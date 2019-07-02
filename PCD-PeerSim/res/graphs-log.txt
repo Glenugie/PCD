@@ -1,0 +1,66 @@
+
+R version 3.3.1 (2016-06-21) -- "Bug in Your Hair"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> files <- file.info(list.files("C:/Users/Sam/Dropbox/PhD/PCD-PeerSim/res/csv"))
+> # res <- read.csv("C:/Users/Sam/Dropbox/PhD/PCD-PeerSim/res/Results_05-06-2017_12-10-33.csv", header = TRUE, sep = ",", quote = "\"",dec = ".", fill = TRUE, comment.char = "")
+> res <- read.csv(paste("C:/Users/Sam/Dropbox/PhD/PCD-PeerSim/res/csv/",rownames(files)[order(files$mtime)][nrow(files)],sep=""), header = TRUE, sep = ",", quote = "\"",dec = ".", fill = TRUE, comment.char = "")
+> 
+> setEPS()
+> postscript(paste(c("Graphs-",format(Sys.time(), "%Y-%m-%d_%H-%M-%S"),".eps"),collapse=""))
+> layout(matrix(c(1,2,3,4), ncol=2, byrow=TRUE), heights=c(50, 50))
+> 
+> plot(res[[1]],res[[2]],xlab="Cycles",ylab="Peers",ylim=c(0,res[1,2]),type="l",col="black",axes=FALSE,main="Peers in the Network")
+> points(res[[1]],res[[3]],col="blue",type="l")
+> points(res[[1]],res[[5]],col="red",type="l")
+> axis(1, at = seq(0,length(res[[1]]), by = 50), las=2)
+> axis(2, at = seq(0,res[1,2], by = 50), las=2)
+> abline(h=seq(0,res[1,2], by = 50), v=seq(0,length(res[[1]]), by = 50), lty=1, col="lightgrey")
+> 
+> plot(res[[1]],res[[4]],xlab="Cycles",ylim=c(0,100),ylab="Average Satisfaction (%)",type="l",col="black",axes=FALSE,main="Average Satisfaction (%)")
+> axis(1, at = seq(0,length(res[[1]]), by = 50), las=2)
+> axis(2, at = seq(0,100, by = 10), las=2)
+> abline(h=seq(0,100, by = 10), v=seq(0,length(res[[1]]), by = 50), lty=1, col="lightgrey")
+> 
+> plot(res[[1]],res[[8]],xlab="Cycles",ylab="Normalised Profit",type="l",col="black",axes=FALSE,main="Normalised Profit")
+> axis(1, at = seq(0,length(res[[1]]), by = 50), las=2)
+> axis(2, at = seq(0,25, by = 5), las=2)
+> abline(h=seq(0,25, by = 5), v=seq(0,length(res[[1]]), by = 50), lty=1, col="lightgrey")
+> 
+> plot(res[[1]],res[[11]],xlab="Cycles",ylab="Messages Sent",ylim=c(0,1000),type="l",col="black",axes=FALSE,main="Messages Sent")
+> axis(1, at = seq(0,length(res[[1]]), by = 50), las=2)
+> axis(2, at = seq(0,1000, by = 100), las=2)
+> abline(h=seq(0,1000, by = 100), v=seq(0,length(res[[1]]), by = 50), lty=1, col="lightgrey")
+> dev.off()
+null device 
+          1 
+> 
+> avgRes <- read.csv("C:/Users/Sam/Dropbox/PhD/PCD-PeerSim/res/Results.csv", header = TRUE, sep = ",", quote = "\"",dec = ".", fill = TRUE, comment.char = "")
+> setEPS()
+> postscript(paste(c("AvgGraphs-",format(Sys.time(), "%Y-%m-%d_%H-%M-%S"),".eps"),collapse=""))
+> plot(avgRes[[1]],avgRes[[4]],xlab="Run Number",ylim=c(0,100),ylab="Average Satisfaction (%)",type="l",col="black",axes=FALSE,main="Average Satisfaction (%)")
+> axis(1, at = seq(0,length(avgRes[[1]]), by = 5), las=2)
+> axis(2, at = seq(0,100, by = 10), las=2)
+> abline(h=seq(0,100, by = 10), v=seq(0,length(avgRes[[1]]), by = 50), lty=1, col="lightgrey")
+> dev.off()
+null device 
+          1 
+> 
+> proc.time()
+   user  system elapsed 
+   0.15    0.42    0.29 

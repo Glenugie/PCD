@@ -1,0 +1,24 @@
+res <- read.csv("C:/Users/Sam/Dropbox/PhD/PCD-PeerSim/res/Results_05-06-2017_12-10-33.csv", header = TRUE, sep = ",", quote = "\"",dec = ".", fill = TRUE, comment.char = "")
+layout(matrix(c(1,2,3,4), ncol=2, byrow=TRUE), heights=c(50, 50))
+
+plot(res[[1]],res[[2]],xlab="Cycles",ylab="Peers",ylim=c(0,res[1,2]),type="l",col="black",axes=FALSE,main="Peers in the Network")
+points(res[[1]],res[[3]],col="blue",type="l")
+points(res[[1]],res[[5]],col="red",type="l")
+axis(1, at = seq(0,length(res[[1]]), by = 50), las=2)
+axis(2, at = seq(0,res[1,2], by = 50), las=2)
+abline(h=seq(0,res[1,2], by = 50), v=seq(0,length(res[[1]]), by = 50), lty=1, col="lightgrey")
+
+plot(res[[1]],res[[4]],xlab="Cycles",ylim=c(0,100),ylab="Average Satisfaction (%)",type="l",col="black",axes=FALSE,main="Average Satisfaction (%)")
+axis(1, at = seq(0,length(res[[1]]), by = 50), las=2)
+axis(2, at = seq(0,100, by = 10), las=2)
+abline(h=seq(0,100, by = 10), v=seq(0,length(res[[1]]), by = 50), lty=1, col="lightgrey")
+
+plot(res[[1]],res[[8]],xlab="Cycles",ylab="Normalised Profit",type="l",col="black",axes=FALSE,main="Normalised Profit")
+axis(1, at = seq(0,length(res[[1]]), by = 50), las=2)
+axis(2, at = seq(0,25, by = 5), las=2)
+abline(h=seq(0,25, by = 5), v=seq(0,length(res[[1]]), by = 50), lty=1, col="lightgrey")
+
+plot(res[[1]],res[[11]],xlab="Cycles",ylab="Messages Sent",ylim=c(0,1000),type="l",col="black",axes=FALSE,main="Messages Sent")
+axis(1, at = seq(0,length(res[[1]]), by = 50), las=2)
+axis(2, at = seq(0,1000, by = 100), las=2)
+abline(h=seq(0,1000, by = 100), v=seq(0,length(res[[1]]), by = 50), lty=1, col="lightgrey")

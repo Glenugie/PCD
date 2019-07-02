@@ -1,0 +1,341 @@
+% Groups Master List
+% Group(g1,peer1).
+:- dynamic group/2.
+
+% Peer Master List
+% peer(peer1).
+:- dynamic peer/1.
+
+% Data Master List
+:- dynamic data/4.
+
+% polRejected(FactOwner, PolicyHolder, Rejector, DataID)
+:- dynamic polRejected/4.
+
+% State of Affairs
+	%myGPS(245).
+
+	% Obligations
+	% obligation(ObligationOwner, Obligation).
+	% obligation(peer1,[peer1,provideRecords(500),23445566]).
+	:- dynamic obligation/2.
+
+	% Record Requests/Accesses
+	% recordRequest(RecordOwner, ProviderID, RequestorID, DataID, Quantity, Date, RequestApproved).
+	% recordRequest(peer1, peer0, peer1, d7, 1, date('date(2017', '1', '25', '14', '33', '50.400300979', '0', ''UTC'', ''-')'), true).
+	:- dynamic recordRequest/7.
+
+	% Data
+	% hasData(FactOwner, DataOwner, DataID).
+	:- dynamic hasData/3.
+	% dataElement(DataOwner, DataID, DataBody).
+	:- dynamic dataElement/3.
+	% noData(FactOwner, PeerID, DataID)
+	:- dynamic noData/3.
+	% connected(FactOwner, PeerID)
+	:- dynamic connected/2.
+	% peerOffline(FactOwner, PeerID)
+	:- dynamic peerOffline/2.
+
+% findData :- connected/2 entries which do not have noData/3 entries
+findData(I,D,L) :- hasData(I,_,D),!,findall(ID,hasData(I,ID,D),L).
+findData(I,D,L) :- findall(ID,possibleData(I,ID,D),L).
+
+possibleData(I,ID,D) :- connected(I,ID), neg(noData(I,ID,D)).
+	%numRecords(I,X,Y,Z) :- findall(T,recordRequest(I,X,Y,T,_,true),S), listTotal(S,0,Z).
+
+numData(I,D,Z) :- findall(T,dataElement(I,D,T),S), listLength(S,0,Z).
+
+% Policies
+% policy(PolicyOwner,Policy).
+% policy(peer1,[POL]).
+% [ 'P' , peer42 , d1 , [ [recordsAccessed(peer1,d1) < 50] , 0 , 0 ] , [] , [], false]
+:- dynamic policy/2.
+
+%:- ['JavaOutput.pl'].
+
+permitRequest(I,ID,D,L) :- policy(I,L), L=['F',ID,D,_,_,_,true], checkConditions(I,L),!,fail.
+permitRequest(I,ID,D,L) :- policy(I,L), L=['P',ID,D,_,_,_,true], checkConditions(I,L),!.
+permitRequest(I,ID,_,L) :- policy(I,L), L=['F',ID,any,_,_,_,true], checkConditions(I,L),!,fail.
+permitRequest(I,ID,_,L) :- policy(I,L), L=['P',ID,any,_,_,_,true], checkConditions(I,L),!.
+
+permitRequest(I,ID,D,L) :- policy(I,L), L=['F',G,D,_,_,_,true], group(G,ID), checkConditions(I,L),!,fail.
+permitRequest(I,ID,D,L) :- policy(I,L), L=['P',G,D,_,_,_,true], group(G,ID), checkConditions(I,L),!.
+permitRequest(I,ID,_,L) :- policy(I,L), L=['F',G,any,_,_,_,true], group(G,ID), checkConditions(I,L),!,fail.
+permitRequest(I,ID,_,L) :- policy(I,L), L=['P',G,any,_,_,_,true], group(G,ID), checkConditions(I,L),!.
+
+permitRequest(I,_,D,L) :- policy(I,L), L=['F',any,D,_,_,_,true], checkConditions(I,L),!,fail.
+permitRequest(I,_,D,L) :- policy(I,L), L=['P',any,D,_,_,_,true], checkConditions(I,L),!.
+permitRequest(I,_,_,L) :- policy(I,L), L=['F',any,any,_,_,_,true], checkConditions(I,L),!,fail.
+permitRequest(I,_,_,L) :- policy(I,L), L=['P',any,any,_,_,_,true], checkConditions(I,L),!.
+
+permitRequest(_,ID,D,L) :- L= ['P',ID,D,[],[],[],true].
+
+% I is the Requestor, Provider is anyone, D is Data
+permitRequestPolicy(I,D,L) :- L=['F',_,D,_,_,_,true], checkConditions(I,L),!,fail.
+permitRequestPolicy(I,D,L) :- L=['P',_,D,_,_,_,true], checkConditions(I,L),!.
+permitRequestPolicy(I,_,L) :- L=['F',_,any,_,_,_,true], checkConditions(I,L),!,fail.
+permitRequestPolicy(I,_,L) :- L=['P',_,any,_,_,_,true], checkConditions(I,L),!.
+permitRequestPolicy(_,_,_).
+
+% Permission Checkers
+	/* Order of Policy Permission Checks:
+		F Peer Data, P Peer Data, F Peer any, P Peer any
+		F Group Data, P Group Data, F Group any, P Group any
+		F any Data, P any Data, F any any, P any any
+	*/
+
+	permit(I,ID,D,L) :- policy(I,L), L=['F',ID,D,_,_,_,false], checkConditions(I,L),!,fail.
+	permit(I,ID,D,L) :- policy(I,L), L=['P',ID,D,_,_,_,false], checkConditions(I,L),!.
+	permit(I,ID,D,L) :- policy(I,L), L=['F',ID,any,_,_,_,false], hasData(I,I,D), checkConditions(I,L),!,fail.
+	permit(I,ID,D,L) :- policy(I,L), L=['P',ID,any,_,_,_,false], hasData(I,I,D), checkConditions(I,L),!.
+
+	permit(I,ID,D,L) :- policy(I,L), L=['F',G,D,_,_,_,false], group(G,ID), checkConditions(I,L),!,fail.
+	permit(I,ID,D,L) :- policy(I,L), L=['P',G,D,_,_,_,false], group(G,ID), checkConditions(I,L),!.
+	permit(I,ID,D,L) :- policy(I,L), L=['F',G,any,_,_,_,false], group(G,ID), hasData(I,I,D), checkConditions(I,L),!,fail.
+	permit(I,ID,D,L) :- policy(I,L), L=['P',G,any,_,_,_,false], group(G,ID), hasData(I,I,D), checkConditions(I,L),!.
+
+	permit(I,_,D,L) :- policy(I,L), L=['F',any,D,_,_,_,false], checkConditions(I,L),!,fail.
+	permit(I,_,D,L) :- policy(I,L), L=['P',any,D,_,_,_,false], checkConditions(I,L),!.
+	permit(I,_,D,L) :- policy(I,L), L=['F',any,any,_,_,_,false], hasData(I,I,D), checkConditions(I,L),!,fail.
+	permit(I,_,D,L) :- policy(I,L), L=['P',any,any,_,_,_,false], hasData(I,I,D), checkConditions(I,L),!.
+
+	permit(I,ID,D,L) :- defaultPermit(I,'T'), L= ['P',ID,D,[],[],[],false].
+
+	%Checks if a specific policy (L) forbids I from providing D to ID
+
+	permitPolicy(I,ID,D,L) :- L=['F',ID,D,_,_,_,false], checkConditions(I,L),!,fail.
+	permitPolicy(I,ID,D,L) :- L=['P',ID,D,_,_,_,false], checkConditions(I,L),!.
+	permitPolicy(I,ID,D,L) :- L=['F',ID,any,_,_,_,false], hasData(I,I,D), checkConditions(I,L),!,fail.
+	permitPolicy(I,ID,D,L) :- L=['P',ID,any,_,_,_,false], hasData(I,I,D), checkConditions(I,L),!.
+
+	permitPolicy(I,ID,D,L) :- L=['F',G,D,_,_,_,false], group(G,ID), checkConditions(I,L),!,fail.
+	permitPolicy(I,ID,D,L) :- L=['P',G,D,_,_,_,false], group(G,ID), checkConditions(I,L),!.
+	permitPolicy(I,ID,D,L) :- L=['F',G,any,_,_,_,false], group(G,ID), hasData(I,I,D), checkConditions(I,L),!,fail.
+	permitPolicy(I,ID,D,L) :- L=['P',G,any,_,_,_,false], group(G,ID), hasData(I,I,D), checkConditions(I,L),!.
+
+	permitPolicy(I,_,D,L) :- L=['F',any,D,_,_,_,false], checkConditions(I,L),!,fail.
+	permitPolicy(I,_,D,L) :- L=['P',any,D,_,_,_,false], checkConditions(I,L),!.
+	permitPolicy(I,_,D,L) :- L=['F',any,any,_,_,_,false], hasData(I,I,D), checkConditions(I,L),!,fail.
+	permitPolicy(I,_,D,L) :- L=['P',any,any,_,_,_,false], hasData(I,I,D), checkConditions(I,L),!.
+
+	permitPolicy(_,_,_,_).
+
+
+	/*% I is the owner, X is the requestor ID, Y is the data ID, L is the policy (usually a variable)
+	permit(I,X,Y,L) :- policy(I,L), checkModality(L,'F'), checkIdentity(L,X), checkData(L,Y), checkConditions(I,L), checkPreObligations(L),!,fail.
+	permit(I,X,Y,L) :- policy(I,L), checkModality(L,'P'), checkIdentity(L,X), checkData(L,Y), checkConditions(I,L), checkPreObligations(L),!.
+	permit(I,X,Y,L) :- policy(I,L), checkModality(L,'F'), checkIdentity(L,X), checkAnyData(I,L,Y), checkConditions(I,L), checkPreObligations(L),!,fail.
+	permit(I,X,Y,L) :- policy(I,L), checkModality(L,'P'), checkIdentity(L,X), checkAnyData(I,L,Y), checkConditions(I,L), checkPreObligations(L),!.
+
+	permit(I,X,Y,L) :- policy(I,L), checkModality(L,'F'), checkGroupIdentity(L,X), checkData(L,Y), checkConditions(I,L), checkPreObligations(L),!,fail.
+	permit(I,X,Y,L) :- policy(I,L), checkModality(L,'P'), checkGroupIdentity(L,X), checkData(L,Y), checkConditions(I,L), checkPreObligations(L),!.
+	permit(I,X,Y,L) :- policy(I,L), checkModality(L,'F'), checkGroupIdentity(L,X), checkAnyData(I,L,Y), checkConditions(I,L), checkPreObligations(L),!,fail.
+	permit(I,X,Y,L) :- policy(I,L), checkModality(L,'P'), checkGroupIdentity(L,X), checkAnyData(I,L,Y), checkConditions(I,L), checkPreObligations(L),!.
+
+	permit(I,_,Y,L) :- policy(I,L), checkModality(L,'F'), checkAnyIdentity(L), checkData(L,Y), checkConditions(I,L), checkPreObligations(L),!,fail.
+	permit(I,_,Y,L) :- policy(I,L), checkModality(L,'P'), checkAnyIdentity(L), checkData(L,Y), checkConditions(I,L), checkPreObligations(L),!.
+	permit(I,_,Y,L) :- policy(I,L), checkModality(L,'F'), checkAnyIdentity(L), checkAnyData(I,L,Y), checkConditions(I,L), checkPreObligations(L),!,fail.
+	permit(I,_,Y,L) :- policy(I,L), checkModality(L,'P'), checkAnyIdentity(L), checkAnyData(I,L,Y), checkConditions(I,L), checkPreObligations(L),!.
+
+	% permit if no policies exist defaultPermit("T"). At this point, execution has stopped if there is an explicit permit or forbid, yes?
+	permit(I,X,Y,L) :- defaultPermit(I,'T'), L= ['P',X,Y,[],[],[],false].*/
+
+	%canRequest(ID,D,L) :- policy(ID,L), [_,self,_,_,_,_|_] = L
+
+	relPolicies(I,X,Y,L) :- policy(I,L), checkIdentity(L,X), checkData(L,Y).
+	relPolicies(I,X,_,L) :- policy(I,L), checkIdentity(L,X), checkAnyDataNoExist(L).
+	relPolicies(I,X,Y,L) :- policy(I,L), checkGroupIdentity(L,X), checkData(L,Y).
+	relPolicies(I,X,_,L) :- policy(I,L), checkGroupIdentity(L,X), checkAnyDataNoExist(L).
+	relPolicies(I,_,Y,L) :- policy(I,L), checkAnyIdentity(L), checkData(L,Y).
+	relPolicies(I,_,_,L) :- policy(I,L), checkAnyIdentity(L), checkAnyDataNoExist(L).
+
+	%relRecords(I,X,[M,ID,D,C,O],R) :- policy(X,_,[M,ID,D,C,O]), recordRequest(I,I,D,Q,T,G), R = recordRequest(I,I,D,Q,T,G).
+	% Need to capture data and peers mentioned in conditions/obligations
+
+	relRecords(I,X,[M,_,RID,D,C,PO,O],R) :- policy(X,[M,RID,D,C,PO,O]), recordRequest(I,X,I,D2,Q,T,G), R = recordRequest(I,X,I,D2,Q,T,G). % Reports ALL records as relevant
+
+	%relRecords(I,X,[M,ID,D,C,O],PID) :- policy(X,_,[M,ID,D,C,O]), PID = policy(X,_,[M,ID,D,C,O]).
+	%relRecords(I,X,[M,ID,D,C,O],ID2,D2,Q,T,G) :- policy(X,_,[M,ID,D,C,O]), recordRequest(I,I,D,Q,T,G), ID2 = ID, D2 = D.
+
+% Modality, Identity, and Data Checks
+	% checkModality([M|_],X) :- =(M,X).
+
+	checkIdentity([_,ID|_],X) :- =(ID,X).
+	checkGroupIdentity([_,ID|_],X) :- group(G,X), =(G,ID).
+	checkAnyIdentity([_,ID|_]) :- =(ID,any).
+
+	%checkIdentitySingle(ID,X) :- =(ID,X).
+	%checkIdentitySingle(ID,X) :- group(G,X), =(G,ID).
+	%checkIdentitySingle(ID,_) :- =(ID,any).
+
+	checkData([_,_,D|_],X) :- =(D,X).
+	checkAnyDataNoExist([_,_,D|_]) :- =(D,any).
+	% checkAnyData(I,[_,_,D|_],X) :- =(D,any), hasData(I,I,X).
+
+% Condition Checking
+	/* Potential Conditions
+		recordsAccessed([Peer,Data],Num,[Date])
+		recordsRequested([Peer,Data],Num,[Date])
+		requests([Peer,Data],Num,[Date])
+
+		lastRequest([Peer,Data],Date)
+		lastAccess([Peer,Data],Date)
+
+		year()
+		month()
+		day()
+		hour()
+		minute()
+	*/
+	checkConditions(I,[_,_,D,C|_]) :- checkCondition(I,C,D).
+		:- discontiguous checkCondition/3.
+		% Records Accessed
+			%checkCondition([recordsAccessed(CV)|T],D) :- me(ID), conRecordsAccessed(ID,D,CV), checkCondition(T,D).
+			%checkCondition([recordsAccessed(ID,D2,CV)|T],D) :- conRecordsAccessed(ID,D2,CV), checkCondition(T,D).
+			checkCondition(I,[H|T],D) :- functor(H,Comp,_), arg(1,H,recordsAccessed(ID,D2)), arg(2,H,V), conRecordsAccessed(I,ID,D2,Comp,V), checkCondition(I,T,D).
+			%conRecordsAccessed(ID,D,C) :- integer(C), numRecords(ID,D,T), T < C.
+			conRecordsAccessed(I,ID,D,C,V) :- numRecords(I,_,ID,D,T), conditionComparator(T,V,C).
+
+		% Records Requested
+			%checkCondition([recordsRequested(CV)|T],D) :- me(ID), conRecordsRequested(ID,D,CV), checkCondition(T,D).
+			%checkCondition([recordsRequested(ID,D2,CV)|T],D) :- conRecordsRequested(ID,D2,CV), checkCondition(T,D).
+			checkCondition(I,[H|T],D) :- functor(H,Comp,_), arg(1,H,recordsRequested(ID,D2)), arg(2,H,V), conRecordsRequested(I,ID,D2,Comp,V), checkCondition(I,T,D).
+			conRecordsRequested(I,ID,D,C,V) :- numRecordsRequested(I,_,ID,D,T), conditionComparator(T,V,C).
+
+		% Requests
+			%checkCondition([requests(CV)|T],D) :- me(ID), conRequests(ID,D,CV), checkCondition(T,D).
+			%checkCondition([requests(ID,D2,CV)|T],D) :- conRequests(ID,D2,CV), checkCondition(T,D).
+			checkCondition(I,[H|T],D) :- functor(H,Comp,_), arg(1,H,requests(ID,D2)), arg(2,H,V), conRequests(I,ID,D2,Comp,V), checkCondition(I,T,D).
+			conRequests(I,ID,D,C,V) :- numRequests(I,_,ID,D,T), conditionComparator(T,V,C).
+
+		% Last Request
+			%checkCondition([lastRequest(CV)|T],D) :- me(ID), conLastRequest(ID,D,CV), checkCondition(T,D).
+			%checkCondition([lastRequest(ID,D2,CV)|T],D) :- conLastRequest(ID,D2,CV), checkCondition(T,D).
+			checkCondition(I,[H|T],D) :- functor(H,Comp,_), arg(1,H,lastRequest(ID,D2)), arg(2,H,V), conLastRequest(I,ID,D2,Comp,V), checkCondition(I,T,D).
+			%conLastRequest(X,Y,V) :- group(X,_), !, findall(M,group(X,M),GMs), findall(T,recordRequest(GMs,Y,_,T,_),S), maxDate(S,M), date_time_stamp(V,VAc), M =< VAc, !, fail.
+			conLastRequest(I,ID,D,C,V) :- findall(T,recordRequest(I,_,ID,D,_,T,_),S), maxDate(S,M), date_time_stamp(V,VAc), conditionComparator(M,VAc,C).
+
+		% Last Access
+			%checkCondition([lastAccess(CV)|T],D) :- me(ID), conLastAccess(ID,D,CV), checkCondition(T,D).
+			%checkCondition([_(lastAccess(ID,D2),V)|T],D) :- conLastAccess(ID,D2,CV), checkCondition(T,D).
+			checkCondition(I,[H|T],D) :- functor(H,Comp,_), arg(1,H,lastAccess(ID,D2)), arg(2,H,V), conLastAccess(I,ID,D2,Comp,V), checkCondition(I,T,D).
+			conLastAccess(I,ID,D,C,V) :- findall(T,recordRequest(I,_,ID,D,_,T,true),S), maxDate(S,M), date_time_stamp(V,VAc), conditionComparator(M,VAc,C).
+
+		% Date/Time
+			%checkCondition([year(CV)|T],D) :- conYear(CV), checkCondition(T,D).
+			checkCondition(I,[H|T],D) :- functor(H,Comp,_), arg(1,H,year(Y)), conYear(Comp,Y), checkCondition(I,T,D).
+			conYear(C,V) :- get_time(T), stamp_date_time(T,D,'UTC'), date_time_value('year',D,VC), conditionComparator(V,VC,C).
+
+			%checkCondition([month(CV)|T],D) :- conMonth(CV), checkCondition(T,D).
+			checkCondition(I,[H|T],D) :- functor(H,Comp,_), arg(1,H,month(M)), conMonth(Comp,M), checkCondition(I,T,D).
+			conMonth(C,V) :- get_time(T), stamp_date_time(T,D,'UTC'), date_time_value('month',D,VC), conditionComparator(V,VC,C).
+
+			%checkCondition([day(CV)|T],D) :- conDay(CV), checkCondition(T,D).
+			checkCondition(I,[H|T],D) :- functor(H,Comp,_), arg(1,H,day(Da)), conDay(Comp,Da), checkCondition(I,T,D).
+			conDay(C,V) :- get_time(T), stamp_date_time(T,D,'UTC'), date_time_value('day',D,VC), conditionComparator(V,VC,C).
+
+			%checkCondition([hour(CV)|T],D) :- conHour(CV), checkCondition(T,D).
+			checkCondition(I,[H|T],D) :- functor(H,Comp,_), arg(1,H,hour(Ho)), conHour(Comp,Ho), checkCondition(I,T,D).
+			conHour(C,V) :- get_time(T), stamp_date_time(T,D,'UTC'), date_time_value('hour',D,VC), conditionComparator(V,VC,C).
+
+			%checkCondition([minute(CV)|T],D) :- conMinute(CV), checkCondition(T,D).
+			checkCondition(I,[H|T],D) :- functor(H,Comp,_), arg(1,H,minute(M)), conMinute(Comp,M), checkCondition(I,T,D).
+			conMinute(C,V) :- get_time(T), stamp_date_time(T,D,'UTC'), date_time_value('minute',D,VC), conditionComparator(V,VC,C).
+	checkCondition(_,[],_).
+
+% Obligation Checking
+	/* Potential Obligations
+		obtain	(Target,Data,Quantity)
+		provide (Target,Data,Quantity,Peer)
+		enforce (Target,Policy)
+		inform	(Target)
+	*/
+	/*checkPreObligations([_,_,_,_,O|_]) :- checkObligation(O).
+	checkObligations([_,_,_,_,_,O|_]) :- checkObligation(O).
+	:- discontiguous checkObligation/1.
+		% obtain(Target,Data,Quantity)
+			checkObligation([obtain(Tgt,D,Q)|T]) :- oblEnforce(Tgt,D,Q), checkObligation(T).
+			oblObtain(_,_,_).
+
+		% provide(Target,Data,Quantity,Peer)
+			checkObligation([provide(Tgt,D,Q,ID)|T]) :- oblProvide(Tgt,D,Q,ID), checkObligation(T).
+			oblProvide(_,_,_,_).
+
+		% enforce(Target,Policy)
+			checkObligation([enforce(Tgt,P)|T]) :- policy(P,_), oblEnforce(Tgt,P), checkObligation(T).
+			oblEnforce(_,_).
+
+		% inform(Target)
+			checkObligation([inform(Tgt)|T]) :- oblInform(Tgt), checkObligation(T).
+			oblInform(_).
+
+	checkObligation([]).*/
+
+% Queries
+	% listTrueConditions(L) :- policy(_,L), checkConditions(L).
+	% listTruePreObligations(L) :- policy(_,L), checkPreObligations(L).
+	% listTrueObligations(L) :- policy(_,L), checkObligations(L).
+
+	% whatCanIAccess(Y) :- me(X), policy(_,L), permit(X,Y,L).
+	% whoCanAccess(X,Y) :- peer(X), permit(X,Y,_).
+	% whatCanTheyAccess(I,X,Y) :- data(Y,_,_,_), permit(I,X,Y,_).
+	% whoCanAccessWhat(X,Y) :- peer(X), data(Y,_,_,_), permit(X,Y,_).
+
+	numRecords(I,PID,RID,Y,Z) :- findall(T,recordRequest(I,PID,RID,Y,T,_,true),S), listTotal(S,0,Z).
+	numRecordsRequested(I,PID,RID,Y,Z) :- findall(T,recordRequest(I,PID,RID,Y,T,_,_),S), listTotal(S,0,Z).
+	numRequests(I,PID,RID,Y,Z) :- findall(RID,recordRequest(I,PID,RID,Y,_,_,_),S), listLength(S,0,Z).
+	numRequestsApproved(I,PID,RID,Y,Z) :- findall(T,recordRequest(I,PID,RID,Y,T,_,true),S), listLength(S,0,Z).
+	numRequestsDenied(I,PID,RID,Y,Z) :- findall(T,recordRequest(I,PID,RID,Y,T,_,false),S), listLength(S,0,Z).
+	getLastRequest(I,PID,RID,Y,Z) :- findall(T,recordRequest(I,PID,RID,Y,_,T,_),S), maxDate(S,M), stamp_date_time(M,Z,'UTC').
+	getLastAccess(I,PID,RID,Y,Z) :- findall(T,recordRequest(I,PID,RID,Y,_,T,true),S), maxDate(S,M), stamp_date_time(M,Z,'UTC').
+
+	recordObligations(L) :- [_,_,_,_,_,O|_] = L, recordObligation(O).
+		recordObligation([provide(Tgt,D,Q,ID)|T]) :- write(obligation([Tgt,provide(D,Q,ID)])),nl, recordObligation(T).
+		recordObligation([enforce(Tgt,P)|T]) :- policy(P,L), write(obligation([Tgt,enforce(L)])),nl, recordObligation(T).
+	recordObligation([]).
+
+% Utility
+
+	%numData(I,D,Z) :- findall(T,dataElement(I,D,T),S), listTotal(S,0,Z).
+
+	listTotal([H|T],A,L) :- Anew is A+H, listTotal(T,Anew,L).
+	listTotal([],A,A).
+	listLength([_|T],A,L) :- Anew is A+1, listLength(T,Anew,L).
+	listLength([],A,A).
+
+	%Finds the transaction record with the most recent date for a given collection of transaction records
+	accMaxDate([H|T],A,Max) :- date_time_stamp(H,Ti), Ti  >  A, accMaxDate(T,Ti,Max).
+	accMaxDate([H|T],A,Max) :- date_time_stamp(H,Ti), Ti  =<  A, accMaxDate(T,A,Max).
+	accMaxDate([],A,A).
+	maxDate(List,Max) :- List = [H|_], date_time_stamp(H,Ti), accMaxDate(List,Ti,Max).
+
+	conditionComparator(C1,T,_) :- complexTerm(T), functor(T,C,_), arg(2,T,C2), compareNumbers(C1,C,C2).
+	conditionComparator(C1,T,C) :- number(T), compareNumbers(C1,C,T).
+	compareNumbers(C1,C,C2) :- functor(T,C,2), arg(1,T,C1), arg(2,T,C2), T.
+	complexTerm(X) :- nonvar(X), functor(X,_,A), A > 0.
+
+	% greaterThanZero(X) :- ( X > 0 -> true;  false).
+	neg(G) :- G,!,fail.
+	neg(_).
+
+% Could have a system where you submit a request of the form (Peer, Data, Quantity), and it returns the generated records you are permitted to access
+	% requestData(I,ID,D,N,M) :- permit(I,ID,D,L), !, requestRecords(I,ID,D,L,M,N), get_time(T), stamp_date_time(T,Date,'UTC'), write(recordRequest(ID,ID,D,M,Date,true)), nl, recordObligations(L), sendRecords(D,M,M).
+	% requestData(I,ID,D,N,R) :- permit(I,ID,D,L), !, requestRecords(I,ID,D,L,M,N), get_time(T), stamp_date_time(T,Date,'UTC'), R = recordRequest(ID,ID,D,M,Date,true), recordObligations(L).
+	requestData(I,ID,D,N,R,O) :- permit(I,ID,D,L), !, requestRecords(I,ID,D,L,M,N), get_time(T), stamp_date_time(T,Date,'UTC'), R = recordRequest(ID,I,ID,D,M,Date,true), L = [_,_,_,_,_,O,_|_].
+
+	% recordRequest(ID,D,M,Date,true)
+ %Need to take NumData into account
+	requestRecords(I,ID,D,L,T,N) :- maxRecords(I,ID,D,L,M), M =:= -1, !, T = N.
+	requestRecords(I,ID,D,L,T,N) :- maxRecords(I,ID,D,L,M), M >= N, T = N.
+	requestRecords(I,ID,D,L,T,N) :- maxRecords(I,ID,D,L,M), M < N, T = M.
+	maxRecords(I,ID,D,L,M) :- [_,_,_,C|_] = L, maxRecord(I,ID,C,D,M), M >= -1.
+	maxRecord(I,ID,[recordsAccessed(CV)|_],D,M) :- !,findMaxRecord(I,ID,D,CV,M).
+	maxRecord(I,ID,[recordsAccessed(ID,D,CV)|_],D,M) :- !,findMaxRecord(I,ID,D,CV,M).
+	maxRecord(_,_,[_|_],_,M) :- M = -1.
+	maxRecord(_,_,[],_,M) :- M = -1.
+	findMaxRecord(I,ID,D,CV,M) :- numRecords(I,_,ID,D,R), functor(CV,C,_), C = <, arg(2,CV,V), M is V - R.
+	findMaxRecord(I,ID,D,CV,M) :- numRecords(I,_,ID,D,R), functor(CV,C,_), C = =<, arg(2,CV,V), M is V - R.
+
+	% sendRecords(D,M,T) :- M > 0, C is T - M + 1, write(C:[D,'-------------------']), nl, MNew is M - 1, sendRecords(D,MNew,T).
+	% sendRecords(_,M,_) :- M =< 0.

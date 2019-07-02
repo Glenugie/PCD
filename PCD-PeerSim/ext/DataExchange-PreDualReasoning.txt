@@ -1,0 +1,1774 @@
+package com.pcd;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Random;
+
+import org.jpl7.Atom;
+import org.jpl7.Compound;
+import org.jpl7.Term;
+import org.jpl7.Util;
+import org.jpl7.Variable;
+
+import peersim.cdsim.CDProtocol;
+import peersim.config.Configuration;
+import peersim.config.FastConfig;
+import peersim.core.CommonState;
+import peersim.core.Fallible;
+import peersim.core.Linkable;
+import peersim.core.Network;
+import peersim.core.Node;
+
+public class DataExchange implements CDProtocol {
+    private final boolean POLICY_OVERLAP_WARNING = true;
+    private final int MAX_GROUPS = 100;
+    
+    private final int minDataDesired, maxDataDesired;
+    private final int minDataOwned, maxDataOwned;
+    private final int minPolicies, maxPolicies;
+    private final int minPeerBudget, maxPeerBudget;
+    private final int maxDataHops;
+    private final int cycleCost;
+    //private final boolean desiredOverridesOwned;
+    private final boolean overlayNetworkEnabled;
+    private final boolean allowNewConnections;
+
+    //private SimpleDateFormat prologDateFormat;
+    private Random rng;
+    private Term[] masterDataArray;
+    protected long peerID;
+    protected long peerPublicKey;
+    private long peerPrivateKey;
+    private String connectionType;
+
+    private boolean disconnecting;
+
+    private final boolean defaultPermit;
+    private final int idealPeers;
+
+    protected HashMap<String, Node> overlayNetwork; //Maps PeerIDs to Peers
+
+    protected HashMap<String, Integer> desiredData;
+    protected HashMap<String, Integer> pendingData;
+    protected HashMap<String, Integer> receivedData;
+    protected ArrayList<String> ownedData;
+    protected HashMap<String, Integer> dataValue;
+
+    protected ArrayList<DataPolicy> policies;
+    protected ArrayList<ObligationSet> obligationSets;
+    protected HashSet<DataElement> dataCollection;
+
+    //private int activeRequests;
+    protected int peerBudget, startingBudget;
+
+    protected int dataReceived;
+    protected long disconnectTime;
+    protected int disconnectType;
+    protected int penaltyRounds;
+
+    protected boolean provider;
+    protected boolean requestor;
+    protected Role role;
+
+    protected ArrayList<P2PMessage> messages;
+
+    public DataExchange(String prefix) {
+        rng = new Random(CommonState.r.getLastSeed());
+        //prologDateFormat = new SimpleDateFormat("yyyy,MM,dd,HH,mm,ss,0,z,'false'");
+
+        minDataDesired = Configuration.getInt(prefix + ".minDataDesired");
+        maxDataDesired = Configuration.getInt(prefix + ".maxDataDesired");
+        minDataOwned = Configuration.getInt(prefix + ".minDataOwned");
+        maxDataOwned = Configuration.getInt(prefix + ".maxDataOwned");
+        minPolicies = Configuration.getInt(prefix + ".minPolicies");
+        maxPolicies = Configuration.getInt(prefix + ".maxPolicies");
+        minPeerBudget = Configuration.getInt(prefix + ".minPeerBudget");
+        maxPeerBudget = Configuration.getInt(prefix + ".maxPeerBudget");
+        maxDataHops = Configuration.getInt(prefix + ".maxDataHops");
+
+        cycleCost = Configuration.getInt(prefix + ".cycleCost");
+
+        //desiredOverridesOwned = Configuration.getBoolean(prefix+".desiredOverridesOwned");
+        overlayNetworkEnabled = Configuration.getBoolean(prefix + ".overlayNetwork");
+        allowNewConnections = Configuration.getBoolean(prefix + ".allowNewConnections");
+        defaultPermit = Configuration.getBoolean(prefix + ".defaultPermit");
+
+        idealPeers = Configuration.getInt("init.rnd.k");
+
+        disconnecting = false;
+        dataReceived = 0;
+        disconnectTime = -1;
+        disconnectType = -1;
+        penaltyRounds = 0;
+        role = null;
+    }
+
+    public void nextCycle(Node node, int protocolID) {
+        int linkableID = FastConfig.getLinkable(protocolID);
+        Linkable linkable = (Linkable) node.getProtocol(linkableID);
+
+        //On the first cycle, inserts information about neighbours into prolog
+        if (peersim.core.CommonState.getTime() == 0) {
+            for (int i = 0; i < linkable.degree(); i += 1) {
+                overlayNetwork.put("peer" + linkable.getNeighbor(i).getID(), linkable.getNeighbor(i));
+                PrologInterface.assertFact("connected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + linkable.getNeighbor(i).getID()) });
+            }
+        }
+
+        //Process Messages
+        dataReceived = 0;
+        processMessages(node, protocolID);
+
+        // Policy Processing
+        for (int i = policies.size() - 1; i >= 0; i -= 1) {
+            DataPolicy pol = policies.get(i);
+            if (pol.duration != -99) {
+                pol.duration -= 1;
+                if (pol.duration <= 0) {
+                    policies.remove(pol);
+                    PrologInterface.retractFact("policy", new Term[] { new Atom("peer" + peerID), pol.getPrologTerm() });
+
+                    //Mark any obligations associated with enforcing Policy as fulfilled
+                }
+            }
+        }
+
+        // Obligation Processing
+        processObligations(node, protocolID);
+
+        peerBudget -= cycleCost;
+        //At the end of each cycle, need to reason on remaining value from desired data, vs the predicted cost of remaining in the network to get it
+        if (desiredData.size() > 0 && linkable.degree() > 0 && peerBudget >= cycleCost && penaltyRounds == 0) {            
+            //List of data items order by value (either personal value, or assigned value by an obligation penalty)              
+            int dataItemPos = 0;
+            boolean dataSelected = false;
+            while (!dataSelected && dataItemPos < desiredData.size()) {
+                String dataItem = desiredData.keySet().toArray(new String[0])[dataItemPos];
+                
+    
+                HashSet<Term> potentialTargetsSet = PrologInterface.runQuery("findData", new Term[] { new Atom("peer" + peerID), new Atom(dataItem), new Variable("L") }, "L");
+                Term potentialTargetsTerm = (Term) potentialTargetsSet.toArray()[0];
+                String[] potentialTargets = Util.atomListToStringArray(potentialTargetsTerm);
+                int targetNum = 0;
+                if (potentialTargets.length > 0) {
+                    boolean targetFound = false;
+                    while (!targetFound && targetNum < potentialTargets.length) {
+                        if (("peer"+peerID).equals(potentialTargets[targetNum])) {
+                            targetNum += 1;                            
+                        } else {
+                            //Ideally this should get the (self) policies for all potential targets, and then choose the target with the least penalty 
+                            //System.out.println("\n===== Permit Request for peer"+peerID+" START=====");
+                            HashSet<Term> applicableSelfPolicies = PrologInterface.runQuery("permitRequest", new Term[] { new Atom("peer"+peerID), new Atom(potentialTargets[targetNum]),  new Atom(dataItem), new Variable("L") }, "L");
+                            //System.out.println("\n===== Permit Request for peer"+peerID+" END=====");
+                            
+                            //Warns on policy overlap
+                            if (POLICY_OVERLAP_WARNING && applicableSelfPolicies.size() > 1) {
+                                System.err.println("Policy overlap detected for peer"+peerID+" and "+dataItem);
+                                for (Term p : applicableSelfPolicies) {
+                                    System.err.println("\t"+(new DataPolicy(-1,p,-1,false)).toString());
+                                }
+                            }
+                            
+                            boolean requestPermit = false;
+                            /*if (applicableSelfPolicies.size() == 0) { 
+                                requestPermit = true;
+                            } else */if (applicableSelfPolicies.size() > 0) {
+                                DataPolicy relPol = new DataPolicy(peerID,(Term) applicableSelfPolicies.toArray()[0],-1,false);
+                                if (relPol.safeModality.equals("P")) { requestPermit = true;}
+                            }
+                            
+                            if (requestPermit && overlayNetwork.containsKey(potentialTargets[targetNum])) {
+                                dataSelected = true;
+                                targetFound = true;
+                            } else { 
+                                targetNum += 1;
+                            }
+                        }
+                    }
+                    
+                    if (targetFound) {
+                        Node peer = overlayNetwork.get(potentialTargets[targetNum]);
+                        DataExchange n = (DataExchange) peer.getProtocol(protocolID);
+        
+                        //Send Desired_Data[RND],1 to Neighbour[RND] as "Data_Request"
+                        n.sendMessage(protocolID, peer, node, "DATA_REQUEST", new Object[] { dataItem, desiredData.get(dataItem), 0 });
+        
+                        pendingData.put(dataItem, desiredData.get(dataItem));
+                        desiredData.remove(dataItem);
+                    }
+                }
+                dataItemPos += 1;
+            }
+            //Need to reason before disconnecting, in some situations there may be a good enough reason to stay a while longer (incoming pay-off)
+        } else if (requestor && desiredData.size() == 0 && pendingData.size() == 0) {
+            //System.err.println("Peer "+peerID+" got all necessary data");
+            gracefulDisconnect(node, protocolID, 0);
+        } else if (peerBudget < cycleCost) {
+            //System.err.println("Peer "+peerID+" ran out of budget");
+            gracefulDisconnect(node, protocolID, 1);
+        } else if (overlayNetwork.size() == 0) {
+            //System.err.println("Peer "+peerID+" ran out of neighbours");
+            gracefulDisconnect(node, protocolID, 2);
+        }
+
+        //If settings permit (and not currently penalised), forms new connections up to the degree of connectedness in config file
+        if (allowNewConnections && overlayNetwork.size() < idealPeers && penaltyRounds == 0) {
+            Node randomPeer = Network.get(rng.nextInt(Network.size()));
+            //If the random peer is online, and not already connected
+            if (!overlayNetwork.containsKey("peer" + randomPeer.getID()) && randomPeer.isUp()) {
+                overlayNetwork.put("peer" + randomPeer.getID(), randomPeer);
+            }
+        }
+
+        //Query q = new Query(new Compound("listing", new Term[]{new Compound("noRequest",new Term[0])})); q.oneSolution(); q.close();
+        PrologInterface.retractFact("noRequest", new Term[] { new Atom("peer"+peerID), new Variable("_"), new Variable("_"), new org.jpl7.Integer(peersim.core.CommonState.getTime())});
+        penaltyRounds = Math.max(0, (penaltyRounds - 1));
+    }
+
+    private void processMessages(Node node, int protocolID) {
+        for (int i = messages.size() - 1; i >= 0; i -= 1) {
+            P2PMessage msg = messages.get(i);
+            if (msg.time <= peersim.core.CommonState.getTime()
+                    && (penaltyRounds == 0 || (penaltyRounds > 0 && (msg.type.equals("DATA_REQUEST") || msg.type.equals("REJECT_POLICIES") || msg.type.equals("RECORD_INFORM") || msg.type.equals("OBLIGATION_COMPLETE"))))) {
+                DataExchange n = (DataExchange) msg.sender.getProtocol(protocolID);
+
+                switch (msg.type) {
+                    case "PEER_DOWN":
+                        //Peer_Down -> Sender_ID, Data_Item
+                        if (overlayNetwork.containsKey("peer" + msg.sender.getID())) {
+                            overlayNetwork.remove("peer" + msg.sender.getID());
+                            PrologInterface.retractFact("connected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + msg.sender.getID()) });
+                            PrologInterface.assertFact("peerOffline", new Term[] { new Atom("peer"+peerID), new Atom("peer" + msg.sender.getID()) });
+                        }
+
+                        if (pendingData.containsKey(msg.payload[0])) {
+                            desiredData.put((String) msg.payload[0], pendingData.get(msg.payload[0]));
+                            pendingData.remove((String) msg.payload[0]);
+                            //activeRequests -= 1;
+                        }
+                        break;
+                    case "MALFORMED_RECORDS":
+                        //Malformed_Records -> Sender_ID, Data_Item
+                        if (pendingData.containsKey(msg.payload[0])) {
+                            desiredData.put((String) msg.payload[0], pendingData.get(msg.payload[0]));
+                            pendingData.remove((String) msg.payload[0]);
+                            //activeRequests -= 1;-
+                        }
+                        break;
+                    case "DATA_REQUEST":
+                        //Data_Request -> Sender_ID, Data_Item, Data_Quantity, Hops		        		
+                        if (ownedData.contains(msg.payload[0])) { //If Data_Item in Owned_Data
+                            HashSet<Term> relPolicies = new HashSet<Term>();
+                            //Query Prolog: Relevant Policies for Sender_ID and Data_Item -> Rel_Policies
+                            HashSet<Term> result = PrologInterface.runQuery("relPolicies", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]), new Variable("L") }, "L");
+                                                        
+                            boolean preliminaryPermit = false;
+                            if (result.size() == 0 && defaultPermit) { 
+                                preliminaryPermit = true;
+                            } else if (result.size() > 0) {
+                                for (Term t : result) {
+                                    //relPolicies.add(PrologInterface.policyToTerm(t));
+                                    relPolicies.add(t);
+                                    DataPolicy relPol = new DataPolicy(peerID,t,-1,false);
+                                    if (relPol.safeModality.equals("P")) { preliminaryPermit = true;}
+                                }
+                            }
+
+                            //Send Data_Item, Data_Quantity, Rel_Policies to Sender_ID as "Policy_Inform"   
+                            if (preliminaryPermit) {
+                                n.sendMessage(protocolID, msg.sender, node, "POLICY_INFORM", new Object[] { (String) msg.payload[0], new Integer((int) msg.payload[1]), relPolicies });
+                            } else {
+                                //Generates a Dataless DataPackage
+                                HashMap<String, HashSet<Term>> transRecords = PrologInterface.runMultiVarQuery("requestData",
+                                        new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]), new org.jpl7.Integer((Integer) msg.payload[1]), new Variable("R"), new Variable("O") },
+                                        new String[] { "R", "O" });
+                                DataPackage dataPackage = assembleDataPackage(transRecords, msg.sender.getID());
+                                
+                                n.sendMessage(protocolID, msg.sender, node, "NO_ACCESS", new Object[] { (String) msg.payload[0], dataPackage });
+                            }
+                        } else { //Peer doesn't have the data, attempting to find neighbour who does
+                            Node[] nodeTargets = new Node[0];
+                            if (((int) msg.payload[2]) < maxDataHops) {
+                                HashSet<Term> potentialTargetsSet = PrologInterface.runQuery("findData", new Term[] { new Atom("peer" + peerID), new Atom((String) msg.payload[0]), new Variable("L") }, "L");
+                                Term potentialTargetsTerm = (Term) potentialTargetsSet.toArray()[0];
+                                String[] potentialTargets = Util.atomListToStringArray(potentialTargetsTerm);
+
+                                ArrayList<Node> potentialNodeTargets = new ArrayList<Node>();
+                                for (int j = 0; j < potentialTargets.length; j += 1) {
+                                    if (overlayNetwork.containsKey(potentialTargets[j])) {
+                                        potentialNodeTargets.add(overlayNetwork.get(potentialTargets[j]));
+                                    }
+                                }
+                                nodeTargets = potentialNodeTargets.toArray(new Node[0]);
+                            }
+                            //Generates a Dataless DataPackage
+                            HashMap<String, HashSet<Term>> transRecords = PrologInterface.runMultiVarQuery("requestData",
+                                    new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]), new org.jpl7.Integer((Integer) msg.payload[1]), new Variable("R"), new Variable("O") },
+                                    new String[] { "R", "O" });
+                            DataPackage dataPackage = assembleDataPackage(transRecords, msg.sender.getID());
+                            n.sendMessage(protocolID, msg.sender, node, "NO_DATA", new Object[] { (String) msg.payload[0], nodeTargets, msg.payload[2], dataPackage }); //Send Data_Item to Sender_ID as "No_Data"
+                        }
+                        break;
+                    case "NO_DATA":
+                        //No_Data -> Sender_ID, Data_Item, Potential_Targets, Hops, Data_Package[]
+                        //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
+                        
+                        processIncomingDataPackage((DataPackage) msg.payload[3],msg.sender,protocolID);
+                        
+                        //Prolog State of Affairs Add: Sender_ID does not have Data_Item
+                        PrologInterface.assertFact("noData", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]) });
+
+                        Node[] potentialTargets = new Node[0];
+                        try {
+                            potentialTargets = (Node[]) msg.payload[1];
+                        } catch (ClassCastException e) {
+                            //Could not cast targets, malformed message
+                        }                
+                        
+                        int targetNum = 0;
+                        boolean dataRequestSent = false;
+                        if (potentialTargets.length > 0 && pendingData.containsKey(msg.payload[0])) {
+                            boolean targetFound = false;
+                            while (!targetFound && targetNum < potentialTargets.length) {
+                                if (("peer"+peerID).equals(potentialTargets[targetNum])) {
+                                    targetNum += 1;                            
+                                } else {
+                                    //Ideally this should get the (self) policies for all potential targets, and then choose the target with the least penalty 
+                                    //System.out.println("\n===== Permit Request for peer"+peerID+" START=====");
+                                    HashSet<Term> applicableSelfPolicies = PrologInterface.runQuery("permitRequest", new Term[] { new Atom("peer"+peerID), new Atom("peer"+potentialTargets[targetNum].getID()),  new Atom((String) msg.payload[0]), new Variable("L") }, "L");
+                                    //System.out.println("\n===== Permit Request for peer"+peerID+" END=====");
+                                    
+                                    //Warns on policy overlap
+                                    if (POLICY_OVERLAP_WARNING && applicableSelfPolicies.size() > 1) {
+                                        System.err.println("Policy overlap detected for peer"+peerID+" and "+msg.payload[0]);
+                                        for (Term p : applicableSelfPolicies) {
+                                            System.err.println("\t"+(new DataPolicy(-1,p,-1,false)).toString());
+                                        }
+                                    }
+                                    
+                                    boolean requestPermit = false;
+                                    /*if (applicableSelfPolicies.size() == 0) { 
+                                        requestPermit = true;
+                                    } else */if (applicableSelfPolicies.size() > 0) {
+                                        DataPolicy relPol = new DataPolicy(peerID,(Term) applicableSelfPolicies.toArray()[0],-1,false);
+                                        if (relPol.safeModality.equals("P")) { requestPermit = true;}
+                                    }
+                                    
+                                    if (requestPermit) {
+                                        targetFound = true;
+                                    } else { 
+                                        targetNum += 1;
+                                    }
+                                }
+                            }
+                            
+                            if (targetFound) {
+                                Node peer = potentialTargets[targetNum];
+                                DataExchange nDE = (DataExchange) peer.getProtocol(protocolID);
+                                nDE.sendMessage(protocolID, peer, node, "DATA_REQUEST", new Object[] { (String) msg.payload[0], pendingData.get((String) msg.payload[0]), (((int) msg.payload[2]) + 1) });
+                                dataRequestSent = true;
+                            }
+                        }
+
+                        if (!dataRequestSent) {
+                            if (pendingData.containsKey(msg.payload[0])) {
+                                desiredData.put((String) msg.payload[0], pendingData.get((String) msg.payload[0]));
+                                pendingData.remove((String) msg.payload[0]);
+                                //activeRequests -= 1;	
+                            }
+                        }
+                        break;
+                    case "NO_ACCESS":
+                        //No_Access -> Sender_ID, Data_Item, Data_Package[]
+                        //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
+                        
+                        processIncomingDataPackage((DataPackage) msg.payload[1],msg.sender,protocolID);
+                        
+                        if (pendingData.containsKey(msg.payload[0])) {
+                            desiredData.put((String) msg.payload[0], pendingData.get((String) msg.payload[0]));
+                            pendingData.remove((String) msg.payload[0]);
+                            //activeRequests -= 1;
+
+                            //Prolog State of Affairs Add: Sender_ID does not have Data_Item
+                            PrologInterface.assertFact("noAccess", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]) });
+                        }
+                        break;
+                    case "POLICY_INFORM":
+                        //Policy_Inform -> Sender_ID, Data_Item, Data_Quantity, Rel_Policies
+                        HashSet<Term> relPolicies = null;
+                        try {
+                            relPolicies = (HashSet<Term>) msg.payload[2];
+                        } catch (ClassCastException e) {
+                            //Could not cast policies, malformed message
+                        }
+
+                        if (relPolicies == null) {
+                            if (pendingData.containsKey(msg.payload[0])) {
+                                desiredData.put((String) msg.payload[0], pendingData.get((String) msg.payload[0]));
+                                pendingData.remove((String) msg.payload[0]);
+                                //activeRequests -= 1;
+                            }
+                            break;
+                        } else {                            
+                            //For all relPolicies, determine which hold for your current records. Evaluate all of these only (the others are irrelevant)
+                            //If none are left, then halt this transaction as it will produce no meaningful result
+                            HashSet<Term> relPoliciesFiltered = new HashSet<Term>();
+                            for (Term pol : relPolicies) {
+                                if (PrologInterface.runGroundQuery("policyRelevant",new Term[] { new Atom("peer"+peerID), pol})) {
+                                    relPoliciesFiltered.add(pol);
+                                }
+                            }
+                            //System.out.println(relPolicies.size()+" => "+relPoliciesFiltered.size());
+                            
+                            //Query Prolog: Should I accept Rel_Policies -> Accept_Policies
+                            float policyCost = policyCost(msg,relPolicies);     
+                            
+                            if (policyCost >= 0) {
+                                //Query Prolog: Relevant Records for Rel_Policies -> Rel_Records
+                                HashSet<String> relRecords = new HashSet<String>();
+                                for (Term p : relPolicies) {
+                                    HashSet<Term> result = PrologInterface.runQuery("relRecords", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), p, new Variable("R") }, "R");
+                                    //HashSet<Term> result = PrologInterface.runQuery("relRecords", new Term[]{new Atom("peer"+peerID),new Atom("peer"+n.peerID),p,new Variable("ID"),new Variable("D"),new Variable("Q"),new Variable("T"), new Variable("G")}, "Q");
+                                    for (Term t : result) {
+                                        relRecords.add(t.toString());
+                                    }
+                                }
+
+                                //Send Data_Item, Data_Quantity, Rel_Records to Sender_ID as "Record_Inform"
+                                n.sendMessage(protocolID, msg.sender, node, "RECORD_INFORM", new Object[] { (String) msg.payload[0], (Integer) msg.payload[1], relRecords });
+                            } else {
+                                //Send Data_Item to Sender_ID as "Reject_Policies"
+                                n.sendMessage(protocolID, msg.sender, node, "REJECT_POLICIES", new String[] { (String) msg.payload[0] });
+                                if (pendingData.containsKey(msg.payload[0])) {
+                                    desiredData.put((String) msg.payload[0], pendingData.get((String) msg.payload[0]));
+                                    pendingData.remove((String) msg.payload[0]);
+                                    //activeRequests -= 1;
+
+                                    //Prolog State of Affairs Add: Rejected Sender_ID policies for Data_Item
+                                    PrologInterface.assertFact("polRejected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom("peer" + peerID), new Atom((String) msg.payload[0]) });
+                                    
+                                    //Don't request this data from this provider for X (10?) turns. This mark gets cleared if the your personalv alue for this data is changed
+                                    PrologInterface.retractFact("noRequest", new Term[] { new Atom("peer"+peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]), new Variable("_")});
+                                    PrologInterface.assertFact("noRequest", new Term[] { new Atom("peer"+peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]), new org.jpl7.Integer(peersim.core.CommonState.getTime() + 10)});
+                                }
+                            }
+                        }
+                        break;
+                    case "REJECT_POLICIES":
+                        //Reject_Policies -> Sender_ID, Data_Item
+                        //Prolog State of Affairs Add: Sender_ID rejected policies for Data_Item
+                        PrologInterface.assertFact("polRejected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]) });
+                        break;
+                    case "RECORD_INFORM":
+                        //Record_Inform -> Sender_ID, Data_Item, Data_Quantity, Rel_Records
+                        HashSet<String> relRecords = null;
+                        try {
+                            relRecords = (HashSet<String>) msg.payload[2];
+                        } catch (ClassCastException e) {
+                            //Could not cast records, malformed message
+                        }
+
+                        if (relRecords == null) {
+                            n.sendMessage(protocolID, msg.sender, node, "MALFORMED_RECORDS", new String[] { (String) msg.payload[0] });
+                            break;
+                        } else {
+                            for (String r : relRecords) {
+                                PrologInterface.assertFact("recordRequest", PrologInterface.stringToTransRecord(peerID, r));
+                            }
+                            //Prolog Query: Pre-Obligations associated with Sender_ID accessing Data_Quantity of Data_Item with Rel_Records -> Pre_Obl
+                            //% Returns any pre-obligations from policies associated with this data request, but omits any pre-obligations that are provably fulfilled by Rel_Records
+                            ArrayList<ObligationSet> preObligations = new ArrayList<ObligationSet>();
+                            if (preObligations.size() > 0) {
+                                //Send ["OBLIGATION_INFORM", Sender_ID, Data_Item, Data_Quantity, Pre_Obl]
+                            } else {
+                                //Query Prolog: Permit Sender_ID access to Data_Quantity of Data_item with Rel_Records -> Data_Package
+                                HashMap<String, HashSet<Term>> transRecords = PrologInterface.runMultiVarQuery("requestData",
+                                        new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]), new org.jpl7.Integer((Integer) msg.payload[1]), new Variable("R"), new Variable("O") },
+                                        new String[] { "R", "O" });
+                                DataPackage dataPackage = assembleDataPackage(transRecords, msg.sender.getID());
+
+                                //Send Data_Item, Data_Package to Sender_ID as "Data_Result" 			
+                                //n.sendMessage(msg.sender, node, "DATA_RESULT", new String[]{(String) msg.payload[0],msg.payload[0]+":[peer"+n.peerID+","+msg.payload[0]+","+dataPermitted+","+prologDateFormat.format(new Date().getTime())+","+(dataPermitted > 0)+"])"});
+                                n.sendMessage(protocolID, msg.sender, node, "DATA_RESULT", new Object[] { (String) msg.payload[0], dataPackage });
+                                //PrologInterface.assertFact("recordRequest", new Term[]{new Atom("peer"+peerID),new Atom("peer"+n.peerID),new Atom((String) msg.payload[0]),new org.jpl7.Integer(dataPermitted),new Atom(prologDateFormat.format(new Date().getTime())),new Atom(dataAllowed.toString())});
+
+                                //Mark any obligations associated with providing Data_Quantity of Data_Item to Sender_ID as fulfilled
+                            }
+                        }
+                        break;
+                    case "PREOBLIGATION_INFORM":
+                        //["PREOBLIGATION_INFORM", Sender_ID, Data_Item, Data_Quantity, (ArrayList<ObligationSet>) Pre_Obl]
+                        ArrayList<ObligationSet> oblSets = null;
+                        try {
+                            oblSets = (ArrayList<ObligationSet>) msg.payload[2];
+                        } catch (ClassCastException e) {
+                            //Could not cast records, malformed message
+                        }
+
+                        for (ObligationSet oblSet : oblSets) {
+                            obligationSets.add(oblSet);
+                        }
+                        break;
+                    case "OBLIGATION_COMPLETE":
+                        //["OBLIGATION_COMPLETE", Sender_ID, Data_Item, Data_Quantity, Completed_Obl]
+                        //Prolog Query: Pre-Obligations associated with Sender_ID accessing Data_Quantity of Data_Item with Rel_records -> Pre_Obl
+                        //    % Gathers policies which reference Data_Item (or any data) and your identity (Sender_ID, any groups Sender_ID is a part of, or any peer), then returns a set of pre_obligations associated with these policies
+                        //If Pre_Obl is empty or Completed_Obl (The proof of completion) matches Pre_Obl (The set of obligations to be fulfilled)
+                        //    DataPackage dataPackage = new DataPackage();
+                        //    Prolog Query: Create Data_Package for Sender_ID to access Data_Quantity of Data_Item -> Data_Package
+                        //        % Generates a Data_Package containing the permitted data element(s) and the associated transaction records
+                        //        % As part of this operation, asserts a fact that Sender_ID now has Data_Item, if approved
+                        //    Encrypt Data_Package
+                        //    Send ["DATA_RESULT", Sender_ID, Data_Item, Data_Package, null]
+                        //    Mark any obligations associated with providing Data_Quantity of Data_Item to Sender_ID as
+                        //Else
+                        //    Send ["PREOBLIGATION_INFORM", Sender_ID, Data_Item, Data_Quantity, Pre_Obl]
+                        //End
+                        break;
+                    case "DATA_RESULT":
+                        //Data_Result -> Sender_ID, Data_Item, Data_Package[]
+                        //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
+
+                        DataPackage dataPackage = (DataPackage) msg.payload[1];
+                        processIncomingDataPackage(dataPackage,msg.sender,protocolID);
+
+                        //activeRequests -= 1;
+                        break;
+                    case "OBLIGATION_INFORM":
+                        //["OBLIGATION_INFORM", Sender_ID, Data_Item, Data_Quantity, Completed_Obl]
+
+                        // Can do some processing with this fact
+                        break;
+
+                }
+
+                Object test = messages.remove(i);
+                if (test == null) {
+                    System.err.println("ERROR");
+                }
+            }
+        }
+    }
+
+    private void processObligations(Node node, int protocolID) {
+        if (obligationSets.size() > 0) {
+            for (int i = (obligationSets.size() - 1); i >= 0; i -= 1) {
+                ObligationSet oblSet = obligationSets.get(i);
+                boolean fulfilled = true;
+                for (Obligation obl : oblSet.obligations.keySet()) {
+                    if (oblSet.obligations.get(obl) != 2) {
+                        fulfilled = false;
+                        break;
+                    }
+                }
+
+                if (fulfilled) {
+                    if (oblSet.preObligation) {
+                        //Completed_Obl is the set of fulfilled obligations record (acting as proof of fulfilment)
+                        HashSet<String> completedObl = new HashSet<String>();
+                        for (Obligation oblTest : oblSet.obligations.keySet()) {
+                            completedObl.add(oblTest.toString());
+                        }
+
+                        //Send ["OBLIGATION_COMPLETE", Sender_ID, Data_Item, Data_Quantity, Completed_Obl]	
+                        Node n = getPeerByID("peer" + oblSet.issuerID);
+                        if (n != null) {
+                            ((DataExchange) n.getProtocol(protocolID)).sendMessage(protocolID, n, node, "OBLIGATION_INFORM", new Object[] { completedObl });
+                        }
+                    }
+                    obligationSets.remove(oblSet);
+                } else if (peersim.core.CommonState.getTime() >= oblSet.expiry) {
+                    System.out.println("Penalty of "+oblSet.penalty+" applied to peer"+peerID);
+                    penaltyRounds += oblSet.penalty;
+                    obligationSets.remove(oblSet);
+                }
+            }
+
+            //Sort ObligationSets according to highest Reward/Sanction/Urgency (obligations are weighted on which expires soonest)
+
+            //If all obligations are marked as processed (or fulfilled), set all processed obligations to unprocessed
+            boolean allProcessed = true;
+            for (ObligationSet oblSet : obligationSets) {
+                for (Obligation obl : oblSet.obligations.keySet()) {
+                    if (oblSet.obligations.get(obl) == 0) {
+                        allProcessed = false;
+                        break;
+                    }
+                }
+                if (!allProcessed) {
+                    break;
+                }
+            }
+            if (allProcessed) {
+                for (ObligationSet oblSet : obligationSets) {
+                    for (Obligation obl : oblSet.obligations.keySet()) {
+                        if (oblSet.obligations.get(obl) == 1) {
+                            oblSet.obligations.replace(obl, 0);
+                        }
+                    }
+                }
+            }
+
+            int oblSetIndex = 0, oblIndex = 0;
+            ObligationSet oblSet = null;
+            Obligation obl = null;
+            while (oblSetIndex < obligationSets.size() && obl == null) {
+                oblSet = obligationSets.get(oblSetIndex);
+                oblIndex = 0;
+                Obligation lastObl = null;
+                obl = null;
+                for (Obligation oblTest : oblSet.obligations.keySet()) {
+                    if (oblSet.obligations.get(oblTest) == 0) {
+                        obl = oblTest;
+                        break;
+                    }
+                    oblIndex += 1;
+                    lastObl = oblTest;
+                }
+                //If Obl type is INFORM and the Obligation prior to Obl in OblSet is unfulfilled
+                if (obl != null && obl.type.equals("inform") && lastObl != null && oblSet.obligations.get(lastObl) != 2) {
+                    obl = null;
+                }
+                oblSetIndex += 1;
+            }
+
+            if (obl != null) {
+                switch (obl.type) {
+                    case "obtain": {
+                        //[Data_Item, Data_Quantity] <- Obtain
+                        int quantityDataOwned = 0;
+                        if (ownedData.contains(obl.payload[0])) {
+                            Term result = PrologInterface.runQueryFirstResult("numData", new Term[] { new Atom("peer" + peerID), new Atom(obl.payload[0]), new Variable("Z") }, "Z");
+                            if (result != null) {
+                                quantityDataOwned = result.intValue();
+                            }
+                        }
+                        
+                        int quantityNeeded = Integer.parseInt(obl.payload[1]) - quantityDataOwned;
+                        if (quantityNeeded > 0) {
+                            if (desiredData.containsKey(obl.payload[0])) {
+                                desiredData.replace(obl.payload[0], desiredData.get(obl.payload[0]) + quantityNeeded);
+                            } else {
+                                desiredData.put(obl.payload[0], quantityNeeded);
+                            }
+                        } else {
+                            oblSet.obligations.replace(obl, 2); //Mark Obligation as fulfilled                            
+                        }                        
+                        break;
+                    }    
+                    case "provide":
+                        //[Data_Item, Data_Quantity, Data_Recipient] <- Provide
+                        int quantityDataOwned = 0;
+                        if (ownedData.contains(obl.payload[0])) {
+                            Term result = PrologInterface.runQueryFirstResult("numData", new Term[] { new Atom("peer" + peerID), new Atom(obl.payload[0]), new Variable("Z") }, "Z");
+                            if (result != null) {
+                                quantityDataOwned = result.intValue();
+                            }
+                        }
+
+                        if (quantityDataOwned >= Integer.parseInt(obl.payload[1])) {
+                            HashSet<Term> relPolicies = new HashSet<Term>();
+                            //Prolog Query: Relevant Policies for Data_Recipient and Data_Item -> Rel_Policies
+                            HashSet<Term> result = PrologInterface.runQuery("relPolicies", new Term[] { new Atom("peer" + peerID), new Atom(obl.payload[2]), new Atom(obl.payload[0]), new Variable("L") }, "L");
+                            for (Term t : result) {
+                                //relPolicies.add(PrologInterface.policyToTerm(t));
+                                relPolicies.add(t);
+                            }
+
+                            //Send ["POLICY_INFORM", Data_Recipient, Data_Item, Data_Quantity, Rel_Policies]	        			
+                            if (relPolicies.size() > 0 || defaultPermit) {
+                                Node n = getPeerByID(obl.payload[2]);
+                                if (n != null) {
+                                    ((DataExchange) n.getProtocol(protocolID)).sendMessage(protocolID, n, node, "POLICY_INFORM", new Object[] { obl.payload[0], Integer.parseInt(obl.payload[1]), relPolicies });
+                                }
+                            } else {
+                                //Could change policies to allow this obligation to be fulfilled. Potentially
+                            }
+                        } else {
+                            if (desiredData.containsKey(obl.payload[0])) {
+                                desiredData.replace(obl.payload[0], desiredData.get(obl.payload[0]) + Integer.parseInt(obl.payload[1]));
+                            } else {
+                                desiredData.put(obl.payload[0], Integer.parseInt(obl.payload[1]));
+                            }
+                        }
+                        break;
+
+                    case "adopt":
+                        //[Policy, Duration] <- Adopt
+                        boolean conflict = false;
+                        DataPolicy polToCheck = new DataPolicy(peerID,Util.textToTerm(obl.payload[0]),Integer.parseInt(obl.payload[1]),false);
+                        //Prolog Query: Does adding Policy to my policy collection create a conflict -> Conflicted_Policies
+                        HashSet<Term> result = PrologInterface.runQuery("polsViolatedBy", new Term[] { new Atom("peer" + peerID), polToCheck.getPrologTerm(), new Variable("L") }, "L");
+                        if (result.size() > 0) { conflict = true;}
+                        if (!conflict) {
+                            //Prolog Query: Does Policy, enacted by Issuer_ID already exist -> Current_Policy_Expiry
+                                //% Finds a policy which matches policy(Issuer_ID,Policy,_), extract the current duration of this policy
+                            //If Current_Policy_Expiry is NULL
+                                //Prolog Assert: Add Policy to Policy Collection with expiry in Duration cycles
+                                //% policy(Self,Policy,Duration)
+                            //Else if Current_Policy_Expiry is not infinite
+                                //Prolog Assert: Add Duration cycles to the current expiry of Policy
+                                //% policy(Self,Policy,(Current_Policy_Duration + Duration))
+                            //End
+                            policies.add(polToCheck);
+                            PrologInterface.assertFact("policy", new Term[]{ new Atom("peer"+peerID),polToCheck.getPrologTerm()});
+                        }
+                        break;
+
+                    case "inform":
+                        //[Inform_Recipient] <- Inform
+                        HashSet<String> completedObl = new HashSet<String>();
+                        int i = 0;
+                        for (Obligation oblTest : oblSet.obligations.keySet()) {
+                            completedObl.add(oblTest.toString());
+                            if (i >= oblIndex) {
+                                break;
+                            }
+                            i += 1;
+                        }
+
+                        //Send ["OBLIGATION_INFORM", Inform_Recipient, Completed_Obl, null, null]	        			
+                        Node n = getPeerByID(obl.payload[0]);
+                        if (n != null) {
+                            ((DataExchange) n.getProtocol(protocolID)).sendMessage(protocolID, n, node, "OBLIGATION_INFORM", new Object[] { completedObl });                            
+                            oblSet.obligations.replace(obl, 2); //Mark Obligation as fulfilled
+                        }
+                        break;
+                }
+                if (oblSet.obligations.get(obl) == 0) {
+                    oblSet.obligations.replace(obl, 1);
+                }
+            }
+        }
+    }
+    
+    public float policyCost(P2PMessage msg, HashSet<Term> relPolicies) {
+        boolean debugPolCost = false; 
+        
+        HashSet<Term> applicablePolicies = new HashSet<Term>(relPolicies);        
+        applicablePolicies.addAll(PrologInterface.runQuery("permitRequest", new Term[] { new Atom("peer"+peerID), new Atom("peer"+msg.sender.getID()),  new Atom((String) msg.payload[0]), new Variable("L") }, "L"));
+
+        if (debugPolCost) { System.out.println("\n==========POLICY COST EVALUATION==========");}
+        if (debugPolCost) { System.out.println("peer"+peerID+" is requesting "+msg.payload[1]+" x "+msg.payload[0]+" from peer"+msg.sender.getID()+" (Cycle "+peersim.core.CommonState.getTime()+")");}
+                                    
+        // Relevant_Obligations = All obligations and pre-obligations attached to Pol, and all obligations and preobligations
+        // from self policies which cover Data_Item or Provider_ID (whose conditions hold for current state of affairs)
+        //ArrayList<Obligation> polObligations = new ArrayList<Obligation>();
+        ArrayList<ObligationSet> polOblSets = new ArrayList<ObligationSet>();
+        int maxRecordsLowest = -1;
+        for (Term pol : applicablePolicies) {
+            DataPolicy tempPol = new DataPolicy(peerID,pol,0,false);
+            /*System.out.println(tempPol.toString());
+            System.out.println("\t"+tempPol.getPolicyString());
+            System.out.println("\t"+tempPol.getPrologTerm());*/
+            for (ObligationSet oblSet : tempPol.preObligationsProc) {
+                polOblSets.add(oblSet);
+                /*for (Obligation obl : oblSet.obligations.keySet()) {
+                    polObligations.add(obl);
+                }*/
+            }
+            for (ObligationSet oblSet : tempPol.obligationsProc) {
+                polOblSets.add(oblSet);
+                /*for (Obligation obl : oblSet.obligations.keySet()) {
+                    polObligations.add(obl);
+                }*/
+            }
+            int maxRecords = Integer.parseInt(PrologInterface.runQueryFirstResult("requestRecords", new Term[] { new Atom("peer"+peerID), new Atom("peer"+msg.sender.getID()), new Atom((String) msg.payload[0]), tempPol.getPrologTerm(), new Variable("M"), new org.jpl7.Integer((int) msg.payload[1])}, "M").toString());
+            if (maxRecordsLowest == -1 || maxRecords < maxRecordsLowest) { maxRecordsLowest = maxRecords;}
+        }
+        
+        // cycleCost 
+        int avgTransLength = 4;
+        // overlayNetwork.size()
+        int numNeighboursWithoutData = 0;
+        try { Integer.parseInt(PrologInterface.runQueryFirstResult("numWithoutData", new Term[] { new Atom("peer"+peerID), new Atom((String) msg.payload[0]), new Variable("Z")}, "Z").toString());} catch (Exception e) {}
+        
+        int lDataValue = getDataValue((String) msg.payload[0]);
+        int sdValue = ((cycleCost * avgTransLength) * ((numNeighboursWithoutData / overlayNetwork.size()) * 10));
+        
+        //requestRecords(I,ID,D,L,M,N)
+        
+        
+        if (debugPolCost) { System.out.println("Data Value: ("+lDataValue+" * "+maxRecordsLowest+") = "+(lDataValue*maxRecordsLowest));}
+        if (debugPolCost) { System.out.println("Supply and Demand Value: ( ("+cycleCost+" * "+avgTransLength+") * (("+numNeighboursWithoutData+" / "+overlayNetwork.size()+") * 10) ) = "+sdValue);}
+        
+        float policyCost = (lDataValue*maxRecordsLowest) + sdValue;
+
+        float fulfilOblCost = 0;                                                        
+        //Estimated cost to fulfill obligations from other data that will be TRIGGERED by this data request. Building in self policies to the above collection effectively captures this
+        if (debugPolCost && polOblSets.size() > 0) { System.out.println("Fulfill Calc:");}
+        for (ObligationSet oblSet : polOblSets) {
+            if (debugPolCost) { System.out.println("\tObligation Set [Pen: "+oblSet.penalty+", Dur: "+oblSet.duration+", Pre: "+oblSet.preObligation+"]");}
+            //Estimated Cost to fulfill obligations
+            //CC * (Penalty cycles for breaking obligations associated with this data * (1 - Probability of completing obligations in time))
+
+            double completionProb = 1.0;
+            int minCyclesNeeded = 0;
+            float fulfilThisOblCost = 0;
+            for (Obligation obl : oblSet.obligations.keySet()) {      
+                if (debugPolCost) { System.out.println("\t\t"+obl);}
+                /*System.out.println(obl);  
+                System.out.println(obl.type);
+                for (String oblP : obl.payload) { System.out.println("\t"+oblP);}*/
+                
+                switch (obl.type) {
+                    case "obtain": case "provide":
+                    // obtain(d3, 4)    
+                        int dataCount = countData(obl.payload[0]);
+                        int dataQuantity = Integer.parseInt(obl.payload[1]);
+                        int dataVal = getDataValue((String) msg.payload[0]);
+                        
+                        if (obl.type.equals("obtain") || (obl.type.equals("provide") && dataCount < dataQuantity)) {                                            
+                            //Cost
+                            if (dataCount < dataQuantity) { 
+                                fulfilThisOblCost += ((cycleCost * avgTransLength));
+                                if (debugPolCost) { System.out.println("\t\t\tObtain Cost (Cycles): "+(cycleCost * avgTransLength));}
+                            }
+                            fulfilThisOblCost -= (dataVal * dataQuantity);
+                            minCyclesNeeded += avgTransLength;
+                            
+                            if (debugPolCost) { System.out.println("\t\t\tObtain Cost (Value): ("+dataVal+" * "+dataQuantity+") = "+(dataVal * dataQuantity));}
+                            
+                            for (ObligationSet oblSetTest : obligationSets) {
+                                for (Obligation oblTest : oblSetTest.obligations.keySet()) {
+                                    if (oblTest.type.equals("adopt")) {
+                                        DataPolicy tempPolicy = new DataPolicy(peerID,Util.textToTerm(oblTest.payload[0]),-1,true);
+                                        if (tempPolicy.selfTarget) {
+                                            //Self_Pol prohibits acquiring Data_Item and Self_Pol.Conditions hold
+                                            boolean selfPolPermit = PrologInterface.runGroundQuery("permitRequestPolicy", new Term[]{ new Atom("peer"+peerID), new Atom(obl.payload[0]), tempPolicy.getPrologTerm()});
+                                            //System.out.println("Request "+obl.payload[0]+" => "+selfPolPermit+"\n"+tempPolicy.toString()+"\n\n");
+                                            
+                                            if (!selfPolPermit) {
+                                                fulfilThisOblCost += oblSetTest.penalty;
+                                                if (debugPolCost) { System.out.println("\t\t\t\t(Obtain) Cost to Break a Self Policy: "+oblSetTest.penalty);}
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            //Probability of Completion
+                            //IMPLICIT: if (Own >= Obl.Data_Quantity of Obl.Data_Item) { completionProb *= 1.0;}    
+                            if (PrologInterface.runGroundQuery("recordRequest", new Term[]{ new Atom("peer"+peerID), new Variable("_"), new Atom("peer"+peerID), new Atom(obl.payload[0]), new Variable("_"), new Variable("_"), new Atom("true")})) { completionProb *= 0.95;}
+                            if (PrologInterface.runGroundQuery("hasData", new Term[]{ new Atom("peer"+peerID), new Variable("_"), new Atom(obl.payload[0])})) { completionProb *= 0.75;}
+                            else if (PrologInterface.runGroundQuery("possibleData", new Term[]{ new Atom("peer"+peerID), new Variable("_"), new Atom(obl.payload[0])})) { completionProb *= 0.5;}
+                            else if (!PrologInterface.runGroundQuery("possibleData", new Term[]{ new Atom("peer"+peerID), new Variable("_"), new Atom(obl.payload[0])})) { completionProb *= 0.05;}
+                            else { completionProb *= 0.0;}
+                        }
+                        if (obl.type.equals("obtain")) {                             
+                            if (debugPolCost) { System.out.println("\t\t\tCycles: "+avgTransLength);}
+                            if (debugPolCost) { System.out.println("\t\t\tProbability: "+completionProb);}
+                            break;
+                        }
+                        
+                    // Provide
+                    // provide(d1, 5, peer80)
+                        //Cost
+                        fulfilThisOblCost += (cycleCost * avgTransLength);
+                        fulfilThisOblCost += (dataVal * dataQuantity);
+                        minCyclesNeeded += avgTransLength;
+
+                        if (debugPolCost) { System.out.println("\t\t\tProvide Cost (Cycles): "+(cycleCost * avgTransLength));}
+                        if (debugPolCost) { System.out.println("\t\t\tProvide Cost (Value): ("+dataVal+" * "+dataQuantity+") = "+(dataVal * dataQuantity));}
+                        
+                        for (ObligationSet oblSetTest : obligationSets) {
+                            for (Obligation oblTest : oblSetTest.obligations.keySet()) {
+                                if (oblTest.type.equals("adopt")) {
+                                    DataPolicy tempPolicy = new DataPolicy(peerID,Util.textToTerm(oblTest.payload[0]),-1,true);
+                                    if (!tempPolicy.selfTarget) {
+                                        boolean polPermit = PrologInterface.runGroundQuery("permitPolicy", new Term[]{ new Atom("peer"+peerID), new Atom(obl.payload[2]), new Atom(obl.payload[0]), tempPolicy.getPrologTerm()});
+                                        //System.out.println("Request "+obl.payload[0]+" => "+polPermit+"\n"+tempPolicy.toString()+"\n\n");
+                                        
+                                        if (!polPermit) {
+                                            fulfilThisOblCost += oblSetTest.penalty;
+                                            if (debugPolCost) { System.out.println("\t\t\t\tCost to Break a Policy: "+oblSetTest.penalty);}
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        //Probability of Completion                                            
+                        if (!PrologInterface.runGroundQuery("peerOffline",new Term[] { new Atom("peer"+peerID), new Atom (obl.payload[2]) })) { completionProb *= 0.95;}
+                        else { completionProb *= 0.0;}
+                        
+                        if (debugPolCost) { System.out.println("\t\t\tCycles: "+avgTransLength);}
+                        if (debugPolCost) { System.out.println("\t\t\tProbability: "+completionProb);}
+                        break;
+
+                    case "adopt":
+                    // adopt(['P',any,d3,[],[],[[[inform(peer85)], 5, 6]],false], 5)
+                        //Cost
+                        fulfilThisOblCost += (cycleCost * Integer.parseInt(obl.payload[1]+1));
+                        if (debugPolCost) { System.out.println("\t\t\tAdopt Cost (Cycles): "+(cycleCost * Integer.parseInt(obl.payload[1]+1)));}
+                        
+                        //The penalty cost of any policies violated by obl.Policy
+                        DataPolicy adoptOblPolicy = new DataPolicy(peerID,Util.textToTerm(obl.payload[0]),-1,true);
+                        for (ObligationSet oblSetTest : obligationSets) {
+                            for (Obligation oblTest : oblSetTest.obligations.keySet()) {
+                                if (oblTest.type.equals("adopt")) {
+                                    DataPolicy tempPolicy = new DataPolicy(peerID,Util.textToTerm(oblTest.payload[0]),-1,true);
+                                    boolean polViolated = PrologInterface.runGroundQuery("polViolates", new Term[]{ new Atom("peer"+peerID), tempPolicy.getPrologTerm(), adoptOblPolicy.getPrologTerm()});
+
+                                    if (polViolated) {
+                                        if (debugPolCost) { System.out.println("\t\t\t\t(Adopt) Cost of Violated Policy: "+oblSetTest.penalty);}
+                                        fulfilThisOblCost += oblSetTest.penalty;
+                                        break;
+                                    }
+                                }
+                            }                            
+                        }
+                        
+                        //The penalty cost of any obligations which can no longer be fulfilled due to obl.Policy
+                        for (String d : desiredData.keySet()) {
+                            if (!PrologInterface.runGroundQuery("permitRequestPolicy",new Term[]{new Atom("peer"+peerID),new Atom(d),adoptOblPolicy.getPrologTerm()})) {
+                                int dVal = 0; if (dataValue.containsKey(d)) { dataValue.get(d);}
+                                fulfilOblCost += Math.min((cycleCost * (avgTransLength + Integer.parseInt(obl.payload[1]))),dVal);
+
+                                for (ObligationSet oblSetTest : obligationSets) {
+                                    for (Obligation oblTest : oblSetTest.obligations.keySet()) {
+                                        if ((oblTest.type.equals("obtain") || oblTest.type.equals("provide")) && oblTest.payload[0].equals(d)) {
+                                            fulfilThisOblCost += oblSetTest.penalty;
+                                            if (debugPolCost) { System.out.println("\t\t\t\t(Adopt) Cost of Blocked Obligation: "+oblSetTest.penalty);}
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        //Probability of Completion
+                        if (oblSet.duration < Integer.parseInt(obl.payload[1]+1)) { completionProb *= 0.0;}
+                        else { completionProb *= 0.95;}
+                        
+                        if (debugPolCost) { System.out.println("\t\t\tCycles: -");}
+                        if (debugPolCost) { System.out.println("\t\t\tProbability: "+completionProb);}
+                        break;
+
+                    case "inform":
+                    // inform(peer0)
+                        //Cost
+                        fulfilThisOblCost += cycleCost;
+                        minCyclesNeeded += 1;
+
+                        //Probability of Completion                                            
+                        if (PrologInterface.runGroundQuery("peerOffline",new Term[] { new Atom("peer"+peerID), new Atom (obl.payload[0]) })) { completionProb *= 0.0;}
+                        else { completionProb *= 0.95;}
+                        
+                        if (debugPolCost) { System.out.println("\t\t\tInform Cost (Cycles): "+cycleCost);}
+                        if (debugPolCost) { System.out.println("\t\t\tCycles: 1");}
+                        if (debugPolCost) { System.out.println("\t\t\tProbability: "+completionProb);}
+                        break;
+                }
+            }
+            
+            //If there isn't enough time left, mark completion probability as 0
+            if (debugPolCost) { System.out.print("\t\tDuration: "+minCyclesNeeded+" > "+oblSet.duration);}
+            if (minCyclesNeeded > oblSet.duration) { 
+                completionProb = 0.0;
+                if (debugPolCost) { System.out.print(" -> Completion is impossible [Prob: "+completionProb+"]");}
+            } else {
+                long spareRounds = Math.abs(minCyclesNeeded-oblSet.duration);
+                if (spareRounds <= 2) {
+                    if (debugPolCost) { System.out.print("\n\t\t\tTight Schedule -> Completion = "+completionProb+" * "+(0.5+(spareRounds*0.2)));}
+                    if (spareRounds == 0) { completionProb *= 0.5;}
+                    else if (spareRounds == 1) { completionProb *= 0.7;}
+                    else if (spareRounds == 2) { completionProb *= 0.9;}
+                }
+            }
+            if (debugPolCost) { System.out.println("");}
+            
+            fulfilThisOblCost += ((oblSet.penalty * cycleCost) * (1.0 - completionProb));
+            if (debugPolCost) { System.out.println("\t\tCompletion Probability: "+completionProb);}
+            if (debugPolCost) { System.out.println("\t\tCompletion Value: (("+oblSet.penalty+" * "+cycleCost+") * (1.0 - "+completionProb+")) = "+((oblSet.penalty * cycleCost) * (1.0 - completionProb)));}
+            
+            if (oblSet.preObligation) { 
+                policyCost += fulfilThisOblCost;
+            } else {
+                fulfilOblCost += fulfilThisOblCost;
+            }
+        }
+
+        float breakOblCost = 0;
+        for (ObligationSet oblSet : polOblSets) {
+            if (!oblSet.preObligation) {
+                breakOblCost += oblSet.penalty;
+            }
+        }
+        breakOblCost *= cycleCost;
+        
+        if (polOblSets.size() > 0) {
+            policyCost -= Math.min(fulfilOblCost, breakOblCost);
+            if (debugPolCost) { 
+                System.out.println("Fulfill Obligation Cost: "+fulfilOblCost);
+                System.out.println("Break Obligation Cost: "+breakOblCost);
+                if (fulfilOblCost > breakOblCost) { 
+                    System.out.println("Action: Break Obligations");
+                } else { 
+                    System.out.println("Action: Fulfill Obligations");
+                }
+            }
+        }
+        
+        if (debugPolCost) { System.out.println("Policy Value: "+policyCost);}
+        if (debugPolCost) { System.out.println("==========================================\n");}
+        return policyCost;
+    }
+
+    public void sendMessage(int protocolID, Node r, Node s, String type, Object[] payload) {
+        if (r.isUp() && !disconnecting) {
+            messages.add(new P2PMessage(s, type, payload, (peersim.core.CommonState.getTime() + 1)));
+            if (PrologInterface.debugMessages) {
+                String payloadString = "";
+                /*if (type.equals("DATA_RESULT")) {
+                    DataPackage p = (DataPackage) payload[1];
+                    payloadString = p.dataItems.toString() + " - " + p.transactionRecords.toString();
+                } else {*/
+                    for (Object p : payload) {
+                        payloadString += p + ",";
+                    }
+                    if (payloadString.length() > 0) {
+                        payloadString = payloadString.substring(0, payloadString.length() - 1);
+                    }
+                //}
+                System.out.println(s.getID() + " -> " + r.getID() + ", " + type + ", [" + payloadString + "], " + (peersim.core.CommonState.getTime() + 1));
+            }
+        } else if (s.isUp()) {
+            DataExchange sDE = ((DataExchange) s.getProtocol(protocolID));
+            if (!sDE.disconnecting) {
+                String returnData = "-1";
+                try {
+                    returnData = (String) payload[0];
+                } catch (ClassCastException e) {
+                }
+                sDE.messages.add(new P2PMessage(r, "PEER_DOWN", new String[] { returnData }, (peersim.core.CommonState.getTime() + 1)));
+                if (PrologInterface.debugMessages) {
+                    System.out.println(r.getID() + " -> " + s.getID() + ", PEER_DOWN, [" + returnData + "], " + (peersim.core.CommonState.getTime() + 1));
+                }
+            }
+        }
+    }
+
+    protected void gracefulDisconnect(Node node, int protocolID, int dType) {
+        disconnecting = true;
+        for (P2PMessage msg : messages) {
+            DataExchange n = (DataExchange) msg.sender.getProtocol(protocolID);
+            switch (msg.type) {
+                case "DATA_REQUEST":
+                case "RECORD_INFORM":
+                    n.sendMessage(protocolID, msg.sender, node, "PEER_DOWN", new String[] { (String) msg.payload[0] });
+                    break;
+            }
+        }
+
+        messages.clear();
+        disconnectTime = peersim.core.CommonState.getTime();
+        disconnectType = dType;
+        DataExchange.suspend(node);
+    }
+
+    protected static void suspend(Node node) {
+        node.setFailState(Fallible.DOWN);
+    }
+    
+    public void initPeer(long id, Term[] mDA, Role r) {
+        masterDataArray = mDA;
+        peerID = id;
+        peerPublicKey = peerID;
+        peerPrivateKey = peerPublicKey + 1;
+        provider = true;
+        requestor = true;
+        role = r;
+
+        dataValue = new HashMap<String, Integer>();
+        desiredData = new HashMap<String, Integer>();
+        ownedData = new ArrayList<String>();
+        receivedData = new HashMap<String, Integer>();
+        dataCollection = new HashSet<DataElement>();
+        
+        for (String[] dD : r.desiredData) {
+            desiredData.put(dD[0], Integer.parseInt(dD[1]));
+            dataValue.put(dD[0], Integer.parseInt(dD[2]));
+        }
+        for (String[] oD : r.ownedData) {
+            ownedData.add(oD[0]);
+            PrologInterface.assertFact("hasData", new Term[] { new Atom("peer" + peerID), new Atom("peer" + peerID), new Atom(oD[0]) });
+            
+            for (int i = 0; i < Integer.parseInt(oD[1]); i += 1) {
+                DataElement newDataElement = new DataElement(oD[0], generateDataElement(5));
+                if (!dataCollection.contains(newDataElement)) {
+                    PrologInterface.assertFact("dataElement", new Term[] { new Atom("peer" + peerID), new Atom(oD[0]), new Atom(newDataElement.data) });
+                }
+                dataCollection.add(newDataElement);
+            }
+            dataValue.put(oD[0], Integer.parseInt(oD[2]));
+        }
+
+        policies = new ArrayList<DataPolicy>();
+        obligationSets = new ArrayList<ObligationSet>();
+        overlayNetwork = new HashMap<String, Node>();
+        messages = new ArrayList<P2PMessage>();
+        pendingData = new HashMap<String, Integer>();
+
+        PrologInterface.assertFact("peer", new Term[] { new Atom("peer" + id) });
+        for (String g : r.groups) {
+            PrologInterface.assertFact("group", new Term[] { new Atom(g), new Atom("peer" + id) });
+        }
+        
+        String defaultPermitFact = "T"; if (!defaultPermit) { defaultPermitFact = "F";}
+        PrologInterface.assertFact("defaultPermit", new Term[] { new Atom("peer" + peerID), new Atom(defaultPermitFact) });
+        
+        connectionType = "S"; if (r.connection.equals("Dynamic")) { connectionType = "D";}
+        
+        //Policies
+        if (minPolicies > 0) {
+            int maxPoliciesActual = Math.min(maxPolicies, (masterDataArray.length * Network.size()));
+            int minPoliciesActual = (int) Math.floor(maxPoliciesActual * (minPolicies/(float) maxPolicies));
+            
+            ArrayList<String> anyDataList = new ArrayList<String>(); for (Term t : masterDataArray) { anyDataList.add(t.toString());}
+            HashMap<String,ArrayList<String>> groupDataList = new HashMap<String,ArrayList<String>>();
+            for (int i = 0; i < MAX_GROUPS; i += 1) {
+                ArrayList<String> tempDataList = new ArrayList<String>(); for (Term t : masterDataArray) { tempDataList.add(t.toString());};
+                groupDataList.put("G"+i,tempDataList);
+            }
+            HashMap<String,ArrayList<String>> peerDataList = new HashMap<String,ArrayList<String>>();
+            for (long p = 0; p < Network.size(); p += 1) {
+                if (p != peerID) {
+                    ArrayList<String> tempDataList = new ArrayList<String>(); for (Term t : masterDataArray) { tempDataList.add(t.toString());};
+                    peerDataList.put("peer"+p,tempDataList);
+                }
+            }
+            
+            //System.out.println(minPolicies+" - "+maxPolicies+" => "+minPoliciesActual+" - "+maxPoliciesActual);
+            int numPolicies = rng.nextInt(maxPoliciesActual - minPoliciesActual + 1) + minPoliciesActual;
+            if (r.policies.length > 0) {
+                for (int i = 0; i < numPolicies; i += 1) {
+                    int selectedPol = rng.nextInt(r.policies.length);
+                    //Term newPol = generatePolicy(polTarget,dTarget,0,false);
+                    
+                    String selectedPolString = r.policies[selectedPol];
+                    //System.out.println(selectedPolString);
+                    selectedPolString = selectedPolString.replaceAll("\\{self\\}", "peer"+id);
+                    
+                    while (selectedPolString.contains("{id}")) {
+                        String p = (String) peerDataList.keySet().toArray()[rng.nextInt(peerDataList.size())];
+                        selectedPolString = selectedPolString.replaceFirst("\\{id\\}", p);
+                    }
+                    
+                    //System.out.println("\t"+selectedPolString);
+                    
+                    Term newPol = Util.textToTerm(r.policies[selectedPol]);
+                    policies.add(new DataPolicy(id, newPol, -99, false));
+                    PrologInterface.assertFact("policy", new Term[] { new Atom("peer" + id), newPol });
+                }
+            }
+        }
+
+        peerBudget = rng.nextInt(maxPeerBudget - minPeerBudget + 1) + minPeerBudget;
+        startingBudget = peerBudget;
+    }
+
+    public void initPeer(long id, Term[] mDA, int type) {
+        masterDataArray = mDA;
+        peerID = id;
+        peerPublicKey = peerID;
+        peerPrivateKey = peerPublicKey + 1;
+        connectionType = "D";
+
+        if (type == 0 || type == 2) {
+            provider = true;
+        }
+        if (type == 1 || type == 2) {
+            requestor = true;
+        }
+
+        dataValue = new HashMap<String, Integer>();
+
+        int numDataDesired = rng.nextInt(maxDataDesired - minDataDesired + 1) + minDataDesired;
+        if (!requestor) {
+            numDataDesired = 0;
+        }
+        desiredData = new HashMap<String, Integer>();
+        for (int i = 0; i < numDataDesired; i += 1) {
+            String toAdd = masterDataArray[rng.nextInt(masterDataArray.length - 1)].toString();
+            if (!desiredData.containsKey(toAdd)) {
+                desiredData.put(toAdd, (rng.nextInt(10) + 1));
+                setDataValue(toAdd, rng.nextInt(10) + 1);
+            }
+        }
+
+        int numDataOwned = rng.nextInt(maxDataOwned - minDataOwned + 1) + minDataOwned;
+        if (!provider) {
+            numDataDesired = 0;
+        }
+        ownedData = new ArrayList<String>();
+        dataCollection = new HashSet<DataElement>();
+        for (int i = 0; i < numDataOwned; i += 1) {
+            String toAdd = masterDataArray[rng.nextInt(masterDataArray.length - 1)].toString();
+            //if ((!desiredData.containsKey(toAdd) && desiredOverridesOwned) || !desiredOverridesOwned) {
+            //if (!desiredOverridesOwned && desiredData.containsKey(toAdd)) { desiredData.remove(toAdd);}
+
+            DataElement newDataElement = new DataElement(toAdd, generateDataElement(5));
+            if (!dataCollection.contains(newDataElement)) {
+                PrologInterface.assertFact("dataElement", new Term[] { new Atom("peer" + peerID), new Atom(toAdd), new Atom(newDataElement.data) });
+            }
+            dataCollection.add(newDataElement);
+
+            if (!ownedData.contains(toAdd)) {
+                ownedData.add(toAdd);
+                setDataValue(toAdd, rng.nextInt(10) + 1);
+            }
+            //}         
+        }
+        for (String d : ownedData) {
+            PrologInterface.assertFact("hasData", new Term[] { new Atom("peer" + peerID), new Atom("peer" + peerID), new Atom(d) });
+        }
+        receivedData = new HashMap<String, Integer>();
+
+        policies = new ArrayList<DataPolicy>();
+        obligationSets = new ArrayList<ObligationSet>();
+        overlayNetwork = new HashMap<String, Node>();
+        messages = new ArrayList<P2PMessage>();
+        pendingData = new HashMap<String, Integer>();
+
+        PrologInterface.assertFact("peer", new Term[] { new Atom("peer" + id) });
+        if (rng.nextInt(10) == 0) {
+            PrologInterface.assertFact("group", new Term[] { new Atom("g" + rng.nextInt(MAX_GROUPS) + 1), new Atom("peer" + id) });
+        }
+
+        //String defaultPermitFact = "T"; defaultPermit = true; if (rng.nextInt(5) == 0) { defaultPermitFact = "F"; defaultPermit = false;}
+        String defaultPermitFact = "T"; if (!defaultPermit) { defaultPermitFact = "F";}
+        PrologInterface.assertFact("defaultPermit", new Term[] { new Atom("peer" + peerID), new Atom(defaultPermitFact) });
+
+        // policy(peer1,1,['P',peer42,d1,[recordsAccessed(_ < 50)],[]]).
+        if (minPolicies > 0) {
+            int maxPoliciesActual = Math.min(maxPolicies, (masterDataArray.length * Network.size()));
+            int minPoliciesActual = (int) Math.floor(maxPoliciesActual * (minPolicies/(float) maxPolicies));
+            
+            ArrayList<String> anyDataList = new ArrayList<String>(); for (Term t : masterDataArray) { anyDataList.add(t.toString());}
+            HashMap<String,ArrayList<String>> groupDataList = new HashMap<String,ArrayList<String>>();
+            for (int i = 0; i < MAX_GROUPS; i += 1) {
+                ArrayList<String> tempDataList = new ArrayList<String>(); for (Term t : masterDataArray) { tempDataList.add(t.toString());};
+                groupDataList.put("G"+i,tempDataList);
+            }
+            HashMap<String,ArrayList<String>> peerDataList = new HashMap<String,ArrayList<String>>();
+            for (long p = 0; p < Network.size(); p += 1) {
+                if (p != peerID) {
+                    ArrayList<String> tempDataList = new ArrayList<String>(); for (Term t : masterDataArray) { tempDataList.add(t.toString());};
+                    peerDataList.put("peer"+p,tempDataList);
+                }
+            }
+            
+            //System.out.println(minPolicies+" - "+maxPolicies+" => "+minPoliciesActual+" - "+maxPoliciesActual);
+            int numPolicies = rng.nextInt(maxPoliciesActual - minPoliciesActual + 1) + minPoliciesActual;
+            if (ownedData.size() > 0) {
+                for (int i = 0; i < numPolicies; i += 1) {
+                    String p = (String) peerDataList.keySet().toArray()[rng.nextInt(peerDataList.size())];
+                    int d = rng.nextInt(peerDataList.get(p).size());
+                    //for (int p = 0; p < Network.size(); p += 1) {
+                        //for (int d = 0; d < masterDataArray.length; d += 1) {
+                    String dTarget = peerDataList.get(p).get(d);
+                    if (rng.nextInt(25) == 0) { dTarget = "any";}
+
+                    String polTarget = p;
+                    if (rng.nextInt(50) == 0) {
+                        if (anyDataList.size() < masterDataArray.length) { dTarget = peerDataList.get(p).get(d);}
+                        if (dTarget.equals("any")) {
+                            polTarget = "any";
+                            anyDataList.clear();
+                        } else if (anyDataList.contains(dTarget)) {
+                            polTarget = "any";
+                            anyDataList.remove(dTarget);
+                        }
+                    } else if (rng.nextInt(20) == 0) {
+                        HashSet<Term> result = PrologInterface.runQuery("group", new Term[] { new Variable("G"), new Variable("_") }, "G");
+                        String groupTarget = null;
+                        if (result.size() > 0) {
+                            Term[] resultArray = result.toArray(new Term[0]);
+                            groupTarget = resultArray[rng.nextInt(resultArray.length)].toString();
+                        }
+                            
+                        if (groupTarget != null && groupDataList.containsKey(groupTarget)) {
+                            if (groupDataList.get(groupTarget).size() < masterDataArray.length) { peerDataList.get(p).get(d);}
+                            if (dTarget.equals("any")) {
+                                polTarget = groupTarget;
+                                groupDataList.remove(groupTarget);
+                            } else {
+                                if (groupDataList.get(groupTarget).contains(dTarget)) {
+                                    polTarget = groupTarget;
+                                    groupDataList.get(groupTarget).remove(dTarget);
+                                    if (groupDataList.get(groupTarget).size() == 0) { groupDataList.remove(groupTarget);}
+                                }
+                            }
+                        }
+                    } else if (dTarget.equals("any")) {
+                        if (peerDataList.get(polTarget).size() < masterDataArray.length) { dTarget = peerDataList.get(p).get(d);}                                
+                    }
+                    
+                    //Create pol with polTarget and d                            
+                    Term newPol = generatePolicy(polTarget,dTarget,0,false);
+                    policies.add(new DataPolicy(id, newPol, -99, false));
+                    PrologInterface.assertFact("policy", new Term[] { new Atom("peer" + id), newPol });
+                    
+                    if (dTarget.equals("any")) { 
+                        peerDataList.remove(p);
+                    } else {
+                        peerDataList.get(p).remove(dTarget);
+                        if (peerDataList.get(p).size() == 0) { peerDataList.remove(p);}
+                    }
+                        //}
+                    //}
+                    if (peerDataList.size() == 0) { break;}
+                }
+            }
+        }
+
+        peerBudget = rng.nextInt(maxPeerBudget - minPeerBudget + 1) + minPeerBudget;
+        startingBudget = peerBudget;
+    }
+
+    public int getDataValue(String data) {
+        if (dataValue.containsKey(data)) {
+            return dataValue.get(data);
+        }
+        return 1;
+    }
+
+    public void setDataValue(String data, int value) {
+        if (!dataValue.containsKey(data)) {
+            dataValue.put(data, value);
+        } else {
+            dataValue.replace(data, value);
+        }
+
+    }
+    
+    public int countData(String d) {
+        int dCount = 0;
+        for (DataElement data : dataCollection) {
+            if (data.dataID.equals(d)) { 
+                dCount += 1;
+            }
+        }
+        return dCount;
+    }
+
+    public boolean verifyKey(long key) {
+        if ((key + 1) == peerPrivateKey) {
+            return true;
+        }
+        return false;
+    }
+    
+    private void processIncomingDataPackage(DataPackage dataPackage, Node sender, int protocolID) {
+        DataExchange n = (DataExchange) sender.getProtocol(protocolID);
+        dataPackage.decrypt();
+        
+        HashSet<String> dataTypesInPackage = new HashSet<String>();
+
+        for (DataElement d : dataPackage.dataItems) {
+            //Manages current collection of data that is desired. Can be safely ignored for incoming data that you don't care about
+            if (pendingData.containsKey(d.dataID) || desiredData.containsKey(d.dataID)) {
+                if (!desiredData.containsKey(d.dataID)) {
+                    desiredData.put(d.dataID, pendingData.get(d.dataID));
+                }
+                pendingData.remove(d.dataID);
+
+                if (desiredData.get(d.dataID) <= 1) {
+                    desiredData.remove(d.dataID);
+                } else {
+                    desiredData.replace(d.dataID, desiredData.get(d.dataID) - 1);
+                }
+            }
+            
+            //Updates information about received data (used to calculate satisfaction)
+            if (!receivedData.containsKey(d.dataID)) { receivedData.put(d.dataID,0);}
+            receivedData.replace(d.dataID, receivedData.get(d.dataID)+1);            
+
+            //If there is an (unfulfilled) obligation for collecting Data_Item, and the quantity of Data_Item you own exceeds Data_Quantity 
+            //Mark any obligations associated with acquiring Data_Quantity of Data_Item as fulfilled
+
+            dataReceived += 1;
+            /*if (!ownedData.contains(d.dataID)) {
+                if (!dataCollection.contains(d)) {
+                    PrologInterface.assertFact("dataElement", new Term[] { new Atom("peer" + peerID), new Atom(d.dataID), new Atom(d.data) });
+                }
+                dataCollection.add(d);
+                if (provider) {
+                    ownedData.add(d.dataID);
+                }
+                peerBudget += getDataValue(d.dataID);
+            }*/
+            dataTypesInPackage.add(d.dataID);
+            if (!ownedData.contains(d.dataID)) { ownedData.add(d.dataID);}
+            if (!dataCollection.contains(d)) {
+                PrologInterface.assertFact("dataElement", new Term[] { new Atom("peer" + peerID), new Atom(d.dataID), new Atom(d.data)});
+                dataCollection.add(d);
+            }
+            peerBudget += getDataValue(d.dataID);
+
+            //Prolog State of Affairs Add: Sender_ID has Data_Item, Receiver_ID has Data_Item
+            if (overlayNetworkEnabled) {
+                overlayNetwork.put("peer" + sender.getID(), sender);
+                PrologInterface.assertFact("connected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID) });
+            }
+        }
+        
+        for (String d : dataTypesInPackage) {
+            PrologInterface.assertFactIfNotExist("hasData", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom(d) });
+            PrologInterface.assertFactIfNotExist("hasData", new Term[] { new Atom("peer" + peerID), new Atom("peer" + peerID), new Atom(d) });
+        }
+
+        for (String r : dataPackage.transactionRecords) {
+            addTransRecordToCollection(r);
+        }
+
+        for (ObligationSet o : dataPackage.obligations) {
+            //Can just add this, conflict checking has been done when deciding to accept the policy(s) 
+            //Actually needs to update existing obligations if a new one comes in that adds to them
+            //Currently obliged to send 5 d1, then obliged to send 5 d1, would mean 10 d1 total
+            obligationSets.add(o);
+        }
+    }
+    
+    private void addTransRecordToCollection(String r) {
+        //if (r.endsWith("]")) { r = r.substring(1, r.length()-1);} else { r = r.substring(1);}
+        //String[] rSplit = r.split(",");
+
+        //Prolog Records Add: Transaction_Records
+        //PrologInterface.assertFact("recordRequest", new Term[]{new Atom("peer"+peerID),new Atom(rSplit[0]),new Atom(rSplit[1]),new org.jpl7.Integer(Integer.parseInt(rSplit[2])),new Atom(rSplit[3]),new Atom(rSplit[4]),new Variable()});
+        PrologInterface.assertFact("recordRequest", PrologInterface.stringToTransRecord(peerID, r));
+    }
+
+    public Term generatePolicy(String polTarget, String dataItem, int nestingLevel, boolean canSelfTarget) {
+        String modality = "P"; if (rng.nextInt(4) == 0) { modality = "F";}
+
+        if (polTarget.equals("")) {
+            int polTargetID = rng.nextInt(Network.size());
+            polTarget = "peer" + polTargetID;
+            if (rng.nextInt(50) == 0) {
+                polTarget = "any";
+            } else if (rng.nextInt(20) == 0) {
+                HashSet<Term> result = PrologInterface.runQuery("group", new Term[] { new Variable("G"), new Variable("_") }, "G");
+                if (result.size() > 0) {
+                    Term[] resultArray = result.toArray(new Term[0]);
+                    polTarget = resultArray[rng.nextInt(resultArray.length)].toString();
+                }
+            }
+        }
+
+        if (dataItem.equals("")) {
+            dataItem = ownedData.get(rng.nextInt(ownedData.size()));
+            if (rng.nextInt(25) == 0) {
+                dataItem = "any";
+            }
+        }
+
+        //Conditions: [Con1,Con2]
+        Term[] conditions = new Term[0];
+        if (rng.nextInt(25) == 0) {
+            int numConditions = rng.nextInt(100);
+            if (numConditions <= 75) {
+                numConditions = 1;
+            } else if (numConditions <= 95) {
+                numConditions = 2;
+            } else {
+                numConditions = 3;
+            }
+
+            conditions = new Term[numConditions];
+            for (int j = 0; j < numConditions; j += 1) {
+                Term con = null;
+
+                int opType = rng.nextInt(6);
+                String op = "";
+                switch (opType) {
+                    case 0:
+                        op = ">";
+                        break;
+                    case 1:
+                        op = ">=";
+                        break;
+                    case 2:
+                        op = "<";
+                        break;
+                    case 3:
+                        op = "=<";
+                        break;
+                    case 4:
+                        op = "=:=";
+                        break;
+                    case 5:
+                        op = "=\\=";
+                        break;
+                }
+
+                int n = 0;
+                int conType = rng.nextInt(5);
+                Term date = null;
+                switch (conType) {
+                    case 0: { // Operator(recordsAccessed(ID,Data),N)
+                        String dataItemCon = masterDataArray[rng.nextInt(masterDataArray.length - 1)].toString();
+                        String peerTargetCon = "peer" + rng.nextInt(Network.size());
+                        con = new Compound("recordsAccessed", new Term[] { new Atom(dataItemCon), new Atom(peerTargetCon) });
+                        n = rng.nextInt(100) + 1;
+                        break;
+                    }
+                    case 1: { // Operator(recordsRequested(ID,Data),N)
+                        String dataItemCon = masterDataArray[rng.nextInt(masterDataArray.length - 1)].toString();
+                        String peerTargetCon = "peer" + rng.nextInt(Network.size());
+                        con = new Compound("recordsRequested", new Term[] { new Atom(dataItemCon), new Atom(peerTargetCon) });
+                        n = rng.nextInt(100) + 1;
+                        break;
+                    }
+                    case 2: { // Operator(requests(ID,Data),N)
+                        String dataItemCon = masterDataArray[rng.nextInt(masterDataArray.length - 1)].toString();
+                        String peerTargetCon = "peer" + rng.nextInt(Network.size());
+                        con = new Compound("requests", new Term[] { new Atom(dataItemCon), new Atom(peerTargetCon) });
+                        n = rng.nextInt(100) + 1;
+                        break;
+                    }
+                    case 3: { // Operator(lastRequest(ID,Data),N)
+                        String dataItemCon = masterDataArray[rng.nextInt(masterDataArray.length - 1)].toString();
+                        String peerTargetCon = "peer" + rng.nextInt(Network.size());
+                        con = new Compound("lastRequest", new Term[] { new Atom(dataItemCon), new Atom(peerTargetCon) });
+                        date = new Compound("date", new Term[] { new org.jpl7.Integer(2017), new org.jpl7.Integer(rng.nextInt(12)+1), new org.jpl7.Integer(rng.nextInt(31)+1), new org.jpl7.Integer(rng.nextInt(24)), new org.jpl7.Integer(rng.nextInt(60)),new org.jpl7.Float(0.0f),new org.jpl7.Integer(0),new Atom("local"),new Atom("false")});
+                        n = rng.nextInt(100) + 1;
+                        break;
+                    }
+                    case 4: { // Operator(lastAccess(ID,Data),N)
+                        String dataItemCon = masterDataArray[rng.nextInt(masterDataArray.length - 1)].toString();
+                        String peerTargetCon = "peer" + rng.nextInt(Network.size());
+                        con = new Compound("lastAccess", new Term[] { new Atom(dataItemCon), new Atom(peerTargetCon) });
+                        date = new Compound("date", new Term[] { new org.jpl7.Integer(2017), new org.jpl7.Integer(rng.nextInt(12)+1), new org.jpl7.Integer(rng.nextInt(31)+1), new org.jpl7.Integer(rng.nextInt(24)), new org.jpl7.Integer(rng.nextInt(60)),new org.jpl7.Float(0.0f),new org.jpl7.Integer(0),new Atom("local"),new Atom("false")});
+                        n = rng.nextInt(100) + 1;
+                        break;
+                    }
+                    case 5: { // Operator(year(Year),N)
+                        con = new Compound("year", new Term[0]);
+                        n = rng.nextInt(2) + 2017;
+                        break;
+                    }
+                    case 6: { // Operator(month(Month),N)
+                        con = new Compound("month", new Term[0]);
+                        n = rng.nextInt(12) + 1;
+                        break;
+                    }
+                    case 7: { // Operator(day(Day),N)
+                        con = new Compound("day", new Term[0]);
+                        n = rng.nextInt(31) + 1;
+                        break;
+                    }
+                    case 8: { // Operator(hour(Hour),N)
+                        con = new Compound("hour", new Term[0]);
+                        n = rng.nextInt(24);
+                        break;
+                    }
+                    case 9: { // Operator(minute(Minute),N)
+                        con = new Compound("minute", new Term[0]);
+                        n = rng.nextInt(60);
+                        break;
+                    }
+                }
+
+                if (date == null) {
+                    conditions[j] = new Compound(op, new Term[] { con, new org.jpl7.Integer(n) });
+                } else {
+                    conditions[j] = new Compound(op, new Term[] { con, date });
+                }
+                //conditions[j] = Util.textToTerm(op+"("+n+")");
+            }
+        }
+
+        //Obligations: [ [[Obl1], Penalty1, Duration1], [[Obl2,Obl3], Penalty2, Duration2] ]
+        Term[] preObligations = new Term[0];
+        Term[] obligations = new Term[0];
+        if (rng.nextInt(5) == 0) {
+            int numObligations = rng.nextInt(100);
+            if (numObligations <= 75) {
+                numObligations = 1;
+            } else if (numObligations <= 95) {
+                numObligations = 2;
+            } else {
+                numObligations = 3;
+            }
+            int numPreObligations = rng.nextInt(100);
+            if (numPreObligations <= 80) {
+                numPreObligations = 0;
+            } else {
+                numPreObligations = 1;
+            }
+
+            preObligations = new Term[numPreObligations];
+            obligations = new Term[numObligations];
+            for (int j = 0; j < (numObligations + numPreObligations); j += 1) {
+                Term[] obl = new Term[3];
+
+                boolean preObl = (j >= numObligations);
+                int oblType = rng.nextInt(4);
+                if (oblType == 2 && nestingLevel >= 5) {
+                    oblType = rng.nextInt(3);
+                    if (oblType == 2) {
+                        oblType = 3;
+                    }
+                } //If this policy is nested more than 5 times, prevent further "adopt" obligations
+                if (preObl && oblType == 3) {
+                    oblType = rng.nextInt(3);
+                } //Pre obligations don't use inform(), as this is implicitly built into the mechanism
+                switch (oblType) {
+                    case 0: { // obtain(Data,Quantity)
+                        String dataItemObl = masterDataArray[rng.nextInt(masterDataArray.length - 1)].toString();
+                        Term oblTerm = new Compound("obtain", new Term[] { new Atom(dataItemObl), new org.jpl7.Integer(rng.nextInt(10) + 1) });
+                        obl[0] = Util.termArrayToList(new Term[] { oblTerm });
+                        obl[1] = new org.jpl7.Integer((rng.nextInt(10) + 1));
+                        obl[2] = new org.jpl7.Integer(rng.nextInt(5) + 5);
+                        break;
+                    }
+                    case 1: { // provide(Data,Quantity,Peer)
+                        String dataItemObl = masterDataArray[rng.nextInt(masterDataArray.length - 1)].toString();
+                        String peerTargetObl = "peer" + rng.nextInt(Network.size());
+                        Term oblTerm = new Compound("provide", new Term[] { new Atom(dataItemObl), new org.jpl7.Integer(rng.nextInt(10) + 1), new Atom(peerTargetObl) });
+                        obl[0] = Util.termArrayToList(new Term[] { oblTerm });
+                        obl[1] = new org.jpl7.Integer((rng.nextInt(10) + 1));
+                        obl[2] = new org.jpl7.Integer(rng.nextInt(5) + 5);
+                        break;
+                    }
+                    case 2: { // adopt(Policy,Duration)
+                        Term oblTerm = new Compound("adopt", new Term[] { generatePolicy("","",nestingLevel + 1,true), new org.jpl7.Integer(rng.nextInt(5) + 1) });
+                        obl[0] = Util.termArrayToList(new Term[] { oblTerm });
+                        obl[1] = new org.jpl7.Integer((rng.nextInt(10) + 1));
+                        obl[2] = new org.jpl7.Integer(rng.nextInt(5) + 5);
+                        break;
+                    }
+                    case 3: { // inform(Peer)
+                        String peerTargetObl = "peer" + peerID; //This inform will target the policy owner 80% of the time
+                        if (rng.nextInt(5) == 0) {
+                            peerTargetObl = "peer" + rng.nextInt(Network.size());
+                        }
+                        Term oblTerm = new Compound("inform", new Term[] { new Atom(peerTargetObl) });
+                        obl[0] = Util.termArrayToList(new Term[] { oblTerm });
+                        obl[1] = new org.jpl7.Integer((rng.nextInt(10) + 1));
+                        obl[2] = new org.jpl7.Integer(rng.nextInt(5) + 5);
+                        break;
+                    }
+                }
+                if (preObl) {
+                    preObligations[j - numObligations] = Util.listToTermArray(obl[0])[0];
+                } else {
+                    obligations[j] = Util.termArrayToList(obl);
+                }
+            }
+        }
+        
+        boolean selfPol = false;
+        if (canSelfTarget && rng.nextInt(10) == 0) { selfPol = true;}
+        
+        /*if (conditions.length > 0) {
+            System.out.print(peerID+": "+modality+", "+polTarget+", "+dataItem+"\n\t");
+            for (Term v : conditions) { System.out.print(v+", ");}
+            System.out.print("\n\t");
+            for (Term v : preObligations) { System.out.print(v+", ");}
+            System.out.print("\n\t");
+            for (Term v : obligations) { System.out.print(v+", ");}
+            System.out.println("");
+        }*/
+        return Util.termArrayToList(new Term[] { new Atom(modality), new Atom(polTarget), new Atom(dataItem), Util.termArrayToList(conditions), Util.termArrayToList(preObligations), Util.termArrayToList(obligations), new Atom(""+selfPol) });
+    }
+
+    public String generateDataElement(int l) {
+        String dataElement = "";
+        for (int i = 0; i < l; i += 1) {
+            switch (rng.nextInt(3)) {
+                case 0: //Uppercase (65-90)
+                    dataElement += "" + ((char) (rng.nextInt(26) + 65));
+                    break;
+                case 1: //Lowercase (97-122)
+                    dataElement += "" + ((char) (rng.nextInt(26) + 97));
+                    break;
+                case 2: //Number
+                    dataElement += rng.nextInt(10);
+                    break;
+            }
+        }
+        //System.out.println(dataElement);
+        return dataElement;
+    }
+    
+    private DataPackage assembleDataPackage(HashMap<String, HashSet<Term>> transRecords, long msgID) {
+        DataPackage dataPackage = new DataPackage();
+        for (Term tR : transRecords.get("R")) {
+            String r = tR.toString();
+            String rBody = r.substring(r.indexOf("(") + 1, r.length() - 1);
+            String[] rSplit = rBody.split(",");
+            for (int j = 0; j < rSplit.length; j += 1) {
+                rSplit[j] = rSplit[j].trim();
+            }
+            PrologInterface.assertFact("recordRequest", PrologInterface.stringToTransRecord(peerID, r));
+            dataPackage.transactionRecords.add(r);
+            
+            if (rSplit[rSplit.length-1].equals("true")) {
+                int dataQuantity = Integer.parseInt(rSplit[4]);
+                if (dataQuantity > 0) {
+                    for (int j = 0; j < dataQuantity; j += 1) {
+                        String dBody = "";
+                        for (DataElement dE : dataCollection) {
+                            if (dE.dataID.equals(rSplit[3])) {
+                                dBody = dE.data;
+                            }
+                        }
+                        dataPackage.dataItems.add(new DataElement(rSplit[3], dBody));
+                    }
+                }
+            }
+        }
+        for (Term tO : transRecords.get("O")) {
+            Term[] transObl = Util.listToTermArray(tO);
+            for (Term oblStruct : transObl) {
+                Term[] oblSplit = Util.listToTermArray(oblStruct);
+                Term[] obligations = Util.listToTermArray(oblSplit[0]);
+                int penalty = oblSplit[1].intValue();
+                int duration = oblSplit[2].intValue();
+
+                ObligationSet oblSet = new ObligationSet(msgID, duration, penalty, false);
+                for (Term obl : obligations) {
+                    if (obl.toString().startsWith("adopt(")) {
+                        DataPolicy adoptPolProc = new DataPolicy(-1,obl.args()[0], -1,true);
+                        oblSet.obligations.put(new Obligation("adopt("+adoptPolProc.getPolicyString()+obl.toString().substring(obl.toString().lastIndexOf(","))), 0);                                                
+                    } else {
+                        oblSet.obligations.put(new Obligation(obl.toString()), 0);
+                    }
+                    //System.out.println(obl+" , "+penalty+" , "+duration);
+                }
+                dataPackage.obligations.add(oblSet);
+            }
+        }
+        dataPackage.encrypt();
+        return dataPackage;
+    }
+
+    private Node getPeerByID(String peerID) {
+        Node n = null;
+
+        for (int p = 0; p < Network.size(); p += 1) {
+            if (("peer" + Network.get(p).getID()).equals(peerID)) {
+                n = Network.get(p);
+                break;
+            }
+        }
+
+        return n;
+    }
+
+    public Object clone() {
+        DataExchange dataExchange = null;
+        try {
+            dataExchange = (DataExchange) super.clone();
+        } catch (CloneNotSupportedException e) {
+            // Never happens
+        }
+        return dataExchange;
+    }
+}

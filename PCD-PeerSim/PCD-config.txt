@@ -1,0 +1,55 @@
+# PCD CONFIG
+
+# Initialises simulation parameters
+#random.seed 1234567890
+#random.seed 1496052552012
+simulation.experiments 1
+simulation.cycles 100
+network.size 100
+#control.shf Shuffle
+
+# Idle Protocol
+protocol.lnk IdleProtocol
+
+# Data Exchange Protocol and Parameters
+protocol.pcd com.pcd.DataExchange
+protocol.pcd.linkable lnk
+
+protocol.pcd.minDataDesired 1
+protocol.pcd.maxDataDesired 5
+protocol.pcd.minDataOwned 1
+protocol.pcd.maxDataOwned 5
+protocol.pcd.minPolicies 25
+protocol.pcd.maxPolicies 50
+protocol.pcd.minPeerBudget 100
+protocol.pcd.maxPeerBudget 100
+protocol.pcd.maxDataHops 2
+protocol.pcd.cycleCost 1 
+
+protocol.pcd.defaultPermit false
+# protocol.pcd.desiredOverridesOwned true
+protocol.pcd.overlayNetwork true
+protocol.pcd.allowNewConnections true
+
+protocol.pcd.roles #Exp1Roles.json
+
+# Initialise Peers
+init.keys com.pcd.KeyInit
+init.keys.protocol pcd
+
+init.keys.numDataInNetwork 10
+init.keys.percentProviders 0
+init.keys.percentRequestors 0
+
+init.keys.printSimInfo false
+init.keys.debugProlog false
+init.keys.debugMessages false
+
+# Creates a random of graph of peers with k connections per peer
+init.rnd WireKOut
+init.rnd.protocol lnk
+init.rnd.k 10
+
+# Observer
+control.deo com.pcd.DataExchangeObserver
+control.deo.protocol pcd
