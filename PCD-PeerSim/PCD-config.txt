@@ -1,55 +1,86 @@
 # PCD CONFIG
-
 # Initialises simulation parameters
-#random.seed 1234567890
-#random.seed 1496052552012
-simulation.experiments 1
-simulation.cycles 100
-network.size 100
-#control.shf Shuffle
+	#random.seed 1234567890		# Fixed seed, for debugging
+	simulation.experiments 1	# Number of Iterations
+	simulation.cycles 100		# Number of Cycles per Iteration
+	network.size 100			# Number of Peers
 
 # Idle Protocol
-protocol.lnk IdleProtocol
+	protocol.lnk IdleProtocol
 
 # Data Exchange Protocol and Parameters
-protocol.pcd com.pcd.DataExchange
-protocol.pcd.linkable lnk
+	protocol.pcd com.pcd.DataExchange
+	protocol.pcd.linkable lnk
 
-protocol.pcd.minDataDesired 1
-protocol.pcd.maxDataDesired 5
-protocol.pcd.minDataOwned 1
-protocol.pcd.maxDataOwned 5
-protocol.pcd.minPolicies 25
-protocol.pcd.maxPolicies 50
-protocol.pcd.minPeerBudget 100
-protocol.pcd.maxPeerBudget 100
-protocol.pcd.maxDataHops 2
-protocol.pcd.cycleCost 1 
+# Peer Parameters
+	protocol.pcd.cycleCost 1 
 
-protocol.pcd.defaultPermit false
-# protocol.pcd.desiredOverridesOwned true
-protocol.pcd.overlayNetwork true
-protocol.pcd.allowNewConnections true
+	protocol.pcd.minPolicies 5
+	protocol.pcd.maxPolicies 10
 
-protocol.pcd.roles #Exp1Roles.json
+	protocol.pcd.percFaultyPeers 10
+	protocol.pcd.percFaultRate 5
+
+	protocol.pcd.percAltruisticPeers 50 	(Self-interested is 100 - this)
+	protocol.pcd.percFairPeers 50			(Selfish is 100 - this)
+
+	protocol.pcd.maxNeighbours 10 # Peers may not have more than MAX(This,k) neighbours
+
+	protocol.pcd.defaultPermit false
+
+	# Arbitrary length list of strings, with placeholders for Data, ID, Number, String ({DATA}, {ID}, {X-Y}, {"S1",...,"SN"})
+	# Placeholders are tagged with a numeric identifier or *, allowing multiple versions of the same parameter to be used. I.e. {DATA~1}, {DATA~*}, [DATA]{1} would generate {DATA~1}, then use that same value for the second
+	protocol.pcd.policies Test.pcdpol
+
+	# Arbitrary length list of CSV strings, format: d[n],[Own%],[Want%],[MinU],[MaxU]
+	protocol.pcd.data Test.pcddata
 
 # Initialise Peers
-init.keys com.pcd.KeyInit
-init.keys.protocol pcd
+	init.keys com.pcd.KeyInit
+	init.keys.protocol pcd
 
-init.keys.numDataInNetwork 10
-init.keys.percentProviders 0
-init.keys.percentRequestors 0
+# DEBUG PARAMETERS
+	init.keys.printSimInfo false
+	init.keys.debugProlog false
+	init.keys.debugMessages false
 
-init.keys.printSimInfo false
-init.keys.debugProlog false
-init.keys.debugMessages false
+# Topology
+	# Mesh
+		init.rnd WireKOut
+		init.rnd.protocol lnk
+		init.rnd.k 10
+		protocol.pcd.allowNewConnections false
 
-# Creates a random of graph of peers with k connections per peer
-init.rnd WireKOut
-init.rnd.protocol lnk
-init.rnd.k 10
+	# Overlay
+	#	init.rnd WireKOut
+	#	init.rnd.protocol lnk
+	#	init.rnd.k 5
+	#	protocol.pcd.allowNewConnections true
+
+	# Fully Connected
+	#	init.rnd WireKOut
+	#	init.rnd.protocol lnk
+	#	init.rnd.k 999999999
+	#	protocol.pcd.allowNewConnections false
+
+	# Pseudo-Grid
+	#	init.rnd WireRingLattice
+	#	init.rnd.protocol lnk
+	#	init.rnd.k 4
+	#	protocol.pcd.allowNewConnections false
+
+	# Ring
+	#	init.rnd WireRingLattice
+	#	init.rnd.protocol lnk
+	#	init.rnd.k 2
+	#	protocol.pcd.allowNewConnections false
+
+	# Tree
+	#	init.rnd WireRegRootedTree
+	#	init.rnd.protocol lnk
+	#	init.rnd.k 5
+	#	protocol.pcd.allowNewConnections false
 
 # Observer
-control.deo com.pcd.DataExchangeObserver
-control.deo.protocol pcd
+	control.deo com.pcd.DataExchangeObserver
+	control.deo.protocol pcd
