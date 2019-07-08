@@ -1,5 +1,6 @@
 package com.pcd;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -13,6 +14,29 @@ public class PrologInterface {
 	public static boolean printSimInfo;
 	public static boolean debugProlog;	
 	public static boolean debugMessages;
+	
+	public static double confSeed;
+	public static int confExperiments;
+	public static int confCycles;
+	public static int confPeers;
+	
+	public static int confCycleCost;
+	public static int confMinPols;
+	public static int confMaxPols;
+	public static int confFaultyPeers;
+	public static int confFaultRate;
+	public static int confAltruistic;
+	public static int confFair;
+	public static int confMaxNeighbours;
+	public static boolean confDefaultPermit;
+	
+	public static ArrayList<DataConfig> confDataTypes;
+	public static ArrayList<String> confProtoPolicies;
+	
+	public static int confTopology;
+	public static int confTopologyVal;
+	public static boolean confNewConnections;
+	
 	private static String debugFilter = "";
 	
 	private static boolean initialised = false;	

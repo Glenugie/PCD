@@ -13,27 +13,27 @@
 	protocol.pcd.linkable lnk
 
 # Peer Parameters
-	protocol.pcd.cycleCost 1 
+	init.keys.cycleCost 1 
 
-	protocol.pcd.minPolicies 5
-	protocol.pcd.maxPolicies 10
+	init.keys.minPolicies 5
+	init.keys.maxPolicies 10
 
-	protocol.pcd.percFaultyPeers 10
-	protocol.pcd.percFaultRate 5
+	init.keys.percFaultyPeers 10
+	init.keys.percFaultRate 5
 
-	protocol.pcd.percAltruisticPeers 50 	(Self-interested is 100 - this)
-	protocol.pcd.percFairPeers 50			(Selfish is 100 - this)
+	init.keys.percAltruisticPeers 50 	# (Self-interested is 100 - this)
+	init.keys.percFairPeers 50			# (Selfish is 100 - this)
 
-	protocol.pcd.maxNeighbours 10 # Peers may not have more than MAX(This,k) neighbours
+	init.keys.maxNeighbours 10 # Peers may not have more than MAX(This,k) neighbours
 
-	protocol.pcd.defaultPermit false
+	init.keys.defaultPermit false
 
 	# Arbitrary length list of strings, with placeholders for Data, ID, Number, String ({DATA}, {ID}, {X-Y}, {"S1",...,"SN"})
 	# Placeholders are tagged with a numeric identifier or *, allowing multiple versions of the same parameter to be used. I.e. {DATA~1}, {DATA~*}, [DATA]{1} would generate {DATA~1}, then use that same value for the second
-	protocol.pcd.policies Test.pcdpol
+	init.keys.policies Test.pcdpol
 
 	# Arbitrary length list of CSV strings, format: d[n],[Own%],[Want%],[MinU],[MaxU]
-	protocol.pcd.data Test.pcddata
+	init.keys.data Test.pcddata
 
 # Initialise Peers
 	init.keys com.pcd.KeyInit
@@ -46,40 +46,47 @@
 
 # Topology
 	# Mesh
+		init.keys.topology 1
 		init.rnd WireKOut
 		init.rnd.protocol lnk
 		init.rnd.k 10
-		protocol.pcd.allowNewConnections false
+		init.keys.allowNewConnections false
+		# Note that for this, we have to evoke a random neighbour removal in cycle 1
 
 	# Overlay
+	#	init.keys.topology 2
 	#	init.rnd WireKOut
 	#	init.rnd.protocol lnk
 	#	init.rnd.k 5
-	#	protocol.pcd.allowNewConnections true
+	#	init.keys.allowNewConnections true
 
 	# Fully Connected
+	#	init.keys.topology 3
 	#	init.rnd WireKOut
 	#	init.rnd.protocol lnk
 	#	init.rnd.k 999999999
-	#	protocol.pcd.allowNewConnections false
+	#	init.keys.allowNewConnections false
 
 	# Pseudo-Grid
+	#	init.keys.topology 4
 	#	init.rnd WireRingLattice
 	#	init.rnd.protocol lnk
 	#	init.rnd.k 4
-	#	protocol.pcd.allowNewConnections false
+	#	init.keys.allowNewConnections false
 
 	# Ring
+	#	init.keys.topology 5
 	#	init.rnd WireRingLattice
 	#	init.rnd.protocol lnk
 	#	init.rnd.k 2
-	#	protocol.pcd.allowNewConnections false
+	#	init.keys.allowNewConnections false
 
 	# Tree
+	#	init.keys.topology 6
 	#	init.rnd WireRegRootedTree
 	#	init.rnd.protocol lnk
 	#	init.rnd.k 5
-	#	protocol.pcd.allowNewConnections false
+	#	init.keys.allowNewConnections false
 
 # Observer
 	control.deo com.pcd.DataExchangeObserver
