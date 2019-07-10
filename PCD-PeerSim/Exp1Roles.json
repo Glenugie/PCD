@@ -1,0 +1,229 @@
+// date( Ye  , Mo, Da, H,  M,   S, Offset,    TZ,   DST )
+// date( 2017,  1, 10, 5, 48, 0.0, 0     , local, false )
+
+// DATA TYPES
+// d1 - Incoming Buses
+// d2 - Traffic Congestion
+// d3 - Sensor Data
+// d4 - City Events
+// d5 - Taxi Fares
+// d6 - Traffic Accidents
+// d7 - Road Closures
+// d8 - Bike Stand Locations
+// d9 - Bike Stand Availability
+// d10 - Drone Deliviries
+// d11 - Restaurant Prices
+// d12 - Restaurant Waiting Time
+// d13 - Restaurant Special Offers
+// d14 - Pedestrian Flow
+// d15 - Parking
+// d16 - Weather
+// d17 - Routes
+// d18 - Upcoming Stops
+
+// GROUPS
+// g1 - Buses and Bus Stops
+// g2 - Buses
+// g3 - Bus Stops
+// g4 - City Owned
+// g5 - Users
+// g6 - Phones
+// g7 - Infrastructure
+// g8 - Taxis and Taxi Ranks
+// g9 - Taxis
+// g10 - Taxi Ranks
+// g11 - Bike Stands
+// g12 - Traffic Lights
+// g13 - Drones
+// g14 - Restaurants
+// g15 - Cars
+
+{
+	"roles": [
+	  {
+	    "name": "Bus Stop",
+	    "groups": ["g1", "g3", "g4"],
+	    "connection": "Hybrid",
+	    "policies": [
+	      //["P", "id|any", "d2", [], [], [], "false"],
+	      //["P|F", "any", "d2", [], [], [], "false"]
+	      ["P", "g1", "d1", [], [], [], false,-1,-1],
+	      ["P", "g2", "d2", [], [], [], false,-1,-1],
+        //["F", "any", "d1", ["lastAccess({self},d1) > date(=,=,=,=,-10,=,0,local,=)"], [], [], false],
+	      ["P", "any", "d2", ["recordsAccessed({self},d2) < 10"],[],[],false,-1,-1],
+	      //Make it a pre obligation so that the peer cannot just return the data you send them
+	      ["P", "any", "d2", [], ["provide(d2, 1, {self})"], [], false,-1,-1] 
+	    ],
+
+	    //                 [Data, Quantity, Value]
+	    "desiredData": 		[["d1",-1,10],["d2",-1,10]],
+	    "ownedData": 		[["d1",10,5],["d2",10,5]],
+
+	    "generatedData": 	[],
+	    "distribution": 10 /* Percentage of Total Peers that have this role */
+	  },
+	  {
+	    "name": "Bus",
+	    "groups": ["g1","g2","g4"],
+	    "connection": "Dynamic",
+	    "policies": [
+	        ["P", "g1", "d1", [], [], [], false,-1,-1],
+	        ["P", "g2", "d2", [], [], [], false,-1,-1],
+	        ["P", "any", "d18", [], [], [], false,-1,-1],
+	        ["P", "any", "d2", ["recordsAccessed({self},d2) < 10"],[],[],false,-1,-1],
+	        ["P", "any", "d2", [], ["provide(d2, 1, {self})"], [], false,-1,-1],
+          ["P", "any", "any", [], [], [], false,-1,-1] 
+	    ],
+
+	    "desiredData": 		[["d2",-1,10],["d6",-1,10],["d7",-1,10]],
+	    "ownedData": 		[["d1",10,5]],
+
+	    "generatedData": ["d1","d2","d18"],
+	    "distribution": 10
+	  },
+	  {
+	    "name": "Infrastructure",
+	    "groups": ["g4", "g7"],
+	    "connection": "Hybrid",
+	    "policies": [          
+          ["P", "any", "d4", [], [], [], false,-1,-1],
+          ["P", "any", "d3", [], [], [[["provide(any,1,{self})"],5,5]], false,-1,-1],
+          ["P", "{id}", "d3", [], [], [], false,-1,-1]
+	    ],
+
+	    "desiredData": [["d1",-1,10],["d2",-1,10],["d3",-1,10],["d4",-1,10],["d5",-1,10],["d6",-1,10],["d7",-1,10],["d8",-1,10],["d9",-1,10],["d14",-1,10],["d15",-1,10],["d16",-1,10],["d17",-1,10],["d18",-1,10]],
+	    "ownedData": [["d3","5","5"]],
+
+	    "generatedData": ["d3","d14","d4"],
+	    "distribution": 10
+	  },
+	  {
+	    "name": "Taxi",
+	    "groups": ["g8","g9"],
+	    "connection": "Dynamic",
+	    "policies": [
+          ["P", "g8", "d2", [], [], [], false,-1,-1],
+          ["P", "any", "d5", ["recordsAccessed({self},d5) < 10"],[],[],false,-1,-1],
+          ["P", "any", "d2", [], ["provide(d2, 1, {self})"], [], false,-1,-1],
+          ["P", "any", "any", [], [], [], false,-1,-1] 
+	    ],
+
+	    "desiredData": [["d5",-1,10],["d2",-1,10],["d6",-1,10],["d7",-1,10]],
+	    "ownedData": [["d5",5,5]],
+
+	    "generatedData": ["d5","d2"],
+	    "distribution": 10
+	  },
+	  {
+	    "name": "Taxi Rank",
+	    "groups": ["g8","g10"],
+	    "connection": "Hybrid",
+	    "policies": [
+        ["P", "g8", "d2", [], [], [], false,-1,-1],
+        ["P", "g8", "d5", [], [], [], false,-1,-1],
+        ["P", "g8", "d6", [], [], [], false,-1,-1],
+        ["P", "g8", "d7", [], [], [], false,-1,-1],
+        ["P", "g8", "d15", [], [], [], false,-1,-1],
+        //["F", "any", "d5", ["lastAccess({self},d5) > date(=,=,=,=,-10,=,0,local,=)"], [], [], false],
+        ["P", "any", "d2", ["recordsAccessed({self},d2) < 10"],[],[],false,-1,-1],
+        ["P", "any", "d2", [], ["provide(d2, 1, {self})"], [], false,-1,-1] 
+	    ],
+
+	    "desiredData": [["d2",-1,10],["d5",-1,10],["d6",-1,10],["d7",-1,10]],
+	    "ownedData": [],
+
+	    "generatedData": [],
+	    "distribution": 5
+	  },
+	  {
+	    "name": "Bike Stand",
+	    "groups": ["g4","g11"],
+	    "connection": "Hybrid",
+	    "policies": [
+        ["P", "any", "d8", [], [], [], false,-1,-1],
+        ["P", "any", "d9", [], [], [], false,-1,-1]
+	    ],
+
+	    "desiredData": [["d8",-1,10]],
+	    "ownedData": [["d9",5,5]],
+
+	    "generatedData": ["d9"],
+	    "distribution": 5
+	  },
+	  {
+	    "name": "Traffic Light",
+	    "groups": ["g4","g12"],
+	    "connection": "Hybrid",
+	    "policies": [
+        	["P", "any", "d2", [], [], [], false,-1,-1],
+        	["P", "any", "d6", [], [], [], false,-1,-1],
+        	["P", "any", "d7", [], [], [], false,-1,-1],
+	        ["P", "any", "d15", [], [], [], false,-1,-1],
+	        ["P", "any", "d17", [], [], [], false,-1,-1]
+	    ],
+
+	    "desiredData": [["d2",-1,10],["d6",-1,10],["d7",-1,10]],
+	    "ownedData": [["d17",10,5]],
+
+	    "generatedData": ["d2","d6"],
+	    "distribution": 10
+	  },
+	  {
+	    "name": "Drone",
+	    "groups": ["g13"],
+	    "connection": "Dynamic",
+	    "policies": [
+        	["P", "g13", "d10", [], [], [], false,-1,-1],
+        	["P", "g6", "d10", [], ["provide(d16,1,{self})"], [], false,-1,-1]
+	    ],
+
+	    "desiredData": [["d10",-1,10]],
+	    "ownedData": [["d10",1,5]],
+
+	    "generatedData": ["d10"],
+	    "distribution": 5
+	  },
+	  {
+	    "name": "Restaurant",
+	    "groups": ["g14","g5"],
+	    "connection": "Hybrid",
+	    "policies": [
+	    	["P","any","any",[],[],[],false,-1,-1]
+	    ],
+
+	    "desiredData": [["d14",-1,10],["d4",-1,10],["d13",-1,10]],
+	    "ownedData": [["d11",5,5],["d12",2,5],["d13",2,5]],
+
+	    "generatedData": ["d11","d12","d13"],
+	    "distribution": 5
+	  },
+	  {
+	    "name": "Car",
+	    "groups": ["g15","g5"],
+	    "connection": "Dynamic",
+	    "policies": [
+	    	["P","any","any",[],[],[],false,-1,-1]
+	    ],
+
+	    "desiredData": [["d2",-1,10],["d4",-1,10],["d6",-1,10],["d7",-1,10],["d15",-1,10],["d17",-1,10]],
+	    "ownedData": [],
+
+	    "generatedData": ["d2","d3","d6","d7","d14"],
+	    "distribution": 10
+	  },
+	  {
+	    "name": "Phone",
+	    "groups": ["g5", "g6"],
+	    "connection": "Dynamic",
+	    "policies": [
+	    	["P","any","any",[],[],[],false,-1,-1]
+	    ],
+
+	    "desiredData": [["d1",-1,10],["d4",-1,10],["d5",-1,10],["d8",-1,10],["d9",-1,10],["d11",-1,10],["d12",-1,10],["d13",-1,10],["d14",-1,10],["d16",-1,10]],
+	    "ownedData": [],
+
+	    "generatedData": ["d3","d14"],
+	    "distribution": 20
+	  }
+	]
+}
