@@ -87,8 +87,15 @@ public class DataExchange implements CDProtocol {
         
         for (int i = 0; i < linkable.degree(); i += 1) {
             overlayNetwork.put("peer" + linkable.getNeighbor(i).getID(), linkable.getNeighbor(i));
-            PrologInterface.assertFact("connected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + linkable.getNeighbor(i).getID()) });
+            //PrologInterface.assertFact("connected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + linkable.getNeighbor(i).getID()) });
         }
+        
+//        if (PrologInterface.confTopology == 1) { // Mesh Network
+//            int numConnectionsToKill = rng.nextInt((PrologInterface.confTopologyVal/2));
+//            for (int i = 0; i < numConnectionsToKill; i += 1) {                
+//                overlayNetwork.remove(((String) overlayNetwork.keySet().toArray()[0]));
+//            }
+//        }
     }
 
     public void nextCycle(Node node, int protocolID) {
