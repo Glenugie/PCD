@@ -47,7 +47,7 @@
 # Topology
 	# Mesh
 		init.keys.topology 1
-		init.rnd WireKOut
+		init.rnd WireMesh
 		init.rnd.protocol lnk
 		init.rnd.k 10
 		init.keys.allowNewConnections false
