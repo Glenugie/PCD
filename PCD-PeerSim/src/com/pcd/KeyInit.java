@@ -85,13 +85,30 @@ public class KeyInit implements Control {
             }
         }
         
+        parseData();
+        for (DataConfig dConf : PrologInterface.confDataTypes) {
+            int numWant = (int) Math.ceil((Network.size()/100.0) * dConf.percWant);
+            int numOwn = (int) Math.ceil((Network.size()/100.0) * dConf.percOwn);
+            ArrayList<Integer> peerIDsData = new ArrayList<Integer>(); for (int i = 0; i < Network.size(); i += 1) { peerIDsData.add(i);}
+            Collections.shuffle(peerIDsData);
+            for (int i = 0; i < Network.size(); i += 1) {
+                int uMult = 1;
+                if (i < numWant) {
+                    ((DataExchange) Network.get(peerIDs1.get(i)).getProtocol(pid)).makeWantData(dConf.dataId);
+                    uMult = 2;
+                }
+                if (i < numOwn) {
+                    ((DataExchange) Network.get(peerIDs1.get(i)).getProtocol(pid)).makeOwnData(dConf.dataId);                    
+                }
+                ((DataExchange) Network.get(peerIDs1.get(i)).getProtocol(pid)).setDataValue(dConf.dataId,(CommonState.r.nextInt((dConf.maxU-dConf.minU))+dConf.minU)*uMult);
+            }
+        }
+        
+        parsePolicies();        
         for (int i = 0; i < Network.size(); i += 1) {
             DataExchange protocol = (DataExchange) Network.get(peerIDs1.get(i)).getProtocol(pid);
             protocol.initPeer();        	
         }
-	    
-	    parseData();
-	    parsePolicies();
         
         PrologInterface.dumpListing();
         

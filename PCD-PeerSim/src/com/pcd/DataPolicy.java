@@ -2,11 +2,9 @@ package com.pcd;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedList;
 
-import org.jpl7.Atom;
-import org.jpl7.Compound;
 import org.jpl7.Term;
-import org.jpl7.Util;
 
 public class DataPolicy {
 	public long ownerID;
@@ -18,9 +16,8 @@ public class DataPolicy {
 	public ArrayList<String> actCond;
 	public ArrayList<String> deactCond;
 	public String mod;
-	public String src;
-	public String iss;
-	public String id;
+	public LinkedList<String> src;
+	public String tgt;
 	public ArrayList<Action> actions;    
     public int reward;
     public int penalty;
@@ -31,47 +28,46 @@ public class DataPolicy {
     // [ [ requests(d2, peer1)=:=11 ], [ false ], 'F', peer9, peer9, peer2, [ dataAccess(d2, 10)], 5, 0 ]	
 	public DataPolicy(long owner, Term policy, int duration, boolean nested) {
 		ownerID = owner;
-        Term[] polTerms = policy.toTermArray();
-        
-        orgActCond = polTerms[0];
-        actCond = new ArrayList<String>();
-        for (Term con : Util.listToTermArray(orgActCond)) {         
-            String conString = con.args()[0]+" "+((Compound) con).name()+" "+con.args()[1];
-            actCond.add(conString);
-        }
-        
-        orgDeactCond = polTerms[1];
-        deactCond = new ArrayList<String>();
-        for (Term con : Util.listToTermArray(orgDeactCond)) {         
-            String conString = con.args()[0]+" "+((Compound) con).name()+" "+con.args()[1];
-            deactCond.add(conString);
-        }
-		
-        mod = polTerms[2].toString();
-        src = polTerms[3].toString();
-        iss = polTerms[4].toString();
-        id = polTerms[5].toString();
-		
-		orgActions = polTerms[5];
-		actions = new ArrayList<Action>();
-		for (Term act : Util.listToTermArray(orgActions)) {		    
-            if (act.toString().startsWith("adopt(")) {
-                DataPolicy adoptPolProc = new DataPolicy(-1,act.args()[0], -1,true);
-                System.out.println(adoptPolProc);
-                actions.add(new Action("adopt("+adoptPolProc.getPolicyString()+act.toString().substring(act.toString().lastIndexOf(","))));
-            } else {
-                actions.add(new Action(act.toString()));
-            }
-		}
-		
-		try {
-		    reward = Integer.parseInt(polTerms[7].toString());
-		    penalty = Integer.parseInt(polTerms[8].toString());
-		} catch (Exception e) {
-		    reward = 0;
-		    penalty = 0;
-		}
-        this.duration = duration;
+//        Term[] polTerms = policy.toTermArray();
+//        
+//        orgActCond = polTerms[0];
+//        actCond = new ArrayList<String>();
+//        for (Term con : Util.listToTermArray(orgActCond)) {         
+//            String conString = con.args()[0]+" "+((Compound) con).name()+" "+con.args()[1];
+//            actCond.add(conString);
+//        }
+//        
+//        orgDeactCond = polTerms[1];
+//        deactCond = new ArrayList<String>();
+//        for (Term con : Util.listToTermArray(orgDeactCond)) {         
+//            String conString = con.args()[0]+" "+((Compound) con).name()+" "+con.args()[1];
+//            deactCond.add(conString);
+//        }
+//		
+//        mod = polTerms[2].toString();
+//        src = polTerms[3].toString();
+//        tgt = polTerms[5].toString();
+//		
+//		orgActions = polTerms[5];
+//		actions = new ArrayList<Action>();
+//		for (Term act : Util.listToTermArray(orgActions)) {		    
+//            if (act.toString().startsWith("adopt(")) {
+//                DataPolicy adoptPolProc = new DataPolicy(-1,act.args()[0], -1,true);
+//                System.out.println(adoptPolProc);
+//                actions.add(new Action("adopt("+adoptPolProc.getPolicyString()+act.toString().substring(act.toString().lastIndexOf(","))));
+//            } else {
+//                actions.add(new Action(act.toString()));
+//            }
+//		}
+//		
+//		try {
+//		    reward = Integer.parseInt(polTerms[7].toString());
+//		    penalty = Integer.parseInt(polTerms[8].toString());
+//		} catch (Exception e) {
+//		    reward = 0;
+//		    penalty = 0;
+//		}
+//        this.duration = duration;
         
         /*if ((ownerID == 4 || owner == 2) && id.equals("peer2") && dataItem.equals("d2")) {
             System.out.println(policy);
@@ -83,15 +79,19 @@ public class DataPolicy {
 		//if (!nested) { System.out.println(toString());}
 	}
 	
+	public DataPolicy(long owner, String policy, boolean nested) {
+	    
+	}
+	
 	
 	//Produces a policy string formatted for readability
 	public String toString() {
-		return "[\n\t"+getActCondString()+",\n\t"+getDeactCondString()+",\n"+mod+", Src:"+src+", Iss:"+iss+", Id:"+id+",\n\t"+getActionString()+",\n"+reward+","+penalty+"] (Cycles: "+duration+")";
+		return "[\n\t"+getActCondString()+",\n\t"+getDeactCondString()+",\n"+mod+", Src:"+getSourceString()+", Tgt:"+tgt+",\n\t"+getActionString()+",\n"+reward+","+penalty+"] (Cycles: "+duration+")";
 	}
     
 	//Produces a policy string as would appear in our formalism
     public String getPolicyString() {
-        return "["+getActCondString()+","+getDeactCondString()+","+mod+","+src+","+iss+","+id+","+getActionString()+","+reward+","+penalty+"]";
+        return "["+getActCondString()+","+getDeactCondString()+","+mod+","+getSourceString()+","+tgt+","+getActionString()+","+reward+","+penalty+"]";
     }
     
     public String getActCondString() {
@@ -130,7 +130,32 @@ public class DataPolicy {
         return actString;
     }
     
+    public String getSourceString() {
+        String sourceString = "[";
+        if (src.size() > 0) {
+            for (String s : src) {
+                sourceString += s+", ";
+            }
+            sourceString = sourceString.substring(0, sourceString.length()-2);
+        }
+        sourceString += "]";
+        return sourceString;
+    }
+    
     public boolean equals(DataPolicy polC) {
+        if (!condEquals(polC)) { 
+            return false;
+        }
+        if (!mod.equals(polC.mod) || !tgt.equals(polC.tgt)) {
+            return false;
+        }
+        if (!actionEquals(polC)) { 
+            return false;
+        }
+        return true;
+    }
+    
+    public boolean condEquals(DataPolicy polC) {
         ArrayList<String> activation = new ArrayList<String>(); activation.addAll(actCond);
         for (String aC : polC.actCond) {
             if (activation.contains(aC)) {
@@ -151,6 +176,26 @@ public class DataPolicy {
         }
         if (deactivation.size() > 0) { return false;}
         
+        return true;
+    }
+    
+    public boolean actionEquals(DataPolicy polC) {
+        ArrayList<Action> act = new ArrayList<Action>(); act.addAll(actions);
+        for (Action aC : polC.actions) {
+            boolean found = false;
+            for (Action aTest : act) {
+                if (aTest.toString().equals(aC.toString())) {
+                    found = true;
+                    break;
+                }
+            }
+            if (found) {
+                act.remove(aC);
+            } else {
+                return false;
+            }
+        }
+        if (act.size() > 0) { return false;}
         return true;
     }
     
@@ -175,9 +220,9 @@ public class DataPolicy {
         return obligationString;
     }*/
 	
-	public Term getPrologTerm() {
-		return Util.termArrayToList(new Term[]{orgActCond,orgDeactCond,new Atom(mod),new Atom(src),new Atom(iss),new Atom(id),orgActions,new org.jpl7.Integer(reward),new org.jpl7.Integer(penalty)});
-	}
+//	public Term getPrologTerm() {
+//		return Util.termArrayToList(new Term[]{orgActCond,orgDeactCond,new Atom(mod),new Atom(src),new Atom(iss),new Atom(id),orgActions,new org.jpl7.Integer(reward),new org.jpl7.Integer(penalty)});
+//	}
     
     public HashSet<Action> getObligedActions() {
         HashSet<Action> oActions = new HashSet<Action>();
