@@ -990,7 +990,7 @@ public class DataExchange implements CDProtocol {
                 chosenPol = chosenPolRaw;
             }
             
-            DataPolicy pol = new DataPolicy(peerID,chosenPol,false);            
+            DataPolicy pol = new DataPolicy(peerID,chosenPol,"",false);            
             addPolicy(pol);
             
             i += 1;

@@ -79,8 +79,57 @@ public class DataPolicy {
 		//if (!nested) { System.out.println(toString());}
 	}
 	
-	public DataPolicy(long owner, String policy, boolean nested) {
-	    
+	// [true],[false],P,peer1,["access({DATA~2},{ID~1},-1)"],{0-5~3},{5-10~4}
+	public DataPolicy(long owner, String policy, String srcChain, boolean nested) {
+	    if (srcChain.equals("")) { srcChain = "owner";}
+        ownerID = owner;
+        
+        String actCondS = "", deactCondS = "", actionS = "";
+        int actStart = -1, actEnd = -1, deactStart = -1, deactEnd = -1, actionStart = -1, actionEnd = -1, sqBracks = 0;
+        for (int i = 0; i < policy.length(); i += 1) {
+            if ((""+policy.charAt(i)).equals("[")) {
+                if (sqBracks == 0 && actStart == -1 && actEnd == -1) {
+                    actStart = i;
+                    sqBracks += 1;
+                } else if (sqBracks == 0 && actEnd != -1 && deactStart == -1 && deactEnd == -1) {
+                    deactStart = i;
+                    sqBracks += 1;
+                } else if (sqBracks == 0 && deactEnd != -1 && actionStart == -1 && actionEnd == -1) {    
+                    actionStart = i;
+                    sqBracks += 1;
+                } else {
+                    sqBracks += 1;
+                }
+            } else if ((""+policy.charAt(i)).equals("]")) {
+                if (sqBracks == 1 && actStart != -1 && actEnd == -1) {
+                    actEnd = i;
+                } else if (sqBracks == 1 && actEnd != -1 && deactStart != -1 && deactEnd == -1) {
+                    deactEnd = i;
+                }  else if (sqBracks == 1 && deactEnd != -1 && actionStart != -1 && actionEnd == -1) {
+                    actionEnd = i;
+                } else {
+                    sqBracks -= 1;
+                }
+            }
+        }
+        actCondS = policy.substring(actStart,actEnd);
+        deactCondS = policy.substring(deactStart,deactEnd);
+        policy = policy.substring(deactEnd+1,actionStart)+policy.substring(actionEnd);
+        System.out.println(actCondS+"\n"+deactCondS+"\n"+actionS+"\n"+policy);
+        
+        String[] polSplit = policy.split(",");
+        mod = polSplit[0];
+        tgt = polSplit[1];
+        try {
+            reward = Integer.parseInt(polSplit[2]);
+            penalty = Integer.parseInt(polSplit[3]);
+        } catch (Exception e) {
+            reward = 0;
+            penalty = 0;
+        }
+        duration = 0;
+        
+        //if (!nested) { System.out.println(toString());}
 	}
 	
 	
