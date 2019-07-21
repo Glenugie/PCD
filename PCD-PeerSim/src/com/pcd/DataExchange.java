@@ -108,7 +108,7 @@ public class DataExchange implements CDProtocol {
         processMessages(node, protocolID);
         
         // Update Policies
-        updatePolicies();
+        updatePolicies(); // Empty hook for now
 
         // Obligation Processing, determines current possible actions and carries one out
         processObligations(node, protocolID);        
@@ -155,24 +155,12 @@ public class DataExchange implements CDProtocol {
         for (int i = messages.size() - 1; i >= 0; i -= 1) {
             P2PMessage msg = messages.get(i);
             if (msg.time <= peersim.core.CommonState.getTime()
-                    && (penaltyRounds == 0 || (penaltyRounds > 0 && (msg.type.equals("DATA_REQUEST") || msg.type.equals("REJECT_POLICIES") || msg.type.equals("RECORD_INFORM") || msg.type.equals("OBLIGATION_COMPLETE"))))) {
+                    && (penaltyCycles == 0 || (penaltyCycles > 0 && (msg.type.equals("DATA_REQUEST") || msg.type.equals("REJECT_POLICIES") 
+                    || msg.type.equals("RECORD_INFORM") || msg.type.equals("OBLIGATION_COMPLETE") || msg.type.equals("CONFIRM_WAIT")
+                    || msg.type.equals("MALFORMED_RECORDS") || msg.type.equals("INVALID_TRANSACTION"))))) {
                 DataExchange n = (DataExchange) msg.sender.getProtocol(protocolID);
 
                 switch (msg.type) {
-                    case "PEER_DOWN":
-                        //Peer_Down -> Sender_ID, Data_Item
-                        if (overlayNetwork.containsKey("peer" + msg.sender.getID())) {
-                            overlayNetwork.remove("peer" + msg.sender.getID());
-                            PrologInterface.retractFact("connected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + msg.sender.getID()) });
-                            PrologInterface.assertFact("peerOffline", new Term[] { new Atom("peer"+peerID), new Atom("peer" + msg.sender.getID()) });
-                        }
-
-                        if (pendingData.containsKey(msg.payload[0])) {
-                            desiredData.put((String) msg.payload[0], pendingData.get(msg.payload[0]));
-                            pendingData.remove((String) msg.payload[0]);
-                            //activeRequests -= 1;
-                        }
-                        break;
                     case "DATA_REQUEST":
                         //Data_Request -> Sender_ID, Data_Item, Data_Quantity, Hops		        		
                         if (ownedData.contains(msg.payload[0])) { //If Data_Item in Owned_Data
@@ -418,17 +406,6 @@ public class DataExchange implements CDProtocol {
                             }
                         }
                         break;
-                    case "REJECT_POLICIES":
-                        //Reject_Policies -> Sender_ID, Data_Item
-                        //Prolog State of Affairs Add: Sender_ID rejected policies for Data_Item
-                        PrologInterface.assertFact("polRejected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]) });
-                        break;
-                    case "WAIT":
-                        //TODO: WAIT message receipt
-                        break;
-                    case "CONFIRM_WAIT":
-                        //TODO: CONFIRM_WAIT message receipt
-                        break;
                     case "RECORD_INFORM":
                         //Record_Inform -> Sender_ID, Data_Item, Data_Quantity, Chosen_PolicySet, Rel_Records
                         HashSet<String> relRecords = null;
@@ -476,6 +453,26 @@ public class DataExchange implements CDProtocol {
                             //TODO: Mark any obligations associated with providing Data_Quantity of Data_Item to Sender_ID as fulfilled
                         }
                         break;
+                    case "DATA_RESULT":
+                        //Data_Result -> Sender_ID, Data_Item, Data_Package[]
+                        //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
+
+                        DataPackage dataPackage = (DataPackage) msg.payload[1];
+                        processIncomingDataPackage(dataPackage,msg.sender,protocolID);
+
+                        //activeRequests -= 1;
+                        break;
+                    case "REJECT_POLICIES":
+                        //Reject_Policies -> Sender_ID, Data_Item
+                        //Prolog State of Affairs Add: Sender_ID rejected policies for Data_Item
+                        PrologInterface.assertFact("polRejected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]) });
+                        break;
+                    case "WAIT":
+                        //TODO: WAIT message receipt
+                        break;
+                    case "CONFIRM_WAIT":
+                        //TODO: CONFIRM_WAIT message receipt
+                        break;
                     case "MALFORMED_RECORDS":
                         //Malformed_Records -> Sender_ID, Data_Item
                         if (pendingData.containsKey(msg.payload[0])) {
@@ -487,14 +484,22 @@ public class DataExchange implements CDProtocol {
                     case "INVALID_TRANSACTION":
                         //TODO: INVALID_TRANSACTION receipt
                         break;
-                    case "DATA_RESULT":
-                        //Data_Result -> Sender_ID, Data_Item, Data_Package[]
-                        //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
+                    case "PEER_DOWN":
+                        //Peer_Down -> Sender_ID, Data_Item
+                        if (overlayNetwork.containsKey("peer" + msg.sender.getID())) {
+                            overlayNetwork.remove("peer" + msg.sender.getID());
+                            PrologInterface.retractFact("connected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + msg.sender.getID()) });
+                            PrologInterface.assertFact("peerOffline", new Term[] { new Atom("peer"+peerID), new Atom("peer" + msg.sender.getID()) });
+                        }
 
-                        DataPackage dataPackage = (DataPackage) msg.payload[1];
-                        processIncomingDataPackage(dataPackage,msg.sender,protocolID);
-
-                        //activeRequests -= 1;
+                        if (pendingData.containsKey(msg.payload[0])) {
+                            desiredData.put((String) msg.payload[0], pendingData.get(msg.payload[0]));
+                            pendingData.remove((String) msg.payload[0]);
+                            //activeRequests -= 1;
+                        }
+                        break;
+                    case "INFORM":
+                        //TODO: INFORM
                         break;
                 }
 
