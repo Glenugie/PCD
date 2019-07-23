@@ -15,6 +15,9 @@
 # Peer Parameters
 	init.keys.cycleCost 1 
 
+    init.keys.minBudget 100
+    init.keys.maxBudget 100
+
 	init.keys.minPolicies 5
 	init.keys.maxPolicies 10
 

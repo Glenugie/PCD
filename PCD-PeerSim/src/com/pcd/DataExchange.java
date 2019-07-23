@@ -89,6 +89,8 @@ public class DataExchange implements CDProtocol {
         altruistic = false;
         fair = false;
         faulty = false;
+        
+        messages = new ArrayList<P2PMessage>();
     }
     
     public void setID(long id) {
@@ -105,6 +107,8 @@ public class DataExchange implements CDProtocol {
             //PrologInterface.assertFact("connected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + linkable.getNeighbor(i).getID()) });
         }
         
+        peerBudget = rng.nextInt(PrologInterface.confMaxBudget - PrologInterface.confMinBudget) + PrologInterface.confMinBudget;
+        startingBudget = peerBudget;
         initPeerPolicies();
     }
     

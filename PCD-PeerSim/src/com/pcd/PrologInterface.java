@@ -21,8 +21,10 @@ public class PrologInterface {
 	public static int confPeers;
 	
 	public static int confCycleCost;
-	public static int confMinPols;
-	public static int confMaxPols;
+    public static int confMinBudget;
+    public static int confMaxBudget;
+    public static int confMinPols;
+    public static int confMaxPols;
 	public static int confFaultyPeers;
 	public static int confFaultRate;
 	public static int confAltruistic;
