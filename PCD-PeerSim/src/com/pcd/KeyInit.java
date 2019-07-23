@@ -74,6 +74,7 @@ public class KeyInit implements Control {
         Collections.shuffle(peerIDs1); Collections.shuffle(peerIDs2); Collections.shuffle(peerIDs3);
         
         for (int i = 0; i < Network.size(); i += 1) {
+            ((DataExchange) Network.get(i).getProtocol(pid)).setID(Network.get(i).getID());
             if (i < numAltruistic) {
                 ((DataExchange) Network.get(peerIDs1.get(i)).getProtocol(pid)).makeAltruistic();
             }
@@ -84,6 +85,11 @@ public class KeyInit implements Control {
                 ((DataExchange) Network.get(peerIDs3.get(i)).getProtocol(pid)).makeFaulty();
             }
         }
+
+        // Initialise Peers
+//        for (int i = 0; i < Network.size(); i += 1) {
+//            ((DataExchange) Network.get(i).getProtocol(pid)).initPeerConnections(,Network.get(i),pid);
+//        }
         
         parseData();
         for (DataConfig dConf : PrologInterface.confDataTypes) {
@@ -105,10 +111,10 @@ public class KeyInit implements Control {
         }
         
         parsePolicies();        
-        for (int i = 0; i < Network.size(); i += 1) {
-            DataExchange protocol = (DataExchange) Network.get(peerIDs1.get(i)).getProtocol(pid);
-            protocol.initPeer();        	
-        }
+//        for (int i = 0; i < Network.size(); i += 1) {
+//            DataExchange protocol = (DataExchange) Network.get(peerIDs1.get(i)).getProtocol(pid);
+//            protocol.initPeerPolicies();        	
+//        }
         
         PrologInterface.dumpListing();
         

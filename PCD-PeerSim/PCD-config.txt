@@ -40,25 +40,24 @@
 	init.keys.protocol pcd
 
 # DEBUG PARAMETERS
-	init.keys.printSimInfo false
-	init.keys.debugProlog false
+	init.keys.printSimInfo true
+	init.keys.debugProlog true
 	init.keys.debugMessages false
 
 # Topology
 	# Mesh
-		init.keys.topology 1
-		init.rnd WireMesh
-		init.rnd.protocol lnk
-		init.rnd.k 10
-		init.keys.allowNewConnections false
-		# Note that for this, we have to evoke a random neighbour removal in cycle 1
+	#	init.keys.topology 1
+	#	init.rnd WireMesh
+	#	init.rnd.protocol lnk
+	#	init.rnd.k 10
+	#	init.keys.allowNewConnections false
 
 	# Overlay
-	#	init.keys.topology 2
-	#	init.rnd WireKOut
-	#	init.rnd.protocol lnk
-	#	init.rnd.k 5
-	#	init.keys.allowNewConnections true
+		init.keys.topology 2
+		init.rnd WireKOut
+		init.rnd.protocol lnk
+		init.rnd.k 5
+		init.keys.allowNewConnections true
 
 	# Fully Connected
 	#	init.keys.topology 3

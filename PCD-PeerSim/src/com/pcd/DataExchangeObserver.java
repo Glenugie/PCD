@@ -51,7 +51,7 @@ public class DataExchangeObserver implements Control {
     public DataExchangeObserver(String name) {
         this.name = name;
         pid = Configuration.getPid(name + "." + PAR_PROT);
-        cycleCost = Configuration.getInt("protocol.pcd.cycleCost");
+        cycleCost = Configuration.getInt("init.keys.cycleCost");
         
         totalCumulativeMessages = 0;
         //totalCumulativeProfit = 0;
@@ -191,7 +191,7 @@ public class DataExchangeObserver implements Control {
     
     public boolean execute() {
         //return executeNew();
-        return true;
+        return false;
     }
 
 //    public boolean executeNew() {
