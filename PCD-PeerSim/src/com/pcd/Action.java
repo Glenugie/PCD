@@ -10,6 +10,7 @@ public class Action {
     public Action(String act) {        
         actString = act;
         type = act.substring(0, act.indexOf("("));
+        //System.out.println(act+": "+type);
         if (actString.startsWith("adopt")) { System.out.println("\t\t"+actString+"\n");}
         
         payload = new String[0];
@@ -21,7 +22,7 @@ public class Action {
             payload = act.substring(act.indexOf("(")+1, act.indexOf(")")).split(", ");
         }
         
-        if (type.equals("dataAccess")) { 
+        if (type.equals("access")) { 
             expiry = -1;
         } else {
             expiry = (peersim.core.CommonState.getTime() + Integer.parseInt(payload[payload.length-1]));

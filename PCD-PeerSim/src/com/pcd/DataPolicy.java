@@ -23,6 +23,8 @@ public class DataPolicy {
     public int penalty;
     
     public int duration;
+    public boolean alwaysActive = false;
+    public boolean neverDeactive = false;
     
     // [ [ Active ], [ Deactive ], Mod, Src, Iss, Id, [ Action ], Rew, Pen]
     // [ [ requests(d2, peer1)=:=11 ], [ false ], 'F', peer9, peer9, peer2, [ dataAccess(d2, 10)], 5, 0 ]	
@@ -139,17 +141,58 @@ public class DataPolicy {
         }        
         
         actCond = new ArrayList<String>();
-        for (String aC : actCondS.split(",")) {
-            actCond.add(aC);
+        if (actCondS.toLowerCase().equals("true")) {
+            alwaysActive = true;
+        } else {
+            for (String aC : actCondS.split(",")) {
+                if (aC.contains("(")) {
+                    actCond.add(aC);
+                }
+            }
         }
         
         deactCond = new ArrayList<String>();
-        for (String dC : deactCondS.split(",")) {
-            deactCond.add(dC);
+        if (deactCondS.toLowerCase().equals("false")) {
+            neverDeactive = true;
+        } else {
+            for (String dC : deactCondS.split(",")) {
+                if (dC.contains("(")) {
+                    deactCond.add(dC);
+                }
+            }
         }
-
+        
+        //"access({DATA~2},{ID~1},-1)","access({DATA~2},{ID~1},-1)","access({DATA~2},{ID~1},-1)"
         actions = new ArrayList<Action>();
-        for (String act : actionS.split(",")) {         
+        int bracks = 0, open = -1, close = -1;
+        String actionSTemp = actionS;
+        System.out.println(actionSTemp);
+        while (actionSTemp.contains("(")) {
+            for (int i = 0; i < actionSTemp.length(); i += 1) {
+                if ((""+actionSTemp.charAt(i)).equals("(")) {
+                    if (bracks == 0 && open == -1 && close == -1) {
+                        open = i;
+                        bracks += 1;
+                    } else {
+                        bracks += 1;
+                    }
+                } else if ((""+actionSTemp.charAt(i)).equals(")")) {
+                    if (bracks == 1 && open != -1 && close == -1) {
+                        close = i;
+                        bracks -= 1;                    
+                        break;
+                    } else {
+                        bracks -= 1;
+                    }
+                }
+            }
+            
+            int startQuote = actionSTemp.indexOf("\"");
+            //System.out.println("BLOCK: "+startQuote+", "+open+", "+close);
+            String act = actionSTemp.substring(startQuote+1,close+1);
+            //System.out.println(act);
+            actionSTemp = actionSTemp.substring(close+1);
+            
             if (act.startsWith("\"")) { act = act.substring(1);}
             if (act.endsWith("\"")) { act = act.substring(0,act.length()-1);}
             if (act.startsWith("adopt(")) {
