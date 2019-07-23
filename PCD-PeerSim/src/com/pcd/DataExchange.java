@@ -107,7 +107,11 @@ public class DataExchange implements CDProtocol {
             //PrologInterface.assertFact("connected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + linkable.getNeighbor(i).getID()) });
         }
         
-        peerBudget = rng.nextInt(PrologInterface.confMaxBudget - PrologInterface.confMinBudget) + PrologInterface.confMinBudget;
+        if (PrologInterface.confMaxBudget == PrologInterface.confMinBudget ) {
+            peerBudget = PrologInterface.confMaxBudget;
+        } else {
+            peerBudget = rng.nextInt(PrologInterface.confMaxBudget - PrologInterface.confMinBudget) + PrologInterface.confMinBudget;
+        }
         startingBudget = peerBudget;
         initPeerPolicies();
     }

@@ -43,8 +43,8 @@
 	init.keys.protocol pcd
 
 # DEBUG PARAMETERS
-	init.keys.printSimInfo true
-	init.keys.debugProlog true
+	init.keys.printSimInfo false
+	init.keys.debugProlog false
 	init.keys.debugMessages false
 
 # Topology
