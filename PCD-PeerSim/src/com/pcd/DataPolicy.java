@@ -81,7 +81,7 @@ public class DataPolicy {
 	
 	// [true],[false],P,peer1,["access({DATA~2},{ID~1},-1)"],{0-5~3},{5-10~4}
 	public DataPolicy(long owner, String policy, String srcChain, boolean nested) {
-	    if (srcChain.equals("")) { srcChain = "owner";}
+	    if (srcChain.equals("")) { srcChain = "peer"+owner;}
         ownerID = owner;
         
         String actCondS = "", deactCondS = "", actionS = "";
@@ -103,18 +103,22 @@ public class DataPolicy {
             } else if ((""+policy.charAt(i)).equals("]")) {
                 if (sqBracks == 1 && actStart != -1 && actEnd == -1) {
                     actEnd = i;
+                    sqBracks -= 1;
                 } else if (sqBracks == 1 && actEnd != -1 && deactStart != -1 && deactEnd == -1) {
                     deactEnd = i;
+                    sqBracks -= 1;
                 }  else if (sqBracks == 1 && deactEnd != -1 && actionStart != -1 && actionEnd == -1) {
                     actionEnd = i;
+                    sqBracks -= 1;
                 } else {
                     sqBracks -= 1;
                 }
             }
         }
-        actCondS = policy.substring(actStart,actEnd);
-        deactCondS = policy.substring(deactStart,deactEnd);
-        policy = policy.substring(deactEnd+1,actionStart)+policy.substring(actionEnd);
+        actCondS = policy.substring(actStart+1,actEnd);
+        deactCondS = policy.substring(deactStart+1,deactEnd);
+        actionS = policy.substring(actionStart+1,actionEnd);
+        policy = policy.substring(deactEnd+2,actionStart)+policy.substring(actionEnd+2);
         System.out.println(actCondS+"\n"+deactCondS+"\n"+actionS+"\n"+policy);
         
         String[] polSplit = policy.split(",");
@@ -129,6 +133,34 @@ public class DataPolicy {
         }
         duration = 0;
         
+        src = new LinkedList<String>();
+        for (String s : srcChain.split(",")) {
+            src.add(s);
+        }        
+        
+        actCond = new ArrayList<String>();
+        for (String aC : actCondS.split(",")) {
+            actCond.add(aC);
+        }
+        
+        deactCond = new ArrayList<String>();
+        for (String dC : deactCondS.split(",")) {
+            deactCond.add(dC);
+        }
+
+        actions = new ArrayList<Action>();
+        for (String act : actionS.split(",")) {         
+            if (act.startsWith("\"")) { act = act.substring(1);}
+            if (act.endsWith("\"")) { act = act.substring(0,act.length()-1);}
+            if (act.startsWith("adopt(")) {
+                String polBody = act.substring(6,act.length()-1);
+                DataPolicy adoptPolProc = new DataPolicy(-1, polBody, srcChain, true);
+                System.out.println(adoptPolProc);
+                actions.add(new Action("adopt("+adoptPolProc.getPolicyString()+act.substring(act.lastIndexOf(","))));
+            } else {
+                actions.add(new Action(act));
+            }
+        }
         //if (!nested) { System.out.println(toString());}
 	}
 	
