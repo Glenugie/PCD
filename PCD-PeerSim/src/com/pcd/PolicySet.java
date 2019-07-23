@@ -109,10 +109,10 @@ public class PolicySet {
         
         int i = 0;
         for (DataPolicy pPol : primary) {
-            pols[i] = pPol.getPrologTerm(); i += 1;
+            //pols[i] = pPol.getPrologTerm(); i += 1;
         }
         for (DataPolicy sPol : secondary) {
-            pols[i] = sPol.getPrologTerm(); i += 1;
+            //pols[i] = sPol.getPrologTerm(); i += 1;
         }
         return Util.termArrayToList(pols);
     }
