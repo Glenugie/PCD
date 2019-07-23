@@ -121,7 +121,7 @@ public class DataPolicy {
         deactCondS = policy.substring(deactStart+1,deactEnd);
         actionS = policy.substring(actionStart+1,actionEnd);
         policy = policy.substring(deactEnd+2,actionStart)+policy.substring(actionEnd+2);
-        System.out.println(actCondS+"\n"+deactCondS+"\n"+actionS+"\n"+policy);
+        //System.out.println(actCondS+"\n"+deactCondS+"\n"+actionS+"\n"+policy);
         
         String[] polSplit = policy.split(",");
         mod = polSplit[0];
@@ -166,7 +166,7 @@ public class DataPolicy {
         actions = new ArrayList<Action>();
         int bracks = 0, open = -1, close = -1;
         String actionSTemp = actionS;
-        System.out.println(actionSTemp);
+        //System.out.println(actionSTemp);
         while (actionSTemp.contains("(")) {
             for (int i = 0; i < actionSTemp.length(); i += 1) {
                 if ((""+actionSTemp.charAt(i)).equals("(")) {
@@ -198,7 +198,7 @@ public class DataPolicy {
             if (act.startsWith("adopt(")) {
                 String polBody = act.substring(6,act.length()-1);
                 DataPolicy adoptPolProc = new DataPolicy(-1, polBody, srcChain, true);
-                System.out.println(adoptPolProc);
+                //System.out.println(adoptPolProc);
                 actions.add(new Action("adopt("+adoptPolProc.getPolicyString()+act.substring(act.lastIndexOf(","))));
             } else {
                 actions.add(new Action(act));

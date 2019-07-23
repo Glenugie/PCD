@@ -167,7 +167,7 @@ public class DataExchange implements CDProtocol {
                 }
             }
             chosenPol = chosenPolRaw;
-            System.out.println(chosenPol);
+            //System.out.println(chosenPol);
             
             DataPolicy pol = new DataPolicy(peerID,chosenPol,"",false);            
             addPolicy(pol);
