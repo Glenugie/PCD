@@ -40,6 +40,7 @@ public class DataExchange implements CDProtocol {
 //    protected HashMap<String, Integer> receivedData;
     protected HashSet<String> wantedData;
     protected HashSet<String> ownedData;
+    protected HashSet<String> producedData;
     protected HashMap<String, Integer> dataValue;
     protected HashSet<DataElement> dataCollection;
 
@@ -81,6 +82,7 @@ public class DataExchange implements CDProtocol {
         
         wantedData = new HashSet<String>();
         ownedData = new HashSet<String>();
+        producedData = new HashSet<String>();
         dataValue = new HashMap<String, Integer>();
         dataCollection = new HashSet<DataElement>();
         
@@ -204,6 +206,11 @@ public class DataExchange implements CDProtocol {
                 if (!overlayNetwork.containsKey("peer" + randomPeer.getID()) && randomPeer.isUp()) {
                     overlayNetwork.put("peer" + randomPeer.getID(), randomPeer);
                 }
+            }
+            
+            // Produce Data
+            for (String d : producedData) {
+                dataCollection.add(new DataElement(d, generateDataElement()));
             }
     
             //Query q = new Query(new Compound("listing", new Term[]{new Compound("noRequest",new Term[0])})); q.oneSolution(); q.close();
@@ -1119,6 +1126,7 @@ public class DataExchange implements CDProtocol {
     
     public void makeOwnData(String d) {
         ownedData.add(d);
+        producedData.add(d);
     }
     
     private void addPolicy(DataPolicy pol) {
