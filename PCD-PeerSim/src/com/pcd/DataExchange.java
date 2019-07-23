@@ -160,353 +160,405 @@ public class DataExchange implements CDProtocol {
 
                 switch (msg.type) {
                     case "DATA_REQUEST":
-                        //Data_Request -> Sender_ID, Data_Item, Data_Quantity, Hops		        		
-                        if (ownedData.contains(msg.payload[0])) { //If Data_Item in Owned_Data
-                            HashSet<Term> relPolicies = new HashSet<Term>();
-                            //Query Prolog: Relevant Policies for Sender_ID and Data_Item -> Rel_Policies
-                            HashSet<Term> result = PrologInterface.runQuery("relPolicies", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]), new Variable("L") }, "L");
-                            
-                            HashMap<DataPolicy,Integer> rPols = new HashMap<DataPolicy,Integer>();                            
-                            for (Term pol : result) {
-                                DataPolicy relPol = new DataPolicy(peerID,pol,-1,false);
-                                if (relPol.mod.equals("P") || relPol.mod.equals("F")) {
-                                    rPols.put(relPol, 0);
-                                }
-                            }
-                            
-                            HashSet<PolicySet> relPolSets = new HashSet<PolicySet>();
-                            for (DataPolicy pol : rPols.keySet()) {
-                                if (rPols.get(pol) == 0) {
-                                    PolicySet polSet = new PolicySet();
-                                    polSet.addPrimary(pol, policyValueProvider(pol), 0.0);
-                                    rPols.replace(pol, 1);
-                                    
-                                    // Identify policies with identical conditions (i.e., completely overlapping with) to Pol, and add as secondary policies to PolSet
-                                    for (DataPolicy sPol : rPols.keySet()) {
-                                        if (rPols.get(sPol) == 0 && pol.equals(sPol)) {
-                                            polSet.addPrimary(sPol, policyValueProvider(sPol), 0.0);
-                                            rPols.replace(sPol, 1);
-                                        }
-                                    }
-                                    
-                                    // Identify non-mutually exclusive policies, and add as tertiary policies to PolSet
-                                    HashSet<DataPolicy> psPols = new HashSet<DataPolicy>(); psPols.add(pol); psPols.addAll(polSet.getSecondary());
-                                    for (DataPolicy polPS : psPols) {
-                                        for (DataPolicy tPol : rPols.keySet()) {
-                                            //TODO: DataPolicy.mutuallyExclusive()
-                                            if (rPols.get(tPol) == 0 && !polSet.getSecondary().contains(tPol) && !tPol.mutuallyExclusive(polPS)) {
-                                                // Identify policies with conditions that are NOT mutually exclusive to Pol-PS, and add as tertiary policy to PolSet (if not already present)  
-                                                polSet.addSecondary(tPol, policyValueProvider(tPol), 0.0);
-                                            }
-                                        }
-                                    }
-                                    // TODO: Compute estimated value of every policy in set (for R)                                    
-                                    
-                                    // Value of set computed and stored as the combined profit of primary/secondary policies
-                                    polSet.computeValue();
-                                    if (polSet.providerValue > 0 && polSet.worstProviderValue > 0 && polSet.containsPermit()) {       
-                                        //TODO: Add polSet to some kind of register to prove it is a valid offer
-                                        relPolSets.add(polSet);
-                                    }
-                                }
-                            }
-
-                            //Send Data_Item, Data_Quantity, Rel_Policies to Sender_ID as "Policy_Inform"   
-                            if (relPolSets.size() > 0) {                                
-                                n.sendMessage(protocolID, msg.sender, node, "POLICY_INFORM", new Object[] { (String) msg.payload[0], new Integer((int) msg.payload[1]), relPolSets });
-                            } else {
-                                //Generates a Dataless DataPackage
-                                // requestData( Provider, Requestor, PolicySet, Data, Quantity, Records, Reward, Penalty)
-                                HashSet<Term> transRecords = PrologInterface.runQuery("generateDatalessPackage", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]), new org.jpl7.Integer((Integer) msg.payload[1]), new Variable("R") }, "R");
-                                DataPackage dataPackage = assembleDataPackage(transRecords, null, msg.sender.getID());
-                                
-                                n.sendMessage(protocolID, msg.sender, node, "NO_ACCESS", new Object[] { (String) msg.payload[0], dataPackage });
-                            }
-                        } else { //Peer doesn't have the data, attempting to find neighbour who does
-                            Node[] nodeTargets = new Node[0];
-                            /*if (((int) msg.payload[2]) < maxDataHops) {
-                                HashSet<Term> potentialTargetsSet = PrologInterface.runQuery("findData", new Term[] { new Atom("peer" + peerID), new Atom((String) msg.payload[0]), new Variable("L") }, "L");
-                                Term potentialTargetsTerm = (Term) potentialTargetsSet.toArray()[0];
-                                String[] potentialTargets = Util.atomListToStringArray(potentialTargetsTerm);
-
-                                ArrayList<Node> potentialNodeTargets = new ArrayList<Node>();
-                                for (int j = 0; j < potentialTargets.length; j += 1) {
-                                    if (overlayNetwork.containsKey(potentialTargets[j])) {
-                                        potentialNodeTargets.add(overlayNetwork.get(potentialTargets[j]));
-                                    }
-                                }
-                                nodeTargets = potentialNodeTargets.toArray(new Node[0]);
-                            }*/
-                            
-                            //Generates a Dataless DataPackage
-                            HashSet<Term> transRecords = PrologInterface.runQuery("generateDatalessPackage", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]), new org.jpl7.Integer((Integer) msg.payload[1]), new Variable("R") }, "R");
-                            DataPackage dataPackage = assembleDataPackage(transRecords, null, msg.sender.getID());
-                            n.sendMessage(protocolID, msg.sender, node, "NO_DATA", new Object[] { (String) msg.payload[0], nodeTargets, msg.payload[2], dataPackage }); //Send Data_Item to Sender_ID as "No_Data"
-                        }
-                        
-//                        if (DATA_REQUEST_FORWARDING && !selfishPeer && ((int) msg.payload[2]) < maxDataHops) {
-//                            Node[] nodeTargets = new Node[0];
-//                            if (((int) msg.payload[2]) < maxDataHops) {
-//                                HashSet<Term> potentialTargetsSet = PrologInterface.runQuery("findData", new Term[] { new Atom("peer" + peerID), new Atom((String) msg.payload[0]), new Variable("L") }, "L");
-//                                Term potentialTargetsTerm = (Term) potentialTargetsSet.toArray()[0];
-//                                String[] potentialTargets = Util.atomListToStringArray(potentialTargetsTerm);
-//
-//                                ArrayList<Node> potentialNodeTargets = new ArrayList<Node>();
-//                                for (int j = 0; j < potentialTargets.length; j += 1) {
-//                                    if (overlayNetwork.containsKey(potentialTargets[j])) {
-//                                        potentialNodeTargets.add(overlayNetwork.get(potentialTargets[j]));
-//                                    }
-//                                }
-//                                nodeTargets = potentialNodeTargets.toArray(new Node[0]);
-//                            }
-//                            
-//                            for (Node nT : nodeTargets) {
-//                                n.sendMessage(protocolID, nT, msg.sender, "DATA_REQUEST", new Object[] { (String) msg.payload[0], new Integer((int) msg.payload[1]), (((int) msg.payload[2]) + 1) });                                
-//                            }
-//                        }
+                        processMsg_DataRequest(n, msg, node, protocolID);
                         break;
                     case "NO_DATA":
-                        //No_Data -> Sender_ID, Data_Item, Potential_Targets, Hops, Data_Package[]
-                        //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
-                        
-                        processIncomingDataPackage((DataPackage) msg.payload[3],msg.sender,protocolID);
-                        
-                        //Prolog State of Affairs Add: Sender_ID does not have Data_Item
-                        PrologInterface.assertFact("noData", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]) });
-
-                        Node[] potentialTargets = new Node[0];
-                        try {
-                            potentialTargets = (Node[]) msg.payload[1];
-                        } catch (ClassCastException e) {
-                            //Could not cast targets, malformed message
-                        }                
-                        
-                        int targetNum = 0;
-                        boolean dataRequestSent = false;
-
-                        if (!dataRequestSent) {
-//                            if (pendingData.containsKey(msg.payload[0])) {
-//                                desiredData.put((String) msg.payload[0], pendingData.get((String) msg.payload[0]));
-//                                pendingData.remove((String) msg.payload[0]);
-//                                //activeRequests -= 1;	
-//                            }
-                        }
+                        processMsg_NoData(n, msg, node, protocolID);
                         break;
                     case "NO_ACCESS":
-                        //No_Access -> Sender_ID, Data_Item, Data_Package[]
-                        //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
-                        
-                        processIncomingDataPackage((DataPackage) msg.payload[1],msg.sender,protocolID);
-                        
-//                        if (pendingData.containsKey(msg.payload[0])) {
-//                            desiredData.put((String) msg.payload[0], pendingData.get((String) msg.payload[0]));
-//                            pendingData.remove((String) msg.payload[0]);
-//                            //activeRequests -= 1;
-//
-//                            //Prolog State of Affairs Add: Sender_ID does not have Data_Item
-//                            PrologInterface.assertFact("noAccess", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]) });
-//                        }
+                        processMsg_NoAccess(n, msg, node, protocolID);
                         break;
                     case "POLICY_INFORM":
-                        //Policy_Inform -> Sender_ID, Data_Item, Data_Quantity, HashSet<PolicySet> relPolicySets
-                        HashSet<PolicySet> relPolicySets = null;
-                        try {
-                            relPolicySets = (HashSet<PolicySet>) msg.payload[2];
-                        } catch (ClassCastException e) {
-                            //Could not cast policies, malformed message
-                        }
-
-                        if (relPolicySets == null) {
-//                            if (pendingData.containsKey(msg.payload[0])) {
-//                                desiredData.put((String) msg.payload[0], pendingData.get((String) msg.payload[0]));
-//                                pendingData.remove((String) msg.payload[0]);
-//                                //activeRequests -= 1;
-//                            }
-                            break;
-                        } else {                            
-                            //For all relPolicies, determine which hold for your current records. Evaluate all of these only (the others are irrelevant)
-                            //If none are left, then halt this transaction as it will produce no meaningful result
-                            HashSet<PolicySet> acceptablePolicySets = new HashSet<PolicySet>();
-                            for (PolicySet polSet : relPolicySets) {
-                                for (DataPolicy pPol : polSet.getPrimary()) {
-                                    polSet.addPrimary(pPol, null, policyValueRequestor(pPol,(String) msg.payload[0],(int) msg.payload[1]));
-                                }
-                                for (DataPolicy sPol : polSet.getSecondary()) {
-                                    polSet.addSecondary(sPol, null, policyValueRequestor(sPol,(String) msg.payload[0],(int) msg.payload[1]));
-                                }
-                                polSet.computeValue();                                
-
-                                boolean optimal = true;       
-                                for (PolicySet pSetComp : relPolicySets) {
-                                    if (pSetComp.providerValue > polSet.providerValue && pSetComp.requestorValue > polSet.requestorValue) {
-                                        optimal = false;
-                                        break;
-                                    }
-                                }                        
-                                
-                                //FUTURE: The requestor could here try to mitigate unprofitable tertiary policies
-                                if (polSet.requestorValue > 0 && polSet.worstRequestorValue > 0 && optimal) {
-                                    acceptablePolicySets.add(polSet);
-                                }
-                            }
-                            //System.out.println(relPolicySets.size()+" => "+acceptablePolicySets.size());
-                            
-                            //TODO: Likelihood of getting a better offer from elsewhere
-                            
-                            if (acceptablePolicySets.size() > 0) {
-                                PolicySet bestSet = null; double bestValue = 0.0;
-                                for (PolicySet pSet : acceptablePolicySets) {
-//                                    if (!selfishPeer) {
-//                                        double profitRatioFairness = 1.0;
-//                                        if (pSet.providerValue > pSet.requestorValue) { profitRatioFairness = Math.abs(1-(pSet.providerValue / pSet.requestorValue));}
-//                                        else { profitRatioFairness = Math.abs(1-(pSet.requestorValue / pSet.providerValue));}
-//                                        if (bestSet == null || profitRatioFairness < bestValue || (profitRatioFairness == bestValue && pSet.requestorValue > bestSet.requestorValue)) {
-//                                            bestSet = pSet;
-//                                            bestValue = profitRatioFairness;
-//                                        }             
-//                                    } else {
-//                                        if (bestSet == null || pSet.requestorValue > bestValue) {
-//                                            bestSet = pSet;
-//                                            bestValue = pSet.requestorValue;
-//                                        }
-//                                    }
-                                }                                
-
-                                HashSet<Term> inactiveConditions = PrologInterface.runQuery("inactiveConditions", new Term[] { bestSet.getPrologTerm(), new Variable("C") }, "C");
-                                if (inactiveConditions.size() == 0) {
-                                    // Get relevant records, send RECORD_INFORM
-                                    HashSet<String> relRecords = new HashSet<String>();
-                                    HashSet<Term> result = PrologInterface.runQuery("relRecords", new Term[] { new Atom("peer" + peerID), bestSet.getPrologTerm(), new Variable("R") }, "R");
-                                    for (Term t : result) {
-                                        relRecords.add(t.toString());
-                                    }
-    
-                                    //Send Data_Item, Data_Quantity, Rel_Records to Sender_ID as "Record_Inform"
-                                    n.sendMessage(protocolID, msg.sender, node, "RECORD_INFORM", new Object[] { (String) msg.payload[0], (Integer) msg.payload[1], bestSet, relRecords });
-                                } else {
-                                    // TODO: Send WAIT and add appropriate actions to goal list
-                                }
-                            } else if (relPolicySets.size() > 0) {
-                                //Send Data_Item to Sender_ID as "Reject_Policies"
-                                n.sendMessage(protocolID, msg.sender, node, "REJECT_POLICIES", new String[] { (String) msg.payload[0] });
-//                                if (pendingData.containsKey(msg.payload[0])) {
-//                                    desiredData.put((String) msg.payload[0], pendingData.get((String) msg.payload[0]));
-//                                    pendingData.remove((String) msg.payload[0]);
-//                                    //activeRequests -= 1;
-//
-//                                    //Prolog State of Affairs Add: Rejected Sender_ID policies for Data_Item
-//                                    PrologInterface.assertFact("polRejected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom("peer" + peerID), new Atom((String) msg.payload[0]) });
-//                                    
-//                                    //Don't request this data from this provider for X (10?) turns. This mark gets cleared if the your personal value for this data is changed
-//                                    PrologInterface.retractFact("noRequest", new Term[] { new Atom("peer"+peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]), new Variable("_")});
-//                                    PrologInterface.assertFact("noRequest", new Term[] { new Atom("peer"+peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]), new org.jpl7.Integer(peersim.core.CommonState.getTime() + 10)});
-//                                }
-                            }
-                        }
+                        processMsg_PolicyInform(n, msg, node, protocolID);
                         break;
                     case "RECORD_INFORM":
-                        //Record_Inform -> Sender_ID, Data_Item, Data_Quantity, Chosen_PolicySet, Rel_Records
-                        HashSet<String> relRecords = null;
-                        try {
-                            relRecords = (HashSet<String>) msg.payload[3];
-                        } catch (ClassCastException e) {
-                            //Could not cast records, malformed message
-                        }
-                        
-                        PolicySet chosenPolicySet = null;
-                        try {
-                            chosenPolicySet = (PolicySet) msg.payload[2];
-                        } catch (ClassCastException e) {
-                            //Could not cast policy set, malformed message
-                        }
-
-                        if (relRecords == null) {
-                            n.sendMessage(protocolID, msg.sender, node, "MALFORMED_RECORDS", new String[] { (String) msg.payload[0] });
-                            break;
-                        } else if (chosenPolicySet == null) {
-                            n.sendMessage(protocolID, msg.sender, node, "INVALID_TRANSACTION", new String[] { (String) msg.payload[0] });
-                            break;
-                        } else {
-                            for (String r : relRecords) {
-                                PrologInterface.assertFact("recordRequest", PrologInterface.stringToTransRecord(peerID, r));
-                            }       
-
-                            //Query Prolog: Permit Sender_ID access to Data_Quantity of Data_item with Rel_Records -> Data_Package
-                            HashMap<String, HashSet<Term>> prologDataPack = PrologInterface.runMultiVarQuery("requestData",
-                                    new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), chosenPolicySet.getPrologTerm(), new Atom((String) msg.payload[0]), new org.jpl7.Integer((Integer) msg.payload[1]), new Variable("R"), new Variable("Rew"), new Variable("Pen") },
-                                    new String[] { "R", "Rew", "Pen" });
-                            HashSet<Term> transRecords = prologDataPack.get("R");
-                            
-                            //TODO: Apply reward/penalty to self
-                            double reward = ((Term) prologDataPack.get("Rew").toArray()[0]).doubleValue();
-                            double penalty = ((Term) prologDataPack.get("Pen").toArray()[0]).doubleValue();
-                            
-                            DataPackage dataPackage = assembleDataPackage(transRecords, chosenPolicySet.getObligations(), msg.sender.getID());
-
-                            //Send Data_Item, Data_Package to Sender_ID as "Data_Result" 			
-                            //n.sendMessage(msg.sender, node, "DATA_RESULT", new String[]{(String) msg.payload[0],msg.payload[0]+":[peer"+n.peerID+","+msg.payload[0]+","+dataPermitted+","+prologDateFormat.format(new Date().getTime())+","+(dataPermitted > 0)+"])"});
-                            n.sendMessage(protocolID, msg.sender, node, "DATA_RESULT", new Object[] { (String) msg.payload[0], dataPackage });
-                            //PrologInterface.assertFact("recordRequest", new Term[]{new Atom("peer"+peerID),new Atom("peer"+n.peerID),new Atom((String) msg.payload[0]),new org.jpl7.Integer(dataPermitted),new Atom(prologDateFormat.format(new Date().getTime())),new Atom(dataAllowed.toString())});
-
-                            //TODO: Mark any obligations associated with providing Data_Quantity of Data_Item to Sender_ID as fulfilled
-                        }
+                        processMsg_RecordInform(n, msg, node, protocolID);
                         break;
                     case "DATA_RESULT":
-                        //Data_Result -> Sender_ID, Data_Item, Data_Package[]
-                        //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
-
-                        DataPackage dataPackage = (DataPackage) msg.payload[1];
-                        processIncomingDataPackage(dataPackage,msg.sender,protocolID);
-
-                        //activeRequests -= 1;
+                        processMsg_DataResult(n, msg, node, protocolID);
                         break;
                     case "REJECT_POLICIES":
-                        //Reject_Policies -> Sender_ID, Data_Item
-                        //Prolog State of Affairs Add: Sender_ID rejected policies for Data_Item
-                        PrologInterface.assertFact("polRejected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]) });
+                        processMsg_RejectPolicies(n, msg, node, protocolID);
                         break;
                     case "WAIT":
-                        //TODO: WAIT message receipt
+                        processMsg_Wait(n, msg, node, protocolID);
                         break;
                     case "CONFIRM_WAIT":
-                        //TODO: CONFIRM_WAIT message receipt
+                        processMsg_ConfirmWait(n, msg, node, protocolID);
                         break;
                     case "MALFORMED_RECORDS":
-                        //Malformed_Records -> Sender_ID, Data_Item
-//                        if (pendingData.containsKey(msg.payload[0])) {
-//                            desiredData.put((String) msg.payload[0], pendingData.get(msg.payload[0]));
-//                            pendingData.remove((String) msg.payload[0]);
-//                            //activeRequests -= 1;-
-//                        }
+                        processMsg_MalformedRecords(n, msg, node, protocolID);
                         break;
                     case "INVALID_TRANSACTION":
-                        //TODO: INVALID_TRANSACTION receipt
+                        processMsg_InvalidTransaction(n, msg, node, protocolID);
                         break;
                     case "PEER_DOWN":
-                        //Peer_Down -> Sender_ID, Data_Item
-                        if (overlayNetwork.containsKey("peer" + msg.sender.getID())) {
-                            overlayNetwork.remove("peer" + msg.sender.getID());
-                            PrologInterface.retractFact("connected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + msg.sender.getID()) });
-                            PrologInterface.assertFact("peerOffline", new Term[] { new Atom("peer"+peerID), new Atom("peer" + msg.sender.getID()) });
-                        }
-
-//                        if (pendingData.containsKey(msg.payload[0])) {
-//                            desiredData.put((String) msg.payload[0], pendingData.get(msg.payload[0]));
-//                            pendingData.remove((String) msg.payload[0]);
-//                            //activeRequests -= 1;
-//                        }
+                        processMsg_PeerDown(n, msg, node, protocolID);
                         break;
                     case "INFORM":
-                        //TODO: INFORM
+                        processMsg_Inform(n, msg, node, protocolID);
                         break;
                 }
 
                 Object test = messages.remove(i);
                 if (test == null) {
-                    System.err.println("ERROR");
+                    System.err.println("ERROR removing message "+i+" from inbox of "+peerID);
                 }
             }
         }
+    }
+    
+    private void processMsg_DataRequest(DataExchange n, P2PMessage msg, Node node, int protocolID) {
+      //Data_Request -> Sender_ID, Data_Item, Data_Quantity, Hops                     
+        if (ownedData.contains(msg.payload[0])) { //If Data_Item in Owned_Data
+            HashSet<Term> relPolicies = new HashSet<Term>();
+            //Query Prolog: Relevant Policies for Sender_ID and Data_Item -> Rel_Policies
+            HashSet<Term> result = PrologInterface.runQuery("relPolicies", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]), new Variable("L") }, "L");
+            
+            HashMap<DataPolicy,Integer> rPols = new HashMap<DataPolicy,Integer>();                            
+            for (Term pol : result) {
+                DataPolicy relPol = new DataPolicy(peerID,pol,-1,false);
+                if (relPol.mod.equals("P") || relPol.mod.equals("F")) {
+                    rPols.put(relPol, 0);
+                }
+            }
+            
+            HashSet<PolicySet> relPolSets = new HashSet<PolicySet>();
+            for (DataPolicy pol : rPols.keySet()) {
+                if (rPols.get(pol) == 0) {
+                    PolicySet polSet = new PolicySet();
+                    polSet.addPrimary(pol, policyValueProvider(pol), 0.0);
+                    rPols.replace(pol, 1);
+                    
+                    // Identify policies with identical conditions (i.e., completely overlapping with) to Pol, and add as secondary policies to PolSet
+                    for (DataPolicy sPol : rPols.keySet()) {
+                        if (rPols.get(sPol) == 0 && pol.equals(sPol)) {
+                            polSet.addPrimary(sPol, policyValueProvider(sPol), 0.0);
+                            rPols.replace(sPol, 1);
+                        }
+                    }
+                    
+                    // Identify non-mutually exclusive policies, and add as tertiary policies to PolSet
+                    HashSet<DataPolicy> psPols = new HashSet<DataPolicy>(); psPols.add(pol); psPols.addAll(polSet.getSecondary());
+                    for (DataPolicy polPS : psPols) {
+                        for (DataPolicy tPol : rPols.keySet()) {
+                            //TODO: DataPolicy.mutuallyExclusive()
+                            if (rPols.get(tPol) == 0 && !polSet.getSecondary().contains(tPol) && !tPol.mutuallyExclusive(polPS)) {
+                                // Identify policies with conditions that are NOT mutually exclusive to Pol-PS, and add as tertiary policy to PolSet (if not already present)  
+                                polSet.addSecondary(tPol, policyValueProvider(tPol), 0.0);
+                            }
+                        }
+                    }
+                    // TODO: Compute estimated value of every policy in set (for R)                                    
+                    
+                    // Value of set computed and stored as the combined profit of primary/secondary policies
+                    polSet.computeValue();
+                    if (polSet.providerValue > 0 && polSet.worstProviderValue > 0 && polSet.containsPermit()) {       
+                        //TODO: Add polSet to some kind of register to prove it is a valid offer
+                        relPolSets.add(polSet);
+                    }
+                }
+            }
+
+            //Send Data_Item, Data_Quantity, Rel_Policies to Sender_ID as "Policy_Inform"   
+            if (relPolSets.size() > 0) {                                
+                n.sendMessage(protocolID, msg.sender, node, "POLICY_INFORM", new Object[] { (String) msg.payload[0], new Integer((int) msg.payload[1]), relPolSets });
+            } else {
+                //Generates a Dataless DataPackage
+                // requestData( Provider, Requestor, PolicySet, Data, Quantity, Records, Reward, Penalty)
+                HashSet<Term> transRecords = PrologInterface.runQuery("generateDatalessPackage", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]), new org.jpl7.Integer((Integer) msg.payload[1]), new Variable("R") }, "R");
+                DataPackage dataPackage = assembleDataPackage(transRecords, null, msg.sender.getID());
+                
+                n.sendMessage(protocolID, msg.sender, node, "NO_ACCESS", new Object[] { (String) msg.payload[0], dataPackage });
+            }
+        } else { //Peer doesn't have the data, attempting to find neighbour who does
+            Node[] nodeTargets = new Node[0];
+            /*if (((int) msg.payload[2]) < maxDataHops) {
+                HashSet<Term> potentialTargetsSet = PrologInterface.runQuery("findData", new Term[] { new Atom("peer" + peerID), new Atom((String) msg.payload[0]), new Variable("L") }, "L");
+                Term potentialTargetsTerm = (Term) potentialTargetsSet.toArray()[0];
+                String[] potentialTargets = Util.atomListToStringArray(potentialTargetsTerm);
+
+                ArrayList<Node> potentialNodeTargets = new ArrayList<Node>();
+                for (int j = 0; j < potentialTargets.length; j += 1) {
+                    if (overlayNetwork.containsKey(potentialTargets[j])) {
+                        potentialNodeTargets.add(overlayNetwork.get(potentialTargets[j]));
+                    }
+                }
+                nodeTargets = potentialNodeTargets.toArray(new Node[0]);
+            }*/
+            
+            //Generates a Dataless DataPackage
+            HashSet<Term> transRecords = PrologInterface.runQuery("generateDatalessPackage", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]), new org.jpl7.Integer((Integer) msg.payload[1]), new Variable("R") }, "R");
+            DataPackage dataPackage = assembleDataPackage(transRecords, null, msg.sender.getID());
+            n.sendMessage(protocolID, msg.sender, node, "NO_DATA", new Object[] { (String) msg.payload[0], nodeTargets, msg.payload[2], dataPackage }); //Send Data_Item to Sender_ID as "No_Data"
+        }
+        
+//        if (DATA_REQUEST_FORWARDING && !selfishPeer && ((int) msg.payload[2]) < maxDataHops) {
+//            Node[] nodeTargets = new Node[0];
+//            if (((int) msg.payload[2]) < maxDataHops) {
+//                HashSet<Term> potentialTargetsSet = PrologInterface.runQuery("findData", new Term[] { new Atom("peer" + peerID), new Atom((String) msg.payload[0]), new Variable("L") }, "L");
+//                Term potentialTargetsTerm = (Term) potentialTargetsSet.toArray()[0];
+//                String[] potentialTargets = Util.atomListToStringArray(potentialTargetsTerm);
+//
+//                ArrayList<Node> potentialNodeTargets = new ArrayList<Node>();
+//                for (int j = 0; j < potentialTargets.length; j += 1) {
+//                    if (overlayNetwork.containsKey(potentialTargets[j])) {
+//                        potentialNodeTargets.add(overlayNetwork.get(potentialTargets[j]));
+//                    }
+//                }
+//                nodeTargets = potentialNodeTargets.toArray(new Node[0]);
+//            }
+//            
+//            for (Node nT : nodeTargets) {
+//                n.sendMessage(protocolID, nT, msg.sender, "DATA_REQUEST", new Object[] { (String) msg.payload[0], new Integer((int) msg.payload[1]), (((int) msg.payload[2]) + 1) });                                
+//            }
+//        }
+    }
+    
+    private void processMsg_NoData(DataExchange n, P2PMessage msg, Node node, int protocolID) {
+        //No_Data -> Sender_ID, Data_Item, Potential_Targets, Hops, Data_Package[]
+        //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
+        
+        processIncomingDataPackage((DataPackage) msg.payload[3],msg.sender,protocolID);
+        
+        //Prolog State of Affairs Add: Sender_ID does not have Data_Item
+        PrologInterface.assertFact("noData", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]) });
+
+        Node[] potentialTargets = new Node[0];
+        try {
+            potentialTargets = (Node[]) msg.payload[1];
+        } catch (ClassCastException e) {
+            //Could not cast targets, malformed message
+        }                
+        
+        int targetNum = 0;
+        boolean dataRequestSent = false;
+
+        if (!dataRequestSent) {
+//            if (pendingData.containsKey(msg.payload[0])) {
+//                desiredData.put((String) msg.payload[0], pendingData.get((String) msg.payload[0]));
+//                pendingData.remove((String) msg.payload[0]);
+//                //activeRequests -= 1;    
+//            }
+        }
+    }
+    
+    private void processMsg_NoAccess(DataExchange n, P2PMessage msg, Node node, int protocolID) {
+        //No_Access -> Sender_ID, Data_Item, Data_Package[]
+        //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
+        
+        processIncomingDataPackage((DataPackage) msg.payload[1],msg.sender,protocolID);
+        
+//        if (pendingData.containsKey(msg.payload[0])) {
+//            desiredData.put((String) msg.payload[0], pendingData.get((String) msg.payload[0]));
+//            pendingData.remove((String) msg.payload[0]);
+//            //activeRequests -= 1;
+//
+//            //Prolog State of Affairs Add: Sender_ID does not have Data_Item
+//            PrologInterface.assertFact("noAccess", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]) });
+//        }
+    }
+    
+    private void processMsg_PolicyInform(DataExchange n, P2PMessage msg, Node node, int protocolID) {
+        //Policy_Inform -> Sender_ID, Data_Item, Data_Quantity, HashSet<PolicySet> relPolicySets
+        HashSet<PolicySet> relPolicySets = null;
+        try {
+            relPolicySets = (HashSet<PolicySet>) msg.payload[2];
+        } catch (ClassCastException e) {
+            //Could not cast policies, malformed message
+        }
+
+        if (relPolicySets == null) {
+//            if (pendingData.containsKey(msg.payload[0])) {
+//                desiredData.put((String) msg.payload[0], pendingData.get((String) msg.payload[0]));
+//                pendingData.remove((String) msg.payload[0]);
+//                //activeRequests -= 1;
+//            }
+            return;
+        } else {                            
+            //For all relPolicies, determine which hold for your current records. Evaluate all of these only (the others are irrelevant)
+            //If none are left, then halt this transaction as it will produce no meaningful result
+            HashSet<PolicySet> acceptablePolicySets = new HashSet<PolicySet>();
+            for (PolicySet polSet : relPolicySets) {
+                for (DataPolicy pPol : polSet.getPrimary()) {
+                    polSet.addPrimary(pPol, null, policyValueRequestor(pPol,(String) msg.payload[0],(int) msg.payload[1]));
+                }
+                for (DataPolicy sPol : polSet.getSecondary()) {
+                    polSet.addSecondary(sPol, null, policyValueRequestor(sPol,(String) msg.payload[0],(int) msg.payload[1]));
+                }
+                polSet.computeValue();                                
+
+                boolean optimal = true;       
+                for (PolicySet pSetComp : relPolicySets) {
+                    if (pSetComp.providerValue > polSet.providerValue && pSetComp.requestorValue > polSet.requestorValue) {
+                        optimal = false;
+                        break;
+                    }
+                }                        
+                
+                //FUTURE: The requestor could here try to mitigate unprofitable tertiary policies
+                if (polSet.requestorValue > 0 && polSet.worstRequestorValue > 0 && optimal) {
+                    acceptablePolicySets.add(polSet);
+                }
+            }
+            //System.out.println(relPolicySets.size()+" => "+acceptablePolicySets.size());
+            
+            //TODO: Likelihood of getting a better offer from elsewhere
+            
+            if (acceptablePolicySets.size() > 0) {
+                PolicySet bestSet = null; double bestValue = 0.0;
+                for (PolicySet pSet : acceptablePolicySets) {
+//                    if (!selfishPeer) {
+//                        double profitRatioFairness = 1.0;
+//                        if (pSet.providerValue > pSet.requestorValue) { profitRatioFairness = Math.abs(1-(pSet.providerValue / pSet.requestorValue));}
+//                        else { profitRatioFairness = Math.abs(1-(pSet.requestorValue / pSet.providerValue));}
+//                        if (bestSet == null || profitRatioFairness < bestValue || (profitRatioFairness == bestValue && pSet.requestorValue > bestSet.requestorValue)) {
+//                            bestSet = pSet;
+//                            bestValue = profitRatioFairness;
+//                        }             
+//                    } else {
+//                        if (bestSet == null || pSet.requestorValue > bestValue) {
+//                            bestSet = pSet;
+//                            bestValue = pSet.requestorValue;
+//                        }
+//                    }
+                }                                
+
+                HashSet<Term> inactiveConditions = PrologInterface.runQuery("inactiveConditions", new Term[] { bestSet.getPrologTerm(), new Variable("C") }, "C");
+                if (inactiveConditions.size() == 0) {
+                    // Get relevant records, send RECORD_INFORM
+                    HashSet<String> relRecords = new HashSet<String>();
+                    HashSet<Term> result = PrologInterface.runQuery("relRecords", new Term[] { new Atom("peer" + peerID), bestSet.getPrologTerm(), new Variable("R") }, "R");
+                    for (Term t : result) {
+                        relRecords.add(t.toString());
+                    }
+
+                    //Send Data_Item, Data_Quantity, Rel_Records to Sender_ID as "Record_Inform"
+                    n.sendMessage(protocolID, msg.sender, node, "RECORD_INFORM", new Object[] { (String) msg.payload[0], (Integer) msg.payload[1], bestSet, relRecords });
+                } else {
+                    // TODO: Send WAIT and add appropriate actions to goal list
+                }
+            } else if (relPolicySets.size() > 0) {
+                //Send Data_Item to Sender_ID as "Reject_Policies"
+                n.sendMessage(protocolID, msg.sender, node, "REJECT_POLICIES", new String[] { (String) msg.payload[0] });
+//                if (pendingData.containsKey(msg.payload[0])) {
+//                    desiredData.put((String) msg.payload[0], pendingData.get((String) msg.payload[0]));
+//                    pendingData.remove((String) msg.payload[0]);
+//                    //activeRequests -= 1;
+//
+//                    //Prolog State of Affairs Add: Rejected Sender_ID policies for Data_Item
+//                    PrologInterface.assertFact("polRejected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom("peer" + peerID), new Atom((String) msg.payload[0]) });
+//                    
+//                    //Don't request this data from this provider for X (10?) turns. This mark gets cleared if the your personal value for this data is changed
+//                    PrologInterface.retractFact("noRequest", new Term[] { new Atom("peer"+peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]), new Variable("_")});
+//                    PrologInterface.assertFact("noRequest", new Term[] { new Atom("peer"+peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]), new org.jpl7.Integer(peersim.core.CommonState.getTime() + 10)});
+//                }
+            }
+        }
+    }
+    
+    private void processMsg_RecordInform(DataExchange n, P2PMessage msg, Node node, int protocolID) {
+        //Record_Inform -> Sender_ID, Data_Item, Data_Quantity, Chosen_PolicySet, Rel_Records
+        HashSet<String> relRecords = null;
+        try {
+            relRecords = (HashSet<String>) msg.payload[3];
+        } catch (ClassCastException e) {
+            //Could not cast records, malformed message
+        }
+        
+        PolicySet chosenPolicySet = null;
+        try {
+            chosenPolicySet = (PolicySet) msg.payload[2];
+        } catch (ClassCastException e) {
+            //Could not cast policy set, malformed message
+        }
+
+        if (relRecords == null) {
+            n.sendMessage(protocolID, msg.sender, node, "MALFORMED_RECORDS", new String[] { (String) msg.payload[0] });
+            return;
+        } else if (chosenPolicySet == null) {
+            n.sendMessage(protocolID, msg.sender, node, "INVALID_TRANSACTION", new String[] { (String) msg.payload[0] });
+            return;
+        } else {
+            for (String r : relRecords) {
+                PrologInterface.assertFact("recordRequest", PrologInterface.stringToTransRecord(peerID, r));
+            }       
+
+            //Query Prolog: Permit Sender_ID access to Data_Quantity of Data_item with Rel_Records -> Data_Package
+            HashMap<String, HashSet<Term>> prologDataPack = PrologInterface.runMultiVarQuery("requestData",
+                    new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), chosenPolicySet.getPrologTerm(), new Atom((String) msg.payload[0]), new org.jpl7.Integer((Integer) msg.payload[1]), new Variable("R"), new Variable("Rew"), new Variable("Pen") },
+                    new String[] { "R", "Rew", "Pen" });
+            HashSet<Term> transRecords = prologDataPack.get("R");
+            
+            //TODO: Apply reward/penalty to self
+            double reward = ((Term) prologDataPack.get("Rew").toArray()[0]).doubleValue();
+            double penalty = ((Term) prologDataPack.get("Pen").toArray()[0]).doubleValue();
+            
+            DataPackage dataPackage = assembleDataPackage(transRecords, chosenPolicySet.getObligations(), msg.sender.getID());
+
+            //Send Data_Item, Data_Package to Sender_ID as "Data_Result"            
+            //n.sendMessage(msg.sender, node, "DATA_RESULT", new String[]{(String) msg.payload[0],msg.payload[0]+":[peer"+n.peerID+","+msg.payload[0]+","+dataPermitted+","+prologDateFormat.format(new Date().getTime())+","+(dataPermitted > 0)+"])"});
+            n.sendMessage(protocolID, msg.sender, node, "DATA_RESULT", new Object[] { (String) msg.payload[0], dataPackage });
+            //PrologInterface.assertFact("recordRequest", new Term[]{new Atom("peer"+peerID),new Atom("peer"+n.peerID),new Atom((String) msg.payload[0]),new org.jpl7.Integer(dataPermitted),new Atom(prologDateFormat.format(new Date().getTime())),new Atom(dataAllowed.toString())});
+
+            //TODO: Mark any obligations associated with providing Data_Quantity of Data_Item to Sender_ID as fulfilled
+        }
+    }
+    
+    private void processMsg_DataResult(DataExchange n, P2PMessage msg, Node node, int protocolID) {
+        //Data_Result -> Sender_ID, Data_Item, Data_Package[]
+        //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
+
+        DataPackage dataPackage = (DataPackage) msg.payload[1];
+        processIncomingDataPackage(dataPackage,msg.sender,protocolID);
+
+        //activeRequests -= 1;
+    }
+    
+    private void processMsg_RejectPolicies(DataExchange n, P2PMessage msg, Node node, int protocolID) {
+        //Reject_Policies -> Sender_ID, Data_Item
+        //Prolog State of Affairs Add: Sender_ID rejected policies for Data_Item
+        PrologInterface.assertFact("polRejected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]) });
+    }
+    
+    private void processMsg_Wait(DataExchange n, P2PMessage msg, Node node, int protocolID) {
+        
+    }
+    
+    private void processMsg_ConfirmWait(DataExchange n, P2PMessage msg, Node node, int protocolID) {
+        
+    }
+    
+    private void processMsg_MalformedRecords(DataExchange n, P2PMessage msg, Node node, int protocolID) {
+        //Malformed_Records -> Sender_ID, Data_Item
+//      if (pendingData.containsKey(msg.payload[0])) {
+//          desiredData.put((String) msg.payload[0], pendingData.get(msg.payload[0]));
+//          pendingData.remove((String) msg.payload[0]);
+//          //activeRequests -= 1;-
+//      }
+    }
+    
+    private void processMsg_InvalidTransaction(DataExchange n, P2PMessage msg, Node node, int protocolID) {
+        
+    }
+    
+    private void processMsg_PeerDown(DataExchange n, P2PMessage msg, Node node, int protocolID) {
+        //Peer_Down -> Sender_ID, Data_Item
+        if (overlayNetwork.containsKey("peer" + msg.sender.getID())) {
+            overlayNetwork.remove("peer" + msg.sender.getID());
+            PrologInterface.retractFact("connected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + msg.sender.getID()) });
+            PrologInterface.assertFact("peerOffline", new Term[] { new Atom("peer"+peerID), new Atom("peer" + msg.sender.getID()) });
+        }
+
+//        if (pendingData.containsKey(msg.payload[0])) {
+//            desiredData.put((String) msg.payload[0], pendingData.get(msg.payload[0]));
+//            pendingData.remove((String) msg.payload[0]);
+//            //activeRequests -= 1;
+//        }
+    }
+    
+    private void processMsg_Inform(DataExchange n, P2PMessage msg, Node node, int protocolID) {
+        
     }
     
     private void updatePolicies() {
