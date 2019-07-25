@@ -24,6 +24,7 @@ public class DataExchange implements CDProtocol {
     private final int AVG_TRANS_LENGTH = 4;
     private final int DATA_ELEMENT_LENGTH = 5;    
     private final boolean DATA_REQUEST_FORWARDING = true;
+    private final int MAX_TRANSACTIONS = 1000;
 
     //private SimpleDateFormat prologDateFormat;
     private Random rng;
@@ -62,6 +63,9 @@ public class DataExchange implements CDProtocol {
     private boolean faulty;
 
     protected ArrayList<P2PMessage> messages;
+    
+    private HashSet<Integer> transactionStack;
+    private int currentTransaction = 0;
 
     public DataExchange(String prefix) {
         rng = new Random(CommonState.r.getLastSeed());
@@ -311,14 +315,14 @@ public class DataExchange implements CDProtocol {
         //No_Data -> Sender_ID, Data_Item, Potential_Targets, Hops, Data_Package[]
         //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
         
-        processIncomingDataPackage((DataPackage) msg.payload[3],msg.sender,protocolID);
+        processIncomingDataPackage((DataPackage) msg.body[3],msg.sender,protocolID);
         
         //Prolog State of Affairs Add: Sender_ID does not have Data_Item
-        PrologInterface.assertFact("noData", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]) });
+        PrologInterface.assertFact("noData", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.body[0]) });
 
         Node[] potentialTargets = new Node[0];
         try {
-            potentialTargets = (Node[]) msg.payload[1];
+            potentialTargets = (Node[]) msg.body[1];
         } catch (ClassCastException e) {
             //Could not cast targets, malformed message
         }                
@@ -327,9 +331,9 @@ public class DataExchange implements CDProtocol {
         boolean dataRequestSent = false;
 
         if (!dataRequestSent) {
-//            if (pendingData.containsKey(msg.payload[0])) {
-//                desiredData.put((String) msg.payload[0], pendingData.get((String) msg.payload[0]));
-//                pendingData.remove((String) msg.payload[0]);
+//            if (pendingData.containsKey(msg.body[0])) {
+//                desiredData.put((String) msg.body[0], pendingData.get((String) msg.body[0]));
+//                pendingData.remove((String) msg.body[0]);
 //                //activeRequests -= 1;    
 //            }
         }
@@ -339,15 +343,15 @@ public class DataExchange implements CDProtocol {
         //No_Access -> Sender_ID, Data_Item, Data_Package[]
         //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
         
-        processIncomingDataPackage((DataPackage) msg.payload[1],msg.sender,protocolID);
+        processIncomingDataPackage((DataPackage) msg.body[1],msg.sender,protocolID);
         
-//        if (pendingData.containsKey(msg.payload[0])) {
-//            desiredData.put((String) msg.payload[0], pendingData.get((String) msg.payload[0]));
-//            pendingData.remove((String) msg.payload[0]);
+//        if (pendingData.containsKey(msg.body[0])) {
+//            desiredData.put((String) msg.body[0], pendingData.get((String) msg.body[0]));
+//            pendingData.remove((String) msg.body[0]);
 //            //activeRequests -= 1;
 //
 //            //Prolog State of Affairs Add: Sender_ID does not have Data_Item
-//            PrologInterface.assertFact("noAccess", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]) });
+//            PrologInterface.assertFact("noAccess", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.body[0]) });
 //        }
     }
     
@@ -355,15 +359,15 @@ public class DataExchange implements CDProtocol {
         //Policy_Inform -> Sender_ID, Data_Item, Data_Quantity, HashSet<PolicySet> relPolicySets
         HashSet<PolicySet> relPolicySets = null;
         try {
-            relPolicySets = (HashSet<PolicySet>) msg.payload[2];
+            relPolicySets = (HashSet<PolicySet>) msg.body[2];
         } catch (ClassCastException e) {
             //Could not cast policies, malformed message
         }
 
         if (relPolicySets == null) {
-//            if (pendingData.containsKey(msg.payload[0])) {
-//                desiredData.put((String) msg.payload[0], pendingData.get((String) msg.payload[0]));
-//                pendingData.remove((String) msg.payload[0]);
+//            if (pendingData.containsKey(msg.body[0])) {
+//                desiredData.put((String) msg.body[0], pendingData.get((String) msg.body[0]));
+//                pendingData.remove((String) msg.body[0]);
 //                //activeRequests -= 1;
 //            }
             return;
@@ -373,10 +377,10 @@ public class DataExchange implements CDProtocol {
             HashSet<PolicySet> acceptablePolicySets = new HashSet<PolicySet>();
             for (PolicySet polSet : relPolicySets) {
                 for (DataPolicy pPol : polSet.getPrimary()) {
-                    polSet.addPrimary(pPol, null, policyValueRequestor(pPol,(String) msg.payload[0],(int) msg.payload[1]));
+                    polSet.addPrimary(pPol, null, policyValueRequestor(pPol,(String) msg.body[0],(int) msg.body[1]));
                 }
                 for (DataPolicy sPol : polSet.getSecondary()) {
-                    polSet.addSecondary(sPol, null, policyValueRequestor(sPol,(String) msg.payload[0],(int) msg.payload[1]));
+                    polSet.addSecondary(sPol, null, policyValueRequestor(sPol,(String) msg.body[0],(int) msg.body[1]));
                 }
                 polSet.computeValue();                                
 
@@ -426,24 +430,24 @@ public class DataExchange implements CDProtocol {
                     }
 
                     //Send Data_Item, Data_Quantity, Rel_Records to Sender_ID as "Record_Inform"
-                    n.sendMessage(protocolID, msg.sender, node, "RECORD_INFORM", new Object[] { (String) msg.payload[0], (Integer) msg.payload[1], bestSet, relRecords });
+                    n.sendMessage(protocolID, msg.sender, node, "RECORD_INFORM", new Object[] { (String) msg.body[0], (Integer) msg.body[1], bestSet, relRecords });
                 } else {
                     // TODO: Send WAIT and add appropriate actions to goal list
                 }
             } else if (relPolicySets.size() > 0) {
                 //Send Data_Item to Sender_ID as "Reject_Policies"
-                n.sendMessage(protocolID, msg.sender, node, "REJECT_POLICIES", new String[] { (String) msg.payload[0] });
-//                if (pendingData.containsKey(msg.payload[0])) {
-//                    desiredData.put((String) msg.payload[0], pendingData.get((String) msg.payload[0]));
-//                    pendingData.remove((String) msg.payload[0]);
+                n.sendMessage(protocolID, msg.sender, node, "REJECT_POLICIES", new String[] { (String) msg.body[0] });
+//                if (pendingData.containsKey(msg.body[0])) {
+//                    desiredData.put((String) msg.body[0], pendingData.get((String) msg.body[0]));
+//                    pendingData.remove((String) msg.body[0]);
 //                    //activeRequests -= 1;
 //
 //                    //Prolog State of Affairs Add: Rejected Sender_ID policies for Data_Item
-//                    PrologInterface.assertFact("polRejected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom("peer" + peerID), new Atom((String) msg.payload[0]) });
+//                    PrologInterface.assertFact("polRejected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom("peer" + peerID), new Atom((String) msg.body[0]) });
 //                    
 //                    //Don't request this data from this provider for X (10?) turns. This mark gets cleared if the your personal value for this data is changed
-//                    PrologInterface.retractFact("noRequest", new Term[] { new Atom("peer"+peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]), new Variable("_")});
-//                    PrologInterface.assertFact("noRequest", new Term[] { new Atom("peer"+peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]), new org.jpl7.Integer(peersim.core.CommonState.getTime() + 10)});
+//                    PrologInterface.retractFact("noRequest", new Term[] { new Atom("peer"+peerID), new Atom("peer" + n.peerID), new Atom((String) msg.body[0]), new Variable("_")});
+//                    PrologInterface.assertFact("noRequest", new Term[] { new Atom("peer"+peerID), new Atom("peer" + n.peerID), new Atom((String) msg.body[0]), new org.jpl7.Integer(peersim.core.CommonState.getTime() + 10)});
 //                }
             }
         }
@@ -453,23 +457,23 @@ public class DataExchange implements CDProtocol {
         //Record_Inform -> Sender_ID, Data_Item, Data_Quantity, Chosen_PolicySet, Rel_Records
         HashSet<String> relRecords = null;
         try {
-            relRecords = (HashSet<String>) msg.payload[3];
+            relRecords = (HashSet<String>) msg.body[3];
         } catch (ClassCastException e) {
             //Could not cast records, malformed message
         }
         
         PolicySet chosenPolicySet = null;
         try {
-            chosenPolicySet = (PolicySet) msg.payload[2];
+            chosenPolicySet = (PolicySet) msg.body[2];
         } catch (ClassCastException e) {
             //Could not cast policy set, malformed message
         }
 
         if (relRecords == null) {
-            n.sendMessage(protocolID, msg.sender, node, "MALFORMED_RECORDS", new String[] { (String) msg.payload[0] });
+            n.sendMessage(protocolID, msg.sender, node, "MALFORMED_RECORDS", new String[] { (String) msg.body[0] });
             return;
         } else if (chosenPolicySet == null) {
-            n.sendMessage(protocolID, msg.sender, node, "INVALID_TRANSACTION", new String[] { (String) msg.payload[0] });
+            n.sendMessage(protocolID, msg.sender, node, "INVALID_TRANSACTION", new String[] { (String) msg.body[0] });
             return;
         } else {
             for (String r : relRecords) {
@@ -478,7 +482,7 @@ public class DataExchange implements CDProtocol {
 
             //Query Prolog: Permit Sender_ID access to Data_Quantity of Data_item with Rel_Records -> Data_Package
             HashMap<String, HashSet<Term>> prologDataPack = PrologInterface.runMultiVarQuery("requestData",
-                    new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), chosenPolicySet.getPrologTerm(), new Atom((String) msg.payload[0]), new org.jpl7.Integer((Integer) msg.payload[1]), new Variable("R"), new Variable("Rew"), new Variable("Pen") },
+                    new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), chosenPolicySet.getPrologTerm(), new Atom((String) msg.body[0]), new org.jpl7.Integer((Integer) msg.body[1]), new Variable("R"), new Variable("Rew"), new Variable("Pen") },
                     new String[] { "R", "Rew", "Pen" });
             HashSet<Term> transRecords = prologDataPack.get("R");
             
@@ -489,9 +493,9 @@ public class DataExchange implements CDProtocol {
             DataPackage dataPackage = assembleDataPackage(transRecords, chosenPolicySet.getObligations(), msg.sender.getID());
 
             //Send Data_Item, Data_Package to Sender_ID as "Data_Result"            
-            //n.sendMessage(msg.sender, node, "DATA_RESULT", new String[]{(String) msg.payload[0],msg.payload[0]+":[peer"+n.peerID+","+msg.payload[0]+","+dataPermitted+","+prologDateFormat.format(new Date().getTime())+","+(dataPermitted > 0)+"])"});
-            n.sendMessage(protocolID, msg.sender, node, "DATA_RESULT", new Object[] { (String) msg.payload[0], dataPackage });
-            //PrologInterface.assertFact("recordRequest", new Term[]{new Atom("peer"+peerID),new Atom("peer"+n.peerID),new Atom((String) msg.payload[0]),new org.jpl7.Integer(dataPermitted),new Atom(prologDateFormat.format(new Date().getTime())),new Atom(dataAllowed.toString())});
+            //n.sendMessage(msg.sender, node, "DATA_RESULT", new String[]{(String) msg.body[0],msg.body[0]+":[peer"+n.peerID+","+msg.body[0]+","+dataPermitted+","+prologDateFormat.format(new Date().getTime())+","+(dataPermitted > 0)+"])"});
+            n.sendMessage(protocolID, msg.sender, node, "DATA_RESULT", new Object[] { (String) msg.body[0], dataPackage });
+            //PrologInterface.assertFact("recordRequest", new Term[]{new Atom("peer"+peerID),new Atom("peer"+n.peerID),new Atom((String) msg.body[0]),new org.jpl7.Integer(dataPermitted),new Atom(prologDateFormat.format(new Date().getTime())),new Atom(dataAllowed.toString())});
 
             //TODO: Mark any obligations associated with providing Data_Quantity of Data_Item to Sender_ID as fulfilled
         }
@@ -501,7 +505,7 @@ public class DataExchange implements CDProtocol {
         //Data_Result -> Sender_ID, Data_Item, Data_Package[]
         //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
 
-        DataPackage dataPackage = (DataPackage) msg.payload[1];
+        DataPackage dataPackage = (DataPackage) msg.body[1];
         processIncomingDataPackage(dataPackage,msg.sender,protocolID);
 
         //activeRequests -= 1;
@@ -510,7 +514,7 @@ public class DataExchange implements CDProtocol {
     private void processMsg_RejectPolicies(DataExchange n, P2PMessage msg, Node node, int protocolID) {
         //Reject_Policies -> Sender_ID, Data_Item
         //Prolog State of Affairs Add: Sender_ID rejected policies for Data_Item
-        PrologInterface.assertFact("polRejected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]) });
+        PrologInterface.assertFact("polRejected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.body[0]) });
     }
     
     private void processMsg_Wait(DataExchange n, P2PMessage msg, Node node, int protocolID) {
@@ -523,9 +527,9 @@ public class DataExchange implements CDProtocol {
     
     private void processMsg_MalformedRecords(DataExchange n, P2PMessage msg, Node node, int protocolID) {
         //Malformed_Records -> Sender_ID, Data_Item
-//      if (pendingData.containsKey(msg.payload[0])) {
-//          desiredData.put((String) msg.payload[0], pendingData.get(msg.payload[0]));
-//          pendingData.remove((String) msg.payload[0]);
+//      if (pendingData.containsKey(msg.body[0])) {
+//          desiredData.put((String) msg.body[0], pendingData.get(msg.body[0]));
+//          pendingData.remove((String) msg.body[0]);
 //          //activeRequests -= 1;-
 //      }
     }
@@ -542,9 +546,9 @@ public class DataExchange implements CDProtocol {
             PrologInterface.assertFact("peerOffline", new Term[] { new Atom("peer"+peerID), new Atom("peer" + msg.sender.getID()) });
         }
 
-//        if (pendingData.containsKey(msg.payload[0])) {
-//            desiredData.put((String) msg.payload[0], pendingData.get(msg.payload[0]));
-//            pendingData.remove((String) msg.payload[0]);
+//        if (pendingData.containsKey(msg.body[0])) {
+//            desiredData.put((String) msg.body[0], pendingData.get(msg.body[0]));
+//            pendingData.remove((String) msg.body[0]);
 //            //activeRequests -= 1;
 //        }
     }
@@ -950,22 +954,17 @@ public class DataExchange implements CDProtocol {
         return false;
     }
        
-    public void sendMessage(int protocolID, Node r, Node s, String type, Object[] payload) {
+    public void sendMessage(int protocolID, Node r, Node s, int tId, String type, Object[] body) {
         if (r.isUp() && !disconnecting) {
-            messages.add(new P2PMessage(s, type, payload, (peersim.core.CommonState.getTime() + 1)));
+            messages.add(new P2PMessage(s, r, tId, type, (peersim.core.CommonState.getTime() + 1), body));
             if (PrologInterface.debugMessages) {
                 String payloadString = "";
-                /*if (type.equals("DATA_RESULT")) {
-                    DataPackage p = (DataPackage) payload[1];
-                    payloadString = p.dataItems.toString() + " - " + p.transactionRecords.toString();
-                } else {*/
-                    for (Object p : payload) {
-                        payloadString += p + ",";
-                    }
-                    if (payloadString.length() > 0) {
-                        payloadString = payloadString.substring(0, payloadString.length() - 1);
-                    }
-                //}
+                for (Object p : body) {
+                    payloadString += p + ",";
+                }
+                if (payloadString.length() > 0) {
+                    payloadString = payloadString.substring(0, payloadString.length() - 1);
+                }
                 System.out.println(s.getID() + " -> " + r.getID() + ", " + type + ", [" + payloadString + "], " + (peersim.core.CommonState.getTime() + 1));
             }
         } else if (s.isUp()) {
@@ -973,10 +972,10 @@ public class DataExchange implements CDProtocol {
             if (!sDE.disconnecting) {
                 String returnData = "-1";
                 try {
-                    returnData = (String) payload[0];
+                    returnData = (String) body[0];
                 } catch (ClassCastException e) {
                 }
-                sDE.messages.add(new P2PMessage(r, "PEER_DOWN", new String[] { returnData }, (peersim.core.CommonState.getTime() + 1)));
+                sDE.messages.add(new P2PMessage(r, s, tId, "PEER_DOWN", (peersim.core.CommonState.getTime() + 1), new String[] { returnData }));
                 if (PrologInterface.debugMessages) {
                     System.out.println(r.getID() + " -> " + s.getID() + ", PEER_DOWN, [" + returnData + "], " + (peersim.core.CommonState.getTime() + 1));
                 }
@@ -988,12 +987,7 @@ public class DataExchange implements CDProtocol {
         disconnecting = true;
         for (P2PMessage msg : messages) {
             DataExchange n = (DataExchange) msg.sender.getProtocol(protocolID);
-            switch (msg.type) {
-                case "DATA_REQUEST":
-                case "RECORD_INFORM":
-                    n.sendMessage(protocolID, msg.sender, node, "PEER_DOWN", new String[] { (String) msg.payload[0] });
-                    break;
-            }
+            n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "PEER_DOWN", new String[] { (String) msg.body[0] });
         }
 
         messages.clear();
