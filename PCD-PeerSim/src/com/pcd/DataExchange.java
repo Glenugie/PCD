@@ -197,7 +197,7 @@ public class DataExchange implements CDProtocol {
             updatePolicies(); // Empty hook for now
     
             // Obligation Processing, determines current possible actions and carries one out
-            processObligations(node, protocolID);        
+            processActions(node, protocolID);        
     
             //If settings permit (and not currently penalised), forms new connections up to the degree of connectedness in config file
             if (PrologInterface.confNewConnections && overlayNetwork.size() < PrologInterface.confMaxNeighbours && penaltyCycles == 0) {
@@ -304,109 +304,7 @@ public class DataExchange implements CDProtocol {
     
     private void processMsg_DataRequest(DataExchange n, P2PMessage msg, Node node, int protocolID) {
       //Data_Request -> Sender_ID, Data_Item, Data_Quantity, Hops                     
-        if (ownedData.contains(msg.payload[0])) { //If Data_Item in Owned_Data
-            HashSet<Term> relPolicies = new HashSet<Term>();
-            //Query Prolog: Relevant Policies for Sender_ID and Data_Item -> Rel_Policies
-            HashSet<Term> result = PrologInterface.runQuery("relPolicies", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]), new Variable("L") }, "L");
-            
-            HashMap<DataPolicy,Integer> rPols = new HashMap<DataPolicy,Integer>();                            
-            for (Term pol : result) {
-                DataPolicy relPol = new DataPolicy(peerID,pol,-1,false);
-                if (relPol.mod.equals("P") || relPol.mod.equals("F")) {
-                    rPols.put(relPol, 0);
-                }
-            }
-            
-            HashSet<PolicySet> relPolSets = new HashSet<PolicySet>();
-            for (DataPolicy pol : rPols.keySet()) {
-                if (rPols.get(pol) == 0) {
-                    PolicySet polSet = new PolicySet();
-                    polSet.addPrimary(pol, policyValueProvider(pol), 0.0);
-                    rPols.replace(pol, 1);
-                    
-                    // Identify policies with identical conditions (i.e., completely overlapping with) to Pol, and add as secondary policies to PolSet
-                    for (DataPolicy sPol : rPols.keySet()) {
-                        if (rPols.get(sPol) == 0 && pol.equals(sPol)) {
-                            polSet.addPrimary(sPol, policyValueProvider(sPol), 0.0);
-                            rPols.replace(sPol, 1);
-                        }
-                    }
-                    
-                    // Identify non-mutually exclusive policies, and add as tertiary policies to PolSet
-                    HashSet<DataPolicy> psPols = new HashSet<DataPolicy>(); psPols.add(pol); psPols.addAll(polSet.getSecondary());
-                    for (DataPolicy polPS : psPols) {
-                        for (DataPolicy tPol : rPols.keySet()) {
-                            //TODO: DataPolicy.mutuallyExclusive()
-                            if (rPols.get(tPol) == 0 && !polSet.getSecondary().contains(tPol) && !tPol.mutuallyExclusive(polPS)) {
-                                // Identify policies with conditions that are NOT mutually exclusive to Pol-PS, and add as tertiary policy to PolSet (if not already present)  
-                                polSet.addSecondary(tPol, policyValueProvider(tPol), 0.0);
-                            }
-                        }
-                    }
-                    // TODO: Compute estimated value of every policy in set (for R)                                    
-                    
-                    // Value of set computed and stored as the combined profit of primary/secondary policies
-                    polSet.computeValue();
-                    if (polSet.providerValue > 0 && polSet.worstProviderValue > 0 && polSet.containsPermit()) {       
-                        //TODO: Add polSet to some kind of register to prove it is a valid offer
-                        relPolSets.add(polSet);
-                    }
-                }
-            }
-
-            //Send Data_Item, Data_Quantity, Rel_Policies to Sender_ID as "Policy_Inform"   
-            if (relPolSets.size() > 0) {                                
-                n.sendMessage(protocolID, msg.sender, node, "POLICY_INFORM", new Object[] { (String) msg.payload[0], new Integer((int) msg.payload[1]), relPolSets });
-            } else {
-                //Generates a Dataless DataPackage
-                // requestData( Provider, Requestor, PolicySet, Data, Quantity, Records, Reward, Penalty)
-                HashSet<Term> transRecords = PrologInterface.runQuery("generateDatalessPackage", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]), new org.jpl7.Integer((Integer) msg.payload[1]), new Variable("R") }, "R");
-                DataPackage dataPackage = assembleDataPackage(transRecords, null, msg.sender.getID());
-                
-                n.sendMessage(protocolID, msg.sender, node, "NO_ACCESS", new Object[] { (String) msg.payload[0], dataPackage });
-            }
-        } else { //Peer doesn't have the data, attempting to find neighbour who does
-            Node[] nodeTargets = new Node[0];
-            /*if (((int) msg.payload[2]) < maxDataHops) {
-                HashSet<Term> potentialTargetsSet = PrologInterface.runQuery("findData", new Term[] { new Atom("peer" + peerID), new Atom((String) msg.payload[0]), new Variable("L") }, "L");
-                Term potentialTargetsTerm = (Term) potentialTargetsSet.toArray()[0];
-                String[] potentialTargets = Util.atomListToStringArray(potentialTargetsTerm);
-
-                ArrayList<Node> potentialNodeTargets = new ArrayList<Node>();
-                for (int j = 0; j < potentialTargets.length; j += 1) {
-                    if (overlayNetwork.containsKey(potentialTargets[j])) {
-                        potentialNodeTargets.add(overlayNetwork.get(potentialTargets[j]));
-                    }
-                }
-                nodeTargets = potentialNodeTargets.toArray(new Node[0]);
-            }*/
-            
-            //Generates a Dataless DataPackage
-            HashSet<Term> transRecords = PrologInterface.runQuery("generateDatalessPackage", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]), new org.jpl7.Integer((Integer) msg.payload[1]), new Variable("R") }, "R");
-            DataPackage dataPackage = assembleDataPackage(transRecords, null, msg.sender.getID());
-            n.sendMessage(protocolID, msg.sender, node, "NO_DATA", new Object[] { (String) msg.payload[0], nodeTargets, msg.payload[2], dataPackage }); //Send Data_Item to Sender_ID as "No_Data"
-        }
         
-//        if (DATA_REQUEST_FORWARDING && !selfishPeer && ((int) msg.payload[2]) < maxDataHops) {
-//            Node[] nodeTargets = new Node[0];
-//            if (((int) msg.payload[2]) < maxDataHops) {
-//                HashSet<Term> potentialTargetsSet = PrologInterface.runQuery("findData", new Term[] { new Atom("peer" + peerID), new Atom((String) msg.payload[0]), new Variable("L") }, "L");
-//                Term potentialTargetsTerm = (Term) potentialTargetsSet.toArray()[0];
-//                String[] potentialTargets = Util.atomListToStringArray(potentialTargetsTerm);
-//
-//                ArrayList<Node> potentialNodeTargets = new ArrayList<Node>();
-//                for (int j = 0; j < potentialTargets.length; j += 1) {
-//                    if (overlayNetwork.containsKey(potentialTargets[j])) {
-//                        potentialNodeTargets.add(overlayNetwork.get(potentialTargets[j]));
-//                    }
-//                }
-//                nodeTargets = potentialNodeTargets.toArray(new Node[0]);
-//            }
-//            
-//            for (Node nT : nodeTargets) {
-//                n.sendMessage(protocolID, nT, msg.sender, "DATA_REQUEST", new Object[] { (String) msg.payload[0], new Integer((int) msg.payload[1]), (((int) msg.payload[2]) + 1) });                                
-//            }
-//        }
     }
     
     private void processMsg_NoData(DataExchange n, P2PMessage msg, Node node, int protocolID) {
@@ -659,7 +557,7 @@ public class DataExchange implements CDProtocol {
         
     }
 
-    private void processObligations(Node node, int protocolID) {     
+    private void processActions(Node node, int protocolID) {     
       //At the end of each cycle, need to reason on remaining value from desired data, vs the predicted cost of remaining in the network to get it
 //        if (desiredData.size() > 0 && linkable.degree() > 0 && peerBudget >= PrologInterface.confCycleCost && penaltyRounds == 0) {
 //            for (String gD : generatedData) {
