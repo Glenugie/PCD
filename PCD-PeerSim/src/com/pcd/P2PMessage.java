@@ -4,14 +4,20 @@ import peersim.core.Node;
 
 public class P2PMessage {
 	public Node sender;
-	public String type;
-	public Object[] payload;
-	public long time;
+	public Node receiver;
+	public long transactionId;
+	public String type;    
+    public long time;
 	
-	public P2PMessage(Node s, String t, Object[] p, long ti) {
+	public Object[] body;
+	
+	public P2PMessage(Node s, Node r, long id, String t, long ti, Object[] b) {
 		sender = s;
+		receiver = r;
+		transactionId = id;
 		type = t;
-		payload = p;
-		time = ti;
+        time = ti;
+		
+        body = b;		
 	}
 }
