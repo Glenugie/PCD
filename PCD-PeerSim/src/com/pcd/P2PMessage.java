@@ -12,6 +12,7 @@ public class P2PMessage {
 	public Object[] body;
 	
 	public P2PMessage(Node s, Node r, int id, String t, long ti, Object[] b) {
+	    //System.out.println(s.getID()+", "+r.getID());
 		sender = s;
 		receiver = r;
 		transactionId = id;
