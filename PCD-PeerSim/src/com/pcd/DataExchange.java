@@ -68,9 +68,9 @@ public class DataExchange implements CDProtocol {
     protected int rewardCycles;
     protected int penaltyCycles;
     
-    private boolean altruistic;
-    private boolean fair;
-    private boolean faulty;
+    private boolean altruistic; // Altruistic peers will always comply with policies if possible, even at a loss of value. Self-interested peers will use profit estimates to determine the most valuable choice; preferring compliance if possible
+    private boolean fair; // Fair peers promote social welfare, forward messages etc.. Selfish peers will not do any of this.
+    private boolean faulty; // Faulty peers have a PrologInterface.confFaultRate % chance to drop outgoing messages. Non-faulty peers will always send messages successfully.
 
     protected ArrayList<P2PMessage> messages;
     
