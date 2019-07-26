@@ -433,7 +433,7 @@ public class DataExchange implements CDProtocol {
     private void processMsg_PolicyInform(DataExchange n, P2PMessage msg, Node node, int protocolID) {
         //Policy_Inform -> Sender_ID, Data_Item, Data_Quantity, HashSet<PolicySet> relPolicySets
         
-        // MUST ACCEPT EVEN IF NOT IN outTransactionStack
+        // MUST ACCEPT EVEN IF NOT IN outTransactionStack, as long as the data being offered is wanted
     }
     
     private void processMsg_RecordInform(DataExchange n, P2PMessage msg, Node node, int protocolID) {
@@ -453,11 +453,13 @@ public class DataExchange implements CDProtocol {
     }
     
     private void processMsg_Wait(DataExchange n, P2PMessage msg, Node node, int protocolID) {
-        
+        if (hasOpenOutTrans(n.peerID, msg.transactionId)) {
+            n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "CONFIRM_WAIT", new Object[] { }, null);
+        }
     }
     
     private void processMsg_ConfirmWait(DataExchange n, P2PMessage msg, Node node, int protocolID) {
-        
+        hasOpenInTrans(n.peerID, msg.transactionId);
     }
     
     private void processMsg_MalformedRecords(DataExchange n, P2PMessage msg, Node node, int protocolID) {
@@ -470,7 +472,7 @@ public class DataExchange implements CDProtocol {
     }
     
     private void processMsg_InvalidTransaction(DataExchange n, P2PMessage msg, Node node, int protocolID) {
-        
+        removeOutTrans(n.peerID, msg.transactionId);                
     }
     
     private void processMsg_PeerOverload(DataExchange n, P2PMessage msg, Node node, int protocolID) {
@@ -1082,6 +1084,14 @@ public class DataExchange implements CDProtocol {
         return false;
     }
     
+    private boolean hasOpenInTrans(long peer, int id) {
+        if (inTransactionStack.containsKey(id) && inTransactionStack.get(id).peerID == peer) {
+            inTransactionStack.get(id).resetLife();
+            return true;
+        }
+        return false;
+    }
+    
     private boolean removeInTrans(long peer, int id) {
         if (inTransactionStack.containsKey(id) && inTransactionStack.get(id).peerID == peer) {
             inTransactionStack.remove(id);
@@ -1094,6 +1104,17 @@ public class DataExchange implements CDProtocol {
         for (int tKey : outTransactionStack.keySet()) {
             Transaction t = outTransactionStack.get(tKey);
             if (t.peerID == peer && t.predicate.equals(pred)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    private boolean hasOpenOutTrans(long peer, int id) {
+        for (int tKey : outTransactionStack.keySet()) {
+            Transaction t = outTransactionStack.get(tKey);
+            if (t.peerID == peer && t.remoteId == id) {
+                t.resetLife();
                 return true;
             }
         }
