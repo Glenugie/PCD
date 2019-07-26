@@ -388,8 +388,20 @@ public class DataExchange implements CDProtocol {
         if (rng.nextInt(5) != 0) {
             relPolicySets.add(new PolicySet());
         }
-        
+                
         return relPolicySets;
+    }
+    
+    private int policyProfitPrv_Permit() {
+        return 0;
+    }
+    
+    private int policyProfitPrv_Prohibit() {
+        return 0;
+    }
+    
+    private int policyProfitPrv_Oblige() {
+        return 0;
     }
     
     private int checkCompliance(HashSet<PolicySet> polSets, String pred) {
@@ -431,23 +443,23 @@ public class DataExchange implements CDProtocol {
     }
     
     private void processMsg_PolicyInform(DataExchange n, P2PMessage msg, Node node, int protocolID) {
-        //Policy_Inform -> Sender_ID, Data_Item, Data_Quantity, HashSet<PolicySet> relPolicySets
+        //Policy_Inform -> HashSet<PolicySet> relPolicySets
         
         // MUST ACCEPT EVEN IF NOT IN outTransactionStack, as long as the data being offered is wanted
     }
     
     private void processMsg_RecordInform(DataExchange n, P2PMessage msg, Node node, int protocolID) {
-        //Record_Inform -> Sender_ID, Data_Item, Data_Quantity, Chosen_PolicySet, Rel_Records
+        //Record_Inform -> Chosen_PolicySet, Rel_Records
         
     }
     
     private void processMsg_DataResult(DataExchange n, P2PMessage msg, Node node, int protocolID) {
-        //Data_Result -> Sender_ID, Data_Item, Data_Package[]
+        //Data_Result -> Data_Package[]
         //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
     }
     
     private void processMsg_RejectPolicies(DataExchange n, P2PMessage msg, Node node, int protocolID) {
-        //Reject_Policies -> Sender_ID, Data_Item
+        //Reject_Policies -> Null
         //Prolog State of Affairs Add: Sender_ID rejected policies for Data_Item
         
     }
