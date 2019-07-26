@@ -33,7 +33,7 @@ public class DataExchange implements CDProtocol {
     private final int AVG_TRANS_LENGTH = 4;
     private final int DATA_ELEMENT_LENGTH = 5;    
     private final boolean DATA_REQUEST_FORWARDING = true;
-    private final int MAX_TRANSACTIONS = 1000;
+    private final int MAX_TRANSACTIONS = 100;
     private final int TRANS_LIFETIME = 5;
 
     //private SimpleDateFormat prologDateFormat;
@@ -118,13 +118,14 @@ public class DataExchange implements CDProtocol {
         int linkableID = FastConfig.getLinkable(protocolID);
         Linkable linkable = (Linkable) node.getProtocol(linkableID);
         
-        // Internal representation of the Overlay network
-        for (int i = 0; i < node.protocolSize(); i += 1) {
+        /*for (int i = 0; i < node.protocolSize(); i += 1) {
             System.out.println(i+": "+node.getProtocol(i));
-        }
-        System.out.println("Init "+node.getID());
+        }*/
+
+        // Internal representation of the Overlay network
+        //System.out.println("Init "+node.getID());
         for (int i = 0; i < linkable.degree(); i += 1) {
-            System.out.println(linkable.getNeighbor(i).getID());
+            //System.out.println(linkable.getNeighbor(i).getID());
             if (linkable.getNeighbor(i).getID() != node.getID()) {
                 overlayNetwork.put("peer" + linkable.getNeighbor(i).getID(), linkable.getNeighbor(i));
             }
@@ -138,7 +139,6 @@ public class DataExchange implements CDProtocol {
         }
         startingBudget = peerBudget;
         
-        System.out.println("\tPols");
         initPeerPolicies();
     }
     
@@ -271,6 +271,7 @@ public class DataExchange implements CDProtocol {
     }
 
     private void processMessages(Node node, int protocolID) {
+        if (PrologInterface.printSimInfo) { System.out.println(peerID+" has "+messages.size()+" messages");}
         for (int i = messages.size() - 1; i >= 0; i -= 1) {
             P2PMessage msg = messages.get(i);
             if (msg.time <= peersim.core.CommonState.getTime()
@@ -313,6 +314,9 @@ public class DataExchange implements CDProtocol {
                         case "INVALID_TRANSACTION":
                             processMsg_InvalidTransaction(n, msg, node, protocolID);    // Provider -> Requestor
                             break;
+                        case "PEER_OVERLOAD":
+                            processMsg_PeerOverload(n, msg, node, protocolID);          // Provider -> Requestor
+                            break;
                         case "PEER_DOWN":
                             processMsg_PeerDown(n, msg, node, protocolID);              // Either -> Either
                             break;
@@ -335,13 +339,13 @@ public class DataExchange implements CDProtocol {
     }
     
     private void processMsg_DataRequest(DataExchange n, P2PMessage msg, Node node, int protocolID) {
-        //Data_Request -> Data_Item, Data_Quantity              
-        if (entails((String) msg.body[0])) {
-            if (!hasOpenInTrans(n.peerID, (String) msg.body[0])) {
-                // Generate a new transaction
+        //Data_Request -> Data_Item, Data_Quantity   
+        HashSet<PolicySet> relPolSets = null;
+        if (transactionFree() && !hasOpenInTrans(n.peerID, (String) msg.body[0])) {           
+            if (entails((String) msg.body[0])) {
                 int newTID = getFreeTransaction();
                 
-                HashSet<PolicySet> relPolSets = generatePolicySets();
+                relPolSets = generatePolicySets();
                 if (relPolSets.size() > 0) {
                     inTransactionStack.put(newTID, new Transaction(newTID, msg.transactionId, n.peerID, (String) msg.body[0], (int) msg.body[1], TRANS_LIFETIME));
                     n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "POLICY_INFORM", new Object[] { relPolSets }, null);
@@ -349,23 +353,26 @@ public class DataExchange implements CDProtocol {
                     DataPackage datalessPackage = assembleDataPackage(generateTransactionRecords(),msg.sender.getID());
                     n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "NO_ACCESS", new Object[] { datalessPackage }, null);                
                 }
-                
-                rewardCycles += checkCompliance(relPolSets, (String) msg.body[0]);
-                penaltyCycles += checkViolation(relPolSets, (String) msg.body[0]);
+            } else {       
+                DataPackage datalessPackage = assembleDataPackage(generateTransactionRecords(),msg.sender.getID());
+                n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "NO_DATA", new Object[] { datalessPackage }, null);         
+            }
+            
+            if (DATA_REQUEST_FORWARDING && fair) {
+                HashSet<Node> forwardTargets = getForwardingNeighbours((String) msg.body[0]);
+                for (Node nT : forwardTargets) {
+                    if (!msg.inChain(nT)) {
+                        n.sendMessage(protocolID, nT, msg.sender, -1, "DATA_REQUEST", new Object[] { (String) msg.body[0], new Integer((int) msg.body[1]) }, msg.getChain());
+                    }
+                }
             }
         } else {
             DataPackage datalessPackage = assembleDataPackage(generateTransactionRecords(),msg.sender.getID());
-            n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "NO_DATA", new Object[] { datalessPackage }, null);                
+            n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "PEER_OVERLOAD", new Object[] { datalessPackage }, null);                  
         }
         
-        if (DATA_REQUEST_FORWARDING && fair) {
-            HashSet<Node> forwardTargets = getForwardingNeighbours((String) msg.body[0]);
-            for (Node nT : forwardTargets) {
-                if (!msg.inChain(nT)) {
-                    n.sendMessage(protocolID, nT, msg.sender, -1, "DATA_REQUEST", new Object[] { (String) msg.body[0], new Integer((int) msg.body[1]) }, msg.getChain());
-                }
-            }
-        }
+        rewardCycles += checkCompliance(relPolSets, (String) msg.body[0]);
+        penaltyCycles += checkViolation(relPolSets, (String) msg.body[0]);
     }
     
     private boolean entails(String s) {
@@ -465,6 +472,15 @@ public class DataExchange implements CDProtocol {
     private void processMsg_InvalidTransaction(DataExchange n, P2PMessage msg, Node node, int protocolID) {
         
     }
+    
+    private void processMsg_PeerOverload(DataExchange n, P2PMessage msg, Node node, int protocolID) {
+        //No_Access -> Sender_ID, Data_Item, Data_Package[]
+        //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
+        
+        processIncomingDataPackage((DataPackage) msg.body[0], msg.sender, protocolID);
+        removeOutTrans(n.peerID, msg.transactionId);        
+    }
+    
     
     private void processMsg_PeerDown(DataExchange n, P2PMessage msg, Node node, int protocolID) {
         //Peer_Down -> Sender_ID, Data_Item
@@ -1067,7 +1083,7 @@ public class DataExchange implements CDProtocol {
     }
     
     private boolean removeInTrans(long peer, int id) {
-        if (inTransactionStack.get(id).peerID == peer) {
+        if (inTransactionStack.containsKey(id) && inTransactionStack.get(id).peerID == peer) {
             inTransactionStack.remove(id);
             return true;
         }
@@ -1085,7 +1101,7 @@ public class DataExchange implements CDProtocol {
     }
     
     private boolean removeOutTrans(long peer, int id) {
-        if (outTransactionStack.get(id).peerID == peer) {
+        if (outTransactionStack.containsKey(id) && outTransactionStack.get(id).peerID == peer) {
             outTransactionStack.remove(id);
             return true;
         }

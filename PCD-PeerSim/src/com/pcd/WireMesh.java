@@ -40,10 +40,13 @@ public class WireMesh extends WireGraph {
                     g.setEdge(i, newNeighbourID);
                     g.setEdge(newNeighbourID, i);
                     //System.out.println(conns[i]+" ?= "+g.getNeighbours(i).size()+" ("+g.getNeighbours(newNeighbourID).size()+")");
-                    if (conns[newNeighbourID] >= g.getNeighbours(newNeighbourID).size()) {
+                    //if (conns[newNeighbourID] >= g.getNeighbours(newNeighbourID).size()) {
                         activeNodes.remove(newNeighbour);
-                    }
-                }                
+                    //}
+                } else {
+                    //System.out.println(newNeighbourID+" is full");
+                    activeNodes.remove(newNeighbour);
+                }
             }
             masterNodes.remove((Integer) i);
         }        
