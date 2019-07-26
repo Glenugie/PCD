@@ -488,8 +488,8 @@ public class DataExchange implements CDProtocol {
         //Peer_Down -> Sender_ID, Data_Item
         if (overlayNetwork.containsKey("peer" + msg.sender.getID())) {
             overlayNetwork.remove("peer" + msg.sender.getID());
-            PrologInterface.retractFact("connected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + msg.sender.getID()) });
-            PrologInterface.assertFact("peerOffline", new Term[] { new Atom("peer"+peerID), new Atom("peer" + msg.sender.getID()) });
+            //PrologInterface.retractFact("connected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + msg.sender.getID()) });
+            //PrologInterface.assertFact("peerOffline", new Term[] { new Atom("peer"+peerID), new Atom("peer" + msg.sender.getID()) });
         }
 
 //        if (pendingData.containsKey(msg.body[0])) {
@@ -500,7 +500,7 @@ public class DataExchange implements CDProtocol {
     }
     
     private void processMsg_Inform(DataExchange n, P2PMessage msg, Node node, int protocolID) {
-        
+        // Open hook for strategic planning
     }
     
     private void updatePolicies() {
