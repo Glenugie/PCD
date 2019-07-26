@@ -30,14 +30,14 @@ public class DataPackage {
 	}
 	
 	public String toString() {
-	    String dataPackage = "DATA PACKAGE: [\n";
+	    String dataPackage = "DATA PACKAGE: [";
 	    
 	    if (dataItems.size() > 0) {
     	    dataPackage += "Data Elements: ";
     	    for (DataElement d : dataItems) {
     	        dataPackage += d.dataID+" ("+d.data+"), ";
     	    }
-            dataPackage = dataPackage.substring(0, dataPackage.length()-2)+"\n";
+            dataPackage = dataPackage.substring(0, dataPackage.length()-2)+" | ";
 	    }
     	 
 	    if (transactionRecords.size() > 0) {   
@@ -45,7 +45,7 @@ public class DataPackage {
     	    for (TransactionRecord tR : transactionRecords) {
     	        dataPackage += tR.toString()+", ";
     	    }
-    	    dataPackage = dataPackage.substring(0, dataPackage.length()-2)+"\n";
+    	    dataPackage = dataPackage.substring(0, dataPackage.length()-2)+"";
     	}
 	    
 	    dataPackage += "]";

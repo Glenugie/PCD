@@ -329,37 +329,51 @@ public class DataExchange implements CDProtocol {
     
     private void processMsg_DataRequest(DataExchange n, P2PMessage msg, Node node, int protocolID) {
         //Data_Request -> Data_Item, Data_Quantity              
-        if (entails((String) msg.body[0]) && !hasOpenTransaction(n.peerID, (String) msg.body[0])) {
-            // Generate a new transaction
-            int newTID = getFreeTransaction();
-            
-            HashSet<PolicySet> relPolSets = generatePolicySets();
-            if (relPolSets.size() > 0) {
-                transactionStack.put(newTID, new Transaction(newTID, n.peerID, (String) msg.body[0], (int) msg.body[1], TRANS_LIFETIME));
-                n.sendMessage(protocolID, msg.sender, node, newTID, "POLICY_INFORM", new Object[] { relPolSets }, null);
-            } else {
-                DataPackage datalessPackage = assembleDataPackage(generateTransactionRecords(),msg.sender.getID());
-                n.sendMessage(protocolID, msg.sender, node, newTID, "NO_ACCESS", new Object[] { datalessPackage }, null);                
+        if (entails((String) msg.body[0])) {
+            if (!hasOpenTransaction(n.peerID, (String) msg.body[0])) {
+                // Generate a new transaction
+                int newTID = getFreeTransaction();
+                
+                HashSet<PolicySet> relPolSets = generatePolicySets();
+                if (relPolSets.size() > 0) {
+                    transactionStack.put(newTID, new Transaction(newTID, n.peerID, (String) msg.body[0], (int) msg.body[1], TRANS_LIFETIME));
+                    n.sendMessage(protocolID, msg.sender, node, newTID, "POLICY_INFORM", new Object[] { relPolSets }, null);
+                } else {
+                    DataPackage datalessPackage = assembleDataPackage(generateTransactionRecords(),msg.sender.getID());
+                    n.sendMessage(protocolID, msg.sender, node, -1, "NO_ACCESS", new Object[] { datalessPackage }, null);                
+                }
+                
+                rewardCycles += checkCompliance(relPolSets, (String) msg.body[0]);
+                penaltyCycles += checkViolation(relPolSets, (String) msg.body[0]);
             }
-            
-            rewardCycles += checkCompliance(relPolSets, (String) msg.body[0]);
-            penaltyCycles += checkViolation(relPolSets, (String) msg.body[0]);
-            
-            if (DATA_REQUEST_FORWARDING && fair) {
-                HashSet<Node> forwardTargets = getForwardingNeighbours((String) msg.body[0]);
-                for (Node nT : forwardTargets) {
-                    if (!msg.inChain(nT)) {
-                        n.sendMessage(protocolID, nT, msg.sender, -1, "DATA_REQUEST", new Object[] { (String) msg.body[0], new Integer((int) msg.body[1]) }, msg.getChain());
-                    }
+        } else {
+            DataPackage datalessPackage = assembleDataPackage(generateTransactionRecords(),msg.sender.getID());
+            n.sendMessage(protocolID, msg.sender, node, -1, "NO_DATA", new Object[] { datalessPackage }, null);                
+        }
+        
+        if (DATA_REQUEST_FORWARDING && fair) {
+            HashSet<Node> forwardTargets = getForwardingNeighbours((String) msg.body[0]);
+            for (Node nT : forwardTargets) {
+                if (!msg.inChain(nT)) {
+                    n.sendMessage(protocolID, nT, msg.sender, -1, "DATA_REQUEST", new Object[] { (String) msg.body[0], new Integer((int) msg.body[1]) }, msg.getChain());
                 }
             }
         }
     }
     
+    private boolean entails(String s) {
+        if (rng.nextInt(5) != 0) {
+            return true;
+        }
+        return false;
+    }
+    
     private HashSet<PolicySet> generatePolicySets() {
         HashSet<PolicySet> relPolicySets = new HashSet<PolicySet>();
         
-        relPolicySets.add(new PolicySet());
+        if (rng.nextInt(5) != 0) {
+            relPolicySets.add(new PolicySet());
+        }
         
         return relPolicySets;
     }
@@ -1047,10 +1061,6 @@ public class DataExchange implements CDProtocol {
             }            
         }
         return false;
-    }
-    
-    private boolean entails(String s) {
-        return true;
     }
     
     private void processIncomingDataPackage(DataPackage dataPackage, Node sender, int protocolID) {

@@ -49,18 +49,18 @@
 
 # Topology
 	# Mesh
-	#	init.keys.topology 1
-	#	init.rnd WireMesh
-	#	init.rnd.protocol lnk
-	#	init.rnd.k 10
-	#	init.keys.allowNewConnections false
+		init.keys.topology 1
+		init.rnd WireMesh
+		init.rnd.protocol lnk
+    	init.rnd.k 10
+		init.keys.allowNewConnections false
 
 	# Overlay
-		init.keys.topology 2
-		init.rnd WireKOut
-		init.rnd.protocol lnk
-		init.rnd.k 5
-		init.keys.allowNewConnections true
+	#	init.keys.topology 2
+	#	init.rnd WireKOut
+	#	init.rnd.protocol lnk
+	#	init.rnd.k 5
+	#	init.keys.allowNewConnections true
 
 	# Fully Connected
 	#	init.keys.topology 3
