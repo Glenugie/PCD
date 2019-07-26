@@ -74,8 +74,8 @@ public class DataExchange implements CDProtocol {
 
     protected ArrayList<P2PMessage> messages;
     
-    private HashMap<Integer, Transaction> transactionStack;
-    private HashSet<Transaction> activeRequests;
+    private HashMap<Integer, Transaction> inTransactionStack;
+    private HashMap<Integer, Transaction> outTransactionStack;
     private int currentTransaction = 0;
 
     public DataExchange(String prefix) {
@@ -108,8 +108,8 @@ public class DataExchange implements CDProtocol {
         overlayNetwork = new HashMap<String, Node>();
         
         messages = new ArrayList<P2PMessage>();
-        transactionStack = new HashMap<Integer, Transaction>();
-        activeRequests = new HashSet<Transaction>();
+        inTransactionStack = new HashMap<Integer, Transaction>();
+        outTransactionStack = new HashMap<Integer, Transaction>();
         
         peerID = id;
     }
@@ -337,17 +337,17 @@ public class DataExchange implements CDProtocol {
     private void processMsg_DataRequest(DataExchange n, P2PMessage msg, Node node, int protocolID) {
         //Data_Request -> Data_Item, Data_Quantity              
         if (entails((String) msg.body[0])) {
-            if (!hasOpenTransaction(n.peerID, (String) msg.body[0])) {
+            if (!hasOpenInTrans(n.peerID, (String) msg.body[0])) {
                 // Generate a new transaction
                 int newTID = getFreeTransaction();
                 
                 HashSet<PolicySet> relPolSets = generatePolicySets();
                 if (relPolSets.size() > 0) {
-                    transactionStack.put(newTID, new Transaction(newTID, n.peerID, (String) msg.body[0], (int) msg.body[1], TRANS_LIFETIME));
-                    n.sendMessage(protocolID, msg.sender, node, newTID, "POLICY_INFORM", new Object[] { relPolSets }, null);
+                    inTransactionStack.put(newTID, new Transaction(newTID, msg.transactionId, n.peerID, (String) msg.body[0], (int) msg.body[1], TRANS_LIFETIME));
+                    n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "POLICY_INFORM", new Object[] { relPolSets }, null);
                 } else {
                     DataPackage datalessPackage = assembleDataPackage(generateTransactionRecords(),msg.sender.getID());
-                    n.sendMessage(protocolID, msg.sender, node, -1, "NO_ACCESS", new Object[] { datalessPackage }, null);                
+                    n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "NO_ACCESS", new Object[] { datalessPackage }, null);                
                 }
                 
                 rewardCycles += checkCompliance(relPolSets, (String) msg.body[0]);
@@ -355,7 +355,7 @@ public class DataExchange implements CDProtocol {
             }
         } else {
             DataPackage datalessPackage = assembleDataPackage(generateTransactionRecords(),msg.sender.getID());
-            n.sendMessage(protocolID, msg.sender, node, -1, "NO_DATA", new Object[] { datalessPackage }, null);                
+            n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "NO_DATA", new Object[] { datalessPackage }, null);                
         }
         
         if (DATA_REQUEST_FORWARDING && fair) {
@@ -402,30 +402,31 @@ public class DataExchange implements CDProtocol {
     }
     
     private void processMsg_NoData(DataExchange n, P2PMessage msg, Node node, int protocolID) {
-        //No_Data -> Sender_ID, Data_Item, Potential_Targets, Hops, Data_Package[]
+        //No_Data -> Sender_ID, Data_Item, Data_Package[]
         //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
-
+        
+        processIncomingDataPackage((DataPackage) msg.body[0], msg.sender, protocolID);
+        
+        //Prolog State of Affairs Add: Sender_ID does not have Data_Item
+        //PrologInterface.assertFact("noData", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.body[0]) });
+        removeOutTrans(n.peerID, msg.transactionId);
     }
     
     private void processMsg_NoAccess(DataExchange n, P2PMessage msg, Node node, int protocolID) {
         //No_Access -> Sender_ID, Data_Item, Data_Package[]
         //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
         
-        //processIncomingDataPackage((DataPackage) msg.body[1],msg.sender,protocolID);
+        processIncomingDataPackage((DataPackage) msg.body[0], msg.sender, protocolID);
         
-//        if (pendingData.containsKey(msg.body[0])) {
-//            desiredData.put((String) msg.body[0], pendingData.get((String) msg.body[0]));
-//            pendingData.remove((String) msg.body[0]);
-//            //activeRequests -= 1;
-//
-//            //Prolog State of Affairs Add: Sender_ID does not have Data_Item
-//            PrologInterface.assertFact("noAccess", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.body[0]) });
-//        }
+        //Prolog State of Affairs Add: Sender ID may have Data_item, but won't allow us access
+        //PrologInterface.assertFact("noAccess", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]) });
+        removeOutTrans(n.peerID, msg.transactionId);
     }
     
     private void processMsg_PolicyInform(DataExchange n, P2PMessage msg, Node node, int protocolID) {
         //Policy_Inform -> Sender_ID, Data_Item, Data_Quantity, HashSet<PolicySet> relPolicySets
-
+        
+        // MUST ACCEPT EVEN IF NOT IN outTransactionStack
     }
     
     private void processMsg_RecordInform(DataExchange n, P2PMessage msg, Node node, int protocolID) {
@@ -494,7 +495,7 @@ public class DataExchange implements CDProtocol {
         Node neighbour = overlayNetwork.get(overlayNetwork.keySet().toArray()[rng.nextInt(overlayNetwork.size())]);
         String data = (String) wantedData.toArray()[rng.nextInt(wantedData.size())];
         //System.out.println(n.peerID+" ?= "+neighbour.getID()+" for "+node.getID());
-        if (!hasOpenRequest(((DataExchange) neighbour.getProtocol(protocolID)).peerID, data)) {
+        if (!hasOpenOutTrans(((DataExchange) neighbour.getProtocol(protocolID)).peerID, data)) {
             sendDataRequest(protocolID, node, neighbour, data);
         }
         
@@ -770,28 +771,32 @@ public class DataExchange implements CDProtocol {
     }
     
     private void sendDataRequest(int protocolID, Node send, Node rec, String data) {
-        DataExchange n = (DataExchange) rec.getProtocol(protocolID);
-        n.sendMessage(protocolID, rec, send, -1, "DATA_REQUEST", new Object[] { data, 1 }, null);
-        activeRequests.add(new Transaction(-1, n.peerID, data, 1, TRANS_LIFETIME));
+        if (transactionFree()) {
+            int tID = getFreeTransaction();
+            DataExchange n = (DataExchange) rec.getProtocol(protocolID);
+            n.sendMessage(protocolID, rec, send, -1, "DATA_REQUEST", new Object[] { data, 1 }, null);
+            outTransactionStack.put(tID, new Transaction(tID, -1, n.peerID, data, 1, TRANS_LIFETIME));
+        }
     }
     
     private void processTransactionStack() {
         HashSet<Integer> toRemove = new HashSet<Integer>();
-        for (int tKey : transactionStack.keySet()) {
-            if (transactionStack.get(tKey).decrementLife()) {
+        for (int tKey : inTransactionStack.keySet()) {
+            if (inTransactionStack.get(tKey).decrementLife()) {
                 toRemove.add(tKey);
                 if (currentTransaction > tKey) { currentTransaction = tKey;}
             }
         }
-        for (int i : toRemove) { transactionStack.remove(i);}
+        for (int i : toRemove) { inTransactionStack.remove(i);}
         
-        HashSet<Transaction> toRemoveTrans = new HashSet<Transaction>();
-        for (Transaction t : activeRequests) {
-            if (t.decrementLife()) {
-                toRemoveTrans.add(t);
+        toRemove = new HashSet<Integer>();
+        for (int tKey : outTransactionStack.keySet()) {
+            if (outTransactionStack.get(tKey).decrementLife()) {
+                toRemove.add(tKey);
+                if (currentTransaction > tKey) { currentTransaction = tKey;}
             }
         }
-        for (Transaction t : toRemoveTrans) { activeRequests.remove(t);}
+        for (int i : toRemove) { outTransactionStack.remove(i);}
     }
     
     private void decideToLeaveNetwork() {
@@ -1037,12 +1042,12 @@ public class DataExchange implements CDProtocol {
     }
     
     private boolean transactionFree() {
-        return (transactionStack.size() < MAX_TRANSACTIONS);
+        return (inTransactionStack.size() < MAX_TRANSACTIONS);
     }
     
     private int getFreeTransaction() {
         if (transactionFree()) {
-            while (transactionStack.containsKey(currentTransaction)) {
+            while (inTransactionStack.containsKey(currentTransaction)) {
                 currentTransaction += 1;
             }
             return currentTransaction;
@@ -1051,9 +1056,9 @@ public class DataExchange implements CDProtocol {
         }
     }
     
-    private boolean hasOpenTransaction(long peer, String pred) {
-        for (int tKey : transactionStack.keySet()) {
-            Transaction t = transactionStack.get(tKey);
+    private boolean hasOpenInTrans(long peer, String pred) {
+        for (int tKey : inTransactionStack.keySet()) {
+            Transaction t = inTransactionStack.get(tKey);
             if (t.peerID == peer && t.predicate.equals(pred)) {
                 return true;
             }
@@ -1061,11 +1066,28 @@ public class DataExchange implements CDProtocol {
         return false;
     }
     
-    private boolean hasOpenRequest(long peer, String pred) {
-        for (Transaction t : activeRequests) {
+    private boolean removeInTrans(long peer, int id) {
+        if (inTransactionStack.get(id).peerID == peer) {
+            inTransactionStack.remove(id);
+            return true;
+        }
+        return false;
+    }
+    
+    private boolean hasOpenOutTrans(long peer, String pred) {
+        for (int tKey : outTransactionStack.keySet()) {
+            Transaction t = outTransactionStack.get(tKey);
             if (t.peerID == peer && t.predicate.equals(pred)) {
                 return true;
-            }            
+            }
+        }
+        return false;
+    }
+    
+    private boolean removeOutTrans(long peer, int id) {
+        if (outTransactionStack.get(id).peerID == peer) {
+            outTransactionStack.remove(id);
+            return true;
         }
         return false;
     }
