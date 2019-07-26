@@ -20,24 +20,36 @@ public class WireMesh extends WireGraph {
     }
     
     public void wire(Graph g) {
-        ArrayList<Integer> activeNodes = new ArrayList<Integer>();
+        ArrayList<Integer> masterNodes = new ArrayList<Integer>();
         int[] conns = new int[Network.size()];
-        for (int i = 1; i < Network.size(); ++i) {
+        for (int i = 0; i < Network.size(); ++i) {
             conns[i] = CommonState.r.nextInt(k) + 1;
-            activeNodes.add(i);
+            masterNodes.add(i);
+            //System.out.println(k+" ?= "+conns[i]);
         }
-        
-        for (int i = 1; i < Network.size(); ++i) {
+
+        for (int i = 0; i < Network.size(); ++i) {
+            ArrayList<Integer> activeNodes = (ArrayList<Integer>) masterNodes.clone();
             Node n = (Node) g.getNode(i);
-            while (conns[i] < g.getNeighbours(i).size()) {
+            while (conns[i] > g.getNeighbours(i).size() && activeNodes.size() > 0) {
                 int newNeighbour = CommonState.r.nextInt(activeNodes.size());
                 int newNeighbourID = activeNodes.get(newNeighbour);
-                g.setEdge(i, newNeighbourID);
-                if (conns[newNeighbourID] >= g.getNeighbours(newNeighbourID).size()) {
-                    activeNodes.remove(newNeighbour);
-                }
+                if (g.getNeighbours(newNeighbourID).size() < k) {
+                    //System.out.println(conns[i]+" ?= "+g.getNeighbours(i).size()+" ("+g.getNeighbours(newNeighbourID).size()+")");
+                    //System.out.println(i+" <-> "+newNeighbourID);
+                    g.setEdge(i, newNeighbourID);
+                    g.setEdge(newNeighbourID, i);
+                    //System.out.println(conns[i]+" ?= "+g.getNeighbours(i).size()+" ("+g.getNeighbours(newNeighbourID).size()+")");
+                    if (conns[newNeighbourID] >= g.getNeighbours(newNeighbourID).size()) {
+                        activeNodes.remove(newNeighbour);
+                    }
+                }                
             }
-            activeNodes.remove((Integer) i);
+            masterNodes.remove((Integer) i);
+        }        
+
+        for (int i = 0; i < Network.size(); ++i) {
+            //System.out.println("Goal: "+conns[i]+", Actual: "+g.getNeighbours(i).size());
         }
     }
 

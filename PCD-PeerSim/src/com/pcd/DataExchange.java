@@ -119,7 +119,12 @@ public class DataExchange implements CDProtocol {
         Linkable linkable = (Linkable) node.getProtocol(linkableID);
         
         // Internal representation of the Overlay network
+        for (int i = 0; i < node.protocolSize(); i += 1) {
+            System.out.println(i+": "+node.getProtocol(i));
+        }
+        System.out.println("Init "+node.getID());
         for (int i = 0; i < linkable.degree(); i += 1) {
+            System.out.println(linkable.getNeighbor(i).getID());
             if (linkable.getNeighbor(i).getID() != node.getID()) {
                 overlayNetwork.put("peer" + linkable.getNeighbor(i).getID(), linkable.getNeighbor(i));
             }
@@ -132,6 +137,8 @@ public class DataExchange implements CDProtocol {
             peerBudget = rng.nextInt(PrologInterface.confMaxBudget - PrologInterface.confMinBudget) + PrologInterface.confMinBudget;
         }
         startingBudget = peerBudget;
+        
+        System.out.println("\tPols");
         initPeerPolicies();
     }
     
