@@ -10,6 +10,8 @@ import org.jpl7.Compound;
 import org.jpl7.Query;
 import org.jpl7.Term;
 
+import com.pcd.model.DataConfig;
+
 public class PrologInterface {	
 	public static boolean printSimInfo;
 	public static boolean debugProlog;	

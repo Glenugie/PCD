@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import com.pcd.model.DataConfig;
+
 import peersim.config.Configuration;
 import peersim.core.CommonState;
 import peersim.core.Control;
@@ -76,7 +78,7 @@ public class KeyInit implements Control {
         Collections.shuffle(peerIDs1); Collections.shuffle(peerIDs2); Collections.shuffle(peerIDs3);
         
         for (int i = 0; i < Network.size(); i += 1) {
-            ((DataExchange) Network.get(i).getProtocol(pid)).setID(Network.get(i).getID());
+            ((DataExchange) Network.get(i).getProtocol(pid)).initPeer(Network.get(i).getID());
             if (i < numAltruistic) {
                 ((DataExchange) Network.get(peerIDs1.get(i)).getProtocol(pid)).makeAltruistic();
             }

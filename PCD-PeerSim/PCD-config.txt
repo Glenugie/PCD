@@ -2,8 +2,8 @@
 # Initialises simulation parameters
 	#random.seed 1234567890		# Fixed seed, for debugging
 	simulation.experiments 1	# Number of Iterations
-	simulation.cycles 100		# Number of Cycles per Iteration
-	network.size 100			# Number of Peers
+	simulation.cycles 25		# Number of Cycles per Iteration
+	network.size 25			# Number of Peers
 
 # Idle Protocol
 	protocol.lnk IdleProtocol
@@ -45,7 +45,7 @@
 # DEBUG PARAMETERS
 	init.keys.printSimInfo false
 	init.keys.debugProlog false
-	init.keys.debugMessages false
+	init.keys.debugMessages true
 
 # Topology
 	# Mesh
