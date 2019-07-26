@@ -1,16 +1,14 @@
-package com.pcd;
+package com.pcd.model;
 
 import java.util.ArrayList;
 
 public class DataPackage {
 	public ArrayList<DataElement> dataItems;
-	public ArrayList<String> transactionRecords;
-	public ArrayList<DataPolicy> obligations;
+	public ArrayList<TransactionRecord> transactionRecords;
 	
 	public DataPackage() {
 		dataItems = new ArrayList<DataElement>();
-		transactionRecords = new ArrayList<String>();
-		obligations = new ArrayList<DataPolicy>();
+		transactionRecords = new ArrayList<TransactionRecord>();
 	}
 	
 	public void encrypt() {
@@ -44,18 +42,11 @@ public class DataPackage {
     	 
 	    if (transactionRecords.size() > 0) {   
     	    dataPackage += "Transaction Records: ";
-    	    for (String tR : transactionRecords) {
-    	        dataPackage += tR+", ";
+    	    for (TransactionRecord tR : transactionRecords) {
+    	        dataPackage += tR.toString()+", ";
     	    }
     	    dataPackage = dataPackage.substring(0, dataPackage.length()-2)+"\n";
     	}
-	    
-	    if (obligations.size() > 0) {
-    	    for (DataPolicy pol : obligations) {
-    	        dataPackage += pol.toString()+"\n";
-    	    }
-            dataPackage = dataPackage.substring(0, dataPackage.length()-2)+"\n";
-	    }
 	    
 	    dataPackage += "]";
 	    

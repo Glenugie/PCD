@@ -1,4 +1,4 @@
-package com.pcd;
+package com.pcd.model;
 
 // Parse an arbitrary length list of CSV strings, format: d[n],[Own%],[Want%],[MinU],[MaxU]
 // d1,10,100,1,10

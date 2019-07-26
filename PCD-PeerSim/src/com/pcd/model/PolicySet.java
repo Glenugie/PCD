@@ -1,4 +1,4 @@
-package com.pcd;
+package com.pcd.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;

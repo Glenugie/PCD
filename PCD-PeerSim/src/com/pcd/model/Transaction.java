@@ -1,4 +1,4 @@
-package com.pcd;
+package com.pcd.model;
 
 public class Transaction {
     public int transactionId;
