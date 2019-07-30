@@ -116,6 +116,7 @@ public class PolicySet {
         }
         return Util.termArrayToList(pols);
     }
+    
     public boolean containsPermit() {
         for (DataPolicy pPol : primary) { if (pPol.mod.equals("P")) { return true;}}
         return false;
@@ -160,5 +161,17 @@ public class PolicySet {
         }
         
         return oActions;
+    }
+    
+    public boolean isActive() {
+        return true;
+    }
+    
+    public boolean canActivate() {
+        return true;
+    }
+    
+    public void cullOptionalPolicies() {
+        
     }
 }

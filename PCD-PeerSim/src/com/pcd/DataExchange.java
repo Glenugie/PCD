@@ -35,6 +35,7 @@ public class DataExchange implements CDProtocol {
     private final boolean DATA_REQUEST_FORWARDING = true;
     private final int MAX_TRANSACTIONS = 100;
     private final int TRANS_LIFETIME = 5;
+    private final int MIN_UTIL = 10;
 
     //private SimpleDateFormat prologDateFormat;
     private Random rng;
@@ -348,7 +349,7 @@ public class DataExchange implements CDProtocol {
                 relPolSets = generatePolicySets();
                 if (relPolSets.size() > 0) {
                     inTransactionStack.put(newTID, new Transaction(newTID, msg.transactionId, n.peerID, (String) msg.body[0], (int) msg.body[1], TRANS_LIFETIME));
-                    n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "POLICY_INFORM", new Object[] { relPolSets }, null);
+                    n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "POLICY_INFORM", new Object[] { (String) msg.body[0], relPolSets }, null);
                 } else {
                     DataPackage datalessPackage = assembleDataPackage(generateTransactionRecords(),msg.sender.getID());
                     n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "NO_ACCESS", new Object[] { datalessPackage }, null);                
@@ -392,15 +393,15 @@ public class DataExchange implements CDProtocol {
         return relPolicySets;
     }
     
-    private int policyProfitPrv_Permit() {
+    private double policyProfitPrv_Permit() {
         return 0;
     }
     
-    private int policyProfitPrv_Prohibit() {
+    private double policyProfitPrv_Prohibit() {
         return 0;
     }
     
-    private int policyProfitPrv_Oblige() {
+    private double policyProfitPrv_Oblige() {
         return 0;
     }
     
@@ -443,9 +444,55 @@ public class DataExchange implements CDProtocol {
     }
     
     private void processMsg_PolicyInform(DataExchange n, P2PMessage msg, Node node, int protocolID) {
-        //Policy_Inform -> HashSet<PolicySet> relPolicySets
+        //Policy_Inform -> Data_Item, HashSet<PolicySet> relPolicySets
         
-        // MUST ACCEPT EVEN IF NOT IN outTransactionStack, as long as the data being offered is wanted
+        HashSet<PolicySet> policySets = (HashSet<PolicySet>) msg.body[1];
+        for (PolicySet ps : policySets) {
+            double val = policyProfitReq(ps);
+            ps.requestorValue = val;
+            ps.cullOptionalPolicies();
+        }
+        
+        PolicySet chosenPS = choosePolicySet(policySets);
+        if (chosenPS == null) {
+            n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "REJECT_POLICIES", new Object[] { }, null);
+        } else if (chosenPS.isActive()) {
+            boolean hasTrans = hasOpenOutTrans(n.peerID, msg.transactionId);
+            if (hasTrans || (!hasTrans && transactionFree() && wantedData.contains((String) msg.body[0]))) {
+                // Should accept if not in outTransactionStack, as long as the data being offered is wanted
+                if (!hasTrans) {
+                    int tID = getFreeTransaction();
+                    outTransactionStack.put(tID, new Transaction(tID, -1, n.peerID, (String) msg.body[0], 1, TRANS_LIFETIME));
+                }
+                HashSet<TransactionRecord> relRecords = getRelRecords();
+                n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "RECORD_INFORM", new Object[] { chosenPS, relRecords }, null);
+            }
+        } else if (chosenPS.canActivate()) {
+            scheduleActions(chosenPS);
+            n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "WAIT", new Object[] { }, null);
+        }
+    }
+    
+    private PolicySet choosePolicySet(HashSet<PolicySet> policySets) {
+        PolicySet chosenPS = new PolicySet();
+        return chosenPS;
+    }
+    
+    private double policyProfitReq(PolicySet ps) {
+        return 0;
+    }
+    
+    private double actionCostReq() {
+        return 0;
+    }
+    
+    private HashSet<TransactionRecord> getRelRecords() {
+        HashSet<TransactionRecord> relRecords = new HashSet<TransactionRecord>();
+        return relRecords;
+    }
+    
+    private void scheduleActions(PolicySet ps) {
+        
     }
     
     private void processMsg_RecordInform(DataExchange n, P2PMessage msg, Node node, int protocolID) {
@@ -456,6 +503,9 @@ public class DataExchange implements CDProtocol {
     private void processMsg_DataResult(DataExchange n, P2PMessage msg, Node node, int protocolID) {
         //Data_Result -> Data_Package[]
         //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
+
+        DataPackage dataPackage = (DataPackage) msg.body[0];
+        processIncomingDataPackage(dataPackage,msg.sender,protocolID);
     }
     
     private void processMsg_RejectPolicies(DataExchange n, P2PMessage msg, Node node, int protocolID) {
