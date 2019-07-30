@@ -458,6 +458,7 @@ public class DataExchange implements CDProtocol {
         PolicySet chosenPS = choosePolicySet(policySets);
         if (chosenPS == null) {
             n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "REJECT_POLICIES", new Object[] { }, null);
+            removeOutTrans(n.peerID, msg.transactionId);
         } else if (chosenPS.isActive()) {
             boolean hasTrans = hasOpenOutTrans(n.peerID, msg.transactionId);
             if (hasTrans || (!hasTrans && transactionFree() && wantedData.contains((String) msg.body[0]))) {
@@ -561,17 +562,19 @@ public class DataExchange implements CDProtocol {
     private void processMsg_RejectPolicies(DataExchange n, P2PMessage msg, Node node, int protocolID) {
         //Reject_Policies -> Null
         //Prolog State of Affairs Add: Sender_ID rejected policies for Data_Item
-        
+        if (hasOpenInRemoteTrans(n.peerID, msg.transactionId)) {
+            removeInRemoteTrans(n.peerID, msg.transactionId);
+        }
     }
     
     private void processMsg_Wait(DataExchange n, P2PMessage msg, Node node, int protocolID) {
-        if (hasOpenOutTrans(n.peerID, msg.transactionId)) {
+        if (hasOpenInRemoteTrans(n.peerID, msg.transactionId)) {
             n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "CONFIRM_WAIT", new Object[] { }, null);
         }
     }
     
     private void processMsg_ConfirmWait(DataExchange n, P2PMessage msg, Node node, int protocolID) {
-        hasOpenInTrans(n.peerID, msg.transactionId);
+        hasOpenOutTrans(n.peerID, msg.transactionId);
     }
     
     private void processMsg_MalformedRecords(DataExchange n, P2PMessage msg, Node node, int protocolID) {
@@ -1228,6 +1231,16 @@ public class DataExchange implements CDProtocol {
         if (inTransactionStack.containsKey(id) && inTransactionStack.get(id).peerID == peer) {
             inTransactionStack.remove(id);
             return true;
+        }
+        return false;
+    }
+    
+    private boolean removeInRemoteTrans(long peer, int id) {
+        for (int key : inTransactionStack.keySet()) {
+            if (inTransactionStack.get(key).remoteId == id && inTransactionStack.get(key).peerID == peer) {
+                inTransactionStack.remove(id);
+                return true;
+            }
         }
         return false;
     }
