@@ -353,11 +353,11 @@ public class DataExchange implements CDProtocol {
                     inTransactionStack.put(newTID, t);
                     n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "POLICY_INFORM", new Object[] { (String) msg.body[0], relPolSets }, null);
                 } else {
-                    DataPackage datalessPackage = assembleDataPackage(generateTransactionRecords(),msg.sender.getID());
+                    DataPackage datalessPackage = assembleDataPackage(null,generateTransactionRecords(),msg.sender.getID());
                     n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "NO_ACCESS", new Object[] { datalessPackage }, null);                
                 }
             } else {       
-                DataPackage datalessPackage = assembleDataPackage(generateTransactionRecords(),msg.sender.getID());
+                DataPackage datalessPackage = assembleDataPackage(null,generateTransactionRecords(),msg.sender.getID());
                 n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "NO_DATA", new Object[] { datalessPackage }, null);         
             }
             
@@ -370,7 +370,7 @@ public class DataExchange implements CDProtocol {
                 }
             }
         } else {
-            DataPackage datalessPackage = assembleDataPackage(generateTransactionRecords(),msg.sender.getID());
+            DataPackage datalessPackage = assembleDataPackage(null,generateTransactionRecords(),msg.sender.getID());
             n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "PEER_OVERLOAD", new Object[] { datalessPackage }, null);                  
         }
         
@@ -395,15 +395,15 @@ public class DataExchange implements CDProtocol {
         return relPolicySets;
     }
     
-    private double policyProfitPrv_Permit() {
+    private double policyProfitPrv_Permit(PolicySet ps) {
         return 0;
     }
     
-    private double policyProfitPrv_Prohibit() {
+    private double policyProfitPrv_Prohibit(PolicySet ps) {
         return 0;
     }
     
-    private double policyProfitPrv_Oblige() {
+    private double policyProfitPrv_Oblige(PolicySet ps) {
         return 0;
     }
     
@@ -502,6 +502,7 @@ public class DataExchange implements CDProtocol {
         if (!hasOpenInRemoteTrans(n.peerID, msg.transactionId)) {
             n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "INVALID_TRANSACTION", new Object[] { }, null);            
         } else {
+            Transaction t = getOpenInRemoteTrans(n.peerID, msg.transactionId);
             HashSet<TransactionRecord> relRecords = null;
             try {
                 relRecords = (HashSet<TransactionRecord>) msg.body[1];
@@ -520,12 +521,31 @@ public class DataExchange implements CDProtocol {
             if (relRecords == null) {
                 n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "MALFORMED_RECORDS", new Object[] { }, null);
             } else if (chosenPolicySet == null) { // A policy set was not chosen, send the offer again
-                Transaction t = getOpenInRemoteTrans(n.peerID, msg.transactionId);
                 n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "POLICY_INFORM", new Object[] { t.predicate, t.policySets }, null);                
             } else {
+                assimilateRecords(relRecords);
                 
+                HashSet<DataPolicy> active = chosenPolicySet.activeSet();
+                HashSet<DataElement> data = null;
+                if (active.size() == chosenPolicySet.size() || (active.size() > 0 && policyProfitPrv_Permit(chosenPolicySet) > MIN_UTIL && chosenPolicySet.permitsAccess(t.predicate))) {
+                    data = chooseData(chosenPolicySet, msg.transactionId);
+                } else { 
+                    // Nothing
+                }
+                
+                DataPackage dp = assembleDataPackage(data,generateTransactionRecords(),msg.sender.getID()); 
+                n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "DATA_RESULT", new Object[] { dp }, null);
             }
         }
+    }
+    
+    private void assimilateRecords(HashSet<TransactionRecord> relRecords) {
+        
+    }
+    
+    private HashSet<DataElement> chooseData(PolicySet ps, int id) {
+        HashSet<DataElement> data = new HashSet<DataElement>();
+        return data;
     }
     
     private void processMsg_DataResult(DataExchange n, P2PMessage msg, Node node, int protocolID) {
@@ -1589,7 +1609,7 @@ public class DataExchange implements CDProtocol {
     }
 
     //private DataPackage assembleDataPackage(HashMap<String, HashSet<Term>> transRecords, long msgID) {
-    private DataPackage assembleDataPackage(HashSet<TransactionRecord> transRecords, long msgID) {
+    private DataPackage assembleDataPackage(HashSet<DataElement> data, HashSet<TransactionRecord> transRecords, long msgID) {
         DataPackage dataPackage = new DataPackage();
 //        for (Term tR : transRecords) {
 //            String r = tR.toString();
@@ -1625,6 +1645,9 @@ public class DataExchange implements CDProtocol {
     
     private HashSet<TransactionRecord> generateTransactionRecords() {
         HashSet<TransactionRecord> transRecords = new HashSet<TransactionRecord>();
+        
+        //Store all transaction records;
+        
         return transRecords;
     }
 

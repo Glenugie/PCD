@@ -104,6 +104,10 @@ public class PolicySet {
         }
     }
     
+    public boolean permitsAccess(String d) {
+        return true;
+    }
+    
     public Term getPrologTerm() {
         Term[] pols = new Term[primary.size()+secondary.size()]; 
         
@@ -167,11 +171,19 @@ public class PolicySet {
         return true;
     }
     
+    public HashSet<DataPolicy> activeSet() {
+        return primary;
+    }
+    
     public boolean canActivate() {
         return true;
     }
     
     public void cullOptionalPolicies() {
         
+    }
+    
+    public int size() {
+        return (primary.size() + secondary.size());
     }
 }
