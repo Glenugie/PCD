@@ -1,11 +1,17 @@
 package com.pcd.model;
 
+import java.util.HashSet;
+
 public class Transaction {
     public int transactionId;
     public int remoteId;
     public long peerID;
+    
     public String predicate;
     public int quantity;
+    
+    public HashSet<PolicySet> policySets;
+    
     public int lifetime;
     private int maxLife;
     
@@ -13,8 +19,12 @@ public class Transaction {
         transactionId = id;
         remoteId = rId;
         peerID = peer;
+        
         predicate = p;
         quantity = quant;
+        
+        policySets = new HashSet<PolicySet>();
+        
         lifetime = l;
         maxLife = l;
     }

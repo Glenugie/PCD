@@ -348,7 +348,9 @@ public class DataExchange implements CDProtocol {
                 
                 relPolSets = generatePolicySets();
                 if (relPolSets.size() > 0) {
-                    inTransactionStack.put(newTID, new Transaction(newTID, msg.transactionId, n.peerID, (String) msg.body[0], (int) msg.body[1], TRANS_LIFETIME));
+                    Transaction t = new Transaction(newTID, msg.transactionId, n.peerID, (String) msg.body[0], (int) msg.body[1], TRANS_LIFETIME);
+                    t.policySets = relPolSets;
+                    inTransactionStack.put(newTID, t);
                     n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "POLICY_INFORM", new Object[] { (String) msg.body[0], relPolSets }, null);
                 } else {
                     DataPackage datalessPackage = assembleDataPackage(generateTransactionRecords(),msg.sender.getID());
@@ -497,7 +499,33 @@ public class DataExchange implements CDProtocol {
     
     private void processMsg_RecordInform(DataExchange n, P2PMessage msg, Node node, int protocolID) {
         //Record_Inform -> Chosen_PolicySet, Rel_Records
-        
+        if (!hasOpenInRemoteTrans(n.peerID, msg.transactionId)) {
+            n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "INVALID_TRANSACTION", new Object[] { }, null);            
+        } else {
+            HashSet<TransactionRecord> relRecords = null;
+            try {
+                relRecords = (HashSet<TransactionRecord>) msg.body[1];
+            } catch (ClassCastException e) {
+                //Could not cast records, malformed message
+            }
+            
+            PolicySet chosenPolicySet = null;
+            try {
+                chosenPolicySet = (PolicySet) msg.body[0];
+            } catch (ClassCastException e) {
+                //Could not cast policy set, malformed message
+            }
+    
+    
+            if (relRecords == null) {
+                n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "MALFORMED_RECORDS", new Object[] { }, null);
+            } else if (chosenPolicySet == null) { // A policy set was not chosen, send the offer again
+                Transaction t = getOpenInRemoteTrans(n.peerID, msg.transactionId);
+                n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "POLICY_INFORM", new Object[] { t.predicate, t.policySets }, null);                
+            } else {
+                
+            }
+        }
     }
     
     private void processMsg_DataResult(DataExchange n, P2PMessage msg, Node node, int protocolID) {
@@ -1152,6 +1180,25 @@ public class DataExchange implements CDProtocol {
             return true;
         }
         return false;
+    }
+    
+    private boolean hasOpenInRemoteTrans(long peer, int id) {
+        for (int key : inTransactionStack.keySet()) {
+            if (inTransactionStack.get(key).remoteId == id && inTransactionStack.get(key).peerID == peer) {
+                inTransactionStack.get(id).resetLife();
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    private Transaction getOpenInRemoteTrans(long peer, int id) {
+        for (int key : inTransactionStack.keySet()) {
+            if (inTransactionStack.get(key).remoteId == id && inTransactionStack.get(key).peerID == peer) {
+                return inTransactionStack.get(id);
+            }
+        }
+        return null;
     }
     
     private boolean removeInTrans(long peer, int id) {
