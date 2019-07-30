@@ -464,8 +464,10 @@ public class DataExchange implements CDProtocol {
                 // Should accept if not in outTransactionStack, as long as the data being offered is wanted
                 if (!hasTrans) {
                     int tID = getFreeTransaction();
+                    msg.transactionId = tID;
                     outTransactionStack.put(tID, new Transaction(tID, -1, n.peerID, (String) msg.body[0], 1, TRANS_LIFETIME));
                 }
+                outTransactionStack.get(msg.transactionId).policySets = policySets;
                 HashSet<TransactionRecord> relRecords = getRelRecords();
                 n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "RECORD_INFORM", new Object[] { chosenPS, relRecords }, null);
             }
@@ -540,7 +542,7 @@ public class DataExchange implements CDProtocol {
     }
     
     private void assimilateRecords(HashSet<TransactionRecord> relRecords) {
-        
+        // Permanently store some details, temporarily store others
     }
     
     private HashSet<DataElement> chooseData(PolicySet ps, int id) {
@@ -574,11 +576,12 @@ public class DataExchange implements CDProtocol {
     
     private void processMsg_MalformedRecords(DataExchange n, P2PMessage msg, Node node, int protocolID) {
         //Malformed_Records -> Sender_ID, Data_Item
-//      if (pendingData.containsKey(msg.body[0])) {
-//          desiredData.put((String) msg.body[0], pendingData.get(msg.body[0]));
-//          pendingData.remove((String) msg.body[0]);
-//          //activeRequests -= 1;-
-//      }
+
+        if (hasOpenOutTrans(n.peerID, msg.transactionId)) {
+            Transaction t = outTransactionStack.get(msg.transactionId);
+            // Fake a new POLICY_INFORM
+            n.sendMessage(protocolID, node, msg.sender, msg.transactionId, "POLICY_INFORM", new Object[] { t.predicate, t.policySets }, null);
+        }
     }
     
     private void processMsg_InvalidTransaction(DataExchange n, P2PMessage msg, Node node, int protocolID) {
