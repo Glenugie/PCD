@@ -463,14 +463,16 @@ public class DataExchange implements CDProtocol {
             boolean hasTrans = hasOpenOutTrans(n.peerID, msg.transactionId);
             if (hasTrans || (!hasTrans && transactionFree() && wantedData.contains((String) msg.body[0]))) {
                 // Should accept if not in outTransactionStack, as long as the data being offered is wanted
+                int tID = msg.transactionId;
                 if (!hasTrans) {
-                    int tID = getFreeTransaction();
-                    msg.transactionId = tID;
+                    tID = getFreeTransaction();
                     outTransactionStack.put(tID, new Transaction(tID, -1, n.peerID, (String) msg.body[0], 1, TRANS_LIFETIME));
                 }
-                outTransactionStack.get(msg.transactionId).policySets = policySets;
+                System.out.println(outTransactionStack.keySet());
+                System.err.println(outTransactionStack.containsKey(tID)+ " ?= "+hasOpenOutTrans(n.peerID, tID)+": "+tID+", "+msg.transactionId+" ("+hasTrans+")");
+                outTransactionStack.get(tID).policySets = policySets;
                 HashSet<TransactionRecord> relRecords = getRelRecords();
-                n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "RECORD_INFORM", new Object[] { chosenPS, relRecords }, null);
+                n.sendMessage(protocolID, msg.sender, node, tID, "RECORD_INFORM", new Object[] { chosenPS, relRecords }, null);
             }
         } else if (chosenPS.canActivate()) {
             scheduleActions(chosenPS);
@@ -523,8 +525,8 @@ public class DataExchange implements CDProtocol {
     
             if (relRecords == null) {
                 n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "MALFORMED_RECORDS", new Object[] { }, null);
-            } else if (chosenPolicySet == null) { // A policy set was not chosen, send the offer again
-                n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "POLICY_INFORM", new Object[] { t.predicate, t.policySets }, null);                
+            } else if (chosenPolicySet == null) { // A policy set was not chosen, kill the transaction
+                removeInRemoteTrans(n.peerID, msg.transactionId);      
             } else {
                 assimilateRecords(relRecords);
                 
@@ -538,6 +540,8 @@ public class DataExchange implements CDProtocol {
                 
                 DataPackage dp = assembleDataPackage(data,generateTransactionRecords(),msg.sender.getID()); 
                 n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "DATA_RESULT", new Object[] { dp }, null);
+                
+                removeInRemoteTrans(n.peerID, msg.transactionId);
             }
         }
     }

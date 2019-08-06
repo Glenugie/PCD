@@ -2,7 +2,7 @@
 # Initialises simulation parameters
 	random.seed 1564148657890		# Fixed seed, for debugging
 	simulation.experiments 1	# Number of Iterations
-	simulation.cycles 25		# Number of Cycles per Iteration
+	simulation.cycles 10		# Number of Cycles per Iteration
 	network.size 25			# Number of Peers
 
 # Idle Protocol
