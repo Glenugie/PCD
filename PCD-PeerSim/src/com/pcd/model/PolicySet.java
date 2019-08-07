@@ -170,7 +170,7 @@ public class PolicySet {
     }
     
     public boolean isActive() {
-        if (CommonState.r.nextInt(5) == 0) {
+        if (CommonState.r.nextInt(25) == 0) {
             return false;
         }
         return true;
@@ -181,7 +181,7 @@ public class PolicySet {
     }
     
     public boolean canActivate() {
-        if (CommonState.r.nextInt(5) == 0) {
+        if (CommonState.r.nextInt(25) == 0) {
             return false;
         }
         return true;

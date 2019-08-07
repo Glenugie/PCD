@@ -513,7 +513,7 @@ public class DataExchange implements CDProtocol {
     
     private PolicySet choosePolicySet(HashSet<PolicySet> policySets) {
         PolicySet chosenPS = new PolicySet();
-        if (rng.nextInt(5) == 0) {
+        if (rng.nextInt(50) == 0) {
             return null;
         }
         return chosenPS;
