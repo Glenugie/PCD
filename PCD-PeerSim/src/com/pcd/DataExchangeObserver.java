@@ -7,6 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.TreeMap;
 
 import peersim.config.Configuration;
+import peersim.core.CommonState;
 import peersim.core.Control;
 import peersim.core.Network;
 
@@ -210,9 +211,11 @@ public class DataExchangeObserver implements Control {
             protocol.initMessageTotals();
         }
         
+        System.out.println("\n===================== Cycle "+CommonState.getTime()+" =====================");
         for (String type : masterMessageTotals.keySet()) {
             System.out.println(type+": "+masterMessageTotals.get(type)+" ("+masterMessageTotalsCumulative.get(type)+")");
         }
+        System.out.println("==========================================\n");
         
         return false;
     }
