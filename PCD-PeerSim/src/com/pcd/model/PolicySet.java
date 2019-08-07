@@ -7,6 +7,8 @@ import java.util.HashSet;
 import org.jpl7.Term;
 import org.jpl7.Util;
 
+import peersim.core.CommonState;
+
 public class PolicySet {
     private HashSet<DataPolicy> primary;
     private HashSet<DataPolicy> secondary;
@@ -168,6 +170,9 @@ public class PolicySet {
     }
     
     public boolean isActive() {
+        if (CommonState.r.nextInt(5) == 0) {
+            return false;
+        }
         return true;
     }
     
@@ -176,6 +181,9 @@ public class PolicySet {
     }
     
     public boolean canActivate() {
+        if (CommonState.r.nextInt(5) == 0) {
+            return false;
+        }
         return true;
     }
     

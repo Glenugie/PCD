@@ -43,6 +43,7 @@ public class DataExchangeObserver implements Control {
 
     HashMap<String,Integer> roleNumbersTotal;
     HashMap<String,Integer> roleNumbersActive;
+    LinkedHashMap<String,Integer> masterMessageTotalsCumulative;
     
     //Stat Name, Shortened Name, In Multi-Run CSV, In Single-Run CSV, In Cycle Debug Print, Resets Each Cycle
     private String[][] statsD;
@@ -52,6 +53,7 @@ public class DataExchangeObserver implements Control {
         this.name = name;
         pid = Configuration.getPid(name + "." + PAR_PROT);
         cycleCost = Configuration.getInt("init.keys.cycleCost");
+        masterMessageTotalsCumulative =  new LinkedHashMap<String, Integer>();
         
         totalCumulativeMessages = 0;
         //totalCumulativeProfit = 0;
@@ -191,6 +193,27 @@ public class DataExchangeObserver implements Control {
     
     public boolean execute() {
         //return executeNew();
+        LinkedHashMap<String,Integer> masterMessageTotals = new LinkedHashMap<String, Integer>();
+        int networkSize = Network.size();
+        for (int i = 0; i < networkSize; i+= 1) {
+            DataExchange protocol = (DataExchange) Network.get(i).getProtocol(pid);
+            for (String type : protocol.messageTotals.keySet()) {
+                if (!masterMessageTotals.containsKey(type)) {
+                    masterMessageTotals.put(type, 0);
+                }
+                if (!masterMessageTotalsCumulative.containsKey(type)) {
+                    masterMessageTotalsCumulative.put(type, 0);
+                }
+                masterMessageTotals.replace(type, masterMessageTotals.get(type)+protocol.messageTotals.get(type));                
+                masterMessageTotalsCumulative.replace(type, masterMessageTotalsCumulative.get(type)+protocol.messageTotals.get(type));
+            }
+            protocol.initMessageTotals();
+        }
+        
+        for (String type : masterMessageTotals.keySet()) {
+            System.out.println(type+": "+masterMessageTotals.get(type)+" ("+masterMessageTotalsCumulative.get(type)+")");
+        }
+        
         return false;
     }
 

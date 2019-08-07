@@ -37,15 +37,24 @@ public class P2PMessage {
 	public void addChain(HashSet<Node> nodes) {
 	    chain.addAll(nodes);
 	}
-	
-	public boolean inChain(Node test) {
-	    for (Node n : chain) {
-	        if (n.getID() == test.getID()) {
-	            return true;
-	        }
-	    }
-	    return false;
-	}
+    
+    public boolean inChain(Node test) {
+        for (Node n : chain) {
+            if (n.getID() == test.getID()) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public boolean inChain(long test) {
+        for (Node n : chain) {
+            if (n.getID() == test) {
+                return true;
+            }
+        }
+        return false;
+    }
 	
 	public String chainString() {
         String chainString = "";
