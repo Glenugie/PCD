@@ -356,7 +356,7 @@ public class DataExchange implements CDProtocol {
                         payload += o.toString()+", ";
                     }
                     payload = "["+payload.substring(0,payload.length()-2)+"]";
-                    System.err.println("Could not process message "+i+" ("+n.peerID+" -> "+peerID+") ["+msg.type+": "+payload+"]");
+                    System.err.println("Could not process message "+i+" ("+n.peerID+" -> "+peerID+") ["+msg.type+" ("+msg.transactionId+"): "+payload+"]");
                     //System.err.println(e.getMessage());
                     e.printStackTrace();
                 }
@@ -438,11 +438,17 @@ public class DataExchange implements CDProtocol {
     }
     
     private int checkCompliance(HashSet<PolicySet> polSets, String pred) {
-        return (rng.nextInt(50) % 20);
+        int rew =  rng.nextInt(100);
+        if (rew < 99) { rew = 0;} else { rew = 1;} 
+        //System.out.println("Reward Given: "+rew);
+        return rew;
     }
     
     private int checkViolation(HashSet<PolicySet> polSets, String pred) {
-        return (rng.nextInt(50) % 20);
+        int pen =  rng.nextInt(100);
+        if (pen < 99) { pen = 0;} else { pen = 1;}
+        //System.out.println("Penalty Given: "+pen);
+        return pen;
     }
     
     private HashSet<Node> getForwardingNeighbours(String pred) {
@@ -490,6 +496,7 @@ public class DataExchange implements CDProtocol {
             n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "REJECT_POLICIES", new Object[] { }, null);
             removeOutTrans(n.peerID, msg.transactionId);
         } else if (chosenPS.isActive()) {
+            System.out.println(outTransactionStack.keySet());
             boolean hasTrans = hasOpenOutTrans(n.peerID, msg.transactionId);
             if (hasTrans || (!hasTrans && transactionFree() && wantedData.contains((String) msg.body[0]))) {
                 // Should accept if not in outTransactionStack, as long as the data being offered is wanted
