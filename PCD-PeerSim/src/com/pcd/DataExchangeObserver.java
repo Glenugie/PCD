@@ -1,10 +1,19 @@
 package com.pcd;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.TreeMap;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+
+import com.pcd.model.SocialWelfare;
 
 import peersim.config.Configuration;
 import peersim.core.CommonState;
@@ -13,209 +22,199 @@ import peersim.core.Network;
 
 public class DataExchangeObserver implements Control {
     private static final String PAR_PROT = "protocol";
-    private final boolean PEER_ROLE_CALL = false;
-    private final boolean CSV_TO_CMD = false;
     
     private final NumberFormat satisfactionFormat = new DecimalFormat("#0.00"); 
     private final NumberFormat debugPrintFormat = new DecimalFormat("#0.####");     
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss");
     private final String name;
     private final int pid;
     private final int cycleCost;
-    private final long startTime;
+    private File logMain;
     
-    private String outputMatrix;
-    private long totalCumulativeMessages;
-    private long totalCumulativeDataReceived;
+    private LinkedHashMap<String,Integer> masterMessageTotalsCumulative;
+    private long cumulativeTotal;
     
+    private LinkedHashSet<String> masterRoles;
+    private HashMap<String, Integer> roles;
     
-    //private long totalCumulativeProfit;
-    private long totalCumulativeCycleSpend;
+    private LinkedList<HashMap<String, Integer>> regularCycles;
+    private LinkedList<HashMap<String, Integer>> rewardCycles;
+    private LinkedList<HashMap<String, Integer>> penaltyCycles;
+    private LinkedList<HashMap<String, Long>> cycleTimes;
     
-    private int totalPeerDownSim;
-    private int totalMalformedRecordsSim;
-    private int totalDataRequestSim;
-    private int totalNoDataSim;
-    private int totalNoAccessSim;
-    private int totalPolicyInformSim;
-    private int totalRejectPoliciesSim;
-    private int totalRecordInformSim;
-    private int totalDataResultSim;
-    private int totalDataResultWithDataSim;    
-
-    HashMap<String,Integer> roleNumbersTotal;
-    HashMap<String,Integer> roleNumbersActive;
-    LinkedHashMap<String,Integer> masterMessageTotalsCumulative;
+    private LinkedList<HashMap<String, SocialWelfare>> socialWelfare;
     
-    //Stat Name, Shortened Name, In Multi-Run CSV, In Single-Run CSV, In Cycle Debug Print, Resets Each Cycle
-    private String[][] statsD;
-    private LinkedHashMap<String,TreeMap<String, Double>> stats;
     
     public DataExchangeObserver(String name) {
         this.name = name;
         pid = Configuration.getPid(name + "." + PAR_PROT);
         cycleCost = Configuration.getInt("init.keys.cycleCost");
+        
         masterMessageTotalsCumulative =  new LinkedHashMap<String, Integer>();
+        cumulativeTotal = 0;
         
-        totalCumulativeMessages = 0;
-        //totalCumulativeProfit = 0;
-        totalCumulativeCycleSpend = 0;
-        totalPeerDownSim = 0; totalMalformedRecordsSim = 0; totalDataRequestSim = 0; totalNoDataSim = 0; totalNoAccessSim = 0;
-        totalPolicyInformSim = 0; totalRejectPoliciesSim = 0; totalRecordInformSim = 0; totalDataResultSim = 0; totalDataResultWithDataSim = 0;
-        
-        startTime = System.currentTimeMillis();
-        
-        statsD = new String[0][0];
-        String[][] statsDT = new String[999][6];
-        int r = 0;
-        //              Name                             Shortened Name                       Multi-Run CSV        Per-Run CSV          Debug Print          Reset Stat Each Cycle
-        
-        statsDT[r][0] = "Total Messages";                statsDT[r][1] = "Tot Messages";      statsDT[r][2] = "1"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "0"; r += 1;
-        statsDT[r][0] = "Total Cycle Spend";             statsDT[r][1] = "Tot Spend";         statsDT[r][2] = "1"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "0"; r += 1;
-        statsDT[r][0] = "Total Data Received";           statsDT[r][1] = "Tot Data";          statsDT[r][2] = "1"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "0"; r += 1;
-        statsDT[r][0] = "Total PEER_DOWN";               statsDT[r][1] = "Tot PEER_DOWN";     statsDT[r][2] = "0"; statsDT[r][3] = "0"; statsDT[r][4] = "0"; statsDT[r][5] = "0"; r += 1;
-        statsDT[r][0] = "Total MALFORMED_RECORDS";       statsDT[r][1] = "Tot MALF_REC";      statsDT[r][2] = "0"; statsDT[r][3] = "0"; statsDT[r][4] = "0"; statsDT[r][5] = "0"; r += 1;
-        statsDT[r][0] = "Total DATA_REQUEST";            statsDT[r][1] = "Tot DATA_REQ";      statsDT[r][2] = "0"; statsDT[r][3] = "0"; statsDT[r][4] = "1"; statsDT[r][5] = "0"; r += 1;
-        statsDT[r][0] = "Total NO_DATA";                 statsDT[r][1] = "Tot NO_DATA";       statsDT[r][2] = "0"; statsDT[r][3] = "0"; statsDT[r][4] = "1"; statsDT[r][5] = "0"; r += 1;
-        statsDT[r][0] = "Total NO_ACCESS";               statsDT[r][1] = "Tot NO_ACC";        statsDT[r][2] = "0"; statsDT[r][3] = "0"; statsDT[r][4] = "1"; statsDT[r][5] = "0"; r += 1;
-        statsDT[r][0] = "Total POLICY_INFORM";           statsDT[r][1] = "Tot POL_INF";       statsDT[r][2] = "0"; statsDT[r][3] = "0"; statsDT[r][4] = "1"; statsDT[r][5] = "0"; r += 1;
-        statsDT[r][0] = "Total REJECT_POLICIES";         statsDT[r][1] = "Tot REJ_POL";       statsDT[r][2] = "0"; statsDT[r][3] = "0"; statsDT[r][4] = "1"; statsDT[r][5] = "0"; r += 1;
-        statsDT[r][0] = "Total RECORD_INFORM";           statsDT[r][1] = "Tot REC_INF";       statsDT[r][2] = "0"; statsDT[r][3] = "0"; statsDT[r][4] = "1"; statsDT[r][5] = "0"; r += 1;
-        statsDT[r][0] = "Total DATA_RESULT";             statsDT[r][1] = "Tot DATA_RES";      statsDT[r][2] = "0"; statsDT[r][3] = "0"; statsDT[r][4] = "1"; statsDT[r][5] = "0"; r += 1;
-        statsDT[r][0] = "Total DATA_RESULT (+Data)";     statsDT[r][1] = "Tot DATA_RES (+D)"; statsDT[r][2] = "0"; statsDT[r][3] = "0"; statsDT[r][4] = "1"; statsDT[r][5] = "0"; r += 1;
+        masterRoles = new LinkedHashSet<String>();
+        masterRoles.add("AFF"); masterRoles.add("AFN"); masterRoles.add("ASF"); masterRoles.add("ASN");
+        masterRoles.add("SFF"); masterRoles.add("SFN"); masterRoles.add("SSF"); masterRoles.add("SSN");
+        roles = new HashMap<String, Integer>(); for (String r : masterRoles) { roles.put(r, 0);}
 
-        statsDT[r][0] = "Peers Remaining";              statsDT[r][1] = "Num Peers";          statsDT[r][2] = "0"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "Unsatisfied";                  statsDT[r][1] = "Unsatisfied";        statsDT[r][2] = "0"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "Budget Exhausted";             statsDT[r][1] = "No Budget";          statsDT[r][2] = "0"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "Orphaned";                     statsDT[r][1] = "Orphaned";           statsDT[r][2] = "0"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "Messages";                     statsDT[r][1] = "Messages";           statsDT[r][2] = "0"; statsDT[r][3] = "0"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "Requesting";                   statsDT[r][1] = "Requesting";         statsDT[r][2] = "0"; statsDT[r][3] = "0"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "Waiting";                      statsDT[r][1] = "Waiting";            statsDT[r][2] = "0"; statsDT[r][3] = "0"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "Requestors";                   statsDT[r][1] = "Requestors";         statsDT[r][2] = "0"; statsDT[r][3] = "0"; statsDT[r][4] = "0"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "Providers";                    statsDT[r][1] = "Providers";          statsDT[r][2] = "0"; statsDT[r][3] = "0"; statsDT[r][4] = "0"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "Dual Role";                    statsDT[r][1] = "Dual Role";          statsDT[r][2] = "0"; statsDT[r][3] = "0"; statsDT[r][4] = "0"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "PEER_DOWN";                    statsDT[r][1] = "PEER_DOWN";          statsDT[r][2] = "0"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "MALFORMED_RECORDS";            statsDT[r][1] = "MALF_REC";           statsDT[r][2] = "0"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "DATA_REQUEST";                 statsDT[r][1] = "DATA_REQ";           statsDT[r][2] = "0"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "NO_DATA";                      statsDT[r][1] = "NO_DATA";            statsDT[r][2] = "0"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "NO_ACCESS";                    statsDT[r][1] = "NO_ACC";             statsDT[r][2] = "0"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "POLICY_INFORM";                statsDT[r][1] = "POL_INF";            statsDT[r][2] = "0"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "REJECT_POLICIES";              statsDT[r][1] = "REJ_POL";            statsDT[r][2] = "0"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "RECORD_INFORM";                statsDT[r][1] = "REC_INF";            statsDT[r][2] = "0"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "DATA_RESULT";                  statsDT[r][1] = "DATA_RES";           statsDT[r][2] = "0"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "DATA_RESULT (+Data)";          statsDT[r][1] = "DATA_RES (+D)";      statsDT[r][2] = "0"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "Data Received";                statsDT[r][1] = "Data Received";      statsDT[r][2] = "0"; statsDT[r][3] = "1"; statsDT[r][4] = "0"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "Cycle Spend";                  statsDT[r][1] = "Cycle Spend";        statsDT[r][2] = "0"; statsDT[r][3] = "1"; statsDT[r][4] = "0"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "Total Profit";                 statsDT[r][1] = "Profit";             statsDT[r][2] = "0"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "Total Neighbours";             statsDT[r][1] = "Neighbours";         statsDT[r][2] = "0"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "Total Satisfaction";           statsDT[r][1] = "Satisfaction";       statsDT[r][2] = "0"; statsDT[r][3] = "0"; statsDT[r][4] = "0"; statsDT[r][5] = "1"; r += 1;
-
-        statsDT[r][0] = "Average Satisfaction";         statsDT[r][1] = "Avg Satisfaction";   statsDT[r][2] = "1"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "Average Profit";               statsDT[r][1] = "Avg Profit";         statsDT[r][2] = "1"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "Average Data Received";        statsDT[r][1] = "Avg Data";           statsDT[r][2] = "1"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "Average Normalised Profit";    statsDT[r][1] = "Avg Norm Profit";    statsDT[r][2] = "1"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
-        statsDT[r][0] = "Average Neighbours";           statsDT[r][1] = "Avg Neighbours";     statsDT[r][2] = "1"; statsDT[r][3] = "1"; statsDT[r][4] = "1"; statsDT[r][5] = "1"; r += 1;
+        regularCycles = new LinkedList<HashMap<String, Integer>>();
+        rewardCycles = new LinkedList<HashMap<String, Integer>>();
+        penaltyCycles = new LinkedList<HashMap<String, Integer>>();
+        cycleTimes = new LinkedList<HashMap<String, Long>>();
         
-        if (r > 0) {
-            statsD = new String[r][statsDT[0].length];
-            for (int i = 0; i < r; i += 1) {
-                for (int j = 0; j < statsDT[0].length; j += 1) {
-                    //System.out.println("Copying statsDT["+i+"]["+j+"] to statsD["+i+"]["+j+"]");
-                    //System.out.println("\t"+statsDT[i][j]);
-                    statsD[i][j] = statsDT[i][j];
-                }
-            }
-        }
+        socialWelfare = new LinkedList<HashMap<String, SocialWelfare>>();
         
-        roleNumbersTotal = new HashMap<String,Integer>();
-        for (int i = 0; i < Network.size(); i++) {
-            DataExchange protocol = (DataExchange) Network.get(i).getProtocol(pid);
-            String role = "No Role";// if (protocol.role != null) { role = protocol.role.name;}
-            if (!roleNumbersTotal.containsKey(role)) { roleNumbersTotal.put(role, 0);}
-        }
-            
-        stats = new LinkedHashMap<String,TreeMap<String, Double>>();
-        for (String[] s : statsD) { addStat(s[0]);}        
-    }
-    
-    //Could have stats that don't index by role, but by another stat or init value. WOuld just need to block the role insertion in this method
-    public void addStat(String statName) {
-        TreeMap<String,Double> statTrack = new TreeMap<String,Double>();
-        for (String r : roleNumbersTotal.keySet()) { statTrack.put(r,0.0);}
-        stats.put(statName, statTrack);
-    }
-    
-    public void resetStat(String statName) {
-        if (stats.containsKey(statName)) {
-            TreeMap<String,Double> statTrack = new TreeMap<String,Double>();
-            for (String r : roleNumbersTotal.keySet()) { statTrack.put(r,0.0);}
-            stats.replace(statName, statTrack);
-        } else {
-            addStat(statName);
-        }
-    }
-    
-    public void addToStat(String statName, String role, double val) {
-        if (stats.containsKey(statName)) { 
-            if (!stats.get(statName).containsKey(role)) { stats.get(statName).put(role, 0.0);}
-            stats.get(statName).put(role, stats.get(statName).get(role)+val);
-        }
-    }
-    
-    public int getIndexOfStat(String statName) {
-        for (int i = 0; i < statsD.length; i += 1) {
-            if (statsD[i][0].equals(statName)) {
-                return i; 
+        logMain = new File("res/csv/Run_"+dateFormat.format(new Date().getTime())+".csv");       
+        boolean newFile = false;
+        try {                    
+            newFile = logMain.createNewFile();
+            int i = 1;
+            while (i < 100 && !newFile) {
+                logMain = new File("res/csv/Run_"+dateFormat.format(new Date().getTime())+"_"+i+".csv");   
+                newFile = logMain.createNewFile();
+                i += 1;
             }
-        }
-        return -1;
-    }
-    
-    public int getRoleNumbersActive(String role) {
-        if (roleNumbersActive.containsKey(role)) {
-            return roleNumbersActive.get(role);
-        }
-        return 0;
-    }
-    
-    public int getRoleNumbersTotal(String role) {
-        if (roleNumbersTotal.containsKey(role)) {
-            return roleNumbersTotal.get(role);
-        }
-        return 0;
-    }
-    
-    public double totalStatRoles(String statName) {
-        double total = 0.0;
-        for (String roleName : stats.get(statName).keySet()) {
-            total += stats.get(statName).get(roleName);
-        }
-        return total;
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }    
     }
     
     public boolean execute() {
-        //return executeNew();
         LinkedHashMap<String,Integer> masterMessageTotals = new LinkedHashMap<String, Integer>();
-        int networkSize = Network.size();
-        for (int i = 0; i < networkSize; i+= 1) {
-            DataExchange protocol = (DataExchange) Network.get(i).getProtocol(pid);
-            for (String type : protocol.messageTotals.keySet()) {
-                if (!masterMessageTotals.containsKey(type)) {
-                    masterMessageTotals.put(type, 0);
-                }
-                if (!masterMessageTotalsCumulative.containsKey(type)) {
-                    masterMessageTotalsCumulative.put(type, 0);
-                }
-                masterMessageTotals.replace(type, masterMessageTotals.get(type)+protocol.messageTotals.get(type));                
-                masterMessageTotalsCumulative.replace(type, masterMessageTotalsCumulative.get(type)+protocol.messageTotals.get(type));
-            }
-            protocol.initMessageTotals();
+        
+        HashMap<String, Integer> regularCycle = new HashMap<String, Integer>();
+        HashMap<String, Integer> rewardCycle = new HashMap<String, Integer>();
+        HashMap<String, Integer> penaltyCycle = new HashMap<String, Integer>();
+        HashMap<String, Long> cycleTime = new HashMap<String, Long>();
+        HashMap<String, SocialWelfare> welfare = new HashMap<String, SocialWelfare>();
+        
+        String csvLine = "";
+        
+        for (String r : masterRoles) { 
+            if (!regularCycle.containsKey(r)) { regularCycle.put(r, 0);}
+            if (!rewardCycle.containsKey(r)) { rewardCycle.put(r, 0);}
+            if (!penaltyCycle.containsKey(r)) { penaltyCycle.put(r, 0);}
+            if (!cycleTime.containsKey(r)) { cycleTime.put(r, (long) 0);}
+            if (!welfare.containsKey(r)) { welfare.put(r, new SocialWelfare());}            
         }
         
-        System.out.println("\n===================== Cycle "+CommonState.getTime()+" =====================");
-        for (String type : masterMessageTotals.keySet()) {
-            System.out.println(type+": "+masterMessageTotals.get(type)+" ("+masterMessageTotalsCumulative.get(type)+")");
+        if (peersim.core.CommonState.getTime() == 0) {
+            int networkSize = Network.size();
+            for (int i = 0; i < networkSize; i+= 1) {
+                DataExchange protocol = (DataExchange) Network.get(i).getProtocol(pid);
+                String role = protocol.getRole();
+                roles.replace(role, roles.get(role)+1);
+            }
+            
+            csvLine = "[PARAMETERS], Size: "+PrologInterface.confPeers+", Cycles: "+PrologInterface.confCycles+", Topology: "+PrologInterface.confTopology+" ("+PrologInterface.confTopologyVal+"), Altruist: "+
+                    PrologInterface.confAltruistic+"%, Fair: "+PrologInterface.confFair+"%, Fault: "+PrologInterface.confFaultyPeers+"% ("+PrologInterface.confFaultRate+"%), Default P: "+
+                    PrologInterface.confDefaultPermit+", Max Neighbours: "+PrologInterface.confMaxNeighbours+", Policies: "+PrologInterface.confMinPols+" - "+PrologInterface.confMaxPols+", Budget: "+
+                    PrologInterface.confMinBudget+" - "+PrologInterface.confMaxBudget+", Data: "+PrologInterface.confDataFile+", Policies: "+PrologInterface.confPolicyFile+"\n";
+            csvLine += "Cycle,";
+            DataExchange protocol = (DataExchange) Network.get(0).getProtocol(pid);
+            for (String type : protocol.messageTotals.keySet()) {
+                csvLine += type+",";
+            }
+            for (String r : masterRoles) {
+                csvLine += r+"-Num,";
+                csvLine += r+"-Cyc,";
+                csvLine += r+"-Rew,";
+                csvLine += r+"-Pen,";
+                csvLine += r+"-Time,";
+                csvLine += r+"-SW-Num,";
+                csvLine += r+"-SW-Avg,";
+                csvLine += r+"-SW-Dev,";
+                csvLine += r+"-SW-Min,";
+                csvLine += r+"-SW-Max,";
+            }
+            csvLine = csvLine.substring(0,csvLine.length()-1);
+        } else {        
+            int networkSize = Network.size();
+            for (int i = 0; i < networkSize; i+= 1) {
+                DataExchange protocol = (DataExchange) Network.get(i).getProtocol(pid);
+                for (String type : protocol.messageTotals.keySet()) {
+                    if (!masterMessageTotals.containsKey(type)) {
+                        masterMessageTotals.put(type, 0);
+                    }
+                    if (!masterMessageTotalsCumulative.containsKey(type)) {
+                        masterMessageTotalsCumulative.put(type, 0);
+                    }
+                    masterMessageTotals.replace(type, masterMessageTotals.get(type)+protocol.messageTotals.get(type));                
+                    masterMessageTotalsCumulative.replace(type, masterMessageTotalsCumulative.get(type)+protocol.messageTotals.get(type));
+                }
+                protocol.initMessageTotals();
+                
+                String role = protocol.getRole();
+                switch (protocol.lastCycle) {
+                    case 0: // Regular
+                        regularCycle.replace(role, regularCycle.get(role)+1);
+                        break;
+                    case 1: // Reward
+                        rewardCycle.replace(role, rewardCycle.get(role)+1);
+                        break;
+                    case 2: // Penalty
+                        penaltyCycle.replace(role, penaltyCycle.get(role)+1);
+                        break;
+                }
+                cycleTime.replace(role, cycleTime.get(role)+protocol.lastTime);
+                if (protocol.dataReceived != 0) {
+                    welfare.get(role).addValue(protocol.dataReceived);
+                }
+            }
+            
+            for (String r : welfare.keySet()) {
+                welfare.get(r).calculate();
+            }
+            
+            regularCycles.push(regularCycle);
+            rewardCycles.push(rewardCycle);
+            penaltyCycles.push(penaltyCycle);
+            cycleTimes.push(cycleTime);
+            socialWelfare.push(welfare);
+
+            csvLine = ""+CommonState.getTime()+",";
+            System.out.println("\n===================== Cycle "+CommonState.getTime()+" =====================");
+            int tot = 0;
+            for (String type : masterMessageTotals.keySet()) {
+                //if (masterMessageTotals.get(type) > 0 || peersim.core.CommonState.getTime() == PrologInterface.confCycles-1) {
+                    System.out.println(type+": "+masterMessageTotals.get(type)+" ("+masterMessageTotalsCumulative.get(type)+")");
+                //}
+                csvLine += masterMessageTotals.get(type)+",";
+                tot += masterMessageTotals.get(type);
+                cumulativeTotal += masterMessageTotals.get(type);
+            }     
+            System.out.println("TOTAL: "+tot+" ("+cumulativeTotal+")");   
+            for (String r : masterRoles) {
+                if (roles.get(r) > 0) {
+                    System.out.println("\t"+r+" ("+roles.get(r)+"): "+regularCycle.get(r)+"/"+rewardCycle.get(r)+"/"+penaltyCycle.get(r)+", "+(cycleTime.get(r)/roles.get(r))+"ms ("+cycleTime.get(r)+"ms)");
+                    if (welfare.get(r).vals.size() > 0) {
+                        System.out.println("\t\t"+welfare.get(r).vals.size()+" NUM, "+welfare.get(r).average+" AVG, "+welfare.get(r).deviation+" DEV, "+welfare.get(r).min+" MIN, "+welfare.get(r).max+" MAX");
+                    }
+                }
+                //SSN-Num,SSN-Cyc,SSN-Rew,SSN-Pen,SSN-Time,SSN-SW-Num,SSN-SW-Avg,SSN-SW-Dev,SSN-SW-Min,SSN-SW-Max
+                csvLine += roles.get(r)+",";
+                csvLine += regularCycle.get(r)+",";
+                csvLine += rewardCycle.get(r)+",";
+                csvLine += penaltyCycle.get(r)+",";
+                csvLine += cycleTime.get(r)+",";
+                csvLine += welfare.get(r).vals.size()+",";
+                csvLine += welfare.get(r).average+",";
+                csvLine += welfare.get(r).deviation+",";
+                csvLine += welfare.get(r).min+",";
+                csvLine += welfare.get(r).max+",";
+            }
+            System.out.println("==========================================\n");
+            csvLine = csvLine.substring(0,csvLine.length()-1);
         }
-        System.out.println("==========================================\n");
+        
+        try {              
+            BufferedWriter out = new BufferedWriter(new FileWriter(logMain,true));
+            out.write(csvLine+"\n");
+            out.close();
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
         
         return false;
     }

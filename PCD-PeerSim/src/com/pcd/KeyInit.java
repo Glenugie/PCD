@@ -45,7 +45,9 @@ public class KeyInit implements Control {
         PrologInterface.confMaxNeighbours = Math.max(Configuration.getInt("init.rnd.k"),Configuration.getInt(name+".maxNeighbours"));
         PrologInterface.confDefaultPermit = Configuration.getBoolean(name+".defaultPermit");
         
+        PrologInterface.confDataFile = Configuration.getString(name+".data");
         PrologInterface.confDataTypes = new ArrayList<DataConfig>();
+        PrologInterface.confPolicyFile = Configuration.getString(name+".policies");
         PrologInterface.confProtoPolicies = new ArrayList<String>();
         
         PrologInterface.confTopology = Configuration.getInt(name+".topology");

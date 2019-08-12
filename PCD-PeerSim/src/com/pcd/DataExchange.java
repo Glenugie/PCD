@@ -45,6 +45,9 @@ public class DataExchange implements CDProtocol {
     //private String connectionType;
 
     private boolean disconnecting;
+    
+    protected int lastCycle;
+    protected long lastTime;
 
     protected HashMap<String, Node> overlayNetwork; //Maps PeerIDs to Peers
 
@@ -98,6 +101,9 @@ public class DataExchange implements CDProtocol {
         altruistic = false;
         fair = false;
         faulty = false;
+        
+        lastCycle = -1;
+        lastTime = -1;
         
         initPeer(-1);
     }
@@ -231,6 +237,8 @@ public class DataExchange implements CDProtocol {
     public void nextCycle(Node node, int protocolID) {
         int linkableID = FastConfig.getLinkable(protocolID);
         Linkable linkable = (Linkable) node.getProtocol(linkableID);
+        long start = System.currentTimeMillis();
+        //long tmp = System.currentTimeMillis();
 
         //On the first cycle, initialises the peer
         if (peersim.core.CommonState.getTime() == 0) {
@@ -238,17 +246,21 @@ public class DataExchange implements CDProtocol {
         } else {
             // Policy Processing (Compliance/Violation Check)
             checkPolicyCompliance();
+            //System.out.println("Peer "+peerID+" [Policy Compliance]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
     
             // Process Messages
             dataReceived = 0;
             //System.out.println(peerID);
             processMessages(node, protocolID);
+            //System.out.println("Peer "+peerID+" [Messages]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
             
             // Update Policies
             updatePolicies(); // Empty hook for now
+            //System.out.println("Peer "+peerID+" [Policy Update]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
     
             // Obligation Processing, determines current possible actions and carries one out
-            processActions(node, protocolID);        
+            processActions(node, protocolID);       
+            //System.out.println("Peer "+peerID+" [Actions]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis(); 
     
             // If settings permit (and not currently penalised), forms new connections up to the degree of connectedness in config file
             if (PrologInterface.confNewConnections && overlayNetwork.size() < PrologInterface.confMaxNeighbours && penaltyCycles == 0) {
@@ -258,27 +270,39 @@ public class DataExchange implements CDProtocol {
                     overlayNetwork.put("peer" + randomPeer.getID(), randomPeer);
                 }
             }
+            //System.out.println("Peer "+peerID+" [Overlay]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
             
             // Produce Data
             for (String d : producedData) {
                 dataCollection.add(new DataElement(d, generateDataElement()));
             }
+            //System.out.println("Peer "+peerID+" [Data Generation] "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
     
             //Query q = new Query(new Compound("listing", new Term[]{new Compound("noRequest",new Term[0])})); q.oneSolution(); q.close();
             PrologInterface.retractFact("noRequest", new Term[] { new Atom("peer"+peerID), new Variable("_"), new Variable("_"), new org.jpl7.Integer(peersim.core.CommonState.getTime())});
             if (penaltyCycles > 0) {
                 peerBudget -= PrologInterface.confCycleCost;
                 penaltyCycles = Math.max(0, (penaltyCycles - 1));
+                lastCycle = 2;
             } else if (rewardCycles > 0) {
-                rewardCycles = Math.max(0, (rewardCycles - 1));            
+                rewardCycles = Math.max(0, (rewardCycles - 1));
+                lastCycle = 1;
             } else {
-                peerBudget -= PrologInterface.confCycleCost;            
+                peerBudget -= PrologInterface.confCycleCost;
+                lastCycle = 0;
             }
+            //System.out.println("Peer "+peerID+" [Cycle Tick]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
             
             processTransactionStack();
+            //System.out.println("Peer "+peerID+" [Transaction Stack]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
             
             decideToLeaveNetwork();
+            //System.out.println("Peer "+peerID+" [Network Leave]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
         }
+        
+        //System.out.println("Peer "+peerID+" done in "+(System.currentTimeMillis()-start)+"ms");
+        lastTime = (System.currentTimeMillis()-start);
+        //System.out.println("");
     }
     
     private void checkPolicyCompliance() {
@@ -496,7 +520,7 @@ public class DataExchange implements CDProtocol {
             n.sendMessage(protocolID, msg.sender, node, msg.transactionId, "REJECT_POLICIES", new Object[] { }, null);
             removeOutTrans(n.peerID, msg.transactionId);
         } else if (chosenPS.isActive()) {
-            System.out.println(outTransactionStack.keySet());
+            //System.out.println(outTransactionStack.keySet());
             boolean hasTrans = hasOpenOutTrans(n.peerID, msg.transactionId);
             if (hasTrans || (!hasTrans && transactionFree() && wantedData.contains((String) msg.body[0]))) {
                 // Should accept if not in outTransactionStack, as long as the data being offered is wanted
@@ -504,10 +528,10 @@ public class DataExchange implements CDProtocol {
                 if (!hasTrans) {
                     tID = getFreeTransaction();
                     outTransactionStack.put(tID, new Transaction(tID, -1, n.peerID, (String) msg.body[0], 1, TRANS_LIFETIME));
-                } else {
+                }/* else {
                     System.out.println(outTransactionStack.keySet());
                     System.err.println(outTransactionStack.containsKey(tID)+ " ?= "+hasOpenOutTrans(n.peerID, tID)+": "+tID+", "+msg.transactionId+" ("+hasTrans+")");
-                }
+                }*/
                 outTransactionStack.get(tID).policySets = policySets;
                 HashSet<TransactionRecord> relRecords = getRelRecords();
                 n.sendMessage(protocolID, msg.sender, node, tID, "RECORD_INFORM", new Object[] { chosenPS, relRecords }, null);
@@ -584,7 +608,7 @@ public class DataExchange implements CDProtocol {
                 HashSet<DataPolicy> active = chosenPolicySet.activeSet();
                 HashSet<DataElement> data = null;
                 if (active.size() == chosenPolicySet.size() || (active.size() > 0 && policyProfitPrv_Permit(chosenPolicySet) > MIN_UTIL && chosenPolicySet.permitsAccess(t.predicate))) {
-                    data = chooseData(chosenPolicySet, msg.transactionId);
+                    data = chooseData(chosenPolicySet, t);
                 } else { 
                     // Nothing
                 }
@@ -601,8 +625,11 @@ public class DataExchange implements CDProtocol {
         // Permanently store some details, temporarily store others
     }
     
-    private HashSet<DataElement> chooseData(PolicySet ps, int id) {
+    private HashSet<DataElement> chooseData(PolicySet ps, Transaction t) {
         HashSet<DataElement> data = new HashSet<DataElement>();
+        while (rng.nextInt(2) == 0 || data.size() < t.quantity) {
+            data.add(new DataElement(t.predicate,generateDataElement()));
+        }
         return data;
     }
     
@@ -964,6 +991,7 @@ public class DataExchange implements CDProtocol {
     private void sendDataRequest(int protocolID, Node send, Node rec, String data) {
         if (transactionFree()) {
             int tID = getFreeTransaction();
+            if (tID == -1) { System.err.println("CRITICAL");}
             DataExchange n = (DataExchange) rec.getProtocol(protocolID);
             //System.out.print(rec.getID()+", "+send.getID()+" ("+overlayNetwork.keySet()+")");
             n.sendMessage(protocolID, rec, send, tID, "DATA_REQUEST", new Object[] { data, 1 }, null);
@@ -1242,6 +1270,14 @@ public class DataExchange implements CDProtocol {
         return dCount;
     }
     
+    public String getRole() {
+        String role = "";
+        if (altruistic) { role += "A";} else { role += "S";}
+        if (fair) { role += "F";} else { role += "S";}
+        if (faulty) { role += "F";} else { role += "N";}
+        return role;
+    }
+    
     private boolean transactionFree() {
         return (inTransactionStack.size() < MAX_TRANSACTIONS);
     }
@@ -1323,11 +1359,13 @@ public class DataExchange implements CDProtocol {
     }
     
     private boolean hasOpenOutTrans(long peer, int id) {
-        for (int tKey : outTransactionStack.keySet()) {
-            Transaction t = outTransactionStack.get(tKey);
-            if (t.peerID == peer && t.remoteId == id) {
-                t.resetLife();
-                return true;
+        if (id >= 0) {
+            for (int tKey : outTransactionStack.keySet()) {
+                Transaction t = outTransactionStack.get(tKey);
+                if (t.peerID == peer && t.remoteId == id) {
+                    t.resetLife();
+                    return true;
+                }
             }
         }
         return false;
@@ -1344,6 +1382,10 @@ public class DataExchange implements CDProtocol {
     private void processIncomingDataPackage(DataPackage dataPackage, Node sender, int protocolID) {
         DataExchange n = (DataExchange) sender.getProtocol(protocolID);
         dataPackage.decrypt();
+        
+        for (DataElement d : dataPackage.dataItems) {
+            dataReceived += dataValue.get(d.dataID);
+        }
         
         for (TransactionRecord r : dataPackage.transactionRecords) {
             addTransRecordToCollection(r);
@@ -1728,6 +1770,8 @@ public class DataExchange implements CDProtocol {
 //        if (obligations != null) {
 //            dataPackage.obligations.addAll(obligations);
 //        }
+        if (data != null) { dataPackage.dataItems.addAll(data);}
+        if (transRecords != null) { dataPackage.transactionRecords.addAll(transRecords);}
         dataPackage.encrypt();
         return dataPackage;
     }
