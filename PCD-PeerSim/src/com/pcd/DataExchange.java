@@ -322,6 +322,8 @@ public class DataExchange implements CDProtocol {
 
     private void processMessages(Node node, int protocolID) {
         if (PrologInterface.printSimInfo) { System.out.println(peerID+" has "+messages.size()+" messages");}
+        HashMap<String, Long> messageTimes = new HashMap<String, Long>();
+        HashMap<String, Long> messageTotals = new HashMap<String, Long>();
         for (int i = messages.size() - 1; i >= 0; i -= 1) {
             P2PMessage msg = messages.get(i);
             if (msg.time <= peersim.core.CommonState.getTime()
@@ -329,6 +331,7 @@ public class DataExchange implements CDProtocol {
                     || msg.type.equals("RECORD_INFORM") || msg.type.equals("OBLIGATION_COMPLETE") || msg.type.equals("CONFIRM_WAIT")
                     || msg.type.equals("MALFORMED_RECORDS") || msg.type.equals("INVALID_TRANSACTION"))))) {
                 DataExchange n = (DataExchange) msg.sender.getProtocol(protocolID);
+                long start = System.currentTimeMillis();
                 try {
                     switch (msg.type) {
                         case "DATA_REQUEST":
@@ -384,12 +387,22 @@ public class DataExchange implements CDProtocol {
                     //System.err.println(e.getMessage());
                     e.printStackTrace();
                 }
+                
+                if (!messageTimes.containsKey(msg.type)) {
+                    messageTimes.put(msg.type, (long) 0);
+                    messageTotals.put(msg.type, (long) 0);
+                }
+                messageTotals.replace(msg.type, messageTotals.get(msg.type)+1);
+                messageTimes.replace(msg.type, messageTimes.get(msg.type)+(System.currentTimeMillis()-start));
 
                 Object test = messages.remove(i);
                 if (test == null) {
                     System.err.println("ERROR removing message "+i+" from inbox of "+peerID);
                 }
             }
+        }
+        for (String t : messageTimes.keySet()) {
+            System.out.println("Average for "+t+": "+(messageTimes.get(t)/messageTotals.get(t))+"ms");
         }
     }
     
