@@ -12,21 +12,21 @@ public class DataPackage {
 	}
 	
 	public void encrypt() {
-		try {
-			Thread.sleep(50);
-		} catch (InterruptedException e) {
-			//Unable to simulate sleep
-			System.err.println("Unable to simulate encryption");
-		}
+//		try {
+//			Thread.sleep(50);
+//		} catch (InterruptedException e) {
+//			//Unable to simulate sleep
+//			System.err.println("Unable to simulate encryption");
+//		}
 	}
 	
 	public void decrypt() {
-		try {
-			Thread.sleep(50);
-		} catch (InterruptedException e) {
-			//Unable to simulate sleep
-			System.err.println("Unable to simulate decryption");
-		}
+//		try {
+//			Thread.sleep(50);
+//		} catch (InterruptedException e) {
+//			//Unable to simulate sleep
+//			System.err.println("Unable to simulate decryption");
+//		}
 	}
 	
 	public String toString() {

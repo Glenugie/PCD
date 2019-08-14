@@ -65,13 +65,20 @@ public class DataExchangeObserver implements Control {
         
         socialWelfare = new LinkedList<HashMap<String, SocialWelfare>>();
         
-        logMain = new File("res/csv/Run_"+dateFormat.format(new Date().getTime())+".csv");       
+        String s = "";
+        try {
+            s = Configuration.getString("simulation.title");
+        } catch (Exception e) {
+            s = dateFormat.format(new Date().getTime());
+        }
+        
+        logMain = new File("res/csv/Run_"+s+".csv");       
         boolean newFile = false;
         try {                    
-            newFile = logMain.createNewFile();
+            newFile = false;
             int i = 1;
             while (i < 100 && !newFile) {
-                logMain = new File("res/csv/Run_"+dateFormat.format(new Date().getTime())+"_"+i+".csv");   
+                logMain = new File("res/csv/Run_"+s+"_"+i+".csv");   
                 newFile = logMain.createNewFile();
                 i += 1;
             }
@@ -107,7 +114,7 @@ public class DataExchangeObserver implements Control {
                 roles.replace(role, roles.get(role)+1);
             }
             
-            csvLine = "[PARAMETERS], Size: "+PrologInterface.confPeers+", Cycles: "+PrologInterface.confCycles+", Topology: "+PrologInterface.confTopology+" ("+PrologInterface.confTopologyVal+"), Altruist: "+
+            csvLine = "//[PARAMETERS], Size: "+PrologInterface.confPeers+", Cycles: "+PrologInterface.confCycles+", Topology: "+PrologInterface.confTopology+" ("+PrologInterface.confTopologyVal+"), Altruist: "+
                     PrologInterface.confAltruistic+"%, Fair: "+PrologInterface.confFair+"%, Fault: "+PrologInterface.confFaultyPeers+"% ("+PrologInterface.confFaultRate+"%), Default P: "+
                     PrologInterface.confDefaultPermit+", Max Neighbours: "+PrologInterface.confMaxNeighbours+", Policies: "+PrologInterface.confMinPols+" - "+PrologInterface.confMaxPols+", Budget: "+
                     PrologInterface.confMinBudget+" - "+PrologInterface.confMaxBudget+", Data: "+PrologInterface.confDataFile+", Policies: "+PrologInterface.confPolicyFile+"\n";
@@ -127,6 +134,7 @@ public class DataExchangeObserver implements Control {
                 csvLine += r+"-SW-Dev,";
                 csvLine += r+"-SW-Min,";
                 csvLine += r+"-SW-Max,";
+                csvLine += r+"-SW-All,";
             }
             csvLine = csvLine.substring(0,csvLine.length()-1);
         } else {        
@@ -203,6 +211,7 @@ public class DataExchangeObserver implements Control {
                 csvLine += welfare.get(r).deviation+",";
                 csvLine += welfare.get(r).min+",";
                 csvLine += welfare.get(r).max+",";
+                csvLine += welfare.get(r).getValues()+",";
             }
             System.out.println("==========================================\n");
             csvLine = csvLine.substring(0,csvLine.length()-1);

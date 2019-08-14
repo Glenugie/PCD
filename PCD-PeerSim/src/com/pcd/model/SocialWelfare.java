@@ -28,6 +28,7 @@ public class SocialWelfare {
         if (!firstVal) {
             min = val;
             max = val;
+            firstVal = true;
         }
         
         total += val;
@@ -35,6 +36,17 @@ public class SocialWelfare {
         
         if (val < min) { min = val;}
         if (val > max) { max = val;}
+    }
+    
+    public String getValues() {
+        String s = "";
+        if (vals.size() > 0) {
+            for (Double d : vals) {            
+                s += d+",";
+            }
+            s = s.substring(0,s.length()-1);
+        }
+        return "\""+s+"\"";
     }
     
     public void calculate() {

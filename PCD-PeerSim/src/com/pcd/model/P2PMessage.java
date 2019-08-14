@@ -7,7 +7,8 @@ import peersim.core.Node;
 public class P2PMessage {
 	public Node sender;
 	public Node receiver;
-	public int transactionId;
+    public int prvTransId;
+    public int reqTransId;
 	public String type;    
     public long time;
 	
@@ -15,11 +16,12 @@ public class P2PMessage {
 	
 	private HashSet<Node> chain;
 	
-	public P2PMessage(Node s, Node r, int id, String t, long ti, Object[] b) {
+	public P2PMessage(Node s, Node r, int prvid, int reqid, String t, long ti, Object[] b) {
 	    //System.out.println(s.getID()+", "+r.getID());
 		sender = s;
 		receiver = r;
-		transactionId = id;
+        prvTransId = prvid;
+        reqTransId = reqid;
 		type = t;
         time = ti;
 		
