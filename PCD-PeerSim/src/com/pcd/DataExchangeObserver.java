@@ -70,15 +70,13 @@ public class DataExchangeObserver implements Control {
             s = Configuration.getString("simulation.title");
         } catch (Exception e) {
             s = dateFormat.format(new Date().getTime());
-        }
-        
-        logMain = new File("res/csv/Run_"+s+".csv");       
+        }  
         boolean newFile = false;
         try {                    
             newFile = false;
             int i = 1;
             while (i < 100 && !newFile) {
-                logMain = new File("res/csv/Run_"+s+"_"+i+".csv");   
+                logMain = new File("C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/Run_"+s+"_"+i+".csv");   
                 newFile = logMain.createNewFile();
                 i += 1;
             }

@@ -135,6 +135,8 @@ public class DataExchange implements CDProtocol {
         messageTotals.put("POLICY_INFORM", 0);
         messageTotals.put("RECORD_INFORM", 0);
         messageTotals.put("DATA_RESULT", 0);
+        messageTotals.put("DATA_RESULT_Y", 0);
+        messageTotals.put("DATA_RESULT_N", 0);
         messageTotals.put("NO_DATA", 0);
         messageTotals.put("NO_ACCESS", 0);
         messageTotals.put("REJECT_POLICIES", 0);
@@ -1165,6 +1167,18 @@ public class DataExchange implements CDProtocol {
                         }
                     } else {
                         messages.add(msg);
+                        if (type.equals("DATA_RESULT")) {
+                            if (messageTotals.containsKey(type)) { messageTotals.replace(type, messageTotals.get(type)+1);}
+                            try {
+                                if (((DataPackage) body[0]).dataItems.size() > 0) {
+                                    type = "DATA_RESULT_Y";                                    
+                                } else {
+                                    type = "DATA_RESULT_N";                                    
+                                }
+                            } catch (Exception e) {
+                                type = "DATA_RESULT_N";
+                            }
+                        }
                         if (messageTotals.containsKey(type)) { messageTotals.replace(type, messageTotals.get(type)+1);}
                         if (PrologInterface.debugMessages) {
                             String payloadString = "";
