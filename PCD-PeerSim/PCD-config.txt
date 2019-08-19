@@ -1,7 +1,7 @@
 # PCD CONFIG
 # Initialises simulation parameters
 	random.seed 1564148657890		# Fixed seed, for debugging
-	simulation.experiments 1	# Number of Iterations
+	simulation.experiments 25	# Number of Iterations
 	simulation.cycles 100		# Number of Cycles per Iteration
 	simulation.title Test
 	network.size 100			# Number of Peers
@@ -19,8 +19,8 @@
     init.keys.minBudget 100
     init.keys.maxBudget 100
 
-	init.keys.minPolicies 5
-	init.keys.maxPolicies 10
+	init.keys.minPolicies 50
+	init.keys.maxPolicies 100
 
 	init.keys.percFaultyPeers 10
 	init.keys.percFaultRate 5

@@ -31,6 +31,7 @@ public class DataExchange implements CDProtocol {
     private final boolean POLICY_OVERLAP_WARNING = true;
     private final boolean DEBUG_POL_COST = false;
     private final int MAX_GROUPS = 100;
+    private final boolean TRUE_RANDOM = true;
     private final int AVG_TRANS_LENGTH = 4;
     private final int DATA_ELEMENT_LENGTH = 5;    
     private final boolean DATA_REQUEST_FORWARDING = true;
@@ -437,10 +438,17 @@ public class DataExchange implements CDProtocol {
     }
     
     private boolean entails(String s) {
-        if (rng.nextInt(25) != 0) {
-            return true;
+        if (TRUE_RANDOM) {
+            if (rng.nextInt(25) != 0) {
+                return true;
+            }
+            return false;
+        } else {
+            if (countData(s) > 0) {
+                return true;
+            }
+            return false;
         }
-        return false;
     }
     
     private HashSet<PolicySet> generatePolicySets() {
