@@ -547,8 +547,37 @@ public class DataExchange implements CDProtocol {
             return rng.nextInt(50)-25;
         } else {
             double u = 0.0;
+            for (Action a : p.actions) {
+                switch (a.type) {
+                    case "obtain":
+                        break;
+                    case "wipe":
+                        break;
+                    case "provide":
+                        if (Long.parseLong(a.payload[2]) == peerID) {
+                            u += dataValue.get(a.payload[0]) * Integer.parseInt(a.payload[1]);
+                        }
+                        break;
+                    case "adopt":
+                        u += benefitOfAdopt(new DataPolicy(-1,a.payload[0],"",false));
+                        break;
+                    case "revoke":
+                        u += benefitOfRevoke(new DataPolicy(-1,a.payload[0],"",false));
+                        break;
+                    case "inform":
+                        break;
+                }
+            }
             return u;
         }
+}
+    
+    private double benefitOfAdopt(DataPolicy p) {
+        return 0;
+    }
+    
+    private double benefitOfRevoke(DataPolicy p) {
+        return 0;
     }
     
     private DataPolicy negativeOptional(PolicySet ps) {

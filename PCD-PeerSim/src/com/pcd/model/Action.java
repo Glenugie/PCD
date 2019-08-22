@@ -25,7 +25,7 @@ public class Action {
         if (type.equals("access")) { 
             expiry = -1;
         } else {
-            expiry = (peersim.core.CommonState.getTime() + Integer.parseInt(payload[payload.length-1]));
+            expiry = (peersim.core.CommonState.getTime() + Integer.parseInt((String) payload[payload.length-1]));
         }
         
         //TODO: Calculate time to complete action
@@ -36,7 +36,7 @@ public class Action {
         if (type.equals("dataAccess")) { 
             return -1;
         } else {
-            return Integer.parseInt(payload[payload.length-1]);
+            return Integer.parseInt((String) payload[payload.length-1]);
         }
     }
     
