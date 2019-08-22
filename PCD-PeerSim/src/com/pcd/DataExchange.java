@@ -500,15 +500,55 @@ public class DataExchange implements CDProtocol {
     }
     
     private double policyProfitPrv_Permit(PolicySet ps) {
-        return rng.nextInt(50)-25;
+        if (TRUE_RANDOM) {
+            return rng.nextInt(50)-25;
+        } else {
+            double u = 0.0;
+            for (DataPolicy p : ps.getPolicies()) {
+                switch (p.mod) {
+                    case "P":
+                        u += p.reward;
+                        break;
+                    case "F":
+                        u -= p.penalty;
+                        break;
+                    case "O":
+                        u += policyProfitPrv_Oblige(p);
+                        break;
+                }
+            }
+            return u;
+        }
     }
     
     private double policyProfitPrv_Prohibit(PolicySet ps) {
-        return rng.nextInt(50)-25;
+        if (TRUE_RANDOM) {
+            return rng.nextInt(50)-25;
+        } else {
+            double u = 0.0;
+            for (DataPolicy p : ps.getPolicies()) {
+                switch (p.mod) {
+                    case "P":
+                        u -= p.penalty;
+                        break;
+                    case "F":
+                        u += p.reward;
+                        break;
+                    case "O":
+                        break;
+                }
+            }
+            return u;
+        }
     }
     
-    private double policyProfitPrv_Oblige(PolicySet ps) {
-        return rng.nextInt(50)-25;
+    private double policyProfitPrv_Oblige(DataPolicy p) {
+        if (TRUE_RANDOM) {
+            return rng.nextInt(50)-25;
+        } else {
+            double u = 0.0;
+            return u;
+        }
     }
     
     private DataPolicy negativeOptional(PolicySet ps) {

@@ -142,6 +142,13 @@ public class PolicySet {
         return secondary;
     }
     
+    public HashSet<DataPolicy> getPolicies() {
+        HashSet<DataPolicy> pols = new HashSet<DataPolicy>();
+        pols.addAll(primary);
+        pols.addAll(secondary);
+        return pols;
+    }
+    
     public HashSet<DataPolicy> getObligations() {
         HashSet<DataPolicy> obligations = new HashSet<DataPolicy>();
 
