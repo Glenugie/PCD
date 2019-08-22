@@ -53,6 +53,11 @@ public class PolicySet {
         }
     }
     
+    public void remove(DataPolicy p) {
+        primary.remove(p);
+        secondary.remove(p);
+    }
+    
     
     public void computeValue() {        
         providerValue = 0.0;

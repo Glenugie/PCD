@@ -405,7 +405,7 @@ public class DataExchange implements CDProtocol {
             if (entails((String) msg.body[0])) {
                 int newTID = getFreeTransaction();
                 
-                relPolSets = generatePolicySets();
+                relPolSets = generatePolicySets(msg.sender, (String) msg.body[0]);
                 if (relPolSets.size() > 0 || PrologInterface.confDefaultPermit) {
                     Transaction t = new Transaction(newTID, msg.reqTransId, n.peerID, (String) msg.body[0], (int) msg.body[1], TRANS_LIFETIME);
                     t.policySets = relPolSets;
@@ -451,7 +451,7 @@ public class DataExchange implements CDProtocol {
         }
     }
     
-    private HashSet<PolicySet> generatePolicySets() {
+    private HashSet<PolicySet> generatePolicySets(Node req, String pred) {
         HashSet<PolicySet> relPolicySets = new HashSet<PolicySet>();
         
         if (TRUE_RANDOM) {
@@ -459,10 +459,44 @@ public class DataExchange implements CDProtocol {
                 relPolicySets.add(new PolicySet());
             }
         } else {
-            
+            HashSet<DataPolicy> relPolicies = relevantPolicies(req, pred);
+            HashSet<DataPolicy> toRemove = new HashSet<DataPolicy>();
+            for (DataPolicy pol : relPolicies) {
+                if (!toRemove.contains(pol)) {
+                    PolicySet pSet = new PolicySet();
+                    for (DataPolicy tPol : relPolicies) {
+                        if (!toRemove.contains(tPol)) {
+                            if (pol.equals(tPol)) {
+                                pSet.addPrimary(tPol, 0.0, 0.0);
+                                toRemove.add(tPol);
+                            } else if (!pol.mutuallyExclusive(tPol)) {
+                                pSet.addSecondary(tPol, 0.0, 0.0);                        
+                            }
+                        }
+                    }
+                    double utilP = policyProfitPrv_Permit(pSet);
+                    DataPolicy neg = negativeOptional(pSet);
+                    while (utilP < MIN_UTIL && neg != null) {
+                        pSet.remove(neg);
+                        utilP = policyProfitPrv_Permit(pSet);
+                        neg = negativeOptional(pSet);
+                    }
+                    pSet.providerValue = utilP;
+                    relPolicySets.add(pSet);
+                }
+            }
+            PolicySet forbidPols = prohibitPolicies(req, pred);
+            double utilF = policyProfitPrv_Prohibit(forbidPols);
+            relPolicySets = removeBelowThreshold(relPolicySets, utilF);            
         }
                 
         return relPolicySets;
+    }
+    
+    private HashSet<DataPolicy> relevantPolicies(Node req, String pred) {
+        HashSet<DataPolicy> relPolicies = new HashSet<DataPolicy>();
+        
+        return relPolicies;
     }
     
     private double policyProfitPrv_Permit(PolicySet ps) {
@@ -475,6 +509,18 @@ public class DataExchange implements CDProtocol {
     
     private double policyProfitPrv_Oblige(PolicySet ps) {
         return rng.nextInt(50)-25;
+    }
+    
+    private DataPolicy negativeOptional(PolicySet ps) {
+        return null;
+    }
+    
+    private PolicySet prohibitPolicies(Node req, String pred) {
+        return new PolicySet(); 
+    }
+    
+    private HashSet<PolicySet> removeBelowThreshold(HashSet<PolicySet> relPols, double utilF) {
+        return relPols;
     }
     
     private int checkCompliance(HashSet<PolicySet> polSets, String pred) {
