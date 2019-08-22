@@ -30,8 +30,8 @@ import peersim.core.Node;
 public class DataExchange implements CDProtocol {
     private final boolean POLICY_OVERLAP_WARNING = true;
     private final boolean DEBUG_POL_COST = false;
+    private final boolean TRUE_RANDOM = false;
     private final int MAX_GROUPS = 100;
-    private final boolean TRUE_RANDOM = true;
     private final int AVG_TRANS_LENGTH = 4;
     private final int DATA_ELEMENT_LENGTH = 5;    
     private final boolean DATA_REQUEST_FORWARDING = true;
@@ -406,7 +406,7 @@ public class DataExchange implements CDProtocol {
                 int newTID = getFreeTransaction();
                 
                 relPolSets = generatePolicySets();
-                if (relPolSets.size() > 0) {
+                if (relPolSets.size() > 0 || PrologInterface.confDefaultPermit) {
                     Transaction t = new Transaction(newTID, msg.reqTransId, n.peerID, (String) msg.body[0], (int) msg.body[1], TRANS_LIFETIME);
                     t.policySets = relPolSets;
                     inTransactionStack.put(newTID, t);
@@ -454,8 +454,12 @@ public class DataExchange implements CDProtocol {
     private HashSet<PolicySet> generatePolicySets() {
         HashSet<PolicySet> relPolicySets = new HashSet<PolicySet>();
         
-        if (rng.nextInt(5) != 0) {
-            relPolicySets.add(new PolicySet());
+        if (TRUE_RANDOM) {
+            if (rng.nextInt(5) != 0) {
+                relPolicySets.add(new PolicySet());
+            }
+        } else {
+            
         }
                 
         return relPolicySets;
