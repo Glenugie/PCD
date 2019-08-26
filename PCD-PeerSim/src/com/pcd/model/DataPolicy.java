@@ -1,10 +1,13 @@
 package com.pcd.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 
 import org.jpl7.Term;
+
+import com.pcd.DataExchange;
 
 public class DataPolicy {
 	public long ownerID;
@@ -325,6 +328,38 @@ public class DataPolicy {
     
     public boolean mutuallyExclusive(DataPolicy polC) {
         return true;
+    }
+    
+    public HashMap<String, Integer> getData(String id) {
+        HashMap<String, Integer> availableData = new HashMap<String, Integer>();
+        
+        for (Action a : actions) {
+            if (a.type.equals("dataAccess")) {
+                if (((String) a.payload[1]).equals("_") || ((String) a.payload[1]).equals(id)) {
+                    String dType = (String) a.payload[0];
+                    int dQuant = Integer.parseInt(a.payload[2]);
+                    if (!availableData.containsKey(dType)) { availableData.put(dType, 0);}
+                    if (dQuant == -1) {
+                        availableData.replace(dType, -1);
+                    } else if (availableData.get(dType) != -1) {
+                        availableData.replace(dType, availableData.get(dType)+dQuant);
+                    }
+                }
+            }
+        }
+        
+        return availableData;
+    }
+    
+    public boolean isActive(DataExchange peer) {
+        return true;        
+    }
+
+    public boolean isActivatable(DataExchange peer) {
+        if (isActive(peer)) { return true;}
+        
+        
+        return true;        
     }
     
     /*public String getObligationString() {

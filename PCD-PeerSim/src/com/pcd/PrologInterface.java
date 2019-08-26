@@ -12,7 +12,14 @@ import org.jpl7.Term;
 
 import com.pcd.model.DataConfig;
 
-public class PrologInterface {	
+public class PrologInterface {	    
+    public static boolean TRUE_RANDOM;
+    public static boolean REASONING;
+    public static boolean DATA_REQUEST_FORWARDING;
+    public static int MAX_TRANSACTIONS;
+    public static int TRANS_LIFETIME;
+    public static int MIN_UTIL;
+    
 	public static boolean printSimInfo;
 	public static boolean debugProlog;	
 	public static boolean debugMessages;

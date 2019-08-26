@@ -12,6 +12,14 @@
 # Data Exchange Protocol and Parameters
 	protocol.pcd com.pcd.DataExchange
 	protocol.pcd.linkable lnk
+	
+# Global Parameters
+    init.keys.peersTrueRandom false
+    init.keys.peersReasoning true
+    init.keys.dataRequestForwarding true
+    init.keys.maxTransactions 1000
+    init.keys.transactionLifetime 5
+    init.keys.minUtility 10
 
 # Peer Parameters
 	init.keys.cycleCost 1 

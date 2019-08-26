@@ -30,14 +30,9 @@ import peersim.core.Node;
 public class DataExchange implements CDProtocol {
     private final boolean POLICY_OVERLAP_WARNING = true;
     private final boolean DEBUG_POL_COST = false;
-    private final boolean TRUE_RANDOM = false;
     private final int MAX_GROUPS = 100;
     private final int AVG_TRANS_LENGTH = 4;
     private final int DATA_ELEMENT_LENGTH = 5;    
-    private final boolean DATA_REQUEST_FORWARDING = true;
-    private final int MAX_TRANSACTIONS = 1000;
-    private final int TRANS_LIFETIME = 5;
-    private final int MIN_UTIL = 10;
 
     //private SimpleDateFormat prologDateFormat;
     private Random rng;
@@ -122,7 +117,7 @@ public class DataExchange implements CDProtocol {
         initMessageTotals();
         
         freeTransactions = new ArrayList<Integer>();
-        for (int i = 0; i < MAX_TRANSACTIONS; i += 1) { freeTransactions.add(i);}
+        for (int i = 0; i < PrologInterface.MAX_TRANSACTIONS; i += 1) { freeTransactions.add(i);}
         inTransactionStack = new HashMap<Integer, Transaction>();
         outTransactionStack = new HashMap<Integer, Transaction>();
         transactions = new HashSet<TransactionRecord>();
@@ -407,7 +402,7 @@ public class DataExchange implements CDProtocol {
                 
                 relPolSets = generatePolicySets(msg.sender, (String) msg.body[0]);
                 if (relPolSets.size() > 0 || PrologInterface.confDefaultPermit) {
-                    Transaction t = new Transaction(newTID, msg.reqTransId, n.peerID, (String) msg.body[0], (int) msg.body[1], TRANS_LIFETIME);
+                    Transaction t = new Transaction(newTID, msg.reqTransId, n.peerID, (String) msg.body[0], (int) msg.body[1], PrologInterface.TRANS_LIFETIME);
                     t.policySets = relPolSets;
                     inTransactionStack.put(newTID, t);
                     n.sendMessage(protocolID, msg.sender, node, newTID, msg.reqTransId, "POLICY_INFORM", new Object[] { (String) msg.body[0], relPolSets }, null);
@@ -420,7 +415,7 @@ public class DataExchange implements CDProtocol {
                 n.sendMessage(protocolID, msg.sender, node, -1, msg.reqTransId, "NO_DATA", new Object[] { datalessPackage }, null);         
             }
             
-            if (DATA_REQUEST_FORWARDING && fair) {
+            if (PrologInterface.DATA_REQUEST_FORWARDING && fair) {
                 HashSet<Node> forwardTargets = getForwardingNeighbours((String) msg.body[0]);
                 for (Node nT : forwardTargets) {
                     if (!msg.inChain(nT)) {
@@ -438,7 +433,7 @@ public class DataExchange implements CDProtocol {
     }
     
     private boolean entails(String s) {
-        if (TRUE_RANDOM) {
+        if (PrologInterface.TRUE_RANDOM) {
             if (rng.nextInt(25) != 0) {
                 return true;
             }
@@ -454,7 +449,7 @@ public class DataExchange implements CDProtocol {
     private HashSet<PolicySet> generatePolicySets(Node req, String pred) {
         HashSet<PolicySet> relPolicySets = new HashSet<PolicySet>();
         
-        if (TRUE_RANDOM) {
+        if (PrologInterface.TRUE_RANDOM) {
             if (rng.nextInt(5) != 0) {
                 relPolicySets.add(new PolicySet());
             }
@@ -476,7 +471,7 @@ public class DataExchange implements CDProtocol {
                     }
                     double utilP = policyProfitPrv_Permit(pSet);
                     DataPolicy neg = negativeOptional(pSet);
-                    while (utilP < MIN_UTIL && neg != null) {
+                    while (utilP < PrologInterface.MIN_UTIL && neg != null) {
                         pSet.remove(neg);
                         utilP = policyProfitPrv_Permit(pSet);
                         neg = negativeOptional(pSet);
@@ -493,14 +488,29 @@ public class DataExchange implements CDProtocol {
         return relPolicySets;
     }
     
+    /* Relevant here are those policies which in some way reference the requestor's identity (specifically, or as a group 
+     * they are a part of) and the data in question (either the specific predicate or as the wildcard). 
+     * We note that these relevant policies need not necessarily be active in the current state, but it must be possible to 
+     * activate them. Concretely, a policy that activates at a later time is acceptable, but not one that requires a different 
+     * identity, or to undo an event that has already occurred.
+     */
     private HashSet<DataPolicy> relevantPolicies(Node req, String pred) {
         HashSet<DataPolicy> relPolicies = new HashSet<DataPolicy>();
+        
+        for (DataPolicy p : policies) {
+            HashMap<String, Integer> data = p.getData("peer"+req.getID());
+            if ((data.containsKey(pred) || data.containsKey("any")) && (p.tgt.equals("peer"+req.getID()) || p.tgt.equals("any"))) {
+                if (p.isActivatable(this)) {
+                    relPolicies.add(p);
+                }
+            }
+        }
         
         return relPolicies;
     }
     
     private double policyProfitPrv_Permit(PolicySet ps) {
-        if (TRUE_RANDOM) {
+        if (PrologInterface.TRUE_RANDOM) {
             return rng.nextInt(50)-25;
         } else {
             double u = 0.0;
@@ -522,7 +532,7 @@ public class DataExchange implements CDProtocol {
     }
     
     private double policyProfitPrv_Prohibit(PolicySet ps) {
-        if (TRUE_RANDOM) {
+        if (PrologInterface.TRUE_RANDOM) {
             return rng.nextInt(50)-25;
         } else {
             double u = 0.0;
@@ -543,7 +553,7 @@ public class DataExchange implements CDProtocol {
     }
     
     private double policyProfitPrv_Oblige(DataPolicy p) {
-        if (TRUE_RANDOM) {
+        if (PrologInterface.TRUE_RANDOM) {
             return rng.nextInt(50)-25;
         } else {
             double u = 0.0;
@@ -605,11 +615,22 @@ public class DataExchange implements CDProtocol {
         //System.out.println("Penalty Given: "+pen);
         return pen;
     }
-    
     private HashSet<Node> getForwardingNeighbours(String pred) {
         HashSet<Node> targets = new HashSet<Node>();
         for (String n : overlayNetwork.keySet()) {
-            targets.add(overlayNetwork.get(n));
+            if (PrologInterface.TRUE_RANDOM) {
+                if (rng.nextBoolean()) {
+                    targets.add(overlayNetwork.get(n));
+                }
+            } else if (!PrologInterface.REASONING) {
+                targets.add(overlayNetwork.get(n));                
+            } else {                
+                // The neighbours of the provider which either: 
+                    // a) Are known to own $\overline{\mathbbm{p}}$, 
+                    // b) Have previously denied access to $\overline{\mathbbm{p}}$,
+                    // c) Potentially has $\overline{\mathbbm{p}}$ (not confirmed to not have it)
+                
+            }
         }
         return targets;
     }
@@ -658,7 +679,7 @@ public class DataExchange implements CDProtocol {
                 int tID = msg.reqTransId;
                 if (!hasTrans) {
                     tID = getFreeTransaction();
-                    outTransactionStack.put(tID, new Transaction(tID, msg.prvTransId, n.peerID, (String) msg.body[0], 1, TRANS_LIFETIME));
+                    outTransactionStack.put(tID, new Transaction(tID, msg.prvTransId, n.peerID, (String) msg.body[0], 1, PrologInterface.TRANS_LIFETIME));
                 }/* else {
                     System.out.println(outTransactionStack.keySet());
                     System.err.println(outTransactionStack.containsKey(tID)+ " ?= "+hasOpenOutTrans(n.peerID, tID)+": "+tID+", "+msg.transactionId+" ("+hasTrans+")");
@@ -739,7 +760,7 @@ public class DataExchange implements CDProtocol {
                 
                 HashSet<DataPolicy> active = chosenPolicySet.activeSet();
                 HashSet<DataElement> data = null;
-                if (active.size() == chosenPolicySet.size() || (active.size() > 0 && policyProfitPrv_Permit(chosenPolicySet) > MIN_UTIL && chosenPolicySet.permitsAccess(t.predicate))) {
+                if (active.size() == chosenPolicySet.size() || (active.size() > 0 && policyProfitPrv_Permit(chosenPolicySet) > PrologInterface.MIN_UTIL && chosenPolicySet.permitsAccess(t.predicate))) {
                     data = chooseData(chosenPolicySet, t);
                 } else { 
                     // Nothing
@@ -1127,7 +1148,7 @@ public class DataExchange implements CDProtocol {
             //System.out.print(rec.getID()+", "+send.getID()+" ("+overlayNetwork.keySet()+")");
             n.sendMessage(protocolID, rec, send, -1, tID, "DATA_REQUEST", new Object[] { data, 1 }, null);
             //System.out.println("");
-            outTransactionStack.put(tID, new Transaction(tID, -1, n.peerID, data, 1, TRANS_LIFETIME));
+            outTransactionStack.put(tID, new Transaction(tID, -1, n.peerID, data, 1, PrologInterface.TRANS_LIFETIME));
         }
     }
     
