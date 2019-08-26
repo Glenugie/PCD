@@ -14,6 +14,7 @@ import com.pcd.model.Action;
 import com.pcd.model.DataElement;
 import com.pcd.model.DataPackage;
 import com.pcd.model.DataPolicy;
+import com.pcd.model.Knowledgebase;
 import com.pcd.model.P2PMessage;
 import com.pcd.model.PolicySet;
 import com.pcd.model.Transaction;
@@ -46,6 +47,7 @@ public class DataExchange implements CDProtocol {
     protected long lastTime;
 
     protected HashMap<String, Node> overlayNetwork; //Maps PeerIDs to Peers
+    protected Knowledgebase kb;
 
 //    protected HashMap<String, Integer> desiredData;
 //    protected HashMap<String, Integer> pendingData;
@@ -112,6 +114,7 @@ public class DataExchange implements CDProtocol {
         dataCollection = new HashSet<DataElement>();
         
         overlayNetwork = new HashMap<String, Node>();
+        kb = new Knowledgebase();
         
         messages = new ArrayList<P2PMessage>();
         initMessageTotals();
@@ -625,11 +628,9 @@ public class DataExchange implements CDProtocol {
             } else if (!PrologInterface.REASONING) {
                 targets.add(overlayNetwork.get(n));                
             } else {                
-                // The neighbours of the provider which either: 
-                    // a) Are known to own $\overline{\mathbbm{p}}$, 
-                    // b) Have previously denied access to $\overline{\mathbbm{p}}$,
-                    // c) Potentially has $\overline{\mathbbm{p}}$ (not confirmed to not have it)
-                
+                if (kb.mightHaveData(n, pred)) {
+                    targets.add(overlayNetwork.get(n));                        
+                }
             }
         }
         return targets;
