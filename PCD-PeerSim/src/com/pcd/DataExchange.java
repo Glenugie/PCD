@@ -641,6 +641,8 @@ public class DataExchange implements CDProtocol {
         //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
         
         processIncomingDataPackage((DataPackage) msg.body[0], msg.sender, protocolID);
+        Transaction t = getOpenOutTrans(n.peerID, msg.reqTransId);
+        kb.add("noData", new String[]{ "peer"+n.peerID, t.predicate});
         
         //Prolog State of Affairs Add: Sender_ID does not have Data_Item
         //PrologInterface.assertFact("noData", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.body[0]) });
@@ -652,6 +654,8 @@ public class DataExchange implements CDProtocol {
         //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
         
         processIncomingDataPackage((DataPackage) msg.body[0], msg.sender, protocolID);
+        Transaction t = getOpenOutTrans(n.peerID, msg.reqTransId);
+        kb.add("refusedData", new String[]{ "peer"+n.peerID, t.predicate});
         
         //Prolog State of Affairs Add: Sender ID may have Data_item, but won't allow us access
         //PrologInterface.assertFact("noAccess", new Term[] { new Atom("peer" + peerID), new Atom("peer" + n.peerID), new Atom((String) msg.payload[0]) });
@@ -693,6 +697,8 @@ public class DataExchange implements CDProtocol {
             scheduleActions(chosenPS);
             n.sendMessage(protocolID, msg.sender, node, msg.prvTransId, msg.reqTransId, "WAIT", new Object[] { }, null);
         }
+        
+        kb.add("hasData", new String[]{ "peer"+n.peerID, (String) msg.body[0]});
     }
     
     private PolicySet choosePolicySet(HashSet<PolicySet> policySets) {
@@ -1547,6 +1553,15 @@ public class DataExchange implements CDProtocol {
             }
         }
         return false;
+    }
+    
+    private Transaction getOpenOutTrans(long peer, int id) {
+        for (int key : outTransactionStack.keySet()) {
+            if (outTransactionStack.get(key).transactionId == id && outTransactionStack.get(key).peerID == peer) {
+                return outTransactionStack.get(key);
+            }
+        }
+        return null;
     }
     
     private boolean removeOutTrans(long peer, int id) {
