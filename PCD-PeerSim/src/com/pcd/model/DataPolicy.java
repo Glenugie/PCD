@@ -8,6 +8,9 @@ import java.util.LinkedList;
 import org.jpl7.Term;
 
 import com.pcd.DataExchange;
+import com.pcd.PrologInterface;
+
+import peersim.core.CommonState;
 
 public class DataPolicy {
 	public long ownerID;
@@ -282,6 +285,10 @@ public class DataPolicy {
         return true;
     }
     
+    public boolean trueEquals(DataPolicy polC) {
+        return getPolicyString().equals(polC.getPolicyString());
+    }
+    
     public boolean condEquals(DataPolicy polC) {
         ArrayList<String> activation = new ArrayList<String>(); activation.addAll(actCond);
         for (String aC : polC.actCond) {
@@ -352,14 +359,54 @@ public class DataPolicy {
     }
     
     public boolean isActive(DataExchange peer) {
-        return true;        
+        if (PrologInterface.TRUE_RANDOM) {
+            return true;
+        } else {
+            for (long actState = CommonState.getTime(); actState >= 0; actState -= 1) {
+                boolean actHeld = true;
+                for (String cA : actCond) {
+                    if (!holds(cA)) {
+                        actHeld = false;
+                        break;
+                    }
+                }
+                if (actHeld) {
+                    boolean deactivated = false;
+                    for (long deactState = actState; deactState <= CommonState.getTime(); deactState += 1) {
+                        boolean deactHeld = true;
+                        for (String cD : deactCond) {
+                            if (!holds(cD)) {
+                                deactHeld = false;
+                                break;
+                            }
+                        }
+                        if (deactHeld) {
+                            deactivated = true;
+                            break;
+                        }
+                    }
+                    if (!deactivated) {
+                        return true;
+                    }
+                }
+            }
+        }   
+        return false;
     }
 
+    public boolean holds(String cond) {
+        return true;
+    }
+    
     public boolean isActivatable(DataExchange peer) {
-        if (isActive(peer)) { return true;}
-        
-        
-        return true;        
+        if (PrologInterface.TRUE_RANDOM) {
+            return true;
+        } else {
+            if (isActive(peer)) { 
+                return true;
+            }
+        }     
+        return false;        
     }
     
     /*public String getObligationString() {

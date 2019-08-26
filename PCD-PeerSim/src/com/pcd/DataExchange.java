@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Random;
+import java.util.Set;
 
 import org.jpl7.Atom;
 import org.jpl7.Term;
@@ -431,8 +432,8 @@ public class DataExchange implements CDProtocol {
             n.sendMessage(protocolID, msg.sender, node, -1, msg.reqTransId, "PEER_OVERLOAD", new Object[] { datalessPackage }, null);                  
         }
         
-        rewardCycles += checkCompliance(relPolSets, (String) msg.body[0]);
-        penaltyCycles += checkViolation(relPolSets, (String) msg.body[0]);
+        rewardCycles += checkCompliance(relPolSets, (String) msg.body[0], n.peerID);
+        penaltyCycles += checkViolation(relPolSets, (String) msg.body[0], n.peerID);
     }
     
     private boolean entails(String s) {
@@ -605,16 +606,76 @@ public class DataExchange implements CDProtocol {
         return relPols;
     }
     
-    private int checkCompliance(HashSet<PolicySet> polSets, String pred) {
-        int rew =  rng.nextInt(100);
-        if (rew < 99) { rew = 0;} else { rew = 1;} 
+    private int checkCompliance(HashSet<PolicySet> polSets, String pred, long peer) {
+        int rew =  0;
+        if (PrologInterface.TRUE_RANDOM) {
+            rew = rng.nextInt(100);
+            if (rew < 99) { rew = 0;} else { rew = 1;} 
+        } else {
+            for (DataPolicy pol : policies) {
+                boolean complied = true;
+                if (pol.mod.equals("F") && pol.tgt.equals("peer"+peer) && pol.isActive(this)) {
+                    Set<String> data = pol.getData("peer"+peer).keySet();
+                    if (data.contains(pred)) {
+                        // Prohibition is complied with if polSets contains at least one policy set who has pol as a primary policy
+                        boolean found = false;
+                        for (PolicySet ps : polSets) {
+                            for (DataPolicy pTest : ps.getPrimary()) {
+                                if (pol.trueEquals(pTest)) {
+                                    found = true;
+                                    break;
+                                }
+                            }
+                            if (found) { break;}
+                        }
+                        
+                        if (found) {
+                            complied = false;
+                        }
+                    }
+                }
+                if (complied) {
+                    rew += pol.reward;
+                }
+            }
+        }
         //System.out.println("Reward Given: "+rew);
         return rew;
     }
     
-    private int checkViolation(HashSet<PolicySet> polSets, String pred) {
-        int pen =  rng.nextInt(100);
-        if (pen < 99) { pen = 0;} else { pen = 1;}
+    private int checkViolation(HashSet<PolicySet> polSets, String pred, long peer) {
+        int pen =  0;
+        if (PrologInterface.TRUE_RANDOM) {
+            pen = rng.nextInt(100);
+            if (pen < 99) { pen = 0;} else { pen = 1;} 
+        } else {
+            for (DataPolicy pol : policies) {
+                boolean violated = false;
+                if (pol.mod.equals("P") && pol.tgt.equals("peer"+peer) && pol.isActive(this)) {
+                    Set<String> data = pol.getData("peer"+peer).keySet();
+                    if (data.contains(pred)) {
+                        // Permission is violated if polSets doesn't contain a policy set who has pol as a primary policy
+                        boolean found = false;
+                        for (PolicySet ps : polSets) {
+                            for (DataPolicy pTest : ps.getPrimary()) {
+                                if (pol.trueEquals(pTest)) {
+                                    found = true;
+                                    break;
+                                }
+                            }
+                            if (found) { break;}
+                        }
+                        
+                        if (!found) {
+                            violated = true;
+                        }
+                    }
+                }
+                if (violated) {
+                    pen += pol.penalty;
+                }
+            }
+        }
         //System.out.println("Penalty Given: "+pen);
         return pen;
     }
