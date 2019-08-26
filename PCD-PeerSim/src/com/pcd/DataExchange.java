@@ -847,6 +847,7 @@ public class DataExchange implements CDProtocol {
         //Peer_Down -> Sender_ID, Data_Item
         if (overlayNetwork.containsKey("peer" + msg.sender.getID())) {
             overlayNetwork.remove("peer" + msg.sender.getID());
+            kb.add("offline", new String[] { "peer"+n.peerID});
             //PrologInterface.retractFact("connected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + msg.sender.getID()) });
             //PrologInterface.assertFact("peerOffline", new Term[] { new Atom("peer"+peerID), new Atom("peer" + msg.sender.getID()) });
         }
