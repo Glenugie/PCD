@@ -37,4 +37,8 @@ public class Transaction {
         lifetime -= 1;
         return (lifetime <= 0);
     }
+    
+    public String toString() {
+        return "t( tid: "+transactionId+" , rid: "+remoteId+" , pid: "+peerID+" , pred: "+predicate+" x "+quantity+" [ "+lifetime+" ] )";
+    }
 }

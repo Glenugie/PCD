@@ -137,6 +137,7 @@ public class DataExchangeObserver implements Control {
             csvLine = csvLine.substring(0,csvLine.length()-1);
         } else {        
             int networkSize = Network.size();
+            int freeTrans = 0;
             for (int i = 0; i < networkSize; i+= 1) {
                 DataExchange protocol = (DataExchange) Network.get(i).getProtocol(pid);
                 for (String type : protocol.messageTotals.keySet()) {
@@ -150,6 +151,8 @@ public class DataExchangeObserver implements Control {
                     masterMessageTotalsCumulative.replace(type, masterMessageTotalsCumulative.get(type)+protocol.messageTotals.get(type));
                 }
                 protocol.initMessageTotals();
+                
+                freeTrans += protocol.freeTransactions.size();
                 
                 String role = protocol.getRole();
                 switch (protocol.lastCycle) {
@@ -168,6 +171,7 @@ public class DataExchangeObserver implements Control {
                     welfare.get(role).addValue(protocol.dataReceived);
                 }
             }
+            System.out.println("Free Transactions: "+(freeTrans/networkSize)+" ("+freeTrans+")");
             
             for (String r : welfare.keySet()) {
                 welfare.get(r).calculate();
@@ -180,22 +184,22 @@ public class DataExchangeObserver implements Control {
             socialWelfare.push(welfare);
 
             csvLine = ""+CommonState.getTime()+",";
-            System.out.println("\n===================== Cycle "+CommonState.getTime()+" =====================");
+            //System.out.println("\n===================== Cycle "+CommonState.getTime()+" =====================");
             int tot = 0;
             for (String type : masterMessageTotals.keySet()) {
                 //if (masterMessageTotals.get(type) > 0 || peersim.core.CommonState.getTime() == PrologInterface.confCycles-1) {
-                    System.out.println(type+": "+masterMessageTotals.get(type)+" ("+masterMessageTotalsCumulative.get(type)+")");
+                    //System.out.println(type+": "+masterMessageTotals.get(type)+" ("+masterMessageTotalsCumulative.get(type)+")");
                 //}
                 csvLine += masterMessageTotals.get(type)+",";
                 tot += masterMessageTotals.get(type);
                 cumulativeTotal += masterMessageTotals.get(type);
             }     
-            System.out.println("TOTAL: "+tot+" ("+cumulativeTotal+")");   
+            //System.out.println("TOTAL: "+tot+" ("+cumulativeTotal+")");   
             for (String r : masterRoles) {
                 if (roles.get(r) > 0) {
-                    System.out.println("\t"+r+" ("+roles.get(r)+"): "+regularCycle.get(r)+"/"+rewardCycle.get(r)+"/"+penaltyCycle.get(r)+", "+(cycleTime.get(r)/roles.get(r))+"ms ("+cycleTime.get(r)+"ms)");
+                    //System.out.println("\t"+r+" ("+roles.get(r)+"): "+regularCycle.get(r)+"/"+rewardCycle.get(r)+"/"+penaltyCycle.get(r)+", "+(cycleTime.get(r)/roles.get(r))+"ms ("+cycleTime.get(r)+"ms)");
                     if (welfare.get(r).vals.size() > 0) {
-                        System.out.println("\t\t"+welfare.get(r).vals.size()+" NUM, "+welfare.get(r).average+" AVG, "+welfare.get(r).deviation+" DEV, "+welfare.get(r).min+" MIN, "+welfare.get(r).max+" MAX");
+                        //System.out.println("\t\t"+welfare.get(r).vals.size()+" NUM, "+welfare.get(r).average+" AVG, "+welfare.get(r).deviation+" DEV, "+welfare.get(r).min+" MIN, "+welfare.get(r).max+" MAX");
                     }
                 }
                 //SSN-Num,SSN-Cyc,SSN-Rew,SSN-Pen,SSN-Time,SSN-SW-Num,SSN-SW-Avg,SSN-SW-Dev,SSN-SW-Min,SSN-SW-Max
@@ -211,7 +215,7 @@ public class DataExchangeObserver implements Control {
                 csvLine += welfare.get(r).max+",";
                 csvLine += welfare.get(r).getValues()+",";
             }
-            System.out.println("==========================================\n");
+            //System.out.println("==========================================\n");
             csvLine = csvLine.substring(0,csvLine.length()-1);
         }
         

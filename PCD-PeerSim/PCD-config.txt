@@ -1,7 +1,7 @@
 # PCD CONFIG
 # Initialises simulation parameters
 	random.seed 1564148657890		# Fixed seed, for debugging
-	simulation.experiments 25	# Number of Iterations
+	simulation.experiments 1	# Number of Iterations
 	simulation.cycles 1000		# Number of Cycles per Iteration
 	simulation.title TrueRandom1000
 	network.size 1000			# Number of Peers
@@ -17,7 +17,7 @@
     init.keys.peersTrueRandom true
     init.keys.peersReasoning false
     init.keys.dataRequestForwarding true
-    init.keys.maxTransactions 10000
+    init.keys.maxTransactions 2500
     init.keys.transactionLifetime 5
     init.keys.minUtility 10
 
