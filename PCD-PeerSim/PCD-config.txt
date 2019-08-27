@@ -17,7 +17,7 @@
     init.keys.peersTrueRandom true
     init.keys.peersReasoning false
     init.keys.dataRequestForwarding true
-    init.keys.maxTransactions 1000
+    init.keys.maxTransactions 10000
     init.keys.transactionLifetime 5
     init.keys.minUtility 10
 

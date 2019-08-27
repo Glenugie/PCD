@@ -1234,10 +1234,13 @@ public class DataExchange implements CDProtocol {
                 toRemove.add(tKey);
             }
         }
+        //if (toRemove.size() > 0) { System.out.println("Removing "+toRemove.size()+" incoming transactions ("+inTransactionStack.size()+")");}
         for (int i : toRemove) { 
             inTransactionStack.remove(i);
             if (!freeTransactions.contains(i)) { freeTransactions.add(i);}
         }
+        //if (toRemove.size() > 0) { System.out.println("\tRemoved "+inTransactionStack.size());}
+        
         
         toRemove = new HashSet<Integer>();
         for (int tKey : outTransactionStack.keySet()) {
@@ -1245,10 +1248,12 @@ public class DataExchange implements CDProtocol {
                 toRemove.add(tKey);
             }
         }
+        //if (toRemove.size() > 0) { System.out.println("Removing "+toRemove.size()+" incoming transactions ("+outTransactionStack.size()+")");}
         for (int i : toRemove) { 
             outTransactionStack.remove(i);
             if (!freeTransactions.contains(i)) { freeTransactions.add(i);}
         }
+        //if (toRemove.size() > 0) { System.out.println("\tRemoved "+outTransactionStack.size());}
     }
     
     private void decideToLeaveNetwork() {
