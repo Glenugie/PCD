@@ -2,9 +2,9 @@
 # Initialises simulation parameters
 	random.seed 1564148657890		# Fixed seed, for debugging
 	simulation.experiments 25	# Number of Iterations
-	simulation.cycles 100		# Number of Cycles per Iteration
-	simulation.title Test
-	network.size 100			# Number of Peers
+	simulation.cycles 1000		# Number of Cycles per Iteration
+	simulation.title TrueRandom1000
+	network.size 1000			# Number of Peers
 
 # Idle Protocol
 	protocol.lnk IdleProtocol
@@ -14,8 +14,8 @@
 	protocol.pcd.linkable lnk
 	
 # Global Parameters
-    init.keys.peersTrueRandom false
-    init.keys.peersReasoning true
+    init.keys.peersTrueRandom true
+    init.keys.peersReasoning false
     init.keys.dataRequestForwarding true
     init.keys.maxTransactions 1000
     init.keys.transactionLifetime 5

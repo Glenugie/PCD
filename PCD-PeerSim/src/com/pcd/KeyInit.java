@@ -23,12 +23,12 @@ public class KeyInit implements Control {
         this.name = name;
         pid = Configuration.getPid(name + "." + PAR_PROT);
         
-        PrologInterface.TRUE_RANDOM = Configuration.getBoolean(name+".");
-        PrologInterface.REASONING = Configuration.getBoolean(name+".");
-        PrologInterface.DATA_REQUEST_FORWARDING = Configuration.getBoolean(name+".");
-        PrologInterface.MAX_TRANSACTIONS = Configuration.getInt(name+".");
-        PrologInterface.TRANS_LIFETIME = Configuration.getInt(name+".");
-        PrologInterface.MIN_UTIL = Configuration.getInt(name+".");
+        PrologInterface.TRUE_RANDOM = Configuration.getBoolean(name+".peersTrueRandom");
+        PrologInterface.REASONING = Configuration.getBoolean(name+".peersReasoning");
+        PrologInterface.DATA_REQUEST_FORWARDING = Configuration.getBoolean(name+".dataRequestForwarding");
+        PrologInterface.MAX_TRANSACTIONS = Configuration.getInt(name+".maxTransactions");
+        PrologInterface.TRANS_LIFETIME = Configuration.getInt(name+".transactionLifetime");
+        PrologInterface.MIN_UTIL = Configuration.getInt(name+".minUtility");
 
         PrologInterface.printSimInfo = Configuration.getBoolean(name+".printSimInfo");
         PrologInterface.debugProlog = Configuration.getBoolean(name+".debugProlog");
