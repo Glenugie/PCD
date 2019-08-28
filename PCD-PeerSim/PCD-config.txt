@@ -1,10 +1,10 @@
 # PCD CONFIG
 # Initialises simulation parameters
 	random.seed 1564148657890		# Fixed seed, for debugging
-	simulation.experiments 25	# Number of Iterations
-	simulation.cycles 1000		# Number of Cycles per Iteration
-	simulation.title TrueRandom1000-NoFwd
-	network.size 1000			# Number of Peers
+	simulation.experiments 1	# Number of Iterations
+	simulation.cycles 100		# Number of Cycles per Iteration
+	simulation.title Test
+	network.size 100			# Number of Peers
 
 # Idle Protocol
 	protocol.lnk IdleProtocol
@@ -14,16 +14,17 @@
 	protocol.pcd.linkable lnk
 	
 # Global Parameters
-    init.keys.peersTrueRandom true
-    init.keys.peersReasoning false
-    init.keys.dataRequestForwarding false
+    init.keys.peersTrueRandom false
+    init.keys.peersReasoning true
+    init.keys.dataRequestForwarding true
+    init.keys.defaultPermit false
+    
+    init.keys.cycleCost 1 
     init.keys.maxTransactions 2500
     init.keys.transactionLifetime 5
     init.keys.minUtility 10
 
 # Peer Parameters
-	init.keys.cycleCost 1 
-
     init.keys.minBudget 100
     init.keys.maxBudget 100
 
@@ -37,8 +38,6 @@
 	init.keys.percFairPeers 50			# (Selfish is 100 - this)
 
 	init.keys.maxNeighbours 10 # Peers may not have more than MAX(This,k) neighbours
-
-	init.keys.defaultPermit false
 
 	# Arbitrary length list of strings, with placeholders for Data, ID, Number, String ({DATA}, {ID}, {X-Y}, {"S1",...,"SN"})
 	# Placeholders are tagged with a numeric identifier or *, allowing multiple versions of the same parameter to be used. I.e. {DATA~1}, {DATA~*}, [DATA]{1} would generate {DATA~1}, then use that same value for the second

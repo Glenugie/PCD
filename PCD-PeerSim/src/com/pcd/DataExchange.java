@@ -178,6 +178,11 @@ public class DataExchange implements CDProtocol {
         startingBudget = peerBudget;
         
         initPeerPolicies();
+        
+//        System.out.println("peer"+peerID+" Policies:");
+//        for (DataPolicy pol : policies) {
+//            System.out.println("\t"+pol.getPolicyString());
+//        }
     }
     
     public void initPeerPolicies() {
@@ -217,7 +222,11 @@ public class DataExchange implements CDProtocol {
                                 subVal = (String) validData.toArray()[rng.nextInt(validData.size())];
                             } else if (sub.startsWith("{ID")) {
                                 //System.out.println("Net: "+overlayNetwork.keySet());
-                                subVal = (String) overlayNetwork.keySet().toArray()[rng.nextInt(overlayNetwork.size())];
+                                if (i < (numPolicies/2) || rng.nextInt(2) == 0) {
+                                    subVal = (String) overlayNetwork.keySet().toArray()[rng.nextInt(overlayNetwork.size())];
+                                } else {
+                                    subVal = "peer"+Network.get(rng.nextInt(Network.size())).getID();
+                                }
                             } else if (sub.contains("-")) {
                                 int lower = Integer.parseInt(subBody.split("-")[0]);
                                 int upper = Integer.parseInt(subBody.split("-")[1]);
@@ -496,6 +505,7 @@ public class DataExchange implements CDProtocol {
             HashSet<DataPolicy> relPolicies = relevantPolicies(req, pred);
             HashSet<DataPolicy> toRemove = new HashSet<DataPolicy>();
             for (DataPolicy pol : relPolicies) {
+                System.out.println("Does: "+pol+"\n\t Allow peer"+req.getID()+" access to "+pred+"?");
                 if (!toRemove.contains(pol)) {
                     PolicySet pSet = new PolicySet();
                     for (DataPolicy tPol : relPolicies) {
@@ -538,9 +548,15 @@ public class DataExchange implements CDProtocol {
         
         for (DataPolicy p : policies) {
             HashMap<String, Integer> data = p.getData("peer"+req.getID());
+            if (p.tgt.equals("peer"+req.getID()) || p.tgt.equals("any")) {
+                System.out.println("Is: "+p.getPolicyString()+"\n\t Relevant to peer"+req.getID()+" accessing "+pred+"?");
+                System.out.println("\t"+data.containsKey(pred)+", "+data.containsKey("any")+", "+p.tgt.equals("peer"+req.getID())+", "+p.tgt.equals("any")+" ["+data.keySet()+"]");
+            }
             if ((data.containsKey(pred) || data.containsKey("any")) && (p.tgt.equals("peer"+req.getID()) || p.tgt.equals("any"))) {
+                System.out.println("RELEVANT");
                 if (p.isActivatable(this)) {
                     relPolicies.add(p);
+                    System.out.println("YES");
                 }
             }
         }
@@ -737,7 +753,7 @@ public class DataExchange implements CDProtocol {
         //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
         
         processIncomingDataPackage((DataPackage) msg.body[0], msg.sender, protocolID);
-        if (PrologInterface.REASONING) {
+        if (PrologInterface.REASONING && hasOpenOutTrans(n.peerID, msg.reqTransId)) {
             Transaction t = getOpenOutTrans(n.peerID, msg.reqTransId);
             kb.add("noData", new String[]{ "peer"+n.peerID, t.predicate});
         }
@@ -752,7 +768,7 @@ public class DataExchange implements CDProtocol {
         //Data_Package[] -> Data_Item, Data_Quantity, Transaction_Records
         
         processIncomingDataPackage((DataPackage) msg.body[0], msg.sender, protocolID);
-        if (PrologInterface.REASONING) {
+        if (PrologInterface.REASONING && hasOpenOutTrans(n.peerID, msg.reqTransId)) {
             Transaction t = getOpenOutTrans(n.peerID, msg.reqTransId);
             kb.add("refusedData", new String[]{ "peer"+n.peerID, t.predicate});
         }
@@ -1523,6 +1539,10 @@ public class DataExchange implements CDProtocol {
     public void makeOwnData(String d) {
         ownedData.add(d);
         producedData.add(d);
+        
+        for (int i = 0; i < 5; i += 1) {
+            dataCollection.add(new DataElement(d,generateDataElement()));
+        }
     }
     
     private void addPolicy(DataPolicy pol) {
@@ -1556,11 +1576,14 @@ public class DataExchange implements CDProtocol {
     
     public int countData(String d) {
         int dCount = 0;
+        //System.out.println("Counting "+d);
         for (DataElement data : dataCollection) {
+            //System.out.print(data.dataID+",");
             if (data.dataID.equals(d)) { 
                 dCount += 1;
             }
         }
+        //System.out.println("\n\t"+dCount);
         return dCount;
     }
     
@@ -1713,6 +1736,7 @@ public class DataExchange implements CDProtocol {
         dataPackage.decrypt();
         
         for (DataElement d : dataPackage.dataItems) {
+            kb.add("hasData", new String[] {"peer"+sender.getID(), d.dataID});
             dataReceived += dataValue.get(d.dataID);
         }
         

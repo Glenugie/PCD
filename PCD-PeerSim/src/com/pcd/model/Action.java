@@ -19,8 +19,10 @@ public class Action {
             payload[0] = act.substring(6,act.lastIndexOf(","));
             payload[1] = act.substring(act.lastIndexOf(", ")+2,act.length()-1);
         } else {
-            payload = act.substring(act.indexOf("(")+1, act.indexOf(")")).split(", ");
+            payload = act.substring(act.indexOf("(")+1, act.indexOf(")")).split(",");
         }
+        
+        //System.out.println(act+" => "+type+", "+act.substring(act.indexOf("(")+1, act.indexOf(")"))+" ("+payload.length+")");
         
         if (type.equals("access")) { 
             expiry = -1;

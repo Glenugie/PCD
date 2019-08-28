@@ -207,6 +207,7 @@ public class DataPolicy {
                 //System.out.println(adoptPolProc);
                 actions.add(new Action("adopt("+adoptPolProc.getPolicyString()+act.substring(act.lastIndexOf(","))));
             } else {
+                //System.out.println("\t"+act);
                 actions.add(new Action(act));
             }
         }
@@ -341,8 +342,9 @@ public class DataPolicy {
         HashMap<String, Integer> availableData = new HashMap<String, Integer>();
         
         for (Action a : actions) {
-            if (a.type.equals("dataAccess")) {
-                if (((String) a.payload[1]).equals("_") || ((String) a.payload[1]).equals(id)) {
+            if (a.type.equals("access")) {
+                //System.out.println(a.payload[0]+" - "+a.payload[1]+" ?= "+id);
+                if (((String) a.payload[1]).equals("any") || ((String) a.payload[1]).equals(id)) {
                     String dType = (String) a.payload[0];
                     int dQuant = Integer.parseInt(a.payload[2]);
                     if (!availableData.containsKey(dType)) { availableData.put(dType, 0);}
@@ -395,7 +397,14 @@ public class DataPolicy {
     }
 
     public boolean holds(String cond) {
-        return true;
+        if (cond.contains("(") && cond.endsWith(")")) {
+            String condType = cond.substring(0,cond.indexOf("("));
+            String[] condTerms = cond.substring(cond.indexOf("(")+1,cond.length()-1).split(",");
+            
+            System.out.println(cond+" => "+cond+" + "+condTerms);
+            return true;
+        }
+        return false;
     }
     
     public boolean isActivatable(DataExchange peer) {
