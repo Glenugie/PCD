@@ -1,7 +1,7 @@
 # PCD CONFIG
 # Initialises simulation parameters
 	random.seed 1564148657890		# Fixed seed, for debugging
-	simulation.experiments 1	# Number of Iterations
+	simulation.experiments 25	# Number of Iterations
 	simulation.cycles 1000		# Number of Cycles per Iteration
 	simulation.title TrueRandom1000
 	network.size 1000			# Number of Peers

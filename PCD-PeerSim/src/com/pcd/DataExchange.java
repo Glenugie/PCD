@@ -240,6 +240,7 @@ public class DataExchange implements CDProtocol {
     }
 
     public void nextCycle(Node node, int protocolID) {
+        System.out.print("\t{"+CommonState.getTime()+"} peer"+peerID+" ("+messages.size()+") [");
         int linkableID = FastConfig.getLinkable(protocolID);
         Linkable linkable = (Linkable) node.getProtocol(linkableID);
         long start = System.currentTimeMillis();
@@ -248,22 +249,27 @@ public class DataExchange implements CDProtocol {
         //On the first cycle, initialises the peer
         if (peersim.core.CommonState.getTime() == 0) {
             firstCycleInit(node,protocolID);
+            System.out.print("*");
         } else {
             // Policy Processing (Compliance/Violation Check)
             checkPolicyCompliance();
+            System.out.print("-");
             //System.out.println("Peer "+peerID+" [Policy Compliance]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
     
             // Process Messages
             //System.out.println(peerID);
             processMessages(node, protocolID);
+            System.out.print("-");
             //System.out.println("Peer "+peerID+" [Messages]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
             
             // Update Policies
             updatePolicies(); // Empty hook for now
+            System.out.print("-");
             //System.out.println("Peer "+peerID+" [Policy Update]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
     
             // Obligation Processing, determines current possible actions and carries one out
-            processActions(node, protocolID);       
+            processActions(node, protocolID);   
+            System.out.print("-");    
             //System.out.println("Peer "+peerID+" [Actions]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis(); 
     
             // If settings permit (and not currently penalised), forms new connections up to the degree of connectedness in config file
@@ -274,12 +280,14 @@ public class DataExchange implements CDProtocol {
                     overlayNetwork.put("peer" + randomPeer.getID(), randomPeer);
                 }
             }
+            System.out.print("-");
             //System.out.println("Peer "+peerID+" [Overlay]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
             
             // Produce Data
             for (String d : producedData) {
                 dataCollection.add(new DataElement(d, generateDataElement()));
             }
+            System.out.print("-");
             //System.out.println("Peer "+peerID+" [Data Generation] "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
     
             //Query q = new Query(new Compound("listing", new Term[]{new Compound("noRequest",new Term[0])})); q.oneSolution(); q.close();
@@ -295,15 +303,18 @@ public class DataExchange implements CDProtocol {
                 peerBudget -= PrologInterface.confCycleCost;
                 lastCycle = 0;
             }
+            System.out.print("-");
             //System.out.println("Peer "+peerID+" [Cycle Tick]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
             
             processTransactionStack();
+            System.out.print("-");
             //System.out.println("Peer "+peerID+" [Transaction Stack]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
             
             decideToLeaveNetwork();
+            System.out.print("-");
             //System.out.println("Peer "+peerID+" [Network Leave]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
         }
-        
+        System.out.println("]");
         //System.out.println("Peer "+peerID+" done in "+(System.currentTimeMillis()-start)+"ms");
         lastTime = (System.currentTimeMillis()-start);
         //System.out.println("");
@@ -336,45 +347,59 @@ public class DataExchange implements CDProtocol {
                 try {
                     switch (msg.type) {
                         case "DATA_REQUEST":
+                            System.out.print("A");
                             processMsg_DataRequest(n, msg, node, protocolID);           // Requestor -> Provider
                             break;
                         case "NO_DATA":
+                            System.out.print("B");
                             processMsg_NoData(n, msg, node, protocolID);                // Provider -> Requestor
                             break;
                         case "NO_ACCESS":
+                            System.out.print("C");
                             processMsg_NoAccess(n, msg, node, protocolID);              // Provider -> Requestor
                             break;
                         case "POLICY_INFORM":
+                            System.out.print("D");
                             processMsg_PolicyInform(n, msg, node, protocolID);          // Provider -> Requestor
                             break;
                         case "RECORD_INFORM":
+                            System.out.print("E");
                             processMsg_RecordInform(n, msg, node, protocolID);          // Requestor -> Provider
                             break;
                         case "DATA_RESULT":
+                            System.out.print("F");
                             processMsg_DataResult(n, msg, node, protocolID);            // Provider -> Requestor
                             break;
                         case "REJECT_POLICIES":
+                            System.out.print("G");
                             processMsg_RejectPolicies(n, msg, node, protocolID);        // Requestor -> Provider
                             break;
                         case "WAIT":
+                            System.out.print("H");
                             processMsg_Wait(n, msg, node, protocolID);                  // Requestor -> Provider
                             break;
                         case "CONFIRM_WAIT":
+                            System.out.print("I");
                             processMsg_ConfirmWait(n, msg, node, protocolID);           // Provider -> Requestor
                             break;
                         case "MALFORMED_RECORDS":
+                            System.out.print("J");
                             processMsg_MalformedRecords(n, msg, node, protocolID);      // Provider -> Requestor
                             break;
                         case "INVALID_TRANSACTION":
+                            System.out.print("K");
                             processMsg_InvalidTransaction(n, msg, node, protocolID);    // Provider -> Requestor
                             break;
                         case "PEER_OVERLOAD":
+                            System.out.print("L");
                             processMsg_PeerOverload(n, msg, node, protocolID);          // Provider -> Requestor
                             break;
                         case "PEER_DOWN":
+                            System.out.print("M");
                             processMsg_PeerDown(n, msg, node, protocolID);              // Either -> Either
                             break;
                         case "INFORM":
+                            System.out.print("N");
                             processMsg_Inform(n, msg, node, protocolID);                // Requestor -> Provider
                             break;
                     }
@@ -749,7 +774,6 @@ public class DataExchange implements CDProtocol {
                 int tID = msg.reqTransId;
                 if (!hasTrans) {
                     tID = getFreeTransaction("pPI");
-                    if (outTransactionStack.containsKey(tID)) { System.out.println("UH OH");}
                     outTransactionStack.put(tID, new Transaction(tID, msg.prvTransId, n.peerID, (String) msg.body[0], 1, PrologInterface.TRANS_LIFETIME));
                 }/* else {
                     System.out.println(outTransactionStack.keySet());
@@ -759,7 +783,7 @@ public class DataExchange implements CDProtocol {
                     outTransactionStack.get(tID).policySets = policySets;
                 } catch (Exception e) {
                     e.printStackTrace();
-                    System.out.println(outTransactionStack.containsKey(tID)+" - "+tID);
+                    System.out.println(outTransactionStack.containsKey(tID)+" ("+hasTrans+" - "+hasOpenOutTrans(n.peerID, tID)+") - "+tID);
                 }
                 HashSet<TransactionRecord> relRecords = getRelRecords();
                 n.sendMessage(protocolID, msg.sender, node, msg.prvTransId, tID, "RECORD_INFORM", new Object[] { chosenPS, relRecords }, null);
@@ -860,7 +884,7 @@ public class DataExchange implements CDProtocol {
     
     private HashSet<DataElement> chooseData(PolicySet ps, Transaction t) {
         HashSet<DataElement> data = new HashSet<DataElement>();
-        while (rng.nextInt(2) == 0 || data.size() < t.quantity) {
+        while (rng.nextInt(2) == 0 && data.size() < t.quantity) {
             data.add(new DataElement(t.predicate,generateDataElement()));
         }
         return data;
@@ -1242,9 +1266,10 @@ public class DataExchange implements CDProtocol {
         }
         //if (toRemove.size() > 0) { System.out.println("Removing "+toRemove.size()+" incoming transactions ("+inTransactionStack.size()+")");}
         for (int i : toRemove) { 
-            inTransactionStack.remove(i);
-            if (!freeTransactions.contains(i) && !inTransactionStack.containsKey(i)) { freeTransactions.add(i);}
-            if (inTransactionStack.containsKey(i)) { System.out.println("REMOVAL FAILED FOR "+i);}
+//            inTransactionStack.remove(i);
+//            if (!freeTransactions.contains(i) && !inTransactionStack.containsKey(i)) { freeTransactions.add(i);}
+//            if (inTransactionStack.containsKey(i)) { System.out.println("REMOVAL FAILED FOR "+i);}
+            removeInTrans(-1,i);
         }
         //if (toRemove.size() > 0) { System.out.println("\tRemoved "+inTransactionStack.size());}
         
@@ -1257,9 +1282,10 @@ public class DataExchange implements CDProtocol {
         }
         //if (toRemove.size() > 0) { System.out.println("Removing "+toRemove.size()+" incoming transactions ("+outTransactionStack.size()+")");}
         for (int i : toRemove) { 
-            outTransactionStack.remove(i);
-            if (!freeTransactions.contains(i) && !outTransactionStack.containsKey(i)) { freeTransactions.add(i);}
-            if (outTransactionStack.containsKey(i)) { System.out.println("REMOVAL FAILED FOR "+i);}
+//            outTransactionStack.remove(i);
+//            if (!freeTransactions.contains(i) && !outTransactionStack.containsKey(i)) { freeTransactions.add(i);}
+//            if (outTransactionStack.containsKey(i)) { System.out.println("REMOVAL FAILED FOR "+i);}
+            removeOutTrans(-1,i);
         }
         //if (toRemove.size() > 0) { System.out.println("\tRemoved "+outTransactionStack.size());}
     }
@@ -1598,9 +1624,10 @@ public class DataExchange implements CDProtocol {
     }
     
     private boolean removeInTrans(long peer, int id) {
-        if (inTransactionStack.containsKey(id) && inTransactionStack.get(id).peerID == peer) {
+        if (inTransactionStack.containsKey(id) && (peer == -1 || inTransactionStack.get(id).peerID == peer)) {
             inTransactionStack.remove(id);
             if (!freeTransactions.contains(id)) { freeTransactions.add(id);}
+            if (inTransactionStack.containsKey(id)) { System.out.println("REMOVAL (IN) FAILED FOR "+id);}
             return true;
         }
         return false;
@@ -1609,8 +1636,9 @@ public class DataExchange implements CDProtocol {
     private boolean removeInRemoteTrans(long peer, int id) {
         for (int key : inTransactionStack.keySet()) {
             if (inTransactionStack.get(key).remoteId == id && inTransactionStack.get(key).peerID == peer) {
-                inTransactionStack.remove(id);
+                inTransactionStack.remove(key);
                 if (!freeTransactions.contains(key)) { freeTransactions.add(key);}
+                if (inTransactionStack.containsKey(key)) { System.out.println("REMOVAL (IN) FAILED FOR "+key);}
                 return true;
             }
         }
@@ -1650,9 +1678,10 @@ public class DataExchange implements CDProtocol {
     }
     
     private boolean removeOutTrans(long peer, int id) {
-        if (outTransactionStack.containsKey(id) && outTransactionStack.get(id).peerID == peer) {
+        if (outTransactionStack.containsKey(id) && (peer == -1 || outTransactionStack.get(id).peerID == peer)) {
             outTransactionStack.remove(id);
             if (!freeTransactions.contains(id)) { freeTransactions.add(id);}
+            if (outTransactionStack.containsKey(id)) { System.out.println("REMOVAL (OUT) FAILED FOR "+id);}
             return true;
         }
         return false;

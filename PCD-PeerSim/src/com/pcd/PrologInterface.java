@@ -55,7 +55,7 @@ public class PrologInterface {
 	private static boolean initialised = false;	
 	
 	private static void init() {
-		Query q = new Query("consult", new Term[] { new Atom("PL_PCD.pl")});
+		/*Query q = new Query("consult", new Term[] { new Atom("PL_PCD.pl")});
 		HashMap<String,Term> res = (HashMap<String, Term>) q.oneSolution();
 		if (res == null) {
 			//System.out.println(q.toString()+": FALSE");
@@ -63,7 +63,7 @@ public class PrologInterface {
 			//System.out.println(q.toString()+": TRUE ("+res.keySet()+")");
 			initialised = true;
 		}		
-		q.close();		
+		q.close();*/		
 
         //PrologInterface.runGroundQuery("trace",new Term[] { new Atom("requestData")});
         //PrologInterface.runGroundQuery("trace",new Term[] { new Atom("noRequest")});
