@@ -33,6 +33,7 @@ public class DataExchange implements CDProtocol {
     private final boolean POLICY_OVERLAP_WARNING = true;
     private final boolean DEBUG_POL_COST = false;
     private final int MAX_GROUPS = 100;
+    private final boolean STAGE_CALLS = false;
     private final int AVG_TRANS_LENGTH = 4;
     private final int DATA_ELEMENT_LENGTH = 5;    
 
@@ -187,6 +188,7 @@ public class DataExchange implements CDProtocol {
         int numPolicies = rng.nextInt((PrologInterface.confMaxPols - PrologInterface.confMinPols)) + PrologInterface.confMinPols; 
         int i = 0;
         while (policies.size() < numPolicies && i < (numPolicies * 5)) {
+            boolean error = false;
             String chosenPolRaw = PrologInterface.confProtoPolicies.get(rng.nextInt(PrologInterface.confProtoPolicies.size()));
             String chosenPol = "";
             if (chosenPolRaw.contains("{")) {
@@ -204,22 +206,29 @@ public class DataExchange implements CDProtocol {
                     
                     String subVal = "";
                     if (subs[subID] == null) {
-                        if (sub.contains("\"")) {
-                            String[] choices = subBody.split(",");
-                            //System.out.print("Choices: "); for (String c : choices) { System.out.print(c+", ");} System.out.println("");
-                            subVal = choices[rng.nextInt(choices.length)];
-                            subVal = subVal.substring(1,subVal.length()-1);
-                        } else if (sub.startsWith("{DATA")) {      
-                            //System.out.println("Valid: "+validData);
-                            subVal = (String) validData.toArray()[rng.nextInt(validData.size())];
-                        } else if (sub.startsWith("{ID")) {
-                            //System.out.println("Net: "+overlayNetwork.keySet());
-                            subVal = (String) overlayNetwork.keySet().toArray()[rng.nextInt(overlayNetwork.size())];
-                        } else if (sub.contains("-")) {
-                            int lower = Integer.parseInt(subBody.split("-")[0]);
-                            int upper = Integer.parseInt(subBody.split("-")[1]);
-                            //System.out.println(lower+" to "+upper);
-                            subVal = ""+(rng.nextInt(upper-lower)+lower);
+                        try {
+                            if (sub.contains("\"")) {
+                                String[] choices = subBody.split(",");
+                                //System.out.print("Choices: "); for (String c : choices) { System.out.print(c+", ");} System.out.println("");
+                                subVal = choices[rng.nextInt(choices.length)];
+                                subVal = subVal.substring(1,subVal.length()-1);
+                            } else if (sub.startsWith("{DATA")) {      
+                                //System.out.println("Valid: "+validData);
+                                subVal = (String) validData.toArray()[rng.nextInt(validData.size())];
+                            } else if (sub.startsWith("{ID")) {
+                                //System.out.println("Net: "+overlayNetwork.keySet());
+                                subVal = (String) overlayNetwork.keySet().toArray()[rng.nextInt(overlayNetwork.size())];
+                            } else if (sub.contains("-")) {
+                                int lower = Integer.parseInt(subBody.split("-")[0]);
+                                int upper = Integer.parseInt(subBody.split("-")[1]);
+                                //System.out.println(lower+" to "+upper);
+                                subVal = ""+(rng.nextInt(upper-lower)+lower);
+                            }
+                        } catch (IllegalArgumentException e ) {
+                            System.err.println("Failed to create policy");
+                            e.printStackTrace();
+                            error = true;
+                            break;
                         }
                     } else {
                         subVal = subs[subID];
@@ -228,6 +237,7 @@ public class DataExchange implements CDProtocol {
                     if (subID != 0) { subs[subID] = subVal;}
                     //System.out.println("\t"+sub+" - "+subVal+" = "+chosenPolRaw);
                 }
+                if (error) { break;}
             }
             chosenPol = chosenPolRaw;
             //System.out.println(chosenPol);
@@ -240,7 +250,7 @@ public class DataExchange implements CDProtocol {
     }
 
     public void nextCycle(Node node, int protocolID) {
-        System.out.print("\t{"+CommonState.getTime()+"} peer"+peerID+" ("+messages.size()+") [");
+        if (STAGE_CALLS) System.out.print("\t{"+CommonState.getTime()+"} peer"+peerID+" ("+messages.size()+") [");
         int linkableID = FastConfig.getLinkable(protocolID);
         Linkable linkable = (Linkable) node.getProtocol(linkableID);
         long start = System.currentTimeMillis();
@@ -249,27 +259,27 @@ public class DataExchange implements CDProtocol {
         //On the first cycle, initialises the peer
         if (peersim.core.CommonState.getTime() == 0) {
             firstCycleInit(node,protocolID);
-            System.out.print("*");
+            if (STAGE_CALLS) System.out.print("*");
         } else {
             // Policy Processing (Compliance/Violation Check)
             checkPolicyCompliance();
-            System.out.print("-");
+            if (STAGE_CALLS) System.out.print("-");
             //System.out.println("Peer "+peerID+" [Policy Compliance]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
     
             // Process Messages
             //System.out.println(peerID);
             processMessages(node, protocolID);
-            System.out.print("-");
+            if (STAGE_CALLS) System.out.print("-");
             //System.out.println("Peer "+peerID+" [Messages]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
             
             // Update Policies
             updatePolicies(); // Empty hook for now
-            System.out.print("-");
+            if (STAGE_CALLS) System.out.print("-");
             //System.out.println("Peer "+peerID+" [Policy Update]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
     
             // Obligation Processing, determines current possible actions and carries one out
             processActions(node, protocolID);   
-            System.out.print("-");    
+            if (STAGE_CALLS) System.out.print("-");    
             //System.out.println("Peer "+peerID+" [Actions]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis(); 
     
             // If settings permit (and not currently penalised), forms new connections up to the degree of connectedness in config file
@@ -280,14 +290,14 @@ public class DataExchange implements CDProtocol {
                     overlayNetwork.put("peer" + randomPeer.getID(), randomPeer);
                 }
             }
-            System.out.print("-");
+            if (STAGE_CALLS) System.out.print("-");
             //System.out.println("Peer "+peerID+" [Overlay]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
             
             // Produce Data
             for (String d : producedData) {
                 dataCollection.add(new DataElement(d, generateDataElement()));
             }
-            System.out.print("-");
+            if (STAGE_CALLS) System.out.print("-");
             //System.out.println("Peer "+peerID+" [Data Generation] "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
     
             //Query q = new Query(new Compound("listing", new Term[]{new Compound("noRequest",new Term[0])})); q.oneSolution(); q.close();
@@ -303,18 +313,18 @@ public class DataExchange implements CDProtocol {
                 peerBudget -= PrologInterface.confCycleCost;
                 lastCycle = 0;
             }
-            System.out.print("-");
+            if (STAGE_CALLS) System.out.print("-");
             //System.out.println("Peer "+peerID+" [Cycle Tick]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
             
             processTransactionStack();
-            System.out.print("-");
+            if (STAGE_CALLS) System.out.print("-");
             //System.out.println("Peer "+peerID+" [Transaction Stack]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
             
             decideToLeaveNetwork();
-            System.out.print("-");
+            if (STAGE_CALLS) System.out.print("-");
             //System.out.println("Peer "+peerID+" [Network Leave]: "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
         }
-        System.out.println("]");
+        if (STAGE_CALLS) System.out.println("]");
         //System.out.println("Peer "+peerID+" done in "+(System.currentTimeMillis()-start)+"ms");
         lastTime = (System.currentTimeMillis()-start);
         //System.out.println("");
@@ -347,59 +357,59 @@ public class DataExchange implements CDProtocol {
                 try {
                     switch (msg.type) {
                         case "DATA_REQUEST":
-                            System.out.print("A");
+                            if (STAGE_CALLS) System.out.print("A");
                             processMsg_DataRequest(n, msg, node, protocolID);           // Requestor -> Provider
                             break;
                         case "NO_DATA":
-                            System.out.print("B");
+                            if (STAGE_CALLS) System.out.print("B");
                             processMsg_NoData(n, msg, node, protocolID);                // Provider -> Requestor
                             break;
                         case "NO_ACCESS":
-                            System.out.print("C");
+                            if (STAGE_CALLS) System.out.print("C");
                             processMsg_NoAccess(n, msg, node, protocolID);              // Provider -> Requestor
                             break;
                         case "POLICY_INFORM":
-                            System.out.print("D");
+                            if (STAGE_CALLS) System.out.print("D");
                             processMsg_PolicyInform(n, msg, node, protocolID);          // Provider -> Requestor
                             break;
                         case "RECORD_INFORM":
-                            System.out.print("E");
+                            if (STAGE_CALLS) System.out.print("E");
                             processMsg_RecordInform(n, msg, node, protocolID);          // Requestor -> Provider
                             break;
                         case "DATA_RESULT":
-                            System.out.print("F");
+                            if (STAGE_CALLS) System.out.print("F");
                             processMsg_DataResult(n, msg, node, protocolID);            // Provider -> Requestor
                             break;
                         case "REJECT_POLICIES":
-                            System.out.print("G");
+                            if (STAGE_CALLS) System.out.print("G");
                             processMsg_RejectPolicies(n, msg, node, protocolID);        // Requestor -> Provider
                             break;
                         case "WAIT":
-                            System.out.print("H");
+                            if (STAGE_CALLS) System.out.print("H");
                             processMsg_Wait(n, msg, node, protocolID);                  // Requestor -> Provider
                             break;
                         case "CONFIRM_WAIT":
-                            System.out.print("I");
+                            if (STAGE_CALLS) System.out.print("I");
                             processMsg_ConfirmWait(n, msg, node, protocolID);           // Provider -> Requestor
                             break;
                         case "MALFORMED_RECORDS":
-                            System.out.print("J");
+                            if (STAGE_CALLS) System.out.print("J");
                             processMsg_MalformedRecords(n, msg, node, protocolID);      // Provider -> Requestor
                             break;
                         case "INVALID_TRANSACTION":
-                            System.out.print("K");
+                            if (STAGE_CALLS) System.out.print("K");
                             processMsg_InvalidTransaction(n, msg, node, protocolID);    // Provider -> Requestor
                             break;
                         case "PEER_OVERLOAD":
-                            System.out.print("L");
+                            if (STAGE_CALLS) System.out.print("L");
                             processMsg_PeerOverload(n, msg, node, protocolID);          // Provider -> Requestor
                             break;
                         case "PEER_DOWN":
-                            System.out.print("M");
+                            if (STAGE_CALLS) System.out.print("M");
                             processMsg_PeerDown(n, msg, node, protocolID);              // Either -> Either
                             break;
                         case "INFORM":
-                            System.out.print("N");
+                            if (STAGE_CALLS) System.out.print("N");
                             processMsg_Inform(n, msg, node, protocolID);                // Requestor -> Provider
                             break;
                     }
@@ -787,6 +797,8 @@ public class DataExchange implements CDProtocol {
                 }
                 HashSet<TransactionRecord> relRecords = getRelRecords();
                 n.sendMessage(protocolID, msg.sender, node, msg.prvTransId, tID, "RECORD_INFORM", new Object[] { chosenPS, relRecords }, null);
+            } else {
+                //System.out.println("BEEP: "+hasTrans+" ("+hasOpenOutTrans(n.peerID, msg.reqTransId)+"), "+transactionFree()+", "+hasOpenOutTrans(n.peerID, (String) msg.body[0])+" ("+getOpenOutTrans(n.peerID, (String) msg.body[0]).transactionId+"), "+wantedData.contains((String) msg.body[0])+", "+msg.reqTransId);
             }
         } else if (chosenPS.canActivate()) {
             scheduleActions(chosenPS);
@@ -1659,7 +1671,7 @@ public class DataExchange implements CDProtocol {
         if (id >= 0) {
             for (int tKey : outTransactionStack.keySet()) {
                 Transaction t = outTransactionStack.get(tKey);
-                if (t.peerID == peer && t.remoteId == id) {
+                if (t.peerID == peer && t.transactionId == id) {
                     t.resetLife();
                     return true;
                 }
@@ -1676,6 +1688,15 @@ public class DataExchange implements CDProtocol {
         }
         return null;
     }
+    
+    private Transaction getOpenOutTrans(long peer, String pred) {
+        for (int key : outTransactionStack.keySet()) {
+            if (outTransactionStack.get(key).predicate.equals(pred) && outTransactionStack.get(key).peerID == peer) {
+                return outTransactionStack.get(key);
+            }
+        }
+        return null;
+    }  
     
     private boolean removeOutTrans(long peer, int id) {
         if (outTransactionStack.containsKey(id) && (peer == -1 || outTransactionStack.get(id).peerID == peer)) {

@@ -113,13 +113,13 @@ public class KeyInit implements Control {
             for (int i = 0; i < Network.size(); i += 1) {
                 int uMult = 1;
                 if (i < numWant) {
-                    ((DataExchange) Network.get(peerIDs1.get(i)).getProtocol(pid)).makeWantData(dConf.dataId);
+                    ((DataExchange) Network.get(peerIDsData.get(i)).getProtocol(pid)).makeWantData(dConf.dataId);
                     uMult = 2;
                 }
                 if (i < numOwn) {
-                    ((DataExchange) Network.get(peerIDs1.get(i)).getProtocol(pid)).makeOwnData(dConf.dataId);                    
+                    ((DataExchange) Network.get(peerIDsData.get(i)).getProtocol(pid)).makeOwnData(dConf.dataId);                    
                 }
-                ((DataExchange) Network.get(peerIDs1.get(i)).getProtocol(pid)).setDataValue(dConf.dataId,(CommonState.r.nextInt((dConf.maxU-dConf.minU))+dConf.minU)*uMult);
+                ((DataExchange) Network.get(peerIDsData.get(i)).getProtocol(pid)).setDataValue(dConf.dataId,(CommonState.r.nextInt((dConf.maxU-dConf.minU))+dConf.minU)*uMult);
             }
         }
         
