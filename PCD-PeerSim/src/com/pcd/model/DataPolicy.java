@@ -364,21 +364,24 @@ public class DataPolicy {
         if (PrologInterface.TRUE_RANDOM) {
             return true;
         } else {
+            //System.out.println("\t\tDoes hold?");
             for (long actState = CommonState.getTime(); actState >= 0; actState -= 1) {
+                //System.out.print("\t\t\t"+actState);
                 boolean actHeld = true;
                 for (String cA : actCond) {
-                    if (!holds(cA)) {
+                    if (!holds(cA,true)) {
                         actHeld = false;
                         break;
                     }
                 }
+                //System.out.print(", "+actHeld);
                 if (actHeld) {
                     boolean deactivated = false;
                     for (long deactState = actState; deactState <= CommonState.getTime(); deactState += 1) {
-                        boolean deactHeld = true;
+                        boolean deactHeld = false;
                         for (String cD : deactCond) {
-                            if (!holds(cD)) {
-                                deactHeld = false;
+                            if (holds(cD,true)) {
+                                deactHeld = true;
                                 break;
                             }
                         }
@@ -387,24 +390,93 @@ public class DataPolicy {
                             break;
                         }
                     }
+                    //System.out.print(", "+deactivated);
                     if (!deactivated) {
                         return true;
                     }
                 }
+                //System.out.println("");
             }
         }   
         return false;
     }
 
-    public boolean holds(String cond) {
-        if (cond.contains("(") && cond.endsWith(")")) {
+    // If full is false, we check only for immutable conditions (i.e., conditions which the requestor cannot change the state of)
+    public boolean holds(String cond, boolean full) {
+        if (cond.contains("(") && cond.contains(")")) {
             String condType = cond.substring(0,cond.indexOf("("));
-            String[] condTerms = cond.substring(cond.indexOf("(")+1,cond.length()-1).split(",");
+            String[] condTerms = cond.substring(cond.indexOf("(")+1,cond.lastIndexOf(")")).split(",");
+            String condOp = "";
+            int condComp = 0;
+            if (!cond.endsWith(")")) {
+                String[] compare = cond.substring(cond.lastIndexOf(")")+2).split(" ");
+                condOp = compare[0];
+                condComp = Integer.parseInt(compare[1]);
+            }
             
-            System.out.println(cond+" => "+cond+" + "+condTerms);
-            return true;
+            //System.out.println(cond+" => "+condType+" + "+condTerms+" + "+condOp+" + "+condComp);
+            long curCycle = CommonState.getTime();
+            switch (condType) {
+                case "fact":
+                    if (full) {
+                        
+                    }
+                    break;
+                case "recordsAccessed":
+                    if (full) {
+                        
+                    }
+                    break;
+                case "recordsRequested":
+                    if (full) {
+                        
+                    }
+                    break;
+                case "requestsMade":
+                    if (full) {
+                        
+                    }
+                    break;
+                case "lastAccess":
+                    if (full) {
+                        
+                    }
+                    break;
+                case "lastRequest":
+                    if (full) {
+                        
+                    }
+                    break;
+                case "time":
+                    if (full) {
+                        
+                    } else {
+                        if (condComp > curCycle || (!condOp.equals("<") && !condOp.equals("<="))) {
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+                    break;
+                case "holds":
+                    if (full) {
+                        
+                    }
+                    break;
+                case "complied":
+                    if (full) {
+                        
+                    }
+                    break;
+                case "violated":
+                    if (full) {
+                        
+                    }
+                    break;
+            }
         }
-        return false;
+        //System.out.println(cond+" does not hold");
+        return true;
     }
     
     public boolean isActivatable(DataExchange peer) {
@@ -413,6 +485,40 @@ public class DataPolicy {
         } else {
             if (isActive(peer)) { 
                 return true;
+            } else {
+                //System.out.println("\t\tDoes hold?");
+                for (long actState = CommonState.getTime(); actState >= 0; actState -= 1) {
+                    //System.out.print("\t\t\t"+actState);
+                    boolean actHeld = true;
+                    for (String cA : actCond) {
+                        if (!holds(cA,false)) {
+                            actHeld = false;
+                            break;
+                        }
+                    }
+                    //System.out.print(", "+actHeld);
+                    if (actHeld) {
+                        boolean deactivated = false;
+                        for (long deactState = actState; deactState <= CommonState.getTime(); deactState += 1) {
+                            boolean deactHeld = false;
+                            for (String cD : deactCond) {
+                                if (holds(cD,false)) {
+                                    deactHeld = true;
+                                    break;
+                                }
+                            }
+                            if (deactHeld) {
+                                deactivated = true;
+                                break;
+                            }
+                        }
+                        //System.out.print(", "+deactivated);
+                        if (!deactivated) {
+                            return true;
+                        }
+                    }
+                    //System.out.println("");
+                }
             }
         }     
         return false;        

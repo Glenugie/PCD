@@ -179,10 +179,10 @@ public class DataExchange implements CDProtocol {
         
         initPeerPolicies();
         
-//        System.out.println("peer"+peerID+" Policies:");
-//        for (DataPolicy pol : policies) {
-//            System.out.println("\t"+pol.getPolicyString());
-//        }
+        //System.out.println("peer"+peerID+" Policies:");
+        //for (DataPolicy pol : policies) {
+            //System.out.println("\t"+pol.getPolicyString());
+        //}
     }
     
     public void initPeerPolicies() {
@@ -443,7 +443,7 @@ public class DataExchange implements CDProtocol {
     
     private void processMsg_DataRequest(DataExchange n, P2PMessage msg, Node node, int protocolID) {
         //Data_Request -> Data_Item, Data_Quantity   
-        HashSet<PolicySet> relPolSets = null;
+        HashSet<PolicySet> relPolSets = new HashSet<PolicySet>();
         if (transactionFree() && !hasOpenInTrans(n.peerID, (String) msg.body[0])) {           
             if (entails((String) msg.body[0])) {
                 int newTID = getFreeTransaction("pDR");
@@ -505,7 +505,7 @@ public class DataExchange implements CDProtocol {
             HashSet<DataPolicy> relPolicies = relevantPolicies(req, pred);
             HashSet<DataPolicy> toRemove = new HashSet<DataPolicy>();
             for (DataPolicy pol : relPolicies) {
-                System.out.println("Does: "+pol+"\n\t Allow peer"+req.getID()+" access to "+pred+"?");
+                //System.out.println("Does: "+pol+"\n\t Allow peer"+req.getID()+" access to "+pred+"?");
                 if (!toRemove.contains(pol)) {
                     PolicySet pSet = new PolicySet();
                     for (DataPolicy tPol : relPolicies) {
@@ -549,14 +549,14 @@ public class DataExchange implements CDProtocol {
         for (DataPolicy p : policies) {
             HashMap<String, Integer> data = p.getData("peer"+req.getID());
             if (p.tgt.equals("peer"+req.getID()) || p.tgt.equals("any")) {
-                System.out.println("Is: "+p.getPolicyString()+"\n\t Relevant to peer"+req.getID()+" accessing "+pred+"?");
-                System.out.println("\t"+data.containsKey(pred)+", "+data.containsKey("any")+", "+p.tgt.equals("peer"+req.getID())+", "+p.tgt.equals("any")+" ["+data.keySet()+"]");
+                //System.out.println("Is: "+p.getPolicyString()+"\n\t Relevant to peer"+req.getID()+" accessing "+pred+"?");
+                //System.out.println("\t"+data.containsKey(pred)+", "+data.containsKey("any")+", "+p.tgt.equals("peer"+req.getID())+", "+p.tgt.equals("any")+" ["+data.keySet()+"]");
             }
             if ((data.containsKey(pred) || data.containsKey("any")) && (p.tgt.equals("peer"+req.getID()) || p.tgt.equals("any"))) {
-                System.out.println("RELEVANT");
+                //System.out.println("RELEVANT");
                 if (p.isActivatable(this)) {
                     relPolicies.add(p);
-                    System.out.println("YES");
+                    //System.out.println("YES");
                 }
             }
         }
@@ -1438,7 +1438,7 @@ public class DataExchange implements CDProtocol {
         return false;
     }
        
-    public void sendMessage(int protocolID, Node r, Node s, int pTrId, int rTrId, String type, Object[] body, HashSet<Node> chain) {
+    public void sendMessage(int protocolID, Node r, Node s, int pTrId, int rTrId, String type, Object[] body, HashSet<Long> chain) {
         if (faulty && (PrologInterface.confFaultRate == 100 || rng.nextInt((100-PrologInterface.confFaultRate)) == 0)) {
             if (messageTotals.containsKey("MESSAGE_FAULT")) { messageTotals.replace("MESSAGE_FAULT", messageTotals.get("MESSAGE_FAULT")+1);}
             if (PrologInterface.debugMessages) {

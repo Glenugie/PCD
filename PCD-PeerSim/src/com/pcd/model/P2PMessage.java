@@ -14,7 +14,7 @@ public class P2PMessage {
 	
 	public Object[] body;
 	
-	private HashSet<Node> chain;
+	private HashSet<Long> chain;
 	
 	public P2PMessage(Node s, Node r, int prvid, int reqid, String t, long ti, Object[] b) {
 	    //System.out.println(s.getID()+", "+r.getID());
@@ -27,22 +27,22 @@ public class P2PMessage {
 		
         body = b;		
         
-        chain = new HashSet<Node>();
-        chain.add(s);
-        chain.add(r);
+        chain = new HashSet<Long>();
+        chain.add(s.getID());
+        chain.add(r.getID());
 	}
 	
-	public HashSet<Node> getChain() {
+	public HashSet<Long> getChain() {
 	    return chain;
 	}
 	
-	public void addChain(HashSet<Node> nodes) {
+	public void addChain(HashSet<Long> nodes) {
 	    chain.addAll(nodes);
 	}
     
     public boolean inChain(Node test) {
-        for (Node n : chain) {
-            if (n.getID() == test.getID()) {
+        for (Long n : chain) {
+            if (n == test.getID()) {
                 return true;
             }
         }
@@ -50,8 +50,8 @@ public class P2PMessage {
     }
     
     public boolean inChain(long test) {
-        for (Node n : chain) {
-            if (n.getID() == test) {
+        for (Long n : chain) {
+            if (n == test) {
                 return true;
             }
         }
@@ -60,8 +60,8 @@ public class P2PMessage {
 	
 	public String chainString() {
         String chainString = "";
-        for (Node n : chain) {
-            chainString = "peer"+n.getID()+",";
+        for (Long n : chain) {
+            chainString = "peer"+n+",";
         }
         if (chainString.length() > 0) {
             chainString = "<"+chainString.substring(0, chainString.length() - 1)+">";
