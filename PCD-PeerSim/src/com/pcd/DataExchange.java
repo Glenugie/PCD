@@ -511,10 +511,10 @@ public class DataExchange implements CDProtocol {
                     for (DataPolicy tPol : relPolicies) {
                         if (!toRemove.contains(tPol)) {
                             if (pol.equals(tPol)) {
-                                pSet.addPrimary(tPol, 0.0, 0.0);
+                                pSet.addPrimary(tPol, policyProfitPrv_Permit(tPol), 0.0);
                                 toRemove.add(tPol);
                             } else if (!pol.mutuallyExclusive(tPol)) {
-                                pSet.addSecondary(tPol, 0.0, 0.0);                        
+                                pSet.addSecondary(tPol, policyProfitPrv_Permit(tPol), 0.0);                        
                             }
                         }
                     }
@@ -570,17 +570,27 @@ public class DataExchange implements CDProtocol {
         } else {
             double u = 0.0;
             for (DataPolicy p : ps.getPolicies()) {
-                switch (p.mod) {
-                    case "P":
-                        u += p.reward;
-                        break;
-                    case "F":
-                        u -= p.penalty;
-                        break;
-                    case "O":
-                        u += policyProfitPrv_Oblige(p);
-                        break;
-                }
+                u += policyProfitPrv_Permit(p);
+            }
+            return u;
+        }
+    }
+    
+    private double policyProfitPrv_Permit(DataPolicy p) {
+        if (PrologInterface.TRUE_RANDOM) {
+            return rng.nextInt(50)-25;
+        } else {
+            double u = 0.0;
+            switch (p.mod) {
+                case "P":
+                    u += p.reward;
+                    break;
+                case "F":
+                    u -= p.penalty;
+                    break;
+                case "O":
+                    u += policyProfitPrv_Oblige(p);
+                    break;
             }
             return u;
         }
@@ -592,16 +602,26 @@ public class DataExchange implements CDProtocol {
         } else {
             double u = 0.0;
             for (DataPolicy p : ps.getPolicies()) {
-                switch (p.mod) {
-                    case "P":
-                        u -= p.penalty;
-                        break;
-                    case "F":
-                        u += p.reward;
-                        break;
-                    case "O":
-                        break;
-                }
+                u += policyProfitPrv_Prohibit(p);
+            }
+            return u;
+        }
+    }
+    
+    private double policyProfitPrv_Prohibit(DataPolicy p) {
+        if (PrologInterface.TRUE_RANDOM) {
+            return rng.nextInt(50)-25;
+        } else {
+            double u = 0.0;
+            switch (p.mod) {
+                case "P":
+                    u -= p.penalty;
+                    break;
+                case "F":
+                    u += p.reward;
+                    break;
+                case "O":
+                    break;
             }
             return u;
         }
@@ -646,6 +666,17 @@ public class DataExchange implements CDProtocol {
     }
     
     private DataPolicy negativeOptional(PolicySet ps) {
+        double lowestVal = 0.0; int lowestValInd = -1;
+        for (int i = 0; i < ps.getSecondary().size(); i += 1) {
+            double val = ps.getProviderValue("S"+i);
+            if (val < 0 && (lowestValInd == -1 || val < lowestVal)) {
+                lowestVal = val;
+                lowestValInd = i;
+            }
+        }
+        if (lowestValInd != -1) {
+            return ps.getSecondary(lowestValInd);
+        }
         return null;
     }
     
@@ -654,6 +685,44 @@ public class DataExchange implements CDProtocol {
     }
     
     private HashSet<PolicySet> removeBelowThreshold(HashSet<PolicySet> relPols, double utilF) {
+        /*The last step of this algorithm is to filter out policy sets which do not exceed the minimum threshold (\textit{MinU}). 
+        Before we remove all of the offending policy sets, we first check if that would leave us with no policy sets.
+        If this is the case, and at least one of the policy sets is more profitable than the prohibition set 
+        (that is, denying this request would cost more than allowing it), then we remove all policy sets, \textit{except} 
+        the most profitable one. Otherwise we simply remove all policy sets which do not meet the minimum threshold. 
+        This may leave us with no policy sets, which means the data request will be denied.*/
+        boolean allBelowMin = true;
+        boolean anyAboveForbid = false;
+        double bestValue = 0.0; int first = 0;
+        for (PolicySet ps : relPols) {
+            if (ps.providerValue > PrologInterface.MIN_UTIL) {
+                allBelowMin = false;
+            }
+            if (ps.providerValue >= utilF) {
+                anyAboveForbid = true;
+            }
+            if (first == 0 || ps.providerValue > bestValue) {
+                bestValue = ps.providerValue;
+            }
+        }
+        
+        HashSet<PolicySet> toRemove = new HashSet<PolicySet>();
+        if (allBelowMin && anyAboveForbid) {
+            for (PolicySet ps : relPols) {
+                if (ps.providerValue != bestValue) {
+                    toRemove.add(ps);
+                }
+            }
+        } else {
+            for (PolicySet ps : relPols) {
+                if (ps.providerValue < PrologInterface.MIN_UTIL) {
+                    toRemove.add(ps);
+                }
+            }            
+        }
+        for (PolicySet ps : toRemove) {
+            relPols.remove(ps);
+        }
         return relPols;
     }
     
@@ -834,11 +903,46 @@ public class DataExchange implements CDProtocol {
         return chosenPS;
     }
     
-    private double policyProfitReq(PolicySet ps) {
-        return rng.nextInt(50)-25;
+    private Double policyProfitReq(PolicySet ps) {
+        if (PrologInterface.TRUE_RANDOM) {
+            return (double) (rng.nextInt(50)-25);
+        } else {
+            double u = 0.0;
+            if (ps.canActivate()) {
+                u -= ps.activationCost(); 
+            }
+            u -= PrologInterface.confCycleCost * 2;
+            for (DataPolicy pol : ps.getPrimary()) {
+                if (pol.isActivatable(this)) {
+                    switch (pol.mod) {
+                        case "P":
+                            HashMap<String, Integer> availData = pol.getData("peer"+peerID);
+                            for (String dKey : availData.keySet()) {
+                                int quant = availData.get(dKey);
+                                if (quant == -1) { quant = 1;}
+                                u += (getDataValue(dKey) * quant);
+                            }
+                            break;
+                        case "F":
+                            break;
+                        case "O":
+                            double violObl = pol.penalty;
+                            double fulfilObl = 0;
+                            for (Action a : pol.actions) {
+                                fulfilObl -= actionCostReq(a);
+                            }
+                            u -= Math.min(fulfilObl, violObl);
+                            break;
+                    }
+                } else {
+                    return null;
+                }
+            }
+            return u;
+        }
     }
     
-    private double actionCostReq() {
+    private double actionCostReq(Action a) {
         return rng.nextInt(50)-25;
     }
     
@@ -890,7 +994,7 @@ public class DataExchange implements CDProtocol {
             } else {
                 assimilateRecords(relRecords);
                 
-                HashSet<DataPolicy> active = chosenPolicySet.activeSet();
+                ArrayList<DataPolicy> active = chosenPolicySet.activeSet();
                 HashSet<DataElement> data = null;
                 if (active.size() == chosenPolicySet.size() || (active.size() > 0 && policyProfitPrv_Permit(chosenPolicySet) > PrologInterface.MIN_UTIL && chosenPolicySet.permitsAccess(t.predicate))) {
                     data = chooseData(chosenPolicySet, t);

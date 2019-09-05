@@ -10,10 +10,10 @@ import org.jpl7.Util;
 import peersim.core.CommonState;
 
 public class PolicySet {
-    private HashSet<DataPolicy> primary;
-    private HashSet<DataPolicy> secondary;
-    private HashMap<DataPolicy,Double> providerValues;
-    private HashMap<DataPolicy,Double> requestorValues;
+    private ArrayList<DataPolicy> primary;
+    private ArrayList<DataPolicy> secondary;
+    private HashMap<String,Double> providerValues;
+    private HashMap<String,Double> requestorValues;
     
     public double providerValue;
     public double worstProviderValue;
@@ -21,11 +21,11 @@ public class PolicySet {
     public double worstRequestorValue;
     
     public PolicySet() {
-        primary = new HashSet<DataPolicy>();
-        secondary = new HashSet<DataPolicy>();
+        primary = new ArrayList<DataPolicy>();
+        secondary = new ArrayList<DataPolicy>();
         
-        providerValues = new HashMap<DataPolicy,Double>();
-        requestorValues = new HashMap<DataPolicy,Double>();
+        providerValues = new HashMap<String,Double>();
+        requestorValues = new HashMap<String,Double>();
 
         providerValue = 0.0;
         worstProviderValue = 0.0;
@@ -35,21 +35,23 @@ public class PolicySet {
     
     public void addPrimary(DataPolicy p, Double pVal, Double rVal) {
         primary.add(p);
+        int newID = primary.size()-1;
         if (pVal != null) {
-            providerValues.put(p, pVal);
+            providerValues.put("P"+newID, pVal);
         }
         if (rVal != null) {
-            requestorValues.put(p, rVal);
+            requestorValues.put("P"+newID, rVal);
         }
     }
     
     public void addSecondary(DataPolicy p, Double pVal, Double rVal) {
         secondary.add(p);
+        int newID = primary.size()-1;
         if (pVal != null) {
-            providerValues.put(p, pVal);
+            providerValues.put("S"+newID, pVal);
         }
         if (rVal != null) {
-            requestorValues.put(p, rVal);
+            requestorValues.put("S"+newID, rVal);
         }
     }
     
@@ -133,13 +135,20 @@ public class PolicySet {
         return false;
     }
     
-    public HashSet<DataPolicy> getPrimary() {
+    public ArrayList<DataPolicy> getPrimary() {
         return primary;
     }
     
+    public DataPolicy getPrimary(int i) {
+        return primary.get(i);
+    }        
     
-    public HashSet<DataPolicy> getSecondary() {
+    public ArrayList<DataPolicy> getSecondary() {
         return secondary;
+    }
+    
+    public DataPolicy getSecondary(int i) {
+        return secondary.get(i);
     }
     
     public HashSet<DataPolicy> getPolicies() {
@@ -181,6 +190,10 @@ public class PolicySet {
         return oActions;
     }
     
+    public double getProviderValue(String key) {
+        return providerValues.get(key);
+    }
+    
     public boolean isActive() {
         if (CommonState.r.nextInt(25) == 0) {
             return false;
@@ -188,7 +201,7 @@ public class PolicySet {
         return true;
     }
     
-    public HashSet<DataPolicy> activeSet() {
+    public ArrayList<DataPolicy> activeSet() {
         return primary;
     }
     
@@ -197,6 +210,10 @@ public class PolicySet {
             return false;
         }
         return true;
+    }
+    
+    public double activationCost() {
+        return 0.0;
     }
     
     public void cullOptionalPolicies() {
