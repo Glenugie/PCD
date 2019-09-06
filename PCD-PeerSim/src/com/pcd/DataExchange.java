@@ -850,11 +850,14 @@ public class DataExchange implements CDProtocol {
     private void processMsg_PolicyInform(DataExchange n, P2PMessage msg, Node node, int protocolID) {
         //Policy_Inform -> Data_Item, HashSet<PolicySet> relPolicySets
         
-        HashSet<PolicySet> policySets = (HashSet<PolicySet>) msg.body[1];
-        for (PolicySet ps : policySets) {
-            double val = policyProfitReq(ps);
-            ps.requestorValue = val;
-            ps.cullOptionalPolicies();
+        HashSet<PolicySet> recPolicySets = (HashSet<PolicySet>) msg.body[1];
+        HashSet<PolicySet> policySets = new HashSet<PolicySet>();
+        for (PolicySet ps : recPolicySets) {
+            Double val = policyProfitReq(ps);
+            if (val != null) {
+                ps.requestorValue = val;
+                policySets.add(ps);
+            } 
         }
         
         PolicySet chosenPS = choosePolicySet(policySets);
@@ -908,38 +911,63 @@ public class DataExchange implements CDProtocol {
             return (double) (rng.nextInt(50)-25);
         } else {
             double u = 0.0;
-            if (ps.canActivate()) {
-                u -= ps.activationCost(); 
-            }
             u -= PrologInterface.confCycleCost * 2;
             for (DataPolicy pol : ps.getPrimary()) {
                 if (pol.isActivatable(this)) {
-                    switch (pol.mod) {
-                        case "P":
-                            HashMap<String, Integer> availData = pol.getData("peer"+peerID);
-                            for (String dKey : availData.keySet()) {
-                                int quant = availData.get(dKey);
-                                if (quant == -1) { quant = 1;}
-                                u += (getDataValue(dKey) * quant);
-                            }
-                            break;
-                        case "F":
-                            break;
-                        case "O":
-                            double violObl = pol.penalty;
-                            double fulfilObl = 0;
-                            for (Action a : pol.actions) {
-                                fulfilObl -= actionCostReq(a);
-                            }
-                            u -= Math.min(fulfilObl, violObl);
-                            break;
-                    }
+                    double polU = policyProfitReq(pol);
+                    polU -= pol.activationCost();
+                    ps.addReqValue(pol, polU, true);
+                    u += polU;
                 } else {
                     return null;
                 }
             }
+            int i = 0;
+            HashSet<DataPolicy> toRemove = new HashSet<DataPolicy>();
+            for (DataPolicy pol : ps.getSecondary()) {
+                if (pol.isActivatable(this)) {
+                    double polU = policyProfitReq(pol);
+                    polU -= pol.activationCost();
+                    double polR = ps.getProviderValue("S"+i);
+                    if (polU >= 0.0 || (polR > 0.0 && Math.abs(polU) < polR)) {
+                        ps.addReqValue(pol, polU, false);              
+                        u += polU;          
+                    } else {
+                        toRemove.add(pol);
+                    }
+                }
+                i += 1;
+            }
+            for (DataPolicy pol : toRemove) {
+                ps.remove(pol);
+            }
             return u;
         }
+    }
+    
+    private Double policyProfitReq(DataPolicy pol) {
+        double u = 0.0;
+        switch (pol.mod) {
+            case "P":
+                HashMap<String, Integer> availData = pol.getData("peer"+peerID);
+                for (String dKey : availData.keySet()) {
+                    int quant = availData.get(dKey);
+                    if (quant == -1) { quant = 1;}
+                    u += (getDataValue(dKey) * quant);
+                }
+                break;
+            case "F":
+                break;
+            case "O":
+                double violObl = pol.penalty;
+                double fulfilObl = 0;
+                for (Action a : pol.actions) {
+                    fulfilObl -= actionCostReq(a);
+                }
+                u -= Math.min(fulfilObl, violObl);
+                break;
+        }
+        return u;
     }
     
     private double actionCostReq(Action a) {

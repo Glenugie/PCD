@@ -524,6 +524,10 @@ public class DataPolicy {
         return false;        
     }
     
+    public double activationCost() {
+        return 0.0;
+    }
+    
     /*public String getObligationString() {
         String obligationString = "[";
         if (obligationsProc.size() > 0) {

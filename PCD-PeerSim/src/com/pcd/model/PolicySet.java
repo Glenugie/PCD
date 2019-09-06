@@ -56,8 +56,39 @@ public class PolicySet {
     }
     
     public void remove(DataPolicy p) {
+        int pIndex = primary.indexOf(p);
+        if (pIndex != -1) {
+            providerValues.remove("P"+pIndex);
+            requestorValues.remove("P"+pIndex);
+        }
+        int sIndex = secondary.indexOf(p);
+        if (sIndex != -1) {
+            providerValues.remove("S"+sIndex);
+            requestorValues.remove("S"+sIndex);
+        }
         primary.remove(p);
         secondary.remove(p);
+    }
+    
+    public void addReqValue(DataPolicy p, Double val, boolean prim) {
+        int i = 0;
+        if (prim) {
+            for (DataPolicy pol : primary) {
+                if (pol.trueEquals(p)) {
+                    requestorValues.put("P"+i,val);
+                    break;
+                }
+                i += 1;
+            }
+        } else {
+            for (DataPolicy pol : secondary) {
+                if (pol.trueEquals(p)) {
+                    requestorValues.put("S"+i,val);
+                    break;
+                }
+                i += 1;
+            }
+        }
     }
     
     
