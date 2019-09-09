@@ -906,11 +906,42 @@ public class DataExchange implements CDProtocol {
     }
     
     private PolicySet choosePolicySet(HashSet<PolicySet> policySets) {
-        PolicySet chosenPS = new PolicySet();
-        if (rng.nextInt(50) == 0) {
-            return null;
+        if (PrologInterface.TRUE_RANDOM) {
+            PolicySet chosenPS = new PolicySet();
+            if (rng.nextInt(50) == 0) {
+                return null;
+            }
+            return chosenPS;
+        } else {
+            HashSet<PolicySet> polSetsTmp = (HashSet<PolicySet>) policySets.clone();
+            for (PolicySet pSet : polSetsTmp) {
+                if (pSet.requestorValue < PrologInterface.MIN_UTIL) {
+                    policySets.remove(pSet);
+                }
+            }
+            
+            polSetsTmp = (HashSet<PolicySet>) policySets.clone();
+            for (PolicySet pSet : polSetsTmp) {
+                HashSet<PolicySet> polSetTmpMinus = (HashSet<PolicySet>) policySets.clone();
+                polSetTmpMinus.remove(pSet);
+                for (PolicySet pSetCmp : polSetTmpMinus) {
+                    if (pSet.providerValue >= pSetCmp.providerValue && pSet.requestorValue >= pSetCmp.requestorValue) {
+                        policySets.remove(pSet);                        
+                    }
+                }
+            }
+            
+            PolicySet chosenPS = null;
+            double bestRatio = -1.0;
+            for (PolicySet pSet : policySets) {
+                double ratio = Math.max(pSet.requestorValue,pSet.providerValue)/Math.min(pSet.requestorValue,pSet.providerValue);
+                if (bestRatio == -1.0 || ratio < bestRatio) {
+                    bestRatio = ratio;
+                    chosenPS = pSet;
+                }
+            }
+            return chosenPS;
         }
-        return chosenPS;
     }
     
     private Double policyProfitReq(PolicySet ps) {
