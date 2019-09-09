@@ -360,6 +360,16 @@ public class DataPolicy {
         return availableData;
     }
     
+    public HashSet<String> getIdentities() {
+        HashSet<String> idents = new HashSet<String>();
+        return idents;
+    }
+    
+    public HashSet<String> getPredicates() {
+        HashSet<String> preds = new HashSet<String>();
+        return preds;
+    }
+    
     public boolean isActive(DataExchange peer) {
         if (PrologInterface.TRUE_RANDOM) {
             return true;

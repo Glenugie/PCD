@@ -448,7 +448,7 @@ public class DataExchange implements CDProtocol {
             if (entails((String) msg.body[0])) {
                 int newTID = getFreeTransaction("pDR");
                 
-                relPolSets = generatePolicySets(msg.sender, (String) msg.body[0]);
+                relPolSets = generatePolicySets(msg.sender, (String) msg.body[0], protocolID);
                 if (relPolSets.size() > 0 || PrologInterface.confDefaultPermit) {
                     Transaction t = new Transaction(newTID, msg.reqTransId, n.peerID, (String) msg.body[0], (int) msg.body[1], PrologInterface.TRANS_LIFETIME);
                     t.policySets = relPolSets;
@@ -494,7 +494,7 @@ public class DataExchange implements CDProtocol {
         }
     }
     
-    private HashSet<PolicySet> generatePolicySets(Node req, String pred) {
+    private HashSet<PolicySet> generatePolicySets(Node req, String pred, int protocolID) {
         HashSet<PolicySet> relPolicySets = new HashSet<PolicySet>();
         
         if (PrologInterface.TRUE_RANDOM) {
@@ -529,7 +529,7 @@ public class DataExchange implements CDProtocol {
                     relPolicySets.add(pSet);
                 }
             }
-            PolicySet forbidPols = prohibitPolicies(req, pred);
+            PolicySet forbidPols = prohibitPolicies(req, pred, relPolicies, protocolID);
             double utilF = policyProfitPrv_Prohibit(forbidPols);
             relPolicySets = removeBelowThreshold(relPolicySets, utilF);            
         }
@@ -680,8 +680,15 @@ public class DataExchange implements CDProtocol {
         return null;
     }
     
-    private PolicySet prohibitPolicies(Node req, String pred) {
-        return new PolicySet(); 
+    private PolicySet prohibitPolicies(Node req, String pred, HashSet<DataPolicy> relPols, int protocolID) {
+        PolicySet prohibit = new PolicySet();
+        DataExchange n = (DataExchange) req.getProtocol(protocolID);
+        for (DataPolicy pol : relPols) {
+            if (pol.isActive(n)) {
+                prohibit.addPrimary(pol, 0.0, 0.0);
+            }
+        }
+        return prohibit; 
     }
     
     private HashSet<PolicySet> removeBelowThreshold(HashSet<PolicySet> relPols, double utilF) {
@@ -864,7 +871,7 @@ public class DataExchange implements CDProtocol {
         if (chosenPS == null) {
             n.sendMessage(protocolID, msg.sender, node, msg.prvTransId, msg.reqTransId, "REJECT_POLICIES", new Object[] { }, null);
             removeOutTrans(n.peerID, msg.reqTransId);
-        } else if (chosenPS.isActive()) {
+        } else if (chosenPS.isActive(n)) {
             //System.out.println(outTransactionStack.keySet());
             boolean hasTrans = hasOpenOutTrans(n.peerID, msg.reqTransId);
             if (hasTrans || (!hasTrans && transactionFree() && !hasOpenOutTrans(n.peerID, (String) msg.body[0]) && wantedData.contains((String) msg.body[0]))) {
@@ -883,12 +890,12 @@ public class DataExchange implements CDProtocol {
                     e.printStackTrace();
                     System.out.println(outTransactionStack.containsKey(tID)+" ("+hasTrans+" - "+hasOpenOutTrans(n.peerID, tID)+") - "+tID);
                 }
-                HashSet<TransactionRecord> relRecords = getRelRecords();
+                HashSet<TransactionRecord> relRecords = getRelRecords(peerID, n.peerID, (String) msg.body[0], chosenPS);
                 n.sendMessage(protocolID, msg.sender, node, msg.prvTransId, tID, "RECORD_INFORM", new Object[] { chosenPS, relRecords }, null);
             } else {
                 //System.out.println("BEEP: "+hasTrans+" ("+hasOpenOutTrans(n.peerID, msg.reqTransId)+"), "+transactionFree()+", "+hasOpenOutTrans(n.peerID, (String) msg.body[0])+" ("+getOpenOutTrans(n.peerID, (String) msg.body[0]).transactionId+"), "+wantedData.contains((String) msg.body[0])+", "+msg.reqTransId);
             }
-        } else if (chosenPS.canActivate()) {
+        } else if (chosenPS.canActivate(n)) {
             scheduleActions(chosenPS);
             n.sendMessage(protocolID, msg.sender, node, msg.prvTransId, msg.reqTransId, "WAIT", new Object[] { }, null);
         }
@@ -974,16 +981,53 @@ public class DataExchange implements CDProtocol {
         return rng.nextInt(50)-25;
     }
     
-    private HashSet<TransactionRecord> getRelRecords() {
+//    % These relevant records are, mainly, records of transactions which are ``relevant'' to the policies in the chosen set:
+//    %     Represent a transaction with (as either provider or requestor) any peer referenced in any of the policies in the set.
+//    %     Represent a transaction that involved a request for a predicate referenced in any of the policies in the set.
+//    %     Represent a state contained as a condition of any of the policies in the set.
+    private HashSet<TransactionRecord> getRelRecords(long req, long prv, String pred, PolicySet polSet) {
         HashSet<TransactionRecord> relRecords = new HashSet<TransactionRecord>();
         if (transactions.size() > 0) {
-            int randNum = rng.nextInt(transactions.size());
-            for (TransactionRecord r : transactions) {
-                if (randNum <= 1) {
-                    break;
+            if (PrologInterface.TRUE_RANDOM) {
+                int randNum = rng.nextInt(transactions.size());
+                for (TransactionRecord r : transactions) {
+                    if (randNum <= 1) {
+                        break;
+                    }
+                    relRecords.add(r);
+                    randNum -= 1;
                 }
-                relRecords.add(r);
-                randNum -= 1;
+            } else {
+                for (TransactionRecord r : transactions) {
+                    if (r.refersTo("peer"+req) || r.refersTo("peer"+prv)) {
+                        relRecords.add(r);
+                    } else {
+                        HashSet<String> peerRefs= polSet.getIdentities();
+                        HashSet<String> predRefs = polSet.getPredicates();
+                        if (peerRefs.contains("any")) {
+                            relRecords.add(r);
+                        } else {
+                            boolean found = false;
+                            for (String peerRef : peerRefs) {
+                                if (r.refersTo(peerRef)) {
+                                    found = true;
+                                    break;
+                                }
+                            }
+                            if (!found) {
+                                for (String predRef : predRefs) {
+                                    if (r.refersToPred(predRef)) {
+                                        found = true;
+                                        break;                                                
+                                    }
+                                }
+                            }
+                            if (found) {
+                                relRecords.add(r);
+                            }
+                        }
+                    }
+                }
             }
         }
         return relRecords;

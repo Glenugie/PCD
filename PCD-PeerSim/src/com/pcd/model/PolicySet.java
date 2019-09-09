@@ -7,6 +7,9 @@ import java.util.HashSet;
 import org.jpl7.Term;
 import org.jpl7.Util;
 
+import com.pcd.DataExchange;
+import com.pcd.PrologInterface;
+
 import peersim.core.CommonState;
 
 public class PolicySet {
@@ -225,22 +228,57 @@ public class PolicySet {
         return providerValues.get(key);
     }
     
-    public boolean isActive() {
-        if (CommonState.r.nextInt(25) == 0) {
-            return false;
+    public boolean isActive(DataExchange peer) {
+        if (PrologInterface.TRUE_RANDOM) {
+            if (CommonState.r.nextInt(25) == 0) {
+                return false;
+            }
+            return true;
+        } else {
+            for (DataPolicy p : primary) {
+                if (!p.isActive(peer)) {
+                    return false;
+                }
+            }
+            return true;
         }
-        return true;
     }
     
     public ArrayList<DataPolicy> activeSet() {
         return primary;
     }
     
-    public boolean canActivate() {
-        if (CommonState.r.nextInt(25) == 0) {
-            return false;
+    public HashSet<String> getIdentities() {
+        HashSet<String> idents = new HashSet<String>();
+        for (DataPolicy p : getPolicies()) {
+            idents.addAll(p.getIdentities());
         }
-        return true;
+        return idents;
+    }
+    
+    public HashSet<String> getPredicates() {
+        HashSet<String> preds = new HashSet<String>();
+        for (DataPolicy p : getPolicies()) {
+            preds.addAll(p.getPredicates());
+        }
+        return preds;
+        
+    }
+    
+    public boolean canActivate(DataExchange peer) {
+        if (PrologInterface.TRUE_RANDOM) {
+            if (CommonState.r.nextInt(25) == 0) {
+                return false;
+            }
+            return true;
+        } else {
+            for (DataPolicy p : primary) {
+                if (!p.isActivatable(peer)) {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
     
     public double activationCost() {
