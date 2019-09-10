@@ -1,6 +1,7 @@
 package com.pcd;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
@@ -1100,7 +1101,7 @@ public class DataExchange implements CDProtocol {
                 ArrayList<DataPolicy> active = chosenPolicySet.activeSet();
                 HashSet<DataElement> data = null;
                 if (active.size() == chosenPolicySet.size() || (active.size() > 0 && policyProfitPrv_Permit(chosenPolicySet) > PrologInterface.MIN_UTIL && chosenPolicySet.permitsAccess(t.predicate))) {
-                    data = chooseData(chosenPolicySet, t);
+                    data = chooseData(chosenPolicySet, t, n);
                 } else { 
                     // Nothing
                 }
@@ -1114,13 +1115,38 @@ public class DataExchange implements CDProtocol {
     }
     
     private void assimilateRecords(HashSet<TransactionRecord> relRecords) {
-        // Permanently store some details, temporarily store others
+        transactions.addAll(relRecords);
     }
     
-    private HashSet<DataElement> chooseData(PolicySet ps, Transaction t) {
+    private HashSet<DataElement> chooseData(PolicySet ps, Transaction t, DataExchange n) {
         HashSet<DataElement> data = new HashSet<DataElement>();
-        while (rng.nextInt(2) == 0 && data.size() < t.quantity) {
-            data.add(new DataElement(t.predicate,generateDataElement()));
+        if (PrologInterface.TRUE_RANDOM) {
+            while (rng.nextInt(2) == 0 && data.size() < t.quantity) {
+                data.add(new DataElement(t.predicate,generateDataElement()));
+            }        
+        } else {
+            HashSet<DataPolicy> activePols = new HashSet<DataPolicy>();
+            for (DataPolicy pol : ps.getPolicies()) {
+                if (pol.isActive(n)) {
+                    activePols.add(pol);
+                }
+            }
+            
+            for (DataPolicy pol : activePols) {
+                HashMap<String,Integer> dataRes = pol.getData("peer"+n.peerID);
+                if (dataRes.containsKey(t.predicate) || dataRes.containsKey("any")) {
+                    for (String d : dataRes.keySet()) {
+                        if (d.equals("any")) {
+                            d = t.predicate;
+                        }
+                        int qty = dataRes.get(d);
+                        if (qty == -1) {
+                            qty = t.quantity;
+                        }
+                        data.addAll(getDataElement(d,qty));
+                    }
+                }
+            }
         }
         return data;
     }
@@ -1770,6 +1796,24 @@ public class DataExchange implements CDProtocol {
             return dataValue.get(data);
         }
         return 1;
+    }
+    
+    public ArrayList<DataElement> getDataElement(String type, int qty) {
+        ArrayList<DataElement> dataCollectionShuf = new ArrayList<DataElement>(dataCollection);
+        Collections.shuffle(dataCollectionShuf);
+        
+        ArrayList<DataElement> res = new ArrayList<DataElement>();
+        
+        int i = 0;
+        while (i < res.size() && res.size() < qty) {
+            DataElement dTest = dataCollectionShuf.get(i);
+            if (dTest.dataID.equals(type)) {
+                res.add(dTest);
+            }
+            i += 1;
+        }
+        
+        return res;
     }
 
     public void setDataValue(String data, int value) {
