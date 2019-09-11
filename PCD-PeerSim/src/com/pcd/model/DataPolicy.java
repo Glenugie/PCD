@@ -379,7 +379,7 @@ public class DataPolicy {
                 //System.out.print("\t\t\t"+actState);
                 boolean actHeld = true;
                 for (String cA : actCond) {
-                    if (!holds(cA,true)) {
+                    if (!holds(peer,cA,true,true)) {
                         actHeld = false;
                         break;
                     }
@@ -390,7 +390,7 @@ public class DataPolicy {
                     for (long deactState = actState; deactState <= CommonState.getTime(); deactState += 1) {
                         boolean deactHeld = false;
                         for (String cD : deactCond) {
-                            if (holds(cD,true)) {
+                            if (holds(peer,cD,true,false)) {
                                 deactHeld = true;
                                 break;
                             }
@@ -412,7 +412,7 @@ public class DataPolicy {
     }
 
     // If full is false, we check only for immutable conditions (i.e., conditions which the requestor cannot change the state of)
-    public boolean holds(String cond, boolean full) {
+    public boolean holds(DataExchange peer, String cond, boolean full, boolean act) {
         if (cond.contains("(") && cond.contains(")")) {
             String condType = cond.substring(0,cond.indexOf("("));
             String[] condTerms = cond.substring(cond.indexOf("(")+1,cond.lastIndexOf(")")).split(",");
@@ -427,39 +427,71 @@ public class DataPolicy {
             //System.out.println(cond+" => "+condType+" + "+condTerms+" + "+condOp+" + "+condComp);
             long curCycle = CommonState.getTime();
             switch (condType) {
-                case "fact":
+                case "recordsAccessed": // (peerID, dataID, cycleStart, cycleEnd)
                     if (full) {
-                        
+                        int n = 0;
+                        int start = Integer.parseInt(condTerms[2]), end = Integer.parseInt(condTerms[3]);
+                        for (TransactionRecord tr : peer.getTransactions()) {
+                            if ((condTerms[0].equals("any") || tr.reqID.equals(condTerms[0])) && tr.cycle >= start && (end == -1 || tr.cycle <= end) && (condTerms[1].equals("any") || tr.refersToPred(condTerms[1]))) {
+                                n += tr.qtyGiven;
+                            }
+                        }
+                        return compare(condOp, condComp, n);
                     }
                     break;
-                case "recordsAccessed":
+                case "recordsRequested": // (peerID, dataID, cycleStart, cycleEnd)
                     if (full) {
-                        
+                        int n = 0;
+                        int start = Integer.parseInt(condTerms[2]), end = Integer.parseInt(condTerms[3]);
+                        for (TransactionRecord tr : peer.getTransactions()) {
+                            if ((condTerms[0].equals("any") || tr.reqID.equals(condTerms[0])) && tr.cycle >= start && (end == -1 || tr.cycle <= end) && (condTerms[1].equals("any") || tr.refersToPred(condTerms[1]))) {
+                                n += tr.qtyRequested;
+                            }
+                        }
+                        return compare(condOp, condComp, n);
                     }
                     break;
-                case "recordsRequested":
+                case "requestsMade": // (peerID, dataID, cycleStart, cycleEnd)
                     if (full) {
-                        
+                        int n = 0;
+                        int start = Integer.parseInt(condTerms[2]), end = Integer.parseInt(condTerms[3]);
+                        for (TransactionRecord tr : peer.getTransactions()) {
+                            if ((condTerms[0].equals("any") || tr.reqID.equals(condTerms[0])) && tr.cycle >= start && (end == -1 || tr.cycle <= end) && (condTerms[1].equals("any") || tr.refersToPred(condTerms[1]))) {
+                                n += 1;
+                            }
+                        }
+                        return compare(condOp, condComp, n);
                     }
                     break;
-                case "requestsMade":
-                    if (full) {
-                        
+                case "lastAccess": // (peerID, dataID)
+                    if (full) {                        
+                        int last = -1;
+                        for (TransactionRecord tr : peer.getTransactions()) {
+                            if ((condTerms[0].equals("any") || tr.reqID.equals(condTerms[0])) && (condTerms[1].equals("any") || tr.refersToPred(condTerms[1]))) {
+                                if (tr.cycle > last && tr.qtyGiven > 0) {
+                                    last = tr.cycle;
+                                }
+                            }
+                        }                        
+                        return compare(condOp, condComp, last);
                     }
                     break;
-                case "lastAccess":
-                    if (full) {
-                        
+                case "lastRequest": // (peerID, dataID)
+                    if (full) {                        
+                        int last = -1;
+                        for (TransactionRecord tr : peer.getTransactions()) {
+                            if ((condTerms[0].equals("any") || tr.reqID.equals(condTerms[0])) && (condTerms[1].equals("any") || tr.refersToPred(condTerms[1]))) {
+                                if (tr.cycle > last) {
+                                    last = tr.cycle;
+                                }
+                            }
+                        }                        
+                        return compare(condOp, condComp, last);
                     }
                     break;
-                case "lastRequest":
+                case "time":  // ()
                     if (full) {
-                        
-                    }
-                    break;
-                case "time":
-                    if (full) {
-                        
+                        return compare(condOp, condComp, curCycle);
                     } else {
                         if (condComp > curCycle || (!condOp.equals("<") && !condOp.equals("<="))) {
                             return true;
@@ -467,26 +499,49 @@ public class DataPolicy {
                             return false;
                         }
                     }
+                case "fact":
+                    if (full) {
+                        // Not included in this implementation
+                    }
                     break;
                 case "holds":
                     if (full) {
-                        
+                        // Not included in this implementation
                     }
                     break;
                 case "complied":
                     if (full) {
-                        
+                        // Not included in this implementation
                     }
                     break;
                 case "violated":
                     if (full) {
-                        
+                        // Not included in this implementation
                     }
                     break;
             }
+            return false;
+        } else {
+            return act;
         }
-        //System.out.println(cond+" does not hold");
-        return true;
+    }
+    
+    public boolean compare(String condOp, int condComp, long val) {
+        switch (condOp) {
+            case ">":
+                if (val > condComp) { return true;} break;
+            case ">=":
+                if (val >= condComp) { return true;} break;
+            case "<":
+                if (val < condComp) { return true;} break;
+            case "<=":
+                if (val <= condComp) { return true;} break;
+            case "=":
+                if (val == condComp) { return true;} break;
+            case "!=":
+                if (val != condComp) { return true;} break;
+        }
+        return false;
     }
     
     public boolean isActivatable(DataExchange peer) {
@@ -501,7 +556,7 @@ public class DataPolicy {
                     //System.out.print("\t\t\t"+actState);
                     boolean actHeld = true;
                     for (String cA : actCond) {
-                        if (!holds(cA,false)) {
+                        if (!holds(peer,cA,false,true)) {
                             actHeld = false;
                             break;
                         }
@@ -512,7 +567,7 @@ public class DataPolicy {
                         for (long deactState = actState; deactState <= CommonState.getTime(); deactState += 1) {
                             boolean deactHeld = false;
                             for (String cD : deactCond) {
-                                if (holds(cD,false)) {
+                                if (holds(peer,cD,false,false)) {
                                     deactHeld = true;
                                     break;
                                 }

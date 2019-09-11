@@ -1846,6 +1846,10 @@ public class DataExchange implements CDProtocol {
         return role;
     }
     
+    public HashSet<TransactionRecord> getTransactions() {
+        return transactions;
+    }
+    
     private boolean transactionFree() {
         return (freeTransactions.size() > 0);
     }
