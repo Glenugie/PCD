@@ -441,20 +441,22 @@ public class DataPolicy {
         } else {
             //System.out.println("\t\tDoes hold?");
             for (long actState = CommonState.getTime(); actState >= 0; actState -= 1) {
-                //System.out.print("\t\t\t"+actState);
+                //System.out.print("\t\t\t"+actState+", [");
                 boolean actHeld = true;
                 for (String cA : actCond) {
+                    //System.out.print(cA);
                     if (!holds(peer,cA,true,true)) {
                         actHeld = false;
                         break;
                     }
                 }
-                //System.out.print(", "+actHeld);
+                //System.out.print("], "+actHeld+" [");
                 if (actHeld) {
                     boolean deactivated = false;
                     for (long deactState = actState; deactState <= CommonState.getTime(); deactState += 1) {
                         boolean deactHeld = false;
                         for (String cD : deactCond) {
+                            //System.out.print(cD);
                             if (holds(peer,cD,true,false)) {
                                 deactHeld = true;
                                 break;
@@ -465,12 +467,13 @@ public class DataPolicy {
                             break;
                         }
                     }
-                    //System.out.print(", "+deactivated);
+                    //System.out.print("], "+deactivated);
                     if (!deactivated) {
+                        //System.out.println(", TRUE");
                         return true;
                     }
                 }
-                //System.out.println("");
+                //System.out.println(", FALSE");
             }
         }   
         return false;
@@ -489,7 +492,7 @@ public class DataPolicy {
                 condComp = Integer.parseInt(compare[1]);
             }
             
-            //System.out.println(cond+" => "+condType+" + "+condTerms+" + "+condOp+" + "+condComp);
+            System.out.println(cond+" => "+condType+" + "+condTerms+" + "+condOp+" + "+condComp);
             long curCycle = CommonState.getTime();
             switch (condType) {
                 case "recordsAccessed": // (peerID, dataID, cycleStart, cycleEnd)
@@ -586,9 +589,12 @@ public class DataPolicy {
                     break;
             }
             return false;
-        } else {
-            return act;
+        } else if (alwaysActive && act) {
+            return true;            
+        } else if (neverDeactive && !act) {
+            return false;            
         }
+        return false;
     }
     
     public boolean compare(String condOp, int condComp, long val) {

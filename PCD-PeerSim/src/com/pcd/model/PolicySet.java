@@ -58,6 +58,18 @@ public class PolicySet {
         }
     }
     
+    public boolean allowsAccess(String pred, String id) {
+        for (DataPolicy p : getPolicies()) {
+            if (p.mod.equals("P")) {
+                HashMap<String,Integer> d = p.getData(id);
+                if (d.containsKey("any") || d.containsKey(pred)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    
     public void remove(DataPolicy p) {
         int pIndex = primary.indexOf(p);
         if (pIndex != -1) {

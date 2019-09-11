@@ -519,15 +519,17 @@ public class DataExchange implements CDProtocol {
                             }
                         }
                     }
-                    double utilP = policyProfitPrv_Permit(pSet);
-                    DataPolicy neg = negativeOptional(pSet);
-                    while (utilP < PrologInterface.MIN_UTIL && neg != null) {
-                        pSet.remove(neg);
-                        utilP = policyProfitPrv_Permit(pSet);
-                        neg = negativeOptional(pSet);
+                    if (pSet.allowsAccess(pred, "peer"+req.getID())) {
+                        double utilP = policyProfitPrv_Permit(pSet);
+                        DataPolicy neg = negativeOptional(pSet);
+                        while (utilP < PrologInterface.MIN_UTIL && neg != null) {
+                            pSet.remove(neg);
+                            utilP = policyProfitPrv_Permit(pSet);
+                            neg = negativeOptional(pSet);
+                        }
+                        pSet.providerValue = utilP;
+                        relPolicySets.add(pSet);
                     }
-                    pSet.providerValue = utilP;
-                    relPolicySets.add(pSet);
                 }
             }
             PolicySet forbidPols = prohibitPolicies(req, pred, relPolicies, protocolID);
@@ -675,6 +677,7 @@ public class DataExchange implements CDProtocol {
                 lowestValInd = i;
             }
         }
+        
         if (lowestValInd != -1) {
             return ps.getSecondary(lowestValInd);
         }
@@ -915,13 +918,17 @@ public class DataExchange implements CDProtocol {
             return chosenPS;
         } else {
             HashSet<PolicySet> polSetsTmp = (HashSet<PolicySet>) policySets.clone();
+            //System.out.println(policySets.size()+" ?= "+polSetsTmp.size());
             for (PolicySet pSet : polSetsTmp) {
+                //System.out.println(pSet.requestorValue);
                 if (pSet.requestorValue < PrologInterface.MIN_UTIL) {
                     policySets.remove(pSet);
                 }
             }
+            //System.out.println(policySets.size()+" ?= "+polSetsTmp.size());
             
             polSetsTmp = (HashSet<PolicySet>) policySets.clone();
+            //System.out.println(policySets.size()+" ?= "+polSetsTmp.size());
             for (PolicySet pSet : polSetsTmp) {
                 HashSet<PolicySet> polSetTmpMinus = (HashSet<PolicySet>) policySets.clone();
                 polSetTmpMinus.remove(pSet);
@@ -931,6 +938,7 @@ public class DataExchange implements CDProtocol {
                     }
                 }
             }
+            //System.out.println(policySets.size()+" ?= "+polSetsTmp.size());
             
             PolicySet chosenPS = null;
             double bestRatio = -1.0;
@@ -941,6 +949,9 @@ public class DataExchange implements CDProtocol {
                     chosenPS = pSet;
                 }
             }
+            
+            //System.out.println(chosenPS);
+            //System.out.println("");
             return chosenPS;
         }
     }
@@ -980,6 +991,7 @@ public class DataExchange implements CDProtocol {
             for (DataPolicy pol : toRemove) {
                 ps.remove(pol);
             }
+            //System.out.println("PS Util: "+u);
             return u;
         }
     }
@@ -1006,6 +1018,7 @@ public class DataExchange implements CDProtocol {
                 u -= Math.min(fulfilObl, violObl);
                 break;
         }
+        //System.out.println("Pol Util: "+u+", "+pol.mod);
         return u;
     }
     
@@ -1132,9 +1145,13 @@ public class DataExchange implements CDProtocol {
                 }
             }
             
+            //System.out.println(activePols.size());
+            
             for (DataPolicy pol : activePols) {
+                //System.out.println(pol.getPolicyString()+" ?= "+t.predicate);
                 HashMap<String,Integer> dataRes = pol.getData("peer"+n.peerID);
                 if (dataRes.containsKey(t.predicate) || dataRes.containsKey("any")) {
+                    //System.out.println("\tTRUE");
                     for (String d : dataRes.keySet()) {
                         if (d.equals("any")) {
                             d = t.predicate;
@@ -1143,6 +1160,7 @@ public class DataExchange implements CDProtocol {
                         if (qty == -1) {
                             qty = t.quantity;
                         }
+                        //System.out.println(d+" - "+qty);
                         data.addAll(getDataElement(d,qty));
                     }
                 }
@@ -1804,14 +1822,26 @@ public class DataExchange implements CDProtocol {
         
         ArrayList<DataElement> res = new ArrayList<DataElement>();
         
+        //System.out.println("Get "+qty+" x "+type);
+        
         int i = 0;
-        while (i < res.size() && res.size() < qty) {
+        while (i < dataCollectionShuf.size() && res.size() < qty) {
             DataElement dTest = dataCollectionShuf.get(i);
+            //System.out.println(dTest.dataID);
             if (dTest.dataID.equals(type)) {
+                //System.out.println("FOUND");
                 res.add(dTest);
             }
             i += 1;
         }
+        
+//        System.out.print("Data Collection ("+dataCollectionShuf.size()+"): ");
+//        for (DataElement de : dataCollectionShuf) {
+//            System.out.print(de.dataID+", ");
+//        }
+//        System.out.println("");
+//        
+//        System.out.println("\t"+res);
         
         return res;
     }
