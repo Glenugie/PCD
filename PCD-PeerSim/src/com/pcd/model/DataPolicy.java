@@ -362,11 +362,76 @@ public class DataPolicy {
     
     public HashSet<String> getIdentities() {
         HashSet<String> idents = new HashSet<String>();
+        idents.add(tgt);
+        for (String cond : actCond) {
+            if (cond.contains("(") && cond.contains(")")) {
+                String condType = cond.substring(0,cond.indexOf("("));
+                String[] condTerms = cond.substring(cond.indexOf("(")+1,cond.lastIndexOf(")")).split(",");
+                idents.add(condTerms[0]);
+            }
+        }
+        for (String cond : deactCond) {
+            if (cond.contains("(") && cond.contains(")")) {
+                String condType = cond.substring(0,cond.indexOf("("));
+                String[] condTerms = cond.substring(cond.indexOf("(")+1,cond.lastIndexOf(")")).split(",");
+                idents.add(condTerms[0]);
+            }
+        }
+        for (Action a : actions) {
+            switch (a.type) {
+                case "access": case "obtain": case "wipe":
+                    idents.add(a.payload[1]);
+                    break;
+                case "provide":
+                    idents.add(a.payload[1]);
+                    idents.add(a.payload[2]);
+                    break;
+                case "adopt": case "revoke":        
+                    idents.add(a.payload[1]);            
+                    DataPolicy tmp = new DataPolicy(ownerID, a.payload[0], "", true);
+                    idents.addAll(tmp.getIdentities());
+                    break;
+                case "inform":
+                    idents.add(a.payload[0]);
+                    idents.add(a.payload[1]);
+                    break;
+            }
+        }
         return idents;
     }
     
     public HashSet<String> getPredicates() {
         HashSet<String> preds = new HashSet<String>();
+        for (String cond : actCond) {
+            if (cond.contains("(") && cond.contains(")")) {
+                String condType = cond.substring(0,cond.indexOf("("));
+                String[] condTerms = cond.substring(cond.indexOf("(")+1,cond.lastIndexOf(")")).split(",");
+                preds.add(condTerms[1]);
+            }
+        }
+        for (String cond : deactCond) {
+            if (cond.contains("(") && cond.contains(")")) {
+                String condType = cond.substring(0,cond.indexOf("("));
+                String[] condTerms = cond.substring(cond.indexOf("(")+1,cond.lastIndexOf(")")).split(",");
+                preds.add(condTerms[1]);
+            }
+        }
+        for (Action a : actions) {
+            switch (a.type) {
+                case "access": case "obtain": case "wipe":
+                    preds.add(a.payload[0]);
+                    break;
+                case "provide":
+                    preds.add(a.payload[0]);
+                    break;
+                case "adopt": case "revoke":     
+                    DataPolicy tmp = new DataPolicy(ownerID, a.payload[0], "", true);
+                    preds.addAll(tmp.getPredicates());
+                    break;
+                case "inform":
+                    break;
+            }
+        }
         return preds;
     }
     
