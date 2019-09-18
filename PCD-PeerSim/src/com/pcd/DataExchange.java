@@ -1290,7 +1290,7 @@ public class DataExchange implements CDProtocol {
             }
             for (String d : wantedData) {
                 Action tmp = new Action("obtain("+d+",peer"+peerID+",1)");
-                ActionSet tmpSet = new ActionSet(dataValue.get(d),0);
+                ActionSet tmpSet = new ActionSet(0,0);
                 tmpSet.add(tmp);
                 tmpSet.dln = -1;
                 actionTodo.add(tmpSet);
@@ -1302,7 +1302,10 @@ public class DataExchange implements CDProtocol {
     
     private void chooseAction(ArrayList<ActionSet> todo) {
         for (ActionSet aSet : todo) {
-            
+            int profit = getDataValues(aSet.getData()) - aSet.getDuration(this);
+            for (ActionSet aSet2 : todo) {
+                
+            }
         }
     }
     
@@ -1590,6 +1593,14 @@ public class DataExchange implements CDProtocol {
         }
     }
     
+    public int getDataValues(HashMap<String,Integer> data) {
+        int val = 0;
+        for (String d : data.keySet()) {
+            val += getDataValue(d) * data.get(d);
+        }
+        return val;
+    }
+    
     public int getDataValue(String data) {
         if (dataValue.containsKey(data)) {
             return dataValue.get(data);
@@ -1803,7 +1814,7 @@ public class DataExchange implements CDProtocol {
         
         for (DataElement d : dataPackage.dataItems) {
             kb.add("hasData", new String[] {"peer"+sender.getID(), d.dataID});
-            dataReceived += dataValue.get(d.dataID);
+            dataReceived += getDataValue(d.dataID);
             
             for (ActionSet aSet : obligedActions) {
                 aSet.obtained(d.dataID,peerID);

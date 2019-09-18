@@ -1,7 +1,10 @@
 package com.pcd.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
+
+import com.pcd.DataExchange;
 
 public class ActionSet {
     public HashSet<Action> actions;
@@ -40,6 +43,39 @@ public class ActionSet {
         for (Action a : toRemove) {
             actions.remove(a);
         }
+    }
+    
+    public HashMap<String,Integer> getData() {
+        HashMap<String,Integer> dataQuants = new HashMap<String, Integer>();
+        for (Action a : actions) {
+            if (a.type.equals("obtain")) {
+                if (!dataQuants.containsKey(a.payload[0])) { dataQuants.put(a.payload[0], 0);}
+                dataQuants.replace(a.payload[0], dataQuants.get(a.payload[0]) + Integer.parseInt(a.payload[2]));
+            }            
+        }
+        return dataQuants;
+    }
+    
+    public int getDuration(DataExchange n) {
+        int dur = 0;
+        for (Action a : actions) {
+            switch (a.type) {
+                case "obtain":
+                    dur += 4;
+                    break;
+                case "provide":
+                    dur += 4;
+                    if (n.countData(a.payload[0]) < Integer.parseInt(a.payload[3])) { dur += 4;}
+                    break;
+                case "adopt": case "revoke":
+                    dur += Integer.parseInt(a.payload[2]);
+                    break;
+                case "wipe": case "inform":
+                    dur += 1;
+                    break;
+            }
+        }
+        return dur;
     }
     
     public void calcDln() {
