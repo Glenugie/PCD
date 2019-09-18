@@ -1304,7 +1304,7 @@ public class DataExchange implements CDProtocol {
         boolean posProfit = false;
         for (ActionSet aSet : todo) {
             int dur = aSet.getDuration(this);
-            int profit = getDataValues(aSet.getData()) - dur;
+            int profit = getDataValues(aSet.getData()) - (dur * PrologInterface.confCycleCost);
             for (ActionSet aSet2 : todo) {
                 if ((CommonState.getTime() + dur) < (aSet2.dln - aSet2.getDuration(this)) && !aSet.completes(aSet2)) {
                     profit -= aSet2.pen;
@@ -1330,8 +1330,10 @@ public class DataExchange implements CDProtocol {
             for (ActionSet aSet : todo) {
                 aSet.calcDln();
                 if (chosen == null || aSet.dln < minDln) {
-                    minDln = aSet.dln;
-                    chosen = aSet;
+                    if ((aSet.dln - aSet.duration) > CommonState.getTime() && (aSet.duration * PrologInterface.confCycleCost) < aSet.pen) {
+                        minDln = aSet.dln;
+                        chosen = aSet;                        
+                    }
                 }
             }
         }
