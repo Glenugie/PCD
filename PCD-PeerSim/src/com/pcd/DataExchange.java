@@ -1346,6 +1346,47 @@ public class DataExchange implements CDProtocol {
     }
     
     private void pickAction(ActionSet aSet) {
+        boolean containsPol = false;
+        boolean containsNonZeroDur = false;
+        for (Action a : aSet.actions) {
+            if (a.type.equals("adopt") || a.type.equals("revoke")) {
+                containsPol = true;
+                break;                
+            } else if (a.expiry > 0) {
+                containsNonZeroDur = true;
+                break;
+            }
+        }
+        
+        Action chosen = null;
+        if (containsPol) {
+            long urgency = -1;
+            for (Action a : aSet.actions) {
+                if ((a.type.equals("adopt") || a.type.equals("revoke")) && (chosen == null || a.expiry < urgency)) {
+                    chosen = a;
+                    urgency = a.expiry;
+                }
+            }            
+        } else if (containsNonZeroDur) {
+            long urgency = -1;
+            for (Action a : aSet.actions) {
+                if (chosen == null || a.expiry < urgency) {
+                    chosen = a;
+                    urgency = a.expiry;
+                }
+            }  
+        } else {
+            chosen = aSet.getRand();
+        }
+        
+        if (chosen != null) {
+            doAction(chosen);
+        } else {
+            System.err.println("ERROR: NO ACTION CHOSEN FOR PEER "+peerID);
+        }
+    }
+    
+    private void doAction(Action a) {
         
     }
     

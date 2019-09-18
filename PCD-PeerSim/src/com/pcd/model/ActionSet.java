@@ -6,6 +6,8 @@ import java.util.HashSet;
 
 import com.pcd.DataExchange;
 
+import peersim.core.CommonState;
+
 public class ActionSet {
     public HashSet<Action> actions;
     public long dln;
@@ -93,5 +95,14 @@ public class ActionSet {
             if (minDln == -1 || a.expiry < minDln) { minDln = a.expiry;}
         }
         dln = minDln;
+    }
+    
+    public Action getRand() {
+        if (actions.size() == 0) { 
+            return null;
+        } else {
+            Action[] tmp = (Action[]) actions.toArray();
+            return tmp[CommonState.r.nextInt(actions.size())];
+        }
     }
 }
