@@ -1301,12 +1301,50 @@ public class DataExchange implements CDProtocol {
     }
     
     private void chooseAction(ArrayList<ActionSet> todo) {
+        boolean posProfit = false;
         for (ActionSet aSet : todo) {
-            int profit = getDataValues(aSet.getData()) - aSet.getDuration(this);
+            int dur = aSet.getDuration(this);
+            int profit = getDataValues(aSet.getData()) - dur;
             for (ActionSet aSet2 : todo) {
-                
+                if ((CommonState.getTime() + dur) < (aSet2.dln - aSet2.getDuration(this)) && !aSet.completes(aSet2)) {
+                    profit -= aSet2.pen;
+                }
+                aSet.prof = profit;
+                if (profit >= 0) {
+                    posProfit = true;
+                }
             }
         }
+
+        ActionSet chosen = null;
+        if (posProfit) {
+            int maxProf = -1;
+            for (ActionSet aSet : todo) {
+                if (aSet.prof > maxProf) {
+                    maxProf = aSet.prof;
+                    chosen = aSet;
+                }
+            }
+        } else {
+            long minDln = 0;
+            for (ActionSet aSet : todo) {
+                aSet.calcDln();
+                if (chosen == null || aSet.dln < minDln) {
+                    minDln = aSet.dln;
+                    chosen = aSet;
+                }
+            }
+        }
+        
+        if (chosen != null) {
+            pickAction(chosen);
+        } else {
+            System.err.println("ERROR: NO ACTIONS FOUND FOR PEER "+peerID);
+        }
+    }
+    
+    private void pickAction(ActionSet aSet) {
+        
     }
     
     private void sendDataRequest(int protocolID, Node send, Node rec, String data) {

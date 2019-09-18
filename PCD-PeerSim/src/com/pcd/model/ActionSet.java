@@ -9,6 +9,8 @@ import com.pcd.DataExchange;
 public class ActionSet {
     public HashSet<Action> actions;
     public long dln;
+    public int prof;
+    public int duration;
     public int rew;
     public int pen;
     
@@ -45,6 +47,10 @@ public class ActionSet {
         }
     }
     
+    public boolean completes(ActionSet aSet) {
+        return false;
+    }
+    
     public HashMap<String,Integer> getData() {
         HashMap<String,Integer> dataQuants = new HashMap<String, Integer>();
         for (Action a : actions) {
@@ -58,6 +64,7 @@ public class ActionSet {
     
     public int getDuration(DataExchange n) {
         int dur = 0;
+        int minDur = 0;
         for (Action a : actions) {
             switch (a.type) {
                 case "obtain":
@@ -68,14 +75,16 @@ public class ActionSet {
                     if (n.countData(a.payload[0]) < Integer.parseInt(a.payload[3])) { dur += 4;}
                     break;
                 case "adopt": case "revoke":
-                    dur += Integer.parseInt(a.payload[2]);
+                    dur += 1;
+                    minDur = Math.max(minDur, Integer.parseInt(a.payload[2]));
                     break;
                 case "wipe": case "inform":
                     dur += 1;
                     break;
             }
         }
-        return dur;
+        duration = Math.max(dur,minDur);
+        return duration;
     }
     
     public void calcDln() {
