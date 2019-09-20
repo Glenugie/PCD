@@ -1,0 +1,5 @@
+// Arbitrary length list of strings, with placeholders for Data, ID, Number, String ({DATA}, {ID}, {X-Y}, {"S1",...,"SN"})
+// Placeholders are tagged with a numeric identifier or *, allowing multiple versions of the same parameter to be used. 
+//     I.e. {DATA~1}, {DATA~*}, [DATA]{1} would generate {DATA~1}, then use that same value for the second
+[true],[false],{"P","F"~*},{ID~1},["access({DATA~2},{ID~1},-1)"],{0-5~3},{5-10~4}
+[true],[false],{"P","F"~*},any,["access({DATA~2},any,-1)"],{0-5~3},{5-10~4}
