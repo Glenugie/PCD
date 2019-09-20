@@ -121,6 +121,16 @@ public class KeyInit implements Control {
                 }
                 ((DataExchange) Network.get(peerIDsData.get(i)).getProtocol(pid)).setDataValue(dConf.dataId,(CommonState.r.nextInt((dConf.maxU-dConf.minU))+dConf.minU)*uMult);
             }
+        }        
+
+        for (int i = 0; i < Network.size(); i += 1) {
+            if (((DataExchange) Network.get(i).getProtocol(pid)).wantedData.size() == 0) {
+                DataConfig dConf = PrologInterface.confDataTypes.get(CommonState.r.nextInt(PrologInterface.confDataTypes.size()));
+                ((DataExchange) Network.get(i).getProtocol(pid)).makeWantData(dConf.dataId);
+                if (!((DataExchange) Network.get(i).getProtocol(pid)).dataValue.containsKey(dConf.dataId)) { 
+                    ((DataExchange) Network.get(i).getProtocol(pid)).setDataValue(dConf.dataId,(CommonState.r.nextInt((dConf.maxU-dConf.minU))+dConf.minU)*2);
+                }
+            }
         }
         
         parsePolicies();        
