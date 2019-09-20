@@ -41,10 +41,10 @@
 
 	# Arbitrary length list of strings, with placeholders for Data, ID, Number, String ({DATA}, {ID}, {X-Y}, {"S1",...,"SN"})
 	# Placeholders are tagged with a numeric identifier or *, allowing multiple versions of the same parameter to be used. I.e. {DATA~1}, {DATA~*}, [DATA]{1} would generate {DATA~1}, then use that same value for the second
-	init.keys.policies TrueRandom.pcdpol
+	init.keys.policies Basic.pcdpol
 
 	# Arbitrary length list of CSV strings, format: d[n],[Own%],[Want%],[MinU],[MaxU]
-	init.keys.data Test.pcddata
+	init.keys.data 5-25O-100N.pcddata
 
 # Initialise Peers
 	init.keys com.pcd.KeyInit
