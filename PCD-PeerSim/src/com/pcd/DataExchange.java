@@ -1387,7 +1387,20 @@ public class DataExchange implements CDProtocol {
     }
     
     private void doAction(Action a) {
-        
+        switch (a.type) {
+            case "obtain":
+                break;
+            case "provide":
+                break;
+            case "wipe":
+                break;
+            case "adopt":
+                break;
+            case "revoke":
+                break;
+            case "inform":
+                break;
+        }
     }
     
     private void sendDataRequest(int protocolID, Node send, Node rec, String data) {
