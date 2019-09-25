@@ -1396,18 +1396,31 @@ public class DataExchange implements CDProtocol {
         }
         
         if (chosen != null) {
-            doAction(n, chosen, protocolID);
+            boolean success = doAction(n, chosen, protocolID);
+            if (success) {
+                for (int i = obligedActions.size()-1; i >= 0; i -= 1) {
+                    obligedActions.get(i).remove(chosen);                    
+                }
+            }
         } else {
             System.err.println("ERROR: NO ACTION CHOSEN FOR PEER "+peerID);
         }
     }
     
-    private void doAction(Node n, Action a, int protocolID) {
+    private boolean doAction(Node n, Action a, int protocolID) {
         switch (a.type) {
             case "obtain":
-                break;
+                return generateRequest(protocolID, n, a.payload);
             case "provide":
-                break;
+                int qtyP = countData(a.payload[0]);
+                int qtyR = Integer.parseInt(a.payload[3]);
+                if (qtyP >= qtyR) {
+                    //Send Policy Inform
+                    return true;
+                } else {
+                    generateRequest(protocolID, n, a.payload);
+                    return false;
+                }
             case "wipe":
                 int qty = countData(a.payload[0]);
                 qty = Math.min(qty, Integer.parseInt(a.payload[2]));
@@ -1419,7 +1432,7 @@ public class DataExchange implements CDProtocol {
                         if (qty <= 0) { break;}
                     }
                 }
-                break;
+                return true;
             case "adopt":
                 DataPolicy tmpAPol = new DataPolicy(peerID, a.payload[0], a.payload[1], true);
                 policies.add(tmpAPol);
@@ -1429,7 +1442,7 @@ public class DataExchange implements CDProtocol {
                 } else {
                     adoptedPolicies.put(tmpAPol, aDur);
                 }
-                break;
+                return true;
             case "revoke":
                 DataPolicy tmpRPol = new DataPolicy(peerID, a.payload[0], a.payload[1], true);
                 if (policies.contains(tmpRPol)) {
@@ -1441,12 +1454,29 @@ public class DataExchange implements CDProtocol {
                         revokedPolicies.put(tmpRPol, rDur);
                     }
                 }
-                break;
+                return true;
             case "inform":
                 Node rec = getPeerByID(a.payload[0]);
                 sendMessage(protocolID, rec, n, -1, -1, "INFORM", new Object[] { }, null);
-                break;
+                return true;
         }
+        return false;
+    }
+    
+    private boolean generateRequest(int protocolID, Node n, String[] payload) {
+        HashSet<Node> tmpNodes = getForwardingNeighbours(payload[0]);
+        HashSet<Node> tmpNodes2 = new HashSet<Node>();
+        for (Node nbr : tmpNodes) {
+            if (!hasOpenOutTrans(((DataExchange) nbr.getProtocol(protocolID)).peerID, payload[0])) {
+                tmpNodes2.add(nbr);
+            }
+        }
+        if (tmpNodes2.size() > 0) {
+            Node neighbour = (Node) tmpNodes2.toArray()[rng.nextInt(tmpNodes2.size())];                
+            sendDataRequest(protocolID, n, neighbour, payload[0]);
+            return true;
+        }
+        return false;
     }
     
     private void sendDataRequest(int protocolID, Node send, Node rec, String data) {
