@@ -64,6 +64,7 @@ public class DataExchange implements CDProtocol {
 
     protected ArrayList<DataPolicy> policies;
     protected HashMap<DataPolicy, Integer> adoptedPolicies;
+    protected HashMap<DataPolicy, Integer> revokedPolicies;
     //protected HashMap<DataPolicy,HashMap<Action,Integer>> obligations;
     //protected ArrayList<ArrayList<Action>> obligedActions;
 
@@ -120,6 +121,7 @@ public class DataExchange implements CDProtocol {
         dataValue = new HashMap<String, Integer>();
         dataCollection = new HashSet<DataElement>();
         adoptedPolicies = new HashMap<DataPolicy, Integer>();
+        revokedPolicies = new HashMap<DataPolicy, Integer>();
         
         overlayNetwork = new HashMap<String, Node>();
         kb = new Knowledgebase();
@@ -1419,11 +1421,26 @@ public class DataExchange implements CDProtocol {
                 }
                 break;
             case "adopt":
-                DataPolicy tmpPol = new DataPolicy(peerID, a.payload[0], a.payload[1], true);
-                policies.add(tmpPol);
-                adoptedPolicies.put(tmpPol, Integer.parseInt(a.payload[2]));
+                DataPolicy tmpAPol = new DataPolicy(peerID, a.payload[0], a.payload[1], true);
+                policies.add(tmpAPol);
+                int aDur = Integer.parseInt(a.payload[2]);
+                if (adoptedPolicies.containsKey(tmpAPol)) {
+                    adoptedPolicies.replace(tmpAPol, adoptedPolicies.get(tmpAPol)+aDur);
+                } else {
+                    adoptedPolicies.put(tmpAPol, aDur);
+                }
                 break;
             case "revoke":
+                DataPolicy tmpRPol = new DataPolicy(peerID, a.payload[0], a.payload[1], true);
+                if (policies.contains(tmpRPol)) {
+                    policies.remove(tmpRPol);
+                    int rDur = Integer.parseInt(a.payload[2]);
+                    if (revokedPolicies.containsKey(tmpRPol)) {
+                        revokedPolicies.replace(tmpRPol, revokedPolicies.get(tmpRPol)+rDur);
+                    } else {
+                        revokedPolicies.put(tmpRPol, rDur);
+                    }
+                }
                 break;
             case "inform":
                 Node rec = getPeerByID(a.payload[0]);
@@ -1478,8 +1495,19 @@ public class DataExchange implements CDProtocol {
             int dur = adoptedPolicies.get(pol) - 1;
             if (dur <= 0) {
                 adoptedPolicies.remove(pol);
+                policies.remove(pol);
             } else {
                 adoptedPolicies.replace(pol,  dur);
+            }
+        }
+        
+        for (DataPolicy pol : revokedPolicies.keySet()) {
+            int dur = revokedPolicies.get(pol) - 1;
+            if (dur <= 0) {
+                revokedPolicies.remove(pol);
+                policies.add(pol);
+            } else {
+                revokedPolicies.replace(pol,  dur);
             }
         }
         //if (toRemove.size() > 0) { System.out.println("\tRemoved "+outTransactionStack.size());}
