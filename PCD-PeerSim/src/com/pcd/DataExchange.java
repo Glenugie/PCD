@@ -1348,6 +1348,7 @@ public class DataExchange implements CDProtocol {
     private void pickAction(ActionSet aSet) {
         boolean containsPol = false;
         boolean containsNonZeroDur = false;
+        boolean containsNonInform = false;
         for (Action a : aSet.actions) {
             if (a.type.equals("adopt") || a.type.equals("revoke")) {
                 containsPol = true;
@@ -1357,11 +1358,21 @@ public class DataExchange implements CDProtocol {
                 break;
             }
         }
+        HashSet<Action> workingSet = new HashSet<Action>();
+        for (Action a : aSet.actions) {
+            if (!a.type.equals("inform")) {
+                workingSet.add(a);
+                containsNonInform = true;
+            }
+        }
+        if (!containsNonInform) {
+            workingSet = aSet.actions;
+        }
         
         Action chosen = null;
         if (containsPol) {
             long urgency = -1;
-            for (Action a : aSet.actions) {
+            for (Action a : workingSet) {
                 if ((a.type.equals("adopt") || a.type.equals("revoke")) && (chosen == null || a.expiry < urgency)) {
                     chosen = a;
                     urgency = a.expiry;
@@ -1369,14 +1380,15 @@ public class DataExchange implements CDProtocol {
             }            
         } else if (containsNonZeroDur) {
             long urgency = -1;
-            for (Action a : aSet.actions) {
+            for (Action a : workingSet) {
                 if (chosen == null || a.expiry < urgency) {
                     chosen = a;
                     urgency = a.expiry;
                 }
             }  
-        } else {
-            chosen = aSet.getRand();
+        } else if (workingSet.size() > 0) {
+            Action[] tmp = (Action[]) workingSet.toArray();
+            chosen = tmp[CommonState.r.nextInt(tmp.length)];
         }
         
         if (chosen != null) {
@@ -1399,6 +1411,7 @@ public class DataExchange implements CDProtocol {
             case "revoke":
                 break;
             case "inform":
+                //sendMessage(protocolID, rec, send, -1, tID, "INFORM", new Object[] { data, 1 }, null);
                 break;
         }
     }
