@@ -42,6 +42,10 @@ public class Action {
         }
     }
     
+    public boolean equals(Action a) {
+        return toString().equals(a.toString());
+    }
+    
     public String toString() {
         return actString;
     }

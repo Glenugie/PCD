@@ -1038,7 +1038,25 @@ public class DataExchange implements CDProtocol {
             double u = 0.0;
             switch (a.type) {
                 case "obtain": case "provide":
-                    
+                    int owned = countData(a.payload[0]);
+                    int qty = Integer.parseInt(a.payload[1]);
+                    if (owned < qty) {
+                        u -= PrologInterface.confCycleCost * 4;
+                        u += getDataValue(a.payload[0]) * (qty-owned);
+                        for (DataPolicy p : policies) {
+                            if (p.isActive(this) && p.prohibitsObtain(a.payload[0],"peer"+peerID)) {
+                                u -= p.penalty;
+                            }
+                        }                        
+                    }
+                    if (a.type.equals("provide")) {
+                        u -= PrologInterface.confCycleCost * 4;
+                        for (DataPolicy p : policies) {
+                            if (p.isActive(this) && p.prohibitsProvide(a.payload[0],a.payload[2])) {
+                                u -= p.penalty;
+                            }
+                        }           
+                    }
                     break;
                 case "wipe":
                     u -= (getDataValue(a.payload[0]) * Integer.parseInt(a.payload[1]));

@@ -50,6 +50,23 @@ public class ActionSet {
     }
     
     public boolean completes(ActionSet aSet) {
+        for (Action a : actions) {
+            for (Action aCmp : aSet.actions) {
+                if (a.equals(aCmp)) {
+                    return true;
+                } else if (a.type.equals(aCmp.type)) {
+                    if (a.type.equals("obtain") && a.payload[0].equals(aCmp.payload[0])) {
+                        return true;                        
+                    } else if (a.type.equals("provide") && a.payload[0].equals(aCmp.payload[0]) && a.payload[1].equals(aCmp.payload[1])) {
+                        return true;
+                    } else if (a.type.equals("wipe") && a.payload[0].equals(aCmp.payload[0])) {
+                        return true;
+                    } else if ((a.type.equals("adopt") || a.type.equals("revoke")) && a.payload[0].equals(aCmp.payload[0])) {
+                        return true;
+                    }
+                }
+            }
+        }
         return false;
     }
     

@@ -360,6 +360,40 @@ public class DataPolicy {
         return availableData;
     }
     
+    public boolean prohibitsObtain(String pred, String id) {
+        if (mod.equals("F")) {
+            for (Action a : actions) {
+                if (a.type.equals("access")) {
+                    if (a.payload[0].equals("any") || a.payload[0].equals(pred)) {
+                        if (((String) a.payload[1]).equals("any") || ((String) a.payload[1]).equals(id)) {
+                            return true;
+                        }
+                    }
+                }
+            }
+            return false;
+        } else {
+            return false;
+        }
+    }
+    
+    public boolean prohibitsProvide(String pred, String id) {
+        if (mod.equals("F")) {            
+            for (Action a : actions) {
+                if (a.type.equals("access")) {
+                    if (a.payload[0].equals("any") || a.payload[0].equals(pred)) {
+                        if (((String) a.payload[1]).equals("any") || ((String) a.payload[1]).equals(id)) {
+                            return true;
+                        }
+                    }
+                }
+            }
+            return false;
+        } else {
+            return false;
+        }
+    }  
+    
     public HashSet<String> getIdentities() {
         HashSet<String> idents = new HashSet<String>();
         idents.add(tgt);
