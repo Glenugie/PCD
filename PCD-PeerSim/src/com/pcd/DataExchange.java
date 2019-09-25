@@ -63,6 +63,7 @@ public class DataExchange implements CDProtocol {
     protected HashSet<DataElement> dataCollection;
 
     protected ArrayList<DataPolicy> policies;
+    protected HashMap<DataPolicy, Integer> adoptedPolicies;
     //protected HashMap<DataPolicy,HashMap<Action,Integer>> obligations;
     //protected ArrayList<ArrayList<Action>> obligedActions;
 
@@ -118,6 +119,7 @@ public class DataExchange implements CDProtocol {
         producedData = new HashSet<String>();
         dataValue = new HashMap<String, Integer>();
         dataCollection = new HashSet<DataElement>();
+        adoptedPolicies = new HashMap<DataPolicy, Integer>();
         
         overlayNetwork = new HashMap<String, Node>();
         kb = new Knowledgebase();
@@ -1417,6 +1419,9 @@ public class DataExchange implements CDProtocol {
                 }
                 break;
             case "adopt":
+                DataPolicy tmpPol = new DataPolicy(peerID, a.payload[0], a.payload[1], true);
+                policies.add(tmpPol);
+                adoptedPolicies.put(tmpPol, Integer.parseInt(a.payload[2]));
                 break;
             case "revoke":
                 break;
@@ -1467,6 +1472,15 @@ public class DataExchange implements CDProtocol {
 //            if (!freeTransactions.contains(i) && !outTransactionStack.containsKey(i)) { freeTransactions.add(i);}
 //            if (outTransactionStack.containsKey(i)) { System.out.println("REMOVAL FAILED FOR "+i);}
             removeOutTrans(-1,i);
+        }
+        
+        for (DataPolicy pol : adoptedPolicies.keySet()) {
+            int dur = adoptedPolicies.get(pol) - 1;
+            if (dur <= 0) {
+                adoptedPolicies.remove(pol);
+            } else {
+                adoptedPolicies.replace(pol,  dur);
+            }
         }
         //if (toRemove.size() > 0) { System.out.println("\tRemoved "+outTransactionStack.size());}
     }
