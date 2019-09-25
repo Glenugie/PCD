@@ -1035,8 +1035,34 @@ public class DataExchange implements CDProtocol {
         if (PrologInterface.TRUE_RANDOM) {
             return rng.nextInt(50)-25;
         } else {
-            return 0.0;
+            double u = 0.0;
+            switch (a.type) {
+                case "obtain": case "provide":
+                    
+                    break;
+                case "wipe":
+                    u -= (getDataValue(a.payload[0]) * Integer.parseInt(a.payload[1]));
+                    break;
+                case "adopt":
+                    u += adoptUtil(new DataPolicy(peerID, a.payload[0], "", true),Integer.parseInt(a.payload[2]));
+                    break;
+                case "revoke":
+                    u += revokeUtil(new DataPolicy(peerID, a.payload[0], "", true),Integer.parseInt(a.payload[2]));
+                    break;
+                case "inform":
+                    u -= PrologInterface.confCycleCost;
+                    break;
+            }
+            return u;
         }
+    }
+    
+    public double adoptUtil(DataPolicy pol, int dur) {
+        return 0.0;
+    }
+    
+    public double revokeUtil(DataPolicy pol, int dur) {
+        return 0.0;
     }
     
 //    % These relevant records are, mainly, records of transactions which are ``relevant'' to the policies in the chosen set:
