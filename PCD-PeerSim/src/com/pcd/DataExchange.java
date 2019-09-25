@@ -1414,13 +1414,35 @@ public class DataExchange implements CDProtocol {
             case "provide":
                 int qtyP = countData(a.payload[0]);
                 int qtyR = Integer.parseInt(a.payload[3]);
+                Node prvTo = getPeerByID(a.payload[1]);
                 if (qtyP >= qtyR) {
-                    //Send Policy Inform
-                    return true;
+                    if (transactionFree() && !hasOpenInTrans(prvTo.getID(), (String) a.payload[0])) {         
+                        int newTID = getFreeTransaction("pDR");
+                        
+                        //Send Policy Inform
+                        HashSet<PolicySet> relPolSets = generatePolicySets(prvTo, (String) a.payload[0], protocolID);
+                        if (relPolSets.size() > 0 || PrologInterface.confDefaultPermit) {
+                            Transaction t = new Transaction(newTID, -1, prvTo.getID(), (String) a.payload[0], Integer.parseInt(a.payload[3]), PrologInterface.TRANS_LIFETIME);
+                            t.policySets = relPolSets;
+                            inTransactionStack.put(newTID, t);
+                            sendMessage(protocolID, prvTo, n, newTID, -1, "POLICY_INFORM", new Object[] { (String) a.payload[0], relPolSets }, null);
+                        } else {
+                            String pol = "[true],[false],P,{ID~1},[\"access({DATA~2},{ID~1},-1)\"],0,0";
+                            DataPolicy pPol = new DataPolicy(peerID, pol, "", false); 
+                            PolicySet pSet = new PolicySet();
+                            pSet.addPrimary(pPol, (double) PrologInterface.MIN_UTIL, 0.0);
+                            
+                            Transaction t = new Transaction(newTID, -1, prvTo.getID(), (String) a.payload[0], Integer.parseInt(a.payload[3]), PrologInterface.TRANS_LIFETIME);
+                            t.policySets = relPolSets;
+                            inTransactionStack.put(newTID, t);
+                            sendMessage(protocolID, prvTo, n, newTID, -1, "POLICY_INFORM", new Object[] { (String) a.payload[0], pSet }, null);
+                        }
+                        return true;
+                    }
                 } else {
                     generateRequest(protocolID, n, a.payload);
-                    return false;
                 }
+                return false;
             case "wipe":
                 int qty = countData(a.payload[0]);
                 qty = Math.min(qty, Integer.parseInt(a.payload[2]));
