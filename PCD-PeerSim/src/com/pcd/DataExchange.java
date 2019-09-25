@@ -1296,11 +1296,11 @@ public class DataExchange implements CDProtocol {
                 actionTodo.add(tmpSet);
             }
             
-            chooseAction(actionTodo);
+            chooseAction(node, actionTodo, protocolID);
         }
     }
     
-    private void chooseAction(ArrayList<ActionSet> todo) {
+    private void chooseAction(Node n, ArrayList<ActionSet> todo, int protocolID) {
         boolean posProfit = false;
         for (ActionSet aSet : todo) {
             int dur = aSet.getDuration(this);
@@ -1339,13 +1339,13 @@ public class DataExchange implements CDProtocol {
         }
         
         if (chosen != null) {
-            pickAction(chosen);
+            pickAction(n, chosen, protocolID);
         } else {
             System.err.println("ERROR: NO ACTIONS FOUND FOR PEER "+peerID);
         }
     }
     
-    private void pickAction(ActionSet aSet) {
+    private void pickAction(Node n, ActionSet aSet, int protocolID) {
         boolean containsPol = false;
         boolean containsNonZeroDur = false;
         boolean containsNonInform = false;
@@ -1392,26 +1392,37 @@ public class DataExchange implements CDProtocol {
         }
         
         if (chosen != null) {
-            doAction(chosen);
+            doAction(n, chosen, protocolID);
         } else {
             System.err.println("ERROR: NO ACTION CHOSEN FOR PEER "+peerID);
         }
     }
     
-    private void doAction(Action a) {
+    private void doAction(Node n, Action a, int protocolID) {
         switch (a.type) {
             case "obtain":
                 break;
             case "provide":
                 break;
             case "wipe":
+                int qty = countData(a.payload[0]);
+                qty = Math.min(qty, Integer.parseInt(a.payload[2]));
+                DataElement[] tmp = (DataElement[]) dataCollection.toArray();
+                for (int i = dataCollection.size()-1; i >= 0; i -= 1) {
+                    if (tmp[i].dataID.equals(a.payload[0])) {
+                        dataCollection.remove(tmp[i]);
+                        qty -= 1;
+                        if (qty <= 0) { break;}
+                    }
+                }
                 break;
             case "adopt":
                 break;
             case "revoke":
                 break;
             case "inform":
-                //sendMessage(protocolID, rec, send, -1, tID, "INFORM", new Object[] { data, 1 }, null);
+                Node rec = getPeerByID(a.payload[0]);
+                sendMessage(protocolID, rec, n, -1, -1, "INFORM", new Object[] { }, null);
                 break;
         }
     }
