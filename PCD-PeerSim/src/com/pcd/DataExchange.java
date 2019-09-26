@@ -236,6 +236,8 @@ public class DataExchange implements CDProtocol {
                                 } else {
                                     subVal = "peer"+Network.get(rng.nextInt(Network.size())).getID();
                                 }
+                            } else if (sub.startsWith("{SELF")) { 
+                                subVal = "peer"+peerID;
                             } else if (sub.contains("-")) {
                                 int lower = Integer.parseInt(subBody.split("-")[0]);
                                 int upper = Integer.parseInt(subBody.split("-")[1]);
