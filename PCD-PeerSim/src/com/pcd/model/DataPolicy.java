@@ -194,10 +194,12 @@ public class DataPolicy {
             }
             
             int startQuote = actionSTemp.indexOf("\"");
+            //System.out.println("STRING: "+actionSTemp);
             //System.out.println("BLOCK: "+startQuote+", "+open+", "+close);
             String act = actionSTemp.substring(startQuote+1,close+1);
             //System.out.println(act);
-            actionSTemp = actionSTemp.substring(close+1);
+            actionSTemp = actionSTemp.substring(close+2);
+            if (actionSTemp.startsWith(",")) { actionSTemp = actionSTemp.substring(1);}
             
             if (act.startsWith("\"")) { act = act.substring(1);}
             if (act.endsWith("\"")) { act = act.substring(0,act.length()-1);}

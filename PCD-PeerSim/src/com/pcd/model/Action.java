@@ -11,13 +11,14 @@ public class Action {
         actString = act;
         type = act.substring(0, act.indexOf("("));
         //System.out.println(act+": "+type);
-        if (actString.startsWith("adopt")) { System.out.println("\t\t"+actString+"\n");}
+        //if (actString.startsWith("adopt")) { System.out.println("\t\t"+actString+"\n");}
         
         payload = new String[0];
         if (type.equals("adopt")) {
             payload = new String[2];
             payload[0] = act.substring(6,act.lastIndexOf(","));
-            payload[1] = act.substring(act.lastIndexOf(", ")+2,act.length()-1);
+            payload[1] = act.substring(act.lastIndexOf(",")+2,act.length()-1);
+            //System.out.println(payload[0]+" - "+payload[1]);
         } else {
             payload = act.substring(act.indexOf("(")+1, act.indexOf(")")).split(",");
         }
@@ -30,7 +31,6 @@ public class Action {
             expiry = (peersim.core.CommonState.getTime() + Integer.parseInt((String) payload[payload.length-1]));
         }
         
-        //TODO: Calculate time to complete action
         time = 0;
     }
     
