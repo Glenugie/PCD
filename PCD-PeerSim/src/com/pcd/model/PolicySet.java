@@ -80,6 +80,7 @@ public class PolicySet {
             }
         }
         if (pIndex != -1) {
+            primary.remove(pIndex);
             providerValues.remove("P"+pIndex);
             requestorValues.remove("P"+pIndex);
         }
@@ -91,11 +92,10 @@ public class PolicySet {
             }
         }
         if (sIndex != -1) {
+            secondary.remove(sIndex);
             providerValues.remove("S"+sIndex);
             requestorValues.remove("S"+sIndex);
         }
-        primary.remove(pIndex);
-        secondary.remove(sIndex);
     }
     
     public void addReqValue(DataPolicy p, Double val, boolean prim) {

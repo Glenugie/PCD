@@ -983,9 +983,10 @@ public class DataExchange implements CDProtocol {
                     return null;
                 }
             }
-            int i = 0;
             HashSet<DataPolicy> toRemove = new HashSet<DataPolicy>();
-            for (DataPolicy pol : ps.getSecondary().values()) {
+            //for (DataPolicy pol : ps.getSecondary().values()) {
+            for (Integer i : ps.getSecondary().keySet()) {
+                DataPolicy pol = ps.getSecondary().get(i);
                 if (pol.isActivatable(this)) {
                     double polU = policyProfitReq(pol);
                     polU -= pol.activationCost();
@@ -997,7 +998,6 @@ public class DataExchange implements CDProtocol {
                         toRemove.add(pol);
                     }
                 }
-                i += 1;
             }
             for (DataPolicy pol : toRemove) {
                 ps.remove(pol);
