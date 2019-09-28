@@ -1339,7 +1339,7 @@ public class DataExchange implements CDProtocol {
                 }
             }
             for (String d : wantedData) {
-                Action tmp = new Action("obtain("+d+",peer"+peerID+",1)");
+                Action tmp = new Action("obtain("+d+",peer"+peerID+",-1)");
                 ActionSet tmpSet = new ActionSet(0,0);
                 tmpSet.add(tmp);
                 tmpSet.dln = -1;
@@ -1356,13 +1356,16 @@ public class DataExchange implements CDProtocol {
             int dur = aSet.getDuration(this);
             int profit = getDataValues(aSet.getData()) - (dur * PrologInterface.confCycleCost);
             for (ActionSet aSet2 : todo) {
-                if ((CommonState.getTime() + dur) < (aSet2.dln - aSet2.getDuration(this)) && !aSet.completes(aSet2)) {
+                // If completing this action set will prevent another action set from being completed, 
+                    // and it doesn't contribute to that second action set
+                if (aSet2.dln != -1 && (CommonState.getTime() + dur) < (aSet2.dln - aSet2.getDuration(this)) && !aSet.completes(aSet2)) {
                     profit -= aSet2.pen;
                 }
-                aSet.prof = profit;
-                if (profit >= 0) {
-                    posProfit = true;
-                }
+            }
+            aSet.prof = profit;
+           // System.out.println(getDataValues(aSet.getData())+" - ("+dur+" * "+PrologInterface.confCycleCost+") = "+profit);
+            if (profit >= 0) {
+                posProfit = true;
             }
         }
 
@@ -1375,6 +1378,7 @@ public class DataExchange implements CDProtocol {
                     chosen = aSet;
                 }
             }
+            System.out.println("Positive Profit!: "+chosen);
         } else {
             long minDln = 0;
             for (ActionSet aSet : todo) {
@@ -1386,6 +1390,7 @@ public class DataExchange implements CDProtocol {
                     }
                 }
             }
+            System.out.println("Default!: "+chosen);
         }
         
         if (chosen != null) {
@@ -1437,8 +1442,8 @@ public class DataExchange implements CDProtocol {
                 }
             }  
         } else if (workingSet.size() > 0) {
-            Action[] tmp = (Action[]) workingSet.toArray();
-            chosen = tmp[CommonState.r.nextInt(tmp.length)];
+            Object[] tmp = workingSet.toArray();
+            chosen = (Action) tmp[CommonState.r.nextInt(tmp.length)];
         }
         
         if (chosen != null) {
@@ -1854,7 +1859,9 @@ public class DataExchange implements CDProtocol {
     public int getDataValues(HashMap<String,Integer> data) {
         int val = 0;
         for (String d : data.keySet()) {
-            val += getDataValue(d) * data.get(d);
+            //System.out.println(d+": "+getDataValue(d)+" * "+data.get(d));
+            int qty = data.get(d); if (qty == -1 ) { qty = 1;}
+            val += getDataValue(d) * qty;
         }
         return val;
     }

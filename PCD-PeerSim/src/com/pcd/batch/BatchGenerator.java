@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class BatchGenerator {
     public static void main(String[] args) {
         String[] topologies = {
-            "# Mesh\t\ninit.keys.topology 1\t\ninit.rnd WireMesh\t\ninit.rnd.protocol lnk\t\ninit.rnd.k 10\t\ninit.keys.allowNewConnections false",
+            "# Mesh\t\ninit.keys.topology 1\t\ninit.rnd com.pcd.WireMesh\t\ninit.rnd.protocol lnk\t\ninit.rnd.k 10\t\ninit.keys.allowNewConnections false",
             "# Overlay\n\tinit.keys.topology 2\n\tinit.rnd WireKOut\n\tinit.rnd.protocol lnk\n\tinit.rnd.k 5\n\tinit.keys.allowNewConnections true",
             "# Fully Connected\n\tinit.keys.topology 3\n\tinit.rnd WireKOut\n\tinit.rnd.protocol lnk\n\tinit.rnd.k 999999999\n\tinit.keys.allowNewConnections false",
             "# Pseudo-Grid\n\tinit.keys.topology 4\n\tinit.rnd WireRingLattice\n\tinit.rnd.protocol lnk\n\tinit.rnd.k 4\n\tinit.keys.allowNewConnections false",
@@ -93,7 +93,7 @@ public class BatchGenerator {
             
             for (String f : fileNames) {
                 System.out.println("file: "+f);
-                outF.write("java -classpath .;lib/peersim-1.0.5.jar;lib/jpl.jar;lib/jep-2.3.0.jar;lib/djep-1.0.0.jar;lin/peersim-doclet.jar;bin peersim.Simulator \"conf/"+f+".txt\"\n");
+                outF.write("java -classpath .;lib/peersim-1.0.5.jar;lib/jpl.jar;lib/jep-2.3.0.jar;lib/djep-1.0.0.jar;lin/peersim-doclet.jar;bin peersim.Simulator \"conf/PCD-Conf_"+f+".txt\" -Xmx12g -Xms4g -XX:+UseConcMarkSweepGC\n");
                 outF.write("Rscript \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r\" \""+f+"\"\n\n");
             }
             
