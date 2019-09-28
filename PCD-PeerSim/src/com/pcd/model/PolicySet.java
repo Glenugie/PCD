@@ -56,6 +56,7 @@ public class PolicySet {
         if (rVal != null) {
             requestorValues.put("S"+nextSecondary, rVal);
         }
+        nextSecondary += 1;
     }
     
     public boolean allowsAccess(String pred, String id) {
@@ -93,8 +94,8 @@ public class PolicySet {
             providerValues.remove("S"+sIndex);
             requestorValues.remove("S"+sIndex);
         }
-        primary.remove(p);
-        secondary.remove(p);
+        primary.remove(pIndex);
+        secondary.remove(sIndex);
     }
     
     public void addReqValue(DataPolicy p, Double val, boolean prim) {
