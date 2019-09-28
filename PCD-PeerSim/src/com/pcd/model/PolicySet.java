@@ -280,7 +280,7 @@ public class PolicySet {
     }
     
     public ArrayList<DataPolicy> activeSet() {
-        return (ArrayList<DataPolicy>) primary.values();
+        return new ArrayList<DataPolicy>(primary.values());
     }
     
     public HashSet<String> getIdentities() {

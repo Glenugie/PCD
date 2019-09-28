@@ -1378,7 +1378,7 @@ public class DataExchange implements CDProtocol {
                     chosen = aSet;
                 }
             }
-            System.out.println("Positive Profit!: "+chosen);
+            //System.out.println("Positive Profit!: "+chosen);
         } else {
             long minDln = 0;
             for (ActionSet aSet : todo) {
@@ -1390,7 +1390,7 @@ public class DataExchange implements CDProtocol {
                     }
                 }
             }
-            System.out.println("Default!: "+chosen);
+            //System.out.println("Default!: "+chosen);
         }
         
         if (chosen != null) {

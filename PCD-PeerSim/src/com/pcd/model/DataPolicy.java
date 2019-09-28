@@ -531,7 +531,7 @@ public class DataPolicy {
                 condComp = Integer.parseInt(compare[1]);
             }
             
-            System.out.println(cond+" => "+condType+" + "+condTerms+" + "+condOp+" + "+condComp);
+            //System.out.println(cond+" => "+condType+" + "+condTerms+" + "+condOp+" + "+condComp);
             long curCycle = CommonState.getTime();
             switch (condType) {
                 case "recordsAccessed": // (peerID, dataID, cycleStart, cycleEnd)
