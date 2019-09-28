@@ -680,7 +680,7 @@ public class DataExchange implements CDProtocol {
     
     private DataPolicy negativeOptional(PolicySet ps) {
         double lowestVal = 0.0; int lowestValInd = -1;
-        for (int i = 0; i < ps.getSecondary().size(); i += 1) {
+        for (Integer i : ps.getSecondary().keySet()) {
             double val = ps.getProviderValue("S"+i);
             if (val < 0 && (lowestValInd == -1 || val < lowestVal)) {
                 lowestVal = val;
@@ -761,7 +761,7 @@ public class DataExchange implements CDProtocol {
                         // Prohibition is complied with if polSets contains at least one policy set who has pol as a primary policy
                         boolean found = false;
                         for (PolicySet ps : polSets) {
-                            for (DataPolicy pTest : ps.getPrimary()) {
+                            for (DataPolicy pTest : ps.getPrimary().values()) {
                                 if (pol.trueEquals(pTest)) {
                                     found = true;
                                     break;
@@ -798,7 +798,7 @@ public class DataExchange implements CDProtocol {
                         // Permission is violated if polSets doesn't contain a policy set who has pol as a primary policy
                         boolean found = false;
                         for (PolicySet ps : polSets) {
-                            for (DataPolicy pTest : ps.getPrimary()) {
+                            for (DataPolicy pTest : ps.getPrimary().values()) {
                                 if (pol.trueEquals(pTest)) {
                                     found = true;
                                     break;
@@ -973,7 +973,7 @@ public class DataExchange implements CDProtocol {
         } else {
             double u = 0.0;
             u -= PrologInterface.confCycleCost * 2;
-            for (DataPolicy pol : ps.getPrimary()) {
+            for (DataPolicy pol : ps.getPrimary().values()) {
                 if (pol.isActivatable(this)) {
                     double polU = policyProfitReq(pol);
                     polU -= pol.activationCost();
@@ -985,7 +985,7 @@ public class DataExchange implements CDProtocol {
             }
             int i = 0;
             HashSet<DataPolicy> toRemove = new HashSet<DataPolicy>();
-            for (DataPolicy pol : ps.getSecondary()) {
+            for (DataPolicy pol : ps.getSecondary().values()) {
                 if (pol.isActivatable(this)) {
                     double polU = policyProfitReq(pol);
                     polU -= pol.activationCost();
@@ -1716,13 +1716,13 @@ public class DataExchange implements CDProtocol {
     
     public boolean fulfilObligations(PolicySet polSet) {
         double fulfilProfit = 0.0, breakProfit = 0.0;
-        for (DataPolicy pol : polSet.getPrimary()) {
+        for (DataPolicy pol : polSet.getPrimary().values()) {
             if (pol.mod.equals("O")) {
                 fulfilProfit += costToFulfilObligation(pol);
                 breakProfit += pol.penalty;
             }
         }
-        for (DataPolicy pol : polSet.getSecondary()) {
+        for (DataPolicy pol : polSet.getSecondary().values()) {
             //TODO: If this policy is active
             if (pol.mod.equals("O")) {
                 fulfilProfit += costToFulfilObligation(pol);

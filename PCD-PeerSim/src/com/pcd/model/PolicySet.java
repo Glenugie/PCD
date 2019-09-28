@@ -4,17 +4,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
-import org.jpl7.Term;
-import org.jpl7.Util;
-
 import com.pcd.DataExchange;
 import com.pcd.PrologInterface;
 
 import peersim.core.CommonState;
 
 public class PolicySet {
-    private ArrayList<DataPolicy> primary;
-    private ArrayList<DataPolicy> secondary;
+    private HashMap<Integer,DataPolicy> primary;
+    private HashMap<Integer,DataPolicy> secondary;
+    private int nextPrimary = 0;
+    private int nextSecondary = 0;
     private HashMap<String,Double> providerValues;
     private HashMap<String,Double> requestorValues;
     
@@ -24,8 +23,8 @@ public class PolicySet {
     public double worstRequestorValue;
     
     public PolicySet() {
-        primary = new ArrayList<DataPolicy>();
-        secondary = new ArrayList<DataPolicy>();
+        primary = new HashMap<Integer,DataPolicy>();
+        secondary = new HashMap<Integer,DataPolicy>();
         
         providerValues = new HashMap<String,Double>();
         requestorValues = new HashMap<String,Double>();
@@ -37,24 +36,25 @@ public class PolicySet {
     }
     
     public void addPrimary(DataPolicy p, Double pVal, Double rVal) {
-        primary.add(p);
-        int newID = primary.size()-1;
+        primary.put(nextPrimary,p);
+        //int newID = primary.size()-1;
         if (pVal != null) {
-            providerValues.put("P"+newID, pVal);
+            providerValues.put("P"+nextPrimary, pVal);
         }
         if (rVal != null) {
-            requestorValues.put("P"+newID, rVal);
+            requestorValues.put("P"+nextPrimary, rVal);
         }
+        nextPrimary += 1;
     }
     
     public void addSecondary(DataPolicy p, Double pVal, Double rVal) {
-        secondary.add(p);
-        int newID = primary.size()-1;
+        secondary.put(nextSecondary, p);
+        //int newID = primary.size()-1;
         if (pVal != null) {
-            providerValues.put("S"+newID, pVal);
+            providerValues.put("S"+nextSecondary, pVal);
         }
         if (rVal != null) {
-            requestorValues.put("S"+newID, rVal);
+            requestorValues.put("S"+nextSecondary, rVal);
         }
     }
     
@@ -71,12 +71,24 @@ public class PolicySet {
     }
     
     public void remove(DataPolicy p) {
-        int pIndex = primary.indexOf(p);
+        int pIndex = -1;
+        for (Integer k : primary.keySet()) {
+            if (primary.get(k).equals(p)) {
+                pIndex = k;
+                break;
+            }
+        }
         if (pIndex != -1) {
             providerValues.remove("P"+pIndex);
             requestorValues.remove("P"+pIndex);
         }
-        int sIndex = secondary.indexOf(p);
+        int sIndex = -1;
+        for (Integer k : secondary.keySet()) {
+            if (secondary.get(k).equals(p)) {
+                sIndex = k;
+                break;
+            }
+        }
         if (sIndex != -1) {
             providerValues.remove("S"+sIndex);
             requestorValues.remove("S"+sIndex);
@@ -88,7 +100,8 @@ public class PolicySet {
     public void addReqValue(DataPolicy p, Double val, boolean prim) {
         int i = 0;
         if (prim) {
-            for (DataPolicy pol : primary) {
+            for (Integer k : primary.keySet()) {
+                DataPolicy pol = primary.get(k);
                 if (pol.trueEquals(p)) {
                     requestorValues.put("P"+i,val);
                     break;
@@ -96,7 +109,8 @@ public class PolicySet {
                 i += 1;
             }
         } else {
-            for (DataPolicy pol : secondary) {
+            for (Integer k : secondary.keySet()) {
+                DataPolicy pol = secondary.get(k);
                 if (pol.trueEquals(p)) {
                     requestorValues.put("S"+i,val);
                     break;
@@ -114,11 +128,12 @@ public class PolicySet {
         worstRequestorValue = 0.0;
         
         boolean permitSet = false;
-        for (DataPolicy pPol : primary) { if (pPol.mod.equals("P")) { permitSet = true; break;}}
-        if (!permitSet) { for (DataPolicy sPol : secondary) { if (sPol.mod.equals("P")) { permitSet = true; break;}}}
+        for (DataPolicy pPol : primary.values()) { if (pPol.mod.equals("P")) { permitSet = true; break;}}
+        if (!permitSet) { for (DataPolicy sPol : secondary.values()) { if (sPol.mod.equals("P")) { permitSet = true; break;}}}
         
-        
-        for (DataPolicy pPol : primary) {
+
+        for (Integer k : primary.keySet()) {
+            DataPolicy pPol = primary.get(k);
             switch (pPol.mod) {
                 case "P": 
                     if (permitSet) {
@@ -147,7 +162,8 @@ public class PolicySet {
 
         worstProviderValue = providerValue;
         worstRequestorValue = providerValue;
-        for (DataPolicy sPol : secondary) {
+        for (Integer k : secondary.keySet()) {
+            DataPolicy sPol = secondary.get(k);
             if (permitSet && sPol.mod.equals("F")) { worstProviderValue += sPol.penalty;}
             else if (!permitSet && sPol.mod.equals("P")) { worstProviderValue += sPol.penalty;}
             /*if (providerValues.get(sPol) < 0) {
@@ -163,25 +179,30 @@ public class PolicySet {
         return true;
     }
     
-    public Term getPrologTerm() {
-        Term[] pols = new Term[primary.size()+secondary.size()]; 
-        
-        int i = 0;
-        for (DataPolicy pPol : primary) {
-            //pols[i] = pPol.getPrologTerm(); i += 1;
-        }
-        for (DataPolicy sPol : secondary) {
-            //pols[i] = sPol.getPrologTerm(); i += 1;
-        }
-        return Util.termArrayToList(pols);
-    }
+//    public Term getPrologTerm() {
+//        Term[] pols = new Term[primary.size()+secondary.size()]; 
+//        
+//        int i = 0;
+////        for (DataPolicy pPol : primary) {
+////            //pols[i] = pPol.getPrologTerm(); i += 1;
+////        }
+////        for (DataPolicy sPol : secondary) {
+////            //pols[i] = sPol.getPrologTerm(); i += 1;
+////        }
+//        return Util.termArrayToList(pols);
+//    }
     
     public boolean containsPermit() {
-        for (DataPolicy pPol : primary) { if (pPol.mod.equals("P")) { return true;}}
+        for (Integer k : primary.keySet()) {
+            DataPolicy pPol = primary.get(k);
+            if (pPol.mod.equals("P")) { 
+                return true;
+            }
+        }
         return false;
     }
     
-    public ArrayList<DataPolicy> getPrimary() {
+    public HashMap<Integer,DataPolicy> getPrimary() {
         return primary;
     }
     
@@ -189,7 +210,7 @@ public class PolicySet {
         return primary.get(i);
     }        
     
-    public ArrayList<DataPolicy> getSecondary() {
+    public HashMap<Integer,DataPolicy> getSecondary() {
         return secondary;
     }
     
@@ -199,8 +220,8 @@ public class PolicySet {
     
     public HashSet<DataPolicy> getPolicies() {
         HashSet<DataPolicy> pols = new HashSet<DataPolicy>();
-        pols.addAll(primary);
-        pols.addAll(secondary);
+        pols.addAll(primary.values());
+        pols.addAll(secondary.values());
         return pols;
     }
     
@@ -208,7 +229,7 @@ public class PolicySet {
         HashSet<DataPolicy> obligations = new HashSet<DataPolicy>();
 
         ArrayList<DataPolicy> allPols = new ArrayList<DataPolicy>();
-        allPols.addAll(primary); allPols.addAll(secondary);
+        allPols.addAll(primary.values()); allPols.addAll(secondary.values());
         for (DataPolicy pol : allPols) {
             if (pol.mod.equals("O")) {
                 obligations.add(pol);
@@ -222,7 +243,7 @@ public class PolicySet {
         HashSet<Action> oActions = new HashSet<Action>();
 
         ArrayList<DataPolicy> allPols = new ArrayList<DataPolicy>();
-        allPols.addAll(primary); allPols.addAll(secondary);
+        allPols.addAll(primary.values()); allPols.addAll(secondary.values());
         for (DataPolicy pol : allPols) {
             if (pol.mod.equals("O")) {
                 for (Action act : pol.actions) {
@@ -247,7 +268,8 @@ public class PolicySet {
             }
             return true;
         } else {
-            for (DataPolicy p : primary) {
+            for (Integer k : primary.keySet()) {
+                DataPolicy p = primary.get(k);
                 if (!p.isActive(peer)) {
                     return false;
                 }
@@ -257,7 +279,7 @@ public class PolicySet {
     }
     
     public ArrayList<DataPolicy> activeSet() {
-        return primary;
+        return (ArrayList<DataPolicy>) primary.values();
     }
     
     public HashSet<String> getIdentities() {
@@ -284,7 +306,8 @@ public class PolicySet {
             }
             return true;
         } else {
-            for (DataPolicy p : primary) {
+            for (Integer k : primary.keySet()) {
+                DataPolicy p = primary.get(k);
                 if (!p.isActivatable(peer)) {
                     return false;
                 }
