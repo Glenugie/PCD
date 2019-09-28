@@ -93,8 +93,11 @@ public class BatchGenerator {
             
             for (String f : fileNames) {
                 System.out.println("file: "+f);
-                outF.write("java -classpath .;lib/peersim-1.0.5.jar;lib/jpl.jar;lib/jep-2.3.0.jar;lib/djep-1.0.0.jar;lin/peersim-doclet.jar;bin peersim.Simulator \"conf/PCD-Conf_"+f+".txt\" -Xmx12g -Xms4g -XX:+UseConcMarkSweepGC\n");
-                outF.write("Rscript \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r\" \""+f+"\"\n\n");
+                outF.write("touch \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/Logs/"+f+"-J.txt\"\n");
+                outF.write("java -Xmx12g -Xms4g -XX:+UseConcMarkSweepGC -classpath .;lib/peersim-1.0.5.jar;lib/jpl.jar;lib/jep-2.3.0.jar;lib/djep-1.0.0.jar;lin/peersim-doclet.jar;bin peersim.Simulator \"conf/PCD-Conf_"+f+".txt\""
+                        + " > \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/Logs/"+f+"-J.txt\" 2>&1\n");
+                outF.write("touch \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/Logs/"+f+"-R.txt\"\n");
+                outF.write("Rscript \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r\" \""+f+"\" > \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/Logs/"+f+"-R.txt\" 2>&1\n\n");
             }
             
             outF.close();

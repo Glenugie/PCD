@@ -5,8 +5,10 @@ import java.util.HashSet;
 import peersim.core.Node;
 
 public class P2PMessage {
-	public Node sender;
-	public Node receiver;
+	//public Node sender;
+	//public Node receiver;
+    public long sender;
+    public long receiver;
     public int prvTransId;
     public int reqTransId;
 	public String type;    
@@ -16,7 +18,7 @@ public class P2PMessage {
 	
 	private HashSet<Long> chain;
 	
-	public P2PMessage(Node s, Node r, int prvid, int reqid, String t, long ti, Object[] b) {
+	public P2PMessage(long s, long r, int prvid, int reqid, String t, long ti, Object[] b) {
 	    //System.out.println(s.getID()+", "+r.getID());
 		sender = s;
 		receiver = r;
@@ -28,8 +30,8 @@ public class P2PMessage {
         body = b;		
         
         chain = new HashSet<Long>();
-        chain.add(s.getID());
-        chain.add(r.getID());
+        chain.add(s);
+        chain.add(r);
 	}
 	
 	public HashSet<Long> getChain() {
