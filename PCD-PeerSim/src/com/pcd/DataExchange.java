@@ -80,7 +80,7 @@ public class DataExchange implements CDProtocol {
     private boolean altruistic; // Altruistic peers will always comply with policies if possible, even at a loss of value. Self-interested peers will use profit estimates to determine the most valuable choice; preferring compliance if possible
     private boolean fair; // Fair peers promote social welfare, forward messages etc.. Selfish peers will not do any of this.
     private boolean faulty; // Faulty peers have a PrologInterface.confFaultRate % chance to drop outgoing messages. Non-faulty peers will always send messages successfully.
-    private double breakMult;
+    public double breakMult;
 
     protected ArrayList<P2PMessage> messages;
     protected LinkedHashMap<String,Integer> messageTotals;
@@ -1037,7 +1037,7 @@ public class DataExchange implements CDProtocol {
             case "F":
                 break;
             case "O":
-                double violObl = pol.penalty;
+                double violObl = pol.penalty * breakMult;
                 double fulfilObl = 0;
                 for (Action a : pol.actions) {
                     fulfilObl -= actionCostReq(a);
@@ -1400,7 +1400,7 @@ public class DataExchange implements CDProtocol {
             for (ActionSet aSet : todo) {
                 aSet.calcDln();
                 if (chosen == null || aSet.dln < minDln) {
-                    if ((aSet.dln - aSet.duration) > CommonState.getTime() && (aSet.duration * PrologInterface.confCycleCost) < aSet.pen) {
+                    if ((aSet.dln - aSet.duration) > CommonState.getTime() && (aSet.duration * PrologInterface.confCycleCost) < (aSet.pen * breakMult)) {
                         minDln = aSet.dln;
                         chosen = aSet;                        
                     }

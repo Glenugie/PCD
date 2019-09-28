@@ -37,7 +37,7 @@ public class Transaction {
     public void calcActions(PolicySet ps, DataExchange n) {
         for (DataPolicy p : ps.getPolicies()) {
             if (p.mod.equals("O")) {
-                double violObl = p.penalty;
+                double violObl = p.penalty * n.breakMult;
                 double fulfilObl = 0;
                 for (Action a : p.actions) {
                     fulfilObl -= n.actionCostReq(a);
