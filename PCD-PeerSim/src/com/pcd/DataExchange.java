@@ -937,27 +937,41 @@ public class DataExchange implements CDProtocol {
                 }
             }
             //System.out.println(policySets.size()+" ?= "+polSetsTmp.size());
-            
-            polSetsTmp = (HashSet<PolicySet>) policySets.clone();
-            //System.out.println(policySets.size()+" ?= "+polSetsTmp.size());
-            for (PolicySet pSet : polSetsTmp) {
-                HashSet<PolicySet> polSetTmpMinus = (HashSet<PolicySet>) policySets.clone();
-                polSetTmpMinus.remove(pSet);
-                for (PolicySet pSetCmp : polSetTmpMinus) {
-                    if (pSet.providerValue >= pSetCmp.providerValue && pSet.requestorValue >= pSetCmp.requestorValue) {
-                        policySets.remove(pSet);                        
+
+            PolicySet chosenPS = null;
+            if (fair) {
+                polSetsTmp = (HashSet<PolicySet>) policySets.clone();
+                //System.out.println(policySets.size()+" ?= "+polSetsTmp.size());
+                for (PolicySet pSet : polSetsTmp) {
+                    HashSet<PolicySet> polSetTmpMinus = (HashSet<PolicySet>) policySets.clone();
+                    polSetTmpMinus.remove(pSet);
+                    for (PolicySet pSetCmp : polSetTmpMinus) {
+                        if (pSet.providerValue >= pSetCmp.providerValue && pSet.requestorValue >= pSetCmp.requestorValue) {
+                            policySets.remove(pSet);                        
+                        }
                     }
                 }
-            }
-            //System.out.println(policySets.size()+" ?= "+polSetsTmp.size());
-            
-            PolicySet chosenPS = null;
-            double bestRatio = -1.0;
-            for (PolicySet pSet : policySets) {
-                double ratio = Math.max(pSet.requestorValue,pSet.providerValue)/Math.min(pSet.requestorValue,pSet.providerValue);
-                if (bestRatio == -1.0 || ratio < bestRatio) {
-                    bestRatio = ratio;
-                    chosenPS = pSet;
+                //System.out.println(policySets.size()+" ?= "+polSetsTmp.size());
+                
+                double bestRatio = -1.0;
+                for (PolicySet pSet : policySets) {
+                    double ratio = Math.max(pSet.requestorValue,pSet.providerValue)/Math.min(pSet.requestorValue,pSet.providerValue);
+                    if (bestRatio == -1.0 || ratio < bestRatio) {
+                        bestRatio = ratio;
+                        chosenPS = pSet;
+                    }
+                }
+            } else {
+                double bestRValue = PrologInterface.MIN_UTIL-1;
+                double bestPValue = PrologInterface.MIN_UTIL-1;
+                for (PolicySet pSet : policySets) {
+                    if (pSet.requestorValue > bestRValue || (pSet.requestorValue >= bestRValue && pSet.providerValue > bestPValue)) {
+                        bestRValue = pSet.requestorValue;
+                        chosenPS = pSet;
+                    }
+                    if (pSet.providerValue > bestPValue) {
+                        bestPValue = pSet.providerValue;
+                    }
                 }
             }
             
