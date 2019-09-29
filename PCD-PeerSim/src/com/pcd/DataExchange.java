@@ -1770,7 +1770,9 @@ public class DataExchange implements CDProtocol {
                     P2PMessage msg = new P2PMessage(s.getID(), r.getID(), pTrId, rTrId, type, (peersim.core.CommonState.getTime() + 1), body);
                     if (chain != null) { msg.addChain(chain);}
                     int chainSize = msg.getChain().size();
-                    if (chainSize >= 25 || (chainSize > 5 && rng.nextInt(100-((chainSize-5)*5)) == 0)) {
+                    //if (chainSize >= 25 || (chainSize > 5 && rng.nextInt(100-((chainSize-5)*5)) == 0)) {
+                    if (chainSize >= 10 || (chainSize > 5 && rng.nextInt(10-chainSize) == 0)) {
+                    //if (chainSize >= 5 || rng.nextInt(5-chainSize) == 0) {
                         if (messageTotals.containsKey("CHAIN_FAILURE")) { messageTotals.replace("CHAIN_FAILURE", messageTotals.get("CHAIN_FAILURE")+1);}
                         if (PrologInterface.debugMessages) {
                             System.out.println("CHAIN FAILURE ("+chainSize+")");
