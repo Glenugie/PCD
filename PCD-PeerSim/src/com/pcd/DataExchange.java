@@ -479,10 +479,13 @@ public class DataExchange implements CDProtocol {
             }
             
             if (PrologInterface.DATA_REQUEST_FORWARDING && fair) {
+                int fCount = 0;
                 for (Node nT : getForwardingNeighbours((String) msg.body[0])) {
                     if (!msg.inChain(nT)) {
                         ((DataExchange) nT.getProtocol(protocolID)).sendMessage(protocolID, nT, msgSender, -1, -1, "DATA_REQUEST", new Object[] { (String) msg.body[0], new Integer((int) msg.body[1]) }, msg.getChain());
+                        fCount += 1;
                     }
+                    if (fCount >= PrologInterface.confMaxForward) { break;}
                 }
             }
         } else {

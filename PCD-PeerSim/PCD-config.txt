@@ -19,6 +19,7 @@
     init.keys.dataRequestForwarding true
     init.keys.defaultPermit false
     
+    init.keys.maxForward 3
     init.keys.cycleCost 1 
     init.keys.maxTransactions 2500
     init.keys.transactionLifetime 5

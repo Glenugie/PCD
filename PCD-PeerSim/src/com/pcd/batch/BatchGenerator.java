@@ -42,6 +42,7 @@ public class BatchGenerator {
                             outF.write("protocol.lnk IdleProtocol\n");
                             outF.write("protocol.pcd com.pcd.DataExchange\n");
                             outF.write("protocol.pcd.linkable lnk\n");
+                            outF.write("init.keys.maxForward 3\n");
                             outF.write("init.keys.peersTrueRandom false\n");
                             outF.write("init.keys.peersReasoning true\n");
                             outF.write("init.keys.dataRequestForwarding true\n");

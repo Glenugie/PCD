@@ -39,8 +39,9 @@ public class KeyInit implements Control {
         PrologInterface.confExperiments = Configuration.getInt("simulation.experiments");
         PrologInterface.confCycles = Configuration.getInt("simulation.cycles");
         PrologInterface.confPeers = Configuration.getInt("network.size");
-        
+
         PrologInterface.confCycleCost = Configuration.getInt(name+".cycleCost");
+        PrologInterface.confMaxForward = Configuration.getInt(name+".maxForward");
         PrologInterface.confMinBudget = Configuration.getInt(name+".minBudget");
         PrologInterface.confMaxBudget = Configuration.getInt(name+".maxBudget");
         PrologInterface.confMinPols = Configuration.getInt(name+".minPolicies");

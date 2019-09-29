@@ -28,6 +28,7 @@ public class PrologInterface {
 	public static int confExperiments;
 	public static int confCycles;
 	public static int confPeers;
+	public static int confMaxForward;
 	
 	public static int confCycleCost;
     public static int confMinBudget;
