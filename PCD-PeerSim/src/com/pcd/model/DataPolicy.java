@@ -338,7 +338,7 @@ public class DataPolicy {
     
     public boolean mutuallyExclusive(DataPolicy polC) {
         if (condEquals(polC)) {
-            return false;
+            return false; 
         }
         return true;
     }

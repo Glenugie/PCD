@@ -69,7 +69,8 @@ public class DataExchange implements CDProtocol {
     //protected ArrayList<ArrayList<Action>> obligedActions;
 
     //private int activeRequests;
-    protected int peerBudget, startingBudget;
+    public int peerBudget;
+    public int startingBudget;
 
     protected int dataReceived;
     protected long disconnectTime;
@@ -93,7 +94,11 @@ public class DataExchange implements CDProtocol {
     private ArrayList<ActionSet> obligedActions;
 
     public DataExchange(String prefix) {
-        rng = CommonState.r;
+        if (!prefix.equals("DEBUG")) {
+            rng = CommonState.r;
+        } else {
+            rng = new Random(12345678);
+        }
         //prologDateFormat = new SimpleDateFormat("yyyy,MM,dd,HH,mm,ss,0,z,'false'");
         
         disconnecting = false;

@@ -99,9 +99,56 @@ public class BatchGenerator {
                     outF.write("java -Xmx12g -Xms4g -XX:+UseConcMarkSweepGC -classpath .;lib/peersim-1.0.5.jar;lib/jpl.jar;lib/jep-2.3.0.jar;lib/djep-1.0.0.jar;lin/peersim-doclet.jar;bin peersim.Simulator \"conf/PCD-Conf_"+f+".txt\""
                         + " >> \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/Logs/"+f+".txt\" 2>&1\n");
                 }
-                //outF.write("touch \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/Logs/"+f+"-R.txt\"\n");
                 outF.write("Rscript \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r\" \""+f+"\""
-                        + " >> \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/Logs/"+f+".txt\" 2>&1\n\n");
+                        + " >> \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/Logs/"+f+".txt\" 2>&1\n");
+                
+                String fClean = f.replaceAll(",", "-");
+                outF.write("cd \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/"+f+"/EPS\"\n");
+                outF.write("mv \""+f+"-messages-sankey.eps\" \""+fClean+"-messages-sankey.eps\"\n");
+                outF.write("mv \""+f+"-messages.eps\" \""+fClean+"-messages.eps\"\n");
+                outF.write("mv \""+f+"-cycleBreakdown.eps\" \""+fClean+"-cycleBreakdown.eps\"\n");
+                outF.write("mv \""+f+"-utilScatterAll-Fault.eps\" \""+fClean+"-utilScatterAll-Fault.eps\"\n");
+                outF.write("mv \""+f+"-utilScatterAll-NoFault.eps\" \""+fClean+"-utilScatterAll-NoFault.eps\"\n");
+                outF.write("mv \""+f+"-utility-final.eps\" \""+fClean+"-utility-final.eps\"\n");
+                
+                outF.write("pdflatex \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/"+f+"/EPS/Graphs.tex\"\n");
+                outF.write("rm \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/"+f+"/Graphs.tex\"\n");
+                outF.write("rm \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/"+f+"/EPS/Graphs.tex\"\n");
+                outF.write("rm \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/"+f+"/EPS/Graphs.aux\"\n");
+                outF.write("rm \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/"+f+"/EPS/Graphs.log\"\n");
+                //outF.write("rm $2.aux $2.bbl $2.blg $2.log $2.toc $2.out $2.lof $2.lot $2.out $2.toc texput.log");
+                
+                File newTexFile = new File("C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/"+f+"/EPS/Graphs.tex");
+                try {
+                    newTexFile.createNewFile();
+                    BufferedWriter outTexF = new BufferedWriter(new FileWriter(newTexFile,false));
+                    outTexF.write("\\documentclass{article}\n");
+                    outTexF.write("\\usepackage[utf8]{inputenc}\n");
+                    outTexF.write("\\usepackage[landscape]{geometry}\n");
+                    outTexF.write("\\usepackage{graphicx}\n");
+                    outTexF.write("\\usepackage{epstopdf}\n");                    
+                    outTexF.write("\\title{"+f+"}\n");
+                    outTexF.write("\\begin{document}\n");
+                    outTexF.write("\\maketitle\n");
+                    outTexF.write("\\includegraphics[width=\\textwidth]{"+fClean+"-messages-sankey.eps}\n");
+                    outTexF.write("\\newpage\n");
+                    outTexF.write("\\includegraphics[width=\\textwidth]{"+fClean+"-messages.eps}\n");
+                    outTexF.write("\\newpage\n");
+                    outTexF.write("\\includegraphics[width=\\textwidth]{"+fClean+"-cycleBreakdown.eps}\n");
+                    outTexF.write("\\newpage\n");
+                    outTexF.write("\\includegraphics[width=\\textwidth]{"+fClean+"-utilScatterAll-Fault.eps}\n");
+                    outTexF.write("\\newpage\n");
+                    outTexF.write("\\includegraphics[width=\\textwidth]{"+fClean+"-utilScatterAll-NoFault.eps}\n");
+                    outTexF.write("\\newpage\n");
+                    outTexF.write("\\includegraphics[width=\\textwidth]{"+fClean+"-utility-final.eps}\n");
+                    outTexF.write("\\newpage\n");
+                    outTexF.write("\\end{document}\n");
+                    outTexF.close();
+                } catch (IOException e) {
+                    System.err.println("Something went wrong creating the LaTeX file");
+                    e.printStackTrace();
+                }
+                outF.write("\n");
             }
             
             outF.close();
