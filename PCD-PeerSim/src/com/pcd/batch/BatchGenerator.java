@@ -36,9 +36,9 @@ public class BatchGenerator {
                             
                             outF.write("# PCD CONFIG: "+name+"\n");
                             outF.write("simulation.experiments 1\n");
-                            outF.write("simulation.cycles 1000\n");
+                            outF.write("simulation.cycles 50\n");
                             outF.write("simulation.title "+name+"\n");
-                            outF.write("network.size 250\n");
+                            outF.write("network.size 100\n");
                             outF.write("protocol.lnk IdleProtocol\n");
                             outF.write("protocol.pcd com.pcd.DataExchange\n");
                             outF.write("protocol.pcd.linkable lnk\n");
@@ -94,13 +94,13 @@ public class BatchGenerator {
             
             for (String f : fileNames) {
                 System.out.println("file: "+f);
-                outF.write("touch \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/Logs/"+f+".txt\"\n");
+                outF.write("touch \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/_Logs/"+f+".txt\"\n");
                 for (int i = 0; i < 25; i += 1) {
                     outF.write("java -Xmx12g -Xms4g -XX:+UseConcMarkSweepGC -classpath .;lib/peersim-1.0.5.jar;lib/jpl.jar;lib/jep-2.3.0.jar;lib/djep-1.0.0.jar;lin/peersim-doclet.jar;bin peersim.Simulator \"conf/PCD-Conf_"+f+".txt\""
-                        + " >> \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/Logs/"+f+".txt\" 2>&1\n");
+                        + " >> \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/_Logs/"+f+".txt\" 2>&1\n");
                 }
                 outF.write("Rscript \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r\" \""+f+"\""
-                        + " >> \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/Logs/"+f+".txt\" 2>&1\n");
+                        + " >> \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/_Logs/"+f+".txt\" 2>&1\n");
                 
                 String fClean = f.replaceAll(",", "-");
                 outF.write("cd \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/"+f+"/EPS\"\n");
