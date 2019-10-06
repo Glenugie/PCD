@@ -211,6 +211,7 @@ public class DataExchange implements CDProtocol {
         while (policies.size() < numPolicies && i < (numPolicies * 5)) {
             boolean error = false;
             String chosenPolRaw = PrologInterface.confProtoPolicies.get(rng.nextInt(PrologInterface.confProtoPolicies.size()));
+            String tmpPol = chosenPolRaw;
             String chosenPol = "";
             if (chosenPolRaw.contains("{")) {
                 //Generate policy
@@ -267,7 +268,7 @@ public class DataExchange implements CDProtocol {
                 if (error) { break;}
             }
             chosenPol = chosenPolRaw;
-            //System.out.println(chosenPol);
+            //System.out.println(chosenPol+" ?= \n\t"+tmpPol);
             
             DataPolicy pol = new DataPolicy(peerID,chosenPol,"",false);            
             addPolicy(pol);

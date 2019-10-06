@@ -95,6 +95,7 @@ public class BatchGenerator {
             for (String f : fileNames) {
                 System.out.println("file: "+f);
                 outF.write("@cd \"C:/Users/Sam/git/PCD/PCD-PeerSim\"\n");
+                outF.write("@rm \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/_Logs/"+f+".txt\"\n");
                 outF.write("@touch \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/_Logs/"+f+".txt\"\n");
                 for (int i = 0; i < 10; i += 1) {
                     outF.write("@echo "+f+" - Run "+(i+1)+" Start\n");
@@ -137,12 +138,14 @@ public class BatchGenerator {
                 outF.write("@echo \\newpage >> Graphs.tex\n");
                 outF.write("@echo \\end{document} >> Graphs.tex\n");
                 
-                outF.write("pdflatex \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/"+f+"/EPS/Graphs.tex\"\n");
+                outF.write("pdflatex \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/"+f+"/EPS/Graphs.tex\""
+                        + " >> \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/_Logs/"+f+".txt\" 2>&1\n");
                 outF.write("@sleep 1\n");
                 outF.write("@rm \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/"+f+"/Graphs.tex\"\n");
                 outF.write("@rm \"Graphs.tex\"\n");
                 outF.write("@rm \"Graphs.aux\"\n");
                 outF.write("@rm \"Graphs.log\"\n");
+                outF.write("@echo \"\"");
                 //outF.write("rm $2.aux $2.bbl $2.blg $2.log $2.toc $2.out $2.lof $2.lot $2.out $2.toc texput.log");
                 
 //                File newTexFile = new File("C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/"+f+"/EPS/Graphs.tex");
