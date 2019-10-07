@@ -76,8 +76,8 @@ public class DataExchangeObserver implements Control {
             newFile = false;
             int i = 1;
             while (i < 100 && !newFile) {
-                logMain = new File("C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/"+s+"/Run_"+s+"_"+i+".csv");
-                new File("C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/"+s).mkdirs();
+                logMain = new File("C:/Users/Sam/Dropbox Overflow/PhD/ExperimentRes/csv/"+s+"/Run_"+s+"_"+i+".csv");
+                new File("C:/Users/Sam/Dropbox Overflow/PhD/ExperimentRes/csv/"+s).mkdirs();
                 newFile = logMain.createNewFile();
                 i += 1;
             }
