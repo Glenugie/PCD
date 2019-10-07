@@ -95,19 +95,19 @@ public class BatchGenerator {
             for (String f : fileNames) {
                 System.out.println("file: "+f);
                 outF.write("@cd \"C:/Users/Sam/git/PCD/PCD-PeerSim\"\n");
-                outF.write("@rm \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/_Logs/"+f+".txt\"\n");
-                outF.write("@touch \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/_Logs/"+f+".txt\"\n");
+                outF.write("@rm \"C:/Users/Sam/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/"+f+".txt\"\n");
+                outF.write("@touch \"C:/Users/Sam/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/"+f+".txt\"\n");
                 for (int i = 0; i < 10; i += 1) {
                     outF.write("@echo "+f+" - Run "+(i+1)+" Start\n");
                     outF.write("@java -Xmx12g -Xms4g -XX:+UseConcMarkSweepGC -classpath .;lib/peersim-1.0.5.jar;lib/jpl.jar;lib/jep-2.3.0.jar;lib/djep-1.0.0.jar;lin/peersim-doclet.jar;bin peersim.Simulator \"conf/PCD-Conf_"+f+".txt\""
-                        + " > \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/_Logs/"+f+".txt\" 2>&1\n");
+                        + " > \"C:/Users/Sam/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/"+f+".txt\" 2>&1\n");
                 }
                 outF.write("@echo Generating graphs for "+f+"...\n");
                 outF.write("@Rscript \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r\" \""+f+"\""
-                        + " >> \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/_Logs/"+f+".txt\" 2>&1\n");
+                        + " >> \"C:/Users/Sam/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/"+f+".txt\" 2>&1\n");
                 
                 String fClean = f.replaceAll(",", "-");
-                outF.write("@cd \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/"+f+"/EPS\"\n");
+                outF.write("@cd \"C:/Users/Sam/Dropbox Overflow/PhD/ExperimentRes/csv/"+f+"/EPS\"\n");
                 outF.write("@mv \""+f+"-messages-sankey.eps\" \""+fClean+"-messages-sankey.eps\"\n");
                 outF.write("@mv \""+f+"-messages.eps\" \""+fClean+"-messages.eps\"\n");
                 outF.write("@mv \""+f+"-cycleBreakdown.eps\" \""+fClean+"-cycleBreakdown.eps\"\n");
@@ -138,14 +138,14 @@ public class BatchGenerator {
                 outF.write("@echo \\newpage >> Graphs.tex\n");
                 outF.write("@echo \\end{document} >> Graphs.tex\n");
                 
-                outF.write("pdflatex \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/"+f+"/EPS/Graphs.tex\""
-                        + " >> \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/_Logs/"+f+".txt\" 2>&1\n");
+                outF.write("pdflatex \"C:/Users/Sam/Dropbox Overflow/PhD/ExperimentRes/csv/"+f+"/EPS/Graphs.tex\""
+                        + " >> \"C:/Users/Sam/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/"+f+".txt\" 2>&1\n");
                 outF.write("@sleep 1\n");
-                outF.write("@rm \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/csv/"+f+"/Graphs.tex\"\n");
+                outF.write("@rm \"C:/Users/Sam/Dropbox Overflow/PhD/ExperimentRes/csv/"+f+"/Graphs.tex\"\n");
                 outF.write("@rm \"Graphs.tex\"\n");
                 outF.write("@rm \"Graphs.aux\"\n");
                 outF.write("@rm \"Graphs.log\"\n");
-                outF.write("@mv \"Graphs.pdf\" \"../../_PDF/"+f+".pdf\"\n");
+                outF.write("@mv \"Graphs.pdf\" \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/"+f+".pdf\"\n");
                 outF.write("@echo \"\"\n");
                 //outF.write("rm $2.aux $2.bbl $2.blg $2.log $2.toc $2.out $2.lof $2.lot $2.out $2.toc texput.log");
                 
