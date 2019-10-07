@@ -95,7 +95,7 @@ public class BatchGenerator {
             for (String f : fileNames) {
                 System.out.println("file: "+f);
                 outF.write("@cd \"C:/Users/Sam/git/PCD/PCD-PeerSim\"\n");
-                outF.write("@rm \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/"+f+".txt\"\n");
+                //outF.write("@rm \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/"+f+".txt\"\n");
                 outF.write("@touch \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/"+f+".txt\"\n");
                 for (int i = 0; i < 10; i += 1) {
                     outF.write("@echo "+f+" - Run "+(i+1)+" Start\n");
