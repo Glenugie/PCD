@@ -625,10 +625,12 @@ public class DataExchange implements CDProtocol {
                     System.out.println(rPS+"\n");
                 }
             }
-            relPolicySets = removeBelowThreshold(relPolicySets, utilF);          
-            System.out.println("\t\tSets Post Filter: "+relPolicySets.size());  
-            for (PolicySet rPS : relPolicySets) {
-                System.out.println(rPS+"\n");
+            relPolicySets = removeBelowThreshold(relPolicySets, utilF);    
+            if (DEBUG_LOGIC) {
+                System.out.println("\t\tSets Post Filter: "+relPolicySets.size());  
+                for (PolicySet rPS : relPolicySets) {
+                    System.out.println(rPS+"\n");
+                }
             }
         }
                 
