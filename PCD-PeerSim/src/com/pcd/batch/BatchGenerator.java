@@ -103,7 +103,7 @@ public class BatchGenerator {
                         + " > \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/"+f+".txt\" 2>&1\n");
                 }
                 outF.write("@echo Generating graphs for "+f+"...\n");
-                outF.write("@Rscript \"C:/Users/Sam/Documents/Dropbox/PhD/ExperimentRes/graphs-new-debug.r\" \""+f+"\""
+                outF.write("@Rscript \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r\" \""+f+"\""
                         + " >> \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/"+f+".txt\" 2>&1\n");
                 
                 String fClean = f.replaceAll(",", "-");
