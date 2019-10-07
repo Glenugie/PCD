@@ -108,12 +108,12 @@ public class BatchGenerator {
                 
                 String fClean = f.replaceAll(",", "-");
                 outF.write("@cd \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/"+f+"/EPS\"\n");
-                outF.write("@mv \""+f+"-messages-sankey.eps\" \""+fClean+"-messages-sankey.eps\"\n");
-                outF.write("@mv \""+f+"-messages.eps\" \""+fClean+"-messages.eps\"\n");
-                outF.write("@mv \""+f+"-cycleBreakdown.eps\" \""+fClean+"-cycleBreakdown.eps\"\n");
-                outF.write("@mv \""+f+"-utilScatterAll-Fault.eps\" \""+fClean+"-utilScatterAll-Fault.eps\"\n");
-                outF.write("@mv \""+f+"-utilScatterAll-NoFault.eps\" \""+fClean+"-utilScatterAll-NoFault.eps\"\n");
-                outF.write("@mv \""+f+"-utility-final.eps\" \""+fClean+"-utility-final.eps\"\n");
+//                outF.write("@mv \""+f+"-messages-sankey.eps\" \""+fClean+"-messages-sankey.eps\"\n");
+//                outF.write("@mv \""+f+"-messages.eps\" \""+fClean+"-messages.eps\"\n");
+//                outF.write("@mv \""+f+"-cycleBreakdown.eps\" \""+fClean+"-cycleBreakdown.eps\"\n");
+//                outF.write("@mv \""+f+"-utilScatterAll-Fault.eps\" \""+fClean+"-utilScatterAll-Fault.eps\"\n");
+//                outF.write("@mv \""+f+"-utilScatterAll-NoFault.eps\" \""+fClean+"-utilScatterAll-NoFault.eps\"\n");
+//                outF.write("@mv \""+f+"-utility-final.eps\" \""+fClean+"-utility-final.eps\"\n");
                 
                 outF.write("@touch Graphs.tex\n");
                 outF.write("@echo \\documentclass{article} >> Graphs.tex\n");

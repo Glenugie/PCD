@@ -23,12 +23,6 @@
 @echo Generating graphs for Mesh,100,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,100,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,100,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100,100,1-10O-100N/EPS"
-@mv "Mesh,100,100,1-10O-100N-messages-sankey.eps" "Mesh-100-100-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,100,100,1-10O-100N-messages.eps" "Mesh-100-100-1-10O-100N-messages.eps"
-@mv "Mesh,100,100,1-10O-100N-cycleBreakdown.eps" "Mesh-100-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,100,100,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-100-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,100,100,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-100-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,100,100,1-10O-100N-utility-final.eps" "Mesh-100-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -85,12 +79,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100
 @echo Generating graphs for Mesh,100,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,100,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,100,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100,100,2-50O-50N/EPS"
-@mv "Mesh,100,100,2-50O-50N-messages-sankey.eps" "Mesh-100-100-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,100,100,2-50O-50N-messages.eps" "Mesh-100-100-2-50O-50N-messages.eps"
-@mv "Mesh,100,100,2-50O-50N-cycleBreakdown.eps" "Mesh-100-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,100,100,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-100-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,100,100,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-100-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,100,100,2-50O-50N-utility-final.eps" "Mesh-100-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -147,12 +135,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100
 @echo Generating graphs for Mesh,100,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,100,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,100,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100,100,5-25O-100N/EPS"
-@mv "Mesh,100,100,5-25O-100N-messages-sankey.eps" "Mesh-100-100-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,100,100,5-25O-100N-messages.eps" "Mesh-100-100-5-25O-100N-messages.eps"
-@mv "Mesh,100,100,5-25O-100N-cycleBreakdown.eps" "Mesh-100-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,100,100,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-100-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,100,100,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-100-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,100,100,5-25O-100N-utility-final.eps" "Mesh-100-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -209,12 +191,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100
 @echo Generating graphs for Mesh,100,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,100,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,100,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100,100,10-50O-50N/EPS"
-@mv "Mesh,100,100,10-50O-50N-messages-sankey.eps" "Mesh-100-100-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,100,100,10-50O-50N-messages.eps" "Mesh-100-100-10-50O-50N-messages.eps"
-@mv "Mesh,100,100,10-50O-50N-cycleBreakdown.eps" "Mesh-100-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,100,100,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-100-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,100,100,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-100-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,100,100,10-50O-50N-utility-final.eps" "Mesh-100-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -271,12 +247,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100
 @echo Generating graphs for Mesh,100,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,100,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,100,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100,0,1-10O-100N/EPS"
-@mv "Mesh,100,0,1-10O-100N-messages-sankey.eps" "Mesh-100-0-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,100,0,1-10O-100N-messages.eps" "Mesh-100-0-1-10O-100N-messages.eps"
-@mv "Mesh,100,0,1-10O-100N-cycleBreakdown.eps" "Mesh-100-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,100,0,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-100-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,100,0,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-100-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,100,0,1-10O-100N-utility-final.eps" "Mesh-100-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -333,12 +303,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100
 @echo Generating graphs for Mesh,100,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,100,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,100,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100,0,2-50O-50N/EPS"
-@mv "Mesh,100,0,2-50O-50N-messages-sankey.eps" "Mesh-100-0-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,100,0,2-50O-50N-messages.eps" "Mesh-100-0-2-50O-50N-messages.eps"
-@mv "Mesh,100,0,2-50O-50N-cycleBreakdown.eps" "Mesh-100-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,100,0,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-100-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,100,0,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-100-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,100,0,2-50O-50N-utility-final.eps" "Mesh-100-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -395,12 +359,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100
 @echo Generating graphs for Mesh,100,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,100,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,100,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100,0,5-25O-100N/EPS"
-@mv "Mesh,100,0,5-25O-100N-messages-sankey.eps" "Mesh-100-0-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,100,0,5-25O-100N-messages.eps" "Mesh-100-0-5-25O-100N-messages.eps"
-@mv "Mesh,100,0,5-25O-100N-cycleBreakdown.eps" "Mesh-100-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,100,0,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-100-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,100,0,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-100-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,100,0,5-25O-100N-utility-final.eps" "Mesh-100-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -457,12 +415,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100
 @echo Generating graphs for Mesh,100,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,100,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,100,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100,0,10-50O-50N/EPS"
-@mv "Mesh,100,0,10-50O-50N-messages-sankey.eps" "Mesh-100-0-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,100,0,10-50O-50N-messages.eps" "Mesh-100-0-10-50O-50N-messages.eps"
-@mv "Mesh,100,0,10-50O-50N-cycleBreakdown.eps" "Mesh-100-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,100,0,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-100-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,100,0,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-100-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,100,0,10-50O-50N-utility-final.eps" "Mesh-100-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -519,12 +471,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100
 @echo Generating graphs for Mesh,100,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,100,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,100,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100,50,1-10O-100N/EPS"
-@mv "Mesh,100,50,1-10O-100N-messages-sankey.eps" "Mesh-100-50-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,100,50,1-10O-100N-messages.eps" "Mesh-100-50-1-10O-100N-messages.eps"
-@mv "Mesh,100,50,1-10O-100N-cycleBreakdown.eps" "Mesh-100-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,100,50,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-100-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,100,50,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-100-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,100,50,1-10O-100N-utility-final.eps" "Mesh-100-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -581,12 +527,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100
 @echo Generating graphs for Mesh,100,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,100,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,100,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100,50,2-50O-50N/EPS"
-@mv "Mesh,100,50,2-50O-50N-messages-sankey.eps" "Mesh-100-50-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,100,50,2-50O-50N-messages.eps" "Mesh-100-50-2-50O-50N-messages.eps"
-@mv "Mesh,100,50,2-50O-50N-cycleBreakdown.eps" "Mesh-100-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,100,50,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-100-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,100,50,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-100-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,100,50,2-50O-50N-utility-final.eps" "Mesh-100-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -643,12 +583,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100
 @echo Generating graphs for Mesh,100,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,100,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,100,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100,50,5-25O-100N/EPS"
-@mv "Mesh,100,50,5-25O-100N-messages-sankey.eps" "Mesh-100-50-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,100,50,5-25O-100N-messages.eps" "Mesh-100-50-5-25O-100N-messages.eps"
-@mv "Mesh,100,50,5-25O-100N-cycleBreakdown.eps" "Mesh-100-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,100,50,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-100-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,100,50,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-100-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,100,50,5-25O-100N-utility-final.eps" "Mesh-100-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -705,12 +639,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100
 @echo Generating graphs for Mesh,100,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,100,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,100,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100,50,10-50O-50N/EPS"
-@mv "Mesh,100,50,10-50O-50N-messages-sankey.eps" "Mesh-100-50-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,100,50,10-50O-50N-messages.eps" "Mesh-100-50-10-50O-50N-messages.eps"
-@mv "Mesh,100,50,10-50O-50N-cycleBreakdown.eps" "Mesh-100-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,100,50,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-100-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,100,50,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-100-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,100,50,10-50O-50N-utility-final.eps" "Mesh-100-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -767,12 +695,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100
 @echo Generating graphs for Mesh,100,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,100,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,100,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100,10,1-10O-100N/EPS"
-@mv "Mesh,100,10,1-10O-100N-messages-sankey.eps" "Mesh-100-10-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,100,10,1-10O-100N-messages.eps" "Mesh-100-10-1-10O-100N-messages.eps"
-@mv "Mesh,100,10,1-10O-100N-cycleBreakdown.eps" "Mesh-100-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,100,10,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-100-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,100,10,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-100-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,100,10,1-10O-100N-utility-final.eps" "Mesh-100-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -829,12 +751,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100
 @echo Generating graphs for Mesh,100,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,100,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,100,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100,10,2-50O-50N/EPS"
-@mv "Mesh,100,10,2-50O-50N-messages-sankey.eps" "Mesh-100-10-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,100,10,2-50O-50N-messages.eps" "Mesh-100-10-2-50O-50N-messages.eps"
-@mv "Mesh,100,10,2-50O-50N-cycleBreakdown.eps" "Mesh-100-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,100,10,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-100-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,100,10,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-100-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,100,10,2-50O-50N-utility-final.eps" "Mesh-100-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -891,12 +807,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100
 @echo Generating graphs for Mesh,100,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,100,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,100,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100,10,5-25O-100N/EPS"
-@mv "Mesh,100,10,5-25O-100N-messages-sankey.eps" "Mesh-100-10-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,100,10,5-25O-100N-messages.eps" "Mesh-100-10-5-25O-100N-messages.eps"
-@mv "Mesh,100,10,5-25O-100N-cycleBreakdown.eps" "Mesh-100-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,100,10,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-100-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,100,10,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-100-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,100,10,5-25O-100N-utility-final.eps" "Mesh-100-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -953,12 +863,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100
 @echo Generating graphs for Mesh,100,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,100,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,100,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100,10,10-50O-50N/EPS"
-@mv "Mesh,100,10,10-50O-50N-messages-sankey.eps" "Mesh-100-10-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,100,10,10-50O-50N-messages.eps" "Mesh-100-10-10-50O-50N-messages.eps"
-@mv "Mesh,100,10,10-50O-50N-cycleBreakdown.eps" "Mesh-100-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,100,10,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-100-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,100,10,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-100-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,100,10,10-50O-50N-utility-final.eps" "Mesh-100-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -1015,12 +919,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100
 @echo Generating graphs for Mesh,100,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,100,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,100,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100,90,1-10O-100N/EPS"
-@mv "Mesh,100,90,1-10O-100N-messages-sankey.eps" "Mesh-100-90-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,100,90,1-10O-100N-messages.eps" "Mesh-100-90-1-10O-100N-messages.eps"
-@mv "Mesh,100,90,1-10O-100N-cycleBreakdown.eps" "Mesh-100-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,100,90,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-100-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,100,90,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-100-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,100,90,1-10O-100N-utility-final.eps" "Mesh-100-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -1077,12 +975,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100
 @echo Generating graphs for Mesh,100,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,100,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,100,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100,90,2-50O-50N/EPS"
-@mv "Mesh,100,90,2-50O-50N-messages-sankey.eps" "Mesh-100-90-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,100,90,2-50O-50N-messages.eps" "Mesh-100-90-2-50O-50N-messages.eps"
-@mv "Mesh,100,90,2-50O-50N-cycleBreakdown.eps" "Mesh-100-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,100,90,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-100-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,100,90,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-100-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,100,90,2-50O-50N-utility-final.eps" "Mesh-100-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -1139,12 +1031,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100
 @echo Generating graphs for Mesh,100,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,100,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,100,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100,90,5-25O-100N/EPS"
-@mv "Mesh,100,90,5-25O-100N-messages-sankey.eps" "Mesh-100-90-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,100,90,5-25O-100N-messages.eps" "Mesh-100-90-5-25O-100N-messages.eps"
-@mv "Mesh,100,90,5-25O-100N-cycleBreakdown.eps" "Mesh-100-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,100,90,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-100-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,100,90,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-100-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,100,90,5-25O-100N-utility-final.eps" "Mesh-100-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -1201,12 +1087,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100
 @echo Generating graphs for Mesh,100,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,100,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,100,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100,90,10-50O-50N/EPS"
-@mv "Mesh,100,90,10-50O-50N-messages-sankey.eps" "Mesh-100-90-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,100,90,10-50O-50N-messages.eps" "Mesh-100-90-10-50O-50N-messages.eps"
-@mv "Mesh,100,90,10-50O-50N-cycleBreakdown.eps" "Mesh-100-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,100,90,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-100-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,100,90,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-100-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,100,90,10-50O-50N-utility-final.eps" "Mesh-100-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -1263,12 +1143,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,100
 @echo Generating graphs for Mesh,0,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,0,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,0,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,100,1-10O-100N/EPS"
-@mv "Mesh,0,100,1-10O-100N-messages-sankey.eps" "Mesh-0-100-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,0,100,1-10O-100N-messages.eps" "Mesh-0-100-1-10O-100N-messages.eps"
-@mv "Mesh,0,100,1-10O-100N-cycleBreakdown.eps" "Mesh-0-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,0,100,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-0-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,0,100,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-0-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,0,100,1-10O-100N-utility-final.eps" "Mesh-0-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -1325,12 +1199,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,1
 @echo Generating graphs for Mesh,0,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,0,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,0,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,100,2-50O-50N/EPS"
-@mv "Mesh,0,100,2-50O-50N-messages-sankey.eps" "Mesh-0-100-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,0,100,2-50O-50N-messages.eps" "Mesh-0-100-2-50O-50N-messages.eps"
-@mv "Mesh,0,100,2-50O-50N-cycleBreakdown.eps" "Mesh-0-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,0,100,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-0-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,0,100,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-0-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,0,100,2-50O-50N-utility-final.eps" "Mesh-0-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -1387,12 +1255,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,1
 @echo Generating graphs for Mesh,0,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,0,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,0,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,100,5-25O-100N/EPS"
-@mv "Mesh,0,100,5-25O-100N-messages-sankey.eps" "Mesh-0-100-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,0,100,5-25O-100N-messages.eps" "Mesh-0-100-5-25O-100N-messages.eps"
-@mv "Mesh,0,100,5-25O-100N-cycleBreakdown.eps" "Mesh-0-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,0,100,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-0-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,0,100,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-0-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,0,100,5-25O-100N-utility-final.eps" "Mesh-0-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -1449,12 +1311,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,1
 @echo Generating graphs for Mesh,0,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,0,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,0,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,100,10-50O-50N/EPS"
-@mv "Mesh,0,100,10-50O-50N-messages-sankey.eps" "Mesh-0-100-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,0,100,10-50O-50N-messages.eps" "Mesh-0-100-10-50O-50N-messages.eps"
-@mv "Mesh,0,100,10-50O-50N-cycleBreakdown.eps" "Mesh-0-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,0,100,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-0-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,0,100,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-0-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,0,100,10-50O-50N-utility-final.eps" "Mesh-0-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -1511,12 +1367,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,1
 @echo Generating graphs for Mesh,0,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,0,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,0,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,0,1-10O-100N/EPS"
-@mv "Mesh,0,0,1-10O-100N-messages-sankey.eps" "Mesh-0-0-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,0,0,1-10O-100N-messages.eps" "Mesh-0-0-1-10O-100N-messages.eps"
-@mv "Mesh,0,0,1-10O-100N-cycleBreakdown.eps" "Mesh-0-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,0,0,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-0-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,0,0,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-0-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,0,0,1-10O-100N-utility-final.eps" "Mesh-0-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -1573,12 +1423,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,0
 @echo Generating graphs for Mesh,0,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,0,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,0,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,0,2-50O-50N/EPS"
-@mv "Mesh,0,0,2-50O-50N-messages-sankey.eps" "Mesh-0-0-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,0,0,2-50O-50N-messages.eps" "Mesh-0-0-2-50O-50N-messages.eps"
-@mv "Mesh,0,0,2-50O-50N-cycleBreakdown.eps" "Mesh-0-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,0,0,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-0-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,0,0,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-0-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,0,0,2-50O-50N-utility-final.eps" "Mesh-0-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -1635,12 +1479,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,0
 @echo Generating graphs for Mesh,0,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,0,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,0,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,0,5-25O-100N/EPS"
-@mv "Mesh,0,0,5-25O-100N-messages-sankey.eps" "Mesh-0-0-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,0,0,5-25O-100N-messages.eps" "Mesh-0-0-5-25O-100N-messages.eps"
-@mv "Mesh,0,0,5-25O-100N-cycleBreakdown.eps" "Mesh-0-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,0,0,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-0-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,0,0,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-0-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,0,0,5-25O-100N-utility-final.eps" "Mesh-0-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -1697,12 +1535,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,0
 @echo Generating graphs for Mesh,0,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,0,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,0,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,0,10-50O-50N/EPS"
-@mv "Mesh,0,0,10-50O-50N-messages-sankey.eps" "Mesh-0-0-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,0,0,10-50O-50N-messages.eps" "Mesh-0-0-10-50O-50N-messages.eps"
-@mv "Mesh,0,0,10-50O-50N-cycleBreakdown.eps" "Mesh-0-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,0,0,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-0-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,0,0,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-0-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,0,0,10-50O-50N-utility-final.eps" "Mesh-0-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -1759,12 +1591,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,0
 @echo Generating graphs for Mesh,0,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,0,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,0,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,50,1-10O-100N/EPS"
-@mv "Mesh,0,50,1-10O-100N-messages-sankey.eps" "Mesh-0-50-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,0,50,1-10O-100N-messages.eps" "Mesh-0-50-1-10O-100N-messages.eps"
-@mv "Mesh,0,50,1-10O-100N-cycleBreakdown.eps" "Mesh-0-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,0,50,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-0-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,0,50,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-0-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,0,50,1-10O-100N-utility-final.eps" "Mesh-0-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -1821,12 +1647,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,5
 @echo Generating graphs for Mesh,0,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,0,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,0,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,50,2-50O-50N/EPS"
-@mv "Mesh,0,50,2-50O-50N-messages-sankey.eps" "Mesh-0-50-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,0,50,2-50O-50N-messages.eps" "Mesh-0-50-2-50O-50N-messages.eps"
-@mv "Mesh,0,50,2-50O-50N-cycleBreakdown.eps" "Mesh-0-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,0,50,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-0-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,0,50,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-0-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,0,50,2-50O-50N-utility-final.eps" "Mesh-0-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -1883,12 +1703,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,5
 @echo Generating graphs for Mesh,0,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,0,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,0,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,50,5-25O-100N/EPS"
-@mv "Mesh,0,50,5-25O-100N-messages-sankey.eps" "Mesh-0-50-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,0,50,5-25O-100N-messages.eps" "Mesh-0-50-5-25O-100N-messages.eps"
-@mv "Mesh,0,50,5-25O-100N-cycleBreakdown.eps" "Mesh-0-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,0,50,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-0-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,0,50,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-0-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,0,50,5-25O-100N-utility-final.eps" "Mesh-0-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -1945,12 +1759,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,5
 @echo Generating graphs for Mesh,0,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,0,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,0,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,50,10-50O-50N/EPS"
-@mv "Mesh,0,50,10-50O-50N-messages-sankey.eps" "Mesh-0-50-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,0,50,10-50O-50N-messages.eps" "Mesh-0-50-10-50O-50N-messages.eps"
-@mv "Mesh,0,50,10-50O-50N-cycleBreakdown.eps" "Mesh-0-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,0,50,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-0-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,0,50,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-0-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,0,50,10-50O-50N-utility-final.eps" "Mesh-0-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -2007,12 +1815,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,5
 @echo Generating graphs for Mesh,0,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,0,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,0,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,10,1-10O-100N/EPS"
-@mv "Mesh,0,10,1-10O-100N-messages-sankey.eps" "Mesh-0-10-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,0,10,1-10O-100N-messages.eps" "Mesh-0-10-1-10O-100N-messages.eps"
-@mv "Mesh,0,10,1-10O-100N-cycleBreakdown.eps" "Mesh-0-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,0,10,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-0-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,0,10,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-0-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,0,10,1-10O-100N-utility-final.eps" "Mesh-0-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -2069,12 +1871,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,1
 @echo Generating graphs for Mesh,0,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,0,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,0,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,10,2-50O-50N/EPS"
-@mv "Mesh,0,10,2-50O-50N-messages-sankey.eps" "Mesh-0-10-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,0,10,2-50O-50N-messages.eps" "Mesh-0-10-2-50O-50N-messages.eps"
-@mv "Mesh,0,10,2-50O-50N-cycleBreakdown.eps" "Mesh-0-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,0,10,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-0-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,0,10,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-0-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,0,10,2-50O-50N-utility-final.eps" "Mesh-0-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -2131,12 +1927,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,1
 @echo Generating graphs for Mesh,0,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,0,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,0,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,10,5-25O-100N/EPS"
-@mv "Mesh,0,10,5-25O-100N-messages-sankey.eps" "Mesh-0-10-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,0,10,5-25O-100N-messages.eps" "Mesh-0-10-5-25O-100N-messages.eps"
-@mv "Mesh,0,10,5-25O-100N-cycleBreakdown.eps" "Mesh-0-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,0,10,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-0-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,0,10,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-0-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,0,10,5-25O-100N-utility-final.eps" "Mesh-0-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -2193,12 +1983,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,1
 @echo Generating graphs for Mesh,0,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,0,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,0,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,10,10-50O-50N/EPS"
-@mv "Mesh,0,10,10-50O-50N-messages-sankey.eps" "Mesh-0-10-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,0,10,10-50O-50N-messages.eps" "Mesh-0-10-10-50O-50N-messages.eps"
-@mv "Mesh,0,10,10-50O-50N-cycleBreakdown.eps" "Mesh-0-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,0,10,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-0-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,0,10,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-0-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,0,10,10-50O-50N-utility-final.eps" "Mesh-0-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -2255,12 +2039,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,1
 @echo Generating graphs for Mesh,0,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,0,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,0,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,90,1-10O-100N/EPS"
-@mv "Mesh,0,90,1-10O-100N-messages-sankey.eps" "Mesh-0-90-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,0,90,1-10O-100N-messages.eps" "Mesh-0-90-1-10O-100N-messages.eps"
-@mv "Mesh,0,90,1-10O-100N-cycleBreakdown.eps" "Mesh-0-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,0,90,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-0-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,0,90,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-0-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,0,90,1-10O-100N-utility-final.eps" "Mesh-0-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -2317,12 +2095,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,9
 @echo Generating graphs for Mesh,0,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,0,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,0,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,90,2-50O-50N/EPS"
-@mv "Mesh,0,90,2-50O-50N-messages-sankey.eps" "Mesh-0-90-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,0,90,2-50O-50N-messages.eps" "Mesh-0-90-2-50O-50N-messages.eps"
-@mv "Mesh,0,90,2-50O-50N-cycleBreakdown.eps" "Mesh-0-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,0,90,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-0-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,0,90,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-0-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,0,90,2-50O-50N-utility-final.eps" "Mesh-0-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -2379,12 +2151,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,9
 @echo Generating graphs for Mesh,0,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,0,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,0,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,90,5-25O-100N/EPS"
-@mv "Mesh,0,90,5-25O-100N-messages-sankey.eps" "Mesh-0-90-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,0,90,5-25O-100N-messages.eps" "Mesh-0-90-5-25O-100N-messages.eps"
-@mv "Mesh,0,90,5-25O-100N-cycleBreakdown.eps" "Mesh-0-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,0,90,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-0-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,0,90,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-0-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,0,90,5-25O-100N-utility-final.eps" "Mesh-0-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -2441,12 +2207,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,9
 @echo Generating graphs for Mesh,0,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,0,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,0,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,90,10-50O-50N/EPS"
-@mv "Mesh,0,90,10-50O-50N-messages-sankey.eps" "Mesh-0-90-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,0,90,10-50O-50N-messages.eps" "Mesh-0-90-10-50O-50N-messages.eps"
-@mv "Mesh,0,90,10-50O-50N-cycleBreakdown.eps" "Mesh-0-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,0,90,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-0-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,0,90,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-0-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,0,90,10-50O-50N-utility-final.eps" "Mesh-0-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -2503,12 +2263,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,0,9
 @echo Generating graphs for Mesh,50,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,50,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,100,1-10O-100N/EPS"
-@mv "Mesh,50,100,1-10O-100N-messages-sankey.eps" "Mesh-50-100-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,50,100,1-10O-100N-messages.eps" "Mesh-50-100-1-10O-100N-messages.eps"
-@mv "Mesh,50,100,1-10O-100N-cycleBreakdown.eps" "Mesh-50-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,50,100,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-50-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,50,100,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-50-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,50,100,1-10O-100N-utility-final.eps" "Mesh-50-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -2565,12 +2319,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo Generating graphs for Mesh,50,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,50,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,100,2-50O-50N/EPS"
-@mv "Mesh,50,100,2-50O-50N-messages-sankey.eps" "Mesh-50-100-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,50,100,2-50O-50N-messages.eps" "Mesh-50-100-2-50O-50N-messages.eps"
-@mv "Mesh,50,100,2-50O-50N-cycleBreakdown.eps" "Mesh-50-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,50,100,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-50-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,50,100,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-50-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,50,100,2-50O-50N-utility-final.eps" "Mesh-50-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -2627,12 +2375,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo Generating graphs for Mesh,50,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,50,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,100,5-25O-100N/EPS"
-@mv "Mesh,50,100,5-25O-100N-messages-sankey.eps" "Mesh-50-100-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,50,100,5-25O-100N-messages.eps" "Mesh-50-100-5-25O-100N-messages.eps"
-@mv "Mesh,50,100,5-25O-100N-cycleBreakdown.eps" "Mesh-50-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,50,100,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-50-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,50,100,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-50-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,50,100,5-25O-100N-utility-final.eps" "Mesh-50-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -2689,12 +2431,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo Generating graphs for Mesh,50,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,50,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,100,10-50O-50N/EPS"
-@mv "Mesh,50,100,10-50O-50N-messages-sankey.eps" "Mesh-50-100-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,50,100,10-50O-50N-messages.eps" "Mesh-50-100-10-50O-50N-messages.eps"
-@mv "Mesh,50,100,10-50O-50N-cycleBreakdown.eps" "Mesh-50-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,50,100,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-50-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,50,100,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-50-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,50,100,10-50O-50N-utility-final.eps" "Mesh-50-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -2751,12 +2487,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo Generating graphs for Mesh,50,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,50,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,0,1-10O-100N/EPS"
-@mv "Mesh,50,0,1-10O-100N-messages-sankey.eps" "Mesh-50-0-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,50,0,1-10O-100N-messages.eps" "Mesh-50-0-1-10O-100N-messages.eps"
-@mv "Mesh,50,0,1-10O-100N-cycleBreakdown.eps" "Mesh-50-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,50,0,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-50-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,50,0,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-50-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,50,0,1-10O-100N-utility-final.eps" "Mesh-50-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -2813,12 +2543,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo Generating graphs for Mesh,50,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,50,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,0,2-50O-50N/EPS"
-@mv "Mesh,50,0,2-50O-50N-messages-sankey.eps" "Mesh-50-0-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,50,0,2-50O-50N-messages.eps" "Mesh-50-0-2-50O-50N-messages.eps"
-@mv "Mesh,50,0,2-50O-50N-cycleBreakdown.eps" "Mesh-50-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,50,0,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-50-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,50,0,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-50-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,50,0,2-50O-50N-utility-final.eps" "Mesh-50-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -2875,12 +2599,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo Generating graphs for Mesh,50,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,50,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,0,5-25O-100N/EPS"
-@mv "Mesh,50,0,5-25O-100N-messages-sankey.eps" "Mesh-50-0-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,50,0,5-25O-100N-messages.eps" "Mesh-50-0-5-25O-100N-messages.eps"
-@mv "Mesh,50,0,5-25O-100N-cycleBreakdown.eps" "Mesh-50-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,50,0,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-50-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,50,0,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-50-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,50,0,5-25O-100N-utility-final.eps" "Mesh-50-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -2937,12 +2655,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo Generating graphs for Mesh,50,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,50,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,0,10-50O-50N/EPS"
-@mv "Mesh,50,0,10-50O-50N-messages-sankey.eps" "Mesh-50-0-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,50,0,10-50O-50N-messages.eps" "Mesh-50-0-10-50O-50N-messages.eps"
-@mv "Mesh,50,0,10-50O-50N-cycleBreakdown.eps" "Mesh-50-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,50,0,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-50-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,50,0,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-50-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,50,0,10-50O-50N-utility-final.eps" "Mesh-50-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -2999,12 +2711,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo Generating graphs for Mesh,50,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,50,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,50,1-10O-100N/EPS"
-@mv "Mesh,50,50,1-10O-100N-messages-sankey.eps" "Mesh-50-50-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,50,50,1-10O-100N-messages.eps" "Mesh-50-50-1-10O-100N-messages.eps"
-@mv "Mesh,50,50,1-10O-100N-cycleBreakdown.eps" "Mesh-50-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,50,50,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-50-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,50,50,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-50-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,50,50,1-10O-100N-utility-final.eps" "Mesh-50-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -3061,12 +2767,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo Generating graphs for Mesh,50,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,50,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,50,2-50O-50N/EPS"
-@mv "Mesh,50,50,2-50O-50N-messages-sankey.eps" "Mesh-50-50-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,50,50,2-50O-50N-messages.eps" "Mesh-50-50-2-50O-50N-messages.eps"
-@mv "Mesh,50,50,2-50O-50N-cycleBreakdown.eps" "Mesh-50-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,50,50,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-50-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,50,50,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-50-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,50,50,2-50O-50N-utility-final.eps" "Mesh-50-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -3123,12 +2823,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo Generating graphs for Mesh,50,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,50,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,50,5-25O-100N/EPS"
-@mv "Mesh,50,50,5-25O-100N-messages-sankey.eps" "Mesh-50-50-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,50,50,5-25O-100N-messages.eps" "Mesh-50-50-5-25O-100N-messages.eps"
-@mv "Mesh,50,50,5-25O-100N-cycleBreakdown.eps" "Mesh-50-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,50,50,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-50-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,50,50,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-50-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,50,50,5-25O-100N-utility-final.eps" "Mesh-50-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -3185,12 +2879,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo Generating graphs for Mesh,50,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,50,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,50,10-50O-50N/EPS"
-@mv "Mesh,50,50,10-50O-50N-messages-sankey.eps" "Mesh-50-50-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,50,50,10-50O-50N-messages.eps" "Mesh-50-50-10-50O-50N-messages.eps"
-@mv "Mesh,50,50,10-50O-50N-cycleBreakdown.eps" "Mesh-50-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,50,50,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-50-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,50,50,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-50-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,50,50,10-50O-50N-utility-final.eps" "Mesh-50-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -3247,12 +2935,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo Generating graphs for Mesh,50,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,50,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,10,1-10O-100N/EPS"
-@mv "Mesh,50,10,1-10O-100N-messages-sankey.eps" "Mesh-50-10-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,50,10,1-10O-100N-messages.eps" "Mesh-50-10-1-10O-100N-messages.eps"
-@mv "Mesh,50,10,1-10O-100N-cycleBreakdown.eps" "Mesh-50-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,50,10,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-50-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,50,10,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-50-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,50,10,1-10O-100N-utility-final.eps" "Mesh-50-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -3309,12 +2991,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo Generating graphs for Mesh,50,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,50,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,10,2-50O-50N/EPS"
-@mv "Mesh,50,10,2-50O-50N-messages-sankey.eps" "Mesh-50-10-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,50,10,2-50O-50N-messages.eps" "Mesh-50-10-2-50O-50N-messages.eps"
-@mv "Mesh,50,10,2-50O-50N-cycleBreakdown.eps" "Mesh-50-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,50,10,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-50-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,50,10,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-50-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,50,10,2-50O-50N-utility-final.eps" "Mesh-50-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -3371,12 +3047,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo Generating graphs for Mesh,50,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,50,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,10,5-25O-100N/EPS"
-@mv "Mesh,50,10,5-25O-100N-messages-sankey.eps" "Mesh-50-10-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,50,10,5-25O-100N-messages.eps" "Mesh-50-10-5-25O-100N-messages.eps"
-@mv "Mesh,50,10,5-25O-100N-cycleBreakdown.eps" "Mesh-50-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,50,10,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-50-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,50,10,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-50-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,50,10,5-25O-100N-utility-final.eps" "Mesh-50-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -3433,12 +3103,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo Generating graphs for Mesh,50,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,50,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,10,10-50O-50N/EPS"
-@mv "Mesh,50,10,10-50O-50N-messages-sankey.eps" "Mesh-50-10-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,50,10,10-50O-50N-messages.eps" "Mesh-50-10-10-50O-50N-messages.eps"
-@mv "Mesh,50,10,10-50O-50N-cycleBreakdown.eps" "Mesh-50-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,50,10,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-50-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,50,10,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-50-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,50,10,10-50O-50N-utility-final.eps" "Mesh-50-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -3495,12 +3159,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo Generating graphs for Mesh,50,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,50,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,90,1-10O-100N/EPS"
-@mv "Mesh,50,90,1-10O-100N-messages-sankey.eps" "Mesh-50-90-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,50,90,1-10O-100N-messages.eps" "Mesh-50-90-1-10O-100N-messages.eps"
-@mv "Mesh,50,90,1-10O-100N-cycleBreakdown.eps" "Mesh-50-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,50,90,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-50-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,50,90,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-50-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,50,90,1-10O-100N-utility-final.eps" "Mesh-50-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -3557,12 +3215,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo Generating graphs for Mesh,50,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,50,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,90,2-50O-50N/EPS"
-@mv "Mesh,50,90,2-50O-50N-messages-sankey.eps" "Mesh-50-90-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,50,90,2-50O-50N-messages.eps" "Mesh-50-90-2-50O-50N-messages.eps"
-@mv "Mesh,50,90,2-50O-50N-cycleBreakdown.eps" "Mesh-50-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,50,90,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-50-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,50,90,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-50-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,50,90,2-50O-50N-utility-final.eps" "Mesh-50-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -3619,12 +3271,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo Generating graphs for Mesh,50,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,50,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,90,5-25O-100N/EPS"
-@mv "Mesh,50,90,5-25O-100N-messages-sankey.eps" "Mesh-50-90-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,50,90,5-25O-100N-messages.eps" "Mesh-50-90-5-25O-100N-messages.eps"
-@mv "Mesh,50,90,5-25O-100N-cycleBreakdown.eps" "Mesh-50-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,50,90,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-50-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,50,90,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-50-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,50,90,5-25O-100N-utility-final.eps" "Mesh-50-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -3681,12 +3327,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo Generating graphs for Mesh,50,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,50,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,90,10-50O-50N/EPS"
-@mv "Mesh,50,90,10-50O-50N-messages-sankey.eps" "Mesh-50-90-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,50,90,10-50O-50N-messages.eps" "Mesh-50-90-10-50O-50N-messages.eps"
-@mv "Mesh,50,90,10-50O-50N-cycleBreakdown.eps" "Mesh-50-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,50,90,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-50-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,50,90,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-50-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,50,90,10-50O-50N-utility-final.eps" "Mesh-50-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -3743,12 +3383,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo Generating graphs for Mesh,10,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,10,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,100,1-10O-100N/EPS"
-@mv "Mesh,10,100,1-10O-100N-messages-sankey.eps" "Mesh-10-100-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,10,100,1-10O-100N-messages.eps" "Mesh-10-100-1-10O-100N-messages.eps"
-@mv "Mesh,10,100,1-10O-100N-cycleBreakdown.eps" "Mesh-10-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,10,100,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-10-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,10,100,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-10-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,10,100,1-10O-100N-utility-final.eps" "Mesh-10-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -3805,12 +3439,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo Generating graphs for Mesh,10,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,10,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,100,2-50O-50N/EPS"
-@mv "Mesh,10,100,2-50O-50N-messages-sankey.eps" "Mesh-10-100-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,10,100,2-50O-50N-messages.eps" "Mesh-10-100-2-50O-50N-messages.eps"
-@mv "Mesh,10,100,2-50O-50N-cycleBreakdown.eps" "Mesh-10-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,10,100,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-10-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,10,100,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-10-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,10,100,2-50O-50N-utility-final.eps" "Mesh-10-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -3867,12 +3495,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo Generating graphs for Mesh,10,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,10,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,100,5-25O-100N/EPS"
-@mv "Mesh,10,100,5-25O-100N-messages-sankey.eps" "Mesh-10-100-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,10,100,5-25O-100N-messages.eps" "Mesh-10-100-5-25O-100N-messages.eps"
-@mv "Mesh,10,100,5-25O-100N-cycleBreakdown.eps" "Mesh-10-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,10,100,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-10-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,10,100,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-10-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,10,100,5-25O-100N-utility-final.eps" "Mesh-10-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -3929,12 +3551,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo Generating graphs for Mesh,10,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,10,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,100,10-50O-50N/EPS"
-@mv "Mesh,10,100,10-50O-50N-messages-sankey.eps" "Mesh-10-100-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,10,100,10-50O-50N-messages.eps" "Mesh-10-100-10-50O-50N-messages.eps"
-@mv "Mesh,10,100,10-50O-50N-cycleBreakdown.eps" "Mesh-10-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,10,100,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-10-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,10,100,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-10-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,10,100,10-50O-50N-utility-final.eps" "Mesh-10-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -3991,12 +3607,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo Generating graphs for Mesh,10,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,10,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,0,1-10O-100N/EPS"
-@mv "Mesh,10,0,1-10O-100N-messages-sankey.eps" "Mesh-10-0-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,10,0,1-10O-100N-messages.eps" "Mesh-10-0-1-10O-100N-messages.eps"
-@mv "Mesh,10,0,1-10O-100N-cycleBreakdown.eps" "Mesh-10-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,10,0,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-10-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,10,0,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-10-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,10,0,1-10O-100N-utility-final.eps" "Mesh-10-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -4053,12 +3663,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo Generating graphs for Mesh,10,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,10,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,0,2-50O-50N/EPS"
-@mv "Mesh,10,0,2-50O-50N-messages-sankey.eps" "Mesh-10-0-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,10,0,2-50O-50N-messages.eps" "Mesh-10-0-2-50O-50N-messages.eps"
-@mv "Mesh,10,0,2-50O-50N-cycleBreakdown.eps" "Mesh-10-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,10,0,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-10-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,10,0,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-10-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,10,0,2-50O-50N-utility-final.eps" "Mesh-10-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -4115,12 +3719,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo Generating graphs for Mesh,10,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,10,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,0,5-25O-100N/EPS"
-@mv "Mesh,10,0,5-25O-100N-messages-sankey.eps" "Mesh-10-0-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,10,0,5-25O-100N-messages.eps" "Mesh-10-0-5-25O-100N-messages.eps"
-@mv "Mesh,10,0,5-25O-100N-cycleBreakdown.eps" "Mesh-10-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,10,0,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-10-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,10,0,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-10-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,10,0,5-25O-100N-utility-final.eps" "Mesh-10-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -4177,12 +3775,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo Generating graphs for Mesh,10,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,10,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,0,10-50O-50N/EPS"
-@mv "Mesh,10,0,10-50O-50N-messages-sankey.eps" "Mesh-10-0-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,10,0,10-50O-50N-messages.eps" "Mesh-10-0-10-50O-50N-messages.eps"
-@mv "Mesh,10,0,10-50O-50N-cycleBreakdown.eps" "Mesh-10-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,10,0,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-10-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,10,0,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-10-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,10,0,10-50O-50N-utility-final.eps" "Mesh-10-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -4239,12 +3831,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo Generating graphs for Mesh,10,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,10,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,50,1-10O-100N/EPS"
-@mv "Mesh,10,50,1-10O-100N-messages-sankey.eps" "Mesh-10-50-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,10,50,1-10O-100N-messages.eps" "Mesh-10-50-1-10O-100N-messages.eps"
-@mv "Mesh,10,50,1-10O-100N-cycleBreakdown.eps" "Mesh-10-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,10,50,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-10-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,10,50,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-10-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,10,50,1-10O-100N-utility-final.eps" "Mesh-10-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -4301,12 +3887,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo Generating graphs for Mesh,10,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,10,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,50,2-50O-50N/EPS"
-@mv "Mesh,10,50,2-50O-50N-messages-sankey.eps" "Mesh-10-50-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,10,50,2-50O-50N-messages.eps" "Mesh-10-50-2-50O-50N-messages.eps"
-@mv "Mesh,10,50,2-50O-50N-cycleBreakdown.eps" "Mesh-10-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,10,50,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-10-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,10,50,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-10-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,10,50,2-50O-50N-utility-final.eps" "Mesh-10-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -4363,12 +3943,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo Generating graphs for Mesh,10,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,10,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,50,5-25O-100N/EPS"
-@mv "Mesh,10,50,5-25O-100N-messages-sankey.eps" "Mesh-10-50-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,10,50,5-25O-100N-messages.eps" "Mesh-10-50-5-25O-100N-messages.eps"
-@mv "Mesh,10,50,5-25O-100N-cycleBreakdown.eps" "Mesh-10-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,10,50,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-10-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,10,50,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-10-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,10,50,5-25O-100N-utility-final.eps" "Mesh-10-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -4425,12 +3999,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo Generating graphs for Mesh,10,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,10,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,50,10-50O-50N/EPS"
-@mv "Mesh,10,50,10-50O-50N-messages-sankey.eps" "Mesh-10-50-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,10,50,10-50O-50N-messages.eps" "Mesh-10-50-10-50O-50N-messages.eps"
-@mv "Mesh,10,50,10-50O-50N-cycleBreakdown.eps" "Mesh-10-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,10,50,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-10-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,10,50,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-10-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,10,50,10-50O-50N-utility-final.eps" "Mesh-10-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -4487,12 +4055,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo Generating graphs for Mesh,10,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,10,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,10,1-10O-100N/EPS"
-@mv "Mesh,10,10,1-10O-100N-messages-sankey.eps" "Mesh-10-10-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,10,10,1-10O-100N-messages.eps" "Mesh-10-10-1-10O-100N-messages.eps"
-@mv "Mesh,10,10,1-10O-100N-cycleBreakdown.eps" "Mesh-10-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,10,10,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-10-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,10,10,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-10-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,10,10,1-10O-100N-utility-final.eps" "Mesh-10-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -4549,12 +4111,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo Generating graphs for Mesh,10,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,10,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,10,2-50O-50N/EPS"
-@mv "Mesh,10,10,2-50O-50N-messages-sankey.eps" "Mesh-10-10-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,10,10,2-50O-50N-messages.eps" "Mesh-10-10-2-50O-50N-messages.eps"
-@mv "Mesh,10,10,2-50O-50N-cycleBreakdown.eps" "Mesh-10-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,10,10,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-10-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,10,10,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-10-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,10,10,2-50O-50N-utility-final.eps" "Mesh-10-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -4611,12 +4167,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo Generating graphs for Mesh,10,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,10,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,10,5-25O-100N/EPS"
-@mv "Mesh,10,10,5-25O-100N-messages-sankey.eps" "Mesh-10-10-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,10,10,5-25O-100N-messages.eps" "Mesh-10-10-5-25O-100N-messages.eps"
-@mv "Mesh,10,10,5-25O-100N-cycleBreakdown.eps" "Mesh-10-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,10,10,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-10-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,10,10,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-10-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,10,10,5-25O-100N-utility-final.eps" "Mesh-10-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -4673,12 +4223,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo Generating graphs for Mesh,10,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,10,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,10,10-50O-50N/EPS"
-@mv "Mesh,10,10,10-50O-50N-messages-sankey.eps" "Mesh-10-10-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,10,10,10-50O-50N-messages.eps" "Mesh-10-10-10-50O-50N-messages.eps"
-@mv "Mesh,10,10,10-50O-50N-cycleBreakdown.eps" "Mesh-10-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,10,10,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-10-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,10,10,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-10-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,10,10,10-50O-50N-utility-final.eps" "Mesh-10-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -4735,12 +4279,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo Generating graphs for Mesh,10,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,10,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,90,1-10O-100N/EPS"
-@mv "Mesh,10,90,1-10O-100N-messages-sankey.eps" "Mesh-10-90-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,10,90,1-10O-100N-messages.eps" "Mesh-10-90-1-10O-100N-messages.eps"
-@mv "Mesh,10,90,1-10O-100N-cycleBreakdown.eps" "Mesh-10-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,10,90,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-10-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,10,90,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-10-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,10,90,1-10O-100N-utility-final.eps" "Mesh-10-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -4797,12 +4335,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo Generating graphs for Mesh,10,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,10,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,90,2-50O-50N/EPS"
-@mv "Mesh,10,90,2-50O-50N-messages-sankey.eps" "Mesh-10-90-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,10,90,2-50O-50N-messages.eps" "Mesh-10-90-2-50O-50N-messages.eps"
-@mv "Mesh,10,90,2-50O-50N-cycleBreakdown.eps" "Mesh-10-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,10,90,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-10-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,10,90,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-10-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,10,90,2-50O-50N-utility-final.eps" "Mesh-10-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -4859,12 +4391,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo Generating graphs for Mesh,10,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,10,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,90,5-25O-100N/EPS"
-@mv "Mesh,10,90,5-25O-100N-messages-sankey.eps" "Mesh-10-90-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,10,90,5-25O-100N-messages.eps" "Mesh-10-90-5-25O-100N-messages.eps"
-@mv "Mesh,10,90,5-25O-100N-cycleBreakdown.eps" "Mesh-10-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,10,90,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-10-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,10,90,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-10-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,10,90,5-25O-100N-utility-final.eps" "Mesh-10-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -4921,12 +4447,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo Generating graphs for Mesh,10,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,10,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,90,10-50O-50N/EPS"
-@mv "Mesh,10,90,10-50O-50N-messages-sankey.eps" "Mesh-10-90-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,10,90,10-50O-50N-messages.eps" "Mesh-10-90-10-50O-50N-messages.eps"
-@mv "Mesh,10,90,10-50O-50N-cycleBreakdown.eps" "Mesh-10-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,10,90,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-10-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,10,90,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-10-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,10,90,10-50O-50N-utility-final.eps" "Mesh-10-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -4983,12 +4503,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo Generating graphs for Mesh,90,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,90,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,100,1-10O-100N/EPS"
-@mv "Mesh,90,100,1-10O-100N-messages-sankey.eps" "Mesh-90-100-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,90,100,1-10O-100N-messages.eps" "Mesh-90-100-1-10O-100N-messages.eps"
-@mv "Mesh,90,100,1-10O-100N-cycleBreakdown.eps" "Mesh-90-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,90,100,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-90-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,90,100,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-90-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,90,100,1-10O-100N-utility-final.eps" "Mesh-90-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -5045,12 +4559,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo Generating graphs for Mesh,90,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,90,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,100,2-50O-50N/EPS"
-@mv "Mesh,90,100,2-50O-50N-messages-sankey.eps" "Mesh-90-100-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,90,100,2-50O-50N-messages.eps" "Mesh-90-100-2-50O-50N-messages.eps"
-@mv "Mesh,90,100,2-50O-50N-cycleBreakdown.eps" "Mesh-90-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,90,100,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-90-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,90,100,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-90-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,90,100,2-50O-50N-utility-final.eps" "Mesh-90-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -5107,12 +4615,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo Generating graphs for Mesh,90,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,90,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,100,5-25O-100N/EPS"
-@mv "Mesh,90,100,5-25O-100N-messages-sankey.eps" "Mesh-90-100-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,90,100,5-25O-100N-messages.eps" "Mesh-90-100-5-25O-100N-messages.eps"
-@mv "Mesh,90,100,5-25O-100N-cycleBreakdown.eps" "Mesh-90-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,90,100,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-90-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,90,100,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-90-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,90,100,5-25O-100N-utility-final.eps" "Mesh-90-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -5169,12 +4671,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo Generating graphs for Mesh,90,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,90,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,100,10-50O-50N/EPS"
-@mv "Mesh,90,100,10-50O-50N-messages-sankey.eps" "Mesh-90-100-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,90,100,10-50O-50N-messages.eps" "Mesh-90-100-10-50O-50N-messages.eps"
-@mv "Mesh,90,100,10-50O-50N-cycleBreakdown.eps" "Mesh-90-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,90,100,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-90-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,90,100,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-90-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,90,100,10-50O-50N-utility-final.eps" "Mesh-90-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -5231,12 +4727,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo Generating graphs for Mesh,90,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,90,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,0,1-10O-100N/EPS"
-@mv "Mesh,90,0,1-10O-100N-messages-sankey.eps" "Mesh-90-0-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,90,0,1-10O-100N-messages.eps" "Mesh-90-0-1-10O-100N-messages.eps"
-@mv "Mesh,90,0,1-10O-100N-cycleBreakdown.eps" "Mesh-90-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,90,0,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-90-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,90,0,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-90-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,90,0,1-10O-100N-utility-final.eps" "Mesh-90-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -5293,12 +4783,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo Generating graphs for Mesh,90,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,90,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,0,2-50O-50N/EPS"
-@mv "Mesh,90,0,2-50O-50N-messages-sankey.eps" "Mesh-90-0-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,90,0,2-50O-50N-messages.eps" "Mesh-90-0-2-50O-50N-messages.eps"
-@mv "Mesh,90,0,2-50O-50N-cycleBreakdown.eps" "Mesh-90-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,90,0,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-90-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,90,0,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-90-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,90,0,2-50O-50N-utility-final.eps" "Mesh-90-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -5355,12 +4839,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo Generating graphs for Mesh,90,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,90,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,0,5-25O-100N/EPS"
-@mv "Mesh,90,0,5-25O-100N-messages-sankey.eps" "Mesh-90-0-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,90,0,5-25O-100N-messages.eps" "Mesh-90-0-5-25O-100N-messages.eps"
-@mv "Mesh,90,0,5-25O-100N-cycleBreakdown.eps" "Mesh-90-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,90,0,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-90-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,90,0,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-90-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,90,0,5-25O-100N-utility-final.eps" "Mesh-90-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -5417,12 +4895,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo Generating graphs for Mesh,90,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,90,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,0,10-50O-50N/EPS"
-@mv "Mesh,90,0,10-50O-50N-messages-sankey.eps" "Mesh-90-0-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,90,0,10-50O-50N-messages.eps" "Mesh-90-0-10-50O-50N-messages.eps"
-@mv "Mesh,90,0,10-50O-50N-cycleBreakdown.eps" "Mesh-90-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,90,0,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-90-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,90,0,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-90-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,90,0,10-50O-50N-utility-final.eps" "Mesh-90-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -5479,12 +4951,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo Generating graphs for Mesh,90,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,90,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,50,1-10O-100N/EPS"
-@mv "Mesh,90,50,1-10O-100N-messages-sankey.eps" "Mesh-90-50-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,90,50,1-10O-100N-messages.eps" "Mesh-90-50-1-10O-100N-messages.eps"
-@mv "Mesh,90,50,1-10O-100N-cycleBreakdown.eps" "Mesh-90-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,90,50,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-90-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,90,50,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-90-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,90,50,1-10O-100N-utility-final.eps" "Mesh-90-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -5541,12 +5007,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo Generating graphs for Mesh,90,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,90,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,50,2-50O-50N/EPS"
-@mv "Mesh,90,50,2-50O-50N-messages-sankey.eps" "Mesh-90-50-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,90,50,2-50O-50N-messages.eps" "Mesh-90-50-2-50O-50N-messages.eps"
-@mv "Mesh,90,50,2-50O-50N-cycleBreakdown.eps" "Mesh-90-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,90,50,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-90-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,90,50,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-90-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,90,50,2-50O-50N-utility-final.eps" "Mesh-90-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -5603,12 +5063,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo Generating graphs for Mesh,90,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,90,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,50,5-25O-100N/EPS"
-@mv "Mesh,90,50,5-25O-100N-messages-sankey.eps" "Mesh-90-50-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,90,50,5-25O-100N-messages.eps" "Mesh-90-50-5-25O-100N-messages.eps"
-@mv "Mesh,90,50,5-25O-100N-cycleBreakdown.eps" "Mesh-90-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,90,50,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-90-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,90,50,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-90-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,90,50,5-25O-100N-utility-final.eps" "Mesh-90-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -5665,12 +5119,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo Generating graphs for Mesh,90,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,90,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,50,10-50O-50N/EPS"
-@mv "Mesh,90,50,10-50O-50N-messages-sankey.eps" "Mesh-90-50-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,90,50,10-50O-50N-messages.eps" "Mesh-90-50-10-50O-50N-messages.eps"
-@mv "Mesh,90,50,10-50O-50N-cycleBreakdown.eps" "Mesh-90-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,90,50,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-90-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,90,50,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-90-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,90,50,10-50O-50N-utility-final.eps" "Mesh-90-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -5727,12 +5175,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo Generating graphs for Mesh,90,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,90,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,10,1-10O-100N/EPS"
-@mv "Mesh,90,10,1-10O-100N-messages-sankey.eps" "Mesh-90-10-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,90,10,1-10O-100N-messages.eps" "Mesh-90-10-1-10O-100N-messages.eps"
-@mv "Mesh,90,10,1-10O-100N-cycleBreakdown.eps" "Mesh-90-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,90,10,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-90-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,90,10,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-90-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,90,10,1-10O-100N-utility-final.eps" "Mesh-90-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -5789,12 +5231,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo Generating graphs for Mesh,90,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,90,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,10,2-50O-50N/EPS"
-@mv "Mesh,90,10,2-50O-50N-messages-sankey.eps" "Mesh-90-10-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,90,10,2-50O-50N-messages.eps" "Mesh-90-10-2-50O-50N-messages.eps"
-@mv "Mesh,90,10,2-50O-50N-cycleBreakdown.eps" "Mesh-90-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,90,10,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-90-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,90,10,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-90-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,90,10,2-50O-50N-utility-final.eps" "Mesh-90-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -5851,12 +5287,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo Generating graphs for Mesh,90,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,90,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,10,5-25O-100N/EPS"
-@mv "Mesh,90,10,5-25O-100N-messages-sankey.eps" "Mesh-90-10-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,90,10,5-25O-100N-messages.eps" "Mesh-90-10-5-25O-100N-messages.eps"
-@mv "Mesh,90,10,5-25O-100N-cycleBreakdown.eps" "Mesh-90-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,90,10,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-90-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,90,10,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-90-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,90,10,5-25O-100N-utility-final.eps" "Mesh-90-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -5913,12 +5343,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo Generating graphs for Mesh,90,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,90,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,10,10-50O-50N/EPS"
-@mv "Mesh,90,10,10-50O-50N-messages-sankey.eps" "Mesh-90-10-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,90,10,10-50O-50N-messages.eps" "Mesh-90-10-10-50O-50N-messages.eps"
-@mv "Mesh,90,10,10-50O-50N-cycleBreakdown.eps" "Mesh-90-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,90,10,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-90-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,90,10,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-90-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,90,10,10-50O-50N-utility-final.eps" "Mesh-90-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -5975,12 +5399,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo Generating graphs for Mesh,90,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,90,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,90,1-10O-100N/EPS"
-@mv "Mesh,90,90,1-10O-100N-messages-sankey.eps" "Mesh-90-90-1-10O-100N-messages-sankey.eps"
-@mv "Mesh,90,90,1-10O-100N-messages.eps" "Mesh-90-90-1-10O-100N-messages.eps"
-@mv "Mesh,90,90,1-10O-100N-cycleBreakdown.eps" "Mesh-90-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Mesh,90,90,1-10O-100N-utilScatterAll-Fault.eps" "Mesh-90-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,90,90,1-10O-100N-utilScatterAll-NoFault.eps" "Mesh-90-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,90,90,1-10O-100N-utility-final.eps" "Mesh-90-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -6037,12 +5455,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo Generating graphs for Mesh,90,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,90,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,90,2-50O-50N/EPS"
-@mv "Mesh,90,90,2-50O-50N-messages-sankey.eps" "Mesh-90-90-2-50O-50N-messages-sankey.eps"
-@mv "Mesh,90,90,2-50O-50N-messages.eps" "Mesh-90-90-2-50O-50N-messages.eps"
-@mv "Mesh,90,90,2-50O-50N-cycleBreakdown.eps" "Mesh-90-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,90,90,2-50O-50N-utilScatterAll-Fault.eps" "Mesh-90-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,90,90,2-50O-50N-utilScatterAll-NoFault.eps" "Mesh-90-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,90,90,2-50O-50N-utility-final.eps" "Mesh-90-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -6099,12 +5511,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo Generating graphs for Mesh,90,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,90,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,90,5-25O-100N/EPS"
-@mv "Mesh,90,90,5-25O-100N-messages-sankey.eps" "Mesh-90-90-5-25O-100N-messages-sankey.eps"
-@mv "Mesh,90,90,5-25O-100N-messages.eps" "Mesh-90-90-5-25O-100N-messages.eps"
-@mv "Mesh,90,90,5-25O-100N-cycleBreakdown.eps" "Mesh-90-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Mesh,90,90,5-25O-100N-utilScatterAll-Fault.eps" "Mesh-90-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Mesh,90,90,5-25O-100N-utilScatterAll-NoFault.eps" "Mesh-90-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Mesh,90,90,5-25O-100N-utility-final.eps" "Mesh-90-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -6161,12 +5567,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo Generating graphs for Mesh,90,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Mesh,90,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,90,10-50O-50N/EPS"
-@mv "Mesh,90,90,10-50O-50N-messages-sankey.eps" "Mesh-90-90-10-50O-50N-messages-sankey.eps"
-@mv "Mesh,90,90,10-50O-50N-messages.eps" "Mesh-90-90-10-50O-50N-messages.eps"
-@mv "Mesh,90,90,10-50O-50N-cycleBreakdown.eps" "Mesh-90-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Mesh,90,90,10-50O-50N-utilScatterAll-Fault.eps" "Mesh-90-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Mesh,90,90,10-50O-50N-utilScatterAll-NoFault.eps" "Mesh-90-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Mesh,90,90,10-50O-50N-utility-final.eps" "Mesh-90-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -6223,12 +5623,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo Generating graphs for Over,100,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,100,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,100,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100,100,1-10O-100N/EPS"
-@mv "Over,100,100,1-10O-100N-messages-sankey.eps" "Over-100-100-1-10O-100N-messages-sankey.eps"
-@mv "Over,100,100,1-10O-100N-messages.eps" "Over-100-100-1-10O-100N-messages.eps"
-@mv "Over,100,100,1-10O-100N-cycleBreakdown.eps" "Over-100-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,100,100,1-10O-100N-utilScatterAll-Fault.eps" "Over-100-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,100,100,1-10O-100N-utilScatterAll-NoFault.eps" "Over-100-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,100,100,1-10O-100N-utility-final.eps" "Over-100-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -6285,12 +5679,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100
 @echo Generating graphs for Over,100,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,100,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,100,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100,100,2-50O-50N/EPS"
-@mv "Over,100,100,2-50O-50N-messages-sankey.eps" "Over-100-100-2-50O-50N-messages-sankey.eps"
-@mv "Over,100,100,2-50O-50N-messages.eps" "Over-100-100-2-50O-50N-messages.eps"
-@mv "Over,100,100,2-50O-50N-cycleBreakdown.eps" "Over-100-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,100,100,2-50O-50N-utilScatterAll-Fault.eps" "Over-100-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,100,100,2-50O-50N-utilScatterAll-NoFault.eps" "Over-100-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,100,100,2-50O-50N-utility-final.eps" "Over-100-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -6347,12 +5735,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100
 @echo Generating graphs for Over,100,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,100,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,100,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100,100,5-25O-100N/EPS"
-@mv "Over,100,100,5-25O-100N-messages-sankey.eps" "Over-100-100-5-25O-100N-messages-sankey.eps"
-@mv "Over,100,100,5-25O-100N-messages.eps" "Over-100-100-5-25O-100N-messages.eps"
-@mv "Over,100,100,5-25O-100N-cycleBreakdown.eps" "Over-100-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,100,100,5-25O-100N-utilScatterAll-Fault.eps" "Over-100-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,100,100,5-25O-100N-utilScatterAll-NoFault.eps" "Over-100-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,100,100,5-25O-100N-utility-final.eps" "Over-100-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -6409,12 +5791,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100
 @echo Generating graphs for Over,100,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,100,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,100,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100,100,10-50O-50N/EPS"
-@mv "Over,100,100,10-50O-50N-messages-sankey.eps" "Over-100-100-10-50O-50N-messages-sankey.eps"
-@mv "Over,100,100,10-50O-50N-messages.eps" "Over-100-100-10-50O-50N-messages.eps"
-@mv "Over,100,100,10-50O-50N-cycleBreakdown.eps" "Over-100-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,100,100,10-50O-50N-utilScatterAll-Fault.eps" "Over-100-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,100,100,10-50O-50N-utilScatterAll-NoFault.eps" "Over-100-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,100,100,10-50O-50N-utility-final.eps" "Over-100-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -6471,12 +5847,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100
 @echo Generating graphs for Over,100,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,100,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,100,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100,0,1-10O-100N/EPS"
-@mv "Over,100,0,1-10O-100N-messages-sankey.eps" "Over-100-0-1-10O-100N-messages-sankey.eps"
-@mv "Over,100,0,1-10O-100N-messages.eps" "Over-100-0-1-10O-100N-messages.eps"
-@mv "Over,100,0,1-10O-100N-cycleBreakdown.eps" "Over-100-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,100,0,1-10O-100N-utilScatterAll-Fault.eps" "Over-100-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,100,0,1-10O-100N-utilScatterAll-NoFault.eps" "Over-100-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,100,0,1-10O-100N-utility-final.eps" "Over-100-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -6533,12 +5903,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100
 @echo Generating graphs for Over,100,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,100,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,100,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100,0,2-50O-50N/EPS"
-@mv "Over,100,0,2-50O-50N-messages-sankey.eps" "Over-100-0-2-50O-50N-messages-sankey.eps"
-@mv "Over,100,0,2-50O-50N-messages.eps" "Over-100-0-2-50O-50N-messages.eps"
-@mv "Over,100,0,2-50O-50N-cycleBreakdown.eps" "Over-100-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,100,0,2-50O-50N-utilScatterAll-Fault.eps" "Over-100-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,100,0,2-50O-50N-utilScatterAll-NoFault.eps" "Over-100-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,100,0,2-50O-50N-utility-final.eps" "Over-100-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -6595,12 +5959,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100
 @echo Generating graphs for Over,100,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,100,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,100,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100,0,5-25O-100N/EPS"
-@mv "Over,100,0,5-25O-100N-messages-sankey.eps" "Over-100-0-5-25O-100N-messages-sankey.eps"
-@mv "Over,100,0,5-25O-100N-messages.eps" "Over-100-0-5-25O-100N-messages.eps"
-@mv "Over,100,0,5-25O-100N-cycleBreakdown.eps" "Over-100-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,100,0,5-25O-100N-utilScatterAll-Fault.eps" "Over-100-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,100,0,5-25O-100N-utilScatterAll-NoFault.eps" "Over-100-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,100,0,5-25O-100N-utility-final.eps" "Over-100-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -6657,12 +6015,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100
 @echo Generating graphs for Over,100,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,100,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,100,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100,0,10-50O-50N/EPS"
-@mv "Over,100,0,10-50O-50N-messages-sankey.eps" "Over-100-0-10-50O-50N-messages-sankey.eps"
-@mv "Over,100,0,10-50O-50N-messages.eps" "Over-100-0-10-50O-50N-messages.eps"
-@mv "Over,100,0,10-50O-50N-cycleBreakdown.eps" "Over-100-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,100,0,10-50O-50N-utilScatterAll-Fault.eps" "Over-100-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,100,0,10-50O-50N-utilScatterAll-NoFault.eps" "Over-100-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,100,0,10-50O-50N-utility-final.eps" "Over-100-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -6719,12 +6071,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100
 @echo Generating graphs for Over,100,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,100,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,100,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100,50,1-10O-100N/EPS"
-@mv "Over,100,50,1-10O-100N-messages-sankey.eps" "Over-100-50-1-10O-100N-messages-sankey.eps"
-@mv "Over,100,50,1-10O-100N-messages.eps" "Over-100-50-1-10O-100N-messages.eps"
-@mv "Over,100,50,1-10O-100N-cycleBreakdown.eps" "Over-100-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,100,50,1-10O-100N-utilScatterAll-Fault.eps" "Over-100-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,100,50,1-10O-100N-utilScatterAll-NoFault.eps" "Over-100-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,100,50,1-10O-100N-utility-final.eps" "Over-100-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -6781,12 +6127,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100
 @echo Generating graphs for Over,100,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,100,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,100,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100,50,2-50O-50N/EPS"
-@mv "Over,100,50,2-50O-50N-messages-sankey.eps" "Over-100-50-2-50O-50N-messages-sankey.eps"
-@mv "Over,100,50,2-50O-50N-messages.eps" "Over-100-50-2-50O-50N-messages.eps"
-@mv "Over,100,50,2-50O-50N-cycleBreakdown.eps" "Over-100-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,100,50,2-50O-50N-utilScatterAll-Fault.eps" "Over-100-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,100,50,2-50O-50N-utilScatterAll-NoFault.eps" "Over-100-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,100,50,2-50O-50N-utility-final.eps" "Over-100-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -6843,12 +6183,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100
 @echo Generating graphs for Over,100,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,100,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,100,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100,50,5-25O-100N/EPS"
-@mv "Over,100,50,5-25O-100N-messages-sankey.eps" "Over-100-50-5-25O-100N-messages-sankey.eps"
-@mv "Over,100,50,5-25O-100N-messages.eps" "Over-100-50-5-25O-100N-messages.eps"
-@mv "Over,100,50,5-25O-100N-cycleBreakdown.eps" "Over-100-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,100,50,5-25O-100N-utilScatterAll-Fault.eps" "Over-100-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,100,50,5-25O-100N-utilScatterAll-NoFault.eps" "Over-100-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,100,50,5-25O-100N-utility-final.eps" "Over-100-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -6905,12 +6239,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100
 @echo Generating graphs for Over,100,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,100,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,100,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100,50,10-50O-50N/EPS"
-@mv "Over,100,50,10-50O-50N-messages-sankey.eps" "Over-100-50-10-50O-50N-messages-sankey.eps"
-@mv "Over,100,50,10-50O-50N-messages.eps" "Over-100-50-10-50O-50N-messages.eps"
-@mv "Over,100,50,10-50O-50N-cycleBreakdown.eps" "Over-100-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,100,50,10-50O-50N-utilScatterAll-Fault.eps" "Over-100-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,100,50,10-50O-50N-utilScatterAll-NoFault.eps" "Over-100-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,100,50,10-50O-50N-utility-final.eps" "Over-100-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -6967,12 +6295,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100
 @echo Generating graphs for Over,100,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,100,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,100,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100,10,1-10O-100N/EPS"
-@mv "Over,100,10,1-10O-100N-messages-sankey.eps" "Over-100-10-1-10O-100N-messages-sankey.eps"
-@mv "Over,100,10,1-10O-100N-messages.eps" "Over-100-10-1-10O-100N-messages.eps"
-@mv "Over,100,10,1-10O-100N-cycleBreakdown.eps" "Over-100-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,100,10,1-10O-100N-utilScatterAll-Fault.eps" "Over-100-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,100,10,1-10O-100N-utilScatterAll-NoFault.eps" "Over-100-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,100,10,1-10O-100N-utility-final.eps" "Over-100-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -7029,12 +6351,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100
 @echo Generating graphs for Over,100,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,100,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,100,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100,10,2-50O-50N/EPS"
-@mv "Over,100,10,2-50O-50N-messages-sankey.eps" "Over-100-10-2-50O-50N-messages-sankey.eps"
-@mv "Over,100,10,2-50O-50N-messages.eps" "Over-100-10-2-50O-50N-messages.eps"
-@mv "Over,100,10,2-50O-50N-cycleBreakdown.eps" "Over-100-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,100,10,2-50O-50N-utilScatterAll-Fault.eps" "Over-100-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,100,10,2-50O-50N-utilScatterAll-NoFault.eps" "Over-100-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,100,10,2-50O-50N-utility-final.eps" "Over-100-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -7091,12 +6407,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100
 @echo Generating graphs for Over,100,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,100,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,100,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100,10,5-25O-100N/EPS"
-@mv "Over,100,10,5-25O-100N-messages-sankey.eps" "Over-100-10-5-25O-100N-messages-sankey.eps"
-@mv "Over,100,10,5-25O-100N-messages.eps" "Over-100-10-5-25O-100N-messages.eps"
-@mv "Over,100,10,5-25O-100N-cycleBreakdown.eps" "Over-100-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,100,10,5-25O-100N-utilScatterAll-Fault.eps" "Over-100-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,100,10,5-25O-100N-utilScatterAll-NoFault.eps" "Over-100-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,100,10,5-25O-100N-utility-final.eps" "Over-100-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -7153,12 +6463,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100
 @echo Generating graphs for Over,100,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,100,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,100,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100,10,10-50O-50N/EPS"
-@mv "Over,100,10,10-50O-50N-messages-sankey.eps" "Over-100-10-10-50O-50N-messages-sankey.eps"
-@mv "Over,100,10,10-50O-50N-messages.eps" "Over-100-10-10-50O-50N-messages.eps"
-@mv "Over,100,10,10-50O-50N-cycleBreakdown.eps" "Over-100-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,100,10,10-50O-50N-utilScatterAll-Fault.eps" "Over-100-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,100,10,10-50O-50N-utilScatterAll-NoFault.eps" "Over-100-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,100,10,10-50O-50N-utility-final.eps" "Over-100-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -7215,12 +6519,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100
 @echo Generating graphs for Over,100,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,100,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,100,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100,90,1-10O-100N/EPS"
-@mv "Over,100,90,1-10O-100N-messages-sankey.eps" "Over-100-90-1-10O-100N-messages-sankey.eps"
-@mv "Over,100,90,1-10O-100N-messages.eps" "Over-100-90-1-10O-100N-messages.eps"
-@mv "Over,100,90,1-10O-100N-cycleBreakdown.eps" "Over-100-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,100,90,1-10O-100N-utilScatterAll-Fault.eps" "Over-100-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,100,90,1-10O-100N-utilScatterAll-NoFault.eps" "Over-100-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,100,90,1-10O-100N-utility-final.eps" "Over-100-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -7277,12 +6575,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100
 @echo Generating graphs for Over,100,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,100,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,100,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100,90,2-50O-50N/EPS"
-@mv "Over,100,90,2-50O-50N-messages-sankey.eps" "Over-100-90-2-50O-50N-messages-sankey.eps"
-@mv "Over,100,90,2-50O-50N-messages.eps" "Over-100-90-2-50O-50N-messages.eps"
-@mv "Over,100,90,2-50O-50N-cycleBreakdown.eps" "Over-100-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,100,90,2-50O-50N-utilScatterAll-Fault.eps" "Over-100-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,100,90,2-50O-50N-utilScatterAll-NoFault.eps" "Over-100-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,100,90,2-50O-50N-utility-final.eps" "Over-100-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -7339,12 +6631,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100
 @echo Generating graphs for Over,100,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,100,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,100,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100,90,5-25O-100N/EPS"
-@mv "Over,100,90,5-25O-100N-messages-sankey.eps" "Over-100-90-5-25O-100N-messages-sankey.eps"
-@mv "Over,100,90,5-25O-100N-messages.eps" "Over-100-90-5-25O-100N-messages.eps"
-@mv "Over,100,90,5-25O-100N-cycleBreakdown.eps" "Over-100-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,100,90,5-25O-100N-utilScatterAll-Fault.eps" "Over-100-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,100,90,5-25O-100N-utilScatterAll-NoFault.eps" "Over-100-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,100,90,5-25O-100N-utility-final.eps" "Over-100-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -7401,12 +6687,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100
 @echo Generating graphs for Over,100,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,100,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,100,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100,90,10-50O-50N/EPS"
-@mv "Over,100,90,10-50O-50N-messages-sankey.eps" "Over-100-90-10-50O-50N-messages-sankey.eps"
-@mv "Over,100,90,10-50O-50N-messages.eps" "Over-100-90-10-50O-50N-messages.eps"
-@mv "Over,100,90,10-50O-50N-cycleBreakdown.eps" "Over-100-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,100,90,10-50O-50N-utilScatterAll-Fault.eps" "Over-100-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,100,90,10-50O-50N-utilScatterAll-NoFault.eps" "Over-100-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,100,90,10-50O-50N-utility-final.eps" "Over-100-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -7463,12 +6743,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,100
 @echo Generating graphs for Over,0,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,0,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,0,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,100,1-10O-100N/EPS"
-@mv "Over,0,100,1-10O-100N-messages-sankey.eps" "Over-0-100-1-10O-100N-messages-sankey.eps"
-@mv "Over,0,100,1-10O-100N-messages.eps" "Over-0-100-1-10O-100N-messages.eps"
-@mv "Over,0,100,1-10O-100N-cycleBreakdown.eps" "Over-0-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,0,100,1-10O-100N-utilScatterAll-Fault.eps" "Over-0-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,0,100,1-10O-100N-utilScatterAll-NoFault.eps" "Over-0-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,0,100,1-10O-100N-utility-final.eps" "Over-0-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -7525,12 +6799,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,1
 @echo Generating graphs for Over,0,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,0,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,0,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,100,2-50O-50N/EPS"
-@mv "Over,0,100,2-50O-50N-messages-sankey.eps" "Over-0-100-2-50O-50N-messages-sankey.eps"
-@mv "Over,0,100,2-50O-50N-messages.eps" "Over-0-100-2-50O-50N-messages.eps"
-@mv "Over,0,100,2-50O-50N-cycleBreakdown.eps" "Over-0-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,0,100,2-50O-50N-utilScatterAll-Fault.eps" "Over-0-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,0,100,2-50O-50N-utilScatterAll-NoFault.eps" "Over-0-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,0,100,2-50O-50N-utility-final.eps" "Over-0-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -7587,12 +6855,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,1
 @echo Generating graphs for Over,0,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,0,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,0,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,100,5-25O-100N/EPS"
-@mv "Over,0,100,5-25O-100N-messages-sankey.eps" "Over-0-100-5-25O-100N-messages-sankey.eps"
-@mv "Over,0,100,5-25O-100N-messages.eps" "Over-0-100-5-25O-100N-messages.eps"
-@mv "Over,0,100,5-25O-100N-cycleBreakdown.eps" "Over-0-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,0,100,5-25O-100N-utilScatterAll-Fault.eps" "Over-0-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,0,100,5-25O-100N-utilScatterAll-NoFault.eps" "Over-0-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,0,100,5-25O-100N-utility-final.eps" "Over-0-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -7649,12 +6911,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,1
 @echo Generating graphs for Over,0,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,0,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,0,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,100,10-50O-50N/EPS"
-@mv "Over,0,100,10-50O-50N-messages-sankey.eps" "Over-0-100-10-50O-50N-messages-sankey.eps"
-@mv "Over,0,100,10-50O-50N-messages.eps" "Over-0-100-10-50O-50N-messages.eps"
-@mv "Over,0,100,10-50O-50N-cycleBreakdown.eps" "Over-0-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,0,100,10-50O-50N-utilScatterAll-Fault.eps" "Over-0-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,0,100,10-50O-50N-utilScatterAll-NoFault.eps" "Over-0-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,0,100,10-50O-50N-utility-final.eps" "Over-0-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -7711,12 +6967,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,1
 @echo Generating graphs for Over,0,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,0,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,0,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,0,1-10O-100N/EPS"
-@mv "Over,0,0,1-10O-100N-messages-sankey.eps" "Over-0-0-1-10O-100N-messages-sankey.eps"
-@mv "Over,0,0,1-10O-100N-messages.eps" "Over-0-0-1-10O-100N-messages.eps"
-@mv "Over,0,0,1-10O-100N-cycleBreakdown.eps" "Over-0-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,0,0,1-10O-100N-utilScatterAll-Fault.eps" "Over-0-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,0,0,1-10O-100N-utilScatterAll-NoFault.eps" "Over-0-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,0,0,1-10O-100N-utility-final.eps" "Over-0-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -7773,12 +7023,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,0
 @echo Generating graphs for Over,0,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,0,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,0,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,0,2-50O-50N/EPS"
-@mv "Over,0,0,2-50O-50N-messages-sankey.eps" "Over-0-0-2-50O-50N-messages-sankey.eps"
-@mv "Over,0,0,2-50O-50N-messages.eps" "Over-0-0-2-50O-50N-messages.eps"
-@mv "Over,0,0,2-50O-50N-cycleBreakdown.eps" "Over-0-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,0,0,2-50O-50N-utilScatterAll-Fault.eps" "Over-0-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,0,0,2-50O-50N-utilScatterAll-NoFault.eps" "Over-0-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,0,0,2-50O-50N-utility-final.eps" "Over-0-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -7835,12 +7079,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,0
 @echo Generating graphs for Over,0,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,0,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,0,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,0,5-25O-100N/EPS"
-@mv "Over,0,0,5-25O-100N-messages-sankey.eps" "Over-0-0-5-25O-100N-messages-sankey.eps"
-@mv "Over,0,0,5-25O-100N-messages.eps" "Over-0-0-5-25O-100N-messages.eps"
-@mv "Over,0,0,5-25O-100N-cycleBreakdown.eps" "Over-0-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,0,0,5-25O-100N-utilScatterAll-Fault.eps" "Over-0-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,0,0,5-25O-100N-utilScatterAll-NoFault.eps" "Over-0-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,0,0,5-25O-100N-utility-final.eps" "Over-0-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -7897,12 +7135,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,0
 @echo Generating graphs for Over,0,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,0,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,0,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,0,10-50O-50N/EPS"
-@mv "Over,0,0,10-50O-50N-messages-sankey.eps" "Over-0-0-10-50O-50N-messages-sankey.eps"
-@mv "Over,0,0,10-50O-50N-messages.eps" "Over-0-0-10-50O-50N-messages.eps"
-@mv "Over,0,0,10-50O-50N-cycleBreakdown.eps" "Over-0-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,0,0,10-50O-50N-utilScatterAll-Fault.eps" "Over-0-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,0,0,10-50O-50N-utilScatterAll-NoFault.eps" "Over-0-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,0,0,10-50O-50N-utility-final.eps" "Over-0-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -7959,12 +7191,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,0
 @echo Generating graphs for Over,0,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,0,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,0,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,50,1-10O-100N/EPS"
-@mv "Over,0,50,1-10O-100N-messages-sankey.eps" "Over-0-50-1-10O-100N-messages-sankey.eps"
-@mv "Over,0,50,1-10O-100N-messages.eps" "Over-0-50-1-10O-100N-messages.eps"
-@mv "Over,0,50,1-10O-100N-cycleBreakdown.eps" "Over-0-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,0,50,1-10O-100N-utilScatterAll-Fault.eps" "Over-0-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,0,50,1-10O-100N-utilScatterAll-NoFault.eps" "Over-0-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,0,50,1-10O-100N-utility-final.eps" "Over-0-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -8021,12 +7247,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,5
 @echo Generating graphs for Over,0,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,0,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,0,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,50,2-50O-50N/EPS"
-@mv "Over,0,50,2-50O-50N-messages-sankey.eps" "Over-0-50-2-50O-50N-messages-sankey.eps"
-@mv "Over,0,50,2-50O-50N-messages.eps" "Over-0-50-2-50O-50N-messages.eps"
-@mv "Over,0,50,2-50O-50N-cycleBreakdown.eps" "Over-0-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,0,50,2-50O-50N-utilScatterAll-Fault.eps" "Over-0-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,0,50,2-50O-50N-utilScatterAll-NoFault.eps" "Over-0-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,0,50,2-50O-50N-utility-final.eps" "Over-0-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -8083,12 +7303,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,5
 @echo Generating graphs for Over,0,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,0,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,0,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,50,5-25O-100N/EPS"
-@mv "Over,0,50,5-25O-100N-messages-sankey.eps" "Over-0-50-5-25O-100N-messages-sankey.eps"
-@mv "Over,0,50,5-25O-100N-messages.eps" "Over-0-50-5-25O-100N-messages.eps"
-@mv "Over,0,50,5-25O-100N-cycleBreakdown.eps" "Over-0-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,0,50,5-25O-100N-utilScatterAll-Fault.eps" "Over-0-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,0,50,5-25O-100N-utilScatterAll-NoFault.eps" "Over-0-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,0,50,5-25O-100N-utility-final.eps" "Over-0-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -8145,12 +7359,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,5
 @echo Generating graphs for Over,0,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,0,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,0,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,50,10-50O-50N/EPS"
-@mv "Over,0,50,10-50O-50N-messages-sankey.eps" "Over-0-50-10-50O-50N-messages-sankey.eps"
-@mv "Over,0,50,10-50O-50N-messages.eps" "Over-0-50-10-50O-50N-messages.eps"
-@mv "Over,0,50,10-50O-50N-cycleBreakdown.eps" "Over-0-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,0,50,10-50O-50N-utilScatterAll-Fault.eps" "Over-0-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,0,50,10-50O-50N-utilScatterAll-NoFault.eps" "Over-0-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,0,50,10-50O-50N-utility-final.eps" "Over-0-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -8207,12 +7415,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,5
 @echo Generating graphs for Over,0,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,0,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,0,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,10,1-10O-100N/EPS"
-@mv "Over,0,10,1-10O-100N-messages-sankey.eps" "Over-0-10-1-10O-100N-messages-sankey.eps"
-@mv "Over,0,10,1-10O-100N-messages.eps" "Over-0-10-1-10O-100N-messages.eps"
-@mv "Over,0,10,1-10O-100N-cycleBreakdown.eps" "Over-0-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,0,10,1-10O-100N-utilScatterAll-Fault.eps" "Over-0-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,0,10,1-10O-100N-utilScatterAll-NoFault.eps" "Over-0-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,0,10,1-10O-100N-utility-final.eps" "Over-0-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -8269,12 +7471,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,1
 @echo Generating graphs for Over,0,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,0,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,0,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,10,2-50O-50N/EPS"
-@mv "Over,0,10,2-50O-50N-messages-sankey.eps" "Over-0-10-2-50O-50N-messages-sankey.eps"
-@mv "Over,0,10,2-50O-50N-messages.eps" "Over-0-10-2-50O-50N-messages.eps"
-@mv "Over,0,10,2-50O-50N-cycleBreakdown.eps" "Over-0-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,0,10,2-50O-50N-utilScatterAll-Fault.eps" "Over-0-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,0,10,2-50O-50N-utilScatterAll-NoFault.eps" "Over-0-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,0,10,2-50O-50N-utility-final.eps" "Over-0-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -8331,12 +7527,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,1
 @echo Generating graphs for Over,0,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,0,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,0,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,10,5-25O-100N/EPS"
-@mv "Over,0,10,5-25O-100N-messages-sankey.eps" "Over-0-10-5-25O-100N-messages-sankey.eps"
-@mv "Over,0,10,5-25O-100N-messages.eps" "Over-0-10-5-25O-100N-messages.eps"
-@mv "Over,0,10,5-25O-100N-cycleBreakdown.eps" "Over-0-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,0,10,5-25O-100N-utilScatterAll-Fault.eps" "Over-0-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,0,10,5-25O-100N-utilScatterAll-NoFault.eps" "Over-0-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,0,10,5-25O-100N-utility-final.eps" "Over-0-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -8393,12 +7583,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,1
 @echo Generating graphs for Over,0,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,0,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,0,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,10,10-50O-50N/EPS"
-@mv "Over,0,10,10-50O-50N-messages-sankey.eps" "Over-0-10-10-50O-50N-messages-sankey.eps"
-@mv "Over,0,10,10-50O-50N-messages.eps" "Over-0-10-10-50O-50N-messages.eps"
-@mv "Over,0,10,10-50O-50N-cycleBreakdown.eps" "Over-0-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,0,10,10-50O-50N-utilScatterAll-Fault.eps" "Over-0-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,0,10,10-50O-50N-utilScatterAll-NoFault.eps" "Over-0-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,0,10,10-50O-50N-utility-final.eps" "Over-0-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -8455,12 +7639,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,1
 @echo Generating graphs for Over,0,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,0,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,0,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,90,1-10O-100N/EPS"
-@mv "Over,0,90,1-10O-100N-messages-sankey.eps" "Over-0-90-1-10O-100N-messages-sankey.eps"
-@mv "Over,0,90,1-10O-100N-messages.eps" "Over-0-90-1-10O-100N-messages.eps"
-@mv "Over,0,90,1-10O-100N-cycleBreakdown.eps" "Over-0-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,0,90,1-10O-100N-utilScatterAll-Fault.eps" "Over-0-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,0,90,1-10O-100N-utilScatterAll-NoFault.eps" "Over-0-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,0,90,1-10O-100N-utility-final.eps" "Over-0-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -8517,12 +7695,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,9
 @echo Generating graphs for Over,0,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,0,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,0,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,90,2-50O-50N/EPS"
-@mv "Over,0,90,2-50O-50N-messages-sankey.eps" "Over-0-90-2-50O-50N-messages-sankey.eps"
-@mv "Over,0,90,2-50O-50N-messages.eps" "Over-0-90-2-50O-50N-messages.eps"
-@mv "Over,0,90,2-50O-50N-cycleBreakdown.eps" "Over-0-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,0,90,2-50O-50N-utilScatterAll-Fault.eps" "Over-0-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,0,90,2-50O-50N-utilScatterAll-NoFault.eps" "Over-0-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,0,90,2-50O-50N-utility-final.eps" "Over-0-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -8579,12 +7751,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,9
 @echo Generating graphs for Over,0,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,0,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,0,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,90,5-25O-100N/EPS"
-@mv "Over,0,90,5-25O-100N-messages-sankey.eps" "Over-0-90-5-25O-100N-messages-sankey.eps"
-@mv "Over,0,90,5-25O-100N-messages.eps" "Over-0-90-5-25O-100N-messages.eps"
-@mv "Over,0,90,5-25O-100N-cycleBreakdown.eps" "Over-0-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,0,90,5-25O-100N-utilScatterAll-Fault.eps" "Over-0-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,0,90,5-25O-100N-utilScatterAll-NoFault.eps" "Over-0-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,0,90,5-25O-100N-utility-final.eps" "Over-0-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -8641,12 +7807,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,9
 @echo Generating graphs for Over,0,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,0,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,0,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,90,10-50O-50N/EPS"
-@mv "Over,0,90,10-50O-50N-messages-sankey.eps" "Over-0-90-10-50O-50N-messages-sankey.eps"
-@mv "Over,0,90,10-50O-50N-messages.eps" "Over-0-90-10-50O-50N-messages.eps"
-@mv "Over,0,90,10-50O-50N-cycleBreakdown.eps" "Over-0-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,0,90,10-50O-50N-utilScatterAll-Fault.eps" "Over-0-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,0,90,10-50O-50N-utilScatterAll-NoFault.eps" "Over-0-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,0,90,10-50O-50N-utility-final.eps" "Over-0-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -8703,12 +7863,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,0,9
 @echo Generating graphs for Over,50,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,50,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,100,1-10O-100N/EPS"
-@mv "Over,50,100,1-10O-100N-messages-sankey.eps" "Over-50-100-1-10O-100N-messages-sankey.eps"
-@mv "Over,50,100,1-10O-100N-messages.eps" "Over-50-100-1-10O-100N-messages.eps"
-@mv "Over,50,100,1-10O-100N-cycleBreakdown.eps" "Over-50-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,50,100,1-10O-100N-utilScatterAll-Fault.eps" "Over-50-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,50,100,1-10O-100N-utilScatterAll-NoFault.eps" "Over-50-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,50,100,1-10O-100N-utility-final.eps" "Over-50-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -8765,12 +7919,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo Generating graphs for Over,50,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,50,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,100,2-50O-50N/EPS"
-@mv "Over,50,100,2-50O-50N-messages-sankey.eps" "Over-50-100-2-50O-50N-messages-sankey.eps"
-@mv "Over,50,100,2-50O-50N-messages.eps" "Over-50-100-2-50O-50N-messages.eps"
-@mv "Over,50,100,2-50O-50N-cycleBreakdown.eps" "Over-50-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,50,100,2-50O-50N-utilScatterAll-Fault.eps" "Over-50-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,50,100,2-50O-50N-utilScatterAll-NoFault.eps" "Over-50-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,50,100,2-50O-50N-utility-final.eps" "Over-50-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -8827,12 +7975,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo Generating graphs for Over,50,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,50,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,100,5-25O-100N/EPS"
-@mv "Over,50,100,5-25O-100N-messages-sankey.eps" "Over-50-100-5-25O-100N-messages-sankey.eps"
-@mv "Over,50,100,5-25O-100N-messages.eps" "Over-50-100-5-25O-100N-messages.eps"
-@mv "Over,50,100,5-25O-100N-cycleBreakdown.eps" "Over-50-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,50,100,5-25O-100N-utilScatterAll-Fault.eps" "Over-50-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,50,100,5-25O-100N-utilScatterAll-NoFault.eps" "Over-50-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,50,100,5-25O-100N-utility-final.eps" "Over-50-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -8889,12 +8031,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo Generating graphs for Over,50,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,50,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,100,10-50O-50N/EPS"
-@mv "Over,50,100,10-50O-50N-messages-sankey.eps" "Over-50-100-10-50O-50N-messages-sankey.eps"
-@mv "Over,50,100,10-50O-50N-messages.eps" "Over-50-100-10-50O-50N-messages.eps"
-@mv "Over,50,100,10-50O-50N-cycleBreakdown.eps" "Over-50-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,50,100,10-50O-50N-utilScatterAll-Fault.eps" "Over-50-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,50,100,10-50O-50N-utilScatterAll-NoFault.eps" "Over-50-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,50,100,10-50O-50N-utility-final.eps" "Over-50-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -8951,12 +8087,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo Generating graphs for Over,50,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,50,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,0,1-10O-100N/EPS"
-@mv "Over,50,0,1-10O-100N-messages-sankey.eps" "Over-50-0-1-10O-100N-messages-sankey.eps"
-@mv "Over,50,0,1-10O-100N-messages.eps" "Over-50-0-1-10O-100N-messages.eps"
-@mv "Over,50,0,1-10O-100N-cycleBreakdown.eps" "Over-50-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,50,0,1-10O-100N-utilScatterAll-Fault.eps" "Over-50-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,50,0,1-10O-100N-utilScatterAll-NoFault.eps" "Over-50-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,50,0,1-10O-100N-utility-final.eps" "Over-50-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -9013,12 +8143,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo Generating graphs for Over,50,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,50,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,0,2-50O-50N/EPS"
-@mv "Over,50,0,2-50O-50N-messages-sankey.eps" "Over-50-0-2-50O-50N-messages-sankey.eps"
-@mv "Over,50,0,2-50O-50N-messages.eps" "Over-50-0-2-50O-50N-messages.eps"
-@mv "Over,50,0,2-50O-50N-cycleBreakdown.eps" "Over-50-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,50,0,2-50O-50N-utilScatterAll-Fault.eps" "Over-50-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,50,0,2-50O-50N-utilScatterAll-NoFault.eps" "Over-50-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,50,0,2-50O-50N-utility-final.eps" "Over-50-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -9075,12 +8199,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo Generating graphs for Over,50,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,50,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,0,5-25O-100N/EPS"
-@mv "Over,50,0,5-25O-100N-messages-sankey.eps" "Over-50-0-5-25O-100N-messages-sankey.eps"
-@mv "Over,50,0,5-25O-100N-messages.eps" "Over-50-0-5-25O-100N-messages.eps"
-@mv "Over,50,0,5-25O-100N-cycleBreakdown.eps" "Over-50-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,50,0,5-25O-100N-utilScatterAll-Fault.eps" "Over-50-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,50,0,5-25O-100N-utilScatterAll-NoFault.eps" "Over-50-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,50,0,5-25O-100N-utility-final.eps" "Over-50-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -9137,12 +8255,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo Generating graphs for Over,50,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,50,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,0,10-50O-50N/EPS"
-@mv "Over,50,0,10-50O-50N-messages-sankey.eps" "Over-50-0-10-50O-50N-messages-sankey.eps"
-@mv "Over,50,0,10-50O-50N-messages.eps" "Over-50-0-10-50O-50N-messages.eps"
-@mv "Over,50,0,10-50O-50N-cycleBreakdown.eps" "Over-50-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,50,0,10-50O-50N-utilScatterAll-Fault.eps" "Over-50-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,50,0,10-50O-50N-utilScatterAll-NoFault.eps" "Over-50-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,50,0,10-50O-50N-utility-final.eps" "Over-50-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -9199,12 +8311,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo Generating graphs for Over,50,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,50,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,50,1-10O-100N/EPS"
-@mv "Over,50,50,1-10O-100N-messages-sankey.eps" "Over-50-50-1-10O-100N-messages-sankey.eps"
-@mv "Over,50,50,1-10O-100N-messages.eps" "Over-50-50-1-10O-100N-messages.eps"
-@mv "Over,50,50,1-10O-100N-cycleBreakdown.eps" "Over-50-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,50,50,1-10O-100N-utilScatterAll-Fault.eps" "Over-50-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,50,50,1-10O-100N-utilScatterAll-NoFault.eps" "Over-50-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,50,50,1-10O-100N-utility-final.eps" "Over-50-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -9261,12 +8367,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo Generating graphs for Over,50,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,50,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,50,2-50O-50N/EPS"
-@mv "Over,50,50,2-50O-50N-messages-sankey.eps" "Over-50-50-2-50O-50N-messages-sankey.eps"
-@mv "Over,50,50,2-50O-50N-messages.eps" "Over-50-50-2-50O-50N-messages.eps"
-@mv "Over,50,50,2-50O-50N-cycleBreakdown.eps" "Over-50-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,50,50,2-50O-50N-utilScatterAll-Fault.eps" "Over-50-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,50,50,2-50O-50N-utilScatterAll-NoFault.eps" "Over-50-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,50,50,2-50O-50N-utility-final.eps" "Over-50-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -9323,12 +8423,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo Generating graphs for Over,50,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,50,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,50,5-25O-100N/EPS"
-@mv "Over,50,50,5-25O-100N-messages-sankey.eps" "Over-50-50-5-25O-100N-messages-sankey.eps"
-@mv "Over,50,50,5-25O-100N-messages.eps" "Over-50-50-5-25O-100N-messages.eps"
-@mv "Over,50,50,5-25O-100N-cycleBreakdown.eps" "Over-50-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,50,50,5-25O-100N-utilScatterAll-Fault.eps" "Over-50-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,50,50,5-25O-100N-utilScatterAll-NoFault.eps" "Over-50-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,50,50,5-25O-100N-utility-final.eps" "Over-50-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -9385,12 +8479,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo Generating graphs for Over,50,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,50,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,50,10-50O-50N/EPS"
-@mv "Over,50,50,10-50O-50N-messages-sankey.eps" "Over-50-50-10-50O-50N-messages-sankey.eps"
-@mv "Over,50,50,10-50O-50N-messages.eps" "Over-50-50-10-50O-50N-messages.eps"
-@mv "Over,50,50,10-50O-50N-cycleBreakdown.eps" "Over-50-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,50,50,10-50O-50N-utilScatterAll-Fault.eps" "Over-50-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,50,50,10-50O-50N-utilScatterAll-NoFault.eps" "Over-50-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,50,50,10-50O-50N-utility-final.eps" "Over-50-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -9447,12 +8535,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo Generating graphs for Over,50,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,50,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,10,1-10O-100N/EPS"
-@mv "Over,50,10,1-10O-100N-messages-sankey.eps" "Over-50-10-1-10O-100N-messages-sankey.eps"
-@mv "Over,50,10,1-10O-100N-messages.eps" "Over-50-10-1-10O-100N-messages.eps"
-@mv "Over,50,10,1-10O-100N-cycleBreakdown.eps" "Over-50-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,50,10,1-10O-100N-utilScatterAll-Fault.eps" "Over-50-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,50,10,1-10O-100N-utilScatterAll-NoFault.eps" "Over-50-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,50,10,1-10O-100N-utility-final.eps" "Over-50-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -9509,12 +8591,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo Generating graphs for Over,50,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,50,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,10,2-50O-50N/EPS"
-@mv "Over,50,10,2-50O-50N-messages-sankey.eps" "Over-50-10-2-50O-50N-messages-sankey.eps"
-@mv "Over,50,10,2-50O-50N-messages.eps" "Over-50-10-2-50O-50N-messages.eps"
-@mv "Over,50,10,2-50O-50N-cycleBreakdown.eps" "Over-50-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,50,10,2-50O-50N-utilScatterAll-Fault.eps" "Over-50-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,50,10,2-50O-50N-utilScatterAll-NoFault.eps" "Over-50-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,50,10,2-50O-50N-utility-final.eps" "Over-50-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -9571,12 +8647,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo Generating graphs for Over,50,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,50,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,10,5-25O-100N/EPS"
-@mv "Over,50,10,5-25O-100N-messages-sankey.eps" "Over-50-10-5-25O-100N-messages-sankey.eps"
-@mv "Over,50,10,5-25O-100N-messages.eps" "Over-50-10-5-25O-100N-messages.eps"
-@mv "Over,50,10,5-25O-100N-cycleBreakdown.eps" "Over-50-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,50,10,5-25O-100N-utilScatterAll-Fault.eps" "Over-50-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,50,10,5-25O-100N-utilScatterAll-NoFault.eps" "Over-50-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,50,10,5-25O-100N-utility-final.eps" "Over-50-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -9633,12 +8703,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo Generating graphs for Over,50,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,50,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,10,10-50O-50N/EPS"
-@mv "Over,50,10,10-50O-50N-messages-sankey.eps" "Over-50-10-10-50O-50N-messages-sankey.eps"
-@mv "Over,50,10,10-50O-50N-messages.eps" "Over-50-10-10-50O-50N-messages.eps"
-@mv "Over,50,10,10-50O-50N-cycleBreakdown.eps" "Over-50-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,50,10,10-50O-50N-utilScatterAll-Fault.eps" "Over-50-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,50,10,10-50O-50N-utilScatterAll-NoFault.eps" "Over-50-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,50,10,10-50O-50N-utility-final.eps" "Over-50-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -9695,12 +8759,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo Generating graphs for Over,50,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,50,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,90,1-10O-100N/EPS"
-@mv "Over,50,90,1-10O-100N-messages-sankey.eps" "Over-50-90-1-10O-100N-messages-sankey.eps"
-@mv "Over,50,90,1-10O-100N-messages.eps" "Over-50-90-1-10O-100N-messages.eps"
-@mv "Over,50,90,1-10O-100N-cycleBreakdown.eps" "Over-50-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,50,90,1-10O-100N-utilScatterAll-Fault.eps" "Over-50-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,50,90,1-10O-100N-utilScatterAll-NoFault.eps" "Over-50-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,50,90,1-10O-100N-utility-final.eps" "Over-50-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -9757,12 +8815,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo Generating graphs for Over,50,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,50,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,90,2-50O-50N/EPS"
-@mv "Over,50,90,2-50O-50N-messages-sankey.eps" "Over-50-90-2-50O-50N-messages-sankey.eps"
-@mv "Over,50,90,2-50O-50N-messages.eps" "Over-50-90-2-50O-50N-messages.eps"
-@mv "Over,50,90,2-50O-50N-cycleBreakdown.eps" "Over-50-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,50,90,2-50O-50N-utilScatterAll-Fault.eps" "Over-50-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,50,90,2-50O-50N-utilScatterAll-NoFault.eps" "Over-50-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,50,90,2-50O-50N-utility-final.eps" "Over-50-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -9819,12 +8871,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo Generating graphs for Over,50,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,50,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,90,5-25O-100N/EPS"
-@mv "Over,50,90,5-25O-100N-messages-sankey.eps" "Over-50-90-5-25O-100N-messages-sankey.eps"
-@mv "Over,50,90,5-25O-100N-messages.eps" "Over-50-90-5-25O-100N-messages.eps"
-@mv "Over,50,90,5-25O-100N-cycleBreakdown.eps" "Over-50-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,50,90,5-25O-100N-utilScatterAll-Fault.eps" "Over-50-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,50,90,5-25O-100N-utilScatterAll-NoFault.eps" "Over-50-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,50,90,5-25O-100N-utility-final.eps" "Over-50-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -9881,12 +8927,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo Generating graphs for Over,50,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,50,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,90,10-50O-50N/EPS"
-@mv "Over,50,90,10-50O-50N-messages-sankey.eps" "Over-50-90-10-50O-50N-messages-sankey.eps"
-@mv "Over,50,90,10-50O-50N-messages.eps" "Over-50-90-10-50O-50N-messages.eps"
-@mv "Over,50,90,10-50O-50N-cycleBreakdown.eps" "Over-50-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,50,90,10-50O-50N-utilScatterAll-Fault.eps" "Over-50-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,50,90,10-50O-50N-utilScatterAll-NoFault.eps" "Over-50-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,50,90,10-50O-50N-utility-final.eps" "Over-50-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -9943,12 +8983,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo Generating graphs for Over,10,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,10,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,100,1-10O-100N/EPS"
-@mv "Over,10,100,1-10O-100N-messages-sankey.eps" "Over-10-100-1-10O-100N-messages-sankey.eps"
-@mv "Over,10,100,1-10O-100N-messages.eps" "Over-10-100-1-10O-100N-messages.eps"
-@mv "Over,10,100,1-10O-100N-cycleBreakdown.eps" "Over-10-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,10,100,1-10O-100N-utilScatterAll-Fault.eps" "Over-10-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,10,100,1-10O-100N-utilScatterAll-NoFault.eps" "Over-10-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,10,100,1-10O-100N-utility-final.eps" "Over-10-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -10005,12 +9039,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo Generating graphs for Over,10,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,10,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,100,2-50O-50N/EPS"
-@mv "Over,10,100,2-50O-50N-messages-sankey.eps" "Over-10-100-2-50O-50N-messages-sankey.eps"
-@mv "Over,10,100,2-50O-50N-messages.eps" "Over-10-100-2-50O-50N-messages.eps"
-@mv "Over,10,100,2-50O-50N-cycleBreakdown.eps" "Over-10-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,10,100,2-50O-50N-utilScatterAll-Fault.eps" "Over-10-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,10,100,2-50O-50N-utilScatterAll-NoFault.eps" "Over-10-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,10,100,2-50O-50N-utility-final.eps" "Over-10-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -10067,12 +9095,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo Generating graphs for Over,10,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,10,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,100,5-25O-100N/EPS"
-@mv "Over,10,100,5-25O-100N-messages-sankey.eps" "Over-10-100-5-25O-100N-messages-sankey.eps"
-@mv "Over,10,100,5-25O-100N-messages.eps" "Over-10-100-5-25O-100N-messages.eps"
-@mv "Over,10,100,5-25O-100N-cycleBreakdown.eps" "Over-10-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,10,100,5-25O-100N-utilScatterAll-Fault.eps" "Over-10-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,10,100,5-25O-100N-utilScatterAll-NoFault.eps" "Over-10-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,10,100,5-25O-100N-utility-final.eps" "Over-10-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -10129,12 +9151,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo Generating graphs for Over,10,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,10,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,100,10-50O-50N/EPS"
-@mv "Over,10,100,10-50O-50N-messages-sankey.eps" "Over-10-100-10-50O-50N-messages-sankey.eps"
-@mv "Over,10,100,10-50O-50N-messages.eps" "Over-10-100-10-50O-50N-messages.eps"
-@mv "Over,10,100,10-50O-50N-cycleBreakdown.eps" "Over-10-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,10,100,10-50O-50N-utilScatterAll-Fault.eps" "Over-10-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,10,100,10-50O-50N-utilScatterAll-NoFault.eps" "Over-10-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,10,100,10-50O-50N-utility-final.eps" "Over-10-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -10191,12 +9207,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo Generating graphs for Over,10,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,10,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,0,1-10O-100N/EPS"
-@mv "Over,10,0,1-10O-100N-messages-sankey.eps" "Over-10-0-1-10O-100N-messages-sankey.eps"
-@mv "Over,10,0,1-10O-100N-messages.eps" "Over-10-0-1-10O-100N-messages.eps"
-@mv "Over,10,0,1-10O-100N-cycleBreakdown.eps" "Over-10-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,10,0,1-10O-100N-utilScatterAll-Fault.eps" "Over-10-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,10,0,1-10O-100N-utilScatterAll-NoFault.eps" "Over-10-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,10,0,1-10O-100N-utility-final.eps" "Over-10-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -10253,12 +9263,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo Generating graphs for Over,10,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,10,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,0,2-50O-50N/EPS"
-@mv "Over,10,0,2-50O-50N-messages-sankey.eps" "Over-10-0-2-50O-50N-messages-sankey.eps"
-@mv "Over,10,0,2-50O-50N-messages.eps" "Over-10-0-2-50O-50N-messages.eps"
-@mv "Over,10,0,2-50O-50N-cycleBreakdown.eps" "Over-10-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,10,0,2-50O-50N-utilScatterAll-Fault.eps" "Over-10-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,10,0,2-50O-50N-utilScatterAll-NoFault.eps" "Over-10-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,10,0,2-50O-50N-utility-final.eps" "Over-10-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -10315,12 +9319,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo Generating graphs for Over,10,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,10,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,0,5-25O-100N/EPS"
-@mv "Over,10,0,5-25O-100N-messages-sankey.eps" "Over-10-0-5-25O-100N-messages-sankey.eps"
-@mv "Over,10,0,5-25O-100N-messages.eps" "Over-10-0-5-25O-100N-messages.eps"
-@mv "Over,10,0,5-25O-100N-cycleBreakdown.eps" "Over-10-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,10,0,5-25O-100N-utilScatterAll-Fault.eps" "Over-10-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,10,0,5-25O-100N-utilScatterAll-NoFault.eps" "Over-10-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,10,0,5-25O-100N-utility-final.eps" "Over-10-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -10377,12 +9375,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo Generating graphs for Over,10,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,10,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,0,10-50O-50N/EPS"
-@mv "Over,10,0,10-50O-50N-messages-sankey.eps" "Over-10-0-10-50O-50N-messages-sankey.eps"
-@mv "Over,10,0,10-50O-50N-messages.eps" "Over-10-0-10-50O-50N-messages.eps"
-@mv "Over,10,0,10-50O-50N-cycleBreakdown.eps" "Over-10-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,10,0,10-50O-50N-utilScatterAll-Fault.eps" "Over-10-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,10,0,10-50O-50N-utilScatterAll-NoFault.eps" "Over-10-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,10,0,10-50O-50N-utility-final.eps" "Over-10-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -10439,12 +9431,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo Generating graphs for Over,10,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,10,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,50,1-10O-100N/EPS"
-@mv "Over,10,50,1-10O-100N-messages-sankey.eps" "Over-10-50-1-10O-100N-messages-sankey.eps"
-@mv "Over,10,50,1-10O-100N-messages.eps" "Over-10-50-1-10O-100N-messages.eps"
-@mv "Over,10,50,1-10O-100N-cycleBreakdown.eps" "Over-10-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,10,50,1-10O-100N-utilScatterAll-Fault.eps" "Over-10-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,10,50,1-10O-100N-utilScatterAll-NoFault.eps" "Over-10-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,10,50,1-10O-100N-utility-final.eps" "Over-10-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -10501,12 +9487,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo Generating graphs for Over,10,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,10,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,50,2-50O-50N/EPS"
-@mv "Over,10,50,2-50O-50N-messages-sankey.eps" "Over-10-50-2-50O-50N-messages-sankey.eps"
-@mv "Over,10,50,2-50O-50N-messages.eps" "Over-10-50-2-50O-50N-messages.eps"
-@mv "Over,10,50,2-50O-50N-cycleBreakdown.eps" "Over-10-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,10,50,2-50O-50N-utilScatterAll-Fault.eps" "Over-10-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,10,50,2-50O-50N-utilScatterAll-NoFault.eps" "Over-10-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,10,50,2-50O-50N-utility-final.eps" "Over-10-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -10563,12 +9543,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo Generating graphs for Over,10,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,10,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,50,5-25O-100N/EPS"
-@mv "Over,10,50,5-25O-100N-messages-sankey.eps" "Over-10-50-5-25O-100N-messages-sankey.eps"
-@mv "Over,10,50,5-25O-100N-messages.eps" "Over-10-50-5-25O-100N-messages.eps"
-@mv "Over,10,50,5-25O-100N-cycleBreakdown.eps" "Over-10-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,10,50,5-25O-100N-utilScatterAll-Fault.eps" "Over-10-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,10,50,5-25O-100N-utilScatterAll-NoFault.eps" "Over-10-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,10,50,5-25O-100N-utility-final.eps" "Over-10-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -10625,12 +9599,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo Generating graphs for Over,10,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,10,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,50,10-50O-50N/EPS"
-@mv "Over,10,50,10-50O-50N-messages-sankey.eps" "Over-10-50-10-50O-50N-messages-sankey.eps"
-@mv "Over,10,50,10-50O-50N-messages.eps" "Over-10-50-10-50O-50N-messages.eps"
-@mv "Over,10,50,10-50O-50N-cycleBreakdown.eps" "Over-10-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,10,50,10-50O-50N-utilScatterAll-Fault.eps" "Over-10-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,10,50,10-50O-50N-utilScatterAll-NoFault.eps" "Over-10-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,10,50,10-50O-50N-utility-final.eps" "Over-10-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -10687,12 +9655,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo Generating graphs for Over,10,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,10,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,10,1-10O-100N/EPS"
-@mv "Over,10,10,1-10O-100N-messages-sankey.eps" "Over-10-10-1-10O-100N-messages-sankey.eps"
-@mv "Over,10,10,1-10O-100N-messages.eps" "Over-10-10-1-10O-100N-messages.eps"
-@mv "Over,10,10,1-10O-100N-cycleBreakdown.eps" "Over-10-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,10,10,1-10O-100N-utilScatterAll-Fault.eps" "Over-10-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,10,10,1-10O-100N-utilScatterAll-NoFault.eps" "Over-10-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,10,10,1-10O-100N-utility-final.eps" "Over-10-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -10749,12 +9711,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo Generating graphs for Over,10,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,10,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,10,2-50O-50N/EPS"
-@mv "Over,10,10,2-50O-50N-messages-sankey.eps" "Over-10-10-2-50O-50N-messages-sankey.eps"
-@mv "Over,10,10,2-50O-50N-messages.eps" "Over-10-10-2-50O-50N-messages.eps"
-@mv "Over,10,10,2-50O-50N-cycleBreakdown.eps" "Over-10-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,10,10,2-50O-50N-utilScatterAll-Fault.eps" "Over-10-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,10,10,2-50O-50N-utilScatterAll-NoFault.eps" "Over-10-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,10,10,2-50O-50N-utility-final.eps" "Over-10-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -10811,12 +9767,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo Generating graphs for Over,10,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,10,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,10,5-25O-100N/EPS"
-@mv "Over,10,10,5-25O-100N-messages-sankey.eps" "Over-10-10-5-25O-100N-messages-sankey.eps"
-@mv "Over,10,10,5-25O-100N-messages.eps" "Over-10-10-5-25O-100N-messages.eps"
-@mv "Over,10,10,5-25O-100N-cycleBreakdown.eps" "Over-10-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,10,10,5-25O-100N-utilScatterAll-Fault.eps" "Over-10-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,10,10,5-25O-100N-utilScatterAll-NoFault.eps" "Over-10-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,10,10,5-25O-100N-utility-final.eps" "Over-10-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -10873,12 +9823,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo Generating graphs for Over,10,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,10,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,10,10-50O-50N/EPS"
-@mv "Over,10,10,10-50O-50N-messages-sankey.eps" "Over-10-10-10-50O-50N-messages-sankey.eps"
-@mv "Over,10,10,10-50O-50N-messages.eps" "Over-10-10-10-50O-50N-messages.eps"
-@mv "Over,10,10,10-50O-50N-cycleBreakdown.eps" "Over-10-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,10,10,10-50O-50N-utilScatterAll-Fault.eps" "Over-10-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,10,10,10-50O-50N-utilScatterAll-NoFault.eps" "Over-10-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,10,10,10-50O-50N-utility-final.eps" "Over-10-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -10935,12 +9879,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo Generating graphs for Over,10,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,10,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,90,1-10O-100N/EPS"
-@mv "Over,10,90,1-10O-100N-messages-sankey.eps" "Over-10-90-1-10O-100N-messages-sankey.eps"
-@mv "Over,10,90,1-10O-100N-messages.eps" "Over-10-90-1-10O-100N-messages.eps"
-@mv "Over,10,90,1-10O-100N-cycleBreakdown.eps" "Over-10-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,10,90,1-10O-100N-utilScatterAll-Fault.eps" "Over-10-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,10,90,1-10O-100N-utilScatterAll-NoFault.eps" "Over-10-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,10,90,1-10O-100N-utility-final.eps" "Over-10-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -10997,12 +9935,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo Generating graphs for Over,10,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,10,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,90,2-50O-50N/EPS"
-@mv "Over,10,90,2-50O-50N-messages-sankey.eps" "Over-10-90-2-50O-50N-messages-sankey.eps"
-@mv "Over,10,90,2-50O-50N-messages.eps" "Over-10-90-2-50O-50N-messages.eps"
-@mv "Over,10,90,2-50O-50N-cycleBreakdown.eps" "Over-10-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,10,90,2-50O-50N-utilScatterAll-Fault.eps" "Over-10-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,10,90,2-50O-50N-utilScatterAll-NoFault.eps" "Over-10-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,10,90,2-50O-50N-utility-final.eps" "Over-10-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -11059,12 +9991,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo Generating graphs for Over,10,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,10,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,90,5-25O-100N/EPS"
-@mv "Over,10,90,5-25O-100N-messages-sankey.eps" "Over-10-90-5-25O-100N-messages-sankey.eps"
-@mv "Over,10,90,5-25O-100N-messages.eps" "Over-10-90-5-25O-100N-messages.eps"
-@mv "Over,10,90,5-25O-100N-cycleBreakdown.eps" "Over-10-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,10,90,5-25O-100N-utilScatterAll-Fault.eps" "Over-10-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,10,90,5-25O-100N-utilScatterAll-NoFault.eps" "Over-10-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,10,90,5-25O-100N-utility-final.eps" "Over-10-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -11121,12 +10047,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo Generating graphs for Over,10,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,10,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,90,10-50O-50N/EPS"
-@mv "Over,10,90,10-50O-50N-messages-sankey.eps" "Over-10-90-10-50O-50N-messages-sankey.eps"
-@mv "Over,10,90,10-50O-50N-messages.eps" "Over-10-90-10-50O-50N-messages.eps"
-@mv "Over,10,90,10-50O-50N-cycleBreakdown.eps" "Over-10-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,10,90,10-50O-50N-utilScatterAll-Fault.eps" "Over-10-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,10,90,10-50O-50N-utilScatterAll-NoFault.eps" "Over-10-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,10,90,10-50O-50N-utility-final.eps" "Over-10-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -11183,12 +10103,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo Generating graphs for Over,90,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,90,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,100,1-10O-100N/EPS"
-@mv "Over,90,100,1-10O-100N-messages-sankey.eps" "Over-90-100-1-10O-100N-messages-sankey.eps"
-@mv "Over,90,100,1-10O-100N-messages.eps" "Over-90-100-1-10O-100N-messages.eps"
-@mv "Over,90,100,1-10O-100N-cycleBreakdown.eps" "Over-90-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,90,100,1-10O-100N-utilScatterAll-Fault.eps" "Over-90-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,90,100,1-10O-100N-utilScatterAll-NoFault.eps" "Over-90-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,90,100,1-10O-100N-utility-final.eps" "Over-90-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -11245,12 +10159,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo Generating graphs for Over,90,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,90,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,100,2-50O-50N/EPS"
-@mv "Over,90,100,2-50O-50N-messages-sankey.eps" "Over-90-100-2-50O-50N-messages-sankey.eps"
-@mv "Over,90,100,2-50O-50N-messages.eps" "Over-90-100-2-50O-50N-messages.eps"
-@mv "Over,90,100,2-50O-50N-cycleBreakdown.eps" "Over-90-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,90,100,2-50O-50N-utilScatterAll-Fault.eps" "Over-90-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,90,100,2-50O-50N-utilScatterAll-NoFault.eps" "Over-90-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,90,100,2-50O-50N-utility-final.eps" "Over-90-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -11307,12 +10215,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo Generating graphs for Over,90,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,90,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,100,5-25O-100N/EPS"
-@mv "Over,90,100,5-25O-100N-messages-sankey.eps" "Over-90-100-5-25O-100N-messages-sankey.eps"
-@mv "Over,90,100,5-25O-100N-messages.eps" "Over-90-100-5-25O-100N-messages.eps"
-@mv "Over,90,100,5-25O-100N-cycleBreakdown.eps" "Over-90-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,90,100,5-25O-100N-utilScatterAll-Fault.eps" "Over-90-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,90,100,5-25O-100N-utilScatterAll-NoFault.eps" "Over-90-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,90,100,5-25O-100N-utility-final.eps" "Over-90-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -11369,12 +10271,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo Generating graphs for Over,90,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,90,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,100,10-50O-50N/EPS"
-@mv "Over,90,100,10-50O-50N-messages-sankey.eps" "Over-90-100-10-50O-50N-messages-sankey.eps"
-@mv "Over,90,100,10-50O-50N-messages.eps" "Over-90-100-10-50O-50N-messages.eps"
-@mv "Over,90,100,10-50O-50N-cycleBreakdown.eps" "Over-90-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,90,100,10-50O-50N-utilScatterAll-Fault.eps" "Over-90-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,90,100,10-50O-50N-utilScatterAll-NoFault.eps" "Over-90-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,90,100,10-50O-50N-utility-final.eps" "Over-90-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -11431,12 +10327,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo Generating graphs for Over,90,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,90,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,0,1-10O-100N/EPS"
-@mv "Over,90,0,1-10O-100N-messages-sankey.eps" "Over-90-0-1-10O-100N-messages-sankey.eps"
-@mv "Over,90,0,1-10O-100N-messages.eps" "Over-90-0-1-10O-100N-messages.eps"
-@mv "Over,90,0,1-10O-100N-cycleBreakdown.eps" "Over-90-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,90,0,1-10O-100N-utilScatterAll-Fault.eps" "Over-90-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,90,0,1-10O-100N-utilScatterAll-NoFault.eps" "Over-90-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,90,0,1-10O-100N-utility-final.eps" "Over-90-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -11493,12 +10383,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo Generating graphs for Over,90,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,90,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,0,2-50O-50N/EPS"
-@mv "Over,90,0,2-50O-50N-messages-sankey.eps" "Over-90-0-2-50O-50N-messages-sankey.eps"
-@mv "Over,90,0,2-50O-50N-messages.eps" "Over-90-0-2-50O-50N-messages.eps"
-@mv "Over,90,0,2-50O-50N-cycleBreakdown.eps" "Over-90-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,90,0,2-50O-50N-utilScatterAll-Fault.eps" "Over-90-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,90,0,2-50O-50N-utilScatterAll-NoFault.eps" "Over-90-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,90,0,2-50O-50N-utility-final.eps" "Over-90-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -11555,12 +10439,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo Generating graphs for Over,90,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,90,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,0,5-25O-100N/EPS"
-@mv "Over,90,0,5-25O-100N-messages-sankey.eps" "Over-90-0-5-25O-100N-messages-sankey.eps"
-@mv "Over,90,0,5-25O-100N-messages.eps" "Over-90-0-5-25O-100N-messages.eps"
-@mv "Over,90,0,5-25O-100N-cycleBreakdown.eps" "Over-90-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,90,0,5-25O-100N-utilScatterAll-Fault.eps" "Over-90-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,90,0,5-25O-100N-utilScatterAll-NoFault.eps" "Over-90-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,90,0,5-25O-100N-utility-final.eps" "Over-90-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -11617,12 +10495,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo Generating graphs for Over,90,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,90,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,0,10-50O-50N/EPS"
-@mv "Over,90,0,10-50O-50N-messages-sankey.eps" "Over-90-0-10-50O-50N-messages-sankey.eps"
-@mv "Over,90,0,10-50O-50N-messages.eps" "Over-90-0-10-50O-50N-messages.eps"
-@mv "Over,90,0,10-50O-50N-cycleBreakdown.eps" "Over-90-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,90,0,10-50O-50N-utilScatterAll-Fault.eps" "Over-90-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,90,0,10-50O-50N-utilScatterAll-NoFault.eps" "Over-90-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,90,0,10-50O-50N-utility-final.eps" "Over-90-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -11679,12 +10551,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo Generating graphs for Over,90,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,90,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,50,1-10O-100N/EPS"
-@mv "Over,90,50,1-10O-100N-messages-sankey.eps" "Over-90-50-1-10O-100N-messages-sankey.eps"
-@mv "Over,90,50,1-10O-100N-messages.eps" "Over-90-50-1-10O-100N-messages.eps"
-@mv "Over,90,50,1-10O-100N-cycleBreakdown.eps" "Over-90-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,90,50,1-10O-100N-utilScatterAll-Fault.eps" "Over-90-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,90,50,1-10O-100N-utilScatterAll-NoFault.eps" "Over-90-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,90,50,1-10O-100N-utility-final.eps" "Over-90-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -11741,12 +10607,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo Generating graphs for Over,90,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,90,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,50,2-50O-50N/EPS"
-@mv "Over,90,50,2-50O-50N-messages-sankey.eps" "Over-90-50-2-50O-50N-messages-sankey.eps"
-@mv "Over,90,50,2-50O-50N-messages.eps" "Over-90-50-2-50O-50N-messages.eps"
-@mv "Over,90,50,2-50O-50N-cycleBreakdown.eps" "Over-90-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,90,50,2-50O-50N-utilScatterAll-Fault.eps" "Over-90-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,90,50,2-50O-50N-utilScatterAll-NoFault.eps" "Over-90-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,90,50,2-50O-50N-utility-final.eps" "Over-90-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -11803,12 +10663,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo Generating graphs for Over,90,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,90,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,50,5-25O-100N/EPS"
-@mv "Over,90,50,5-25O-100N-messages-sankey.eps" "Over-90-50-5-25O-100N-messages-sankey.eps"
-@mv "Over,90,50,5-25O-100N-messages.eps" "Over-90-50-5-25O-100N-messages.eps"
-@mv "Over,90,50,5-25O-100N-cycleBreakdown.eps" "Over-90-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,90,50,5-25O-100N-utilScatterAll-Fault.eps" "Over-90-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,90,50,5-25O-100N-utilScatterAll-NoFault.eps" "Over-90-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,90,50,5-25O-100N-utility-final.eps" "Over-90-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -11865,12 +10719,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo Generating graphs for Over,90,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,90,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,50,10-50O-50N/EPS"
-@mv "Over,90,50,10-50O-50N-messages-sankey.eps" "Over-90-50-10-50O-50N-messages-sankey.eps"
-@mv "Over,90,50,10-50O-50N-messages.eps" "Over-90-50-10-50O-50N-messages.eps"
-@mv "Over,90,50,10-50O-50N-cycleBreakdown.eps" "Over-90-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,90,50,10-50O-50N-utilScatterAll-Fault.eps" "Over-90-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,90,50,10-50O-50N-utilScatterAll-NoFault.eps" "Over-90-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,90,50,10-50O-50N-utility-final.eps" "Over-90-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -11927,12 +10775,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo Generating graphs for Over,90,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,90,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,10,1-10O-100N/EPS"
-@mv "Over,90,10,1-10O-100N-messages-sankey.eps" "Over-90-10-1-10O-100N-messages-sankey.eps"
-@mv "Over,90,10,1-10O-100N-messages.eps" "Over-90-10-1-10O-100N-messages.eps"
-@mv "Over,90,10,1-10O-100N-cycleBreakdown.eps" "Over-90-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,90,10,1-10O-100N-utilScatterAll-Fault.eps" "Over-90-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,90,10,1-10O-100N-utilScatterAll-NoFault.eps" "Over-90-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,90,10,1-10O-100N-utility-final.eps" "Over-90-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -11989,12 +10831,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo Generating graphs for Over,90,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,90,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,10,2-50O-50N/EPS"
-@mv "Over,90,10,2-50O-50N-messages-sankey.eps" "Over-90-10-2-50O-50N-messages-sankey.eps"
-@mv "Over,90,10,2-50O-50N-messages.eps" "Over-90-10-2-50O-50N-messages.eps"
-@mv "Over,90,10,2-50O-50N-cycleBreakdown.eps" "Over-90-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,90,10,2-50O-50N-utilScatterAll-Fault.eps" "Over-90-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,90,10,2-50O-50N-utilScatterAll-NoFault.eps" "Over-90-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,90,10,2-50O-50N-utility-final.eps" "Over-90-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -12051,12 +10887,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo Generating graphs for Over,90,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,90,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,10,5-25O-100N/EPS"
-@mv "Over,90,10,5-25O-100N-messages-sankey.eps" "Over-90-10-5-25O-100N-messages-sankey.eps"
-@mv "Over,90,10,5-25O-100N-messages.eps" "Over-90-10-5-25O-100N-messages.eps"
-@mv "Over,90,10,5-25O-100N-cycleBreakdown.eps" "Over-90-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,90,10,5-25O-100N-utilScatterAll-Fault.eps" "Over-90-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,90,10,5-25O-100N-utilScatterAll-NoFault.eps" "Over-90-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,90,10,5-25O-100N-utility-final.eps" "Over-90-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -12113,12 +10943,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo Generating graphs for Over,90,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,90,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,10,10-50O-50N/EPS"
-@mv "Over,90,10,10-50O-50N-messages-sankey.eps" "Over-90-10-10-50O-50N-messages-sankey.eps"
-@mv "Over,90,10,10-50O-50N-messages.eps" "Over-90-10-10-50O-50N-messages.eps"
-@mv "Over,90,10,10-50O-50N-cycleBreakdown.eps" "Over-90-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,90,10,10-50O-50N-utilScatterAll-Fault.eps" "Over-90-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,90,10,10-50O-50N-utilScatterAll-NoFault.eps" "Over-90-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,90,10,10-50O-50N-utility-final.eps" "Over-90-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -12175,12 +10999,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo Generating graphs for Over,90,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,90,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,90,1-10O-100N/EPS"
-@mv "Over,90,90,1-10O-100N-messages-sankey.eps" "Over-90-90-1-10O-100N-messages-sankey.eps"
-@mv "Over,90,90,1-10O-100N-messages.eps" "Over-90-90-1-10O-100N-messages.eps"
-@mv "Over,90,90,1-10O-100N-cycleBreakdown.eps" "Over-90-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Over,90,90,1-10O-100N-utilScatterAll-Fault.eps" "Over-90-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Over,90,90,1-10O-100N-utilScatterAll-NoFault.eps" "Over-90-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,90,90,1-10O-100N-utility-final.eps" "Over-90-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -12237,12 +11055,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo Generating graphs for Over,90,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,90,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,90,2-50O-50N/EPS"
-@mv "Over,90,90,2-50O-50N-messages-sankey.eps" "Over-90-90-2-50O-50N-messages-sankey.eps"
-@mv "Over,90,90,2-50O-50N-messages.eps" "Over-90-90-2-50O-50N-messages.eps"
-@mv "Over,90,90,2-50O-50N-cycleBreakdown.eps" "Over-90-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Over,90,90,2-50O-50N-utilScatterAll-Fault.eps" "Over-90-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,90,90,2-50O-50N-utilScatterAll-NoFault.eps" "Over-90-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,90,90,2-50O-50N-utility-final.eps" "Over-90-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -12299,12 +11111,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo Generating graphs for Over,90,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,90,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,90,5-25O-100N/EPS"
-@mv "Over,90,90,5-25O-100N-messages-sankey.eps" "Over-90-90-5-25O-100N-messages-sankey.eps"
-@mv "Over,90,90,5-25O-100N-messages.eps" "Over-90-90-5-25O-100N-messages.eps"
-@mv "Over,90,90,5-25O-100N-cycleBreakdown.eps" "Over-90-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Over,90,90,5-25O-100N-utilScatterAll-Fault.eps" "Over-90-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Over,90,90,5-25O-100N-utilScatterAll-NoFault.eps" "Over-90-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Over,90,90,5-25O-100N-utility-final.eps" "Over-90-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -12361,12 +11167,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo Generating graphs for Over,90,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Over,90,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,90,10-50O-50N/EPS"
-@mv "Over,90,90,10-50O-50N-messages-sankey.eps" "Over-90-90-10-50O-50N-messages-sankey.eps"
-@mv "Over,90,90,10-50O-50N-messages.eps" "Over-90-90-10-50O-50N-messages.eps"
-@mv "Over,90,90,10-50O-50N-cycleBreakdown.eps" "Over-90-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Over,90,90,10-50O-50N-utilScatterAll-Fault.eps" "Over-90-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Over,90,90,10-50O-50N-utilScatterAll-NoFault.eps" "Over-90-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Over,90,90,10-50O-50N-utility-final.eps" "Over-90-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -12423,12 +11223,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo Generating graphs for Full,100,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,100,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,100,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100,100,1-10O-100N/EPS"
-@mv "Full,100,100,1-10O-100N-messages-sankey.eps" "Full-100-100-1-10O-100N-messages-sankey.eps"
-@mv "Full,100,100,1-10O-100N-messages.eps" "Full-100-100-1-10O-100N-messages.eps"
-@mv "Full,100,100,1-10O-100N-cycleBreakdown.eps" "Full-100-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,100,100,1-10O-100N-utilScatterAll-Fault.eps" "Full-100-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,100,100,1-10O-100N-utilScatterAll-NoFault.eps" "Full-100-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,100,100,1-10O-100N-utility-final.eps" "Full-100-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -12485,12 +11279,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100
 @echo Generating graphs for Full,100,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,100,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,100,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100,100,2-50O-50N/EPS"
-@mv "Full,100,100,2-50O-50N-messages-sankey.eps" "Full-100-100-2-50O-50N-messages-sankey.eps"
-@mv "Full,100,100,2-50O-50N-messages.eps" "Full-100-100-2-50O-50N-messages.eps"
-@mv "Full,100,100,2-50O-50N-cycleBreakdown.eps" "Full-100-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,100,100,2-50O-50N-utilScatterAll-Fault.eps" "Full-100-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,100,100,2-50O-50N-utilScatterAll-NoFault.eps" "Full-100-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,100,100,2-50O-50N-utility-final.eps" "Full-100-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -12547,12 +11335,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100
 @echo Generating graphs for Full,100,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,100,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,100,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100,100,5-25O-100N/EPS"
-@mv "Full,100,100,5-25O-100N-messages-sankey.eps" "Full-100-100-5-25O-100N-messages-sankey.eps"
-@mv "Full,100,100,5-25O-100N-messages.eps" "Full-100-100-5-25O-100N-messages.eps"
-@mv "Full,100,100,5-25O-100N-cycleBreakdown.eps" "Full-100-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,100,100,5-25O-100N-utilScatterAll-Fault.eps" "Full-100-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,100,100,5-25O-100N-utilScatterAll-NoFault.eps" "Full-100-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,100,100,5-25O-100N-utility-final.eps" "Full-100-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -12609,12 +11391,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100
 @echo Generating graphs for Full,100,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,100,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,100,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100,100,10-50O-50N/EPS"
-@mv "Full,100,100,10-50O-50N-messages-sankey.eps" "Full-100-100-10-50O-50N-messages-sankey.eps"
-@mv "Full,100,100,10-50O-50N-messages.eps" "Full-100-100-10-50O-50N-messages.eps"
-@mv "Full,100,100,10-50O-50N-cycleBreakdown.eps" "Full-100-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,100,100,10-50O-50N-utilScatterAll-Fault.eps" "Full-100-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,100,100,10-50O-50N-utilScatterAll-NoFault.eps" "Full-100-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,100,100,10-50O-50N-utility-final.eps" "Full-100-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -12671,12 +11447,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100
 @echo Generating graphs for Full,100,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,100,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,100,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100,0,1-10O-100N/EPS"
-@mv "Full,100,0,1-10O-100N-messages-sankey.eps" "Full-100-0-1-10O-100N-messages-sankey.eps"
-@mv "Full,100,0,1-10O-100N-messages.eps" "Full-100-0-1-10O-100N-messages.eps"
-@mv "Full,100,0,1-10O-100N-cycleBreakdown.eps" "Full-100-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,100,0,1-10O-100N-utilScatterAll-Fault.eps" "Full-100-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,100,0,1-10O-100N-utilScatterAll-NoFault.eps" "Full-100-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,100,0,1-10O-100N-utility-final.eps" "Full-100-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -12733,12 +11503,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100
 @echo Generating graphs for Full,100,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,100,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,100,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100,0,2-50O-50N/EPS"
-@mv "Full,100,0,2-50O-50N-messages-sankey.eps" "Full-100-0-2-50O-50N-messages-sankey.eps"
-@mv "Full,100,0,2-50O-50N-messages.eps" "Full-100-0-2-50O-50N-messages.eps"
-@mv "Full,100,0,2-50O-50N-cycleBreakdown.eps" "Full-100-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,100,0,2-50O-50N-utilScatterAll-Fault.eps" "Full-100-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,100,0,2-50O-50N-utilScatterAll-NoFault.eps" "Full-100-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,100,0,2-50O-50N-utility-final.eps" "Full-100-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -12795,12 +11559,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100
 @echo Generating graphs for Full,100,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,100,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,100,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100,0,5-25O-100N/EPS"
-@mv "Full,100,0,5-25O-100N-messages-sankey.eps" "Full-100-0-5-25O-100N-messages-sankey.eps"
-@mv "Full,100,0,5-25O-100N-messages.eps" "Full-100-0-5-25O-100N-messages.eps"
-@mv "Full,100,0,5-25O-100N-cycleBreakdown.eps" "Full-100-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,100,0,5-25O-100N-utilScatterAll-Fault.eps" "Full-100-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,100,0,5-25O-100N-utilScatterAll-NoFault.eps" "Full-100-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,100,0,5-25O-100N-utility-final.eps" "Full-100-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -12857,12 +11615,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100
 @echo Generating graphs for Full,100,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,100,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,100,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100,0,10-50O-50N/EPS"
-@mv "Full,100,0,10-50O-50N-messages-sankey.eps" "Full-100-0-10-50O-50N-messages-sankey.eps"
-@mv "Full,100,0,10-50O-50N-messages.eps" "Full-100-0-10-50O-50N-messages.eps"
-@mv "Full,100,0,10-50O-50N-cycleBreakdown.eps" "Full-100-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,100,0,10-50O-50N-utilScatterAll-Fault.eps" "Full-100-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,100,0,10-50O-50N-utilScatterAll-NoFault.eps" "Full-100-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,100,0,10-50O-50N-utility-final.eps" "Full-100-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -12919,12 +11671,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100
 @echo Generating graphs for Full,100,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,100,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,100,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100,50,1-10O-100N/EPS"
-@mv "Full,100,50,1-10O-100N-messages-sankey.eps" "Full-100-50-1-10O-100N-messages-sankey.eps"
-@mv "Full,100,50,1-10O-100N-messages.eps" "Full-100-50-1-10O-100N-messages.eps"
-@mv "Full,100,50,1-10O-100N-cycleBreakdown.eps" "Full-100-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,100,50,1-10O-100N-utilScatterAll-Fault.eps" "Full-100-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,100,50,1-10O-100N-utilScatterAll-NoFault.eps" "Full-100-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,100,50,1-10O-100N-utility-final.eps" "Full-100-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -12981,12 +11727,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100
 @echo Generating graphs for Full,100,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,100,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,100,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100,50,2-50O-50N/EPS"
-@mv "Full,100,50,2-50O-50N-messages-sankey.eps" "Full-100-50-2-50O-50N-messages-sankey.eps"
-@mv "Full,100,50,2-50O-50N-messages.eps" "Full-100-50-2-50O-50N-messages.eps"
-@mv "Full,100,50,2-50O-50N-cycleBreakdown.eps" "Full-100-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,100,50,2-50O-50N-utilScatterAll-Fault.eps" "Full-100-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,100,50,2-50O-50N-utilScatterAll-NoFault.eps" "Full-100-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,100,50,2-50O-50N-utility-final.eps" "Full-100-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -13043,12 +11783,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100
 @echo Generating graphs for Full,100,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,100,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,100,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100,50,5-25O-100N/EPS"
-@mv "Full,100,50,5-25O-100N-messages-sankey.eps" "Full-100-50-5-25O-100N-messages-sankey.eps"
-@mv "Full,100,50,5-25O-100N-messages.eps" "Full-100-50-5-25O-100N-messages.eps"
-@mv "Full,100,50,5-25O-100N-cycleBreakdown.eps" "Full-100-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,100,50,5-25O-100N-utilScatterAll-Fault.eps" "Full-100-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,100,50,5-25O-100N-utilScatterAll-NoFault.eps" "Full-100-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,100,50,5-25O-100N-utility-final.eps" "Full-100-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -13105,12 +11839,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100
 @echo Generating graphs for Full,100,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,100,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,100,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100,50,10-50O-50N/EPS"
-@mv "Full,100,50,10-50O-50N-messages-sankey.eps" "Full-100-50-10-50O-50N-messages-sankey.eps"
-@mv "Full,100,50,10-50O-50N-messages.eps" "Full-100-50-10-50O-50N-messages.eps"
-@mv "Full,100,50,10-50O-50N-cycleBreakdown.eps" "Full-100-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,100,50,10-50O-50N-utilScatterAll-Fault.eps" "Full-100-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,100,50,10-50O-50N-utilScatterAll-NoFault.eps" "Full-100-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,100,50,10-50O-50N-utility-final.eps" "Full-100-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -13167,12 +11895,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100
 @echo Generating graphs for Full,100,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,100,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,100,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100,10,1-10O-100N/EPS"
-@mv "Full,100,10,1-10O-100N-messages-sankey.eps" "Full-100-10-1-10O-100N-messages-sankey.eps"
-@mv "Full,100,10,1-10O-100N-messages.eps" "Full-100-10-1-10O-100N-messages.eps"
-@mv "Full,100,10,1-10O-100N-cycleBreakdown.eps" "Full-100-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,100,10,1-10O-100N-utilScatterAll-Fault.eps" "Full-100-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,100,10,1-10O-100N-utilScatterAll-NoFault.eps" "Full-100-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,100,10,1-10O-100N-utility-final.eps" "Full-100-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -13229,12 +11951,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100
 @echo Generating graphs for Full,100,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,100,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,100,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100,10,2-50O-50N/EPS"
-@mv "Full,100,10,2-50O-50N-messages-sankey.eps" "Full-100-10-2-50O-50N-messages-sankey.eps"
-@mv "Full,100,10,2-50O-50N-messages.eps" "Full-100-10-2-50O-50N-messages.eps"
-@mv "Full,100,10,2-50O-50N-cycleBreakdown.eps" "Full-100-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,100,10,2-50O-50N-utilScatterAll-Fault.eps" "Full-100-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,100,10,2-50O-50N-utilScatterAll-NoFault.eps" "Full-100-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,100,10,2-50O-50N-utility-final.eps" "Full-100-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -13291,12 +12007,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100
 @echo Generating graphs for Full,100,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,100,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,100,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100,10,5-25O-100N/EPS"
-@mv "Full,100,10,5-25O-100N-messages-sankey.eps" "Full-100-10-5-25O-100N-messages-sankey.eps"
-@mv "Full,100,10,5-25O-100N-messages.eps" "Full-100-10-5-25O-100N-messages.eps"
-@mv "Full,100,10,5-25O-100N-cycleBreakdown.eps" "Full-100-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,100,10,5-25O-100N-utilScatterAll-Fault.eps" "Full-100-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,100,10,5-25O-100N-utilScatterAll-NoFault.eps" "Full-100-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,100,10,5-25O-100N-utility-final.eps" "Full-100-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -13353,12 +12063,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100
 @echo Generating graphs for Full,100,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,100,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,100,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100,10,10-50O-50N/EPS"
-@mv "Full,100,10,10-50O-50N-messages-sankey.eps" "Full-100-10-10-50O-50N-messages-sankey.eps"
-@mv "Full,100,10,10-50O-50N-messages.eps" "Full-100-10-10-50O-50N-messages.eps"
-@mv "Full,100,10,10-50O-50N-cycleBreakdown.eps" "Full-100-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,100,10,10-50O-50N-utilScatterAll-Fault.eps" "Full-100-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,100,10,10-50O-50N-utilScatterAll-NoFault.eps" "Full-100-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,100,10,10-50O-50N-utility-final.eps" "Full-100-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -13415,12 +12119,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100
 @echo Generating graphs for Full,100,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,100,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,100,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100,90,1-10O-100N/EPS"
-@mv "Full,100,90,1-10O-100N-messages-sankey.eps" "Full-100-90-1-10O-100N-messages-sankey.eps"
-@mv "Full,100,90,1-10O-100N-messages.eps" "Full-100-90-1-10O-100N-messages.eps"
-@mv "Full,100,90,1-10O-100N-cycleBreakdown.eps" "Full-100-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,100,90,1-10O-100N-utilScatterAll-Fault.eps" "Full-100-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,100,90,1-10O-100N-utilScatterAll-NoFault.eps" "Full-100-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,100,90,1-10O-100N-utility-final.eps" "Full-100-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -13477,12 +12175,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100
 @echo Generating graphs for Full,100,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,100,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,100,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100,90,2-50O-50N/EPS"
-@mv "Full,100,90,2-50O-50N-messages-sankey.eps" "Full-100-90-2-50O-50N-messages-sankey.eps"
-@mv "Full,100,90,2-50O-50N-messages.eps" "Full-100-90-2-50O-50N-messages.eps"
-@mv "Full,100,90,2-50O-50N-cycleBreakdown.eps" "Full-100-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,100,90,2-50O-50N-utilScatterAll-Fault.eps" "Full-100-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,100,90,2-50O-50N-utilScatterAll-NoFault.eps" "Full-100-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,100,90,2-50O-50N-utility-final.eps" "Full-100-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -13539,12 +12231,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100
 @echo Generating graphs for Full,100,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,100,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,100,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100,90,5-25O-100N/EPS"
-@mv "Full,100,90,5-25O-100N-messages-sankey.eps" "Full-100-90-5-25O-100N-messages-sankey.eps"
-@mv "Full,100,90,5-25O-100N-messages.eps" "Full-100-90-5-25O-100N-messages.eps"
-@mv "Full,100,90,5-25O-100N-cycleBreakdown.eps" "Full-100-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,100,90,5-25O-100N-utilScatterAll-Fault.eps" "Full-100-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,100,90,5-25O-100N-utilScatterAll-NoFault.eps" "Full-100-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,100,90,5-25O-100N-utility-final.eps" "Full-100-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -13601,12 +12287,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100
 @echo Generating graphs for Full,100,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,100,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,100,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100,90,10-50O-50N/EPS"
-@mv "Full,100,90,10-50O-50N-messages-sankey.eps" "Full-100-90-10-50O-50N-messages-sankey.eps"
-@mv "Full,100,90,10-50O-50N-messages.eps" "Full-100-90-10-50O-50N-messages.eps"
-@mv "Full,100,90,10-50O-50N-cycleBreakdown.eps" "Full-100-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,100,90,10-50O-50N-utilScatterAll-Fault.eps" "Full-100-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,100,90,10-50O-50N-utilScatterAll-NoFault.eps" "Full-100-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,100,90,10-50O-50N-utility-final.eps" "Full-100-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -13663,12 +12343,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,100
 @echo Generating graphs for Full,0,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,0,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,0,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,100,1-10O-100N/EPS"
-@mv "Full,0,100,1-10O-100N-messages-sankey.eps" "Full-0-100-1-10O-100N-messages-sankey.eps"
-@mv "Full,0,100,1-10O-100N-messages.eps" "Full-0-100-1-10O-100N-messages.eps"
-@mv "Full,0,100,1-10O-100N-cycleBreakdown.eps" "Full-0-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,0,100,1-10O-100N-utilScatterAll-Fault.eps" "Full-0-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,0,100,1-10O-100N-utilScatterAll-NoFault.eps" "Full-0-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,0,100,1-10O-100N-utility-final.eps" "Full-0-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -13725,12 +12399,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,1
 @echo Generating graphs for Full,0,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,0,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,0,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,100,2-50O-50N/EPS"
-@mv "Full,0,100,2-50O-50N-messages-sankey.eps" "Full-0-100-2-50O-50N-messages-sankey.eps"
-@mv "Full,0,100,2-50O-50N-messages.eps" "Full-0-100-2-50O-50N-messages.eps"
-@mv "Full,0,100,2-50O-50N-cycleBreakdown.eps" "Full-0-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,0,100,2-50O-50N-utilScatterAll-Fault.eps" "Full-0-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,0,100,2-50O-50N-utilScatterAll-NoFault.eps" "Full-0-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,0,100,2-50O-50N-utility-final.eps" "Full-0-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -13787,12 +12455,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,1
 @echo Generating graphs for Full,0,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,0,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,0,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,100,5-25O-100N/EPS"
-@mv "Full,0,100,5-25O-100N-messages-sankey.eps" "Full-0-100-5-25O-100N-messages-sankey.eps"
-@mv "Full,0,100,5-25O-100N-messages.eps" "Full-0-100-5-25O-100N-messages.eps"
-@mv "Full,0,100,5-25O-100N-cycleBreakdown.eps" "Full-0-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,0,100,5-25O-100N-utilScatterAll-Fault.eps" "Full-0-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,0,100,5-25O-100N-utilScatterAll-NoFault.eps" "Full-0-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,0,100,5-25O-100N-utility-final.eps" "Full-0-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -13849,12 +12511,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,1
 @echo Generating graphs for Full,0,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,0,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,0,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,100,10-50O-50N/EPS"
-@mv "Full,0,100,10-50O-50N-messages-sankey.eps" "Full-0-100-10-50O-50N-messages-sankey.eps"
-@mv "Full,0,100,10-50O-50N-messages.eps" "Full-0-100-10-50O-50N-messages.eps"
-@mv "Full,0,100,10-50O-50N-cycleBreakdown.eps" "Full-0-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,0,100,10-50O-50N-utilScatterAll-Fault.eps" "Full-0-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,0,100,10-50O-50N-utilScatterAll-NoFault.eps" "Full-0-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,0,100,10-50O-50N-utility-final.eps" "Full-0-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -13911,12 +12567,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,1
 @echo Generating graphs for Full,0,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,0,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,0,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,0,1-10O-100N/EPS"
-@mv "Full,0,0,1-10O-100N-messages-sankey.eps" "Full-0-0-1-10O-100N-messages-sankey.eps"
-@mv "Full,0,0,1-10O-100N-messages.eps" "Full-0-0-1-10O-100N-messages.eps"
-@mv "Full,0,0,1-10O-100N-cycleBreakdown.eps" "Full-0-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,0,0,1-10O-100N-utilScatterAll-Fault.eps" "Full-0-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,0,0,1-10O-100N-utilScatterAll-NoFault.eps" "Full-0-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,0,0,1-10O-100N-utility-final.eps" "Full-0-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -13973,12 +12623,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,0
 @echo Generating graphs for Full,0,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,0,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,0,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,0,2-50O-50N/EPS"
-@mv "Full,0,0,2-50O-50N-messages-sankey.eps" "Full-0-0-2-50O-50N-messages-sankey.eps"
-@mv "Full,0,0,2-50O-50N-messages.eps" "Full-0-0-2-50O-50N-messages.eps"
-@mv "Full,0,0,2-50O-50N-cycleBreakdown.eps" "Full-0-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,0,0,2-50O-50N-utilScatterAll-Fault.eps" "Full-0-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,0,0,2-50O-50N-utilScatterAll-NoFault.eps" "Full-0-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,0,0,2-50O-50N-utility-final.eps" "Full-0-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -14035,12 +12679,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,0
 @echo Generating graphs for Full,0,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,0,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,0,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,0,5-25O-100N/EPS"
-@mv "Full,0,0,5-25O-100N-messages-sankey.eps" "Full-0-0-5-25O-100N-messages-sankey.eps"
-@mv "Full,0,0,5-25O-100N-messages.eps" "Full-0-0-5-25O-100N-messages.eps"
-@mv "Full,0,0,5-25O-100N-cycleBreakdown.eps" "Full-0-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,0,0,5-25O-100N-utilScatterAll-Fault.eps" "Full-0-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,0,0,5-25O-100N-utilScatterAll-NoFault.eps" "Full-0-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,0,0,5-25O-100N-utility-final.eps" "Full-0-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -14097,12 +12735,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,0
 @echo Generating graphs for Full,0,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,0,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,0,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,0,10-50O-50N/EPS"
-@mv "Full,0,0,10-50O-50N-messages-sankey.eps" "Full-0-0-10-50O-50N-messages-sankey.eps"
-@mv "Full,0,0,10-50O-50N-messages.eps" "Full-0-0-10-50O-50N-messages.eps"
-@mv "Full,0,0,10-50O-50N-cycleBreakdown.eps" "Full-0-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,0,0,10-50O-50N-utilScatterAll-Fault.eps" "Full-0-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,0,0,10-50O-50N-utilScatterAll-NoFault.eps" "Full-0-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,0,0,10-50O-50N-utility-final.eps" "Full-0-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -14159,12 +12791,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,0
 @echo Generating graphs for Full,0,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,0,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,0,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,50,1-10O-100N/EPS"
-@mv "Full,0,50,1-10O-100N-messages-sankey.eps" "Full-0-50-1-10O-100N-messages-sankey.eps"
-@mv "Full,0,50,1-10O-100N-messages.eps" "Full-0-50-1-10O-100N-messages.eps"
-@mv "Full,0,50,1-10O-100N-cycleBreakdown.eps" "Full-0-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,0,50,1-10O-100N-utilScatterAll-Fault.eps" "Full-0-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,0,50,1-10O-100N-utilScatterAll-NoFault.eps" "Full-0-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,0,50,1-10O-100N-utility-final.eps" "Full-0-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -14221,12 +12847,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,5
 @echo Generating graphs for Full,0,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,0,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,0,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,50,2-50O-50N/EPS"
-@mv "Full,0,50,2-50O-50N-messages-sankey.eps" "Full-0-50-2-50O-50N-messages-sankey.eps"
-@mv "Full,0,50,2-50O-50N-messages.eps" "Full-0-50-2-50O-50N-messages.eps"
-@mv "Full,0,50,2-50O-50N-cycleBreakdown.eps" "Full-0-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,0,50,2-50O-50N-utilScatterAll-Fault.eps" "Full-0-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,0,50,2-50O-50N-utilScatterAll-NoFault.eps" "Full-0-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,0,50,2-50O-50N-utility-final.eps" "Full-0-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -14283,12 +12903,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,5
 @echo Generating graphs for Full,0,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,0,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,0,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,50,5-25O-100N/EPS"
-@mv "Full,0,50,5-25O-100N-messages-sankey.eps" "Full-0-50-5-25O-100N-messages-sankey.eps"
-@mv "Full,0,50,5-25O-100N-messages.eps" "Full-0-50-5-25O-100N-messages.eps"
-@mv "Full,0,50,5-25O-100N-cycleBreakdown.eps" "Full-0-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,0,50,5-25O-100N-utilScatterAll-Fault.eps" "Full-0-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,0,50,5-25O-100N-utilScatterAll-NoFault.eps" "Full-0-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,0,50,5-25O-100N-utility-final.eps" "Full-0-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -14345,12 +12959,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,5
 @echo Generating graphs for Full,0,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,0,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,0,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,50,10-50O-50N/EPS"
-@mv "Full,0,50,10-50O-50N-messages-sankey.eps" "Full-0-50-10-50O-50N-messages-sankey.eps"
-@mv "Full,0,50,10-50O-50N-messages.eps" "Full-0-50-10-50O-50N-messages.eps"
-@mv "Full,0,50,10-50O-50N-cycleBreakdown.eps" "Full-0-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,0,50,10-50O-50N-utilScatterAll-Fault.eps" "Full-0-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,0,50,10-50O-50N-utilScatterAll-NoFault.eps" "Full-0-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,0,50,10-50O-50N-utility-final.eps" "Full-0-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -14407,12 +13015,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,5
 @echo Generating graphs for Full,0,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,0,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,0,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,10,1-10O-100N/EPS"
-@mv "Full,0,10,1-10O-100N-messages-sankey.eps" "Full-0-10-1-10O-100N-messages-sankey.eps"
-@mv "Full,0,10,1-10O-100N-messages.eps" "Full-0-10-1-10O-100N-messages.eps"
-@mv "Full,0,10,1-10O-100N-cycleBreakdown.eps" "Full-0-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,0,10,1-10O-100N-utilScatterAll-Fault.eps" "Full-0-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,0,10,1-10O-100N-utilScatterAll-NoFault.eps" "Full-0-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,0,10,1-10O-100N-utility-final.eps" "Full-0-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -14469,12 +13071,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,1
 @echo Generating graphs for Full,0,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,0,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,0,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,10,2-50O-50N/EPS"
-@mv "Full,0,10,2-50O-50N-messages-sankey.eps" "Full-0-10-2-50O-50N-messages-sankey.eps"
-@mv "Full,0,10,2-50O-50N-messages.eps" "Full-0-10-2-50O-50N-messages.eps"
-@mv "Full,0,10,2-50O-50N-cycleBreakdown.eps" "Full-0-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,0,10,2-50O-50N-utilScatterAll-Fault.eps" "Full-0-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,0,10,2-50O-50N-utilScatterAll-NoFault.eps" "Full-0-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,0,10,2-50O-50N-utility-final.eps" "Full-0-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -14531,12 +13127,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,1
 @echo Generating graphs for Full,0,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,0,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,0,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,10,5-25O-100N/EPS"
-@mv "Full,0,10,5-25O-100N-messages-sankey.eps" "Full-0-10-5-25O-100N-messages-sankey.eps"
-@mv "Full,0,10,5-25O-100N-messages.eps" "Full-0-10-5-25O-100N-messages.eps"
-@mv "Full,0,10,5-25O-100N-cycleBreakdown.eps" "Full-0-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,0,10,5-25O-100N-utilScatterAll-Fault.eps" "Full-0-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,0,10,5-25O-100N-utilScatterAll-NoFault.eps" "Full-0-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,0,10,5-25O-100N-utility-final.eps" "Full-0-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -14593,12 +13183,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,1
 @echo Generating graphs for Full,0,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,0,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,0,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,10,10-50O-50N/EPS"
-@mv "Full,0,10,10-50O-50N-messages-sankey.eps" "Full-0-10-10-50O-50N-messages-sankey.eps"
-@mv "Full,0,10,10-50O-50N-messages.eps" "Full-0-10-10-50O-50N-messages.eps"
-@mv "Full,0,10,10-50O-50N-cycleBreakdown.eps" "Full-0-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,0,10,10-50O-50N-utilScatterAll-Fault.eps" "Full-0-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,0,10,10-50O-50N-utilScatterAll-NoFault.eps" "Full-0-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,0,10,10-50O-50N-utility-final.eps" "Full-0-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -14655,12 +13239,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,1
 @echo Generating graphs for Full,0,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,0,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,0,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,90,1-10O-100N/EPS"
-@mv "Full,0,90,1-10O-100N-messages-sankey.eps" "Full-0-90-1-10O-100N-messages-sankey.eps"
-@mv "Full,0,90,1-10O-100N-messages.eps" "Full-0-90-1-10O-100N-messages.eps"
-@mv "Full,0,90,1-10O-100N-cycleBreakdown.eps" "Full-0-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,0,90,1-10O-100N-utilScatterAll-Fault.eps" "Full-0-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,0,90,1-10O-100N-utilScatterAll-NoFault.eps" "Full-0-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,0,90,1-10O-100N-utility-final.eps" "Full-0-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -14717,12 +13295,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,9
 @echo Generating graphs for Full,0,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,0,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,0,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,90,2-50O-50N/EPS"
-@mv "Full,0,90,2-50O-50N-messages-sankey.eps" "Full-0-90-2-50O-50N-messages-sankey.eps"
-@mv "Full,0,90,2-50O-50N-messages.eps" "Full-0-90-2-50O-50N-messages.eps"
-@mv "Full,0,90,2-50O-50N-cycleBreakdown.eps" "Full-0-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,0,90,2-50O-50N-utilScatterAll-Fault.eps" "Full-0-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,0,90,2-50O-50N-utilScatterAll-NoFault.eps" "Full-0-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,0,90,2-50O-50N-utility-final.eps" "Full-0-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -14779,12 +13351,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,9
 @echo Generating graphs for Full,0,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,0,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,0,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,90,5-25O-100N/EPS"
-@mv "Full,0,90,5-25O-100N-messages-sankey.eps" "Full-0-90-5-25O-100N-messages-sankey.eps"
-@mv "Full,0,90,5-25O-100N-messages.eps" "Full-0-90-5-25O-100N-messages.eps"
-@mv "Full,0,90,5-25O-100N-cycleBreakdown.eps" "Full-0-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,0,90,5-25O-100N-utilScatterAll-Fault.eps" "Full-0-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,0,90,5-25O-100N-utilScatterAll-NoFault.eps" "Full-0-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,0,90,5-25O-100N-utility-final.eps" "Full-0-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -14841,12 +13407,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,9
 @echo Generating graphs for Full,0,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,0,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,0,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,90,10-50O-50N/EPS"
-@mv "Full,0,90,10-50O-50N-messages-sankey.eps" "Full-0-90-10-50O-50N-messages-sankey.eps"
-@mv "Full,0,90,10-50O-50N-messages.eps" "Full-0-90-10-50O-50N-messages.eps"
-@mv "Full,0,90,10-50O-50N-cycleBreakdown.eps" "Full-0-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,0,90,10-50O-50N-utilScatterAll-Fault.eps" "Full-0-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,0,90,10-50O-50N-utilScatterAll-NoFault.eps" "Full-0-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,0,90,10-50O-50N-utility-final.eps" "Full-0-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -14903,12 +13463,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,0,9
 @echo Generating graphs for Full,50,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,50,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,100,1-10O-100N/EPS"
-@mv "Full,50,100,1-10O-100N-messages-sankey.eps" "Full-50-100-1-10O-100N-messages-sankey.eps"
-@mv "Full,50,100,1-10O-100N-messages.eps" "Full-50-100-1-10O-100N-messages.eps"
-@mv "Full,50,100,1-10O-100N-cycleBreakdown.eps" "Full-50-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,50,100,1-10O-100N-utilScatterAll-Fault.eps" "Full-50-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,50,100,1-10O-100N-utilScatterAll-NoFault.eps" "Full-50-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,50,100,1-10O-100N-utility-final.eps" "Full-50-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -14965,12 +13519,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo Generating graphs for Full,50,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,50,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,100,2-50O-50N/EPS"
-@mv "Full,50,100,2-50O-50N-messages-sankey.eps" "Full-50-100-2-50O-50N-messages-sankey.eps"
-@mv "Full,50,100,2-50O-50N-messages.eps" "Full-50-100-2-50O-50N-messages.eps"
-@mv "Full,50,100,2-50O-50N-cycleBreakdown.eps" "Full-50-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,50,100,2-50O-50N-utilScatterAll-Fault.eps" "Full-50-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,50,100,2-50O-50N-utilScatterAll-NoFault.eps" "Full-50-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,50,100,2-50O-50N-utility-final.eps" "Full-50-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -15027,12 +13575,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo Generating graphs for Full,50,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,50,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,100,5-25O-100N/EPS"
-@mv "Full,50,100,5-25O-100N-messages-sankey.eps" "Full-50-100-5-25O-100N-messages-sankey.eps"
-@mv "Full,50,100,5-25O-100N-messages.eps" "Full-50-100-5-25O-100N-messages.eps"
-@mv "Full,50,100,5-25O-100N-cycleBreakdown.eps" "Full-50-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,50,100,5-25O-100N-utilScatterAll-Fault.eps" "Full-50-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,50,100,5-25O-100N-utilScatterAll-NoFault.eps" "Full-50-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,50,100,5-25O-100N-utility-final.eps" "Full-50-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -15089,12 +13631,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo Generating graphs for Full,50,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,50,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,100,10-50O-50N/EPS"
-@mv "Full,50,100,10-50O-50N-messages-sankey.eps" "Full-50-100-10-50O-50N-messages-sankey.eps"
-@mv "Full,50,100,10-50O-50N-messages.eps" "Full-50-100-10-50O-50N-messages.eps"
-@mv "Full,50,100,10-50O-50N-cycleBreakdown.eps" "Full-50-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,50,100,10-50O-50N-utilScatterAll-Fault.eps" "Full-50-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,50,100,10-50O-50N-utilScatterAll-NoFault.eps" "Full-50-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,50,100,10-50O-50N-utility-final.eps" "Full-50-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -15151,12 +13687,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo Generating graphs for Full,50,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,50,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,0,1-10O-100N/EPS"
-@mv "Full,50,0,1-10O-100N-messages-sankey.eps" "Full-50-0-1-10O-100N-messages-sankey.eps"
-@mv "Full,50,0,1-10O-100N-messages.eps" "Full-50-0-1-10O-100N-messages.eps"
-@mv "Full,50,0,1-10O-100N-cycleBreakdown.eps" "Full-50-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,50,0,1-10O-100N-utilScatterAll-Fault.eps" "Full-50-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,50,0,1-10O-100N-utilScatterAll-NoFault.eps" "Full-50-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,50,0,1-10O-100N-utility-final.eps" "Full-50-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -15213,12 +13743,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo Generating graphs for Full,50,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,50,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,0,2-50O-50N/EPS"
-@mv "Full,50,0,2-50O-50N-messages-sankey.eps" "Full-50-0-2-50O-50N-messages-sankey.eps"
-@mv "Full,50,0,2-50O-50N-messages.eps" "Full-50-0-2-50O-50N-messages.eps"
-@mv "Full,50,0,2-50O-50N-cycleBreakdown.eps" "Full-50-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,50,0,2-50O-50N-utilScatterAll-Fault.eps" "Full-50-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,50,0,2-50O-50N-utilScatterAll-NoFault.eps" "Full-50-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,50,0,2-50O-50N-utility-final.eps" "Full-50-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -15275,12 +13799,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo Generating graphs for Full,50,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,50,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,0,5-25O-100N/EPS"
-@mv "Full,50,0,5-25O-100N-messages-sankey.eps" "Full-50-0-5-25O-100N-messages-sankey.eps"
-@mv "Full,50,0,5-25O-100N-messages.eps" "Full-50-0-5-25O-100N-messages.eps"
-@mv "Full,50,0,5-25O-100N-cycleBreakdown.eps" "Full-50-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,50,0,5-25O-100N-utilScatterAll-Fault.eps" "Full-50-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,50,0,5-25O-100N-utilScatterAll-NoFault.eps" "Full-50-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,50,0,5-25O-100N-utility-final.eps" "Full-50-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -15337,12 +13855,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo Generating graphs for Full,50,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,50,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,0,10-50O-50N/EPS"
-@mv "Full,50,0,10-50O-50N-messages-sankey.eps" "Full-50-0-10-50O-50N-messages-sankey.eps"
-@mv "Full,50,0,10-50O-50N-messages.eps" "Full-50-0-10-50O-50N-messages.eps"
-@mv "Full,50,0,10-50O-50N-cycleBreakdown.eps" "Full-50-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,50,0,10-50O-50N-utilScatterAll-Fault.eps" "Full-50-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,50,0,10-50O-50N-utilScatterAll-NoFault.eps" "Full-50-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,50,0,10-50O-50N-utility-final.eps" "Full-50-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -15399,12 +13911,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo Generating graphs for Full,50,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,50,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,50,1-10O-100N/EPS"
-@mv "Full,50,50,1-10O-100N-messages-sankey.eps" "Full-50-50-1-10O-100N-messages-sankey.eps"
-@mv "Full,50,50,1-10O-100N-messages.eps" "Full-50-50-1-10O-100N-messages.eps"
-@mv "Full,50,50,1-10O-100N-cycleBreakdown.eps" "Full-50-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,50,50,1-10O-100N-utilScatterAll-Fault.eps" "Full-50-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,50,50,1-10O-100N-utilScatterAll-NoFault.eps" "Full-50-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,50,50,1-10O-100N-utility-final.eps" "Full-50-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -15461,12 +13967,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo Generating graphs for Full,50,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,50,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,50,2-50O-50N/EPS"
-@mv "Full,50,50,2-50O-50N-messages-sankey.eps" "Full-50-50-2-50O-50N-messages-sankey.eps"
-@mv "Full,50,50,2-50O-50N-messages.eps" "Full-50-50-2-50O-50N-messages.eps"
-@mv "Full,50,50,2-50O-50N-cycleBreakdown.eps" "Full-50-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,50,50,2-50O-50N-utilScatterAll-Fault.eps" "Full-50-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,50,50,2-50O-50N-utilScatterAll-NoFault.eps" "Full-50-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,50,50,2-50O-50N-utility-final.eps" "Full-50-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -15523,12 +14023,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo Generating graphs for Full,50,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,50,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,50,5-25O-100N/EPS"
-@mv "Full,50,50,5-25O-100N-messages-sankey.eps" "Full-50-50-5-25O-100N-messages-sankey.eps"
-@mv "Full,50,50,5-25O-100N-messages.eps" "Full-50-50-5-25O-100N-messages.eps"
-@mv "Full,50,50,5-25O-100N-cycleBreakdown.eps" "Full-50-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,50,50,5-25O-100N-utilScatterAll-Fault.eps" "Full-50-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,50,50,5-25O-100N-utilScatterAll-NoFault.eps" "Full-50-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,50,50,5-25O-100N-utility-final.eps" "Full-50-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -15585,12 +14079,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo Generating graphs for Full,50,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,50,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,50,10-50O-50N/EPS"
-@mv "Full,50,50,10-50O-50N-messages-sankey.eps" "Full-50-50-10-50O-50N-messages-sankey.eps"
-@mv "Full,50,50,10-50O-50N-messages.eps" "Full-50-50-10-50O-50N-messages.eps"
-@mv "Full,50,50,10-50O-50N-cycleBreakdown.eps" "Full-50-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,50,50,10-50O-50N-utilScatterAll-Fault.eps" "Full-50-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,50,50,10-50O-50N-utilScatterAll-NoFault.eps" "Full-50-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,50,50,10-50O-50N-utility-final.eps" "Full-50-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -15647,12 +14135,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo Generating graphs for Full,50,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,50,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,10,1-10O-100N/EPS"
-@mv "Full,50,10,1-10O-100N-messages-sankey.eps" "Full-50-10-1-10O-100N-messages-sankey.eps"
-@mv "Full,50,10,1-10O-100N-messages.eps" "Full-50-10-1-10O-100N-messages.eps"
-@mv "Full,50,10,1-10O-100N-cycleBreakdown.eps" "Full-50-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,50,10,1-10O-100N-utilScatterAll-Fault.eps" "Full-50-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,50,10,1-10O-100N-utilScatterAll-NoFault.eps" "Full-50-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,50,10,1-10O-100N-utility-final.eps" "Full-50-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -15709,12 +14191,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo Generating graphs for Full,50,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,50,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,10,2-50O-50N/EPS"
-@mv "Full,50,10,2-50O-50N-messages-sankey.eps" "Full-50-10-2-50O-50N-messages-sankey.eps"
-@mv "Full,50,10,2-50O-50N-messages.eps" "Full-50-10-2-50O-50N-messages.eps"
-@mv "Full,50,10,2-50O-50N-cycleBreakdown.eps" "Full-50-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,50,10,2-50O-50N-utilScatterAll-Fault.eps" "Full-50-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,50,10,2-50O-50N-utilScatterAll-NoFault.eps" "Full-50-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,50,10,2-50O-50N-utility-final.eps" "Full-50-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -15771,12 +14247,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo Generating graphs for Full,50,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,50,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,10,5-25O-100N/EPS"
-@mv "Full,50,10,5-25O-100N-messages-sankey.eps" "Full-50-10-5-25O-100N-messages-sankey.eps"
-@mv "Full,50,10,5-25O-100N-messages.eps" "Full-50-10-5-25O-100N-messages.eps"
-@mv "Full,50,10,5-25O-100N-cycleBreakdown.eps" "Full-50-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,50,10,5-25O-100N-utilScatterAll-Fault.eps" "Full-50-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,50,10,5-25O-100N-utilScatterAll-NoFault.eps" "Full-50-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,50,10,5-25O-100N-utility-final.eps" "Full-50-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -15833,12 +14303,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo Generating graphs for Full,50,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,50,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,10,10-50O-50N/EPS"
-@mv "Full,50,10,10-50O-50N-messages-sankey.eps" "Full-50-10-10-50O-50N-messages-sankey.eps"
-@mv "Full,50,10,10-50O-50N-messages.eps" "Full-50-10-10-50O-50N-messages.eps"
-@mv "Full,50,10,10-50O-50N-cycleBreakdown.eps" "Full-50-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,50,10,10-50O-50N-utilScatterAll-Fault.eps" "Full-50-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,50,10,10-50O-50N-utilScatterAll-NoFault.eps" "Full-50-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,50,10,10-50O-50N-utility-final.eps" "Full-50-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -15895,12 +14359,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo Generating graphs for Full,50,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,50,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,90,1-10O-100N/EPS"
-@mv "Full,50,90,1-10O-100N-messages-sankey.eps" "Full-50-90-1-10O-100N-messages-sankey.eps"
-@mv "Full,50,90,1-10O-100N-messages.eps" "Full-50-90-1-10O-100N-messages.eps"
-@mv "Full,50,90,1-10O-100N-cycleBreakdown.eps" "Full-50-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,50,90,1-10O-100N-utilScatterAll-Fault.eps" "Full-50-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,50,90,1-10O-100N-utilScatterAll-NoFault.eps" "Full-50-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,50,90,1-10O-100N-utility-final.eps" "Full-50-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -15957,12 +14415,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo Generating graphs for Full,50,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,50,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,90,2-50O-50N/EPS"
-@mv "Full,50,90,2-50O-50N-messages-sankey.eps" "Full-50-90-2-50O-50N-messages-sankey.eps"
-@mv "Full,50,90,2-50O-50N-messages.eps" "Full-50-90-2-50O-50N-messages.eps"
-@mv "Full,50,90,2-50O-50N-cycleBreakdown.eps" "Full-50-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,50,90,2-50O-50N-utilScatterAll-Fault.eps" "Full-50-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,50,90,2-50O-50N-utilScatterAll-NoFault.eps" "Full-50-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,50,90,2-50O-50N-utility-final.eps" "Full-50-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -16019,12 +14471,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo Generating graphs for Full,50,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,50,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,90,5-25O-100N/EPS"
-@mv "Full,50,90,5-25O-100N-messages-sankey.eps" "Full-50-90-5-25O-100N-messages-sankey.eps"
-@mv "Full,50,90,5-25O-100N-messages.eps" "Full-50-90-5-25O-100N-messages.eps"
-@mv "Full,50,90,5-25O-100N-cycleBreakdown.eps" "Full-50-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,50,90,5-25O-100N-utilScatterAll-Fault.eps" "Full-50-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,50,90,5-25O-100N-utilScatterAll-NoFault.eps" "Full-50-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,50,90,5-25O-100N-utility-final.eps" "Full-50-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -16081,12 +14527,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo Generating graphs for Full,50,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,50,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,90,10-50O-50N/EPS"
-@mv "Full,50,90,10-50O-50N-messages-sankey.eps" "Full-50-90-10-50O-50N-messages-sankey.eps"
-@mv "Full,50,90,10-50O-50N-messages.eps" "Full-50-90-10-50O-50N-messages.eps"
-@mv "Full,50,90,10-50O-50N-cycleBreakdown.eps" "Full-50-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,50,90,10-50O-50N-utilScatterAll-Fault.eps" "Full-50-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,50,90,10-50O-50N-utilScatterAll-NoFault.eps" "Full-50-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,50,90,10-50O-50N-utility-final.eps" "Full-50-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -16143,12 +14583,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo Generating graphs for Full,10,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,10,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,100,1-10O-100N/EPS"
-@mv "Full,10,100,1-10O-100N-messages-sankey.eps" "Full-10-100-1-10O-100N-messages-sankey.eps"
-@mv "Full,10,100,1-10O-100N-messages.eps" "Full-10-100-1-10O-100N-messages.eps"
-@mv "Full,10,100,1-10O-100N-cycleBreakdown.eps" "Full-10-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,10,100,1-10O-100N-utilScatterAll-Fault.eps" "Full-10-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,10,100,1-10O-100N-utilScatterAll-NoFault.eps" "Full-10-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,10,100,1-10O-100N-utility-final.eps" "Full-10-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -16205,12 +14639,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo Generating graphs for Full,10,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,10,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,100,2-50O-50N/EPS"
-@mv "Full,10,100,2-50O-50N-messages-sankey.eps" "Full-10-100-2-50O-50N-messages-sankey.eps"
-@mv "Full,10,100,2-50O-50N-messages.eps" "Full-10-100-2-50O-50N-messages.eps"
-@mv "Full,10,100,2-50O-50N-cycleBreakdown.eps" "Full-10-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,10,100,2-50O-50N-utilScatterAll-Fault.eps" "Full-10-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,10,100,2-50O-50N-utilScatterAll-NoFault.eps" "Full-10-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,10,100,2-50O-50N-utility-final.eps" "Full-10-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -16267,12 +14695,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo Generating graphs for Full,10,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,10,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,100,5-25O-100N/EPS"
-@mv "Full,10,100,5-25O-100N-messages-sankey.eps" "Full-10-100-5-25O-100N-messages-sankey.eps"
-@mv "Full,10,100,5-25O-100N-messages.eps" "Full-10-100-5-25O-100N-messages.eps"
-@mv "Full,10,100,5-25O-100N-cycleBreakdown.eps" "Full-10-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,10,100,5-25O-100N-utilScatterAll-Fault.eps" "Full-10-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,10,100,5-25O-100N-utilScatterAll-NoFault.eps" "Full-10-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,10,100,5-25O-100N-utility-final.eps" "Full-10-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -16329,12 +14751,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo Generating graphs for Full,10,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,10,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,100,10-50O-50N/EPS"
-@mv "Full,10,100,10-50O-50N-messages-sankey.eps" "Full-10-100-10-50O-50N-messages-sankey.eps"
-@mv "Full,10,100,10-50O-50N-messages.eps" "Full-10-100-10-50O-50N-messages.eps"
-@mv "Full,10,100,10-50O-50N-cycleBreakdown.eps" "Full-10-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,10,100,10-50O-50N-utilScatterAll-Fault.eps" "Full-10-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,10,100,10-50O-50N-utilScatterAll-NoFault.eps" "Full-10-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,10,100,10-50O-50N-utility-final.eps" "Full-10-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -16391,12 +14807,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo Generating graphs for Full,10,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,10,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,0,1-10O-100N/EPS"
-@mv "Full,10,0,1-10O-100N-messages-sankey.eps" "Full-10-0-1-10O-100N-messages-sankey.eps"
-@mv "Full,10,0,1-10O-100N-messages.eps" "Full-10-0-1-10O-100N-messages.eps"
-@mv "Full,10,0,1-10O-100N-cycleBreakdown.eps" "Full-10-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,10,0,1-10O-100N-utilScatterAll-Fault.eps" "Full-10-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,10,0,1-10O-100N-utilScatterAll-NoFault.eps" "Full-10-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,10,0,1-10O-100N-utility-final.eps" "Full-10-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -16453,12 +14863,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo Generating graphs for Full,10,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,10,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,0,2-50O-50N/EPS"
-@mv "Full,10,0,2-50O-50N-messages-sankey.eps" "Full-10-0-2-50O-50N-messages-sankey.eps"
-@mv "Full,10,0,2-50O-50N-messages.eps" "Full-10-0-2-50O-50N-messages.eps"
-@mv "Full,10,0,2-50O-50N-cycleBreakdown.eps" "Full-10-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,10,0,2-50O-50N-utilScatterAll-Fault.eps" "Full-10-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,10,0,2-50O-50N-utilScatterAll-NoFault.eps" "Full-10-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,10,0,2-50O-50N-utility-final.eps" "Full-10-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -16515,12 +14919,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo Generating graphs for Full,10,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,10,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,0,5-25O-100N/EPS"
-@mv "Full,10,0,5-25O-100N-messages-sankey.eps" "Full-10-0-5-25O-100N-messages-sankey.eps"
-@mv "Full,10,0,5-25O-100N-messages.eps" "Full-10-0-5-25O-100N-messages.eps"
-@mv "Full,10,0,5-25O-100N-cycleBreakdown.eps" "Full-10-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,10,0,5-25O-100N-utilScatterAll-Fault.eps" "Full-10-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,10,0,5-25O-100N-utilScatterAll-NoFault.eps" "Full-10-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,10,0,5-25O-100N-utility-final.eps" "Full-10-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -16577,12 +14975,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo Generating graphs for Full,10,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,10,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,0,10-50O-50N/EPS"
-@mv "Full,10,0,10-50O-50N-messages-sankey.eps" "Full-10-0-10-50O-50N-messages-sankey.eps"
-@mv "Full,10,0,10-50O-50N-messages.eps" "Full-10-0-10-50O-50N-messages.eps"
-@mv "Full,10,0,10-50O-50N-cycleBreakdown.eps" "Full-10-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,10,0,10-50O-50N-utilScatterAll-Fault.eps" "Full-10-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,10,0,10-50O-50N-utilScatterAll-NoFault.eps" "Full-10-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,10,0,10-50O-50N-utility-final.eps" "Full-10-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -16639,12 +15031,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo Generating graphs for Full,10,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,10,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,50,1-10O-100N/EPS"
-@mv "Full,10,50,1-10O-100N-messages-sankey.eps" "Full-10-50-1-10O-100N-messages-sankey.eps"
-@mv "Full,10,50,1-10O-100N-messages.eps" "Full-10-50-1-10O-100N-messages.eps"
-@mv "Full,10,50,1-10O-100N-cycleBreakdown.eps" "Full-10-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,10,50,1-10O-100N-utilScatterAll-Fault.eps" "Full-10-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,10,50,1-10O-100N-utilScatterAll-NoFault.eps" "Full-10-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,10,50,1-10O-100N-utility-final.eps" "Full-10-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -16701,12 +15087,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo Generating graphs for Full,10,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,10,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,50,2-50O-50N/EPS"
-@mv "Full,10,50,2-50O-50N-messages-sankey.eps" "Full-10-50-2-50O-50N-messages-sankey.eps"
-@mv "Full,10,50,2-50O-50N-messages.eps" "Full-10-50-2-50O-50N-messages.eps"
-@mv "Full,10,50,2-50O-50N-cycleBreakdown.eps" "Full-10-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,10,50,2-50O-50N-utilScatterAll-Fault.eps" "Full-10-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,10,50,2-50O-50N-utilScatterAll-NoFault.eps" "Full-10-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,10,50,2-50O-50N-utility-final.eps" "Full-10-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -16763,12 +15143,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo Generating graphs for Full,10,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,10,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,50,5-25O-100N/EPS"
-@mv "Full,10,50,5-25O-100N-messages-sankey.eps" "Full-10-50-5-25O-100N-messages-sankey.eps"
-@mv "Full,10,50,5-25O-100N-messages.eps" "Full-10-50-5-25O-100N-messages.eps"
-@mv "Full,10,50,5-25O-100N-cycleBreakdown.eps" "Full-10-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,10,50,5-25O-100N-utilScatterAll-Fault.eps" "Full-10-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,10,50,5-25O-100N-utilScatterAll-NoFault.eps" "Full-10-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,10,50,5-25O-100N-utility-final.eps" "Full-10-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -16825,12 +15199,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo Generating graphs for Full,10,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,10,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,50,10-50O-50N/EPS"
-@mv "Full,10,50,10-50O-50N-messages-sankey.eps" "Full-10-50-10-50O-50N-messages-sankey.eps"
-@mv "Full,10,50,10-50O-50N-messages.eps" "Full-10-50-10-50O-50N-messages.eps"
-@mv "Full,10,50,10-50O-50N-cycleBreakdown.eps" "Full-10-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,10,50,10-50O-50N-utilScatterAll-Fault.eps" "Full-10-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,10,50,10-50O-50N-utilScatterAll-NoFault.eps" "Full-10-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,10,50,10-50O-50N-utility-final.eps" "Full-10-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -16887,12 +15255,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo Generating graphs for Full,10,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,10,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,10,1-10O-100N/EPS"
-@mv "Full,10,10,1-10O-100N-messages-sankey.eps" "Full-10-10-1-10O-100N-messages-sankey.eps"
-@mv "Full,10,10,1-10O-100N-messages.eps" "Full-10-10-1-10O-100N-messages.eps"
-@mv "Full,10,10,1-10O-100N-cycleBreakdown.eps" "Full-10-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,10,10,1-10O-100N-utilScatterAll-Fault.eps" "Full-10-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,10,10,1-10O-100N-utilScatterAll-NoFault.eps" "Full-10-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,10,10,1-10O-100N-utility-final.eps" "Full-10-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -16949,12 +15311,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo Generating graphs for Full,10,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,10,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,10,2-50O-50N/EPS"
-@mv "Full,10,10,2-50O-50N-messages-sankey.eps" "Full-10-10-2-50O-50N-messages-sankey.eps"
-@mv "Full,10,10,2-50O-50N-messages.eps" "Full-10-10-2-50O-50N-messages.eps"
-@mv "Full,10,10,2-50O-50N-cycleBreakdown.eps" "Full-10-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,10,10,2-50O-50N-utilScatterAll-Fault.eps" "Full-10-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,10,10,2-50O-50N-utilScatterAll-NoFault.eps" "Full-10-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,10,10,2-50O-50N-utility-final.eps" "Full-10-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -17011,12 +15367,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo Generating graphs for Full,10,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,10,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,10,5-25O-100N/EPS"
-@mv "Full,10,10,5-25O-100N-messages-sankey.eps" "Full-10-10-5-25O-100N-messages-sankey.eps"
-@mv "Full,10,10,5-25O-100N-messages.eps" "Full-10-10-5-25O-100N-messages.eps"
-@mv "Full,10,10,5-25O-100N-cycleBreakdown.eps" "Full-10-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,10,10,5-25O-100N-utilScatterAll-Fault.eps" "Full-10-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,10,10,5-25O-100N-utilScatterAll-NoFault.eps" "Full-10-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,10,10,5-25O-100N-utility-final.eps" "Full-10-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -17073,12 +15423,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo Generating graphs for Full,10,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,10,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,10,10-50O-50N/EPS"
-@mv "Full,10,10,10-50O-50N-messages-sankey.eps" "Full-10-10-10-50O-50N-messages-sankey.eps"
-@mv "Full,10,10,10-50O-50N-messages.eps" "Full-10-10-10-50O-50N-messages.eps"
-@mv "Full,10,10,10-50O-50N-cycleBreakdown.eps" "Full-10-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,10,10,10-50O-50N-utilScatterAll-Fault.eps" "Full-10-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,10,10,10-50O-50N-utilScatterAll-NoFault.eps" "Full-10-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,10,10,10-50O-50N-utility-final.eps" "Full-10-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -17135,12 +15479,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo Generating graphs for Full,10,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,10,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,90,1-10O-100N/EPS"
-@mv "Full,10,90,1-10O-100N-messages-sankey.eps" "Full-10-90-1-10O-100N-messages-sankey.eps"
-@mv "Full,10,90,1-10O-100N-messages.eps" "Full-10-90-1-10O-100N-messages.eps"
-@mv "Full,10,90,1-10O-100N-cycleBreakdown.eps" "Full-10-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,10,90,1-10O-100N-utilScatterAll-Fault.eps" "Full-10-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,10,90,1-10O-100N-utilScatterAll-NoFault.eps" "Full-10-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,10,90,1-10O-100N-utility-final.eps" "Full-10-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -17197,12 +15535,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo Generating graphs for Full,10,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,10,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,90,2-50O-50N/EPS"
-@mv "Full,10,90,2-50O-50N-messages-sankey.eps" "Full-10-90-2-50O-50N-messages-sankey.eps"
-@mv "Full,10,90,2-50O-50N-messages.eps" "Full-10-90-2-50O-50N-messages.eps"
-@mv "Full,10,90,2-50O-50N-cycleBreakdown.eps" "Full-10-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,10,90,2-50O-50N-utilScatterAll-Fault.eps" "Full-10-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,10,90,2-50O-50N-utilScatterAll-NoFault.eps" "Full-10-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,10,90,2-50O-50N-utility-final.eps" "Full-10-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -17259,12 +15591,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo Generating graphs for Full,10,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,10,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,90,5-25O-100N/EPS"
-@mv "Full,10,90,5-25O-100N-messages-sankey.eps" "Full-10-90-5-25O-100N-messages-sankey.eps"
-@mv "Full,10,90,5-25O-100N-messages.eps" "Full-10-90-5-25O-100N-messages.eps"
-@mv "Full,10,90,5-25O-100N-cycleBreakdown.eps" "Full-10-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,10,90,5-25O-100N-utilScatterAll-Fault.eps" "Full-10-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,10,90,5-25O-100N-utilScatterAll-NoFault.eps" "Full-10-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,10,90,5-25O-100N-utility-final.eps" "Full-10-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -17321,12 +15647,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo Generating graphs for Full,10,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,10,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,90,10-50O-50N/EPS"
-@mv "Full,10,90,10-50O-50N-messages-sankey.eps" "Full-10-90-10-50O-50N-messages-sankey.eps"
-@mv "Full,10,90,10-50O-50N-messages.eps" "Full-10-90-10-50O-50N-messages.eps"
-@mv "Full,10,90,10-50O-50N-cycleBreakdown.eps" "Full-10-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,10,90,10-50O-50N-utilScatterAll-Fault.eps" "Full-10-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,10,90,10-50O-50N-utilScatterAll-NoFault.eps" "Full-10-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,10,90,10-50O-50N-utility-final.eps" "Full-10-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -17383,12 +15703,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo Generating graphs for Full,90,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,90,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,100,1-10O-100N/EPS"
-@mv "Full,90,100,1-10O-100N-messages-sankey.eps" "Full-90-100-1-10O-100N-messages-sankey.eps"
-@mv "Full,90,100,1-10O-100N-messages.eps" "Full-90-100-1-10O-100N-messages.eps"
-@mv "Full,90,100,1-10O-100N-cycleBreakdown.eps" "Full-90-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,90,100,1-10O-100N-utilScatterAll-Fault.eps" "Full-90-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,90,100,1-10O-100N-utilScatterAll-NoFault.eps" "Full-90-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,90,100,1-10O-100N-utility-final.eps" "Full-90-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -17445,12 +15759,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo Generating graphs for Full,90,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,90,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,100,2-50O-50N/EPS"
-@mv "Full,90,100,2-50O-50N-messages-sankey.eps" "Full-90-100-2-50O-50N-messages-sankey.eps"
-@mv "Full,90,100,2-50O-50N-messages.eps" "Full-90-100-2-50O-50N-messages.eps"
-@mv "Full,90,100,2-50O-50N-cycleBreakdown.eps" "Full-90-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,90,100,2-50O-50N-utilScatterAll-Fault.eps" "Full-90-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,90,100,2-50O-50N-utilScatterAll-NoFault.eps" "Full-90-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,90,100,2-50O-50N-utility-final.eps" "Full-90-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -17507,12 +15815,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo Generating graphs for Full,90,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,90,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,100,5-25O-100N/EPS"
-@mv "Full,90,100,5-25O-100N-messages-sankey.eps" "Full-90-100-5-25O-100N-messages-sankey.eps"
-@mv "Full,90,100,5-25O-100N-messages.eps" "Full-90-100-5-25O-100N-messages.eps"
-@mv "Full,90,100,5-25O-100N-cycleBreakdown.eps" "Full-90-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,90,100,5-25O-100N-utilScatterAll-Fault.eps" "Full-90-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,90,100,5-25O-100N-utilScatterAll-NoFault.eps" "Full-90-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,90,100,5-25O-100N-utility-final.eps" "Full-90-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -17569,12 +15871,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo Generating graphs for Full,90,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,90,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,100,10-50O-50N/EPS"
-@mv "Full,90,100,10-50O-50N-messages-sankey.eps" "Full-90-100-10-50O-50N-messages-sankey.eps"
-@mv "Full,90,100,10-50O-50N-messages.eps" "Full-90-100-10-50O-50N-messages.eps"
-@mv "Full,90,100,10-50O-50N-cycleBreakdown.eps" "Full-90-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,90,100,10-50O-50N-utilScatterAll-Fault.eps" "Full-90-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,90,100,10-50O-50N-utilScatterAll-NoFault.eps" "Full-90-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,90,100,10-50O-50N-utility-final.eps" "Full-90-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -17631,12 +15927,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo Generating graphs for Full,90,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,90,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,0,1-10O-100N/EPS"
-@mv "Full,90,0,1-10O-100N-messages-sankey.eps" "Full-90-0-1-10O-100N-messages-sankey.eps"
-@mv "Full,90,0,1-10O-100N-messages.eps" "Full-90-0-1-10O-100N-messages.eps"
-@mv "Full,90,0,1-10O-100N-cycleBreakdown.eps" "Full-90-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,90,0,1-10O-100N-utilScatterAll-Fault.eps" "Full-90-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,90,0,1-10O-100N-utilScatterAll-NoFault.eps" "Full-90-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,90,0,1-10O-100N-utility-final.eps" "Full-90-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -17693,12 +15983,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo Generating graphs for Full,90,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,90,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,0,2-50O-50N/EPS"
-@mv "Full,90,0,2-50O-50N-messages-sankey.eps" "Full-90-0-2-50O-50N-messages-sankey.eps"
-@mv "Full,90,0,2-50O-50N-messages.eps" "Full-90-0-2-50O-50N-messages.eps"
-@mv "Full,90,0,2-50O-50N-cycleBreakdown.eps" "Full-90-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,90,0,2-50O-50N-utilScatterAll-Fault.eps" "Full-90-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,90,0,2-50O-50N-utilScatterAll-NoFault.eps" "Full-90-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,90,0,2-50O-50N-utility-final.eps" "Full-90-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -17755,12 +16039,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo Generating graphs for Full,90,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,90,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,0,5-25O-100N/EPS"
-@mv "Full,90,0,5-25O-100N-messages-sankey.eps" "Full-90-0-5-25O-100N-messages-sankey.eps"
-@mv "Full,90,0,5-25O-100N-messages.eps" "Full-90-0-5-25O-100N-messages.eps"
-@mv "Full,90,0,5-25O-100N-cycleBreakdown.eps" "Full-90-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,90,0,5-25O-100N-utilScatterAll-Fault.eps" "Full-90-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,90,0,5-25O-100N-utilScatterAll-NoFault.eps" "Full-90-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,90,0,5-25O-100N-utility-final.eps" "Full-90-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -17817,12 +16095,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo Generating graphs for Full,90,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,90,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,0,10-50O-50N/EPS"
-@mv "Full,90,0,10-50O-50N-messages-sankey.eps" "Full-90-0-10-50O-50N-messages-sankey.eps"
-@mv "Full,90,0,10-50O-50N-messages.eps" "Full-90-0-10-50O-50N-messages.eps"
-@mv "Full,90,0,10-50O-50N-cycleBreakdown.eps" "Full-90-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,90,0,10-50O-50N-utilScatterAll-Fault.eps" "Full-90-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,90,0,10-50O-50N-utilScatterAll-NoFault.eps" "Full-90-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,90,0,10-50O-50N-utility-final.eps" "Full-90-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -17879,12 +16151,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo Generating graphs for Full,90,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,90,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,50,1-10O-100N/EPS"
-@mv "Full,90,50,1-10O-100N-messages-sankey.eps" "Full-90-50-1-10O-100N-messages-sankey.eps"
-@mv "Full,90,50,1-10O-100N-messages.eps" "Full-90-50-1-10O-100N-messages.eps"
-@mv "Full,90,50,1-10O-100N-cycleBreakdown.eps" "Full-90-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,90,50,1-10O-100N-utilScatterAll-Fault.eps" "Full-90-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,90,50,1-10O-100N-utilScatterAll-NoFault.eps" "Full-90-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,90,50,1-10O-100N-utility-final.eps" "Full-90-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -17941,12 +16207,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo Generating graphs for Full,90,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,90,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,50,2-50O-50N/EPS"
-@mv "Full,90,50,2-50O-50N-messages-sankey.eps" "Full-90-50-2-50O-50N-messages-sankey.eps"
-@mv "Full,90,50,2-50O-50N-messages.eps" "Full-90-50-2-50O-50N-messages.eps"
-@mv "Full,90,50,2-50O-50N-cycleBreakdown.eps" "Full-90-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,90,50,2-50O-50N-utilScatterAll-Fault.eps" "Full-90-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,90,50,2-50O-50N-utilScatterAll-NoFault.eps" "Full-90-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,90,50,2-50O-50N-utility-final.eps" "Full-90-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -18003,12 +16263,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo Generating graphs for Full,90,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,90,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,50,5-25O-100N/EPS"
-@mv "Full,90,50,5-25O-100N-messages-sankey.eps" "Full-90-50-5-25O-100N-messages-sankey.eps"
-@mv "Full,90,50,5-25O-100N-messages.eps" "Full-90-50-5-25O-100N-messages.eps"
-@mv "Full,90,50,5-25O-100N-cycleBreakdown.eps" "Full-90-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,90,50,5-25O-100N-utilScatterAll-Fault.eps" "Full-90-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,90,50,5-25O-100N-utilScatterAll-NoFault.eps" "Full-90-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,90,50,5-25O-100N-utility-final.eps" "Full-90-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -18065,12 +16319,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo Generating graphs for Full,90,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,90,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,50,10-50O-50N/EPS"
-@mv "Full,90,50,10-50O-50N-messages-sankey.eps" "Full-90-50-10-50O-50N-messages-sankey.eps"
-@mv "Full,90,50,10-50O-50N-messages.eps" "Full-90-50-10-50O-50N-messages.eps"
-@mv "Full,90,50,10-50O-50N-cycleBreakdown.eps" "Full-90-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,90,50,10-50O-50N-utilScatterAll-Fault.eps" "Full-90-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,90,50,10-50O-50N-utilScatterAll-NoFault.eps" "Full-90-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,90,50,10-50O-50N-utility-final.eps" "Full-90-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -18127,12 +16375,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo Generating graphs for Full,90,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,90,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,10,1-10O-100N/EPS"
-@mv "Full,90,10,1-10O-100N-messages-sankey.eps" "Full-90-10-1-10O-100N-messages-sankey.eps"
-@mv "Full,90,10,1-10O-100N-messages.eps" "Full-90-10-1-10O-100N-messages.eps"
-@mv "Full,90,10,1-10O-100N-cycleBreakdown.eps" "Full-90-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,90,10,1-10O-100N-utilScatterAll-Fault.eps" "Full-90-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,90,10,1-10O-100N-utilScatterAll-NoFault.eps" "Full-90-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,90,10,1-10O-100N-utility-final.eps" "Full-90-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -18189,12 +16431,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo Generating graphs for Full,90,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,90,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,10,2-50O-50N/EPS"
-@mv "Full,90,10,2-50O-50N-messages-sankey.eps" "Full-90-10-2-50O-50N-messages-sankey.eps"
-@mv "Full,90,10,2-50O-50N-messages.eps" "Full-90-10-2-50O-50N-messages.eps"
-@mv "Full,90,10,2-50O-50N-cycleBreakdown.eps" "Full-90-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,90,10,2-50O-50N-utilScatterAll-Fault.eps" "Full-90-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,90,10,2-50O-50N-utilScatterAll-NoFault.eps" "Full-90-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,90,10,2-50O-50N-utility-final.eps" "Full-90-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -18251,12 +16487,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo Generating graphs for Full,90,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,90,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,10,5-25O-100N/EPS"
-@mv "Full,90,10,5-25O-100N-messages-sankey.eps" "Full-90-10-5-25O-100N-messages-sankey.eps"
-@mv "Full,90,10,5-25O-100N-messages.eps" "Full-90-10-5-25O-100N-messages.eps"
-@mv "Full,90,10,5-25O-100N-cycleBreakdown.eps" "Full-90-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,90,10,5-25O-100N-utilScatterAll-Fault.eps" "Full-90-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,90,10,5-25O-100N-utilScatterAll-NoFault.eps" "Full-90-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,90,10,5-25O-100N-utility-final.eps" "Full-90-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -18313,12 +16543,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo Generating graphs for Full,90,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,90,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,10,10-50O-50N/EPS"
-@mv "Full,90,10,10-50O-50N-messages-sankey.eps" "Full-90-10-10-50O-50N-messages-sankey.eps"
-@mv "Full,90,10,10-50O-50N-messages.eps" "Full-90-10-10-50O-50N-messages.eps"
-@mv "Full,90,10,10-50O-50N-cycleBreakdown.eps" "Full-90-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,90,10,10-50O-50N-utilScatterAll-Fault.eps" "Full-90-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,90,10,10-50O-50N-utilScatterAll-NoFault.eps" "Full-90-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,90,10,10-50O-50N-utility-final.eps" "Full-90-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -18375,12 +16599,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo Generating graphs for Full,90,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,90,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,90,1-10O-100N/EPS"
-@mv "Full,90,90,1-10O-100N-messages-sankey.eps" "Full-90-90-1-10O-100N-messages-sankey.eps"
-@mv "Full,90,90,1-10O-100N-messages.eps" "Full-90-90-1-10O-100N-messages.eps"
-@mv "Full,90,90,1-10O-100N-cycleBreakdown.eps" "Full-90-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Full,90,90,1-10O-100N-utilScatterAll-Fault.eps" "Full-90-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Full,90,90,1-10O-100N-utilScatterAll-NoFault.eps" "Full-90-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,90,90,1-10O-100N-utility-final.eps" "Full-90-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -18437,12 +16655,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo Generating graphs for Full,90,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,90,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,90,2-50O-50N/EPS"
-@mv "Full,90,90,2-50O-50N-messages-sankey.eps" "Full-90-90-2-50O-50N-messages-sankey.eps"
-@mv "Full,90,90,2-50O-50N-messages.eps" "Full-90-90-2-50O-50N-messages.eps"
-@mv "Full,90,90,2-50O-50N-cycleBreakdown.eps" "Full-90-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Full,90,90,2-50O-50N-utilScatterAll-Fault.eps" "Full-90-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,90,90,2-50O-50N-utilScatterAll-NoFault.eps" "Full-90-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,90,90,2-50O-50N-utility-final.eps" "Full-90-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -18499,12 +16711,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo Generating graphs for Full,90,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,90,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,90,5-25O-100N/EPS"
-@mv "Full,90,90,5-25O-100N-messages-sankey.eps" "Full-90-90-5-25O-100N-messages-sankey.eps"
-@mv "Full,90,90,5-25O-100N-messages.eps" "Full-90-90-5-25O-100N-messages.eps"
-@mv "Full,90,90,5-25O-100N-cycleBreakdown.eps" "Full-90-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Full,90,90,5-25O-100N-utilScatterAll-Fault.eps" "Full-90-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Full,90,90,5-25O-100N-utilScatterAll-NoFault.eps" "Full-90-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Full,90,90,5-25O-100N-utility-final.eps" "Full-90-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -18561,12 +16767,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo Generating graphs for Full,90,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Full,90,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,90,10-50O-50N/EPS"
-@mv "Full,90,90,10-50O-50N-messages-sankey.eps" "Full-90-90-10-50O-50N-messages-sankey.eps"
-@mv "Full,90,90,10-50O-50N-messages.eps" "Full-90-90-10-50O-50N-messages.eps"
-@mv "Full,90,90,10-50O-50N-cycleBreakdown.eps" "Full-90-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Full,90,90,10-50O-50N-utilScatterAll-Fault.eps" "Full-90-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Full,90,90,10-50O-50N-utilScatterAll-NoFault.eps" "Full-90-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Full,90,90,10-50O-50N-utility-final.eps" "Full-90-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -18623,12 +16823,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo Generating graphs for Pseu,100,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,100,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,100,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100,100,1-10O-100N/EPS"
-@mv "Pseu,100,100,1-10O-100N-messages-sankey.eps" "Pseu-100-100-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,100,100,1-10O-100N-messages.eps" "Pseu-100-100-1-10O-100N-messages.eps"
-@mv "Pseu,100,100,1-10O-100N-cycleBreakdown.eps" "Pseu-100-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,100,100,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-100-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,100,100,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-100-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,100,100,1-10O-100N-utility-final.eps" "Pseu-100-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -18685,12 +16879,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100
 @echo Generating graphs for Pseu,100,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,100,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,100,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100,100,2-50O-50N/EPS"
-@mv "Pseu,100,100,2-50O-50N-messages-sankey.eps" "Pseu-100-100-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,100,100,2-50O-50N-messages.eps" "Pseu-100-100-2-50O-50N-messages.eps"
-@mv "Pseu,100,100,2-50O-50N-cycleBreakdown.eps" "Pseu-100-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,100,100,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-100-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,100,100,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-100-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,100,100,2-50O-50N-utility-final.eps" "Pseu-100-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -18747,12 +16935,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100
 @echo Generating graphs for Pseu,100,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,100,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,100,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100,100,5-25O-100N/EPS"
-@mv "Pseu,100,100,5-25O-100N-messages-sankey.eps" "Pseu-100-100-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,100,100,5-25O-100N-messages.eps" "Pseu-100-100-5-25O-100N-messages.eps"
-@mv "Pseu,100,100,5-25O-100N-cycleBreakdown.eps" "Pseu-100-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,100,100,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-100-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,100,100,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-100-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,100,100,5-25O-100N-utility-final.eps" "Pseu-100-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -18809,12 +16991,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100
 @echo Generating graphs for Pseu,100,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,100,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,100,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100,100,10-50O-50N/EPS"
-@mv "Pseu,100,100,10-50O-50N-messages-sankey.eps" "Pseu-100-100-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,100,100,10-50O-50N-messages.eps" "Pseu-100-100-10-50O-50N-messages.eps"
-@mv "Pseu,100,100,10-50O-50N-cycleBreakdown.eps" "Pseu-100-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,100,100,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-100-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,100,100,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-100-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,100,100,10-50O-50N-utility-final.eps" "Pseu-100-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -18871,12 +17047,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100
 @echo Generating graphs for Pseu,100,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,100,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,100,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100,0,1-10O-100N/EPS"
-@mv "Pseu,100,0,1-10O-100N-messages-sankey.eps" "Pseu-100-0-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,100,0,1-10O-100N-messages.eps" "Pseu-100-0-1-10O-100N-messages.eps"
-@mv "Pseu,100,0,1-10O-100N-cycleBreakdown.eps" "Pseu-100-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,100,0,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-100-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,100,0,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-100-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,100,0,1-10O-100N-utility-final.eps" "Pseu-100-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -18933,12 +17103,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100
 @echo Generating graphs for Pseu,100,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,100,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,100,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100,0,2-50O-50N/EPS"
-@mv "Pseu,100,0,2-50O-50N-messages-sankey.eps" "Pseu-100-0-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,100,0,2-50O-50N-messages.eps" "Pseu-100-0-2-50O-50N-messages.eps"
-@mv "Pseu,100,0,2-50O-50N-cycleBreakdown.eps" "Pseu-100-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,100,0,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-100-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,100,0,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-100-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,100,0,2-50O-50N-utility-final.eps" "Pseu-100-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -18995,12 +17159,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100
 @echo Generating graphs for Pseu,100,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,100,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,100,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100,0,5-25O-100N/EPS"
-@mv "Pseu,100,0,5-25O-100N-messages-sankey.eps" "Pseu-100-0-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,100,0,5-25O-100N-messages.eps" "Pseu-100-0-5-25O-100N-messages.eps"
-@mv "Pseu,100,0,5-25O-100N-cycleBreakdown.eps" "Pseu-100-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,100,0,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-100-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,100,0,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-100-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,100,0,5-25O-100N-utility-final.eps" "Pseu-100-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -19057,12 +17215,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100
 @echo Generating graphs for Pseu,100,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,100,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,100,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100,0,10-50O-50N/EPS"
-@mv "Pseu,100,0,10-50O-50N-messages-sankey.eps" "Pseu-100-0-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,100,0,10-50O-50N-messages.eps" "Pseu-100-0-10-50O-50N-messages.eps"
-@mv "Pseu,100,0,10-50O-50N-cycleBreakdown.eps" "Pseu-100-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,100,0,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-100-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,100,0,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-100-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,100,0,10-50O-50N-utility-final.eps" "Pseu-100-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -19119,12 +17271,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100
 @echo Generating graphs for Pseu,100,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,100,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,100,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100,50,1-10O-100N/EPS"
-@mv "Pseu,100,50,1-10O-100N-messages-sankey.eps" "Pseu-100-50-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,100,50,1-10O-100N-messages.eps" "Pseu-100-50-1-10O-100N-messages.eps"
-@mv "Pseu,100,50,1-10O-100N-cycleBreakdown.eps" "Pseu-100-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,100,50,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-100-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,100,50,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-100-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,100,50,1-10O-100N-utility-final.eps" "Pseu-100-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -19181,12 +17327,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100
 @echo Generating graphs for Pseu,100,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,100,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,100,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100,50,2-50O-50N/EPS"
-@mv "Pseu,100,50,2-50O-50N-messages-sankey.eps" "Pseu-100-50-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,100,50,2-50O-50N-messages.eps" "Pseu-100-50-2-50O-50N-messages.eps"
-@mv "Pseu,100,50,2-50O-50N-cycleBreakdown.eps" "Pseu-100-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,100,50,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-100-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,100,50,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-100-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,100,50,2-50O-50N-utility-final.eps" "Pseu-100-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -19243,12 +17383,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100
 @echo Generating graphs for Pseu,100,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,100,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,100,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100,50,5-25O-100N/EPS"
-@mv "Pseu,100,50,5-25O-100N-messages-sankey.eps" "Pseu-100-50-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,100,50,5-25O-100N-messages.eps" "Pseu-100-50-5-25O-100N-messages.eps"
-@mv "Pseu,100,50,5-25O-100N-cycleBreakdown.eps" "Pseu-100-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,100,50,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-100-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,100,50,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-100-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,100,50,5-25O-100N-utility-final.eps" "Pseu-100-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -19305,12 +17439,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100
 @echo Generating graphs for Pseu,100,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,100,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,100,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100,50,10-50O-50N/EPS"
-@mv "Pseu,100,50,10-50O-50N-messages-sankey.eps" "Pseu-100-50-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,100,50,10-50O-50N-messages.eps" "Pseu-100-50-10-50O-50N-messages.eps"
-@mv "Pseu,100,50,10-50O-50N-cycleBreakdown.eps" "Pseu-100-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,100,50,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-100-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,100,50,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-100-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,100,50,10-50O-50N-utility-final.eps" "Pseu-100-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -19367,12 +17495,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100
 @echo Generating graphs for Pseu,100,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,100,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,100,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100,10,1-10O-100N/EPS"
-@mv "Pseu,100,10,1-10O-100N-messages-sankey.eps" "Pseu-100-10-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,100,10,1-10O-100N-messages.eps" "Pseu-100-10-1-10O-100N-messages.eps"
-@mv "Pseu,100,10,1-10O-100N-cycleBreakdown.eps" "Pseu-100-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,100,10,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-100-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,100,10,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-100-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,100,10,1-10O-100N-utility-final.eps" "Pseu-100-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -19429,12 +17551,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100
 @echo Generating graphs for Pseu,100,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,100,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,100,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100,10,2-50O-50N/EPS"
-@mv "Pseu,100,10,2-50O-50N-messages-sankey.eps" "Pseu-100-10-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,100,10,2-50O-50N-messages.eps" "Pseu-100-10-2-50O-50N-messages.eps"
-@mv "Pseu,100,10,2-50O-50N-cycleBreakdown.eps" "Pseu-100-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,100,10,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-100-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,100,10,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-100-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,100,10,2-50O-50N-utility-final.eps" "Pseu-100-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -19491,12 +17607,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100
 @echo Generating graphs for Pseu,100,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,100,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,100,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100,10,5-25O-100N/EPS"
-@mv "Pseu,100,10,5-25O-100N-messages-sankey.eps" "Pseu-100-10-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,100,10,5-25O-100N-messages.eps" "Pseu-100-10-5-25O-100N-messages.eps"
-@mv "Pseu,100,10,5-25O-100N-cycleBreakdown.eps" "Pseu-100-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,100,10,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-100-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,100,10,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-100-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,100,10,5-25O-100N-utility-final.eps" "Pseu-100-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -19553,12 +17663,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100
 @echo Generating graphs for Pseu,100,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,100,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,100,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100,10,10-50O-50N/EPS"
-@mv "Pseu,100,10,10-50O-50N-messages-sankey.eps" "Pseu-100-10-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,100,10,10-50O-50N-messages.eps" "Pseu-100-10-10-50O-50N-messages.eps"
-@mv "Pseu,100,10,10-50O-50N-cycleBreakdown.eps" "Pseu-100-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,100,10,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-100-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,100,10,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-100-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,100,10,10-50O-50N-utility-final.eps" "Pseu-100-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -19615,12 +17719,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100
 @echo Generating graphs for Pseu,100,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,100,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,100,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100,90,1-10O-100N/EPS"
-@mv "Pseu,100,90,1-10O-100N-messages-sankey.eps" "Pseu-100-90-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,100,90,1-10O-100N-messages.eps" "Pseu-100-90-1-10O-100N-messages.eps"
-@mv "Pseu,100,90,1-10O-100N-cycleBreakdown.eps" "Pseu-100-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,100,90,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-100-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,100,90,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-100-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,100,90,1-10O-100N-utility-final.eps" "Pseu-100-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -19677,12 +17775,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100
 @echo Generating graphs for Pseu,100,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,100,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,100,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100,90,2-50O-50N/EPS"
-@mv "Pseu,100,90,2-50O-50N-messages-sankey.eps" "Pseu-100-90-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,100,90,2-50O-50N-messages.eps" "Pseu-100-90-2-50O-50N-messages.eps"
-@mv "Pseu,100,90,2-50O-50N-cycleBreakdown.eps" "Pseu-100-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,100,90,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-100-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,100,90,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-100-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,100,90,2-50O-50N-utility-final.eps" "Pseu-100-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -19739,12 +17831,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100
 @echo Generating graphs for Pseu,100,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,100,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,100,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100,90,5-25O-100N/EPS"
-@mv "Pseu,100,90,5-25O-100N-messages-sankey.eps" "Pseu-100-90-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,100,90,5-25O-100N-messages.eps" "Pseu-100-90-5-25O-100N-messages.eps"
-@mv "Pseu,100,90,5-25O-100N-cycleBreakdown.eps" "Pseu-100-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,100,90,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-100-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,100,90,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-100-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,100,90,5-25O-100N-utility-final.eps" "Pseu-100-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -19801,12 +17887,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100
 @echo Generating graphs for Pseu,100,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,100,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,100,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100,90,10-50O-50N/EPS"
-@mv "Pseu,100,90,10-50O-50N-messages-sankey.eps" "Pseu-100-90-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,100,90,10-50O-50N-messages.eps" "Pseu-100-90-10-50O-50N-messages.eps"
-@mv "Pseu,100,90,10-50O-50N-cycleBreakdown.eps" "Pseu-100-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,100,90,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-100-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,100,90,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-100-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,100,90,10-50O-50N-utility-final.eps" "Pseu-100-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -19863,12 +17943,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,100
 @echo Generating graphs for Pseu,0,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,0,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,0,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,100,1-10O-100N/EPS"
-@mv "Pseu,0,100,1-10O-100N-messages-sankey.eps" "Pseu-0-100-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,0,100,1-10O-100N-messages.eps" "Pseu-0-100-1-10O-100N-messages.eps"
-@mv "Pseu,0,100,1-10O-100N-cycleBreakdown.eps" "Pseu-0-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,0,100,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-0-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,0,100,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-0-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,0,100,1-10O-100N-utility-final.eps" "Pseu-0-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -19925,12 +17999,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,1
 @echo Generating graphs for Pseu,0,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,0,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,0,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,100,2-50O-50N/EPS"
-@mv "Pseu,0,100,2-50O-50N-messages-sankey.eps" "Pseu-0-100-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,0,100,2-50O-50N-messages.eps" "Pseu-0-100-2-50O-50N-messages.eps"
-@mv "Pseu,0,100,2-50O-50N-cycleBreakdown.eps" "Pseu-0-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,0,100,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-0-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,0,100,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-0-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,0,100,2-50O-50N-utility-final.eps" "Pseu-0-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -19987,12 +18055,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,1
 @echo Generating graphs for Pseu,0,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,0,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,0,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,100,5-25O-100N/EPS"
-@mv "Pseu,0,100,5-25O-100N-messages-sankey.eps" "Pseu-0-100-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,0,100,5-25O-100N-messages.eps" "Pseu-0-100-5-25O-100N-messages.eps"
-@mv "Pseu,0,100,5-25O-100N-cycleBreakdown.eps" "Pseu-0-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,0,100,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-0-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,0,100,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-0-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,0,100,5-25O-100N-utility-final.eps" "Pseu-0-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -20049,12 +18111,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,1
 @echo Generating graphs for Pseu,0,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,0,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,0,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,100,10-50O-50N/EPS"
-@mv "Pseu,0,100,10-50O-50N-messages-sankey.eps" "Pseu-0-100-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,0,100,10-50O-50N-messages.eps" "Pseu-0-100-10-50O-50N-messages.eps"
-@mv "Pseu,0,100,10-50O-50N-cycleBreakdown.eps" "Pseu-0-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,0,100,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-0-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,0,100,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-0-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,0,100,10-50O-50N-utility-final.eps" "Pseu-0-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -20111,12 +18167,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,1
 @echo Generating graphs for Pseu,0,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,0,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,0,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,0,1-10O-100N/EPS"
-@mv "Pseu,0,0,1-10O-100N-messages-sankey.eps" "Pseu-0-0-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,0,0,1-10O-100N-messages.eps" "Pseu-0-0-1-10O-100N-messages.eps"
-@mv "Pseu,0,0,1-10O-100N-cycleBreakdown.eps" "Pseu-0-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,0,0,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-0-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,0,0,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-0-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,0,0,1-10O-100N-utility-final.eps" "Pseu-0-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -20173,12 +18223,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,0
 @echo Generating graphs for Pseu,0,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,0,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,0,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,0,2-50O-50N/EPS"
-@mv "Pseu,0,0,2-50O-50N-messages-sankey.eps" "Pseu-0-0-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,0,0,2-50O-50N-messages.eps" "Pseu-0-0-2-50O-50N-messages.eps"
-@mv "Pseu,0,0,2-50O-50N-cycleBreakdown.eps" "Pseu-0-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,0,0,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-0-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,0,0,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-0-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,0,0,2-50O-50N-utility-final.eps" "Pseu-0-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -20235,12 +18279,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,0
 @echo Generating graphs for Pseu,0,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,0,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,0,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,0,5-25O-100N/EPS"
-@mv "Pseu,0,0,5-25O-100N-messages-sankey.eps" "Pseu-0-0-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,0,0,5-25O-100N-messages.eps" "Pseu-0-0-5-25O-100N-messages.eps"
-@mv "Pseu,0,0,5-25O-100N-cycleBreakdown.eps" "Pseu-0-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,0,0,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-0-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,0,0,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-0-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,0,0,5-25O-100N-utility-final.eps" "Pseu-0-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -20297,12 +18335,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,0
 @echo Generating graphs for Pseu,0,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,0,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,0,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,0,10-50O-50N/EPS"
-@mv "Pseu,0,0,10-50O-50N-messages-sankey.eps" "Pseu-0-0-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,0,0,10-50O-50N-messages.eps" "Pseu-0-0-10-50O-50N-messages.eps"
-@mv "Pseu,0,0,10-50O-50N-cycleBreakdown.eps" "Pseu-0-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,0,0,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-0-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,0,0,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-0-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,0,0,10-50O-50N-utility-final.eps" "Pseu-0-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -20359,12 +18391,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,0
 @echo Generating graphs for Pseu,0,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,0,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,0,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,50,1-10O-100N/EPS"
-@mv "Pseu,0,50,1-10O-100N-messages-sankey.eps" "Pseu-0-50-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,0,50,1-10O-100N-messages.eps" "Pseu-0-50-1-10O-100N-messages.eps"
-@mv "Pseu,0,50,1-10O-100N-cycleBreakdown.eps" "Pseu-0-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,0,50,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-0-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,0,50,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-0-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,0,50,1-10O-100N-utility-final.eps" "Pseu-0-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -20421,12 +18447,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,5
 @echo Generating graphs for Pseu,0,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,0,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,0,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,50,2-50O-50N/EPS"
-@mv "Pseu,0,50,2-50O-50N-messages-sankey.eps" "Pseu-0-50-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,0,50,2-50O-50N-messages.eps" "Pseu-0-50-2-50O-50N-messages.eps"
-@mv "Pseu,0,50,2-50O-50N-cycleBreakdown.eps" "Pseu-0-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,0,50,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-0-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,0,50,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-0-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,0,50,2-50O-50N-utility-final.eps" "Pseu-0-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -20483,12 +18503,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,5
 @echo Generating graphs for Pseu,0,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,0,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,0,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,50,5-25O-100N/EPS"
-@mv "Pseu,0,50,5-25O-100N-messages-sankey.eps" "Pseu-0-50-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,0,50,5-25O-100N-messages.eps" "Pseu-0-50-5-25O-100N-messages.eps"
-@mv "Pseu,0,50,5-25O-100N-cycleBreakdown.eps" "Pseu-0-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,0,50,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-0-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,0,50,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-0-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,0,50,5-25O-100N-utility-final.eps" "Pseu-0-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -20545,12 +18559,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,5
 @echo Generating graphs for Pseu,0,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,0,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,0,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,50,10-50O-50N/EPS"
-@mv "Pseu,0,50,10-50O-50N-messages-sankey.eps" "Pseu-0-50-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,0,50,10-50O-50N-messages.eps" "Pseu-0-50-10-50O-50N-messages.eps"
-@mv "Pseu,0,50,10-50O-50N-cycleBreakdown.eps" "Pseu-0-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,0,50,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-0-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,0,50,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-0-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,0,50,10-50O-50N-utility-final.eps" "Pseu-0-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -20607,12 +18615,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,5
 @echo Generating graphs for Pseu,0,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,0,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,0,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,10,1-10O-100N/EPS"
-@mv "Pseu,0,10,1-10O-100N-messages-sankey.eps" "Pseu-0-10-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,0,10,1-10O-100N-messages.eps" "Pseu-0-10-1-10O-100N-messages.eps"
-@mv "Pseu,0,10,1-10O-100N-cycleBreakdown.eps" "Pseu-0-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,0,10,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-0-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,0,10,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-0-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,0,10,1-10O-100N-utility-final.eps" "Pseu-0-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -20669,12 +18671,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,1
 @echo Generating graphs for Pseu,0,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,0,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,0,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,10,2-50O-50N/EPS"
-@mv "Pseu,0,10,2-50O-50N-messages-sankey.eps" "Pseu-0-10-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,0,10,2-50O-50N-messages.eps" "Pseu-0-10-2-50O-50N-messages.eps"
-@mv "Pseu,0,10,2-50O-50N-cycleBreakdown.eps" "Pseu-0-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,0,10,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-0-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,0,10,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-0-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,0,10,2-50O-50N-utility-final.eps" "Pseu-0-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -20731,12 +18727,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,1
 @echo Generating graphs for Pseu,0,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,0,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,0,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,10,5-25O-100N/EPS"
-@mv "Pseu,0,10,5-25O-100N-messages-sankey.eps" "Pseu-0-10-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,0,10,5-25O-100N-messages.eps" "Pseu-0-10-5-25O-100N-messages.eps"
-@mv "Pseu,0,10,5-25O-100N-cycleBreakdown.eps" "Pseu-0-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,0,10,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-0-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,0,10,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-0-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,0,10,5-25O-100N-utility-final.eps" "Pseu-0-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -20793,12 +18783,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,1
 @echo Generating graphs for Pseu,0,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,0,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,0,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,10,10-50O-50N/EPS"
-@mv "Pseu,0,10,10-50O-50N-messages-sankey.eps" "Pseu-0-10-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,0,10,10-50O-50N-messages.eps" "Pseu-0-10-10-50O-50N-messages.eps"
-@mv "Pseu,0,10,10-50O-50N-cycleBreakdown.eps" "Pseu-0-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,0,10,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-0-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,0,10,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-0-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,0,10,10-50O-50N-utility-final.eps" "Pseu-0-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -20855,12 +18839,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,1
 @echo Generating graphs for Pseu,0,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,0,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,0,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,90,1-10O-100N/EPS"
-@mv "Pseu,0,90,1-10O-100N-messages-sankey.eps" "Pseu-0-90-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,0,90,1-10O-100N-messages.eps" "Pseu-0-90-1-10O-100N-messages.eps"
-@mv "Pseu,0,90,1-10O-100N-cycleBreakdown.eps" "Pseu-0-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,0,90,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-0-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,0,90,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-0-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,0,90,1-10O-100N-utility-final.eps" "Pseu-0-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -20917,12 +18895,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,9
 @echo Generating graphs for Pseu,0,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,0,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,0,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,90,2-50O-50N/EPS"
-@mv "Pseu,0,90,2-50O-50N-messages-sankey.eps" "Pseu-0-90-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,0,90,2-50O-50N-messages.eps" "Pseu-0-90-2-50O-50N-messages.eps"
-@mv "Pseu,0,90,2-50O-50N-cycleBreakdown.eps" "Pseu-0-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,0,90,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-0-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,0,90,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-0-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,0,90,2-50O-50N-utility-final.eps" "Pseu-0-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -20979,12 +18951,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,9
 @echo Generating graphs for Pseu,0,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,0,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,0,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,90,5-25O-100N/EPS"
-@mv "Pseu,0,90,5-25O-100N-messages-sankey.eps" "Pseu-0-90-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,0,90,5-25O-100N-messages.eps" "Pseu-0-90-5-25O-100N-messages.eps"
-@mv "Pseu,0,90,5-25O-100N-cycleBreakdown.eps" "Pseu-0-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,0,90,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-0-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,0,90,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-0-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,0,90,5-25O-100N-utility-final.eps" "Pseu-0-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -21041,12 +19007,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,9
 @echo Generating graphs for Pseu,0,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,0,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,0,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,90,10-50O-50N/EPS"
-@mv "Pseu,0,90,10-50O-50N-messages-sankey.eps" "Pseu-0-90-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,0,90,10-50O-50N-messages.eps" "Pseu-0-90-10-50O-50N-messages.eps"
-@mv "Pseu,0,90,10-50O-50N-cycleBreakdown.eps" "Pseu-0-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,0,90,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-0-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,0,90,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-0-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,0,90,10-50O-50N-utility-final.eps" "Pseu-0-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -21103,12 +19063,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,0,9
 @echo Generating graphs for Pseu,50,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,50,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,100,1-10O-100N/EPS"
-@mv "Pseu,50,100,1-10O-100N-messages-sankey.eps" "Pseu-50-100-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,50,100,1-10O-100N-messages.eps" "Pseu-50-100-1-10O-100N-messages.eps"
-@mv "Pseu,50,100,1-10O-100N-cycleBreakdown.eps" "Pseu-50-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,50,100,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-50-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,50,100,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-50-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,50,100,1-10O-100N-utility-final.eps" "Pseu-50-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -21165,12 +19119,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo Generating graphs for Pseu,50,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,50,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,100,2-50O-50N/EPS"
-@mv "Pseu,50,100,2-50O-50N-messages-sankey.eps" "Pseu-50-100-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,50,100,2-50O-50N-messages.eps" "Pseu-50-100-2-50O-50N-messages.eps"
-@mv "Pseu,50,100,2-50O-50N-cycleBreakdown.eps" "Pseu-50-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,50,100,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-50-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,50,100,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-50-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,50,100,2-50O-50N-utility-final.eps" "Pseu-50-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -21227,12 +19175,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo Generating graphs for Pseu,50,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,50,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,100,5-25O-100N/EPS"
-@mv "Pseu,50,100,5-25O-100N-messages-sankey.eps" "Pseu-50-100-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,50,100,5-25O-100N-messages.eps" "Pseu-50-100-5-25O-100N-messages.eps"
-@mv "Pseu,50,100,5-25O-100N-cycleBreakdown.eps" "Pseu-50-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,50,100,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-50-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,50,100,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-50-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,50,100,5-25O-100N-utility-final.eps" "Pseu-50-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -21289,12 +19231,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo Generating graphs for Pseu,50,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,50,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,100,10-50O-50N/EPS"
-@mv "Pseu,50,100,10-50O-50N-messages-sankey.eps" "Pseu-50-100-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,50,100,10-50O-50N-messages.eps" "Pseu-50-100-10-50O-50N-messages.eps"
-@mv "Pseu,50,100,10-50O-50N-cycleBreakdown.eps" "Pseu-50-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,50,100,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-50-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,50,100,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-50-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,50,100,10-50O-50N-utility-final.eps" "Pseu-50-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -21351,12 +19287,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo Generating graphs for Pseu,50,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,50,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,0,1-10O-100N/EPS"
-@mv "Pseu,50,0,1-10O-100N-messages-sankey.eps" "Pseu-50-0-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,50,0,1-10O-100N-messages.eps" "Pseu-50-0-1-10O-100N-messages.eps"
-@mv "Pseu,50,0,1-10O-100N-cycleBreakdown.eps" "Pseu-50-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,50,0,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-50-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,50,0,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-50-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,50,0,1-10O-100N-utility-final.eps" "Pseu-50-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -21413,12 +19343,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo Generating graphs for Pseu,50,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,50,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,0,2-50O-50N/EPS"
-@mv "Pseu,50,0,2-50O-50N-messages-sankey.eps" "Pseu-50-0-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,50,0,2-50O-50N-messages.eps" "Pseu-50-0-2-50O-50N-messages.eps"
-@mv "Pseu,50,0,2-50O-50N-cycleBreakdown.eps" "Pseu-50-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,50,0,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-50-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,50,0,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-50-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,50,0,2-50O-50N-utility-final.eps" "Pseu-50-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -21475,12 +19399,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo Generating graphs for Pseu,50,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,50,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,0,5-25O-100N/EPS"
-@mv "Pseu,50,0,5-25O-100N-messages-sankey.eps" "Pseu-50-0-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,50,0,5-25O-100N-messages.eps" "Pseu-50-0-5-25O-100N-messages.eps"
-@mv "Pseu,50,0,5-25O-100N-cycleBreakdown.eps" "Pseu-50-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,50,0,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-50-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,50,0,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-50-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,50,0,5-25O-100N-utility-final.eps" "Pseu-50-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -21537,12 +19455,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo Generating graphs for Pseu,50,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,50,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,0,10-50O-50N/EPS"
-@mv "Pseu,50,0,10-50O-50N-messages-sankey.eps" "Pseu-50-0-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,50,0,10-50O-50N-messages.eps" "Pseu-50-0-10-50O-50N-messages.eps"
-@mv "Pseu,50,0,10-50O-50N-cycleBreakdown.eps" "Pseu-50-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,50,0,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-50-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,50,0,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-50-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,50,0,10-50O-50N-utility-final.eps" "Pseu-50-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -21599,12 +19511,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo Generating graphs for Pseu,50,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,50,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,50,1-10O-100N/EPS"
-@mv "Pseu,50,50,1-10O-100N-messages-sankey.eps" "Pseu-50-50-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,50,50,1-10O-100N-messages.eps" "Pseu-50-50-1-10O-100N-messages.eps"
-@mv "Pseu,50,50,1-10O-100N-cycleBreakdown.eps" "Pseu-50-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,50,50,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-50-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,50,50,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-50-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,50,50,1-10O-100N-utility-final.eps" "Pseu-50-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -21661,12 +19567,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo Generating graphs for Pseu,50,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,50,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,50,2-50O-50N/EPS"
-@mv "Pseu,50,50,2-50O-50N-messages-sankey.eps" "Pseu-50-50-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,50,50,2-50O-50N-messages.eps" "Pseu-50-50-2-50O-50N-messages.eps"
-@mv "Pseu,50,50,2-50O-50N-cycleBreakdown.eps" "Pseu-50-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,50,50,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-50-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,50,50,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-50-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,50,50,2-50O-50N-utility-final.eps" "Pseu-50-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -21723,12 +19623,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo Generating graphs for Pseu,50,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,50,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,50,5-25O-100N/EPS"
-@mv "Pseu,50,50,5-25O-100N-messages-sankey.eps" "Pseu-50-50-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,50,50,5-25O-100N-messages.eps" "Pseu-50-50-5-25O-100N-messages.eps"
-@mv "Pseu,50,50,5-25O-100N-cycleBreakdown.eps" "Pseu-50-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,50,50,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-50-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,50,50,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-50-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,50,50,5-25O-100N-utility-final.eps" "Pseu-50-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -21785,12 +19679,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo Generating graphs for Pseu,50,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,50,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,50,10-50O-50N/EPS"
-@mv "Pseu,50,50,10-50O-50N-messages-sankey.eps" "Pseu-50-50-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,50,50,10-50O-50N-messages.eps" "Pseu-50-50-10-50O-50N-messages.eps"
-@mv "Pseu,50,50,10-50O-50N-cycleBreakdown.eps" "Pseu-50-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,50,50,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-50-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,50,50,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-50-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,50,50,10-50O-50N-utility-final.eps" "Pseu-50-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -21847,12 +19735,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo Generating graphs for Pseu,50,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,50,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,10,1-10O-100N/EPS"
-@mv "Pseu,50,10,1-10O-100N-messages-sankey.eps" "Pseu-50-10-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,50,10,1-10O-100N-messages.eps" "Pseu-50-10-1-10O-100N-messages.eps"
-@mv "Pseu,50,10,1-10O-100N-cycleBreakdown.eps" "Pseu-50-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,50,10,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-50-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,50,10,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-50-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,50,10,1-10O-100N-utility-final.eps" "Pseu-50-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -21909,12 +19791,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo Generating graphs for Pseu,50,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,50,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,10,2-50O-50N/EPS"
-@mv "Pseu,50,10,2-50O-50N-messages-sankey.eps" "Pseu-50-10-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,50,10,2-50O-50N-messages.eps" "Pseu-50-10-2-50O-50N-messages.eps"
-@mv "Pseu,50,10,2-50O-50N-cycleBreakdown.eps" "Pseu-50-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,50,10,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-50-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,50,10,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-50-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,50,10,2-50O-50N-utility-final.eps" "Pseu-50-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -21971,12 +19847,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo Generating graphs for Pseu,50,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,50,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,10,5-25O-100N/EPS"
-@mv "Pseu,50,10,5-25O-100N-messages-sankey.eps" "Pseu-50-10-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,50,10,5-25O-100N-messages.eps" "Pseu-50-10-5-25O-100N-messages.eps"
-@mv "Pseu,50,10,5-25O-100N-cycleBreakdown.eps" "Pseu-50-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,50,10,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-50-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,50,10,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-50-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,50,10,5-25O-100N-utility-final.eps" "Pseu-50-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -22033,12 +19903,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo Generating graphs for Pseu,50,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,50,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,10,10-50O-50N/EPS"
-@mv "Pseu,50,10,10-50O-50N-messages-sankey.eps" "Pseu-50-10-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,50,10,10-50O-50N-messages.eps" "Pseu-50-10-10-50O-50N-messages.eps"
-@mv "Pseu,50,10,10-50O-50N-cycleBreakdown.eps" "Pseu-50-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,50,10,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-50-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,50,10,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-50-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,50,10,10-50O-50N-utility-final.eps" "Pseu-50-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -22095,12 +19959,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo Generating graphs for Pseu,50,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,50,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,90,1-10O-100N/EPS"
-@mv "Pseu,50,90,1-10O-100N-messages-sankey.eps" "Pseu-50-90-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,50,90,1-10O-100N-messages.eps" "Pseu-50-90-1-10O-100N-messages.eps"
-@mv "Pseu,50,90,1-10O-100N-cycleBreakdown.eps" "Pseu-50-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,50,90,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-50-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,50,90,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-50-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,50,90,1-10O-100N-utility-final.eps" "Pseu-50-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -22157,12 +20015,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo Generating graphs for Pseu,50,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,50,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,90,2-50O-50N/EPS"
-@mv "Pseu,50,90,2-50O-50N-messages-sankey.eps" "Pseu-50-90-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,50,90,2-50O-50N-messages.eps" "Pseu-50-90-2-50O-50N-messages.eps"
-@mv "Pseu,50,90,2-50O-50N-cycleBreakdown.eps" "Pseu-50-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,50,90,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-50-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,50,90,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-50-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,50,90,2-50O-50N-utility-final.eps" "Pseu-50-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -22219,12 +20071,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo Generating graphs for Pseu,50,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,50,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,90,5-25O-100N/EPS"
-@mv "Pseu,50,90,5-25O-100N-messages-sankey.eps" "Pseu-50-90-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,50,90,5-25O-100N-messages.eps" "Pseu-50-90-5-25O-100N-messages.eps"
-@mv "Pseu,50,90,5-25O-100N-cycleBreakdown.eps" "Pseu-50-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,50,90,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-50-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,50,90,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-50-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,50,90,5-25O-100N-utility-final.eps" "Pseu-50-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -22281,12 +20127,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo Generating graphs for Pseu,50,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,50,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,90,10-50O-50N/EPS"
-@mv "Pseu,50,90,10-50O-50N-messages-sankey.eps" "Pseu-50-90-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,50,90,10-50O-50N-messages.eps" "Pseu-50-90-10-50O-50N-messages.eps"
-@mv "Pseu,50,90,10-50O-50N-cycleBreakdown.eps" "Pseu-50-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,50,90,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-50-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,50,90,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-50-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,50,90,10-50O-50N-utility-final.eps" "Pseu-50-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -22343,12 +20183,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo Generating graphs for Pseu,10,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,10,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,100,1-10O-100N/EPS"
-@mv "Pseu,10,100,1-10O-100N-messages-sankey.eps" "Pseu-10-100-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,10,100,1-10O-100N-messages.eps" "Pseu-10-100-1-10O-100N-messages.eps"
-@mv "Pseu,10,100,1-10O-100N-cycleBreakdown.eps" "Pseu-10-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,10,100,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-10-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,10,100,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-10-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,10,100,1-10O-100N-utility-final.eps" "Pseu-10-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -22405,12 +20239,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo Generating graphs for Pseu,10,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,10,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,100,2-50O-50N/EPS"
-@mv "Pseu,10,100,2-50O-50N-messages-sankey.eps" "Pseu-10-100-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,10,100,2-50O-50N-messages.eps" "Pseu-10-100-2-50O-50N-messages.eps"
-@mv "Pseu,10,100,2-50O-50N-cycleBreakdown.eps" "Pseu-10-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,10,100,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-10-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,10,100,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-10-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,10,100,2-50O-50N-utility-final.eps" "Pseu-10-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -22467,12 +20295,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo Generating graphs for Pseu,10,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,10,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,100,5-25O-100N/EPS"
-@mv "Pseu,10,100,5-25O-100N-messages-sankey.eps" "Pseu-10-100-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,10,100,5-25O-100N-messages.eps" "Pseu-10-100-5-25O-100N-messages.eps"
-@mv "Pseu,10,100,5-25O-100N-cycleBreakdown.eps" "Pseu-10-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,10,100,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-10-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,10,100,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-10-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,10,100,5-25O-100N-utility-final.eps" "Pseu-10-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -22529,12 +20351,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo Generating graphs for Pseu,10,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,10,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,100,10-50O-50N/EPS"
-@mv "Pseu,10,100,10-50O-50N-messages-sankey.eps" "Pseu-10-100-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,10,100,10-50O-50N-messages.eps" "Pseu-10-100-10-50O-50N-messages.eps"
-@mv "Pseu,10,100,10-50O-50N-cycleBreakdown.eps" "Pseu-10-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,10,100,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-10-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,10,100,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-10-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,10,100,10-50O-50N-utility-final.eps" "Pseu-10-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -22591,12 +20407,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo Generating graphs for Pseu,10,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,10,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,0,1-10O-100N/EPS"
-@mv "Pseu,10,0,1-10O-100N-messages-sankey.eps" "Pseu-10-0-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,10,0,1-10O-100N-messages.eps" "Pseu-10-0-1-10O-100N-messages.eps"
-@mv "Pseu,10,0,1-10O-100N-cycleBreakdown.eps" "Pseu-10-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,10,0,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-10-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,10,0,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-10-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,10,0,1-10O-100N-utility-final.eps" "Pseu-10-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -22653,12 +20463,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo Generating graphs for Pseu,10,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,10,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,0,2-50O-50N/EPS"
-@mv "Pseu,10,0,2-50O-50N-messages-sankey.eps" "Pseu-10-0-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,10,0,2-50O-50N-messages.eps" "Pseu-10-0-2-50O-50N-messages.eps"
-@mv "Pseu,10,0,2-50O-50N-cycleBreakdown.eps" "Pseu-10-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,10,0,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-10-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,10,0,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-10-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,10,0,2-50O-50N-utility-final.eps" "Pseu-10-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -22715,12 +20519,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo Generating graphs for Pseu,10,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,10,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,0,5-25O-100N/EPS"
-@mv "Pseu,10,0,5-25O-100N-messages-sankey.eps" "Pseu-10-0-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,10,0,5-25O-100N-messages.eps" "Pseu-10-0-5-25O-100N-messages.eps"
-@mv "Pseu,10,0,5-25O-100N-cycleBreakdown.eps" "Pseu-10-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,10,0,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-10-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,10,0,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-10-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,10,0,5-25O-100N-utility-final.eps" "Pseu-10-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -22777,12 +20575,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo Generating graphs for Pseu,10,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,10,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,0,10-50O-50N/EPS"
-@mv "Pseu,10,0,10-50O-50N-messages-sankey.eps" "Pseu-10-0-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,10,0,10-50O-50N-messages.eps" "Pseu-10-0-10-50O-50N-messages.eps"
-@mv "Pseu,10,0,10-50O-50N-cycleBreakdown.eps" "Pseu-10-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,10,0,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-10-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,10,0,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-10-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,10,0,10-50O-50N-utility-final.eps" "Pseu-10-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -22839,12 +20631,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo Generating graphs for Pseu,10,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,10,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,50,1-10O-100N/EPS"
-@mv "Pseu,10,50,1-10O-100N-messages-sankey.eps" "Pseu-10-50-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,10,50,1-10O-100N-messages.eps" "Pseu-10-50-1-10O-100N-messages.eps"
-@mv "Pseu,10,50,1-10O-100N-cycleBreakdown.eps" "Pseu-10-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,10,50,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-10-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,10,50,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-10-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,10,50,1-10O-100N-utility-final.eps" "Pseu-10-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -22901,12 +20687,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo Generating graphs for Pseu,10,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,10,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,50,2-50O-50N/EPS"
-@mv "Pseu,10,50,2-50O-50N-messages-sankey.eps" "Pseu-10-50-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,10,50,2-50O-50N-messages.eps" "Pseu-10-50-2-50O-50N-messages.eps"
-@mv "Pseu,10,50,2-50O-50N-cycleBreakdown.eps" "Pseu-10-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,10,50,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-10-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,10,50,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-10-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,10,50,2-50O-50N-utility-final.eps" "Pseu-10-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -22963,12 +20743,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo Generating graphs for Pseu,10,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,10,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,50,5-25O-100N/EPS"
-@mv "Pseu,10,50,5-25O-100N-messages-sankey.eps" "Pseu-10-50-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,10,50,5-25O-100N-messages.eps" "Pseu-10-50-5-25O-100N-messages.eps"
-@mv "Pseu,10,50,5-25O-100N-cycleBreakdown.eps" "Pseu-10-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,10,50,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-10-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,10,50,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-10-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,10,50,5-25O-100N-utility-final.eps" "Pseu-10-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -23025,12 +20799,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo Generating graphs for Pseu,10,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,10,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,50,10-50O-50N/EPS"
-@mv "Pseu,10,50,10-50O-50N-messages-sankey.eps" "Pseu-10-50-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,10,50,10-50O-50N-messages.eps" "Pseu-10-50-10-50O-50N-messages.eps"
-@mv "Pseu,10,50,10-50O-50N-cycleBreakdown.eps" "Pseu-10-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,10,50,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-10-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,10,50,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-10-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,10,50,10-50O-50N-utility-final.eps" "Pseu-10-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -23087,12 +20855,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo Generating graphs for Pseu,10,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,10,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,10,1-10O-100N/EPS"
-@mv "Pseu,10,10,1-10O-100N-messages-sankey.eps" "Pseu-10-10-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,10,10,1-10O-100N-messages.eps" "Pseu-10-10-1-10O-100N-messages.eps"
-@mv "Pseu,10,10,1-10O-100N-cycleBreakdown.eps" "Pseu-10-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,10,10,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-10-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,10,10,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-10-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,10,10,1-10O-100N-utility-final.eps" "Pseu-10-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -23149,12 +20911,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo Generating graphs for Pseu,10,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,10,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,10,2-50O-50N/EPS"
-@mv "Pseu,10,10,2-50O-50N-messages-sankey.eps" "Pseu-10-10-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,10,10,2-50O-50N-messages.eps" "Pseu-10-10-2-50O-50N-messages.eps"
-@mv "Pseu,10,10,2-50O-50N-cycleBreakdown.eps" "Pseu-10-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,10,10,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-10-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,10,10,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-10-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,10,10,2-50O-50N-utility-final.eps" "Pseu-10-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -23211,12 +20967,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo Generating graphs for Pseu,10,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,10,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,10,5-25O-100N/EPS"
-@mv "Pseu,10,10,5-25O-100N-messages-sankey.eps" "Pseu-10-10-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,10,10,5-25O-100N-messages.eps" "Pseu-10-10-5-25O-100N-messages.eps"
-@mv "Pseu,10,10,5-25O-100N-cycleBreakdown.eps" "Pseu-10-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,10,10,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-10-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,10,10,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-10-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,10,10,5-25O-100N-utility-final.eps" "Pseu-10-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -23273,12 +21023,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo Generating graphs for Pseu,10,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,10,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,10,10-50O-50N/EPS"
-@mv "Pseu,10,10,10-50O-50N-messages-sankey.eps" "Pseu-10-10-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,10,10,10-50O-50N-messages.eps" "Pseu-10-10-10-50O-50N-messages.eps"
-@mv "Pseu,10,10,10-50O-50N-cycleBreakdown.eps" "Pseu-10-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,10,10,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-10-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,10,10,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-10-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,10,10,10-50O-50N-utility-final.eps" "Pseu-10-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -23335,12 +21079,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo Generating graphs for Pseu,10,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,10,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,90,1-10O-100N/EPS"
-@mv "Pseu,10,90,1-10O-100N-messages-sankey.eps" "Pseu-10-90-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,10,90,1-10O-100N-messages.eps" "Pseu-10-90-1-10O-100N-messages.eps"
-@mv "Pseu,10,90,1-10O-100N-cycleBreakdown.eps" "Pseu-10-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,10,90,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-10-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,10,90,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-10-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,10,90,1-10O-100N-utility-final.eps" "Pseu-10-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -23397,12 +21135,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo Generating graphs for Pseu,10,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,10,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,90,2-50O-50N/EPS"
-@mv "Pseu,10,90,2-50O-50N-messages-sankey.eps" "Pseu-10-90-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,10,90,2-50O-50N-messages.eps" "Pseu-10-90-2-50O-50N-messages.eps"
-@mv "Pseu,10,90,2-50O-50N-cycleBreakdown.eps" "Pseu-10-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,10,90,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-10-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,10,90,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-10-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,10,90,2-50O-50N-utility-final.eps" "Pseu-10-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -23459,12 +21191,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo Generating graphs for Pseu,10,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,10,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,90,5-25O-100N/EPS"
-@mv "Pseu,10,90,5-25O-100N-messages-sankey.eps" "Pseu-10-90-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,10,90,5-25O-100N-messages.eps" "Pseu-10-90-5-25O-100N-messages.eps"
-@mv "Pseu,10,90,5-25O-100N-cycleBreakdown.eps" "Pseu-10-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,10,90,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-10-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,10,90,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-10-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,10,90,5-25O-100N-utility-final.eps" "Pseu-10-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -23521,12 +21247,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo Generating graphs for Pseu,10,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,10,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,90,10-50O-50N/EPS"
-@mv "Pseu,10,90,10-50O-50N-messages-sankey.eps" "Pseu-10-90-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,10,90,10-50O-50N-messages.eps" "Pseu-10-90-10-50O-50N-messages.eps"
-@mv "Pseu,10,90,10-50O-50N-cycleBreakdown.eps" "Pseu-10-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,10,90,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-10-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,10,90,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-10-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,10,90,10-50O-50N-utility-final.eps" "Pseu-10-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -23583,12 +21303,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo Generating graphs for Pseu,90,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,90,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,100,1-10O-100N/EPS"
-@mv "Pseu,90,100,1-10O-100N-messages-sankey.eps" "Pseu-90-100-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,90,100,1-10O-100N-messages.eps" "Pseu-90-100-1-10O-100N-messages.eps"
-@mv "Pseu,90,100,1-10O-100N-cycleBreakdown.eps" "Pseu-90-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,90,100,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-90-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,90,100,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-90-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,90,100,1-10O-100N-utility-final.eps" "Pseu-90-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -23645,12 +21359,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo Generating graphs for Pseu,90,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,90,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,100,2-50O-50N/EPS"
-@mv "Pseu,90,100,2-50O-50N-messages-sankey.eps" "Pseu-90-100-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,90,100,2-50O-50N-messages.eps" "Pseu-90-100-2-50O-50N-messages.eps"
-@mv "Pseu,90,100,2-50O-50N-cycleBreakdown.eps" "Pseu-90-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,90,100,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-90-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,90,100,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-90-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,90,100,2-50O-50N-utility-final.eps" "Pseu-90-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -23707,12 +21415,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo Generating graphs for Pseu,90,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,90,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,100,5-25O-100N/EPS"
-@mv "Pseu,90,100,5-25O-100N-messages-sankey.eps" "Pseu-90-100-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,90,100,5-25O-100N-messages.eps" "Pseu-90-100-5-25O-100N-messages.eps"
-@mv "Pseu,90,100,5-25O-100N-cycleBreakdown.eps" "Pseu-90-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,90,100,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-90-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,90,100,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-90-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,90,100,5-25O-100N-utility-final.eps" "Pseu-90-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -23769,12 +21471,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo Generating graphs for Pseu,90,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,90,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,100,10-50O-50N/EPS"
-@mv "Pseu,90,100,10-50O-50N-messages-sankey.eps" "Pseu-90-100-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,90,100,10-50O-50N-messages.eps" "Pseu-90-100-10-50O-50N-messages.eps"
-@mv "Pseu,90,100,10-50O-50N-cycleBreakdown.eps" "Pseu-90-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,90,100,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-90-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,90,100,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-90-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,90,100,10-50O-50N-utility-final.eps" "Pseu-90-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -23831,12 +21527,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo Generating graphs for Pseu,90,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,90,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,0,1-10O-100N/EPS"
-@mv "Pseu,90,0,1-10O-100N-messages-sankey.eps" "Pseu-90-0-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,90,0,1-10O-100N-messages.eps" "Pseu-90-0-1-10O-100N-messages.eps"
-@mv "Pseu,90,0,1-10O-100N-cycleBreakdown.eps" "Pseu-90-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,90,0,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-90-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,90,0,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-90-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,90,0,1-10O-100N-utility-final.eps" "Pseu-90-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -23893,12 +21583,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo Generating graphs for Pseu,90,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,90,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,0,2-50O-50N/EPS"
-@mv "Pseu,90,0,2-50O-50N-messages-sankey.eps" "Pseu-90-0-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,90,0,2-50O-50N-messages.eps" "Pseu-90-0-2-50O-50N-messages.eps"
-@mv "Pseu,90,0,2-50O-50N-cycleBreakdown.eps" "Pseu-90-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,90,0,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-90-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,90,0,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-90-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,90,0,2-50O-50N-utility-final.eps" "Pseu-90-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -23955,12 +21639,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo Generating graphs for Pseu,90,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,90,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,0,5-25O-100N/EPS"
-@mv "Pseu,90,0,5-25O-100N-messages-sankey.eps" "Pseu-90-0-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,90,0,5-25O-100N-messages.eps" "Pseu-90-0-5-25O-100N-messages.eps"
-@mv "Pseu,90,0,5-25O-100N-cycleBreakdown.eps" "Pseu-90-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,90,0,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-90-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,90,0,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-90-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,90,0,5-25O-100N-utility-final.eps" "Pseu-90-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -24017,12 +21695,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo Generating graphs for Pseu,90,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,90,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,0,10-50O-50N/EPS"
-@mv "Pseu,90,0,10-50O-50N-messages-sankey.eps" "Pseu-90-0-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,90,0,10-50O-50N-messages.eps" "Pseu-90-0-10-50O-50N-messages.eps"
-@mv "Pseu,90,0,10-50O-50N-cycleBreakdown.eps" "Pseu-90-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,90,0,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-90-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,90,0,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-90-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,90,0,10-50O-50N-utility-final.eps" "Pseu-90-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -24079,12 +21751,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo Generating graphs for Pseu,90,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,90,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,50,1-10O-100N/EPS"
-@mv "Pseu,90,50,1-10O-100N-messages-sankey.eps" "Pseu-90-50-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,90,50,1-10O-100N-messages.eps" "Pseu-90-50-1-10O-100N-messages.eps"
-@mv "Pseu,90,50,1-10O-100N-cycleBreakdown.eps" "Pseu-90-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,90,50,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-90-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,90,50,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-90-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,90,50,1-10O-100N-utility-final.eps" "Pseu-90-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -24141,12 +21807,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo Generating graphs for Pseu,90,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,90,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,50,2-50O-50N/EPS"
-@mv "Pseu,90,50,2-50O-50N-messages-sankey.eps" "Pseu-90-50-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,90,50,2-50O-50N-messages.eps" "Pseu-90-50-2-50O-50N-messages.eps"
-@mv "Pseu,90,50,2-50O-50N-cycleBreakdown.eps" "Pseu-90-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,90,50,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-90-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,90,50,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-90-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,90,50,2-50O-50N-utility-final.eps" "Pseu-90-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -24203,12 +21863,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo Generating graphs for Pseu,90,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,90,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,50,5-25O-100N/EPS"
-@mv "Pseu,90,50,5-25O-100N-messages-sankey.eps" "Pseu-90-50-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,90,50,5-25O-100N-messages.eps" "Pseu-90-50-5-25O-100N-messages.eps"
-@mv "Pseu,90,50,5-25O-100N-cycleBreakdown.eps" "Pseu-90-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,90,50,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-90-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,90,50,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-90-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,90,50,5-25O-100N-utility-final.eps" "Pseu-90-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -24265,12 +21919,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo Generating graphs for Pseu,90,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,90,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,50,10-50O-50N/EPS"
-@mv "Pseu,90,50,10-50O-50N-messages-sankey.eps" "Pseu-90-50-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,90,50,10-50O-50N-messages.eps" "Pseu-90-50-10-50O-50N-messages.eps"
-@mv "Pseu,90,50,10-50O-50N-cycleBreakdown.eps" "Pseu-90-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,90,50,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-90-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,90,50,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-90-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,90,50,10-50O-50N-utility-final.eps" "Pseu-90-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -24327,12 +21975,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo Generating graphs for Pseu,90,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,90,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,10,1-10O-100N/EPS"
-@mv "Pseu,90,10,1-10O-100N-messages-sankey.eps" "Pseu-90-10-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,90,10,1-10O-100N-messages.eps" "Pseu-90-10-1-10O-100N-messages.eps"
-@mv "Pseu,90,10,1-10O-100N-cycleBreakdown.eps" "Pseu-90-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,90,10,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-90-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,90,10,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-90-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,90,10,1-10O-100N-utility-final.eps" "Pseu-90-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -24389,12 +22031,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo Generating graphs for Pseu,90,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,90,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,10,2-50O-50N/EPS"
-@mv "Pseu,90,10,2-50O-50N-messages-sankey.eps" "Pseu-90-10-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,90,10,2-50O-50N-messages.eps" "Pseu-90-10-2-50O-50N-messages.eps"
-@mv "Pseu,90,10,2-50O-50N-cycleBreakdown.eps" "Pseu-90-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,90,10,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-90-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,90,10,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-90-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,90,10,2-50O-50N-utility-final.eps" "Pseu-90-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -24451,12 +22087,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo Generating graphs for Pseu,90,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,90,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,10,5-25O-100N/EPS"
-@mv "Pseu,90,10,5-25O-100N-messages-sankey.eps" "Pseu-90-10-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,90,10,5-25O-100N-messages.eps" "Pseu-90-10-5-25O-100N-messages.eps"
-@mv "Pseu,90,10,5-25O-100N-cycleBreakdown.eps" "Pseu-90-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,90,10,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-90-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,90,10,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-90-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,90,10,5-25O-100N-utility-final.eps" "Pseu-90-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -24513,12 +22143,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo Generating graphs for Pseu,90,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,90,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,10,10-50O-50N/EPS"
-@mv "Pseu,90,10,10-50O-50N-messages-sankey.eps" "Pseu-90-10-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,90,10,10-50O-50N-messages.eps" "Pseu-90-10-10-50O-50N-messages.eps"
-@mv "Pseu,90,10,10-50O-50N-cycleBreakdown.eps" "Pseu-90-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,90,10,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-90-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,90,10,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-90-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,90,10,10-50O-50N-utility-final.eps" "Pseu-90-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -24575,12 +22199,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo Generating graphs for Pseu,90,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,90,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,90,1-10O-100N/EPS"
-@mv "Pseu,90,90,1-10O-100N-messages-sankey.eps" "Pseu-90-90-1-10O-100N-messages-sankey.eps"
-@mv "Pseu,90,90,1-10O-100N-messages.eps" "Pseu-90-90-1-10O-100N-messages.eps"
-@mv "Pseu,90,90,1-10O-100N-cycleBreakdown.eps" "Pseu-90-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Pseu,90,90,1-10O-100N-utilScatterAll-Fault.eps" "Pseu-90-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,90,90,1-10O-100N-utilScatterAll-NoFault.eps" "Pseu-90-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,90,90,1-10O-100N-utility-final.eps" "Pseu-90-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -24637,12 +22255,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo Generating graphs for Pseu,90,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,90,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,90,2-50O-50N/EPS"
-@mv "Pseu,90,90,2-50O-50N-messages-sankey.eps" "Pseu-90-90-2-50O-50N-messages-sankey.eps"
-@mv "Pseu,90,90,2-50O-50N-messages.eps" "Pseu-90-90-2-50O-50N-messages.eps"
-@mv "Pseu,90,90,2-50O-50N-cycleBreakdown.eps" "Pseu-90-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,90,90,2-50O-50N-utilScatterAll-Fault.eps" "Pseu-90-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,90,90,2-50O-50N-utilScatterAll-NoFault.eps" "Pseu-90-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,90,90,2-50O-50N-utility-final.eps" "Pseu-90-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -24699,12 +22311,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo Generating graphs for Pseu,90,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,90,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,90,5-25O-100N/EPS"
-@mv "Pseu,90,90,5-25O-100N-messages-sankey.eps" "Pseu-90-90-5-25O-100N-messages-sankey.eps"
-@mv "Pseu,90,90,5-25O-100N-messages.eps" "Pseu-90-90-5-25O-100N-messages.eps"
-@mv "Pseu,90,90,5-25O-100N-cycleBreakdown.eps" "Pseu-90-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Pseu,90,90,5-25O-100N-utilScatterAll-Fault.eps" "Pseu-90-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Pseu,90,90,5-25O-100N-utilScatterAll-NoFault.eps" "Pseu-90-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Pseu,90,90,5-25O-100N-utility-final.eps" "Pseu-90-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -24761,12 +22367,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo Generating graphs for Pseu,90,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Pseu,90,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,90,10-50O-50N/EPS"
-@mv "Pseu,90,90,10-50O-50N-messages-sankey.eps" "Pseu-90-90-10-50O-50N-messages-sankey.eps"
-@mv "Pseu,90,90,10-50O-50N-messages.eps" "Pseu-90-90-10-50O-50N-messages.eps"
-@mv "Pseu,90,90,10-50O-50N-cycleBreakdown.eps" "Pseu-90-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Pseu,90,90,10-50O-50N-utilScatterAll-Fault.eps" "Pseu-90-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Pseu,90,90,10-50O-50N-utilScatterAll-NoFault.eps" "Pseu-90-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Pseu,90,90,10-50O-50N-utility-final.eps" "Pseu-90-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -24823,12 +22423,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo Generating graphs for Ring,100,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,100,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,100,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100,100,1-10O-100N/EPS"
-@mv "Ring,100,100,1-10O-100N-messages-sankey.eps" "Ring-100-100-1-10O-100N-messages-sankey.eps"
-@mv "Ring,100,100,1-10O-100N-messages.eps" "Ring-100-100-1-10O-100N-messages.eps"
-@mv "Ring,100,100,1-10O-100N-cycleBreakdown.eps" "Ring-100-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,100,100,1-10O-100N-utilScatterAll-Fault.eps" "Ring-100-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,100,100,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-100-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,100,100,1-10O-100N-utility-final.eps" "Ring-100-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -24885,12 +22479,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100
 @echo Generating graphs for Ring,100,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,100,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,100,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100,100,2-50O-50N/EPS"
-@mv "Ring,100,100,2-50O-50N-messages-sankey.eps" "Ring-100-100-2-50O-50N-messages-sankey.eps"
-@mv "Ring,100,100,2-50O-50N-messages.eps" "Ring-100-100-2-50O-50N-messages.eps"
-@mv "Ring,100,100,2-50O-50N-cycleBreakdown.eps" "Ring-100-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,100,100,2-50O-50N-utilScatterAll-Fault.eps" "Ring-100-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,100,100,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-100-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,100,100,2-50O-50N-utility-final.eps" "Ring-100-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -24947,12 +22535,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100
 @echo Generating graphs for Ring,100,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,100,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,100,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100,100,5-25O-100N/EPS"
-@mv "Ring,100,100,5-25O-100N-messages-sankey.eps" "Ring-100-100-5-25O-100N-messages-sankey.eps"
-@mv "Ring,100,100,5-25O-100N-messages.eps" "Ring-100-100-5-25O-100N-messages.eps"
-@mv "Ring,100,100,5-25O-100N-cycleBreakdown.eps" "Ring-100-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,100,100,5-25O-100N-utilScatterAll-Fault.eps" "Ring-100-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,100,100,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-100-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,100,100,5-25O-100N-utility-final.eps" "Ring-100-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -25009,12 +22591,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100
 @echo Generating graphs for Ring,100,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,100,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,100,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100,100,10-50O-50N/EPS"
-@mv "Ring,100,100,10-50O-50N-messages-sankey.eps" "Ring-100-100-10-50O-50N-messages-sankey.eps"
-@mv "Ring,100,100,10-50O-50N-messages.eps" "Ring-100-100-10-50O-50N-messages.eps"
-@mv "Ring,100,100,10-50O-50N-cycleBreakdown.eps" "Ring-100-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,100,100,10-50O-50N-utilScatterAll-Fault.eps" "Ring-100-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,100,100,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-100-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,100,100,10-50O-50N-utility-final.eps" "Ring-100-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -25071,12 +22647,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100
 @echo Generating graphs for Ring,100,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,100,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,100,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100,0,1-10O-100N/EPS"
-@mv "Ring,100,0,1-10O-100N-messages-sankey.eps" "Ring-100-0-1-10O-100N-messages-sankey.eps"
-@mv "Ring,100,0,1-10O-100N-messages.eps" "Ring-100-0-1-10O-100N-messages.eps"
-@mv "Ring,100,0,1-10O-100N-cycleBreakdown.eps" "Ring-100-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,100,0,1-10O-100N-utilScatterAll-Fault.eps" "Ring-100-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,100,0,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-100-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,100,0,1-10O-100N-utility-final.eps" "Ring-100-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -25133,12 +22703,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100
 @echo Generating graphs for Ring,100,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,100,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,100,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100,0,2-50O-50N/EPS"
-@mv "Ring,100,0,2-50O-50N-messages-sankey.eps" "Ring-100-0-2-50O-50N-messages-sankey.eps"
-@mv "Ring,100,0,2-50O-50N-messages.eps" "Ring-100-0-2-50O-50N-messages.eps"
-@mv "Ring,100,0,2-50O-50N-cycleBreakdown.eps" "Ring-100-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,100,0,2-50O-50N-utilScatterAll-Fault.eps" "Ring-100-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,100,0,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-100-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,100,0,2-50O-50N-utility-final.eps" "Ring-100-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -25195,12 +22759,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100
 @echo Generating graphs for Ring,100,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,100,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,100,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100,0,5-25O-100N/EPS"
-@mv "Ring,100,0,5-25O-100N-messages-sankey.eps" "Ring-100-0-5-25O-100N-messages-sankey.eps"
-@mv "Ring,100,0,5-25O-100N-messages.eps" "Ring-100-0-5-25O-100N-messages.eps"
-@mv "Ring,100,0,5-25O-100N-cycleBreakdown.eps" "Ring-100-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,100,0,5-25O-100N-utilScatterAll-Fault.eps" "Ring-100-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,100,0,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-100-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,100,0,5-25O-100N-utility-final.eps" "Ring-100-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -25257,12 +22815,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100
 @echo Generating graphs for Ring,100,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,100,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,100,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100,0,10-50O-50N/EPS"
-@mv "Ring,100,0,10-50O-50N-messages-sankey.eps" "Ring-100-0-10-50O-50N-messages-sankey.eps"
-@mv "Ring,100,0,10-50O-50N-messages.eps" "Ring-100-0-10-50O-50N-messages.eps"
-@mv "Ring,100,0,10-50O-50N-cycleBreakdown.eps" "Ring-100-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,100,0,10-50O-50N-utilScatterAll-Fault.eps" "Ring-100-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,100,0,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-100-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,100,0,10-50O-50N-utility-final.eps" "Ring-100-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -25319,12 +22871,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100
 @echo Generating graphs for Ring,100,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,100,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,100,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100,50,1-10O-100N/EPS"
-@mv "Ring,100,50,1-10O-100N-messages-sankey.eps" "Ring-100-50-1-10O-100N-messages-sankey.eps"
-@mv "Ring,100,50,1-10O-100N-messages.eps" "Ring-100-50-1-10O-100N-messages.eps"
-@mv "Ring,100,50,1-10O-100N-cycleBreakdown.eps" "Ring-100-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,100,50,1-10O-100N-utilScatterAll-Fault.eps" "Ring-100-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,100,50,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-100-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,100,50,1-10O-100N-utility-final.eps" "Ring-100-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -25381,12 +22927,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100
 @echo Generating graphs for Ring,100,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,100,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,100,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100,50,2-50O-50N/EPS"
-@mv "Ring,100,50,2-50O-50N-messages-sankey.eps" "Ring-100-50-2-50O-50N-messages-sankey.eps"
-@mv "Ring,100,50,2-50O-50N-messages.eps" "Ring-100-50-2-50O-50N-messages.eps"
-@mv "Ring,100,50,2-50O-50N-cycleBreakdown.eps" "Ring-100-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,100,50,2-50O-50N-utilScatterAll-Fault.eps" "Ring-100-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,100,50,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-100-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,100,50,2-50O-50N-utility-final.eps" "Ring-100-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -25443,12 +22983,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100
 @echo Generating graphs for Ring,100,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,100,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,100,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100,50,5-25O-100N/EPS"
-@mv "Ring,100,50,5-25O-100N-messages-sankey.eps" "Ring-100-50-5-25O-100N-messages-sankey.eps"
-@mv "Ring,100,50,5-25O-100N-messages.eps" "Ring-100-50-5-25O-100N-messages.eps"
-@mv "Ring,100,50,5-25O-100N-cycleBreakdown.eps" "Ring-100-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,100,50,5-25O-100N-utilScatterAll-Fault.eps" "Ring-100-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,100,50,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-100-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,100,50,5-25O-100N-utility-final.eps" "Ring-100-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -25505,12 +23039,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100
 @echo Generating graphs for Ring,100,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,100,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,100,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100,50,10-50O-50N/EPS"
-@mv "Ring,100,50,10-50O-50N-messages-sankey.eps" "Ring-100-50-10-50O-50N-messages-sankey.eps"
-@mv "Ring,100,50,10-50O-50N-messages.eps" "Ring-100-50-10-50O-50N-messages.eps"
-@mv "Ring,100,50,10-50O-50N-cycleBreakdown.eps" "Ring-100-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,100,50,10-50O-50N-utilScatterAll-Fault.eps" "Ring-100-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,100,50,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-100-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,100,50,10-50O-50N-utility-final.eps" "Ring-100-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -25567,12 +23095,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100
 @echo Generating graphs for Ring,100,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,100,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,100,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100,10,1-10O-100N/EPS"
-@mv "Ring,100,10,1-10O-100N-messages-sankey.eps" "Ring-100-10-1-10O-100N-messages-sankey.eps"
-@mv "Ring,100,10,1-10O-100N-messages.eps" "Ring-100-10-1-10O-100N-messages.eps"
-@mv "Ring,100,10,1-10O-100N-cycleBreakdown.eps" "Ring-100-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,100,10,1-10O-100N-utilScatterAll-Fault.eps" "Ring-100-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,100,10,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-100-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,100,10,1-10O-100N-utility-final.eps" "Ring-100-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -25629,12 +23151,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100
 @echo Generating graphs for Ring,100,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,100,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,100,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100,10,2-50O-50N/EPS"
-@mv "Ring,100,10,2-50O-50N-messages-sankey.eps" "Ring-100-10-2-50O-50N-messages-sankey.eps"
-@mv "Ring,100,10,2-50O-50N-messages.eps" "Ring-100-10-2-50O-50N-messages.eps"
-@mv "Ring,100,10,2-50O-50N-cycleBreakdown.eps" "Ring-100-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,100,10,2-50O-50N-utilScatterAll-Fault.eps" "Ring-100-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,100,10,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-100-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,100,10,2-50O-50N-utility-final.eps" "Ring-100-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -25691,12 +23207,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100
 @echo Generating graphs for Ring,100,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,100,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,100,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100,10,5-25O-100N/EPS"
-@mv "Ring,100,10,5-25O-100N-messages-sankey.eps" "Ring-100-10-5-25O-100N-messages-sankey.eps"
-@mv "Ring,100,10,5-25O-100N-messages.eps" "Ring-100-10-5-25O-100N-messages.eps"
-@mv "Ring,100,10,5-25O-100N-cycleBreakdown.eps" "Ring-100-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,100,10,5-25O-100N-utilScatterAll-Fault.eps" "Ring-100-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,100,10,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-100-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,100,10,5-25O-100N-utility-final.eps" "Ring-100-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -25753,12 +23263,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100
 @echo Generating graphs for Ring,100,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,100,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,100,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100,10,10-50O-50N/EPS"
-@mv "Ring,100,10,10-50O-50N-messages-sankey.eps" "Ring-100-10-10-50O-50N-messages-sankey.eps"
-@mv "Ring,100,10,10-50O-50N-messages.eps" "Ring-100-10-10-50O-50N-messages.eps"
-@mv "Ring,100,10,10-50O-50N-cycleBreakdown.eps" "Ring-100-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,100,10,10-50O-50N-utilScatterAll-Fault.eps" "Ring-100-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,100,10,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-100-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,100,10,10-50O-50N-utility-final.eps" "Ring-100-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -25815,12 +23319,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100
 @echo Generating graphs for Ring,100,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,100,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,100,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100,90,1-10O-100N/EPS"
-@mv "Ring,100,90,1-10O-100N-messages-sankey.eps" "Ring-100-90-1-10O-100N-messages-sankey.eps"
-@mv "Ring,100,90,1-10O-100N-messages.eps" "Ring-100-90-1-10O-100N-messages.eps"
-@mv "Ring,100,90,1-10O-100N-cycleBreakdown.eps" "Ring-100-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,100,90,1-10O-100N-utilScatterAll-Fault.eps" "Ring-100-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,100,90,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-100-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,100,90,1-10O-100N-utility-final.eps" "Ring-100-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -25877,12 +23375,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100
 @echo Generating graphs for Ring,100,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,100,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,100,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100,90,2-50O-50N/EPS"
-@mv "Ring,100,90,2-50O-50N-messages-sankey.eps" "Ring-100-90-2-50O-50N-messages-sankey.eps"
-@mv "Ring,100,90,2-50O-50N-messages.eps" "Ring-100-90-2-50O-50N-messages.eps"
-@mv "Ring,100,90,2-50O-50N-cycleBreakdown.eps" "Ring-100-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,100,90,2-50O-50N-utilScatterAll-Fault.eps" "Ring-100-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,100,90,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-100-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,100,90,2-50O-50N-utility-final.eps" "Ring-100-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -25939,12 +23431,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100
 @echo Generating graphs for Ring,100,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,100,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,100,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100,90,5-25O-100N/EPS"
-@mv "Ring,100,90,5-25O-100N-messages-sankey.eps" "Ring-100-90-5-25O-100N-messages-sankey.eps"
-@mv "Ring,100,90,5-25O-100N-messages.eps" "Ring-100-90-5-25O-100N-messages.eps"
-@mv "Ring,100,90,5-25O-100N-cycleBreakdown.eps" "Ring-100-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,100,90,5-25O-100N-utilScatterAll-Fault.eps" "Ring-100-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,100,90,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-100-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,100,90,5-25O-100N-utility-final.eps" "Ring-100-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -26001,12 +23487,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100
 @echo Generating graphs for Ring,100,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,100,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,100,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100,90,10-50O-50N/EPS"
-@mv "Ring,100,90,10-50O-50N-messages-sankey.eps" "Ring-100-90-10-50O-50N-messages-sankey.eps"
-@mv "Ring,100,90,10-50O-50N-messages.eps" "Ring-100-90-10-50O-50N-messages.eps"
-@mv "Ring,100,90,10-50O-50N-cycleBreakdown.eps" "Ring-100-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,100,90,10-50O-50N-utilScatterAll-Fault.eps" "Ring-100-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,100,90,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-100-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,100,90,10-50O-50N-utility-final.eps" "Ring-100-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -26063,12 +23543,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,100
 @echo Generating graphs for Ring,0,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,0,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,0,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,100,1-10O-100N/EPS"
-@mv "Ring,0,100,1-10O-100N-messages-sankey.eps" "Ring-0-100-1-10O-100N-messages-sankey.eps"
-@mv "Ring,0,100,1-10O-100N-messages.eps" "Ring-0-100-1-10O-100N-messages.eps"
-@mv "Ring,0,100,1-10O-100N-cycleBreakdown.eps" "Ring-0-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,0,100,1-10O-100N-utilScatterAll-Fault.eps" "Ring-0-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,0,100,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-0-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,0,100,1-10O-100N-utility-final.eps" "Ring-0-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -26125,12 +23599,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,1
 @echo Generating graphs for Ring,0,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,0,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,0,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,100,2-50O-50N/EPS"
-@mv "Ring,0,100,2-50O-50N-messages-sankey.eps" "Ring-0-100-2-50O-50N-messages-sankey.eps"
-@mv "Ring,0,100,2-50O-50N-messages.eps" "Ring-0-100-2-50O-50N-messages.eps"
-@mv "Ring,0,100,2-50O-50N-cycleBreakdown.eps" "Ring-0-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,0,100,2-50O-50N-utilScatterAll-Fault.eps" "Ring-0-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,0,100,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-0-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,0,100,2-50O-50N-utility-final.eps" "Ring-0-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -26187,12 +23655,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,1
 @echo Generating graphs for Ring,0,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,0,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,0,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,100,5-25O-100N/EPS"
-@mv "Ring,0,100,5-25O-100N-messages-sankey.eps" "Ring-0-100-5-25O-100N-messages-sankey.eps"
-@mv "Ring,0,100,5-25O-100N-messages.eps" "Ring-0-100-5-25O-100N-messages.eps"
-@mv "Ring,0,100,5-25O-100N-cycleBreakdown.eps" "Ring-0-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,0,100,5-25O-100N-utilScatterAll-Fault.eps" "Ring-0-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,0,100,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-0-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,0,100,5-25O-100N-utility-final.eps" "Ring-0-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -26249,12 +23711,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,1
 @echo Generating graphs for Ring,0,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,0,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,0,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,100,10-50O-50N/EPS"
-@mv "Ring,0,100,10-50O-50N-messages-sankey.eps" "Ring-0-100-10-50O-50N-messages-sankey.eps"
-@mv "Ring,0,100,10-50O-50N-messages.eps" "Ring-0-100-10-50O-50N-messages.eps"
-@mv "Ring,0,100,10-50O-50N-cycleBreakdown.eps" "Ring-0-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,0,100,10-50O-50N-utilScatterAll-Fault.eps" "Ring-0-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,0,100,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-0-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,0,100,10-50O-50N-utility-final.eps" "Ring-0-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -26311,12 +23767,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,1
 @echo Generating graphs for Ring,0,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,0,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,0,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,0,1-10O-100N/EPS"
-@mv "Ring,0,0,1-10O-100N-messages-sankey.eps" "Ring-0-0-1-10O-100N-messages-sankey.eps"
-@mv "Ring,0,0,1-10O-100N-messages.eps" "Ring-0-0-1-10O-100N-messages.eps"
-@mv "Ring,0,0,1-10O-100N-cycleBreakdown.eps" "Ring-0-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,0,0,1-10O-100N-utilScatterAll-Fault.eps" "Ring-0-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,0,0,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-0-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,0,0,1-10O-100N-utility-final.eps" "Ring-0-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -26373,12 +23823,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,0
 @echo Generating graphs for Ring,0,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,0,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,0,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,0,2-50O-50N/EPS"
-@mv "Ring,0,0,2-50O-50N-messages-sankey.eps" "Ring-0-0-2-50O-50N-messages-sankey.eps"
-@mv "Ring,0,0,2-50O-50N-messages.eps" "Ring-0-0-2-50O-50N-messages.eps"
-@mv "Ring,0,0,2-50O-50N-cycleBreakdown.eps" "Ring-0-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,0,0,2-50O-50N-utilScatterAll-Fault.eps" "Ring-0-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,0,0,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-0-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,0,0,2-50O-50N-utility-final.eps" "Ring-0-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -26435,12 +23879,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,0
 @echo Generating graphs for Ring,0,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,0,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,0,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,0,5-25O-100N/EPS"
-@mv "Ring,0,0,5-25O-100N-messages-sankey.eps" "Ring-0-0-5-25O-100N-messages-sankey.eps"
-@mv "Ring,0,0,5-25O-100N-messages.eps" "Ring-0-0-5-25O-100N-messages.eps"
-@mv "Ring,0,0,5-25O-100N-cycleBreakdown.eps" "Ring-0-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,0,0,5-25O-100N-utilScatterAll-Fault.eps" "Ring-0-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,0,0,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-0-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,0,0,5-25O-100N-utility-final.eps" "Ring-0-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -26497,12 +23935,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,0
 @echo Generating graphs for Ring,0,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,0,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,0,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,0,10-50O-50N/EPS"
-@mv "Ring,0,0,10-50O-50N-messages-sankey.eps" "Ring-0-0-10-50O-50N-messages-sankey.eps"
-@mv "Ring,0,0,10-50O-50N-messages.eps" "Ring-0-0-10-50O-50N-messages.eps"
-@mv "Ring,0,0,10-50O-50N-cycleBreakdown.eps" "Ring-0-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,0,0,10-50O-50N-utilScatterAll-Fault.eps" "Ring-0-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,0,0,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-0-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,0,0,10-50O-50N-utility-final.eps" "Ring-0-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -26559,12 +23991,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,0
 @echo Generating graphs for Ring,0,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,0,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,0,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,50,1-10O-100N/EPS"
-@mv "Ring,0,50,1-10O-100N-messages-sankey.eps" "Ring-0-50-1-10O-100N-messages-sankey.eps"
-@mv "Ring,0,50,1-10O-100N-messages.eps" "Ring-0-50-1-10O-100N-messages.eps"
-@mv "Ring,0,50,1-10O-100N-cycleBreakdown.eps" "Ring-0-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,0,50,1-10O-100N-utilScatterAll-Fault.eps" "Ring-0-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,0,50,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-0-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,0,50,1-10O-100N-utility-final.eps" "Ring-0-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -26621,12 +24047,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,5
 @echo Generating graphs for Ring,0,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,0,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,0,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,50,2-50O-50N/EPS"
-@mv "Ring,0,50,2-50O-50N-messages-sankey.eps" "Ring-0-50-2-50O-50N-messages-sankey.eps"
-@mv "Ring,0,50,2-50O-50N-messages.eps" "Ring-0-50-2-50O-50N-messages.eps"
-@mv "Ring,0,50,2-50O-50N-cycleBreakdown.eps" "Ring-0-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,0,50,2-50O-50N-utilScatterAll-Fault.eps" "Ring-0-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,0,50,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-0-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,0,50,2-50O-50N-utility-final.eps" "Ring-0-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -26683,12 +24103,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,5
 @echo Generating graphs for Ring,0,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,0,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,0,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,50,5-25O-100N/EPS"
-@mv "Ring,0,50,5-25O-100N-messages-sankey.eps" "Ring-0-50-5-25O-100N-messages-sankey.eps"
-@mv "Ring,0,50,5-25O-100N-messages.eps" "Ring-0-50-5-25O-100N-messages.eps"
-@mv "Ring,0,50,5-25O-100N-cycleBreakdown.eps" "Ring-0-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,0,50,5-25O-100N-utilScatterAll-Fault.eps" "Ring-0-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,0,50,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-0-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,0,50,5-25O-100N-utility-final.eps" "Ring-0-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -26745,12 +24159,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,5
 @echo Generating graphs for Ring,0,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,0,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,0,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,50,10-50O-50N/EPS"
-@mv "Ring,0,50,10-50O-50N-messages-sankey.eps" "Ring-0-50-10-50O-50N-messages-sankey.eps"
-@mv "Ring,0,50,10-50O-50N-messages.eps" "Ring-0-50-10-50O-50N-messages.eps"
-@mv "Ring,0,50,10-50O-50N-cycleBreakdown.eps" "Ring-0-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,0,50,10-50O-50N-utilScatterAll-Fault.eps" "Ring-0-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,0,50,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-0-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,0,50,10-50O-50N-utility-final.eps" "Ring-0-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -26807,12 +24215,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,5
 @echo Generating graphs for Ring,0,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,0,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,0,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,10,1-10O-100N/EPS"
-@mv "Ring,0,10,1-10O-100N-messages-sankey.eps" "Ring-0-10-1-10O-100N-messages-sankey.eps"
-@mv "Ring,0,10,1-10O-100N-messages.eps" "Ring-0-10-1-10O-100N-messages.eps"
-@mv "Ring,0,10,1-10O-100N-cycleBreakdown.eps" "Ring-0-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,0,10,1-10O-100N-utilScatterAll-Fault.eps" "Ring-0-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,0,10,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-0-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,0,10,1-10O-100N-utility-final.eps" "Ring-0-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -26869,12 +24271,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,1
 @echo Generating graphs for Ring,0,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,0,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,0,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,10,2-50O-50N/EPS"
-@mv "Ring,0,10,2-50O-50N-messages-sankey.eps" "Ring-0-10-2-50O-50N-messages-sankey.eps"
-@mv "Ring,0,10,2-50O-50N-messages.eps" "Ring-0-10-2-50O-50N-messages.eps"
-@mv "Ring,0,10,2-50O-50N-cycleBreakdown.eps" "Ring-0-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,0,10,2-50O-50N-utilScatterAll-Fault.eps" "Ring-0-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,0,10,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-0-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,0,10,2-50O-50N-utility-final.eps" "Ring-0-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -26931,12 +24327,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,1
 @echo Generating graphs for Ring,0,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,0,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,0,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,10,5-25O-100N/EPS"
-@mv "Ring,0,10,5-25O-100N-messages-sankey.eps" "Ring-0-10-5-25O-100N-messages-sankey.eps"
-@mv "Ring,0,10,5-25O-100N-messages.eps" "Ring-0-10-5-25O-100N-messages.eps"
-@mv "Ring,0,10,5-25O-100N-cycleBreakdown.eps" "Ring-0-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,0,10,5-25O-100N-utilScatterAll-Fault.eps" "Ring-0-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,0,10,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-0-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,0,10,5-25O-100N-utility-final.eps" "Ring-0-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -26993,12 +24383,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,1
 @echo Generating graphs for Ring,0,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,0,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,0,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,10,10-50O-50N/EPS"
-@mv "Ring,0,10,10-50O-50N-messages-sankey.eps" "Ring-0-10-10-50O-50N-messages-sankey.eps"
-@mv "Ring,0,10,10-50O-50N-messages.eps" "Ring-0-10-10-50O-50N-messages.eps"
-@mv "Ring,0,10,10-50O-50N-cycleBreakdown.eps" "Ring-0-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,0,10,10-50O-50N-utilScatterAll-Fault.eps" "Ring-0-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,0,10,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-0-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,0,10,10-50O-50N-utility-final.eps" "Ring-0-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -27055,12 +24439,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,1
 @echo Generating graphs for Ring,0,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,0,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,0,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,90,1-10O-100N/EPS"
-@mv "Ring,0,90,1-10O-100N-messages-sankey.eps" "Ring-0-90-1-10O-100N-messages-sankey.eps"
-@mv "Ring,0,90,1-10O-100N-messages.eps" "Ring-0-90-1-10O-100N-messages.eps"
-@mv "Ring,0,90,1-10O-100N-cycleBreakdown.eps" "Ring-0-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,0,90,1-10O-100N-utilScatterAll-Fault.eps" "Ring-0-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,0,90,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-0-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,0,90,1-10O-100N-utility-final.eps" "Ring-0-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -27117,12 +24495,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,9
 @echo Generating graphs for Ring,0,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,0,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,0,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,90,2-50O-50N/EPS"
-@mv "Ring,0,90,2-50O-50N-messages-sankey.eps" "Ring-0-90-2-50O-50N-messages-sankey.eps"
-@mv "Ring,0,90,2-50O-50N-messages.eps" "Ring-0-90-2-50O-50N-messages.eps"
-@mv "Ring,0,90,2-50O-50N-cycleBreakdown.eps" "Ring-0-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,0,90,2-50O-50N-utilScatterAll-Fault.eps" "Ring-0-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,0,90,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-0-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,0,90,2-50O-50N-utility-final.eps" "Ring-0-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -27179,12 +24551,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,9
 @echo Generating graphs for Ring,0,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,0,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,0,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,90,5-25O-100N/EPS"
-@mv "Ring,0,90,5-25O-100N-messages-sankey.eps" "Ring-0-90-5-25O-100N-messages-sankey.eps"
-@mv "Ring,0,90,5-25O-100N-messages.eps" "Ring-0-90-5-25O-100N-messages.eps"
-@mv "Ring,0,90,5-25O-100N-cycleBreakdown.eps" "Ring-0-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,0,90,5-25O-100N-utilScatterAll-Fault.eps" "Ring-0-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,0,90,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-0-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,0,90,5-25O-100N-utility-final.eps" "Ring-0-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -27241,12 +24607,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,9
 @echo Generating graphs for Ring,0,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,0,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,0,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,90,10-50O-50N/EPS"
-@mv "Ring,0,90,10-50O-50N-messages-sankey.eps" "Ring-0-90-10-50O-50N-messages-sankey.eps"
-@mv "Ring,0,90,10-50O-50N-messages.eps" "Ring-0-90-10-50O-50N-messages.eps"
-@mv "Ring,0,90,10-50O-50N-cycleBreakdown.eps" "Ring-0-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,0,90,10-50O-50N-utilScatterAll-Fault.eps" "Ring-0-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,0,90,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-0-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,0,90,10-50O-50N-utility-final.eps" "Ring-0-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -27303,12 +24663,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,0,9
 @echo Generating graphs for Ring,50,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,50,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,100,1-10O-100N/EPS"
-@mv "Ring,50,100,1-10O-100N-messages-sankey.eps" "Ring-50-100-1-10O-100N-messages-sankey.eps"
-@mv "Ring,50,100,1-10O-100N-messages.eps" "Ring-50-100-1-10O-100N-messages.eps"
-@mv "Ring,50,100,1-10O-100N-cycleBreakdown.eps" "Ring-50-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,50,100,1-10O-100N-utilScatterAll-Fault.eps" "Ring-50-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,50,100,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-50-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,50,100,1-10O-100N-utility-final.eps" "Ring-50-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -27365,12 +24719,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo Generating graphs for Ring,50,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,50,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,100,2-50O-50N/EPS"
-@mv "Ring,50,100,2-50O-50N-messages-sankey.eps" "Ring-50-100-2-50O-50N-messages-sankey.eps"
-@mv "Ring,50,100,2-50O-50N-messages.eps" "Ring-50-100-2-50O-50N-messages.eps"
-@mv "Ring,50,100,2-50O-50N-cycleBreakdown.eps" "Ring-50-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,50,100,2-50O-50N-utilScatterAll-Fault.eps" "Ring-50-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,50,100,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-50-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,50,100,2-50O-50N-utility-final.eps" "Ring-50-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -27427,12 +24775,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo Generating graphs for Ring,50,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,50,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,100,5-25O-100N/EPS"
-@mv "Ring,50,100,5-25O-100N-messages-sankey.eps" "Ring-50-100-5-25O-100N-messages-sankey.eps"
-@mv "Ring,50,100,5-25O-100N-messages.eps" "Ring-50-100-5-25O-100N-messages.eps"
-@mv "Ring,50,100,5-25O-100N-cycleBreakdown.eps" "Ring-50-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,50,100,5-25O-100N-utilScatterAll-Fault.eps" "Ring-50-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,50,100,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-50-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,50,100,5-25O-100N-utility-final.eps" "Ring-50-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -27489,12 +24831,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo Generating graphs for Ring,50,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,50,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,100,10-50O-50N/EPS"
-@mv "Ring,50,100,10-50O-50N-messages-sankey.eps" "Ring-50-100-10-50O-50N-messages-sankey.eps"
-@mv "Ring,50,100,10-50O-50N-messages.eps" "Ring-50-100-10-50O-50N-messages.eps"
-@mv "Ring,50,100,10-50O-50N-cycleBreakdown.eps" "Ring-50-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,50,100,10-50O-50N-utilScatterAll-Fault.eps" "Ring-50-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,50,100,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-50-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,50,100,10-50O-50N-utility-final.eps" "Ring-50-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -27551,12 +24887,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo Generating graphs for Ring,50,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,50,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,0,1-10O-100N/EPS"
-@mv "Ring,50,0,1-10O-100N-messages-sankey.eps" "Ring-50-0-1-10O-100N-messages-sankey.eps"
-@mv "Ring,50,0,1-10O-100N-messages.eps" "Ring-50-0-1-10O-100N-messages.eps"
-@mv "Ring,50,0,1-10O-100N-cycleBreakdown.eps" "Ring-50-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,50,0,1-10O-100N-utilScatterAll-Fault.eps" "Ring-50-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,50,0,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-50-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,50,0,1-10O-100N-utility-final.eps" "Ring-50-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -27613,12 +24943,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo Generating graphs for Ring,50,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,50,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,0,2-50O-50N/EPS"
-@mv "Ring,50,0,2-50O-50N-messages-sankey.eps" "Ring-50-0-2-50O-50N-messages-sankey.eps"
-@mv "Ring,50,0,2-50O-50N-messages.eps" "Ring-50-0-2-50O-50N-messages.eps"
-@mv "Ring,50,0,2-50O-50N-cycleBreakdown.eps" "Ring-50-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,50,0,2-50O-50N-utilScatterAll-Fault.eps" "Ring-50-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,50,0,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-50-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,50,0,2-50O-50N-utility-final.eps" "Ring-50-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -27675,12 +24999,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo Generating graphs for Ring,50,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,50,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,0,5-25O-100N/EPS"
-@mv "Ring,50,0,5-25O-100N-messages-sankey.eps" "Ring-50-0-5-25O-100N-messages-sankey.eps"
-@mv "Ring,50,0,5-25O-100N-messages.eps" "Ring-50-0-5-25O-100N-messages.eps"
-@mv "Ring,50,0,5-25O-100N-cycleBreakdown.eps" "Ring-50-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,50,0,5-25O-100N-utilScatterAll-Fault.eps" "Ring-50-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,50,0,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-50-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,50,0,5-25O-100N-utility-final.eps" "Ring-50-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -27737,12 +25055,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo Generating graphs for Ring,50,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,50,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,0,10-50O-50N/EPS"
-@mv "Ring,50,0,10-50O-50N-messages-sankey.eps" "Ring-50-0-10-50O-50N-messages-sankey.eps"
-@mv "Ring,50,0,10-50O-50N-messages.eps" "Ring-50-0-10-50O-50N-messages.eps"
-@mv "Ring,50,0,10-50O-50N-cycleBreakdown.eps" "Ring-50-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,50,0,10-50O-50N-utilScatterAll-Fault.eps" "Ring-50-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,50,0,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-50-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,50,0,10-50O-50N-utility-final.eps" "Ring-50-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -27799,12 +25111,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo Generating graphs for Ring,50,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,50,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,50,1-10O-100N/EPS"
-@mv "Ring,50,50,1-10O-100N-messages-sankey.eps" "Ring-50-50-1-10O-100N-messages-sankey.eps"
-@mv "Ring,50,50,1-10O-100N-messages.eps" "Ring-50-50-1-10O-100N-messages.eps"
-@mv "Ring,50,50,1-10O-100N-cycleBreakdown.eps" "Ring-50-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,50,50,1-10O-100N-utilScatterAll-Fault.eps" "Ring-50-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,50,50,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-50-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,50,50,1-10O-100N-utility-final.eps" "Ring-50-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -27861,12 +25167,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo Generating graphs for Ring,50,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,50,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,50,2-50O-50N/EPS"
-@mv "Ring,50,50,2-50O-50N-messages-sankey.eps" "Ring-50-50-2-50O-50N-messages-sankey.eps"
-@mv "Ring,50,50,2-50O-50N-messages.eps" "Ring-50-50-2-50O-50N-messages.eps"
-@mv "Ring,50,50,2-50O-50N-cycleBreakdown.eps" "Ring-50-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,50,50,2-50O-50N-utilScatterAll-Fault.eps" "Ring-50-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,50,50,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-50-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,50,50,2-50O-50N-utility-final.eps" "Ring-50-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -27923,12 +25223,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo Generating graphs for Ring,50,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,50,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,50,5-25O-100N/EPS"
-@mv "Ring,50,50,5-25O-100N-messages-sankey.eps" "Ring-50-50-5-25O-100N-messages-sankey.eps"
-@mv "Ring,50,50,5-25O-100N-messages.eps" "Ring-50-50-5-25O-100N-messages.eps"
-@mv "Ring,50,50,5-25O-100N-cycleBreakdown.eps" "Ring-50-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,50,50,5-25O-100N-utilScatterAll-Fault.eps" "Ring-50-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,50,50,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-50-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,50,50,5-25O-100N-utility-final.eps" "Ring-50-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -27985,12 +25279,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo Generating graphs for Ring,50,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,50,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,50,10-50O-50N/EPS"
-@mv "Ring,50,50,10-50O-50N-messages-sankey.eps" "Ring-50-50-10-50O-50N-messages-sankey.eps"
-@mv "Ring,50,50,10-50O-50N-messages.eps" "Ring-50-50-10-50O-50N-messages.eps"
-@mv "Ring,50,50,10-50O-50N-cycleBreakdown.eps" "Ring-50-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,50,50,10-50O-50N-utilScatterAll-Fault.eps" "Ring-50-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,50,50,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-50-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,50,50,10-50O-50N-utility-final.eps" "Ring-50-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -28047,12 +25335,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo Generating graphs for Ring,50,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,50,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,10,1-10O-100N/EPS"
-@mv "Ring,50,10,1-10O-100N-messages-sankey.eps" "Ring-50-10-1-10O-100N-messages-sankey.eps"
-@mv "Ring,50,10,1-10O-100N-messages.eps" "Ring-50-10-1-10O-100N-messages.eps"
-@mv "Ring,50,10,1-10O-100N-cycleBreakdown.eps" "Ring-50-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,50,10,1-10O-100N-utilScatterAll-Fault.eps" "Ring-50-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,50,10,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-50-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,50,10,1-10O-100N-utility-final.eps" "Ring-50-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -28109,12 +25391,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo Generating graphs for Ring,50,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,50,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,10,2-50O-50N/EPS"
-@mv "Ring,50,10,2-50O-50N-messages-sankey.eps" "Ring-50-10-2-50O-50N-messages-sankey.eps"
-@mv "Ring,50,10,2-50O-50N-messages.eps" "Ring-50-10-2-50O-50N-messages.eps"
-@mv "Ring,50,10,2-50O-50N-cycleBreakdown.eps" "Ring-50-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,50,10,2-50O-50N-utilScatterAll-Fault.eps" "Ring-50-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,50,10,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-50-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,50,10,2-50O-50N-utility-final.eps" "Ring-50-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -28171,12 +25447,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo Generating graphs for Ring,50,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,50,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,10,5-25O-100N/EPS"
-@mv "Ring,50,10,5-25O-100N-messages-sankey.eps" "Ring-50-10-5-25O-100N-messages-sankey.eps"
-@mv "Ring,50,10,5-25O-100N-messages.eps" "Ring-50-10-5-25O-100N-messages.eps"
-@mv "Ring,50,10,5-25O-100N-cycleBreakdown.eps" "Ring-50-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,50,10,5-25O-100N-utilScatterAll-Fault.eps" "Ring-50-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,50,10,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-50-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,50,10,5-25O-100N-utility-final.eps" "Ring-50-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -28233,12 +25503,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo Generating graphs for Ring,50,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,50,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,10,10-50O-50N/EPS"
-@mv "Ring,50,10,10-50O-50N-messages-sankey.eps" "Ring-50-10-10-50O-50N-messages-sankey.eps"
-@mv "Ring,50,10,10-50O-50N-messages.eps" "Ring-50-10-10-50O-50N-messages.eps"
-@mv "Ring,50,10,10-50O-50N-cycleBreakdown.eps" "Ring-50-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,50,10,10-50O-50N-utilScatterAll-Fault.eps" "Ring-50-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,50,10,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-50-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,50,10,10-50O-50N-utility-final.eps" "Ring-50-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -28295,12 +25559,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo Generating graphs for Ring,50,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,50,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,90,1-10O-100N/EPS"
-@mv "Ring,50,90,1-10O-100N-messages-sankey.eps" "Ring-50-90-1-10O-100N-messages-sankey.eps"
-@mv "Ring,50,90,1-10O-100N-messages.eps" "Ring-50-90-1-10O-100N-messages.eps"
-@mv "Ring,50,90,1-10O-100N-cycleBreakdown.eps" "Ring-50-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,50,90,1-10O-100N-utilScatterAll-Fault.eps" "Ring-50-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,50,90,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-50-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,50,90,1-10O-100N-utility-final.eps" "Ring-50-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -28357,12 +25615,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo Generating graphs for Ring,50,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,50,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,90,2-50O-50N/EPS"
-@mv "Ring,50,90,2-50O-50N-messages-sankey.eps" "Ring-50-90-2-50O-50N-messages-sankey.eps"
-@mv "Ring,50,90,2-50O-50N-messages.eps" "Ring-50-90-2-50O-50N-messages.eps"
-@mv "Ring,50,90,2-50O-50N-cycleBreakdown.eps" "Ring-50-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,50,90,2-50O-50N-utilScatterAll-Fault.eps" "Ring-50-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,50,90,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-50-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,50,90,2-50O-50N-utility-final.eps" "Ring-50-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -28419,12 +25671,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo Generating graphs for Ring,50,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,50,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,90,5-25O-100N/EPS"
-@mv "Ring,50,90,5-25O-100N-messages-sankey.eps" "Ring-50-90-5-25O-100N-messages-sankey.eps"
-@mv "Ring,50,90,5-25O-100N-messages.eps" "Ring-50-90-5-25O-100N-messages.eps"
-@mv "Ring,50,90,5-25O-100N-cycleBreakdown.eps" "Ring-50-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,50,90,5-25O-100N-utilScatterAll-Fault.eps" "Ring-50-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,50,90,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-50-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,50,90,5-25O-100N-utility-final.eps" "Ring-50-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -28481,12 +25727,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo Generating graphs for Ring,50,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,50,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,90,10-50O-50N/EPS"
-@mv "Ring,50,90,10-50O-50N-messages-sankey.eps" "Ring-50-90-10-50O-50N-messages-sankey.eps"
-@mv "Ring,50,90,10-50O-50N-messages.eps" "Ring-50-90-10-50O-50N-messages.eps"
-@mv "Ring,50,90,10-50O-50N-cycleBreakdown.eps" "Ring-50-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,50,90,10-50O-50N-utilScatterAll-Fault.eps" "Ring-50-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,50,90,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-50-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,50,90,10-50O-50N-utility-final.eps" "Ring-50-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -28543,12 +25783,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo Generating graphs for Ring,10,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,10,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,100,1-10O-100N/EPS"
-@mv "Ring,10,100,1-10O-100N-messages-sankey.eps" "Ring-10-100-1-10O-100N-messages-sankey.eps"
-@mv "Ring,10,100,1-10O-100N-messages.eps" "Ring-10-100-1-10O-100N-messages.eps"
-@mv "Ring,10,100,1-10O-100N-cycleBreakdown.eps" "Ring-10-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,10,100,1-10O-100N-utilScatterAll-Fault.eps" "Ring-10-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,10,100,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-10-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,10,100,1-10O-100N-utility-final.eps" "Ring-10-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -28605,12 +25839,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo Generating graphs for Ring,10,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,10,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,100,2-50O-50N/EPS"
-@mv "Ring,10,100,2-50O-50N-messages-sankey.eps" "Ring-10-100-2-50O-50N-messages-sankey.eps"
-@mv "Ring,10,100,2-50O-50N-messages.eps" "Ring-10-100-2-50O-50N-messages.eps"
-@mv "Ring,10,100,2-50O-50N-cycleBreakdown.eps" "Ring-10-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,10,100,2-50O-50N-utilScatterAll-Fault.eps" "Ring-10-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,10,100,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-10-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,10,100,2-50O-50N-utility-final.eps" "Ring-10-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -28667,12 +25895,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo Generating graphs for Ring,10,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,10,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,100,5-25O-100N/EPS"
-@mv "Ring,10,100,5-25O-100N-messages-sankey.eps" "Ring-10-100-5-25O-100N-messages-sankey.eps"
-@mv "Ring,10,100,5-25O-100N-messages.eps" "Ring-10-100-5-25O-100N-messages.eps"
-@mv "Ring,10,100,5-25O-100N-cycleBreakdown.eps" "Ring-10-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,10,100,5-25O-100N-utilScatterAll-Fault.eps" "Ring-10-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,10,100,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-10-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,10,100,5-25O-100N-utility-final.eps" "Ring-10-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -28729,12 +25951,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo Generating graphs for Ring,10,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,10,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,100,10-50O-50N/EPS"
-@mv "Ring,10,100,10-50O-50N-messages-sankey.eps" "Ring-10-100-10-50O-50N-messages-sankey.eps"
-@mv "Ring,10,100,10-50O-50N-messages.eps" "Ring-10-100-10-50O-50N-messages.eps"
-@mv "Ring,10,100,10-50O-50N-cycleBreakdown.eps" "Ring-10-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,10,100,10-50O-50N-utilScatterAll-Fault.eps" "Ring-10-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,10,100,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-10-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,10,100,10-50O-50N-utility-final.eps" "Ring-10-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -28791,12 +26007,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo Generating graphs for Ring,10,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,10,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,0,1-10O-100N/EPS"
-@mv "Ring,10,0,1-10O-100N-messages-sankey.eps" "Ring-10-0-1-10O-100N-messages-sankey.eps"
-@mv "Ring,10,0,1-10O-100N-messages.eps" "Ring-10-0-1-10O-100N-messages.eps"
-@mv "Ring,10,0,1-10O-100N-cycleBreakdown.eps" "Ring-10-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,10,0,1-10O-100N-utilScatterAll-Fault.eps" "Ring-10-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,10,0,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-10-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,10,0,1-10O-100N-utility-final.eps" "Ring-10-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -28853,12 +26063,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo Generating graphs for Ring,10,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,10,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,0,2-50O-50N/EPS"
-@mv "Ring,10,0,2-50O-50N-messages-sankey.eps" "Ring-10-0-2-50O-50N-messages-sankey.eps"
-@mv "Ring,10,0,2-50O-50N-messages.eps" "Ring-10-0-2-50O-50N-messages.eps"
-@mv "Ring,10,0,2-50O-50N-cycleBreakdown.eps" "Ring-10-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,10,0,2-50O-50N-utilScatterAll-Fault.eps" "Ring-10-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,10,0,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-10-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,10,0,2-50O-50N-utility-final.eps" "Ring-10-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -28915,12 +26119,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo Generating graphs for Ring,10,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,10,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,0,5-25O-100N/EPS"
-@mv "Ring,10,0,5-25O-100N-messages-sankey.eps" "Ring-10-0-5-25O-100N-messages-sankey.eps"
-@mv "Ring,10,0,5-25O-100N-messages.eps" "Ring-10-0-5-25O-100N-messages.eps"
-@mv "Ring,10,0,5-25O-100N-cycleBreakdown.eps" "Ring-10-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,10,0,5-25O-100N-utilScatterAll-Fault.eps" "Ring-10-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,10,0,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-10-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,10,0,5-25O-100N-utility-final.eps" "Ring-10-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -28977,12 +26175,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo Generating graphs for Ring,10,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,10,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,0,10-50O-50N/EPS"
-@mv "Ring,10,0,10-50O-50N-messages-sankey.eps" "Ring-10-0-10-50O-50N-messages-sankey.eps"
-@mv "Ring,10,0,10-50O-50N-messages.eps" "Ring-10-0-10-50O-50N-messages.eps"
-@mv "Ring,10,0,10-50O-50N-cycleBreakdown.eps" "Ring-10-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,10,0,10-50O-50N-utilScatterAll-Fault.eps" "Ring-10-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,10,0,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-10-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,10,0,10-50O-50N-utility-final.eps" "Ring-10-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -29039,12 +26231,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo Generating graphs for Ring,10,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,10,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,50,1-10O-100N/EPS"
-@mv "Ring,10,50,1-10O-100N-messages-sankey.eps" "Ring-10-50-1-10O-100N-messages-sankey.eps"
-@mv "Ring,10,50,1-10O-100N-messages.eps" "Ring-10-50-1-10O-100N-messages.eps"
-@mv "Ring,10,50,1-10O-100N-cycleBreakdown.eps" "Ring-10-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,10,50,1-10O-100N-utilScatterAll-Fault.eps" "Ring-10-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,10,50,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-10-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,10,50,1-10O-100N-utility-final.eps" "Ring-10-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -29101,12 +26287,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo Generating graphs for Ring,10,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,10,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,50,2-50O-50N/EPS"
-@mv "Ring,10,50,2-50O-50N-messages-sankey.eps" "Ring-10-50-2-50O-50N-messages-sankey.eps"
-@mv "Ring,10,50,2-50O-50N-messages.eps" "Ring-10-50-2-50O-50N-messages.eps"
-@mv "Ring,10,50,2-50O-50N-cycleBreakdown.eps" "Ring-10-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,10,50,2-50O-50N-utilScatterAll-Fault.eps" "Ring-10-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,10,50,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-10-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,10,50,2-50O-50N-utility-final.eps" "Ring-10-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -29163,12 +26343,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo Generating graphs for Ring,10,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,10,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,50,5-25O-100N/EPS"
-@mv "Ring,10,50,5-25O-100N-messages-sankey.eps" "Ring-10-50-5-25O-100N-messages-sankey.eps"
-@mv "Ring,10,50,5-25O-100N-messages.eps" "Ring-10-50-5-25O-100N-messages.eps"
-@mv "Ring,10,50,5-25O-100N-cycleBreakdown.eps" "Ring-10-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,10,50,5-25O-100N-utilScatterAll-Fault.eps" "Ring-10-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,10,50,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-10-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,10,50,5-25O-100N-utility-final.eps" "Ring-10-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -29225,12 +26399,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo Generating graphs for Ring,10,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,10,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,50,10-50O-50N/EPS"
-@mv "Ring,10,50,10-50O-50N-messages-sankey.eps" "Ring-10-50-10-50O-50N-messages-sankey.eps"
-@mv "Ring,10,50,10-50O-50N-messages.eps" "Ring-10-50-10-50O-50N-messages.eps"
-@mv "Ring,10,50,10-50O-50N-cycleBreakdown.eps" "Ring-10-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,10,50,10-50O-50N-utilScatterAll-Fault.eps" "Ring-10-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,10,50,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-10-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,10,50,10-50O-50N-utility-final.eps" "Ring-10-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -29287,12 +26455,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo Generating graphs for Ring,10,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,10,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,10,1-10O-100N/EPS"
-@mv "Ring,10,10,1-10O-100N-messages-sankey.eps" "Ring-10-10-1-10O-100N-messages-sankey.eps"
-@mv "Ring,10,10,1-10O-100N-messages.eps" "Ring-10-10-1-10O-100N-messages.eps"
-@mv "Ring,10,10,1-10O-100N-cycleBreakdown.eps" "Ring-10-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,10,10,1-10O-100N-utilScatterAll-Fault.eps" "Ring-10-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,10,10,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-10-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,10,10,1-10O-100N-utility-final.eps" "Ring-10-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -29349,12 +26511,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo Generating graphs for Ring,10,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,10,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,10,2-50O-50N/EPS"
-@mv "Ring,10,10,2-50O-50N-messages-sankey.eps" "Ring-10-10-2-50O-50N-messages-sankey.eps"
-@mv "Ring,10,10,2-50O-50N-messages.eps" "Ring-10-10-2-50O-50N-messages.eps"
-@mv "Ring,10,10,2-50O-50N-cycleBreakdown.eps" "Ring-10-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,10,10,2-50O-50N-utilScatterAll-Fault.eps" "Ring-10-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,10,10,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-10-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,10,10,2-50O-50N-utility-final.eps" "Ring-10-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -29411,12 +26567,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo Generating graphs for Ring,10,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,10,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,10,5-25O-100N/EPS"
-@mv "Ring,10,10,5-25O-100N-messages-sankey.eps" "Ring-10-10-5-25O-100N-messages-sankey.eps"
-@mv "Ring,10,10,5-25O-100N-messages.eps" "Ring-10-10-5-25O-100N-messages.eps"
-@mv "Ring,10,10,5-25O-100N-cycleBreakdown.eps" "Ring-10-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,10,10,5-25O-100N-utilScatterAll-Fault.eps" "Ring-10-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,10,10,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-10-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,10,10,5-25O-100N-utility-final.eps" "Ring-10-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -29473,12 +26623,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo Generating graphs for Ring,10,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,10,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,10,10-50O-50N/EPS"
-@mv "Ring,10,10,10-50O-50N-messages-sankey.eps" "Ring-10-10-10-50O-50N-messages-sankey.eps"
-@mv "Ring,10,10,10-50O-50N-messages.eps" "Ring-10-10-10-50O-50N-messages.eps"
-@mv "Ring,10,10,10-50O-50N-cycleBreakdown.eps" "Ring-10-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,10,10,10-50O-50N-utilScatterAll-Fault.eps" "Ring-10-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,10,10,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-10-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,10,10,10-50O-50N-utility-final.eps" "Ring-10-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -29535,12 +26679,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo Generating graphs for Ring,10,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,10,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,90,1-10O-100N/EPS"
-@mv "Ring,10,90,1-10O-100N-messages-sankey.eps" "Ring-10-90-1-10O-100N-messages-sankey.eps"
-@mv "Ring,10,90,1-10O-100N-messages.eps" "Ring-10-90-1-10O-100N-messages.eps"
-@mv "Ring,10,90,1-10O-100N-cycleBreakdown.eps" "Ring-10-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,10,90,1-10O-100N-utilScatterAll-Fault.eps" "Ring-10-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,10,90,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-10-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,10,90,1-10O-100N-utility-final.eps" "Ring-10-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -29597,12 +26735,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo Generating graphs for Ring,10,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,10,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,90,2-50O-50N/EPS"
-@mv "Ring,10,90,2-50O-50N-messages-sankey.eps" "Ring-10-90-2-50O-50N-messages-sankey.eps"
-@mv "Ring,10,90,2-50O-50N-messages.eps" "Ring-10-90-2-50O-50N-messages.eps"
-@mv "Ring,10,90,2-50O-50N-cycleBreakdown.eps" "Ring-10-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,10,90,2-50O-50N-utilScatterAll-Fault.eps" "Ring-10-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,10,90,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-10-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,10,90,2-50O-50N-utility-final.eps" "Ring-10-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -29659,12 +26791,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo Generating graphs for Ring,10,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,10,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,90,5-25O-100N/EPS"
-@mv "Ring,10,90,5-25O-100N-messages-sankey.eps" "Ring-10-90-5-25O-100N-messages-sankey.eps"
-@mv "Ring,10,90,5-25O-100N-messages.eps" "Ring-10-90-5-25O-100N-messages.eps"
-@mv "Ring,10,90,5-25O-100N-cycleBreakdown.eps" "Ring-10-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,10,90,5-25O-100N-utilScatterAll-Fault.eps" "Ring-10-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,10,90,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-10-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,10,90,5-25O-100N-utility-final.eps" "Ring-10-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -29721,12 +26847,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo Generating graphs for Ring,10,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,10,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,90,10-50O-50N/EPS"
-@mv "Ring,10,90,10-50O-50N-messages-sankey.eps" "Ring-10-90-10-50O-50N-messages-sankey.eps"
-@mv "Ring,10,90,10-50O-50N-messages.eps" "Ring-10-90-10-50O-50N-messages.eps"
-@mv "Ring,10,90,10-50O-50N-cycleBreakdown.eps" "Ring-10-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,10,90,10-50O-50N-utilScatterAll-Fault.eps" "Ring-10-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,10,90,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-10-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,10,90,10-50O-50N-utility-final.eps" "Ring-10-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -29783,12 +26903,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo Generating graphs for Ring,90,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,90,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,100,1-10O-100N/EPS"
-@mv "Ring,90,100,1-10O-100N-messages-sankey.eps" "Ring-90-100-1-10O-100N-messages-sankey.eps"
-@mv "Ring,90,100,1-10O-100N-messages.eps" "Ring-90-100-1-10O-100N-messages.eps"
-@mv "Ring,90,100,1-10O-100N-cycleBreakdown.eps" "Ring-90-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,90,100,1-10O-100N-utilScatterAll-Fault.eps" "Ring-90-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,90,100,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-90-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,90,100,1-10O-100N-utility-final.eps" "Ring-90-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -29845,12 +26959,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo Generating graphs for Ring,90,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,90,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,100,2-50O-50N/EPS"
-@mv "Ring,90,100,2-50O-50N-messages-sankey.eps" "Ring-90-100-2-50O-50N-messages-sankey.eps"
-@mv "Ring,90,100,2-50O-50N-messages.eps" "Ring-90-100-2-50O-50N-messages.eps"
-@mv "Ring,90,100,2-50O-50N-cycleBreakdown.eps" "Ring-90-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,90,100,2-50O-50N-utilScatterAll-Fault.eps" "Ring-90-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,90,100,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-90-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,90,100,2-50O-50N-utility-final.eps" "Ring-90-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -29907,12 +27015,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo Generating graphs for Ring,90,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,90,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,100,5-25O-100N/EPS"
-@mv "Ring,90,100,5-25O-100N-messages-sankey.eps" "Ring-90-100-5-25O-100N-messages-sankey.eps"
-@mv "Ring,90,100,5-25O-100N-messages.eps" "Ring-90-100-5-25O-100N-messages.eps"
-@mv "Ring,90,100,5-25O-100N-cycleBreakdown.eps" "Ring-90-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,90,100,5-25O-100N-utilScatterAll-Fault.eps" "Ring-90-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,90,100,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-90-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,90,100,5-25O-100N-utility-final.eps" "Ring-90-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -29969,12 +27071,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo Generating graphs for Ring,90,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,90,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,100,10-50O-50N/EPS"
-@mv "Ring,90,100,10-50O-50N-messages-sankey.eps" "Ring-90-100-10-50O-50N-messages-sankey.eps"
-@mv "Ring,90,100,10-50O-50N-messages.eps" "Ring-90-100-10-50O-50N-messages.eps"
-@mv "Ring,90,100,10-50O-50N-cycleBreakdown.eps" "Ring-90-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,90,100,10-50O-50N-utilScatterAll-Fault.eps" "Ring-90-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,90,100,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-90-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,90,100,10-50O-50N-utility-final.eps" "Ring-90-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -30031,12 +27127,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo Generating graphs for Ring,90,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,90,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,0,1-10O-100N/EPS"
-@mv "Ring,90,0,1-10O-100N-messages-sankey.eps" "Ring-90-0-1-10O-100N-messages-sankey.eps"
-@mv "Ring,90,0,1-10O-100N-messages.eps" "Ring-90-0-1-10O-100N-messages.eps"
-@mv "Ring,90,0,1-10O-100N-cycleBreakdown.eps" "Ring-90-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,90,0,1-10O-100N-utilScatterAll-Fault.eps" "Ring-90-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,90,0,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-90-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,90,0,1-10O-100N-utility-final.eps" "Ring-90-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -30093,12 +27183,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo Generating graphs for Ring,90,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,90,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,0,2-50O-50N/EPS"
-@mv "Ring,90,0,2-50O-50N-messages-sankey.eps" "Ring-90-0-2-50O-50N-messages-sankey.eps"
-@mv "Ring,90,0,2-50O-50N-messages.eps" "Ring-90-0-2-50O-50N-messages.eps"
-@mv "Ring,90,0,2-50O-50N-cycleBreakdown.eps" "Ring-90-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,90,0,2-50O-50N-utilScatterAll-Fault.eps" "Ring-90-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,90,0,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-90-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,90,0,2-50O-50N-utility-final.eps" "Ring-90-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -30155,12 +27239,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo Generating graphs for Ring,90,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,90,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,0,5-25O-100N/EPS"
-@mv "Ring,90,0,5-25O-100N-messages-sankey.eps" "Ring-90-0-5-25O-100N-messages-sankey.eps"
-@mv "Ring,90,0,5-25O-100N-messages.eps" "Ring-90-0-5-25O-100N-messages.eps"
-@mv "Ring,90,0,5-25O-100N-cycleBreakdown.eps" "Ring-90-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,90,0,5-25O-100N-utilScatterAll-Fault.eps" "Ring-90-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,90,0,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-90-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,90,0,5-25O-100N-utility-final.eps" "Ring-90-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -30217,12 +27295,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo Generating graphs for Ring,90,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,90,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,0,10-50O-50N/EPS"
-@mv "Ring,90,0,10-50O-50N-messages-sankey.eps" "Ring-90-0-10-50O-50N-messages-sankey.eps"
-@mv "Ring,90,0,10-50O-50N-messages.eps" "Ring-90-0-10-50O-50N-messages.eps"
-@mv "Ring,90,0,10-50O-50N-cycleBreakdown.eps" "Ring-90-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,90,0,10-50O-50N-utilScatterAll-Fault.eps" "Ring-90-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,90,0,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-90-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,90,0,10-50O-50N-utility-final.eps" "Ring-90-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -30279,12 +27351,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo Generating graphs for Ring,90,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,90,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,50,1-10O-100N/EPS"
-@mv "Ring,90,50,1-10O-100N-messages-sankey.eps" "Ring-90-50-1-10O-100N-messages-sankey.eps"
-@mv "Ring,90,50,1-10O-100N-messages.eps" "Ring-90-50-1-10O-100N-messages.eps"
-@mv "Ring,90,50,1-10O-100N-cycleBreakdown.eps" "Ring-90-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,90,50,1-10O-100N-utilScatterAll-Fault.eps" "Ring-90-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,90,50,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-90-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,90,50,1-10O-100N-utility-final.eps" "Ring-90-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -30341,12 +27407,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo Generating graphs for Ring,90,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,90,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,50,2-50O-50N/EPS"
-@mv "Ring,90,50,2-50O-50N-messages-sankey.eps" "Ring-90-50-2-50O-50N-messages-sankey.eps"
-@mv "Ring,90,50,2-50O-50N-messages.eps" "Ring-90-50-2-50O-50N-messages.eps"
-@mv "Ring,90,50,2-50O-50N-cycleBreakdown.eps" "Ring-90-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,90,50,2-50O-50N-utilScatterAll-Fault.eps" "Ring-90-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,90,50,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-90-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,90,50,2-50O-50N-utility-final.eps" "Ring-90-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -30403,12 +27463,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo Generating graphs for Ring,90,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,90,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,50,5-25O-100N/EPS"
-@mv "Ring,90,50,5-25O-100N-messages-sankey.eps" "Ring-90-50-5-25O-100N-messages-sankey.eps"
-@mv "Ring,90,50,5-25O-100N-messages.eps" "Ring-90-50-5-25O-100N-messages.eps"
-@mv "Ring,90,50,5-25O-100N-cycleBreakdown.eps" "Ring-90-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,90,50,5-25O-100N-utilScatterAll-Fault.eps" "Ring-90-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,90,50,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-90-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,90,50,5-25O-100N-utility-final.eps" "Ring-90-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -30465,12 +27519,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo Generating graphs for Ring,90,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,90,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,50,10-50O-50N/EPS"
-@mv "Ring,90,50,10-50O-50N-messages-sankey.eps" "Ring-90-50-10-50O-50N-messages-sankey.eps"
-@mv "Ring,90,50,10-50O-50N-messages.eps" "Ring-90-50-10-50O-50N-messages.eps"
-@mv "Ring,90,50,10-50O-50N-cycleBreakdown.eps" "Ring-90-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,90,50,10-50O-50N-utilScatterAll-Fault.eps" "Ring-90-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,90,50,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-90-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,90,50,10-50O-50N-utility-final.eps" "Ring-90-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -30527,12 +27575,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo Generating graphs for Ring,90,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,90,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,10,1-10O-100N/EPS"
-@mv "Ring,90,10,1-10O-100N-messages-sankey.eps" "Ring-90-10-1-10O-100N-messages-sankey.eps"
-@mv "Ring,90,10,1-10O-100N-messages.eps" "Ring-90-10-1-10O-100N-messages.eps"
-@mv "Ring,90,10,1-10O-100N-cycleBreakdown.eps" "Ring-90-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,90,10,1-10O-100N-utilScatterAll-Fault.eps" "Ring-90-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,90,10,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-90-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,90,10,1-10O-100N-utility-final.eps" "Ring-90-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -30589,12 +27631,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo Generating graphs for Ring,90,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,90,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,10,2-50O-50N/EPS"
-@mv "Ring,90,10,2-50O-50N-messages-sankey.eps" "Ring-90-10-2-50O-50N-messages-sankey.eps"
-@mv "Ring,90,10,2-50O-50N-messages.eps" "Ring-90-10-2-50O-50N-messages.eps"
-@mv "Ring,90,10,2-50O-50N-cycleBreakdown.eps" "Ring-90-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,90,10,2-50O-50N-utilScatterAll-Fault.eps" "Ring-90-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,90,10,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-90-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,90,10,2-50O-50N-utility-final.eps" "Ring-90-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -30651,12 +27687,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo Generating graphs for Ring,90,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,90,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,10,5-25O-100N/EPS"
-@mv "Ring,90,10,5-25O-100N-messages-sankey.eps" "Ring-90-10-5-25O-100N-messages-sankey.eps"
-@mv "Ring,90,10,5-25O-100N-messages.eps" "Ring-90-10-5-25O-100N-messages.eps"
-@mv "Ring,90,10,5-25O-100N-cycleBreakdown.eps" "Ring-90-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,90,10,5-25O-100N-utilScatterAll-Fault.eps" "Ring-90-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,90,10,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-90-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,90,10,5-25O-100N-utility-final.eps" "Ring-90-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -30713,12 +27743,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo Generating graphs for Ring,90,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,90,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,10,10-50O-50N/EPS"
-@mv "Ring,90,10,10-50O-50N-messages-sankey.eps" "Ring-90-10-10-50O-50N-messages-sankey.eps"
-@mv "Ring,90,10,10-50O-50N-messages.eps" "Ring-90-10-10-50O-50N-messages.eps"
-@mv "Ring,90,10,10-50O-50N-cycleBreakdown.eps" "Ring-90-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,90,10,10-50O-50N-utilScatterAll-Fault.eps" "Ring-90-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,90,10,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-90-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,90,10,10-50O-50N-utility-final.eps" "Ring-90-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -30775,12 +27799,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo Generating graphs for Ring,90,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,90,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,90,1-10O-100N/EPS"
-@mv "Ring,90,90,1-10O-100N-messages-sankey.eps" "Ring-90-90-1-10O-100N-messages-sankey.eps"
-@mv "Ring,90,90,1-10O-100N-messages.eps" "Ring-90-90-1-10O-100N-messages.eps"
-@mv "Ring,90,90,1-10O-100N-cycleBreakdown.eps" "Ring-90-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Ring,90,90,1-10O-100N-utilScatterAll-Fault.eps" "Ring-90-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,90,90,1-10O-100N-utilScatterAll-NoFault.eps" "Ring-90-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,90,90,1-10O-100N-utility-final.eps" "Ring-90-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -30837,12 +27855,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo Generating graphs for Ring,90,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,90,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,90,2-50O-50N/EPS"
-@mv "Ring,90,90,2-50O-50N-messages-sankey.eps" "Ring-90-90-2-50O-50N-messages-sankey.eps"
-@mv "Ring,90,90,2-50O-50N-messages.eps" "Ring-90-90-2-50O-50N-messages.eps"
-@mv "Ring,90,90,2-50O-50N-cycleBreakdown.eps" "Ring-90-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Ring,90,90,2-50O-50N-utilScatterAll-Fault.eps" "Ring-90-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,90,90,2-50O-50N-utilScatterAll-NoFault.eps" "Ring-90-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,90,90,2-50O-50N-utility-final.eps" "Ring-90-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -30899,12 +27911,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo Generating graphs for Ring,90,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,90,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,90,5-25O-100N/EPS"
-@mv "Ring,90,90,5-25O-100N-messages-sankey.eps" "Ring-90-90-5-25O-100N-messages-sankey.eps"
-@mv "Ring,90,90,5-25O-100N-messages.eps" "Ring-90-90-5-25O-100N-messages.eps"
-@mv "Ring,90,90,5-25O-100N-cycleBreakdown.eps" "Ring-90-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Ring,90,90,5-25O-100N-utilScatterAll-Fault.eps" "Ring-90-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Ring,90,90,5-25O-100N-utilScatterAll-NoFault.eps" "Ring-90-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Ring,90,90,5-25O-100N-utility-final.eps" "Ring-90-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -30961,12 +27967,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo Generating graphs for Ring,90,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Ring,90,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,90,10-50O-50N/EPS"
-@mv "Ring,90,90,10-50O-50N-messages-sankey.eps" "Ring-90-90-10-50O-50N-messages-sankey.eps"
-@mv "Ring,90,90,10-50O-50N-messages.eps" "Ring-90-90-10-50O-50N-messages.eps"
-@mv "Ring,90,90,10-50O-50N-cycleBreakdown.eps" "Ring-90-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Ring,90,90,10-50O-50N-utilScatterAll-Fault.eps" "Ring-90-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Ring,90,90,10-50O-50N-utilScatterAll-NoFault.eps" "Ring-90-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Ring,90,90,10-50O-50N-utility-final.eps" "Ring-90-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -31023,12 +28023,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo Generating graphs for Tree,100,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,100,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,100,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100,100,1-10O-100N/EPS"
-@mv "Tree,100,100,1-10O-100N-messages-sankey.eps" "Tree-100-100-1-10O-100N-messages-sankey.eps"
-@mv "Tree,100,100,1-10O-100N-messages.eps" "Tree-100-100-1-10O-100N-messages.eps"
-@mv "Tree,100,100,1-10O-100N-cycleBreakdown.eps" "Tree-100-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,100,100,1-10O-100N-utilScatterAll-Fault.eps" "Tree-100-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,100,100,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-100-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,100,100,1-10O-100N-utility-final.eps" "Tree-100-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -31085,12 +28079,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100
 @echo Generating graphs for Tree,100,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,100,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,100,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100,100,2-50O-50N/EPS"
-@mv "Tree,100,100,2-50O-50N-messages-sankey.eps" "Tree-100-100-2-50O-50N-messages-sankey.eps"
-@mv "Tree,100,100,2-50O-50N-messages.eps" "Tree-100-100-2-50O-50N-messages.eps"
-@mv "Tree,100,100,2-50O-50N-cycleBreakdown.eps" "Tree-100-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,100,100,2-50O-50N-utilScatterAll-Fault.eps" "Tree-100-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,100,100,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-100-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,100,100,2-50O-50N-utility-final.eps" "Tree-100-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -31147,12 +28135,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100
 @echo Generating graphs for Tree,100,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,100,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,100,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100,100,5-25O-100N/EPS"
-@mv "Tree,100,100,5-25O-100N-messages-sankey.eps" "Tree-100-100-5-25O-100N-messages-sankey.eps"
-@mv "Tree,100,100,5-25O-100N-messages.eps" "Tree-100-100-5-25O-100N-messages.eps"
-@mv "Tree,100,100,5-25O-100N-cycleBreakdown.eps" "Tree-100-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,100,100,5-25O-100N-utilScatterAll-Fault.eps" "Tree-100-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,100,100,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-100-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,100,100,5-25O-100N-utility-final.eps" "Tree-100-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -31209,12 +28191,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100
 @echo Generating graphs for Tree,100,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,100,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,100,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100,100,10-50O-50N/EPS"
-@mv "Tree,100,100,10-50O-50N-messages-sankey.eps" "Tree-100-100-10-50O-50N-messages-sankey.eps"
-@mv "Tree,100,100,10-50O-50N-messages.eps" "Tree-100-100-10-50O-50N-messages.eps"
-@mv "Tree,100,100,10-50O-50N-cycleBreakdown.eps" "Tree-100-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,100,100,10-50O-50N-utilScatterAll-Fault.eps" "Tree-100-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,100,100,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-100-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,100,100,10-50O-50N-utility-final.eps" "Tree-100-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -31271,12 +28247,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100
 @echo Generating graphs for Tree,100,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,100,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,100,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100,0,1-10O-100N/EPS"
-@mv "Tree,100,0,1-10O-100N-messages-sankey.eps" "Tree-100-0-1-10O-100N-messages-sankey.eps"
-@mv "Tree,100,0,1-10O-100N-messages.eps" "Tree-100-0-1-10O-100N-messages.eps"
-@mv "Tree,100,0,1-10O-100N-cycleBreakdown.eps" "Tree-100-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,100,0,1-10O-100N-utilScatterAll-Fault.eps" "Tree-100-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,100,0,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-100-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,100,0,1-10O-100N-utility-final.eps" "Tree-100-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -31333,12 +28303,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100
 @echo Generating graphs for Tree,100,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,100,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,100,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100,0,2-50O-50N/EPS"
-@mv "Tree,100,0,2-50O-50N-messages-sankey.eps" "Tree-100-0-2-50O-50N-messages-sankey.eps"
-@mv "Tree,100,0,2-50O-50N-messages.eps" "Tree-100-0-2-50O-50N-messages.eps"
-@mv "Tree,100,0,2-50O-50N-cycleBreakdown.eps" "Tree-100-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,100,0,2-50O-50N-utilScatterAll-Fault.eps" "Tree-100-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,100,0,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-100-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,100,0,2-50O-50N-utility-final.eps" "Tree-100-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -31395,12 +28359,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100
 @echo Generating graphs for Tree,100,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,100,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,100,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100,0,5-25O-100N/EPS"
-@mv "Tree,100,0,5-25O-100N-messages-sankey.eps" "Tree-100-0-5-25O-100N-messages-sankey.eps"
-@mv "Tree,100,0,5-25O-100N-messages.eps" "Tree-100-0-5-25O-100N-messages.eps"
-@mv "Tree,100,0,5-25O-100N-cycleBreakdown.eps" "Tree-100-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,100,0,5-25O-100N-utilScatterAll-Fault.eps" "Tree-100-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,100,0,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-100-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,100,0,5-25O-100N-utility-final.eps" "Tree-100-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -31457,12 +28415,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100
 @echo Generating graphs for Tree,100,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,100,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,100,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100,0,10-50O-50N/EPS"
-@mv "Tree,100,0,10-50O-50N-messages-sankey.eps" "Tree-100-0-10-50O-50N-messages-sankey.eps"
-@mv "Tree,100,0,10-50O-50N-messages.eps" "Tree-100-0-10-50O-50N-messages.eps"
-@mv "Tree,100,0,10-50O-50N-cycleBreakdown.eps" "Tree-100-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,100,0,10-50O-50N-utilScatterAll-Fault.eps" "Tree-100-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,100,0,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-100-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,100,0,10-50O-50N-utility-final.eps" "Tree-100-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -31519,12 +28471,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100
 @echo Generating graphs for Tree,100,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,100,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,100,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100,50,1-10O-100N/EPS"
-@mv "Tree,100,50,1-10O-100N-messages-sankey.eps" "Tree-100-50-1-10O-100N-messages-sankey.eps"
-@mv "Tree,100,50,1-10O-100N-messages.eps" "Tree-100-50-1-10O-100N-messages.eps"
-@mv "Tree,100,50,1-10O-100N-cycleBreakdown.eps" "Tree-100-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,100,50,1-10O-100N-utilScatterAll-Fault.eps" "Tree-100-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,100,50,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-100-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,100,50,1-10O-100N-utility-final.eps" "Tree-100-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -31581,12 +28527,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100
 @echo Generating graphs for Tree,100,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,100,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,100,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100,50,2-50O-50N/EPS"
-@mv "Tree,100,50,2-50O-50N-messages-sankey.eps" "Tree-100-50-2-50O-50N-messages-sankey.eps"
-@mv "Tree,100,50,2-50O-50N-messages.eps" "Tree-100-50-2-50O-50N-messages.eps"
-@mv "Tree,100,50,2-50O-50N-cycleBreakdown.eps" "Tree-100-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,100,50,2-50O-50N-utilScatterAll-Fault.eps" "Tree-100-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,100,50,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-100-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,100,50,2-50O-50N-utility-final.eps" "Tree-100-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -31643,12 +28583,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100
 @echo Generating graphs for Tree,100,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,100,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,100,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100,50,5-25O-100N/EPS"
-@mv "Tree,100,50,5-25O-100N-messages-sankey.eps" "Tree-100-50-5-25O-100N-messages-sankey.eps"
-@mv "Tree,100,50,5-25O-100N-messages.eps" "Tree-100-50-5-25O-100N-messages.eps"
-@mv "Tree,100,50,5-25O-100N-cycleBreakdown.eps" "Tree-100-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,100,50,5-25O-100N-utilScatterAll-Fault.eps" "Tree-100-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,100,50,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-100-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,100,50,5-25O-100N-utility-final.eps" "Tree-100-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -31705,12 +28639,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100
 @echo Generating graphs for Tree,100,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,100,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,100,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100,50,10-50O-50N/EPS"
-@mv "Tree,100,50,10-50O-50N-messages-sankey.eps" "Tree-100-50-10-50O-50N-messages-sankey.eps"
-@mv "Tree,100,50,10-50O-50N-messages.eps" "Tree-100-50-10-50O-50N-messages.eps"
-@mv "Tree,100,50,10-50O-50N-cycleBreakdown.eps" "Tree-100-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,100,50,10-50O-50N-utilScatterAll-Fault.eps" "Tree-100-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,100,50,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-100-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,100,50,10-50O-50N-utility-final.eps" "Tree-100-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -31767,12 +28695,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100
 @echo Generating graphs for Tree,100,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,100,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,100,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100,10,1-10O-100N/EPS"
-@mv "Tree,100,10,1-10O-100N-messages-sankey.eps" "Tree-100-10-1-10O-100N-messages-sankey.eps"
-@mv "Tree,100,10,1-10O-100N-messages.eps" "Tree-100-10-1-10O-100N-messages.eps"
-@mv "Tree,100,10,1-10O-100N-cycleBreakdown.eps" "Tree-100-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,100,10,1-10O-100N-utilScatterAll-Fault.eps" "Tree-100-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,100,10,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-100-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,100,10,1-10O-100N-utility-final.eps" "Tree-100-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -31829,12 +28751,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100
 @echo Generating graphs for Tree,100,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,100,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,100,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100,10,2-50O-50N/EPS"
-@mv "Tree,100,10,2-50O-50N-messages-sankey.eps" "Tree-100-10-2-50O-50N-messages-sankey.eps"
-@mv "Tree,100,10,2-50O-50N-messages.eps" "Tree-100-10-2-50O-50N-messages.eps"
-@mv "Tree,100,10,2-50O-50N-cycleBreakdown.eps" "Tree-100-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,100,10,2-50O-50N-utilScatterAll-Fault.eps" "Tree-100-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,100,10,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-100-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,100,10,2-50O-50N-utility-final.eps" "Tree-100-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -31891,12 +28807,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100
 @echo Generating graphs for Tree,100,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,100,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,100,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100,10,5-25O-100N/EPS"
-@mv "Tree,100,10,5-25O-100N-messages-sankey.eps" "Tree-100-10-5-25O-100N-messages-sankey.eps"
-@mv "Tree,100,10,5-25O-100N-messages.eps" "Tree-100-10-5-25O-100N-messages.eps"
-@mv "Tree,100,10,5-25O-100N-cycleBreakdown.eps" "Tree-100-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,100,10,5-25O-100N-utilScatterAll-Fault.eps" "Tree-100-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,100,10,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-100-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,100,10,5-25O-100N-utility-final.eps" "Tree-100-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -31953,12 +28863,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100
 @echo Generating graphs for Tree,100,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,100,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,100,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100,10,10-50O-50N/EPS"
-@mv "Tree,100,10,10-50O-50N-messages-sankey.eps" "Tree-100-10-10-50O-50N-messages-sankey.eps"
-@mv "Tree,100,10,10-50O-50N-messages.eps" "Tree-100-10-10-50O-50N-messages.eps"
-@mv "Tree,100,10,10-50O-50N-cycleBreakdown.eps" "Tree-100-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,100,10,10-50O-50N-utilScatterAll-Fault.eps" "Tree-100-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,100,10,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-100-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,100,10,10-50O-50N-utility-final.eps" "Tree-100-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -32015,12 +28919,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100
 @echo Generating graphs for Tree,100,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,100,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,100,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100,90,1-10O-100N/EPS"
-@mv "Tree,100,90,1-10O-100N-messages-sankey.eps" "Tree-100-90-1-10O-100N-messages-sankey.eps"
-@mv "Tree,100,90,1-10O-100N-messages.eps" "Tree-100-90-1-10O-100N-messages.eps"
-@mv "Tree,100,90,1-10O-100N-cycleBreakdown.eps" "Tree-100-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,100,90,1-10O-100N-utilScatterAll-Fault.eps" "Tree-100-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,100,90,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-100-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,100,90,1-10O-100N-utility-final.eps" "Tree-100-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -32077,12 +28975,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100
 @echo Generating graphs for Tree,100,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,100,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,100,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100,90,2-50O-50N/EPS"
-@mv "Tree,100,90,2-50O-50N-messages-sankey.eps" "Tree-100-90-2-50O-50N-messages-sankey.eps"
-@mv "Tree,100,90,2-50O-50N-messages.eps" "Tree-100-90-2-50O-50N-messages.eps"
-@mv "Tree,100,90,2-50O-50N-cycleBreakdown.eps" "Tree-100-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,100,90,2-50O-50N-utilScatterAll-Fault.eps" "Tree-100-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,100,90,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-100-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,100,90,2-50O-50N-utility-final.eps" "Tree-100-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -32139,12 +29031,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100
 @echo Generating graphs for Tree,100,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,100,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,100,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100,90,5-25O-100N/EPS"
-@mv "Tree,100,90,5-25O-100N-messages-sankey.eps" "Tree-100-90-5-25O-100N-messages-sankey.eps"
-@mv "Tree,100,90,5-25O-100N-messages.eps" "Tree-100-90-5-25O-100N-messages.eps"
-@mv "Tree,100,90,5-25O-100N-cycleBreakdown.eps" "Tree-100-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,100,90,5-25O-100N-utilScatterAll-Fault.eps" "Tree-100-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,100,90,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-100-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,100,90,5-25O-100N-utility-final.eps" "Tree-100-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -32201,12 +29087,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100
 @echo Generating graphs for Tree,100,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,100,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,100,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100,90,10-50O-50N/EPS"
-@mv "Tree,100,90,10-50O-50N-messages-sankey.eps" "Tree-100-90-10-50O-50N-messages-sankey.eps"
-@mv "Tree,100,90,10-50O-50N-messages.eps" "Tree-100-90-10-50O-50N-messages.eps"
-@mv "Tree,100,90,10-50O-50N-cycleBreakdown.eps" "Tree-100-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,100,90,10-50O-50N-utilScatterAll-Fault.eps" "Tree-100-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,100,90,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-100-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,100,90,10-50O-50N-utility-final.eps" "Tree-100-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -32263,12 +29143,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,100
 @echo Generating graphs for Tree,0,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,0,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,0,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,100,1-10O-100N/EPS"
-@mv "Tree,0,100,1-10O-100N-messages-sankey.eps" "Tree-0-100-1-10O-100N-messages-sankey.eps"
-@mv "Tree,0,100,1-10O-100N-messages.eps" "Tree-0-100-1-10O-100N-messages.eps"
-@mv "Tree,0,100,1-10O-100N-cycleBreakdown.eps" "Tree-0-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,0,100,1-10O-100N-utilScatterAll-Fault.eps" "Tree-0-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,0,100,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-0-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,0,100,1-10O-100N-utility-final.eps" "Tree-0-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -32325,12 +29199,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,1
 @echo Generating graphs for Tree,0,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,0,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,0,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,100,2-50O-50N/EPS"
-@mv "Tree,0,100,2-50O-50N-messages-sankey.eps" "Tree-0-100-2-50O-50N-messages-sankey.eps"
-@mv "Tree,0,100,2-50O-50N-messages.eps" "Tree-0-100-2-50O-50N-messages.eps"
-@mv "Tree,0,100,2-50O-50N-cycleBreakdown.eps" "Tree-0-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,0,100,2-50O-50N-utilScatterAll-Fault.eps" "Tree-0-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,0,100,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-0-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,0,100,2-50O-50N-utility-final.eps" "Tree-0-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -32387,12 +29255,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,1
 @echo Generating graphs for Tree,0,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,0,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,0,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,100,5-25O-100N/EPS"
-@mv "Tree,0,100,5-25O-100N-messages-sankey.eps" "Tree-0-100-5-25O-100N-messages-sankey.eps"
-@mv "Tree,0,100,5-25O-100N-messages.eps" "Tree-0-100-5-25O-100N-messages.eps"
-@mv "Tree,0,100,5-25O-100N-cycleBreakdown.eps" "Tree-0-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,0,100,5-25O-100N-utilScatterAll-Fault.eps" "Tree-0-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,0,100,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-0-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,0,100,5-25O-100N-utility-final.eps" "Tree-0-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -32449,12 +29311,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,1
 @echo Generating graphs for Tree,0,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,0,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,0,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,100,10-50O-50N/EPS"
-@mv "Tree,0,100,10-50O-50N-messages-sankey.eps" "Tree-0-100-10-50O-50N-messages-sankey.eps"
-@mv "Tree,0,100,10-50O-50N-messages.eps" "Tree-0-100-10-50O-50N-messages.eps"
-@mv "Tree,0,100,10-50O-50N-cycleBreakdown.eps" "Tree-0-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,0,100,10-50O-50N-utilScatterAll-Fault.eps" "Tree-0-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,0,100,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-0-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,0,100,10-50O-50N-utility-final.eps" "Tree-0-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -32511,12 +29367,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,1
 @echo Generating graphs for Tree,0,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,0,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,0,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,0,1-10O-100N/EPS"
-@mv "Tree,0,0,1-10O-100N-messages-sankey.eps" "Tree-0-0-1-10O-100N-messages-sankey.eps"
-@mv "Tree,0,0,1-10O-100N-messages.eps" "Tree-0-0-1-10O-100N-messages.eps"
-@mv "Tree,0,0,1-10O-100N-cycleBreakdown.eps" "Tree-0-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,0,0,1-10O-100N-utilScatterAll-Fault.eps" "Tree-0-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,0,0,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-0-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,0,0,1-10O-100N-utility-final.eps" "Tree-0-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -32573,12 +29423,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,0
 @echo Generating graphs for Tree,0,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,0,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,0,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,0,2-50O-50N/EPS"
-@mv "Tree,0,0,2-50O-50N-messages-sankey.eps" "Tree-0-0-2-50O-50N-messages-sankey.eps"
-@mv "Tree,0,0,2-50O-50N-messages.eps" "Tree-0-0-2-50O-50N-messages.eps"
-@mv "Tree,0,0,2-50O-50N-cycleBreakdown.eps" "Tree-0-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,0,0,2-50O-50N-utilScatterAll-Fault.eps" "Tree-0-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,0,0,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-0-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,0,0,2-50O-50N-utility-final.eps" "Tree-0-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -32635,12 +29479,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,0
 @echo Generating graphs for Tree,0,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,0,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,0,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,0,5-25O-100N/EPS"
-@mv "Tree,0,0,5-25O-100N-messages-sankey.eps" "Tree-0-0-5-25O-100N-messages-sankey.eps"
-@mv "Tree,0,0,5-25O-100N-messages.eps" "Tree-0-0-5-25O-100N-messages.eps"
-@mv "Tree,0,0,5-25O-100N-cycleBreakdown.eps" "Tree-0-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,0,0,5-25O-100N-utilScatterAll-Fault.eps" "Tree-0-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,0,0,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-0-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,0,0,5-25O-100N-utility-final.eps" "Tree-0-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -32697,12 +29535,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,0
 @echo Generating graphs for Tree,0,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,0,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,0,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,0,10-50O-50N/EPS"
-@mv "Tree,0,0,10-50O-50N-messages-sankey.eps" "Tree-0-0-10-50O-50N-messages-sankey.eps"
-@mv "Tree,0,0,10-50O-50N-messages.eps" "Tree-0-0-10-50O-50N-messages.eps"
-@mv "Tree,0,0,10-50O-50N-cycleBreakdown.eps" "Tree-0-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,0,0,10-50O-50N-utilScatterAll-Fault.eps" "Tree-0-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,0,0,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-0-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,0,0,10-50O-50N-utility-final.eps" "Tree-0-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -32759,12 +29591,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,0
 @echo Generating graphs for Tree,0,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,0,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,0,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,50,1-10O-100N/EPS"
-@mv "Tree,0,50,1-10O-100N-messages-sankey.eps" "Tree-0-50-1-10O-100N-messages-sankey.eps"
-@mv "Tree,0,50,1-10O-100N-messages.eps" "Tree-0-50-1-10O-100N-messages.eps"
-@mv "Tree,0,50,1-10O-100N-cycleBreakdown.eps" "Tree-0-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,0,50,1-10O-100N-utilScatterAll-Fault.eps" "Tree-0-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,0,50,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-0-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,0,50,1-10O-100N-utility-final.eps" "Tree-0-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -32821,12 +29647,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,5
 @echo Generating graphs for Tree,0,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,0,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,0,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,50,2-50O-50N/EPS"
-@mv "Tree,0,50,2-50O-50N-messages-sankey.eps" "Tree-0-50-2-50O-50N-messages-sankey.eps"
-@mv "Tree,0,50,2-50O-50N-messages.eps" "Tree-0-50-2-50O-50N-messages.eps"
-@mv "Tree,0,50,2-50O-50N-cycleBreakdown.eps" "Tree-0-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,0,50,2-50O-50N-utilScatterAll-Fault.eps" "Tree-0-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,0,50,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-0-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,0,50,2-50O-50N-utility-final.eps" "Tree-0-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -32883,12 +29703,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,5
 @echo Generating graphs for Tree,0,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,0,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,0,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,50,5-25O-100N/EPS"
-@mv "Tree,0,50,5-25O-100N-messages-sankey.eps" "Tree-0-50-5-25O-100N-messages-sankey.eps"
-@mv "Tree,0,50,5-25O-100N-messages.eps" "Tree-0-50-5-25O-100N-messages.eps"
-@mv "Tree,0,50,5-25O-100N-cycleBreakdown.eps" "Tree-0-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,0,50,5-25O-100N-utilScatterAll-Fault.eps" "Tree-0-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,0,50,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-0-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,0,50,5-25O-100N-utility-final.eps" "Tree-0-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -32945,12 +29759,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,5
 @echo Generating graphs for Tree,0,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,0,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,0,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,50,10-50O-50N/EPS"
-@mv "Tree,0,50,10-50O-50N-messages-sankey.eps" "Tree-0-50-10-50O-50N-messages-sankey.eps"
-@mv "Tree,0,50,10-50O-50N-messages.eps" "Tree-0-50-10-50O-50N-messages.eps"
-@mv "Tree,0,50,10-50O-50N-cycleBreakdown.eps" "Tree-0-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,0,50,10-50O-50N-utilScatterAll-Fault.eps" "Tree-0-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,0,50,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-0-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,0,50,10-50O-50N-utility-final.eps" "Tree-0-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -33007,12 +29815,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,5
 @echo Generating graphs for Tree,0,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,0,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,0,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,10,1-10O-100N/EPS"
-@mv "Tree,0,10,1-10O-100N-messages-sankey.eps" "Tree-0-10-1-10O-100N-messages-sankey.eps"
-@mv "Tree,0,10,1-10O-100N-messages.eps" "Tree-0-10-1-10O-100N-messages.eps"
-@mv "Tree,0,10,1-10O-100N-cycleBreakdown.eps" "Tree-0-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,0,10,1-10O-100N-utilScatterAll-Fault.eps" "Tree-0-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,0,10,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-0-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,0,10,1-10O-100N-utility-final.eps" "Tree-0-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -33069,12 +29871,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,1
 @echo Generating graphs for Tree,0,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,0,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,0,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,10,2-50O-50N/EPS"
-@mv "Tree,0,10,2-50O-50N-messages-sankey.eps" "Tree-0-10-2-50O-50N-messages-sankey.eps"
-@mv "Tree,0,10,2-50O-50N-messages.eps" "Tree-0-10-2-50O-50N-messages.eps"
-@mv "Tree,0,10,2-50O-50N-cycleBreakdown.eps" "Tree-0-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,0,10,2-50O-50N-utilScatterAll-Fault.eps" "Tree-0-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,0,10,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-0-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,0,10,2-50O-50N-utility-final.eps" "Tree-0-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -33131,12 +29927,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,1
 @echo Generating graphs for Tree,0,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,0,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,0,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,10,5-25O-100N/EPS"
-@mv "Tree,0,10,5-25O-100N-messages-sankey.eps" "Tree-0-10-5-25O-100N-messages-sankey.eps"
-@mv "Tree,0,10,5-25O-100N-messages.eps" "Tree-0-10-5-25O-100N-messages.eps"
-@mv "Tree,0,10,5-25O-100N-cycleBreakdown.eps" "Tree-0-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,0,10,5-25O-100N-utilScatterAll-Fault.eps" "Tree-0-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,0,10,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-0-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,0,10,5-25O-100N-utility-final.eps" "Tree-0-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -33193,12 +29983,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,1
 @echo Generating graphs for Tree,0,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,0,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,0,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,10,10-50O-50N/EPS"
-@mv "Tree,0,10,10-50O-50N-messages-sankey.eps" "Tree-0-10-10-50O-50N-messages-sankey.eps"
-@mv "Tree,0,10,10-50O-50N-messages.eps" "Tree-0-10-10-50O-50N-messages.eps"
-@mv "Tree,0,10,10-50O-50N-cycleBreakdown.eps" "Tree-0-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,0,10,10-50O-50N-utilScatterAll-Fault.eps" "Tree-0-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,0,10,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-0-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,0,10,10-50O-50N-utility-final.eps" "Tree-0-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -33255,12 +30039,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,1
 @echo Generating graphs for Tree,0,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,0,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,0,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,90,1-10O-100N/EPS"
-@mv "Tree,0,90,1-10O-100N-messages-sankey.eps" "Tree-0-90-1-10O-100N-messages-sankey.eps"
-@mv "Tree,0,90,1-10O-100N-messages.eps" "Tree-0-90-1-10O-100N-messages.eps"
-@mv "Tree,0,90,1-10O-100N-cycleBreakdown.eps" "Tree-0-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,0,90,1-10O-100N-utilScatterAll-Fault.eps" "Tree-0-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,0,90,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-0-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,0,90,1-10O-100N-utility-final.eps" "Tree-0-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -33317,12 +30095,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,9
 @echo Generating graphs for Tree,0,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,0,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,0,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,90,2-50O-50N/EPS"
-@mv "Tree,0,90,2-50O-50N-messages-sankey.eps" "Tree-0-90-2-50O-50N-messages-sankey.eps"
-@mv "Tree,0,90,2-50O-50N-messages.eps" "Tree-0-90-2-50O-50N-messages.eps"
-@mv "Tree,0,90,2-50O-50N-cycleBreakdown.eps" "Tree-0-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,0,90,2-50O-50N-utilScatterAll-Fault.eps" "Tree-0-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,0,90,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-0-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,0,90,2-50O-50N-utility-final.eps" "Tree-0-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -33379,12 +30151,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,9
 @echo Generating graphs for Tree,0,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,0,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,0,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,90,5-25O-100N/EPS"
-@mv "Tree,0,90,5-25O-100N-messages-sankey.eps" "Tree-0-90-5-25O-100N-messages-sankey.eps"
-@mv "Tree,0,90,5-25O-100N-messages.eps" "Tree-0-90-5-25O-100N-messages.eps"
-@mv "Tree,0,90,5-25O-100N-cycleBreakdown.eps" "Tree-0-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,0,90,5-25O-100N-utilScatterAll-Fault.eps" "Tree-0-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,0,90,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-0-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,0,90,5-25O-100N-utility-final.eps" "Tree-0-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -33441,12 +30207,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,9
 @echo Generating graphs for Tree,0,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,0,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,0,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,90,10-50O-50N/EPS"
-@mv "Tree,0,90,10-50O-50N-messages-sankey.eps" "Tree-0-90-10-50O-50N-messages-sankey.eps"
-@mv "Tree,0,90,10-50O-50N-messages.eps" "Tree-0-90-10-50O-50N-messages.eps"
-@mv "Tree,0,90,10-50O-50N-cycleBreakdown.eps" "Tree-0-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,0,90,10-50O-50N-utilScatterAll-Fault.eps" "Tree-0-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,0,90,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-0-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,0,90,10-50O-50N-utility-final.eps" "Tree-0-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -33503,12 +30263,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,0,9
 @echo Generating graphs for Tree,50,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,50,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,100,1-10O-100N/EPS"
-@mv "Tree,50,100,1-10O-100N-messages-sankey.eps" "Tree-50-100-1-10O-100N-messages-sankey.eps"
-@mv "Tree,50,100,1-10O-100N-messages.eps" "Tree-50-100-1-10O-100N-messages.eps"
-@mv "Tree,50,100,1-10O-100N-cycleBreakdown.eps" "Tree-50-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,50,100,1-10O-100N-utilScatterAll-Fault.eps" "Tree-50-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,50,100,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-50-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,50,100,1-10O-100N-utility-final.eps" "Tree-50-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -33565,12 +30319,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo Generating graphs for Tree,50,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,50,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,100,2-50O-50N/EPS"
-@mv "Tree,50,100,2-50O-50N-messages-sankey.eps" "Tree-50-100-2-50O-50N-messages-sankey.eps"
-@mv "Tree,50,100,2-50O-50N-messages.eps" "Tree-50-100-2-50O-50N-messages.eps"
-@mv "Tree,50,100,2-50O-50N-cycleBreakdown.eps" "Tree-50-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,50,100,2-50O-50N-utilScatterAll-Fault.eps" "Tree-50-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,50,100,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-50-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,50,100,2-50O-50N-utility-final.eps" "Tree-50-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -33627,12 +30375,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo Generating graphs for Tree,50,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,50,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,100,5-25O-100N/EPS"
-@mv "Tree,50,100,5-25O-100N-messages-sankey.eps" "Tree-50-100-5-25O-100N-messages-sankey.eps"
-@mv "Tree,50,100,5-25O-100N-messages.eps" "Tree-50-100-5-25O-100N-messages.eps"
-@mv "Tree,50,100,5-25O-100N-cycleBreakdown.eps" "Tree-50-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,50,100,5-25O-100N-utilScatterAll-Fault.eps" "Tree-50-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,50,100,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-50-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,50,100,5-25O-100N-utility-final.eps" "Tree-50-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -33689,12 +30431,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo Generating graphs for Tree,50,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,50,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,100,10-50O-50N/EPS"
-@mv "Tree,50,100,10-50O-50N-messages-sankey.eps" "Tree-50-100-10-50O-50N-messages-sankey.eps"
-@mv "Tree,50,100,10-50O-50N-messages.eps" "Tree-50-100-10-50O-50N-messages.eps"
-@mv "Tree,50,100,10-50O-50N-cycleBreakdown.eps" "Tree-50-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,50,100,10-50O-50N-utilScatterAll-Fault.eps" "Tree-50-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,50,100,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-50-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,50,100,10-50O-50N-utility-final.eps" "Tree-50-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -33751,12 +30487,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo Generating graphs for Tree,50,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,50,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,0,1-10O-100N/EPS"
-@mv "Tree,50,0,1-10O-100N-messages-sankey.eps" "Tree-50-0-1-10O-100N-messages-sankey.eps"
-@mv "Tree,50,0,1-10O-100N-messages.eps" "Tree-50-0-1-10O-100N-messages.eps"
-@mv "Tree,50,0,1-10O-100N-cycleBreakdown.eps" "Tree-50-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,50,0,1-10O-100N-utilScatterAll-Fault.eps" "Tree-50-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,50,0,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-50-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,50,0,1-10O-100N-utility-final.eps" "Tree-50-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -33813,12 +30543,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo Generating graphs for Tree,50,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,50,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,0,2-50O-50N/EPS"
-@mv "Tree,50,0,2-50O-50N-messages-sankey.eps" "Tree-50-0-2-50O-50N-messages-sankey.eps"
-@mv "Tree,50,0,2-50O-50N-messages.eps" "Tree-50-0-2-50O-50N-messages.eps"
-@mv "Tree,50,0,2-50O-50N-cycleBreakdown.eps" "Tree-50-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,50,0,2-50O-50N-utilScatterAll-Fault.eps" "Tree-50-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,50,0,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-50-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,50,0,2-50O-50N-utility-final.eps" "Tree-50-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -33875,12 +30599,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo Generating graphs for Tree,50,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,50,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,0,5-25O-100N/EPS"
-@mv "Tree,50,0,5-25O-100N-messages-sankey.eps" "Tree-50-0-5-25O-100N-messages-sankey.eps"
-@mv "Tree,50,0,5-25O-100N-messages.eps" "Tree-50-0-5-25O-100N-messages.eps"
-@mv "Tree,50,0,5-25O-100N-cycleBreakdown.eps" "Tree-50-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,50,0,5-25O-100N-utilScatterAll-Fault.eps" "Tree-50-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,50,0,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-50-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,50,0,5-25O-100N-utility-final.eps" "Tree-50-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -33937,12 +30655,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo Generating graphs for Tree,50,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,50,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,0,10-50O-50N/EPS"
-@mv "Tree,50,0,10-50O-50N-messages-sankey.eps" "Tree-50-0-10-50O-50N-messages-sankey.eps"
-@mv "Tree,50,0,10-50O-50N-messages.eps" "Tree-50-0-10-50O-50N-messages.eps"
-@mv "Tree,50,0,10-50O-50N-cycleBreakdown.eps" "Tree-50-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,50,0,10-50O-50N-utilScatterAll-Fault.eps" "Tree-50-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,50,0,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-50-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,50,0,10-50O-50N-utility-final.eps" "Tree-50-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -33999,12 +30711,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo Generating graphs for Tree,50,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,50,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,50,1-10O-100N/EPS"
-@mv "Tree,50,50,1-10O-100N-messages-sankey.eps" "Tree-50-50-1-10O-100N-messages-sankey.eps"
-@mv "Tree,50,50,1-10O-100N-messages.eps" "Tree-50-50-1-10O-100N-messages.eps"
-@mv "Tree,50,50,1-10O-100N-cycleBreakdown.eps" "Tree-50-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,50,50,1-10O-100N-utilScatterAll-Fault.eps" "Tree-50-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,50,50,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-50-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,50,50,1-10O-100N-utility-final.eps" "Tree-50-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -34061,12 +30767,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo Generating graphs for Tree,50,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,50,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,50,2-50O-50N/EPS"
-@mv "Tree,50,50,2-50O-50N-messages-sankey.eps" "Tree-50-50-2-50O-50N-messages-sankey.eps"
-@mv "Tree,50,50,2-50O-50N-messages.eps" "Tree-50-50-2-50O-50N-messages.eps"
-@mv "Tree,50,50,2-50O-50N-cycleBreakdown.eps" "Tree-50-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,50,50,2-50O-50N-utilScatterAll-Fault.eps" "Tree-50-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,50,50,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-50-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,50,50,2-50O-50N-utility-final.eps" "Tree-50-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -34123,12 +30823,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo Generating graphs for Tree,50,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,50,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,50,5-25O-100N/EPS"
-@mv "Tree,50,50,5-25O-100N-messages-sankey.eps" "Tree-50-50-5-25O-100N-messages-sankey.eps"
-@mv "Tree,50,50,5-25O-100N-messages.eps" "Tree-50-50-5-25O-100N-messages.eps"
-@mv "Tree,50,50,5-25O-100N-cycleBreakdown.eps" "Tree-50-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,50,50,5-25O-100N-utilScatterAll-Fault.eps" "Tree-50-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,50,50,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-50-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,50,50,5-25O-100N-utility-final.eps" "Tree-50-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -34185,12 +30879,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo Generating graphs for Tree,50,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,50,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,50,10-50O-50N/EPS"
-@mv "Tree,50,50,10-50O-50N-messages-sankey.eps" "Tree-50-50-10-50O-50N-messages-sankey.eps"
-@mv "Tree,50,50,10-50O-50N-messages.eps" "Tree-50-50-10-50O-50N-messages.eps"
-@mv "Tree,50,50,10-50O-50N-cycleBreakdown.eps" "Tree-50-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,50,50,10-50O-50N-utilScatterAll-Fault.eps" "Tree-50-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,50,50,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-50-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,50,50,10-50O-50N-utility-final.eps" "Tree-50-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -34247,12 +30935,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo Generating graphs for Tree,50,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,50,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,10,1-10O-100N/EPS"
-@mv "Tree,50,10,1-10O-100N-messages-sankey.eps" "Tree-50-10-1-10O-100N-messages-sankey.eps"
-@mv "Tree,50,10,1-10O-100N-messages.eps" "Tree-50-10-1-10O-100N-messages.eps"
-@mv "Tree,50,10,1-10O-100N-cycleBreakdown.eps" "Tree-50-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,50,10,1-10O-100N-utilScatterAll-Fault.eps" "Tree-50-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,50,10,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-50-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,50,10,1-10O-100N-utility-final.eps" "Tree-50-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -34309,12 +30991,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo Generating graphs for Tree,50,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,50,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,10,2-50O-50N/EPS"
-@mv "Tree,50,10,2-50O-50N-messages-sankey.eps" "Tree-50-10-2-50O-50N-messages-sankey.eps"
-@mv "Tree,50,10,2-50O-50N-messages.eps" "Tree-50-10-2-50O-50N-messages.eps"
-@mv "Tree,50,10,2-50O-50N-cycleBreakdown.eps" "Tree-50-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,50,10,2-50O-50N-utilScatterAll-Fault.eps" "Tree-50-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,50,10,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-50-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,50,10,2-50O-50N-utility-final.eps" "Tree-50-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -34371,12 +31047,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo Generating graphs for Tree,50,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,50,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,10,5-25O-100N/EPS"
-@mv "Tree,50,10,5-25O-100N-messages-sankey.eps" "Tree-50-10-5-25O-100N-messages-sankey.eps"
-@mv "Tree,50,10,5-25O-100N-messages.eps" "Tree-50-10-5-25O-100N-messages.eps"
-@mv "Tree,50,10,5-25O-100N-cycleBreakdown.eps" "Tree-50-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,50,10,5-25O-100N-utilScatterAll-Fault.eps" "Tree-50-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,50,10,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-50-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,50,10,5-25O-100N-utility-final.eps" "Tree-50-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -34433,12 +31103,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo Generating graphs for Tree,50,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,50,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,10,10-50O-50N/EPS"
-@mv "Tree,50,10,10-50O-50N-messages-sankey.eps" "Tree-50-10-10-50O-50N-messages-sankey.eps"
-@mv "Tree,50,10,10-50O-50N-messages.eps" "Tree-50-10-10-50O-50N-messages.eps"
-@mv "Tree,50,10,10-50O-50N-cycleBreakdown.eps" "Tree-50-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,50,10,10-50O-50N-utilScatterAll-Fault.eps" "Tree-50-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,50,10,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-50-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,50,10,10-50O-50N-utility-final.eps" "Tree-50-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -34495,12 +31159,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo Generating graphs for Tree,50,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,50,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,90,1-10O-100N/EPS"
-@mv "Tree,50,90,1-10O-100N-messages-sankey.eps" "Tree-50-90-1-10O-100N-messages-sankey.eps"
-@mv "Tree,50,90,1-10O-100N-messages.eps" "Tree-50-90-1-10O-100N-messages.eps"
-@mv "Tree,50,90,1-10O-100N-cycleBreakdown.eps" "Tree-50-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,50,90,1-10O-100N-utilScatterAll-Fault.eps" "Tree-50-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,50,90,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-50-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,50,90,1-10O-100N-utility-final.eps" "Tree-50-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -34557,12 +31215,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo Generating graphs for Tree,50,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,50,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,90,2-50O-50N/EPS"
-@mv "Tree,50,90,2-50O-50N-messages-sankey.eps" "Tree-50-90-2-50O-50N-messages-sankey.eps"
-@mv "Tree,50,90,2-50O-50N-messages.eps" "Tree-50-90-2-50O-50N-messages.eps"
-@mv "Tree,50,90,2-50O-50N-cycleBreakdown.eps" "Tree-50-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,50,90,2-50O-50N-utilScatterAll-Fault.eps" "Tree-50-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,50,90,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-50-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,50,90,2-50O-50N-utility-final.eps" "Tree-50-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -34619,12 +31271,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo Generating graphs for Tree,50,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,50,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,90,5-25O-100N/EPS"
-@mv "Tree,50,90,5-25O-100N-messages-sankey.eps" "Tree-50-90-5-25O-100N-messages-sankey.eps"
-@mv "Tree,50,90,5-25O-100N-messages.eps" "Tree-50-90-5-25O-100N-messages.eps"
-@mv "Tree,50,90,5-25O-100N-cycleBreakdown.eps" "Tree-50-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,50,90,5-25O-100N-utilScatterAll-Fault.eps" "Tree-50-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,50,90,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-50-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,50,90,5-25O-100N-utility-final.eps" "Tree-50-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -34681,12 +31327,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo Generating graphs for Tree,50,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,50,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,90,10-50O-50N/EPS"
-@mv "Tree,50,90,10-50O-50N-messages-sankey.eps" "Tree-50-90-10-50O-50N-messages-sankey.eps"
-@mv "Tree,50,90,10-50O-50N-messages.eps" "Tree-50-90-10-50O-50N-messages.eps"
-@mv "Tree,50,90,10-50O-50N-cycleBreakdown.eps" "Tree-50-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,50,90,10-50O-50N-utilScatterAll-Fault.eps" "Tree-50-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,50,90,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-50-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,50,90,10-50O-50N-utility-final.eps" "Tree-50-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -34743,12 +31383,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo Generating graphs for Tree,10,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,10,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,100,1-10O-100N/EPS"
-@mv "Tree,10,100,1-10O-100N-messages-sankey.eps" "Tree-10-100-1-10O-100N-messages-sankey.eps"
-@mv "Tree,10,100,1-10O-100N-messages.eps" "Tree-10-100-1-10O-100N-messages.eps"
-@mv "Tree,10,100,1-10O-100N-cycleBreakdown.eps" "Tree-10-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,10,100,1-10O-100N-utilScatterAll-Fault.eps" "Tree-10-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,10,100,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-10-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,10,100,1-10O-100N-utility-final.eps" "Tree-10-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -34805,12 +31439,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo Generating graphs for Tree,10,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,10,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,100,2-50O-50N/EPS"
-@mv "Tree,10,100,2-50O-50N-messages-sankey.eps" "Tree-10-100-2-50O-50N-messages-sankey.eps"
-@mv "Tree,10,100,2-50O-50N-messages.eps" "Tree-10-100-2-50O-50N-messages.eps"
-@mv "Tree,10,100,2-50O-50N-cycleBreakdown.eps" "Tree-10-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,10,100,2-50O-50N-utilScatterAll-Fault.eps" "Tree-10-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,10,100,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-10-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,10,100,2-50O-50N-utility-final.eps" "Tree-10-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -34867,12 +31495,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo Generating graphs for Tree,10,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,10,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,100,5-25O-100N/EPS"
-@mv "Tree,10,100,5-25O-100N-messages-sankey.eps" "Tree-10-100-5-25O-100N-messages-sankey.eps"
-@mv "Tree,10,100,5-25O-100N-messages.eps" "Tree-10-100-5-25O-100N-messages.eps"
-@mv "Tree,10,100,5-25O-100N-cycleBreakdown.eps" "Tree-10-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,10,100,5-25O-100N-utilScatterAll-Fault.eps" "Tree-10-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,10,100,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-10-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,10,100,5-25O-100N-utility-final.eps" "Tree-10-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -34929,12 +31551,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo Generating graphs for Tree,10,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,10,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,100,10-50O-50N/EPS"
-@mv "Tree,10,100,10-50O-50N-messages-sankey.eps" "Tree-10-100-10-50O-50N-messages-sankey.eps"
-@mv "Tree,10,100,10-50O-50N-messages.eps" "Tree-10-100-10-50O-50N-messages.eps"
-@mv "Tree,10,100,10-50O-50N-cycleBreakdown.eps" "Tree-10-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,10,100,10-50O-50N-utilScatterAll-Fault.eps" "Tree-10-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,10,100,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-10-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,10,100,10-50O-50N-utility-final.eps" "Tree-10-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -34991,12 +31607,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo Generating graphs for Tree,10,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,10,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,0,1-10O-100N/EPS"
-@mv "Tree,10,0,1-10O-100N-messages-sankey.eps" "Tree-10-0-1-10O-100N-messages-sankey.eps"
-@mv "Tree,10,0,1-10O-100N-messages.eps" "Tree-10-0-1-10O-100N-messages.eps"
-@mv "Tree,10,0,1-10O-100N-cycleBreakdown.eps" "Tree-10-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,10,0,1-10O-100N-utilScatterAll-Fault.eps" "Tree-10-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,10,0,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-10-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,10,0,1-10O-100N-utility-final.eps" "Tree-10-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -35053,12 +31663,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo Generating graphs for Tree,10,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,10,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,0,2-50O-50N/EPS"
-@mv "Tree,10,0,2-50O-50N-messages-sankey.eps" "Tree-10-0-2-50O-50N-messages-sankey.eps"
-@mv "Tree,10,0,2-50O-50N-messages.eps" "Tree-10-0-2-50O-50N-messages.eps"
-@mv "Tree,10,0,2-50O-50N-cycleBreakdown.eps" "Tree-10-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,10,0,2-50O-50N-utilScatterAll-Fault.eps" "Tree-10-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,10,0,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-10-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,10,0,2-50O-50N-utility-final.eps" "Tree-10-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -35115,12 +31719,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo Generating graphs for Tree,10,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,10,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,0,5-25O-100N/EPS"
-@mv "Tree,10,0,5-25O-100N-messages-sankey.eps" "Tree-10-0-5-25O-100N-messages-sankey.eps"
-@mv "Tree,10,0,5-25O-100N-messages.eps" "Tree-10-0-5-25O-100N-messages.eps"
-@mv "Tree,10,0,5-25O-100N-cycleBreakdown.eps" "Tree-10-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,10,0,5-25O-100N-utilScatterAll-Fault.eps" "Tree-10-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,10,0,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-10-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,10,0,5-25O-100N-utility-final.eps" "Tree-10-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -35177,12 +31775,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo Generating graphs for Tree,10,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,10,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,0,10-50O-50N/EPS"
-@mv "Tree,10,0,10-50O-50N-messages-sankey.eps" "Tree-10-0-10-50O-50N-messages-sankey.eps"
-@mv "Tree,10,0,10-50O-50N-messages.eps" "Tree-10-0-10-50O-50N-messages.eps"
-@mv "Tree,10,0,10-50O-50N-cycleBreakdown.eps" "Tree-10-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,10,0,10-50O-50N-utilScatterAll-Fault.eps" "Tree-10-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,10,0,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-10-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,10,0,10-50O-50N-utility-final.eps" "Tree-10-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -35239,12 +31831,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo Generating graphs for Tree,10,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,10,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,50,1-10O-100N/EPS"
-@mv "Tree,10,50,1-10O-100N-messages-sankey.eps" "Tree-10-50-1-10O-100N-messages-sankey.eps"
-@mv "Tree,10,50,1-10O-100N-messages.eps" "Tree-10-50-1-10O-100N-messages.eps"
-@mv "Tree,10,50,1-10O-100N-cycleBreakdown.eps" "Tree-10-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,10,50,1-10O-100N-utilScatterAll-Fault.eps" "Tree-10-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,10,50,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-10-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,10,50,1-10O-100N-utility-final.eps" "Tree-10-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -35301,12 +31887,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo Generating graphs for Tree,10,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,10,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,50,2-50O-50N/EPS"
-@mv "Tree,10,50,2-50O-50N-messages-sankey.eps" "Tree-10-50-2-50O-50N-messages-sankey.eps"
-@mv "Tree,10,50,2-50O-50N-messages.eps" "Tree-10-50-2-50O-50N-messages.eps"
-@mv "Tree,10,50,2-50O-50N-cycleBreakdown.eps" "Tree-10-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,10,50,2-50O-50N-utilScatterAll-Fault.eps" "Tree-10-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,10,50,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-10-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,10,50,2-50O-50N-utility-final.eps" "Tree-10-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -35363,12 +31943,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo Generating graphs for Tree,10,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,10,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,50,5-25O-100N/EPS"
-@mv "Tree,10,50,5-25O-100N-messages-sankey.eps" "Tree-10-50-5-25O-100N-messages-sankey.eps"
-@mv "Tree,10,50,5-25O-100N-messages.eps" "Tree-10-50-5-25O-100N-messages.eps"
-@mv "Tree,10,50,5-25O-100N-cycleBreakdown.eps" "Tree-10-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,10,50,5-25O-100N-utilScatterAll-Fault.eps" "Tree-10-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,10,50,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-10-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,10,50,5-25O-100N-utility-final.eps" "Tree-10-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -35425,12 +31999,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo Generating graphs for Tree,10,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,10,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,50,10-50O-50N/EPS"
-@mv "Tree,10,50,10-50O-50N-messages-sankey.eps" "Tree-10-50-10-50O-50N-messages-sankey.eps"
-@mv "Tree,10,50,10-50O-50N-messages.eps" "Tree-10-50-10-50O-50N-messages.eps"
-@mv "Tree,10,50,10-50O-50N-cycleBreakdown.eps" "Tree-10-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,10,50,10-50O-50N-utilScatterAll-Fault.eps" "Tree-10-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,10,50,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-10-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,10,50,10-50O-50N-utility-final.eps" "Tree-10-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -35487,12 +32055,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo Generating graphs for Tree,10,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,10,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,10,1-10O-100N/EPS"
-@mv "Tree,10,10,1-10O-100N-messages-sankey.eps" "Tree-10-10-1-10O-100N-messages-sankey.eps"
-@mv "Tree,10,10,1-10O-100N-messages.eps" "Tree-10-10-1-10O-100N-messages.eps"
-@mv "Tree,10,10,1-10O-100N-cycleBreakdown.eps" "Tree-10-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,10,10,1-10O-100N-utilScatterAll-Fault.eps" "Tree-10-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,10,10,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-10-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,10,10,1-10O-100N-utility-final.eps" "Tree-10-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -35549,12 +32111,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo Generating graphs for Tree,10,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,10,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,10,2-50O-50N/EPS"
-@mv "Tree,10,10,2-50O-50N-messages-sankey.eps" "Tree-10-10-2-50O-50N-messages-sankey.eps"
-@mv "Tree,10,10,2-50O-50N-messages.eps" "Tree-10-10-2-50O-50N-messages.eps"
-@mv "Tree,10,10,2-50O-50N-cycleBreakdown.eps" "Tree-10-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,10,10,2-50O-50N-utilScatterAll-Fault.eps" "Tree-10-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,10,10,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-10-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,10,10,2-50O-50N-utility-final.eps" "Tree-10-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -35611,12 +32167,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo Generating graphs for Tree,10,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,10,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,10,5-25O-100N/EPS"
-@mv "Tree,10,10,5-25O-100N-messages-sankey.eps" "Tree-10-10-5-25O-100N-messages-sankey.eps"
-@mv "Tree,10,10,5-25O-100N-messages.eps" "Tree-10-10-5-25O-100N-messages.eps"
-@mv "Tree,10,10,5-25O-100N-cycleBreakdown.eps" "Tree-10-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,10,10,5-25O-100N-utilScatterAll-Fault.eps" "Tree-10-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,10,10,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-10-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,10,10,5-25O-100N-utility-final.eps" "Tree-10-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -35673,12 +32223,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo Generating graphs for Tree,10,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,10,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,10,10-50O-50N/EPS"
-@mv "Tree,10,10,10-50O-50N-messages-sankey.eps" "Tree-10-10-10-50O-50N-messages-sankey.eps"
-@mv "Tree,10,10,10-50O-50N-messages.eps" "Tree-10-10-10-50O-50N-messages.eps"
-@mv "Tree,10,10,10-50O-50N-cycleBreakdown.eps" "Tree-10-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,10,10,10-50O-50N-utilScatterAll-Fault.eps" "Tree-10-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,10,10,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-10-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,10,10,10-50O-50N-utility-final.eps" "Tree-10-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -35735,12 +32279,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo Generating graphs for Tree,10,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,10,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,90,1-10O-100N/EPS"
-@mv "Tree,10,90,1-10O-100N-messages-sankey.eps" "Tree-10-90-1-10O-100N-messages-sankey.eps"
-@mv "Tree,10,90,1-10O-100N-messages.eps" "Tree-10-90-1-10O-100N-messages.eps"
-@mv "Tree,10,90,1-10O-100N-cycleBreakdown.eps" "Tree-10-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,10,90,1-10O-100N-utilScatterAll-Fault.eps" "Tree-10-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,10,90,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-10-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,10,90,1-10O-100N-utility-final.eps" "Tree-10-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -35797,12 +32335,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo Generating graphs for Tree,10,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,10,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,90,2-50O-50N/EPS"
-@mv "Tree,10,90,2-50O-50N-messages-sankey.eps" "Tree-10-90-2-50O-50N-messages-sankey.eps"
-@mv "Tree,10,90,2-50O-50N-messages.eps" "Tree-10-90-2-50O-50N-messages.eps"
-@mv "Tree,10,90,2-50O-50N-cycleBreakdown.eps" "Tree-10-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,10,90,2-50O-50N-utilScatterAll-Fault.eps" "Tree-10-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,10,90,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-10-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,10,90,2-50O-50N-utility-final.eps" "Tree-10-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -35859,12 +32391,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo Generating graphs for Tree,10,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,10,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,90,5-25O-100N/EPS"
-@mv "Tree,10,90,5-25O-100N-messages-sankey.eps" "Tree-10-90-5-25O-100N-messages-sankey.eps"
-@mv "Tree,10,90,5-25O-100N-messages.eps" "Tree-10-90-5-25O-100N-messages.eps"
-@mv "Tree,10,90,5-25O-100N-cycleBreakdown.eps" "Tree-10-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,10,90,5-25O-100N-utilScatterAll-Fault.eps" "Tree-10-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,10,90,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-10-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,10,90,5-25O-100N-utility-final.eps" "Tree-10-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -35921,12 +32447,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo Generating graphs for Tree,10,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,10,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,90,10-50O-50N/EPS"
-@mv "Tree,10,90,10-50O-50N-messages-sankey.eps" "Tree-10-90-10-50O-50N-messages-sankey.eps"
-@mv "Tree,10,90,10-50O-50N-messages.eps" "Tree-10-90-10-50O-50N-messages.eps"
-@mv "Tree,10,90,10-50O-50N-cycleBreakdown.eps" "Tree-10-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,10,90,10-50O-50N-utilScatterAll-Fault.eps" "Tree-10-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,10,90,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-10-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,10,90,10-50O-50N-utility-final.eps" "Tree-10-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -35983,12 +32503,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo Generating graphs for Tree,90,100,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,90,100,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,100,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,100,1-10O-100N/EPS"
-@mv "Tree,90,100,1-10O-100N-messages-sankey.eps" "Tree-90-100-1-10O-100N-messages-sankey.eps"
-@mv "Tree,90,100,1-10O-100N-messages.eps" "Tree-90-100-1-10O-100N-messages.eps"
-@mv "Tree,90,100,1-10O-100N-cycleBreakdown.eps" "Tree-90-100-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,90,100,1-10O-100N-utilScatterAll-Fault.eps" "Tree-90-100-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,90,100,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-90-100-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,90,100,1-10O-100N-utility-final.eps" "Tree-90-100-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -36045,12 +32559,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo Generating graphs for Tree,90,100,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,90,100,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,100,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,100,2-50O-50N/EPS"
-@mv "Tree,90,100,2-50O-50N-messages-sankey.eps" "Tree-90-100-2-50O-50N-messages-sankey.eps"
-@mv "Tree,90,100,2-50O-50N-messages.eps" "Tree-90-100-2-50O-50N-messages.eps"
-@mv "Tree,90,100,2-50O-50N-cycleBreakdown.eps" "Tree-90-100-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,90,100,2-50O-50N-utilScatterAll-Fault.eps" "Tree-90-100-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,90,100,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-90-100-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,90,100,2-50O-50N-utility-final.eps" "Tree-90-100-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -36107,12 +32615,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo Generating graphs for Tree,90,100,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,90,100,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,100,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,100,5-25O-100N/EPS"
-@mv "Tree,90,100,5-25O-100N-messages-sankey.eps" "Tree-90-100-5-25O-100N-messages-sankey.eps"
-@mv "Tree,90,100,5-25O-100N-messages.eps" "Tree-90-100-5-25O-100N-messages.eps"
-@mv "Tree,90,100,5-25O-100N-cycleBreakdown.eps" "Tree-90-100-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,90,100,5-25O-100N-utilScatterAll-Fault.eps" "Tree-90-100-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,90,100,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-90-100-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,90,100,5-25O-100N-utility-final.eps" "Tree-90-100-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -36169,12 +32671,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo Generating graphs for Tree,90,100,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,90,100,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,100,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,100,10-50O-50N/EPS"
-@mv "Tree,90,100,10-50O-50N-messages-sankey.eps" "Tree-90-100-10-50O-50N-messages-sankey.eps"
-@mv "Tree,90,100,10-50O-50N-messages.eps" "Tree-90-100-10-50O-50N-messages.eps"
-@mv "Tree,90,100,10-50O-50N-cycleBreakdown.eps" "Tree-90-100-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,90,100,10-50O-50N-utilScatterAll-Fault.eps" "Tree-90-100-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,90,100,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-90-100-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,90,100,10-50O-50N-utility-final.eps" "Tree-90-100-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -36231,12 +32727,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo Generating graphs for Tree,90,0,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,90,0,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,0,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,0,1-10O-100N/EPS"
-@mv "Tree,90,0,1-10O-100N-messages-sankey.eps" "Tree-90-0-1-10O-100N-messages-sankey.eps"
-@mv "Tree,90,0,1-10O-100N-messages.eps" "Tree-90-0-1-10O-100N-messages.eps"
-@mv "Tree,90,0,1-10O-100N-cycleBreakdown.eps" "Tree-90-0-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,90,0,1-10O-100N-utilScatterAll-Fault.eps" "Tree-90-0-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,90,0,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-90-0-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,90,0,1-10O-100N-utility-final.eps" "Tree-90-0-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -36293,12 +32783,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo Generating graphs for Tree,90,0,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,90,0,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,0,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,0,2-50O-50N/EPS"
-@mv "Tree,90,0,2-50O-50N-messages-sankey.eps" "Tree-90-0-2-50O-50N-messages-sankey.eps"
-@mv "Tree,90,0,2-50O-50N-messages.eps" "Tree-90-0-2-50O-50N-messages.eps"
-@mv "Tree,90,0,2-50O-50N-cycleBreakdown.eps" "Tree-90-0-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,90,0,2-50O-50N-utilScatterAll-Fault.eps" "Tree-90-0-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,90,0,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-90-0-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,90,0,2-50O-50N-utility-final.eps" "Tree-90-0-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -36355,12 +32839,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo Generating graphs for Tree,90,0,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,90,0,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,0,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,0,5-25O-100N/EPS"
-@mv "Tree,90,0,5-25O-100N-messages-sankey.eps" "Tree-90-0-5-25O-100N-messages-sankey.eps"
-@mv "Tree,90,0,5-25O-100N-messages.eps" "Tree-90-0-5-25O-100N-messages.eps"
-@mv "Tree,90,0,5-25O-100N-cycleBreakdown.eps" "Tree-90-0-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,90,0,5-25O-100N-utilScatterAll-Fault.eps" "Tree-90-0-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,90,0,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-90-0-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,90,0,5-25O-100N-utility-final.eps" "Tree-90-0-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -36417,12 +32895,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo Generating graphs for Tree,90,0,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,90,0,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,0,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,0,10-50O-50N/EPS"
-@mv "Tree,90,0,10-50O-50N-messages-sankey.eps" "Tree-90-0-10-50O-50N-messages-sankey.eps"
-@mv "Tree,90,0,10-50O-50N-messages.eps" "Tree-90-0-10-50O-50N-messages.eps"
-@mv "Tree,90,0,10-50O-50N-cycleBreakdown.eps" "Tree-90-0-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,90,0,10-50O-50N-utilScatterAll-Fault.eps" "Tree-90-0-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,90,0,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-90-0-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,90,0,10-50O-50N-utility-final.eps" "Tree-90-0-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -36479,12 +32951,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo Generating graphs for Tree,90,50,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,90,50,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,50,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,50,1-10O-100N/EPS"
-@mv "Tree,90,50,1-10O-100N-messages-sankey.eps" "Tree-90-50-1-10O-100N-messages-sankey.eps"
-@mv "Tree,90,50,1-10O-100N-messages.eps" "Tree-90-50-1-10O-100N-messages.eps"
-@mv "Tree,90,50,1-10O-100N-cycleBreakdown.eps" "Tree-90-50-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,90,50,1-10O-100N-utilScatterAll-Fault.eps" "Tree-90-50-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,90,50,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-90-50-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,90,50,1-10O-100N-utility-final.eps" "Tree-90-50-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -36541,12 +33007,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo Generating graphs for Tree,90,50,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,90,50,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,50,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,50,2-50O-50N/EPS"
-@mv "Tree,90,50,2-50O-50N-messages-sankey.eps" "Tree-90-50-2-50O-50N-messages-sankey.eps"
-@mv "Tree,90,50,2-50O-50N-messages.eps" "Tree-90-50-2-50O-50N-messages.eps"
-@mv "Tree,90,50,2-50O-50N-cycleBreakdown.eps" "Tree-90-50-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,90,50,2-50O-50N-utilScatterAll-Fault.eps" "Tree-90-50-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,90,50,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-90-50-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,90,50,2-50O-50N-utility-final.eps" "Tree-90-50-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -36603,12 +33063,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo Generating graphs for Tree,90,50,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,90,50,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,50,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,50,5-25O-100N/EPS"
-@mv "Tree,90,50,5-25O-100N-messages-sankey.eps" "Tree-90-50-5-25O-100N-messages-sankey.eps"
-@mv "Tree,90,50,5-25O-100N-messages.eps" "Tree-90-50-5-25O-100N-messages.eps"
-@mv "Tree,90,50,5-25O-100N-cycleBreakdown.eps" "Tree-90-50-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,90,50,5-25O-100N-utilScatterAll-Fault.eps" "Tree-90-50-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,90,50,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-90-50-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,90,50,5-25O-100N-utility-final.eps" "Tree-90-50-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -36665,12 +33119,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo Generating graphs for Tree,90,50,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,90,50,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,50,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,50,10-50O-50N/EPS"
-@mv "Tree,90,50,10-50O-50N-messages-sankey.eps" "Tree-90-50-10-50O-50N-messages-sankey.eps"
-@mv "Tree,90,50,10-50O-50N-messages.eps" "Tree-90-50-10-50O-50N-messages.eps"
-@mv "Tree,90,50,10-50O-50N-cycleBreakdown.eps" "Tree-90-50-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,90,50,10-50O-50N-utilScatterAll-Fault.eps" "Tree-90-50-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,90,50,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-90-50-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,90,50,10-50O-50N-utility-final.eps" "Tree-90-50-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -36727,12 +33175,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo Generating graphs for Tree,90,10,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,90,10,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,10,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,10,1-10O-100N/EPS"
-@mv "Tree,90,10,1-10O-100N-messages-sankey.eps" "Tree-90-10-1-10O-100N-messages-sankey.eps"
-@mv "Tree,90,10,1-10O-100N-messages.eps" "Tree-90-10-1-10O-100N-messages.eps"
-@mv "Tree,90,10,1-10O-100N-cycleBreakdown.eps" "Tree-90-10-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,90,10,1-10O-100N-utilScatterAll-Fault.eps" "Tree-90-10-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,90,10,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-90-10-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,90,10,1-10O-100N-utility-final.eps" "Tree-90-10-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -36789,12 +33231,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo Generating graphs for Tree,90,10,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,90,10,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,10,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,10,2-50O-50N/EPS"
-@mv "Tree,90,10,2-50O-50N-messages-sankey.eps" "Tree-90-10-2-50O-50N-messages-sankey.eps"
-@mv "Tree,90,10,2-50O-50N-messages.eps" "Tree-90-10-2-50O-50N-messages.eps"
-@mv "Tree,90,10,2-50O-50N-cycleBreakdown.eps" "Tree-90-10-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,90,10,2-50O-50N-utilScatterAll-Fault.eps" "Tree-90-10-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,90,10,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-90-10-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,90,10,2-50O-50N-utility-final.eps" "Tree-90-10-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -36851,12 +33287,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo Generating graphs for Tree,90,10,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,90,10,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,10,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,10,5-25O-100N/EPS"
-@mv "Tree,90,10,5-25O-100N-messages-sankey.eps" "Tree-90-10-5-25O-100N-messages-sankey.eps"
-@mv "Tree,90,10,5-25O-100N-messages.eps" "Tree-90-10-5-25O-100N-messages.eps"
-@mv "Tree,90,10,5-25O-100N-cycleBreakdown.eps" "Tree-90-10-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,90,10,5-25O-100N-utilScatterAll-Fault.eps" "Tree-90-10-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,90,10,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-90-10-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,90,10,5-25O-100N-utility-final.eps" "Tree-90-10-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -36913,12 +33343,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo Generating graphs for Tree,90,10,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,90,10,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,10,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,10,10-50O-50N/EPS"
-@mv "Tree,90,10,10-50O-50N-messages-sankey.eps" "Tree-90-10-10-50O-50N-messages-sankey.eps"
-@mv "Tree,90,10,10-50O-50N-messages.eps" "Tree-90-10-10-50O-50N-messages.eps"
-@mv "Tree,90,10,10-50O-50N-cycleBreakdown.eps" "Tree-90-10-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,90,10,10-50O-50N-utilScatterAll-Fault.eps" "Tree-90-10-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,90,10,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-90-10-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,90,10,10-50O-50N-utility-final.eps" "Tree-90-10-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -36975,12 +33399,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo Generating graphs for Tree,90,90,1-10O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,90,90,1-10O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,90,1-10O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,90,1-10O-100N/EPS"
-@mv "Tree,90,90,1-10O-100N-messages-sankey.eps" "Tree-90-90-1-10O-100N-messages-sankey.eps"
-@mv "Tree,90,90,1-10O-100N-messages.eps" "Tree-90-90-1-10O-100N-messages.eps"
-@mv "Tree,90,90,1-10O-100N-cycleBreakdown.eps" "Tree-90-90-1-10O-100N-cycleBreakdown.eps"
-@mv "Tree,90,90,1-10O-100N-utilScatterAll-Fault.eps" "Tree-90-90-1-10O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,90,90,1-10O-100N-utilScatterAll-NoFault.eps" "Tree-90-90-1-10O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,90,90,1-10O-100N-utility-final.eps" "Tree-90-90-1-10O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -37037,12 +33455,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo Generating graphs for Tree,90,90,2-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,90,90,2-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,90,2-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,90,2-50O-50N/EPS"
-@mv "Tree,90,90,2-50O-50N-messages-sankey.eps" "Tree-90-90-2-50O-50N-messages-sankey.eps"
-@mv "Tree,90,90,2-50O-50N-messages.eps" "Tree-90-90-2-50O-50N-messages.eps"
-@mv "Tree,90,90,2-50O-50N-cycleBreakdown.eps" "Tree-90-90-2-50O-50N-cycleBreakdown.eps"
-@mv "Tree,90,90,2-50O-50N-utilScatterAll-Fault.eps" "Tree-90-90-2-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,90,90,2-50O-50N-utilScatterAll-NoFault.eps" "Tree-90-90-2-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,90,90,2-50O-50N-utility-final.eps" "Tree-90-90-2-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -37099,12 +33511,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo Generating graphs for Tree,90,90,5-25O-100N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,90,90,5-25O-100N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,90,5-25O-100N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,90,5-25O-100N/EPS"
-@mv "Tree,90,90,5-25O-100N-messages-sankey.eps" "Tree-90-90-5-25O-100N-messages-sankey.eps"
-@mv "Tree,90,90,5-25O-100N-messages.eps" "Tree-90-90-5-25O-100N-messages.eps"
-@mv "Tree,90,90,5-25O-100N-cycleBreakdown.eps" "Tree-90-90-5-25O-100N-cycleBreakdown.eps"
-@mv "Tree,90,90,5-25O-100N-utilScatterAll-Fault.eps" "Tree-90-90-5-25O-100N-utilScatterAll-Fault.eps"
-@mv "Tree,90,90,5-25O-100N-utilScatterAll-NoFault.eps" "Tree-90-90-5-25O-100N-utilScatterAll-NoFault.eps"
-@mv "Tree,90,90,5-25O-100N-utility-final.eps" "Tree-90-90-5-25O-100N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
@@ -37161,12 +33567,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo Generating graphs for Tree,90,90,10-50O-50N...
 @Rscript "C:/Users/Sam/Dropbox/PhD/ExperimentRes/graphs-new-debug.r" "Tree,90,90,10-50O-50N" >> "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,90,10-50O-50N.txt" 2>&1
 @cd "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,90,10-50O-50N/EPS"
-@mv "Tree,90,90,10-50O-50N-messages-sankey.eps" "Tree-90-90-10-50O-50N-messages-sankey.eps"
-@mv "Tree,90,90,10-50O-50N-messages.eps" "Tree-90-90-10-50O-50N-messages.eps"
-@mv "Tree,90,90,10-50O-50N-cycleBreakdown.eps" "Tree-90-90-10-50O-50N-cycleBreakdown.eps"
-@mv "Tree,90,90,10-50O-50N-utilScatterAll-Fault.eps" "Tree-90-90-10-50O-50N-utilScatterAll-Fault.eps"
-@mv "Tree,90,90,10-50O-50N-utilScatterAll-NoFault.eps" "Tree-90-90-10-50O-50N-utilScatterAll-NoFault.eps"
-@mv "Tree,90,90,10-50O-50N-utility-final.eps" "Tree-90-90-10-50O-50N-utility-final.eps"
 @touch Graphs.tex
 @echo \documentclass{article} >> Graphs.tex
 @echo \usepackage[utf8]{inputenc} >> Graphs.tex
