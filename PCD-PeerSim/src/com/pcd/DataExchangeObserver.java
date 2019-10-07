@@ -200,7 +200,7 @@ public class DataExchangeObserver implements Control {
             System.out.println("TOTAL: "+tot+" ("+cumulativeTotal+")");   
             for (String r : masterRoles) {
                 if (roles.get(r) > 0) {
-                    System.out.println("\t"+r+" ("+roles.get(r)+"): "+regularCycle.get(r)+"/"+rewardCycle.get(r)+"/"+penaltyCycle.get(r)+", "+(cycleTime.get(r)/roles.get(r))+"ms ("+cycleTime.get(r)+"ms)");
+                    System.out.println("\t"+r+" ("+roles.get(r)+"): "+regularCycle.get(r)+"C/"+rewardCycle.get(r)+"R/"+penaltyCycle.get(r)+"P, "+(cycleTime.get(r)/roles.get(r))+"ms ("+cycleTime.get(r)+"ms)");
                     if (welfare.get(r).vals.size() > 0) {
                         System.out.println("\t\t"+welfare.get(r).vals.size()+" NUM, "+welfare.get(r).average+" AVG, "+welfare.get(r).deviation+" DEV, "+welfare.get(r).min+" MIN, "+welfare.get(r).max+" MAX");
                     }

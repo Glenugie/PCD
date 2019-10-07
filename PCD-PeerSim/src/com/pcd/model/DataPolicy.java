@@ -375,14 +375,18 @@ public class DataPolicy {
     
     public boolean equals(DataPolicy polC) {
         if (!condEquals(polC)) { 
+            //System.out.println("\t\tCOND UNEQUAL");
             return false;
         }
-        if (!mod.equals(polC.mod) || !tgt.equals(polC.tgt)) {
+        if (!mod.equals(polC.mod) || (!tgt.equals(polC.tgt) && !tgt.equals("any") && !polC.tgt.equals("any"))) {
+            //System.out.println("\t\tMOD/TGT UNEQUAL");
             return false;
         }
         if (!actionEquals(polC)) { 
+            //System.out.println("\t\tACTION UNEQUAL");
             return false;
         }
+        //System.out.println("\tPOLICY EQUAL");
         return true;
     }
     
@@ -414,18 +418,42 @@ public class DataPolicy {
         return true;
     }
     
+    /*
+        [[],[],P,[peer5],peer4,[access(d4,peer4,1), access(d2,peer4,1)],0,0]
+        [[],[],P,[peer5],peer4,[access(d4,peer4,-1)],2,6]
+            access(d2,peer4,1) ?= access(d4,peer4,-1) - false
+                ACTION UNEQUAL
+        
+        [[],[],P,[peer0],peer4,[access(d4,peer4,1), access(d2,peer4,1)],0,0]
+        [[],[],P,[peer0],peer4,[access(d4,peer4,1), access(d2,peer4,1)],0,0]
+                ACTION UNEQUAL
+    */
+    
     public boolean actionEquals(DataPolicy polC) {
         ArrayList<Action> act = new ArrayList<Action>(); act.addAll(actions);
         for (Action aC : polC.actions) {
             boolean found = false;
+            Action aTmp = null;
             for (Action aTest : act) {
                 if (aTest.toString().equals(aC.toString())) {
+                    aTmp = aTest;
                     found = true;
                     break;
+                } else if (aTest.type.equals(aC.type)) {
+                    if (aTest.type.equals("access") && 
+                            (aTest.payload[0].equals(aC.payload[0]) || aTest.payload[0].equals("any") || aC.payload[0].equals("any")) && 
+                            (aTest.payload[1].equals(aC.payload[1]) || aTest.payload[1].equals("any") || aC.payload[1].equals("any")) &&
+                            (aTest.payload[2].equals(aC.payload[2]) || aTest.payload[2].equals("-1") || aC.payload[2].equals("-1"))
+                    ) {
+                        aTmp = aTest;
+                        found = true;
+                        break;
+                    }
                 }
+                //System.out.println("\t\t\t"+aC+" ?= "+aTest+" - "+found);
             }
             if (found) {
-                act.remove(aC);
+                act.remove(aTmp);
             } else {
                 return false;
             }

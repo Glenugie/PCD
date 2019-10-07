@@ -46,6 +46,8 @@ public class PolicySet {
                 polSet += "\t\t"+p.getPolicyString()+"\n";
             }
         }
+        polSet += "\t\t\tP: "+providerValue+"\n";
+        polSet += "\t\t\tR: "+requestorValue+"\n";
         return polSet;
     }
     

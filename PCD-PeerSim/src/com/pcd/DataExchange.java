@@ -33,7 +33,7 @@ import peersim.core.Node;
 
 public class DataExchange implements CDProtocol {
     private final boolean POLICY_OVERLAP_WARNING = true;
-    private final boolean DEBUG_LOGIC = true;
+    private final boolean DEBUG_LOGIC = false;
     private final int MAX_GROUPS = 100;
     private final boolean STAGE_CALLS = false;
     private final int AVG_TRANS_LENGTH = 4;
@@ -493,6 +493,8 @@ public class DataExchange implements CDProtocol {
                     System.err.println("ERROR removing message "+i+" from inbox of "+peerID);
                 }
                 if (DEBUG_LOGIC) { System.out.println("");}
+            } else if (penaltyCycles > 0) {
+                if (DEBUG_LOGIC) { System.out.println("PENALTY: "+msg+"\n");}
             }
         }
     }
@@ -530,6 +532,9 @@ public class DataExchange implements CDProtocol {
                     n.sendMessage(protocolID, msgSender, node, newTID, msg.reqTransId, "NO_ACCESS", new Object[] { datalessPackage }, null);
                     if (!freeTransactions.contains(newTID)) { freeTransactions.add(newTID);}
                 }
+                
+                rewardCycles += checkCompliance(relPolSets, (String) msg.body[0], n.peerID);
+                penaltyCycles += checkViolation(relPolSets, (String) msg.body[0], n.peerID);
             } else {       
                 if (DEBUG_LOGIC) { System.out.println("\tNO_DATA");}
                 DataPackage datalessPackage = assembleDataPackage(null,generateTransactionRecords(),msg.sender);
@@ -548,11 +553,8 @@ public class DataExchange implements CDProtocol {
             }
         } else {
             DataPackage datalessPackage = assembleDataPackage(null,generateTransactionRecords(),msg.sender);
-            n.sendMessage(protocolID, msgSender, node, -1, msg.reqTransId, "PEER_OVERLOAD", new Object[] { datalessPackage }, null);                  
+            n.sendMessage(protocolID, msgSender, node, -1, msg.reqTransId, "PEER_OVERLOAD", new Object[] { datalessPackage }, null);         
         }
-        
-        rewardCycles += checkCompliance(relPolSets, (String) msg.body[0], n.peerID);
-        penaltyCycles += checkViolation(relPolSets, (String) msg.body[0], n.peerID);
     }
     
     private boolean entails(String s) {
@@ -580,20 +582,25 @@ public class DataExchange implements CDProtocol {
             HashSet<DataPolicy> relPolicies = relevantPolicies(req, pred);
             HashSet<DataPolicy> toRemove = new HashSet<DataPolicy>();
             for (DataPolicy pol : relPolicies) {
-                //System.out.println("Does: "+pol+"\n\t Allow peer"+req.getID()+" access to "+pred+"?");
+                if (DEBUG_LOGIC) { System.out.println("\t\t"+pol.getPolicyString()+" relevant for peer"+req.getID()+" accessing "+pred+"");}
                 if (!toRemove.contains(pol)) {
                     PolicySet pSet = new PolicySet();
                     for (DataPolicy tPol : relPolicies) {
                         if (!toRemove.contains(tPol)) {
                             if (pol.equals(tPol)) {
+                                if (DEBUG_LOGIC) { System.out.println("\t\t\t"+tPol.getPolicyString()+" is identical, adding as primary");}
                                 pSet.addPrimary(tPol, policyProfitPrv_Permit(tPol), 0.0);
                                 toRemove.add(tPol);
                             } else if (!pol.mutuallyExclusive(tPol)) {
+                                if (DEBUG_LOGIC) { System.out.println("\t\t\t"+tPol.getPolicyString()+" is not mutually exclusive, adding as secondary");}
                                 pSet.addSecondary(tPol, policyProfitPrv_Permit(tPol), 0.0);                        
+                            } else {
+                                if (DEBUG_LOGIC) { System.out.println("\t\t\t"+tPol.getPolicyString()+" is unrelated");}
                             }
                         }
                     }
                     if (pSet.allowsAccess(pred, "peer"+req.getID())) {
+                        if (DEBUG_LOGIC) { System.out.println("\t\tSet allows access");}
                         double utilP = policyProfitPrv_Permit(pSet);
                         DataPolicy neg = negativeOptional(pSet);
                         while (utilP < PrologInterface.MIN_UTIL && neg != null) {
@@ -603,12 +610,26 @@ public class DataExchange implements CDProtocol {
                         }
                         pSet.providerValue = utilP;
                         relPolicySets.add(pSet);
+                    } else {
+                        if (DEBUG_LOGIC) { System.out.println("\t\tSet does not allow access\n"+pSet);}
                     }
                 }
             }
             PolicySet forbidPols = prohibitPolicies(req, pred, relPolicies, protocolID);
             double utilF = policyProfitPrv_Prohibit(forbidPols);
-            relPolicySets = removeBelowThreshold(relPolicySets, utilF);            
+            if (DEBUG_LOGIC) {
+                System.out.println("\tProhibition Set:\n"+forbidPols);
+                System.out.println("\t\tUtil F: "+utilF);
+                System.out.println("\n\t\tSets Pre Filter: "+relPolicySets.size());
+                for (PolicySet rPS : relPolicySets) {
+                    System.out.println(rPS+"\n");
+                }
+            }
+            relPolicySets = removeBelowThreshold(relPolicySets, utilF);          
+            System.out.println("\t\tSets Post Filter: "+relPolicySets.size());  
+            for (PolicySet rPS : relPolicySets) {
+                System.out.println(rPS+"\n");
+            }
         }
                 
         return relPolicySets;
@@ -776,35 +797,35 @@ public class DataExchange implements CDProtocol {
         (that is, denying this request would cost more than allowing it), then we remove all policy sets, \textit{except} 
         the most profitable one. Otherwise we simply remove all policy sets which do not meet the minimum threshold. 
         This may leave us with no policy sets, which means the data request will be denied.*/
-        boolean allBelowMin = true;
-        boolean anyAboveForbid = false;
-        double bestValue = 0.0; int first = 0;
-        for (PolicySet ps : relPols) {
-            if (ps.providerValue > PrologInterface.MIN_UTIL) {
-                allBelowMin = false;
-            }
-            if (ps.providerValue >= utilF) {
-                anyAboveForbid = true;
-            }
-            if (first == 0 || ps.providerValue > bestValue) {
-                bestValue = ps.providerValue;
-            }
-        }
+//        boolean allBelowMin = true;
+//        boolean anyAboveForbid = false;
+//        double bestValue = 0.0; int first = 0;
+//        for (PolicySet ps : relPols) {
+//            if (ps.providerValue > PrologInterface.MIN_UTIL) {
+//                allBelowMin = false;
+//            }
+//            if (ps.providerValue >= utilF) {
+//                anyAboveForbid = true;
+//            }
+//            if (first == 0 || ps.providerValue > bestValue) {
+//                bestValue = ps.providerValue;
+//            }
+//        }
         
         HashSet<PolicySet> toRemove = new HashSet<PolicySet>();
-        if (allBelowMin && anyAboveForbid) {
+//        if (allBelowMin && anyAboveForbid) {
+//            for (PolicySet ps : relPols) {
+//                if (ps.providerValue != bestValue) {
+//                    toRemove.add(ps);
+//                }
+//            }
+//        } else {
             for (PolicySet ps : relPols) {
-                if (ps.providerValue != bestValue) {
-                    toRemove.add(ps);
-                }
-            }
-        } else {
-            for (PolicySet ps : relPols) {
-                if (ps.providerValue < PrologInterface.MIN_UTIL) {
+                if (ps.providerValue < utilF) {
                     toRemove.add(ps);
                 }
             }            
-        }
+//        }
         for (PolicySet ps : toRemove) {
             relPols.remove(ps);
         }
@@ -854,6 +875,7 @@ public class DataExchange implements CDProtocol {
             pen = rng.nextInt(100);
             if (pen < 99) { pen = 0;} else { pen = 1;} 
         } else {
+            if (DEBUG_LOGIC) { System.out.println("\n\t"+peer+" requesting "+pred);}
             for (DataPolicy pol : policies) {
                 boolean violated = false;
                 if (pol.mod.equals("P") && pol.tgt.equals("peer"+peer) && pol.isActive(this)) {
@@ -877,6 +899,7 @@ public class DataExchange implements CDProtocol {
                     }
                 }
                 if (violated) {
+                    if (DEBUG_LOGIC) { System.out.println("\t\tVIOLATED: "+pol.getPolicyString());}
                     pen += pol.penalty;
                 }
             }
@@ -948,6 +971,7 @@ public class DataExchange implements CDProtocol {
         Node msgSender = getPeerByID(msg.sender);
         PolicySet chosenPS = choosePolicySet(policySets);
         if (chosenPS == null) {
+            if (DEBUG_LOGIC) { System.out.println("\tREJECT_POLICIES");}
             n.sendMessage(protocolID, msgSender, node, msg.prvTransId, msg.reqTransId, "REJECT_POLICIES", new Object[] { }, null);
             removeOutTrans(n.peerID, msg.reqTransId);
         } else if (chosenPS.isActive(n)) {
@@ -971,11 +995,13 @@ public class DataExchange implements CDProtocol {
                     System.out.println(outTransactionStack.containsKey(tID)+" ("+hasTrans+" - "+hasOpenOutTrans(n.peerID, tID)+") - "+tID);
                 }
                 HashSet<TransactionRecord> relRecords = getRelRecords(peerID, n.peerID, (String) msg.body[0], chosenPS);
+                if (DEBUG_LOGIC) { System.out.println("\tRECORD_INFORM");}
                 n.sendMessage(protocolID, msgSender, node, msg.prvTransId, tID, "RECORD_INFORM", new Object[] { chosenPS, relRecords }, null);
             } else {
                 //System.out.println("BEEP: "+hasTrans+" ("+hasOpenOutTrans(n.peerID, msg.reqTransId)+"), "+transactionFree()+", "+hasOpenOutTrans(n.peerID, (String) msg.body[0])+" ("+getOpenOutTrans(n.peerID, (String) msg.body[0]).transactionId+"), "+wantedData.contains((String) msg.body[0])+", "+msg.reqTransId);
             }
         } else if (chosenPS.canActivate(n)) {
+            if (DEBUG_LOGIC) { System.out.println("\tWAIT");}
             scheduleActions(chosenPS);
             n.sendMessage(protocolID, msgSender, node, msg.prvTransId, msg.reqTransId, "WAIT", new Object[] { }, null);
         }
@@ -1413,6 +1439,7 @@ public class DataExchange implements CDProtocol {
                     rewardCycles += aSet.rew;
                 } else if (CommonState.getTime() > minDln) {
                     obligedActions.remove(aSet);
+                    if (DEBUG_LOGIC) { System.out.println("PENALTY ACCRUED: Obligation not met, accrued "+aSet.pen+" penalty cycles");}
                     penaltyCycles += aSet.pen;
                 } else {
                     actionTodo.add(aSet);
@@ -1822,6 +1849,7 @@ public class DataExchange implements CDProtocol {
             if (PrologInterface.debugMessages) {
                 System.out.println("MESSAGE FAULT");
             }
+            if (DEBUG_LOGIC) { System.out.println("\t\tFAULT");}
         } else {
             if (r.isUp() && !disconnecting) {
                 if (r.getID() != s.getID()) {
@@ -1929,6 +1957,7 @@ public class DataExchange implements CDProtocol {
     private boolean addPolicy(DataPolicy pol) {
         boolean found = false;
         for (DataPolicy p : policies) {
+            //System.out.println(p.getPolicyString()+"\n"+pol.getPolicyString());
             if (pol.equals(p)) {
                 found = true;
                 break;
