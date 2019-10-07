@@ -57,6 +57,7 @@ public class KeyInit implements Control {
         PrologInterface.confDataTypes = new ArrayList<DataConfig>();
         PrologInterface.confPolicyFile = Configuration.getString(name+".policies");
         PrologInterface.confProtoPolicies = new ArrayList<String>();
+        PrologInterface.confProtoPermitPolicies = new ArrayList<String>();
         
         PrologInterface.confTopology = Configuration.getInt(name+".topology");
         PrologInterface.confTopologyVal = Configuration.getInt("init.rnd.k");
@@ -132,6 +133,13 @@ public class KeyInit implements Control {
                     ((DataExchange) Network.get(i).getProtocol(pid)).setDataValue(dConf.dataId,(CommonState.r.nextInt((dConf.maxU-dConf.minU))+dConf.minU)*2);
                 }
             }
+            if (((DataExchange) Network.get(i).getProtocol(pid)).ownedData.size() == 0) {
+                DataConfig dConf = PrologInterface.confDataTypes.get(CommonState.r.nextInt(PrologInterface.confDataTypes.size()));
+                ((DataExchange) Network.get(i).getProtocol(pid)).makeOwnData(dConf.dataId);
+                if (!((DataExchange) Network.get(i).getProtocol(pid)).dataValue.containsKey(dConf.dataId)) { 
+                    ((DataExchange) Network.get(i).getProtocol(pid)).setDataValue(dConf.dataId,(CommonState.r.nextInt((dConf.maxU-dConf.minU))+dConf.minU)*2);
+                }
+            }
         }
         
         parsePolicies();        
@@ -169,6 +177,7 @@ public class KeyInit implements Control {
     // Placeholders are tagged with a numeric identifier or *, allowing multiple versions of the same parameter to be used. 
 	//     I.e. {DATA~1}, {DATA~*}, [DATA]{1} would generate {DATA~1}, then use that same value for the second
 	// [true],[false],P,{ID~1},["access({DATA~2},{ID~1},-1)"],{0-5~3},{5-10~4}
+	// [true],[false],{"P","F"~*},any,["access({DATA~2},any,-1)"],{0-5~3},{5-10~4}
 	private void parsePolicies() {
         File policyFile = new File(Configuration.getString(name+".policies"));
         try {
@@ -177,6 +186,17 @@ public class KeyInit implements Control {
             while ((line = bufRdr.readLine()) != null) {
                 if (!line.trim().startsWith("//") && !line.trim().equals("")) {
                     PrologInterface.confProtoPolicies.add(line.trim());
+                    String lineMod = line.trim().substring(line.indexOf("]")+1);
+                    lineMod = lineMod.substring(lineMod.indexOf("]")+2);
+                    if (lineMod.startsWith("{")) {
+                        lineMod = lineMod.substring(1,lineMod.indexOf("}"));
+                        lineMod = lineMod.substring(0,lineMod.indexOf("~"));
+                    } else {
+                        lineMod = lineMod.substring(0,lineMod.indexOf(","));
+                    }
+                    if (lineMod.equals("P") || lineMod.contains("\"P\"")) {
+                        PrologInterface.confProtoPermitPolicies.add(line.trim());
+                    }
                 }
             }
             bufRdr.close();

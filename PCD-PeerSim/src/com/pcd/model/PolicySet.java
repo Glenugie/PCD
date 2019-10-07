@@ -35,6 +35,20 @@ public class PolicySet {
         worstRequestorValue = 0.0;
     }
     
+    public String toString() {
+        String polSet = "\t\tPrimary:\n";
+        for (DataPolicy p : primary.values()) {
+            polSet += "\t\t"+p.getPolicyString()+"\n";
+        }
+        if (secondary.size() > 0) {
+            polSet += "\t\tSecondary:\n";
+            for (DataPolicy p : secondary.values()) {
+                polSet += "\t\t"+p.getPolicyString()+"\n";
+            }
+        }
+        return polSet;
+    }
+    
     public void addPrimary(DataPolicy p, Double pVal, Double rVal) {
         primary.put(nextPrimary,p);
         //int newID = primary.size()-1;

@@ -1,10 +1,10 @@
 # PCD CONFIG
 # Initialises simulation parameters
 	random.seed 1564148657890		# Fixed seed, for debugging
-	simulation.experiments 25	# Number of Iterations
-	simulation.cycles 1000		# Number of Cycles per Iteration
+	simulation.experiments 1	# Number of Iterations
+	simulation.cycles 50		# Number of Cycles per Iteration
 	simulation.title Test
-	network.size 250			# Number of Peers
+	network.size 10			# Number of Peers
 
 # Idle Protocol
 	protocol.lnk IdleProtocol
@@ -32,8 +32,8 @@
 	init.keys.minPolicies 50
 	init.keys.maxPolicies 100
 
-	init.keys.percFaultyPeers 10
-	init.keys.percFaultRate 5
+	init.keys.percFaultyPeers 50
+	init.keys.percFaultRate 1
 
 	init.keys.percAltruisticPeers 50 	# (Self-interested is 100 - this)
 	init.keys.percFairPeers 50			# (Selfish is 100 - this)

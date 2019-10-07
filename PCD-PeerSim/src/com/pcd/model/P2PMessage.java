@@ -1,6 +1,5 @@
 package com.pcd.model;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 
 import peersim.core.Node;
@@ -70,5 +69,14 @@ public class P2PMessage {
             chainString = "<"+chainString.substring(0, chainString.length() - 1)+">";
         }
         return chainString;
+	}
+	
+	public String toString() {
+	    String msg = sender+"->"+receiver+" ["+type+"]: ";
+	    for (Object o : body) {
+	        msg += o+", ";
+	    }
+	    msg = msg.substring(0,msg.length()-2);
+	    return msg;
 	}
 }

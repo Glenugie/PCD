@@ -152,10 +152,50 @@ public class DataPolicy {
             if (actCondS.toLowerCase().equals("true")) {
                 alwaysActive = true;
             } else {
-                for (String aC : actCondS.split(",")) {
-                    if (aC.contains("(")) {
-                        actCond.add(aC);
+//                for (String aC : actCondS.split(",")) {
+//                    if (aC.contains("(")) {
+//                        actCond.add(aC);
+//                    }
+//                }
+                String actCondSTemp = actCondS;
+                //System.out.println(actionSTemp);
+                while (actCondSTemp.contains("(")) {
+                    int bracks = 0, open = -1, close = -1;
+                    for (int i = 0; i < actCondSTemp.length(); i += 1) {
+                        if ((""+actCondSTemp.charAt(i)).equals("(")) {
+                            if (bracks == 0 && open == -1 && close == -1) {
+                                open = i;
+                                bracks += 1;
+                            } else {
+                                bracks += 1;
+                            }
+                        } else if ((""+actCondSTemp.charAt(i)).equals(")")) {
+                            if (bracks == 1 && open != -1 && close == -1) {
+                                close = i;
+                                bracks -= 1;                    
+                                break;
+                            } else {
+                                bracks -= 1;
+                            }
+                        }
                     }
+                    
+                    int startQuote = actCondSTemp.indexOf("\"");
+                    //System.out.println("STRING: "+actionSTemp);
+                    //System.out.println("BLOCK: "+startQuote+", "+open+", "+close);
+                    String act = actCondSTemp.substring(startQuote+1,close+1);
+                    String rem = actCondSTemp.substring(close+1);
+                    if (rem.contains(",")) { rem = rem.substring(0,rem.indexOf(","));}
+                    act += rem;
+                    //System.out.println(act);
+                    actCondSTemp = actCondSTemp.substring(close+1);
+                    if (actCondSTemp.startsWith("\"")) { actCondSTemp = actCondSTemp.substring(1);}
+                    if (actCondSTemp.startsWith(",")) { actCondSTemp = actCondSTemp.substring(1);}
+                    //System.out.println("POST: "+actionSTemp);
+                    
+                    if (act.startsWith("\"")) { act = act.substring(1);}
+                    if (act.endsWith("\"")) { act = act.substring(0,act.length()-1);}
+                    actCond.add(act);
                 }
             }
             
@@ -163,10 +203,50 @@ public class DataPolicy {
             if (deactCondS.toLowerCase().equals("false")) {
                 neverDeactive = true;
             } else {
-                for (String dC : deactCondS.split(",")) {
-                    if (dC.contains("(")) {
-                        deactCond.add(dC);
+//                for (String dC : deactCondS.split(",")) {
+//                    if (dC.contains("(")) {
+//                        deactCond.add(dC);
+//                    }
+//                }
+                String deactCondSTemp = deactCondS;
+                //System.out.println(actionSTemp);
+                while (deactCondSTemp.contains("(")) {
+                    int bracks = 0, open = -1, close = -1;
+                    for (int i = 0; i < deactCondSTemp.length(); i += 1) {
+                        if ((""+deactCondSTemp.charAt(i)).equals("(")) {
+                            if (bracks == 0 && open == -1 && close == -1) {
+                                open = i;
+                                bracks += 1;
+                            } else {
+                                bracks += 1;
+                            }
+                        } else if ((""+deactCondSTemp.charAt(i)).equals(")")) {
+                            if (bracks == 1 && open != -1 && close == -1) {
+                                close = i;
+                                bracks -= 1;                    
+                                break;
+                            } else {
+                                bracks -= 1;
+                            }
+                        }
                     }
+                    
+                    int startQuote = deactCondSTemp.indexOf("\"");
+                    //System.out.println("STRING: "+actionSTemp);
+                    //System.out.println("BLOCK: "+startQuote+", "+open+", "+close);
+                    String act = deactCondSTemp.substring(startQuote+1,close+1);
+                    String rem = deactCondSTemp.substring(close+1);
+                    if (rem.contains(",")) { rem = rem.substring(0,rem.indexOf(","));}
+                    act += rem;
+                    //System.out.println(act);
+                    deactCondSTemp = deactCondSTemp.substring(close+1);
+                    if (deactCondSTemp.startsWith("\"")) { deactCondSTemp = deactCondSTemp.substring(1);}
+                    if (deactCondSTemp.startsWith(",")) { deactCondSTemp = deactCondSTemp.substring(1);}
+                    //System.out.println("POST: "+actionSTemp);
+                    
+                    if (act.startsWith("\"")) { act = act.substring(1);}
+                    if (act.endsWith("\"")) { act = act.substring(0,act.length()-1);}
+                    deactCond.add(act);
                 }
             }
             

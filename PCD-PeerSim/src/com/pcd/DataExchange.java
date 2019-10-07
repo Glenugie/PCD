@@ -33,7 +33,7 @@ import peersim.core.Node;
 
 public class DataExchange implements CDProtocol {
     private final boolean POLICY_OVERLAP_WARNING = true;
-    private final boolean DEBUG_POL_COST = false;
+    private final boolean DEBUG_LOGIC = true;
     private final int MAX_GROUPS = 100;
     private final boolean STAGE_CALLS = false;
     private final int AVG_TRANS_LENGTH = 4;
@@ -175,11 +175,17 @@ public class DataExchange implements CDProtocol {
             System.out.println(i+": "+node.getProtocol(i));
         }*/
 
+        if (DEBUG_LOGIC) {
+            System.out.println("Peer "+peerID);
+            System.out.println("\tOwned: "+ownedData);
+            System.out.println("\tWanted: "+wantedData);
+        }
+        
         // Internal representation of the Overlay network
         //System.out.println("Init "+node.getID());
         for (int i = 0; i < linkable.degree(); i += 1) {
-            //System.out.println(linkable.getNeighbor(i).getID()+" ?= "+node.getID());
             if (linkable.getNeighbor(i).getID() != node.getID()) {
+                if (DEBUG_LOGIC) { System.out.println("\t\t"+linkable.getNeighbor(i).getID()+" connected to "+node.getID());}
                 overlayNetwork.put("peer" + linkable.getNeighbor(i).getID(), linkable.getNeighbor(i));
             }
             //PrologInterface.assertFact("connected", new Term[] { new Atom("peer" + peerID), new Atom("peer" + linkable.getNeighbor(i).getID()) });
@@ -193,7 +199,14 @@ public class DataExchange implements CDProtocol {
         startingBudget = peerBudget;
         breakMult = 1.0; if (altruistic) { breakMult = 3.0;}
         
-        initPeerPolicies();
+        initPeerPolicies();        
+        
+        if (DEBUG_LOGIC) {
+            System.out.println("\tPolicies: "+policies.size());
+            for (DataPolicy pol : policies) {
+                //System.out.println("\t\t"+pol.getPolicyString());
+            }
+        }
         
         //System.out.println("peer"+peerID+" Policies:");
         //for (DataPolicy pol : policies) {
@@ -209,72 +222,94 @@ public class DataExchange implements CDProtocol {
         int numPolicies = rng.nextInt((PrologInterface.confMaxPols - PrologInterface.confMinPols)) + PrologInterface.confMinPols; 
         int i = 0;
         while (policies.size() < numPolicies && i < (numPolicies * 5)) {
-            boolean error = false;
             String chosenPolRaw = PrologInterface.confProtoPolicies.get(rng.nextInt(PrologInterface.confProtoPolicies.size()));
-            String tmpPol = chosenPolRaw;
-            String chosenPol = "";
-            if (chosenPolRaw.contains("{")) {
-                //Generate policy
-                String[] subs = new String[99];
-                HashSet<String> validData = new HashSet<String>(); validData.addAll(ownedData); validData.addAll(wantedData);
-                while (chosenPolRaw.contains("{")) {
-                    //System.out.println(chosenPolRaw);
-                    int subStart = chosenPolRaw.indexOf("{");
-                    int subEnd = chosenPolRaw.indexOf("}")+1;
-                    String sub = chosenPolRaw.substring(subStart, subEnd);
-                    String subBody = sub.substring(1,sub.lastIndexOf("~"));
-                    String subIDRaw = sub.substring(sub.indexOf("~")+1,sub.length()-1);
-                    int subID = 0; if (!subIDRaw.equals("*")) { subID = Integer.parseInt(subIDRaw);}
-                    
-                    String subVal = "";
-                    if (subs[subID] == null) {
-                        try {
-                            if (sub.contains("\"")) {
-                                String[] choices = subBody.split(",");
-                                //System.out.print("Choices: "); for (String c : choices) { System.out.print(c+", ");} System.out.println("");
-                                subVal = choices[rng.nextInt(choices.length)];
-                                subVal = subVal.substring(1,subVal.length()-1);
-                            } else if (sub.startsWith("{DATA")) {      
-                                //System.out.println("Valid: "+validData);
-                                subVal = (String) validData.toArray()[rng.nextInt(validData.size())];
-                            } else if (sub.startsWith("{ID")) {
-                                //System.out.println("Net: "+overlayNetwork.keySet());
-                                if (i < (numPolicies/2) || rng.nextInt(2) == 0) {
-                                    subVal = (String) overlayNetwork.keySet().toArray()[rng.nextInt(overlayNetwork.size())];
-                                } else {
-                                    subVal = "peer"+Network.get(rng.nextInt(Network.size())).getID();
-                                }
-                            } else if (sub.startsWith("{SELF")) { 
-                                subVal = "peer"+peerID;
-                            } else if (sub.contains("-")) {
-                                int lower = Integer.parseInt(subBody.split("-")[0]);
-                                int upper = Integer.parseInt(subBody.split("-")[1]);
-                                //System.out.println(lower+" to "+upper);
-                                subVal = ""+(rng.nextInt(upper-lower)+lower);
-                            }
-                        } catch (IllegalArgumentException e ) {
-                            System.err.println("Failed to create policy");
-                            e.printStackTrace();
-                            error = true;
-                            break;
-                        }
-                    } else {
-                        subVal = subs[subID];
-                    }
-                    chosenPolRaw = chosenPolRaw.substring(0,subStart)+subVal+chosenPolRaw.substring(subEnd);
-                    if (subID != 0) { subs[subID] = subVal;}
-                    //System.out.println("\t"+sub+" - "+subVal+" = "+chosenPolRaw);
-                }
-                if (error) { break;}
+            String chosenPol = instantiatePolicy(chosenPolRaw,numPolicies);
+
+            DataPolicy pol = new DataPolicy(peerID,chosenPol,"",false);   
+            if (addPolicy(pol)) { 
+                i = 0;
+            } else {
+                i += 1;
             }
-            chosenPol = chosenPolRaw;
-            //System.out.println(chosenPol+" ?= \n\t"+tmpPol);
             
-            DataPolicy pol = new DataPolicy(peerID,chosenPol,"",false);            
-            addPolicy(pol);
+            if (!pol.mod.equals("P")) {
+                int j = 0;
+                boolean success = false;
+                while (!success && j < 100) {
+                    String chosenPolRaw2 = PrologInterface.confProtoPermitPolicies.get(rng.nextInt(PrologInterface.confProtoPermitPolicies.size()));
+                    String chosenPol2 = instantiatePolicy(chosenPolRaw2,numPolicies*numPolicies);
+    
+                    DataPolicy polP = new DataPolicy(peerID,chosenPol2,"",false); 
+                    polP.mod = "P";
+                    if (addPolicy(polP)) { 
+                        success = true;
+                    } else {
+                        j += 1;
+                    }
+                }
+            }
             
-            i += 1;
+            //System.out.println(chosenPol+" ?= \n\t"+chosenPolRaw+"\n\t"+pol.getPolicyString());
         }        
+    }
+    
+    public String instantiatePolicy(String chosenPolRaw, int numPolicies) {
+        boolean error = false;
+        if (chosenPolRaw.contains("{")) {
+            //Generate policy
+            String[] subs = new String[99];
+            HashSet<String> validData = new HashSet<String>(); validData.addAll(ownedData); validData.addAll(wantedData);
+            while (chosenPolRaw.contains("{")) {
+                //System.out.println(chosenPolRaw);
+                int subStart = chosenPolRaw.indexOf("{");
+                int subEnd = chosenPolRaw.indexOf("}")+1;
+                String sub = chosenPolRaw.substring(subStart, subEnd);
+                String subBody = sub.substring(1,sub.lastIndexOf("~"));
+                String subIDRaw = sub.substring(sub.indexOf("~")+1,sub.length()-1);
+                int subID = 0; if (!subIDRaw.equals("*")) { subID = Integer.parseInt(subIDRaw);}
+                
+                String subVal = "";
+                if (subs[subID] == null) {
+                    try {
+                        if (sub.contains("\"")) {
+                            String[] choices = subBody.split(",");
+                            //System.out.print("Choices: "); for (String c : choices) { System.out.print(c+", ");} System.out.println("");
+                            subVal = choices[rng.nextInt(choices.length)];
+                            subVal = subVal.substring(1,subVal.length()-1);
+                        } else if (sub.startsWith("{DATA")) {      
+                            //System.out.println("Valid: "+validData);
+                            subVal = (String) validData.toArray()[rng.nextInt(validData.size())];
+                        } else if (sub.startsWith("{ID")) {
+                            //System.out.println("Net: "+overlayNetwork.keySet());
+                            if (policies.size() < ((numPolicies/4)*3) || rng.nextInt(2) == 0) {
+                                subVal = (String) overlayNetwork.keySet().toArray()[rng.nextInt(overlayNetwork.size())];
+                            } else {
+                                subVal = "peer"+Network.get(rng.nextInt(Network.size())).getID();
+                            }
+                        } else if (sub.startsWith("{SELF")) { 
+                            subVal = "peer"+peerID;
+                        } else if (sub.contains("-")) {
+                            int lower = Integer.parseInt(subBody.split("-")[0]);
+                            int upper = Integer.parseInt(subBody.split("-")[1]);
+                            //System.out.println(lower+" to "+upper);
+                            subVal = ""+(rng.nextInt(upper-lower)+lower);
+                        }
+                    } catch (IllegalArgumentException e ) {
+                        System.err.println("Failed to create policy");
+                        e.printStackTrace();
+                        error = true;
+                        break;
+                    }
+                } else {
+                    subVal = subs[subID];
+                }
+                chosenPolRaw = chosenPolRaw.substring(0,subStart)+subVal+chosenPolRaw.substring(subEnd);
+                if (subID != 0) { subs[subID] = subVal;}
+                //System.out.println("\t"+sub+" - "+subVal+" = "+chosenPolRaw);
+            }
+            if (error) { return "";}
+        }
+        return chosenPolRaw;
     }
 
     public void nextCycle(Node node, int protocolID) {
@@ -382,6 +417,7 @@ public class DataExchange implements CDProtocol {
                     || msg.type.equals("RECORD_INFORM") || msg.type.equals("OBLIGATION_COMPLETE") || msg.type.equals("CONFIRM_WAIT")
                     || msg.type.equals("MALFORMED_RECORDS") || msg.type.equals("INVALID_TRANSACTION"))))) {
                 DataExchange n = (DataExchange) getPeerByID(msg.sender).getProtocol(protocolID);
+                if (DEBUG_LOGIC) { System.out.println("Processing Message: "+msg);}
                 try {
                     switch (msg.type) {
                         case "DATA_REQUEST":
@@ -456,6 +492,7 @@ public class DataExchange implements CDProtocol {
                 if (test == null) {
                     System.err.println("ERROR removing message "+i+" from inbox of "+peerID);
                 }
+                if (DEBUG_LOGIC) { System.out.println("");}
             }
         }
     }
@@ -464,22 +501,37 @@ public class DataExchange implements CDProtocol {
         //Data_Request -> Data_Item, Data_Quantity   
         HashSet<PolicySet> relPolSets = new HashSet<PolicySet>();
         Node msgSender = getPeerByID(msg.sender);
-        if (transactionFree() && !hasOpenInTrans(n.peerID, (String) msg.body[0])) {           
+        if (DEBUG_LOGIC) { System.out.println("\tTrans Free: "+transactionFree()+", Has Open In Trans: "+hasOpenInTrans(n.peerID, (String) msg.body[0]));}
+        if (transactionFree() && !hasOpenInTrans(n.peerID, (String) msg.body[0])) {       
+            if (DEBUG_LOGIC) { 
+                System.out.println("\tEntails: "+entails((String) msg.body[0])+" ?= "+msg.body[0]);
+                System.out.println("\tOwned: "+ownedData);
+                System.out.println("\tWanted: "+wantedData);
+            }
             if (entails((String) msg.body[0])) {
                 int newTID = getFreeTransaction("pDR");
                 
                 relPolSets = generatePolicySets(msgSender, (String) msg.body[0], protocolID);
+                if (DEBUG_LOGIC) { 
+                    System.out.println("\tPolicy Sets: "+relPolSets.size());
+                    for (PolicySet ps : relPolSets) {
+                        System.out.println(ps.toString());
+                    }
+                }
                 if (relPolSets.size() > 0 || PrologInterface.confDefaultPermit) {
+                    if (DEBUG_LOGIC) { System.out.println("\tPOLICY_INFORM");}
                     Transaction t = new Transaction(newTID, msg.reqTransId, n.peerID, (String) msg.body[0], (int) msg.body[1], PrologInterface.TRANS_LIFETIME);
                     t.policySets = relPolSets;
                     inTransactionStack.put(newTID, t);
                     n.sendMessage(protocolID, msgSender, node, newTID, msg.reqTransId, "POLICY_INFORM", new Object[] { (String) msg.body[0], relPolSets }, null);
                 } else {
+                    if (DEBUG_LOGIC) { System.out.println("\tNO_ACCESS");}
                     DataPackage datalessPackage = assembleDataPackage(null,generateTransactionRecords(),msg.sender);
                     n.sendMessage(protocolID, msgSender, node, newTID, msg.reqTransId, "NO_ACCESS", new Object[] { datalessPackage }, null);
                     if (!freeTransactions.contains(newTID)) { freeTransactions.add(newTID);}
                 }
             } else {       
+                if (DEBUG_LOGIC) { System.out.println("\tNO_DATA");}
                 DataPackage datalessPackage = assembleDataPackage(null,generateTransactionRecords(),msg.sender);
                 n.sendMessage(protocolID, msgSender, node, -1, msg.reqTransId, "NO_DATA", new Object[] { datalessPackage }, null);         
             }
@@ -1874,7 +1926,7 @@ public class DataExchange implements CDProtocol {
         }
     }
     
-    private void addPolicy(DataPolicy pol) {
+    private boolean addPolicy(DataPolicy pol) {
         boolean found = false;
         for (DataPolicy p : policies) {
             if (pol.equals(p)) {
@@ -1885,6 +1937,7 @@ public class DataExchange implements CDProtocol {
         if (!found) {
             policies.add(pol);
         }
+        return !found;
     }
     
     public int getDataValues(HashMap<String,Integer> data) {
@@ -2110,6 +2163,8 @@ public class DataExchange implements CDProtocol {
         
         for (DataElement d : dataPackage.dataItems) {
             kb.add("hasData", new String[] {"peer"+sender.getID(), d.dataID});
+            dataCollection.add(d);
+            if (ownedData.contains(d.dataID)) { ownedData.add(d.dataID);}
             dataReceived += getDataValue(d.dataID);
             
             for (ActionSet aSet : obligedActions) {

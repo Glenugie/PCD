@@ -45,7 +45,8 @@ public class PrologInterface {
 	public static String confDataFile;
 	public static ArrayList<DataConfig> confDataTypes;
 	public static String confPolicyFile;
-	public static ArrayList<String> confProtoPolicies;
+    public static ArrayList<String> confProtoPolicies;
+    public static ArrayList<String> confProtoPermitPolicies;
 	
 	public static int confTopology;
 	public static int confTopologyVal;
