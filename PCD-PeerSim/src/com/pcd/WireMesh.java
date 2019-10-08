@@ -21,10 +21,12 @@ public class WireMesh extends WireGraph {
     
     public void wire(Graph g) {
         ArrayList<Integer> masterNodes = new ArrayList<Integer>();
+        ArrayList<Integer> supportNodes = new ArrayList<Integer>();
         int[] conns = new int[Network.size()];
         for (int i = 0; i < Network.size(); ++i) {
             conns[i] = CommonState.r.nextInt(k) + 1;
             masterNodes.add(i);
+            supportNodes.add(i);
             //System.out.println(k+" ?= "+conns[i]);
         }
 
@@ -47,6 +49,13 @@ public class WireMesh extends WireGraph {
                     //System.out.println(newNeighbourID+" is full");
                     activeNodes.remove(newNeighbour);
                 }
+            }
+            if (g.getNeighbours(i).size() == 0) {
+                int newNeighbour = CommonState.r.nextInt(supportNodes.size());
+                int newNeighbourID = activeNodes.get(newNeighbour);
+                g.setEdge(i, newNeighbourID);
+                g.setEdge(newNeighbourID, i);
+                supportNodes.remove(i);
             }
             masterNodes.remove((Integer) i);
         }        
