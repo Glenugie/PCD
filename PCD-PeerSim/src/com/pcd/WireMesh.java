@@ -32,6 +32,7 @@ public class WireMesh extends WireGraph {
 
         for (int i = 0; i < Network.size(); ++i) {
             ArrayList<Integer> activeNodes = (ArrayList<Integer>) masterNodes.clone();
+            activeNodes.remove((Integer) i);
             Node n = (Node) g.getNode(i);
             while (conns[i] > g.getNeighbours(i).size() && activeNodes.size() > 0) {
                 int newNeighbour = CommonState.r.nextInt(activeNodes.size());
@@ -53,9 +54,16 @@ public class WireMesh extends WireGraph {
             if (g.getNeighbours(i).size() == 0) {
                 int newNeighbour = CommonState.r.nextInt(supportNodes.size());
                 int newNeighbourID = activeNodes.get(newNeighbour);
+                if (newNeighbourID == i) { 
+                    newNeighbour += 1;
+                    if (newNeighbour >= supportNodes.size()) {
+                        newNeighbour = 0;
+                    }
+                    newNeighbourID = activeNodes.get(newNeighbour);
+                }
                 g.setEdge(i, newNeighbourID);
                 g.setEdge(newNeighbourID, i);
-                supportNodes.remove(i);
+                supportNodes.remove((Integer) i);
             }
             masterNodes.remove((Integer) i);
         }        
