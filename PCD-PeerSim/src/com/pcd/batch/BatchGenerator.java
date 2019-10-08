@@ -142,7 +142,7 @@ public class BatchGenerator {
                 outF.write("pdflatex \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/"+f+"/EPS/Graphs.tex\""
                         + " >> \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/"+f+".txt\" 2>&1\n");
                 outF.write("@sleep 1\n");
-                outF.write("@rm \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/"+f+"/Graphs.tex\"\n");
+                //outF.write("@rm \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/"+f+"/Graphs.tex\"\n");
                 outF.write("@rm \"Graphs.tex\"\n");
                 outF.write("@rm \"Graphs.aux\"\n");
                 outF.write("@rm \"Graphs.log\"\n");
