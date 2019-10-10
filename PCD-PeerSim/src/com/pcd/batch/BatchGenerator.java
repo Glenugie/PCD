@@ -146,7 +146,7 @@ public class BatchGenerator {
                 outF.write("@rm \"Graphs.tex\"\n");
                 outF.write("@rm \"Graphs.aux\"\n");
                 outF.write("@rm \"Graphs.log\"\n");
-                outF.write("@mv \"Graphs.pdf\" \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/"+f+".pdf\"\n");
+                outF.write("@mv \"Graphs.pdf\" \"C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/"+fClean+".pdf\"\n");
                 outF.write("@echo \"\"\n");
                 //outF.write("rm $2.aux $2.bbl $2.blg $2.log $2.toc $2.out $2.lof $2.lot $2.out $2.toc texput.log");
                 
