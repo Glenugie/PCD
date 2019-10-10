@@ -16,9 +16,9 @@ public class BatchGenerator {
             "# Ring\n\tinit.keys.topology 5\n\tinit.rnd WireRingLattice\n\tinit.rnd.protocol lnk\n\tinit.rnd.k 2\n\tinit.keys.allowNewConnections false",
             "# Tree\n\tinit.keys.topology 6\n\tinit.rnd WireRegRootedTree\n\tinit.rnd.protocol lnk\n\tinit.rnd.k 5\n\tinit.keys.allowNewConnections false"
         };
-        String[] compliances = {"100", "0", "50", "10", "90"};
-        String[] fairnesses = {"100", "0", "50", "10", "90"};
-        String[] datasets = {"1-10O-100N.pcddata","2-50O-50N.pcddata","5-25O-100N.pcddata","10-50O-50N.pcddata"};
+        String[] compliances = {"50", "10", "90"};
+        String[] fairnesses = {"50", "10", "90"};
+        String[] datasets = {"1-10O-100N.pcddata","5-25O-100N.pcddata","10-50O-50N.pcddata"};
         
         ArrayList<String> fileNames = new ArrayList<String>();
         
@@ -36,7 +36,7 @@ public class BatchGenerator {
                             
                             outF.write("# PCD CONFIG: "+name+"\n");
                             outF.write("simulation.experiments 1\n");
-                            outF.write("simulation.cycles 50\n");
+                            outF.write("simulation.cycles 250\n");
                             outF.write("simulation.title "+name+"\n");
                             outF.write("network.size 100\n");
                             outF.write("protocol.lnk IdleProtocol\n");
