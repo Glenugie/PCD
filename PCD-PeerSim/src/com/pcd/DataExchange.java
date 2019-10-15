@@ -2044,7 +2044,8 @@ public class DataExchange implements CDProtocol {
         String role = "";
         if (altruistic) { role += "A";} else { role += "S";}
         if (fair) { role += "F";} else { role += "S";}
-        if (faulty) { role += "F";} else { role += "N";}
+        //if (faulty) { role += "F";} else { role += "N";}
+        role += "F";
         return role;
     }
     
