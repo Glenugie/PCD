@@ -98,7 +98,7 @@ public class BatchGenerator {
                 //outF.write("@rm \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/"+f+".txt\"\n");
                 outF.write("@touch \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/"+f+".txt\"\n");
                 outF.write("@echo '' > \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/"+f+".txt\" 2>&1\n");
-                for (int i = 0; i < 10; i += 1) {
+                for (int i = 0; i < 25; i += 1) {
                     outF.write("@echo "+f+" - Run "+(i+1)+" Start\n");
                     outF.write("@java -Xmx12g -Xms4g -XX:+UseConcMarkSweepGC -classpath .;lib/peersim-1.0.5.jar;lib/jpl.jar;lib/jep-2.3.0.jar;lib/djep-1.0.0.jar;lin/peersim-doclet.jar;bin peersim.Simulator \"conf/PCD-Conf_"+f+".txt\""
                         + " >> \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/"+f+".txt\" 2>&1\n");

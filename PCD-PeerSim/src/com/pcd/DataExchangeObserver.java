@@ -169,9 +169,9 @@ public class DataExchangeObserver implements Control {
                         break;
                 }
                 cycleTime.replace(role, cycleTime.get(role)+protocol.lastTime);
-                if (protocol.dataReceived != 0) {
+                //if (protocol.dataReceived != 0) {
                     welfare.get(role).addValue(protocol.dataReceived);
-                }
+                //}
             }
             //System.out.println("Free Transactions: "+(freeTrans/networkSize)+" ("+freeTrans+")");
             

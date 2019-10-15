@@ -51,7 +51,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,50,50,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-50-50-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -107,7 +107,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,50,50,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-50-50-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -163,7 +163,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,50,50,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-50-50-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -219,7 +219,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,50,10,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-50-10-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -275,7 +275,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,50,10,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-50-10-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -331,7 +331,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,50,10,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-50-10-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -387,7 +387,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,50,90,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-50-90-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -443,7 +443,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,50,90,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-50-90-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -499,7 +499,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,50,90,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-50-90-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -555,7 +555,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,10,50,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-10-50-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -611,7 +611,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,10,50,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-10-50-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -667,7 +667,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,10,50,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-10-50-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -723,7 +723,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,10,10,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-10-10-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -779,7 +779,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,10,10,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-10-10-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -835,7 +835,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,10,10,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-10-10-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -891,7 +891,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,10,90,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-10-90-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -947,7 +947,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,10,90,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-10-90-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -1003,7 +1003,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,10,90,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-10-90-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -1059,7 +1059,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,90,50,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-90-50-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -1115,7 +1115,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,90,50,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-90-50-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -1171,7 +1171,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,90,50,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-90-50-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -1227,7 +1227,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,90,10,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-90-10-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -1283,7 +1283,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,90,10,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-90-10-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -1339,7 +1339,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,90,10,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-90-10-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -1395,7 +1395,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,90,90,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-90-90-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -1451,7 +1451,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,90,90,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-90-90-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -1507,7 +1507,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh,90,90,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Mesh-90-90-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -1563,7 +1563,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,50,50,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-50-50-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -1619,7 +1619,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,50,50,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-50-50-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -1675,7 +1675,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,50,50,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-50-50-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -1731,7 +1731,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,50,10,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-50-10-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -1787,7 +1787,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,50,10,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-50-10-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -1843,7 +1843,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,50,10,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-50-10-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -1899,7 +1899,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,50,90,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-50-90-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -1955,7 +1955,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,50,90,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-50-90-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -2011,7 +2011,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,50,90,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-50-90-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -2067,7 +2067,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,10,50,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-10-50-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -2123,7 +2123,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,10,50,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-10-50-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -2179,7 +2179,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,10,50,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-10-50-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -2235,7 +2235,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,10,10,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-10-10-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -2291,7 +2291,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,10,10,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-10-10-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -2347,7 +2347,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,10,10,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-10-10-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -2403,7 +2403,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,10,90,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-10-90-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -2459,7 +2459,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,10,90,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-10-90-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -2515,7 +2515,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,10,90,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-10-90-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -2571,7 +2571,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,90,50,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-90-50-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -2627,7 +2627,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,90,50,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-90-50-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -2683,7 +2683,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,90,50,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-90-50-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -2739,7 +2739,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,90,10,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-90-10-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -2795,7 +2795,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,90,10,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-90-10-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -2851,7 +2851,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,90,10,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-90-10-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -2907,7 +2907,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,90,90,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-90-90-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -2963,7 +2963,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,90,90,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-90-90-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -3019,7 +3019,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over,90,90,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Over-90-90-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -3075,7 +3075,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,50,50,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-50-50-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -3131,7 +3131,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,50,50,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-50-50-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -3187,7 +3187,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,50,50,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-50-50-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -3243,7 +3243,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,50,10,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-50-10-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -3299,7 +3299,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,50,10,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-50-10-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -3355,7 +3355,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,50,10,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-50-10-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -3411,7 +3411,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,50,90,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-50-90-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -3467,7 +3467,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,50,90,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-50-90-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -3523,7 +3523,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,50,90,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-50-90-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -3579,7 +3579,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,10,50,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-10-50-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -3635,7 +3635,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,10,50,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-10-50-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -3691,7 +3691,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,10,50,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-10-50-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -3747,7 +3747,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,10,10,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-10-10-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -3803,7 +3803,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,10,10,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-10-10-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -3859,7 +3859,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,10,10,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-10-10-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -3915,7 +3915,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,10,90,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-10-90-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -3971,7 +3971,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,10,90,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-10-90-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -4027,7 +4027,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,10,90,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-10-90-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -4083,7 +4083,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,90,50,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-90-50-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -4139,7 +4139,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,90,50,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-90-50-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -4195,7 +4195,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,90,50,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-90-50-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -4251,7 +4251,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,90,10,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-90-10-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -4307,7 +4307,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,90,10,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-90-10-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -4363,7 +4363,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,90,10,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-90-10-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -4419,7 +4419,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,90,90,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-90-90-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -4475,7 +4475,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,90,90,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-90-90-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -4531,7 +4531,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full,90,90,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Full-90-90-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -4587,7 +4587,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,50,50,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-50-50-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -4643,7 +4643,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,50,50,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-50-50-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -4699,7 +4699,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,50,50,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-50-50-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -4755,7 +4755,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,50,10,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-50-10-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -4811,7 +4811,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,50,10,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-50-10-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -4867,7 +4867,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,50,10,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-50-10-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -4923,7 +4923,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,50,90,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-50-90-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -4979,7 +4979,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,50,90,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-50-90-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -5035,7 +5035,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,50,90,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-50-90-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -5091,7 +5091,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,10,50,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-10-50-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -5147,7 +5147,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,10,50,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-10-50-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -5203,7 +5203,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,10,50,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-10-50-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -5259,7 +5259,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,10,10,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-10-10-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -5315,7 +5315,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,10,10,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-10-10-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -5371,7 +5371,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,10,10,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-10-10-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -5427,7 +5427,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,10,90,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-10-90-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -5483,7 +5483,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,10,90,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-10-90-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -5539,7 +5539,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,10,90,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-10-90-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -5595,7 +5595,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,90,50,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-90-50-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -5651,7 +5651,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,90,50,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-90-50-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -5707,7 +5707,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,90,50,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-90-50-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -5763,7 +5763,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,90,10,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-90-10-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -5819,7 +5819,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,90,10,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-90-10-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -5875,7 +5875,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,90,10,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-90-10-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -5931,7 +5931,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,90,90,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-90-90-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -5987,7 +5987,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,90,90,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-90-90-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -6043,7 +6043,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu,90,90,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Pseu-90-90-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -6099,7 +6099,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,50,50,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-50-50-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -6155,7 +6155,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,50,50,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-50-50-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -6211,7 +6211,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,50,50,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-50-50-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -6267,7 +6267,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,50,10,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-50-10-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -6323,7 +6323,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,50,10,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-50-10-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -6379,7 +6379,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,50,10,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-50-10-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -6435,7 +6435,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,50,90,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-50-90-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -6491,7 +6491,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,50,90,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-50-90-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -6547,7 +6547,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,50,90,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-50-90-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -6603,7 +6603,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,10,50,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-10-50-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -6659,7 +6659,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,10,50,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-10-50-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -6715,7 +6715,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,10,50,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-10-50-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -6771,7 +6771,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,10,10,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-10-10-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -6827,7 +6827,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,10,10,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-10-10-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -6883,7 +6883,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,10,10,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-10-10-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -6939,7 +6939,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,10,90,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-10-90-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -6995,7 +6995,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,10,90,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-10-90-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -7051,7 +7051,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,10,90,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-10-90-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -7107,7 +7107,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,90,50,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-90-50-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -7163,7 +7163,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,90,50,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-90-50-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -7219,7 +7219,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,90,50,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-90-50-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -7275,7 +7275,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,90,10,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-90-10-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -7331,7 +7331,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,90,10,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-90-10-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -7387,7 +7387,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,90,10,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-90-10-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -7443,7 +7443,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,90,90,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-90-90-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -7499,7 +7499,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,90,90,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-90-90-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -7555,7 +7555,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring,90,90,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Ring-90-90-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -7611,7 +7611,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,50,50,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-50-50-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -7667,7 +7667,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,50,50,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-50-50-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -7723,7 +7723,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,50,50,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-50-50-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -7779,7 +7779,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,50,10,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-50-10-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -7835,7 +7835,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,50,10,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-50-10-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -7891,7 +7891,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,50,10,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-50-10-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -7947,7 +7947,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,50,90,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-50-90-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -8003,7 +8003,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,50,90,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-50-90-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -8059,7 +8059,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,50,90,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-50-90-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -8115,7 +8115,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,10,50,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-10-50-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -8171,7 +8171,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,10,50,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-10-50-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -8227,7 +8227,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,10,50,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-10-50-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -8283,7 +8283,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,10,10,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-10-10-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -8339,7 +8339,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,10,10,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-10-10-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -8395,7 +8395,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,10,10,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-10-10-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -8451,7 +8451,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,10,90,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-10-90-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -8507,7 +8507,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,10,90,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-10-90-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -8563,7 +8563,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,10,90,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-10-90-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -8619,7 +8619,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,90,50,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-90-50-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -8675,7 +8675,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,90,50,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-90-50-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -8731,7 +8731,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,90,50,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-90-50-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -8787,7 +8787,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,90,10,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-90-10-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -8843,7 +8843,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,90,10,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-90-10-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -8899,7 +8899,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,90,10,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-90-10-10-50O-50N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -8955,7 +8955,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,90,90,1-10O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-90-90-1-10O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -9011,7 +9011,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,90,90,5-25O-100N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-90-90-5-25O-100N.pdf"
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
@@ -9067,6 +9067,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @rm "Graphs.tex"
 @rm "Graphs.aux"
 @rm "Graphs.log"
-@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree,90,90,10-50O-50N.pdf"
+@mv "Graphs.pdf" "C:/Users/Sam/Dropbox/PhD/ExperimentRes/_PDF/Tree-90-90-10-50O-50N.pdf"
 @echo ""
 
