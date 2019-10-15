@@ -172,6 +172,11 @@ public class DataExchangeObserver implements Control {
                 //if (protocol.dataReceived != 0) {
                     welfare.get(role).addValue(protocol.dataReceived);
                 //}
+                    
+                String noFaultRole = role.substring(0,2)+"N";
+                long rewardGain = (((CommonState.getTime()-1) * PrologInterface.confCycleCost) - (protocol.startingBudget - protocol.peerBudget)) * PrologInterface.confCycleCost;
+                //System.out.println(noFaultRole+": "+rewardGain+" ("+protocol.peerBudget+", "+protocol.startingBudget+")");
+                welfare.get(noFaultRole).addValue(rewardGain);
             }
             //System.out.println("Free Transactions: "+(freeTrans/networkSize)+" ("+freeTrans+")");
             
