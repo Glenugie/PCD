@@ -36,9 +36,9 @@ public class BatchGenerator {
                             
                             outF.write("# PCD CONFIG: "+name+"\n");
                             outF.write("simulation.experiments 1\n");
-                            outF.write("simulation.cycles 250\n");
+                            outF.write("simulation.cycles 1000\n");
                             outF.write("simulation.title "+name+"\n");
-                            outF.write("network.size 100\n");
+                            outF.write("network.size 250\n");
                             outF.write("protocol.lnk IdleProtocol\n");
                             outF.write("protocol.pcd com.pcd.DataExchange\n");
                             outF.write("protocol.pcd.linkable lnk\n");
@@ -55,8 +55,8 @@ public class BatchGenerator {
                             outF.write("init.keys.maxBudget 100\n");
                             outF.write("init.keys.minPolicies 50\n");
                             outF.write("init.keys.maxPolicies 100\n");
-                            outF.write("init.keys.percFaultyPeers 10\n");
-                            outF.write("init.keys.percFaultRate 5\n");
+                            outF.write("init.keys.percFaultyPeers 100\n");
+                            outF.write("init.keys.percFaultRate 1\n");
                             outF.write("init.keys.maxNeighbours 10\n");
                             outF.write("init.keys.policies Basic.pcdpol\n");
 
