@@ -1286,6 +1286,8 @@ public class DataExchange implements CDProtocol {
                     // Nothing
                 }
                 
+                //System.out.println("Policy Set Accepted: "+chosenPolicySet);
+                
                 DataPackage dp = assembleDataPackage(data,generateTransactionRecords(),msg.sender); 
                 n.sendMessage(protocolID, msgSender, node, msg.prvTransId, msg.reqTransId, "DATA_RESULT", new Object[] { dp }, null);
                 
