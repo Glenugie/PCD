@@ -13,8 +13,8 @@ public class BatchGenerator {
             "# Overlay\n\tinit.keys.topology 2\n\tinit.rnd WireKOut\n\tinit.rnd.protocol lnk\n\tinit.rnd.k 5\n\tinit.keys.allowNewConnections true",
             "# Fully Connected\n\tinit.keys.topology 3\n\tinit.rnd WireKOut\n\tinit.rnd.protocol lnk\n\tinit.rnd.k 999999999\n\tinit.keys.allowNewConnections false",
             "# Pseudo-Grid\n\tinit.keys.topology 4\n\tinit.rnd WireRingLattice\n\tinit.rnd.protocol lnk\n\tinit.rnd.k 4\n\tinit.keys.allowNewConnections false",
-            "# Ring\n\tinit.keys.topology 5\n\tinit.rnd WireRingLattice\n\tinit.rnd.protocol lnk\n\tinit.rnd.k 2\n\tinit.keys.allowNewConnections false",
-            "# Tree\n\tinit.keys.topology 6\n\tinit.rnd WireRegRootedTree\n\tinit.rnd.protocol lnk\n\tinit.rnd.k 5\n\tinit.keys.allowNewConnections false"
+            "# Ring\n\tinit.keys.topology 5\n\tinit.rnd WireRingLattice\n\tinit.rnd.protocol lnk\n\tinit.rnd.k 2\n\tinit.keys.allowNewConnections false"
+            //"# Tree\n\tinit.keys.topology 6\n\tinit.rnd WireRegRootedTree\n\tinit.rnd.protocol lnk\n\tinit.rnd.k 5\n\tinit.keys.allowNewConnections false"
         };
         String[] compliances = {"50", "10", "90"};
         String[] fairnesses = {"50", "10", "90"};
@@ -36,9 +36,9 @@ public class BatchGenerator {
                             
                             outF.write("# PCD CONFIG: "+name+"\n");
                             outF.write("simulation.experiments 1\n");
-                            outF.write("simulation.cycles 1000\n");
+                            outF.write("simulation.cycles 500\n");
                             outF.write("simulation.title "+name+"\n");
-                            outF.write("network.size 250\n");
+                            outF.write("network.size 100\n");
                             outF.write("protocol.lnk IdleProtocol\n");
                             outF.write("protocol.pcd com.pcd.DataExchange\n");
                             outF.write("protocol.pcd.linkable lnk\n");
@@ -51,8 +51,8 @@ public class BatchGenerator {
                             outF.write("init.keys.maxTransactions 2500\n");
                             outF.write("init.keys.transactionLifetime 5\n");
                             outF.write("init.keys.minUtility 10\n");
-                            outF.write("init.keys.minBudget 100\n");
-                            outF.write("init.keys.maxBudget 100\n");
+                            outF.write("init.keys.minBudget 1000\n");
+                            outF.write("init.keys.maxBudget 1000\n");
                             outF.write("init.keys.minPolicies 50\n");
                             outF.write("init.keys.maxPolicies 100\n");
                             outF.write("init.keys.percFaultyPeers 100\n");
@@ -96,6 +96,7 @@ public class BatchGenerator {
                 System.out.println("file: "+f);
                 outF.write("@cd \"C:/Users/Sam/git/PCD/PCD-PeerSim\"\n");
                 //outF.write("@rm \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/"+f+".txt\"\n");
+                outF.write("@rmdir /s /q \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/"+f+"/\"\n");
                 outF.write("@touch \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/"+f+".txt\"\n");
                 outF.write("@echo '' > \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/"+f+".txt\" 2>&1\n");
                 for (int i = 0; i < 25; i += 1) {
@@ -132,8 +133,6 @@ public class BatchGenerator {
                 outF.write("@echo \\includegraphics[width=\\textwidth]{"+fClean+"-cycleBreakdown.eps} >> Graphs.tex\n");
                 outF.write("@echo \\newpage >> Graphs.tex\n");
                 outF.write("@echo \\includegraphics[width=\\textwidth]{"+fClean+"-utilScatterAll-Fault.eps} >> Graphs.tex\n");
-                outF.write("@echo \\newpage >> Graphs.tex\n");
-                outF.write("@echo \\includegraphics[width=\\textwidth]{"+fClean+"-utilScatterAll-NoFault.eps} >> Graphs.tex\n");
                 outF.write("@echo \\newpage >> Graphs.tex\n");
                 outF.write("@echo \\includegraphics[width=\\textwidth]{"+fClean+"-utility-final.eps} >> Graphs.tex\n");
                 outF.write("@echo \\newpage >> Graphs.tex\n");

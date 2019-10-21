@@ -1,4 +1,5 @@
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,50,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,50,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,50,1-10O-100N.txt" 2>&1
 @echo Mesh,50,50,1-10O-100N - Run 1 Start
@@ -71,8 +72,6 @@
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-50-50-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-50-50-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-50-50-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -85,6 +84,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,50,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,50,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,50,5-25O-100N.txt" 2>&1
 @echo Mesh,50,50,5-25O-100N - Run 1 Start
@@ -157,8 +157,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-50-50-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-50-50-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-50-50-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -171,6 +169,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,50,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,50,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,50,10-50O-50N.txt" 2>&1
 @echo Mesh,50,50,10-50O-50N - Run 1 Start
@@ -243,8 +242,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-50-50-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-50-50-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-50-50-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -257,6 +254,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,10,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,10,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,10,1-10O-100N.txt" 2>&1
 @echo Mesh,50,10,1-10O-100N - Run 1 Start
@@ -329,8 +327,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-50-10-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-50-10-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-50-10-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -343,6 +339,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,10,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,10,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,10,5-25O-100N.txt" 2>&1
 @echo Mesh,50,10,5-25O-100N - Run 1 Start
@@ -415,8 +412,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-50-10-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-50-10-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-50-10-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -429,6 +424,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,10,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,10,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,10,10-50O-50N.txt" 2>&1
 @echo Mesh,50,10,10-50O-50N - Run 1 Start
@@ -501,8 +497,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-50-10-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-50-10-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-50-10-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -515,6 +509,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,90,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,90,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,90,1-10O-100N.txt" 2>&1
 @echo Mesh,50,90,1-10O-100N - Run 1 Start
@@ -587,8 +582,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-50-90-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-50-90-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-50-90-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -601,6 +594,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,90,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,90,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,90,5-25O-100N.txt" 2>&1
 @echo Mesh,50,90,5-25O-100N - Run 1 Start
@@ -673,8 +667,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-50-90-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-50-90-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-50-90-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -687,6 +679,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,90,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,90,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,50,90,10-50O-50N.txt" 2>&1
 @echo Mesh,50,90,10-50O-50N - Run 1 Start
@@ -759,8 +752,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-50-90-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-50-90-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-50-90-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -773,6 +764,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,50,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,50,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,50,1-10O-100N.txt" 2>&1
 @echo Mesh,10,50,1-10O-100N - Run 1 Start
@@ -845,8 +837,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-10-50-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-10-50-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-10-50-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -859,6 +849,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,50,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,50,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,50,5-25O-100N.txt" 2>&1
 @echo Mesh,10,50,5-25O-100N - Run 1 Start
@@ -931,8 +922,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-10-50-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-10-50-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-10-50-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -945,6 +934,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,50,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,50,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,50,10-50O-50N.txt" 2>&1
 @echo Mesh,10,50,10-50O-50N - Run 1 Start
@@ -1017,8 +1007,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-10-50-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-10-50-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-10-50-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -1031,6 +1019,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,10,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,10,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,10,1-10O-100N.txt" 2>&1
 @echo Mesh,10,10,1-10O-100N - Run 1 Start
@@ -1103,8 +1092,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-10-10-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-10-10-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-10-10-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -1117,6 +1104,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,10,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,10,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,10,5-25O-100N.txt" 2>&1
 @echo Mesh,10,10,5-25O-100N - Run 1 Start
@@ -1189,8 +1177,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-10-10-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-10-10-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-10-10-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -1203,6 +1189,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,10,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,10,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,10,10-50O-50N.txt" 2>&1
 @echo Mesh,10,10,10-50O-50N - Run 1 Start
@@ -1275,8 +1262,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-10-10-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-10-10-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-10-10-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -1289,6 +1274,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,90,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,90,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,90,1-10O-100N.txt" 2>&1
 @echo Mesh,10,90,1-10O-100N - Run 1 Start
@@ -1361,8 +1347,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-10-90-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-10-90-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-10-90-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -1375,6 +1359,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,90,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,90,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,90,5-25O-100N.txt" 2>&1
 @echo Mesh,10,90,5-25O-100N - Run 1 Start
@@ -1447,8 +1432,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-10-90-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-10-90-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-10-90-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -1461,6 +1444,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,90,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,90,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,10,90,10-50O-50N.txt" 2>&1
 @echo Mesh,10,90,10-50O-50N - Run 1 Start
@@ -1533,8 +1517,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-10-90-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-10-90-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-10-90-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -1547,6 +1529,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,50,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,50,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,50,1-10O-100N.txt" 2>&1
 @echo Mesh,90,50,1-10O-100N - Run 1 Start
@@ -1619,8 +1602,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-90-50-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-90-50-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-90-50-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -1633,6 +1614,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,50,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,50,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,50,5-25O-100N.txt" 2>&1
 @echo Mesh,90,50,5-25O-100N - Run 1 Start
@@ -1705,8 +1687,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-90-50-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-90-50-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-90-50-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -1719,6 +1699,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,50,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,50,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,50,10-50O-50N.txt" 2>&1
 @echo Mesh,90,50,10-50O-50N - Run 1 Start
@@ -1791,8 +1772,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-90-50-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-90-50-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-90-50-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -1805,6 +1784,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,10,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,10,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,10,1-10O-100N.txt" 2>&1
 @echo Mesh,90,10,1-10O-100N - Run 1 Start
@@ -1877,8 +1857,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-90-10-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-90-10-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-90-10-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -1891,6 +1869,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,10,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,10,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,10,5-25O-100N.txt" 2>&1
 @echo Mesh,90,10,5-25O-100N - Run 1 Start
@@ -1963,8 +1942,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-90-10-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-90-10-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-90-10-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -1977,6 +1954,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,10,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,10,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,10,10-50O-50N.txt" 2>&1
 @echo Mesh,90,10,10-50O-50N - Run 1 Start
@@ -2049,8 +2027,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-90-10-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-90-10-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-90-10-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -2063,6 +2039,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,90,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,90,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,90,1-10O-100N.txt" 2>&1
 @echo Mesh,90,90,1-10O-100N - Run 1 Start
@@ -2135,8 +2112,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-90-90-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-90-90-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-90-90-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -2149,6 +2124,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,90,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,90,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,90,5-25O-100N.txt" 2>&1
 @echo Mesh,90,90,5-25O-100N - Run 1 Start
@@ -2221,8 +2197,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-90-90-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-90-90-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-90-90-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -2235,6 +2209,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,90,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,90,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Mesh,90,90,10-50O-50N.txt" 2>&1
 @echo Mesh,90,90,10-50O-50N - Run 1 Start
@@ -2307,8 +2282,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-90-90-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Mesh-90-90-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Mesh-90-90-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -2321,6 +2294,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,50,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,50,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,50,1-10O-100N.txt" 2>&1
 @echo Over,50,50,1-10O-100N - Run 1 Start
@@ -2393,8 +2367,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Mesh,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-50-50-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-50-50-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-50-50-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -2407,6 +2379,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,50,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,50,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,50,5-25O-100N.txt" 2>&1
 @echo Over,50,50,5-25O-100N - Run 1 Start
@@ -2479,8 +2452,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-50-50-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-50-50-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-50-50-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -2493,6 +2464,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,50,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,50,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,50,10-50O-50N.txt" 2>&1
 @echo Over,50,50,10-50O-50N - Run 1 Start
@@ -2565,8 +2537,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-50-50-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-50-50-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-50-50-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -2579,6 +2549,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,10,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,10,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,10,1-10O-100N.txt" 2>&1
 @echo Over,50,10,1-10O-100N - Run 1 Start
@@ -2651,8 +2622,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-50-10-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-50-10-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-50-10-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -2665,6 +2634,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,10,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,10,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,10,5-25O-100N.txt" 2>&1
 @echo Over,50,10,5-25O-100N - Run 1 Start
@@ -2737,8 +2707,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-50-10-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-50-10-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-50-10-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -2751,6 +2719,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,10,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,10,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,10,10-50O-50N.txt" 2>&1
 @echo Over,50,10,10-50O-50N - Run 1 Start
@@ -2823,8 +2792,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-50-10-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-50-10-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-50-10-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -2837,6 +2804,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,90,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,90,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,90,1-10O-100N.txt" 2>&1
 @echo Over,50,90,1-10O-100N - Run 1 Start
@@ -2909,8 +2877,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-50-90-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-50-90-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-50-90-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -2923,6 +2889,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,90,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,90,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,90,5-25O-100N.txt" 2>&1
 @echo Over,50,90,5-25O-100N - Run 1 Start
@@ -2995,8 +2962,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-50-90-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-50-90-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-50-90-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -3009,6 +2974,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,90,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,90,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,50,90,10-50O-50N.txt" 2>&1
 @echo Over,50,90,10-50O-50N - Run 1 Start
@@ -3081,8 +3047,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-50-90-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-50-90-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-50-90-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -3095,6 +3059,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,50,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,50,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,50,1-10O-100N.txt" 2>&1
 @echo Over,10,50,1-10O-100N - Run 1 Start
@@ -3167,8 +3132,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-10-50-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-10-50-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-10-50-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -3181,6 +3144,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,50,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,50,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,50,5-25O-100N.txt" 2>&1
 @echo Over,10,50,5-25O-100N - Run 1 Start
@@ -3253,8 +3217,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-10-50-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-10-50-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-10-50-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -3267,6 +3229,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,50,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,50,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,50,10-50O-50N.txt" 2>&1
 @echo Over,10,50,10-50O-50N - Run 1 Start
@@ -3339,8 +3302,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-10-50-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-10-50-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-10-50-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -3353,6 +3314,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,10,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,10,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,10,1-10O-100N.txt" 2>&1
 @echo Over,10,10,1-10O-100N - Run 1 Start
@@ -3425,8 +3387,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-10-10-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-10-10-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-10-10-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -3439,6 +3399,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,10,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,10,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,10,5-25O-100N.txt" 2>&1
 @echo Over,10,10,5-25O-100N - Run 1 Start
@@ -3511,8 +3472,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-10-10-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-10-10-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-10-10-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -3525,6 +3484,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,10,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,10,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,10,10-50O-50N.txt" 2>&1
 @echo Over,10,10,10-50O-50N - Run 1 Start
@@ -3597,8 +3557,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-10-10-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-10-10-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-10-10-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -3611,6 +3569,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,90,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,90,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,90,1-10O-100N.txt" 2>&1
 @echo Over,10,90,1-10O-100N - Run 1 Start
@@ -3683,8 +3642,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-10-90-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-10-90-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-10-90-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -3697,6 +3654,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,90,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,90,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,90,5-25O-100N.txt" 2>&1
 @echo Over,10,90,5-25O-100N - Run 1 Start
@@ -3769,8 +3727,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-10-90-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-10-90-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-10-90-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -3783,6 +3739,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,90,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,90,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,10,90,10-50O-50N.txt" 2>&1
 @echo Over,10,90,10-50O-50N - Run 1 Start
@@ -3855,8 +3812,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-10-90-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-10-90-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-10-90-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -3869,6 +3824,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,50,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,50,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,50,1-10O-100N.txt" 2>&1
 @echo Over,90,50,1-10O-100N - Run 1 Start
@@ -3941,8 +3897,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-90-50-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-90-50-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-90-50-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -3955,6 +3909,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,50,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,50,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,50,5-25O-100N.txt" 2>&1
 @echo Over,90,50,5-25O-100N - Run 1 Start
@@ -4027,8 +3982,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-90-50-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-90-50-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-90-50-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -4041,6 +3994,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,50,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,50,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,50,10-50O-50N.txt" 2>&1
 @echo Over,90,50,10-50O-50N - Run 1 Start
@@ -4113,8 +4067,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-90-50-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-90-50-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-90-50-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -4127,6 +4079,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,10,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,10,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,10,1-10O-100N.txt" 2>&1
 @echo Over,90,10,1-10O-100N - Run 1 Start
@@ -4199,8 +4152,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-90-10-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-90-10-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-90-10-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -4213,6 +4164,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,10,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,10,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,10,5-25O-100N.txt" 2>&1
 @echo Over,90,10,5-25O-100N - Run 1 Start
@@ -4285,8 +4237,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-90-10-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-90-10-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-90-10-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -4299,6 +4249,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,10,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,10,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,10,10-50O-50N.txt" 2>&1
 @echo Over,90,10,10-50O-50N - Run 1 Start
@@ -4371,8 +4322,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-90-10-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-90-10-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-90-10-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -4385,6 +4334,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,90,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,90,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,90,1-10O-100N.txt" 2>&1
 @echo Over,90,90,1-10O-100N - Run 1 Start
@@ -4457,8 +4407,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-90-90-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-90-90-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-90-90-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -4471,6 +4419,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,90,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,90,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,90,5-25O-100N.txt" 2>&1
 @echo Over,90,90,5-25O-100N - Run 1 Start
@@ -4543,8 +4492,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-90-90-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-90-90-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-90-90-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -4557,6 +4504,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,90,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,90,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Over,90,90,10-50O-50N.txt" 2>&1
 @echo Over,90,90,10-50O-50N - Run 1 Start
@@ -4629,8 +4577,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-90-90-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Over-90-90-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Over-90-90-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -4643,6 +4589,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,50,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,50,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,50,1-10O-100N.txt" 2>&1
 @echo Full,50,50,1-10O-100N - Run 1 Start
@@ -4715,8 +4662,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Over,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-50-50-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-50-50-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-50-50-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -4729,6 +4674,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,50,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,50,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,50,5-25O-100N.txt" 2>&1
 @echo Full,50,50,5-25O-100N - Run 1 Start
@@ -4801,8 +4747,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-50-50-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-50-50-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-50-50-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -4815,6 +4759,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,50,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,50,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,50,10-50O-50N.txt" 2>&1
 @echo Full,50,50,10-50O-50N - Run 1 Start
@@ -4887,8 +4832,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-50-50-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-50-50-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-50-50-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -4901,6 +4844,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,10,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,10,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,10,1-10O-100N.txt" 2>&1
 @echo Full,50,10,1-10O-100N - Run 1 Start
@@ -4973,8 +4917,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-50-10-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-50-10-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-50-10-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -4987,6 +4929,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,10,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,10,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,10,5-25O-100N.txt" 2>&1
 @echo Full,50,10,5-25O-100N - Run 1 Start
@@ -5059,8 +5002,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-50-10-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-50-10-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-50-10-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -5073,6 +5014,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,10,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,10,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,10,10-50O-50N.txt" 2>&1
 @echo Full,50,10,10-50O-50N - Run 1 Start
@@ -5145,8 +5087,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-50-10-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-50-10-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-50-10-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -5159,6 +5099,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,90,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,90,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,90,1-10O-100N.txt" 2>&1
 @echo Full,50,90,1-10O-100N - Run 1 Start
@@ -5231,8 +5172,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-50-90-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-50-90-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-50-90-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -5245,6 +5184,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,90,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,90,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,90,5-25O-100N.txt" 2>&1
 @echo Full,50,90,5-25O-100N - Run 1 Start
@@ -5317,8 +5257,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-50-90-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-50-90-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-50-90-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -5331,6 +5269,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,90,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,90,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,50,90,10-50O-50N.txt" 2>&1
 @echo Full,50,90,10-50O-50N - Run 1 Start
@@ -5403,8 +5342,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-50-90-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-50-90-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-50-90-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -5417,6 +5354,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,50,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,50,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,50,1-10O-100N.txt" 2>&1
 @echo Full,10,50,1-10O-100N - Run 1 Start
@@ -5489,8 +5427,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-10-50-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-10-50-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-10-50-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -5503,6 +5439,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,50,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,50,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,50,5-25O-100N.txt" 2>&1
 @echo Full,10,50,5-25O-100N - Run 1 Start
@@ -5575,8 +5512,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-10-50-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-10-50-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-10-50-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -5589,6 +5524,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,50,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,50,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,50,10-50O-50N.txt" 2>&1
 @echo Full,10,50,10-50O-50N - Run 1 Start
@@ -5661,8 +5597,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-10-50-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-10-50-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-10-50-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -5675,6 +5609,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,10,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,10,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,10,1-10O-100N.txt" 2>&1
 @echo Full,10,10,1-10O-100N - Run 1 Start
@@ -5747,8 +5682,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-10-10-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-10-10-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-10-10-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -5761,6 +5694,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,10,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,10,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,10,5-25O-100N.txt" 2>&1
 @echo Full,10,10,5-25O-100N - Run 1 Start
@@ -5833,8 +5767,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-10-10-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-10-10-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-10-10-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -5847,6 +5779,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,10,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,10,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,10,10-50O-50N.txt" 2>&1
 @echo Full,10,10,10-50O-50N - Run 1 Start
@@ -5919,8 +5852,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-10-10-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-10-10-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-10-10-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -5933,6 +5864,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,90,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,90,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,90,1-10O-100N.txt" 2>&1
 @echo Full,10,90,1-10O-100N - Run 1 Start
@@ -6005,8 +5937,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-10-90-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-10-90-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-10-90-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -6019,6 +5949,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,90,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,90,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,90,5-25O-100N.txt" 2>&1
 @echo Full,10,90,5-25O-100N - Run 1 Start
@@ -6091,8 +6022,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-10-90-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-10-90-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-10-90-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -6105,6 +6034,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,90,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,90,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,10,90,10-50O-50N.txt" 2>&1
 @echo Full,10,90,10-50O-50N - Run 1 Start
@@ -6177,8 +6107,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-10-90-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-10-90-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-10-90-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -6191,6 +6119,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,50,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,50,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,50,1-10O-100N.txt" 2>&1
 @echo Full,90,50,1-10O-100N - Run 1 Start
@@ -6263,8 +6192,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-90-50-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-90-50-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-90-50-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -6277,6 +6204,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,50,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,50,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,50,5-25O-100N.txt" 2>&1
 @echo Full,90,50,5-25O-100N - Run 1 Start
@@ -6349,8 +6277,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-90-50-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-90-50-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-90-50-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -6363,6 +6289,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,50,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,50,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,50,10-50O-50N.txt" 2>&1
 @echo Full,90,50,10-50O-50N - Run 1 Start
@@ -6435,8 +6362,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-90-50-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-90-50-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-90-50-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -6449,6 +6374,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,10,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,10,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,10,1-10O-100N.txt" 2>&1
 @echo Full,90,10,1-10O-100N - Run 1 Start
@@ -6521,8 +6447,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-90-10-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-90-10-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-90-10-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -6535,6 +6459,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,10,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,10,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,10,5-25O-100N.txt" 2>&1
 @echo Full,90,10,5-25O-100N - Run 1 Start
@@ -6607,8 +6532,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-90-10-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-90-10-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-90-10-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -6621,6 +6544,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,10,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,10,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,10,10-50O-50N.txt" 2>&1
 @echo Full,90,10,10-50O-50N - Run 1 Start
@@ -6693,8 +6617,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-90-10-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-90-10-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-90-10-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -6707,6 +6629,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,90,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,90,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,90,1-10O-100N.txt" 2>&1
 @echo Full,90,90,1-10O-100N - Run 1 Start
@@ -6779,8 +6702,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-90-90-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-90-90-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-90-90-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -6793,6 +6714,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,90,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,90,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,90,5-25O-100N.txt" 2>&1
 @echo Full,90,90,5-25O-100N - Run 1 Start
@@ -6865,8 +6787,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-90-90-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-90-90-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-90-90-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -6879,6 +6799,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,90,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,90,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Full,90,90,10-50O-50N.txt" 2>&1
 @echo Full,90,90,10-50O-50N - Run 1 Start
@@ -6951,8 +6872,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-90-90-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Full-90-90-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Full-90-90-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -6965,6 +6884,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,50,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,50,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,50,1-10O-100N.txt" 2>&1
 @echo Pseu,50,50,1-10O-100N - Run 1 Start
@@ -7037,8 +6957,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Full,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-50-50-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-50-50-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-50-50-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -7051,6 +6969,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,50,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,50,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,50,5-25O-100N.txt" 2>&1
 @echo Pseu,50,50,5-25O-100N - Run 1 Start
@@ -7123,8 +7042,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-50-50-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-50-50-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-50-50-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -7137,6 +7054,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,50,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,50,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,50,10-50O-50N.txt" 2>&1
 @echo Pseu,50,50,10-50O-50N - Run 1 Start
@@ -7209,8 +7127,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-50-50-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-50-50-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-50-50-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -7223,6 +7139,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,10,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,10,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,10,1-10O-100N.txt" 2>&1
 @echo Pseu,50,10,1-10O-100N - Run 1 Start
@@ -7295,8 +7212,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-50-10-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-50-10-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-50-10-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -7309,6 +7224,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,10,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,10,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,10,5-25O-100N.txt" 2>&1
 @echo Pseu,50,10,5-25O-100N - Run 1 Start
@@ -7381,8 +7297,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-50-10-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-50-10-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-50-10-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -7395,6 +7309,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,10,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,10,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,10,10-50O-50N.txt" 2>&1
 @echo Pseu,50,10,10-50O-50N - Run 1 Start
@@ -7467,8 +7382,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-50-10-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-50-10-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-50-10-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -7481,6 +7394,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,90,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,90,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,90,1-10O-100N.txt" 2>&1
 @echo Pseu,50,90,1-10O-100N - Run 1 Start
@@ -7553,8 +7467,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-50-90-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-50-90-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-50-90-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -7567,6 +7479,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,90,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,90,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,90,5-25O-100N.txt" 2>&1
 @echo Pseu,50,90,5-25O-100N - Run 1 Start
@@ -7639,8 +7552,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-50-90-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-50-90-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-50-90-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -7653,6 +7564,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,90,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,90,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,50,90,10-50O-50N.txt" 2>&1
 @echo Pseu,50,90,10-50O-50N - Run 1 Start
@@ -7725,8 +7637,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-50-90-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-50-90-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-50-90-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -7739,6 +7649,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,50,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,50,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,50,1-10O-100N.txt" 2>&1
 @echo Pseu,10,50,1-10O-100N - Run 1 Start
@@ -7811,8 +7722,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-10-50-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-10-50-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-10-50-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -7825,6 +7734,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,50,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,50,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,50,5-25O-100N.txt" 2>&1
 @echo Pseu,10,50,5-25O-100N - Run 1 Start
@@ -7897,8 +7807,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-10-50-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-10-50-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-10-50-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -7911,6 +7819,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,50,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,50,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,50,10-50O-50N.txt" 2>&1
 @echo Pseu,10,50,10-50O-50N - Run 1 Start
@@ -7983,8 +7892,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-10-50-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-10-50-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-10-50-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -7997,6 +7904,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,10,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,10,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,10,1-10O-100N.txt" 2>&1
 @echo Pseu,10,10,1-10O-100N - Run 1 Start
@@ -8069,8 +7977,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-10-10-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-10-10-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-10-10-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -8083,6 +7989,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,10,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,10,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,10,5-25O-100N.txt" 2>&1
 @echo Pseu,10,10,5-25O-100N - Run 1 Start
@@ -8155,8 +8062,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-10-10-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-10-10-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-10-10-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -8169,6 +8074,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,10,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,10,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,10,10-50O-50N.txt" 2>&1
 @echo Pseu,10,10,10-50O-50N - Run 1 Start
@@ -8241,8 +8147,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-10-10-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-10-10-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-10-10-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -8255,6 +8159,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,90,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,90,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,90,1-10O-100N.txt" 2>&1
 @echo Pseu,10,90,1-10O-100N - Run 1 Start
@@ -8327,8 +8232,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-10-90-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-10-90-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-10-90-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -8341,6 +8244,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,90,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,90,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,90,5-25O-100N.txt" 2>&1
 @echo Pseu,10,90,5-25O-100N - Run 1 Start
@@ -8413,8 +8317,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-10-90-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-10-90-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-10-90-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -8427,6 +8329,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,90,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,90,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,10,90,10-50O-50N.txt" 2>&1
 @echo Pseu,10,90,10-50O-50N - Run 1 Start
@@ -8499,8 +8402,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-10-90-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-10-90-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-10-90-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -8513,6 +8414,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,50,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,50,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,50,1-10O-100N.txt" 2>&1
 @echo Pseu,90,50,1-10O-100N - Run 1 Start
@@ -8585,8 +8487,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-90-50-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-90-50-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-90-50-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -8599,6 +8499,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,50,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,50,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,50,5-25O-100N.txt" 2>&1
 @echo Pseu,90,50,5-25O-100N - Run 1 Start
@@ -8671,8 +8572,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-90-50-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-90-50-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-90-50-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -8685,6 +8584,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,50,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,50,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,50,10-50O-50N.txt" 2>&1
 @echo Pseu,90,50,10-50O-50N - Run 1 Start
@@ -8757,8 +8657,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-90-50-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-90-50-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-90-50-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -8771,6 +8669,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,10,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,10,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,10,1-10O-100N.txt" 2>&1
 @echo Pseu,90,10,1-10O-100N - Run 1 Start
@@ -8843,8 +8742,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-90-10-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-90-10-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-90-10-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -8857,6 +8754,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,10,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,10,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,10,5-25O-100N.txt" 2>&1
 @echo Pseu,90,10,5-25O-100N - Run 1 Start
@@ -8929,8 +8827,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-90-10-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-90-10-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-90-10-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -8943,6 +8839,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,10,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,10,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,10,10-50O-50N.txt" 2>&1
 @echo Pseu,90,10,10-50O-50N - Run 1 Start
@@ -9015,8 +8912,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-90-10-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-90-10-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-90-10-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -9029,6 +8924,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,90,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,90,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,90,1-10O-100N.txt" 2>&1
 @echo Pseu,90,90,1-10O-100N - Run 1 Start
@@ -9101,8 +8997,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-90-90-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-90-90-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-90-90-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -9115,6 +9009,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,90,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,90,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,90,5-25O-100N.txt" 2>&1
 @echo Pseu,90,90,5-25O-100N - Run 1 Start
@@ -9187,8 +9082,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-90-90-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-90-90-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-90-90-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -9201,6 +9094,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,90,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,90,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Pseu,90,90,10-50O-50N.txt" 2>&1
 @echo Pseu,90,90,10-50O-50N - Run 1 Start
@@ -9273,8 +9167,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-90-90-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Pseu-90-90-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Pseu-90-90-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -9287,6 +9179,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,50,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,50,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,50,1-10O-100N.txt" 2>&1
 @echo Ring,50,50,1-10O-100N - Run 1 Start
@@ -9359,8 +9252,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Pseu,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-50-50-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-50-50-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-50-50-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -9373,6 +9264,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,50,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,50,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,50,5-25O-100N.txt" 2>&1
 @echo Ring,50,50,5-25O-100N - Run 1 Start
@@ -9445,8 +9337,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-50-50-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-50-50-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-50-50-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -9459,6 +9349,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,50,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,50,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,50,10-50O-50N.txt" 2>&1
 @echo Ring,50,50,10-50O-50N - Run 1 Start
@@ -9531,8 +9422,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-50-50-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-50-50-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-50-50-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -9545,6 +9434,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,10,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,10,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,10,1-10O-100N.txt" 2>&1
 @echo Ring,50,10,1-10O-100N - Run 1 Start
@@ -9617,8 +9507,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-50-10-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-50-10-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-50-10-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -9631,6 +9519,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,10,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,10,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,10,5-25O-100N.txt" 2>&1
 @echo Ring,50,10,5-25O-100N - Run 1 Start
@@ -9703,8 +9592,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-50-10-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-50-10-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-50-10-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -9717,6 +9604,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,10,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,10,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,10,10-50O-50N.txt" 2>&1
 @echo Ring,50,10,10-50O-50N - Run 1 Start
@@ -9789,8 +9677,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-50-10-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-50-10-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-50-10-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -9803,6 +9689,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,90,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,90,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,90,1-10O-100N.txt" 2>&1
 @echo Ring,50,90,1-10O-100N - Run 1 Start
@@ -9875,8 +9762,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-50-90-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-50-90-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-50-90-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -9889,6 +9774,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,90,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,90,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,90,5-25O-100N.txt" 2>&1
 @echo Ring,50,90,5-25O-100N - Run 1 Start
@@ -9961,8 +9847,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-50-90-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-50-90-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-50-90-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -9975,6 +9859,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,90,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,90,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,50,90,10-50O-50N.txt" 2>&1
 @echo Ring,50,90,10-50O-50N - Run 1 Start
@@ -10047,8 +9932,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-50-90-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-50-90-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-50-90-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -10061,6 +9944,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,50,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,50,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,50,1-10O-100N.txt" 2>&1
 @echo Ring,10,50,1-10O-100N - Run 1 Start
@@ -10133,8 +10017,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-10-50-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-10-50-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-10-50-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -10147,6 +10029,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,50,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,50,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,50,5-25O-100N.txt" 2>&1
 @echo Ring,10,50,5-25O-100N - Run 1 Start
@@ -10219,8 +10102,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-10-50-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-10-50-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-10-50-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -10233,6 +10114,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,50,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,50,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,50,10-50O-50N.txt" 2>&1
 @echo Ring,10,50,10-50O-50N - Run 1 Start
@@ -10305,8 +10187,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-10-50-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-10-50-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-10-50-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -10319,6 +10199,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,10,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,10,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,10,1-10O-100N.txt" 2>&1
 @echo Ring,10,10,1-10O-100N - Run 1 Start
@@ -10391,8 +10272,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-10-10-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-10-10-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-10-10-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -10405,6 +10284,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,10,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,10,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,10,5-25O-100N.txt" 2>&1
 @echo Ring,10,10,5-25O-100N - Run 1 Start
@@ -10477,8 +10357,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-10-10-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-10-10-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-10-10-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -10491,6 +10369,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,10,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,10,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,10,10-50O-50N.txt" 2>&1
 @echo Ring,10,10,10-50O-50N - Run 1 Start
@@ -10563,8 +10442,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-10-10-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-10-10-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-10-10-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -10577,6 +10454,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,90,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,90,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,90,1-10O-100N.txt" 2>&1
 @echo Ring,10,90,1-10O-100N - Run 1 Start
@@ -10649,8 +10527,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-10-90-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-10-90-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-10-90-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -10663,6 +10539,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,90,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,90,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,90,5-25O-100N.txt" 2>&1
 @echo Ring,10,90,5-25O-100N - Run 1 Start
@@ -10735,8 +10612,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-10-90-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-10-90-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-10-90-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -10749,6 +10624,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,90,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,90,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,10,90,10-50O-50N.txt" 2>&1
 @echo Ring,10,90,10-50O-50N - Run 1 Start
@@ -10821,8 +10697,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-10-90-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-10-90-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-10-90-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -10835,6 +10709,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,50,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,50,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,50,1-10O-100N.txt" 2>&1
 @echo Ring,90,50,1-10O-100N - Run 1 Start
@@ -10907,8 +10782,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-90-50-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-90-50-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-90-50-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -10921,6 +10794,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,50,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,50,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,50,5-25O-100N.txt" 2>&1
 @echo Ring,90,50,5-25O-100N - Run 1 Start
@@ -10993,8 +10867,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-90-50-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-90-50-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-90-50-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -11007,6 +10879,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,50,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,50,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,50,10-50O-50N.txt" 2>&1
 @echo Ring,90,50,10-50O-50N - Run 1 Start
@@ -11079,8 +10952,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-90-50-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-90-50-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-90-50-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -11093,6 +10964,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,10,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,10,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,10,1-10O-100N.txt" 2>&1
 @echo Ring,90,10,1-10O-100N - Run 1 Start
@@ -11165,8 +11037,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-90-10-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-90-10-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-90-10-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -11179,6 +11049,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,10,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,10,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,10,5-25O-100N.txt" 2>&1
 @echo Ring,90,10,5-25O-100N - Run 1 Start
@@ -11251,8 +11122,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-90-10-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-90-10-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-90-10-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -11265,6 +11134,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,10,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,10,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,10,10-50O-50N.txt" 2>&1
 @echo Ring,90,10,10-50O-50N - Run 1 Start
@@ -11337,8 +11207,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-90-10-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-90-10-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-90-10-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -11351,6 +11219,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,90,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,90,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,90,1-10O-100N.txt" 2>&1
 @echo Ring,90,90,1-10O-100N - Run 1 Start
@@ -11423,8 +11292,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-90-90-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-90-90-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-90-90-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -11437,6 +11304,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,90,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,90,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,90,5-25O-100N.txt" 2>&1
 @echo Ring,90,90,5-25O-100N - Run 1 Start
@@ -11509,8 +11377,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-90-90-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-90-90-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-90-90-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -11523,6 +11389,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,90,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,90,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Ring,90,90,10-50O-50N.txt" 2>&1
 @echo Ring,90,90,10-50O-50N - Run 1 Start
@@ -11595,8 +11462,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-90-90-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Ring-90-90-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Ring-90-90-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -11609,6 +11474,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,50,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,50,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,50,1-10O-100N.txt" 2>&1
 @echo Tree,50,50,1-10O-100N - Run 1 Start
@@ -11681,8 +11547,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Ring,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-50-50-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-50-50-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-50-50-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -11695,6 +11559,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,50,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,50,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,50,5-25O-100N.txt" 2>&1
 @echo Tree,50,50,5-25O-100N - Run 1 Start
@@ -11767,8 +11632,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-50-50-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-50-50-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-50-50-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -11781,6 +11644,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,50,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,50,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,50,10-50O-50N.txt" 2>&1
 @echo Tree,50,50,10-50O-50N - Run 1 Start
@@ -11853,8 +11717,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-50-50-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-50-50-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-50-50-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -11867,6 +11729,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,10,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,10,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,10,1-10O-100N.txt" 2>&1
 @echo Tree,50,10,1-10O-100N - Run 1 Start
@@ -11939,8 +11802,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-50-10-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-50-10-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-50-10-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -11953,6 +11814,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,10,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,10,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,10,5-25O-100N.txt" 2>&1
 @echo Tree,50,10,5-25O-100N - Run 1 Start
@@ -12025,8 +11887,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-50-10-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-50-10-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-50-10-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -12039,6 +11899,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,10,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,10,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,10,10-50O-50N.txt" 2>&1
 @echo Tree,50,10,10-50O-50N - Run 1 Start
@@ -12111,8 +11972,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-50-10-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-50-10-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-50-10-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -12125,6 +11984,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,90,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,90,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,90,1-10O-100N.txt" 2>&1
 @echo Tree,50,90,1-10O-100N - Run 1 Start
@@ -12197,8 +12057,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-50-90-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-50-90-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-50-90-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -12211,6 +12069,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,90,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,90,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,90,5-25O-100N.txt" 2>&1
 @echo Tree,50,90,5-25O-100N - Run 1 Start
@@ -12283,8 +12142,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-50-90-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-50-90-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-50-90-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -12297,6 +12154,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,90,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,90,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,50,90,10-50O-50N.txt" 2>&1
 @echo Tree,50,90,10-50O-50N - Run 1 Start
@@ -12369,8 +12227,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-50-90-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-50-90-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-50-90-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -12383,6 +12239,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,50,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,50,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,50,1-10O-100N.txt" 2>&1
 @echo Tree,10,50,1-10O-100N - Run 1 Start
@@ -12455,8 +12312,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,50,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-10-50-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-10-50-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-10-50-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -12469,6 +12324,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,50,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,50,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,50,5-25O-100N.txt" 2>&1
 @echo Tree,10,50,5-25O-100N - Run 1 Start
@@ -12541,8 +12397,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-10-50-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-10-50-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-10-50-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -12555,6 +12409,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,50,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,50,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,50,10-50O-50N.txt" 2>&1
 @echo Tree,10,50,10-50O-50N - Run 1 Start
@@ -12627,8 +12482,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-10-50-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-10-50-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-10-50-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -12641,6 +12494,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,10,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,10,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,10,1-10O-100N.txt" 2>&1
 @echo Tree,10,10,1-10O-100N - Run 1 Start
@@ -12713,8 +12567,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-10-10-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-10-10-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-10-10-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -12727,6 +12579,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,10,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,10,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,10,5-25O-100N.txt" 2>&1
 @echo Tree,10,10,5-25O-100N - Run 1 Start
@@ -12799,8 +12652,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-10-10-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-10-10-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-10-10-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -12813,6 +12664,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,10,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,10,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,10,10-50O-50N.txt" 2>&1
 @echo Tree,10,10,10-50O-50N - Run 1 Start
@@ -12885,8 +12737,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-10-10-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-10-10-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-10-10-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -12899,6 +12749,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,90,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,90,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,90,1-10O-100N.txt" 2>&1
 @echo Tree,10,90,1-10O-100N - Run 1 Start
@@ -12971,8 +12822,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-10-90-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-10-90-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-10-90-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -12985,6 +12834,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,90,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,90,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,90,5-25O-100N.txt" 2>&1
 @echo Tree,10,90,5-25O-100N - Run 1 Start
@@ -13057,8 +12907,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-10-90-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-10-90-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-10-90-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -13071,6 +12919,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,90,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,90,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,10,90,10-50O-50N.txt" 2>&1
 @echo Tree,10,90,10-50O-50N - Run 1 Start
@@ -13143,8 +12992,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-10-90-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-10-90-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-10-90-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -13157,6 +13004,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,50,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,50,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,50,1-10O-100N.txt" 2>&1
 @echo Tree,90,50,1-10O-100N - Run 1 Start
@@ -13229,8 +13077,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,10,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-90-50-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-90-50-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-90-50-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -13243,6 +13089,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,50,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,50,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,50,5-25O-100N.txt" 2>&1
 @echo Tree,90,50,5-25O-100N - Run 1 Start
@@ -13315,8 +13162,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-90-50-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-90-50-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-90-50-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -13329,6 +13174,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,50,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,50,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,50,10-50O-50N.txt" 2>&1
 @echo Tree,90,50,10-50O-50N - Run 1 Start
@@ -13401,8 +13247,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-90-50-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-90-50-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-90-50-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -13415,6 +13259,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,10,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,10,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,10,1-10O-100N.txt" 2>&1
 @echo Tree,90,10,1-10O-100N - Run 1 Start
@@ -13487,8 +13332,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-90-10-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-90-10-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-90-10-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -13501,6 +13344,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,10,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,10,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,10,5-25O-100N.txt" 2>&1
 @echo Tree,90,10,5-25O-100N - Run 1 Start
@@ -13573,8 +13417,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-90-10-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-90-10-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-90-10-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -13587,6 +13429,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,10,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,10,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,10,10-50O-50N.txt" 2>&1
 @echo Tree,90,10,10-50O-50N - Run 1 Start
@@ -13659,8 +13502,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-90-10-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-90-10-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-90-10-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -13673,6 +13514,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,90,1-10O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,90,1-10O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,90,1-10O-100N.txt" 2>&1
 @echo Tree,90,90,1-10O-100N - Run 1 Start
@@ -13745,8 +13587,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-90-90-1-10O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-90-90-1-10O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-90-90-1-10O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -13759,6 +13599,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,90,5-25O-100N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,90,5-25O-100N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,90,5-25O-100N.txt" 2>&1
 @echo Tree,90,90,5-25O-100N - Run 1 Start
@@ -13831,8 +13672,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-90-90-5-25O-100N-utilScatterAll-Fault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-90-90-5-25O-100N-utilScatterAll-NoFault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-90-90-5-25O-100N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \end{document} >> Graphs.tex
@@ -13845,6 +13684,7 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo ""
 
 @cd "C:/Users/Sam/git/PCD/PCD-PeerSim"
+@rmdir /s /q "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,90,10-50O-50N/"
 @touch "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,90,10-50O-50N.txt"
 @echo '' > "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/Tree,90,90,10-50O-50N.txt" 2>&1
 @echo Tree,90,90,10-50O-50N - Run 1 Start
@@ -13916,8 +13756,6 @@ pdflatex "C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/Tree,90,
 @echo \includegraphics[width=\textwidth]{Tree-90-90-10-50O-50N-cycleBreakdown.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-90-90-10-50O-50N-utilScatterAll-Fault.eps} >> Graphs.tex
-@echo \newpage >> Graphs.tex
-@echo \includegraphics[width=\textwidth]{Tree-90-90-10-50O-50N-utilScatterAll-NoFault.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
 @echo \includegraphics[width=\textwidth]{Tree-90-90-10-50O-50N-utility-final.eps} >> Graphs.tex
 @echo \newpage >> Graphs.tex
