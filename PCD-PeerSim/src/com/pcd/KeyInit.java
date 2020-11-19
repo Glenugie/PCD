@@ -148,7 +148,7 @@ public class KeyInit implements Control {
 //            protocol.initPeerPolicies();        	
 //        }
         
-        PrologInterface.dumpListing();
+        //PrologInterface.dumpListing();
         
 		return false;
 	}

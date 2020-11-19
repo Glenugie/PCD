@@ -17,8 +17,12 @@ public class BatchGenerator {
             //"# Tree\n\tinit.keys.topology 6\n\tinit.rnd WireRegRootedTree\n\tinit.rnd.protocol lnk\n\tinit.rnd.k 5\n\tinit.keys.allowNewConnections false"
         };
         String[] compliances = {"50", "10", "90"};
-        String[] fairnesses = {"50", "10", "90"};
-        String[] datasets = {"1-10O-100N.pcddata","5-25O-100N.pcddata","10-50O-50N.pcddata"};
+        String[] fairnesses = {"50", "10", "90"};        
+        String[] datasets = {
+            "1-10O-100N.pcddata", "1-25O-100N.pcddata", "1-50O-50N.pcddata",
+            "5-10O-100N.pcddata", "5-25O-100N.pcddata", "5-50O-50N.pcddata",
+            "10-10O-100N.pcddata","10-25O-100N.pcddata","10-50O-50N.pcddata"
+        };
         
         ArrayList<String> fileNames = new ArrayList<String>();
         
@@ -95,7 +99,7 @@ public class BatchGenerator {
             for (String f : fileNames) {
                 System.out.println("file: "+f);
                 outF.write("@cd \"C:/Users/Sam/git/PCD/PCD-PeerSim\"\n");
-                //outF.write("@rm \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/"+f+".txt\"\n");
+                outF.write("@rm \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/"+f+".txt\"\n");
                 outF.write("@rmdir /s /q \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/"+f+"/\"\n");
                 outF.write("@touch \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/"+f+".txt\"\n");
                 outF.write("@echo '' > \"C:/Users/Sam/Documents/Dropbox Overflow/PhD/ExperimentRes/csv/_Logs/"+f+".txt\" 2>&1\n");

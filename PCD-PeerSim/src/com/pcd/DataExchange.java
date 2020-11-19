@@ -8,10 +8,6 @@ import java.util.LinkedHashMap;
 import java.util.Random;
 import java.util.Set;
 
-import org.jpl7.Atom;
-import org.jpl7.Term;
-import org.jpl7.Variable;
-
 import com.pcd.model.Action;
 import com.pcd.model.ActionSet;
 import com.pcd.model.DataElement;
@@ -364,7 +360,7 @@ public class DataExchange implements CDProtocol {
             //System.out.println("Peer "+peerID+" [Data Generation] "+(System.currentTimeMillis()-tmp)+"ms"); tmp = System.currentTimeMillis();
     
             //Query q = new Query(new Compound("listing", new Term[]{new Compound("noRequest",new Term[0])})); q.oneSolution(); q.close();
-            PrologInterface.retractFact("noRequest", new Term[] { new Atom("peer"+peerID), new Variable("_"), new Variable("_"), new org.jpl7.Integer(peersim.core.CommonState.getTime())});
+            //PrologInterface.retractFact("noRequest", new Term[] { new Atom("peer"+peerID), new Variable("_"), new Variable("_"), new org.jpl7.Integer(peersim.core.CommonState.getTime())});
             if (penaltyCycles > 0) {
                 peerBudget -= PrologInterface.confCycleCost;
                 penaltyCycles = Math.max(0, (penaltyCycles - 1));
